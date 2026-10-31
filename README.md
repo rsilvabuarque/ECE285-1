@@ -1,5 +1,13 @@
 # ECE/CS 285 HW1: a REYES renderer
 
+For the Deep Generative Models chest X-ray VAE homework, see
+[hw1_vae/README.md](hw1_vae/README.md) for the implementation, study guide,
+GPU training commands, and report outline.
+The self-contained [teaching notebook](hw1_vae/HW1_VAE.ipynb) also runs on a
+local laptop or hosted GPU; see the [GPU setup guide](hw1_vae/GPU_SETUP.md).
+The [recovery and supercomputer handoff](hw1_vae/RECOVERY_HANDOFF.md) records
+the recovered chat history, completed checks, and how to continue on a cluster.
+
 This C++ implementation provides a REYES-style renderer in `src/ri.cpp` and
 the required shaders in `src/shaders.cpp`. `reference_renders/` has every
 provided scene as the reference renderer draws it: compare those images

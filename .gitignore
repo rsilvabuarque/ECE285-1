@@ -1,0 +1,18 @@
+# Python VAE environment, downloaded data, and experiment outputs
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/data/
+/runs/
+/hw1_vae/data/
+/hw1_vae/runs/
+.ipynb_checkpoints/
+ece285_vae_notebook/
+
+# Local recovery archive and IDE-generated CMake metadata
+/.recovery/
+/build/.cmake/
+
+# Large lecture reference stays local; PDFs are versioned with the homework
+/for_chat_gpt/*.mp4

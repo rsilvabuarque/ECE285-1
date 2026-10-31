@@ -1,0 +1,2 @@
+# Reference PDFs are binary documents, including PDFs with a long text header.
+*.pdf binary

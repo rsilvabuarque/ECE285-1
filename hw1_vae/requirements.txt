@@ -1,0 +1,11 @@
+# Install a matching torch + torchvision pair first using https://pytorch.org/get-started/locally/
+# CPU-only verification here used the official CPU wheel index. Choose CUDA on the training host.
+torch>=2.6
+torchvision>=0.21
+numpy>=1.26
+Pillow>=10
+matplotlib>=3.8
+pytorch-ignite>=0.5.5,<0.6
+scipy>=1.12
+# Optional dataset downloader; manual Kaggle ZIP extraction also works.
+kagglehub>=0.3
