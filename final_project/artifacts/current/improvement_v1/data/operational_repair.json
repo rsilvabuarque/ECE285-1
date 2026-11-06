@@ -1,0 +1,13 @@
+{
+  "utc_seconds": 1794000492.5682743,
+  "action": "Terminate only owned CPU summary process after confirmed per-row NPZ decompression bottleneck; preserve source and empty attempt directory, then rerun derived summaries only.",
+  "stopped_pid": 477524,
+  "node": "nid200308",
+  "affected_script": "quality_summary.py",
+  "evidence": "logs/finish_analysis.log; reports/final/quality_attempt1; executed_sources/quality_summary_v1.py",
+  "fix": "Read provenance array once before row loop; no change to labels, conditions, models, proposal pools or numerical definitions.",
+  "physical_calculations_repeated": 0,
+  "fitted_models_changed": 0,
+  "status": "RESOLVED",
+  "summary_receipt": "reports/final/quality/quality_receipt.json"
+}

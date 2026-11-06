@@ -1,0 +1,7 @@
+# Frozen evidence is hash-verified. Preserve its exact bytes on every checkout.
+artifacts/current/** -text
+*.npz -text
+*.pt -text
+*.pdf -text
+*.png -text
+*.zip -text

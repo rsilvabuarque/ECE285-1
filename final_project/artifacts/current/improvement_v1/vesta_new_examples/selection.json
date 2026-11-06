@@ -1,0 +1,44 @@
+[
+  {
+    "pool": "final",
+    "teacher": "uma",
+    "method": "ar_adapt_cvae",
+    "seed": "20261108",
+    "n_Li": "12",
+    "scoring_structure_id": "mask48_00fe7f9fffff",
+    "canonical_mask": "000000001111111001111111100111111111111111111111",
+    "energy_eV_atom": "-5.7173343710988735",
+    "delta_q20_meV_atom": "-3.5720451996299474",
+    "minus_original_train_min_meV_atom": "-0.7957315539854903",
+    "minus_round1_UMA_train_min_meV_atom": "0.7575419832770436",
+    "source_geometry": "Fresh canonical pristine-derived deletion geometry; no relaxation"
+  },
+  {
+    "pool": "final",
+    "teacher": "uma",
+    "method": "ar_adapt_cvae",
+    "seed": "20261107",
+    "n_Li": "24",
+    "scoring_structure_id": "mask48_01fbb033dc47",
+    "canonical_mask": "000000011111101110110000001100111101110001000111",
+    "energy_eV_atom": "-5.725668687928957",
+    "delta_q20_meV_atom": "-5.433317832914675",
+    "minus_original_train_min_meV_atom": "-1.0739944544031488",
+    "minus_round1_UMA_train_min_meV_atom": "1.0697256730534122",
+    "source_geometry": "Fresh canonical pristine-derived deletion geometry; no relaxation"
+  },
+  {
+    "pool": "final",
+    "teacher": "uma",
+    "method": "ar_adapt_cvae",
+    "seed": "20261108",
+    "n_Li": "36",
+    "scoring_structure_id": "mask48_000001b5c911",
+    "canonical_mask": "000000000000000000000001101101011100100100010001",
+    "energy_eV_atom": "-5.726811552850979",
+    "delta_q20_meV_atom": "-3.7919106328576646",
+    "minus_original_train_min_meV_atom": "-1.3427463512627469",
+    "minus_round1_UMA_train_min_meV_atom": "0.6544509109893681",
+    "source_geometry": "Fresh canonical pristine-derived deletion geometry; no relaxation"
+  }
+]

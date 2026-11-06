@@ -1,0 +1,59 @@
+{
+  "created_utc_seconds": 1793998628.8890724,
+  "hypotheses": [
+    "Conditioning the training likelihood on exact count may repair the independent-Bernoulli/projection mismatch.",
+    "Autoregressive decoding may capture occupancy correlations absent from a weak-latent dense decoder.",
+    "Previously assessed fresh labels can improve sampling after being explicitly promoted to adaptation data."
+  ],
+  "controlled_variants": [
+    "dense original data BCE vs exact-count, same warm start and canonical orientation",
+    "dense exact-count original vs expanded adaptation data",
+    "expanded-data AR CVAE vs matching AR without latent vs composition-only AR CVAE"
+  ],
+  "seeds": [
+    20261106,
+    20261107,
+    20261108
+  ],
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "geometry_target": "Unrelaxed pristine-derived deletion geometry in fixed O3_N48_pilot parent",
+  "development_attempts_per_method_seed_count": 256,
+  "final_attempts_per_method_seed_count": 512,
+  "physical_scorers": [
+    "UMA-S-1.2.1 omat nativeFP32",
+    "MACE-MH-1 omat_pbe nativeFP32"
+  ],
+  "primary_thresholds": "Frozen original train q20 perteacher/composition, not redefined to improve reported scores",
+  "novelty": "Frozen all original+prior scored keys; final additionally excludes all development proposals",
+  "controls": [
+    "fresh uniform fixed count",
+    "fresh frozen standard and beta0.1 legacy CVAEs",
+    "mutation from original low train",
+    "mutation from expanded low train"
+  ],
+  "model_selection": "Within-fit validation objective; development oracle results may select further adaptation. Final settings frozen before final proposals/oracles.",
+  "statistical_scope": "Three trained seeds. Per-seed ranges descriptive; no512-independent-fit claim.",
+  "adaptive_rule": "After development, one supported CVAE family can receive one additional adaptation fit perseed using new development labels. Final never used to tune.",
+  "cost_bound_fourGPU_node_hours": 4,
+  "cumulative_previous_fourGPU_node_hours": 37.91798611111111,
+  "no_DFT": true,
+  "artifacts_before_scoring": {
+    "models.py": "2f3bdcf69f85bdaa8f5ace5224435d867e5f0694263968d4e5d504b1d6ce3a05",
+    "train.py": "f4dcb58e59b45400b3f3ce9fb1f33f33b6c782de21c3d0f82dced5140accd408",
+    "generate.py": "e0fd9f97bfceb0abe0a7d34b8ec52ca79d9830aabe70c66bdc5cdc32fd202bef",
+    "training_round0.npz": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "known_keys_round0.json": "119773f2e3792c1b616e5ecab2686759ab03d8390e4f83f85cad3afd96bd0f46",
+    "data/development_receipt.json": "a93fbee50c5baa2c7ec86c655ef9ea2a67f20b1b9c30aa1e72e64ef5f5c81bc7"
+  },
+  "diversity_analysis_extension": {
+    "utc_seconds": 1793999428.4635184,
+    "hypothesis": "Higher low-tail yield could reflect proximity to expanded training, so measure energy quality against exact nearest-training orbit distance.",
+    "sample": "64 distinct fresh orbits per method/seed/composition via the unchanged deterministic SHA256 order, before final energy outcomes are inspected. Initial12-sample diagnostic preserved.",
+    "cost": "No additional MLIP calls; allocation CPU only,300second cap based on measured12second runtime for1512queries.",
+    "interpretation": "Sampled diagnostic; not a distinct-basin or all-candidate diversity proof."
+  }
+}

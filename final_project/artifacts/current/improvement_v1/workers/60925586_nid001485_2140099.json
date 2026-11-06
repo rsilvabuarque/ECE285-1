@@ -1,0 +1,22 @@
+{
+  "model": "mace",
+  "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+  "checkpoint_hashes": {
+    "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+  },
+  "dtype": "float32",
+  "tf32": false,
+  "package_version": "0.3.16",
+  "torch": "2.13.0+cu130",
+  "ase": "3.26.0",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "load_seconds": 34.23068954597693,
+  "job_id": "60925586",
+  "host": "nid001485",
+  "gpu_visibility": "0",
+  "package": "mace-torch",
+  "task": "omat_pbe",
+  "worker": "60925586_nid001485_2140099",
+  "source_sha256": "763572a4c15425084dd13a8d7b4aa54f88ee7ebaa781895be79862b910ff3307",
+  "calculator_source_sha256": "dbfbbf1723cef56185ec7a17ca0389bd51dc29030bd478ed0032bc69773f1ce9"
+}

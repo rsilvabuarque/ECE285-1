@@ -1,0 +1,14 @@
+{
+  "status": "FIT_COMPLETE",
+  "stop_reason": "maximum_epochs",
+  "completed_epochs": 100,
+  "best_epoch": 100,
+  "best_val_objective": 22.88034734365763,
+  "training_seconds": 66.58705288299825,
+  "checkpoint_sha256": "1a5a9023381450db225ddfaec5647ce6a18ebce8f8fe0ed196b3cd2cbf32f0d8",
+  "train_rows": 60152,
+  "val_rows": 7493,
+  "test_rows": 7602,
+  "heldout_test_evaluated": false,
+  "generation_quality": "Requires new frozen MLIP-oracle proposal evaluation; validation fit is not discovery utility"
+}

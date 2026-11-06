@@ -1,0 +1,4 @@
+pool,teacher_a,teacher_b,n_Li,unique_orbits,spearman
+development,uma,mace,12,8343,0.9620918640975464
+development,uma,mace,24,8439,0.9701436277005879
+development,uma,mace,36,8416,0.9484057644036425

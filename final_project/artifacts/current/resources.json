@@ -1,0 +1,266 @@
+{
+  "gpu_node_hour_limit": 200,
+  "initial_allocations": [
+    {
+      "job_id": 60891540,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 4
+    },
+    {
+      "job_id": 60891542,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 4
+    },
+    {
+      "job_id": 60891541,
+      "nodes": 1,
+      "gpus": 2,
+      "requested_hours": 4
+    },
+    {
+      "job_id": 60892365,
+      "nodes": 1,
+      "gpus": 2,
+      "requested_hours": 4
+    }
+  ],
+  "maximum_initial_four_gpu_node_equivalent_hours": 36,
+  "account": "m5397_g",
+  "accounting": "Track actual sacct allocated GPU-device hours/4 plus site charges; no renewal until current jobs terminal and budget rechecked.",
+  "subsequent_allocations": [
+    {
+      "job_id": 60894121,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 4,
+      "reason": "Resume690missingfixedtasksafter60891540terminalauto-logout; generatedoraclescoring+MDnumericalgates",
+      "driver": "allocation_pipeline.py foreground; releasesonfinish"
+    },
+    {
+      "job_id": 60894929,
+      "nodes": 1,
+      "gpus": 2,
+      "requested_hours": 4,
+      "reason": "Frozen-generated-proposal5teacher scoringwhilefullgeometryphasesfinish; foregroundsrunthenexit"
+    },
+    {
+      "job_id": 60896149,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 3,
+      "qos": "gpu_regular",
+      "reason": "ExtraNVEcompositionchecks,NPT5operating-pointpilots,andbounded200five-psprimaryMDtraces; noDFT",
+      "reservation_four_gpu_node_hours": 12
+    },
+    {
+      "job_id": 60896651,
+      "nodes": 1,
+      "gpus": 2,
+      "requested_hours": 3,
+      "reason": "FactorizedjointdisplacementCVAE/regressorprototypeandcommon640geometry5teacherchecks; foregrounddriver",
+      "reservation_four_gpu_node_hours": 1.5
+    },
+    {
+      "job_id": 60896929,
+      "nodes": 2,
+      "gpus": 8,
+      "requested_hours": 0.5,
+      "qos": "gpu_debug",
+      "reason": "Shortnumerical/extreme-compositionand1psNPTpilotchecks only; no production",
+      "reservation_four_gpu_node_hours": 1
+    },
+    {
+      "job_id": 60897021,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 3,
+      "qos": "gpu_interactive",
+      "reason": "Replacesnever-startedregular60896149afterinteractivefullslotfreed",
+      "reservation_four_gpu_node_hours": 12
+    },
+    {
+      "job_id": 60897930,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 1.5,
+      "qos": "gpu_interactive",
+      "reservation_four_gpu_node_hours": 6,
+      "reason": "Same200MDtasks,additional16singleGPUworkerswithatomicclaims; nochangedphysics. Singleexportownerhandoffonlyafteroriginalallocationterminal."
+    },
+    {
+      "job_id": 60898271,
+      "nodes": 1,
+      "gpus": 1,
+      "requested_hours": 1,
+      "reservation_four_gpu_node_hours": 0.25,
+      "qos": "gpu_shared_interactive",
+      "reason": "DedicatedportableGPUfit/inferencelatencyvalidation, finaldata/audit/reportpackagingafterMDjobsrelease; max0.25node-equivalenth."
+    },
+    {
+      "job_id": 60899999,
+      "nodes": 1,
+      "gpus": 1,
+      "requested_hours": 1,
+      "reservation_four_gpu_node_hours": 0.25,
+      "qos": "gpu_shared_interactive",
+      "reason": "Resumeonlymetadataexport/auditafter60898271timecap. PinnedcachedcontaineravoidsnativePythonDVSstartupwait; no simulationrepeat."
+    },
+    {
+      "job_id": 60900491,
+      "nodes": 1,
+      "gpus": 1,
+      "requested_hours": 1,
+      "reservation_four_gpu_node_hours": 0.25,
+      "qos": "gpu_shared_interactive",
+      "reason": "Review unexpectedly large MD ancestry displacements and finish audit; no chemistry reruns. Accounting collected onhostoutsidecontainer."
+    },
+    {
+      "job_id": 60925586,
+      "nodes": 4,
+      "gpus": 16,
+      "requested_hours": 1,
+      "qos": "gpu_interactive",
+      "reservation_four_gpu_node_hours": 4,
+      "reason": "User-authorized lunch-hour CVAE improvement, fresh MLIP oracle labels and collaborator ZIP; no DFT."
+    }
+  ],
+  "operational_event": {
+    "job": 60891540,
+    "state": "COMPLETED",
+    "elapsed_seconds": 3967,
+    "cause": "Interactiveauto-logoutwhilebackgroundtasksactive",
+    "preserved_fixed_terminal": 4310,
+    "new_attempt_tasks": 690,
+    "old_claims_preserved": true,
+    "repair": "Foregroundphase/drivers; nositecontrolsdisabled"
+  },
+  "last_observed": {
+    "utc_seconds": 1794000644.2516727,
+    "jobs": [
+      {
+        "job_id": 60891540,
+        "state": "COMPLETED",
+        "elapsed_seconds": 3967,
+        "gpus": 16,
+        "device_hours": 17.63111111111111
+      },
+      {
+        "job_id": 60891541,
+        "state": "COMPLETED",
+        "elapsed_seconds": 4346,
+        "gpus": 2,
+        "device_hours": 2.4144444444444444
+      },
+      {
+        "job_id": 60891542,
+        "state": "COMPLETED",
+        "elapsed_seconds": 8938,
+        "gpus": 16,
+        "device_hours": 39.724444444444444
+      },
+      {
+        "job_id": 60892365,
+        "state": "COMPLETED",
+        "elapsed_seconds": 6961,
+        "gpus": 2,
+        "device_hours": 3.8672222222222223
+      },
+      {
+        "job_id": 60894121,
+        "state": "COMPLETED",
+        "elapsed_seconds": 5795,
+        "gpus": 16,
+        "device_hours": 25.755555555555556
+      },
+      {
+        "job_id": 60894929,
+        "state": "COMPLETED",
+        "elapsed_seconds": 6047,
+        "gpus": 2,
+        "device_hours": 3.3594444444444442
+      },
+      {
+        "job_id": 60896149,
+        "state": "CANCELLED by 98231",
+        "elapsed_seconds": 0,
+        "gpus": 0,
+        "device_hours": 0.0
+      },
+      {
+        "job_id": 60896651,
+        "state": "COMPLETED",
+        "elapsed_seconds": 1833,
+        "gpus": 2,
+        "device_hours": 1.0183333333333333
+      },
+      {
+        "job_id": 60896929,
+        "state": "COMPLETED",
+        "elapsed_seconds": 1377,
+        "gpus": 8,
+        "device_hours": 3.06
+      },
+      {
+        "job_id": 60897021,
+        "state": "COMPLETED",
+        "elapsed_seconds": 6859,
+        "gpus": 16,
+        "device_hours": 30.484444444444446
+      },
+      {
+        "job_id": 60897930,
+        "state": "CANCELLED by 98231",
+        "elapsed_seconds": 5056,
+        "gpus": 16,
+        "device_hours": 22.47111111111111
+      },
+      {
+        "job_id": 60898271,
+        "state": "TIMEOUT",
+        "elapsed_seconds": 3602,
+        "gpus": 1,
+        "device_hours": 1.0005555555555556
+      },
+      {
+        "job_id": 60899999,
+        "state": "FAILED",
+        "elapsed_seconds": 229,
+        "gpus": 1,
+        "device_hours": 0.0636111111111111
+      },
+      {
+        "job_id": 60900491,
+        "state": "COMPLETED",
+        "elapsed_seconds": 2958,
+        "gpus": 1,
+        "device_hours": 0.8216666666666667
+      },
+      {
+        "job_id": 60925586,
+        "state": "COMPLETED",
+        "elapsed_seconds": 2525,
+        "gpus": 16,
+        "device_hours": 11.222222222222221
+      }
+    ],
+    "allocated_gpu_device_hours": 162.89416666666668,
+    "allocated_four_gpu_node_equivalent_hours": 40.72354166666667,
+    "raw_sacct": "60891540|COMPLETED|3967|billing=512,cpu=512,energy=10211396,gres/gpu:a100=16,gres/gpu=16,mem=1951208M,node=4\n60891541|COMPLETED|4346|billing=64,cpu=64,energy=2296012,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1\n60891542|COMPLETED|8938|billing=512,cpu=512,energy=23669731,gres/gpu:a100=16,gres/gpu=16,mem=919208M,node=4\n60892365|COMPLETED|6961|billing=64,cpu=64,energy=4638902,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1\n60894121|COMPLETED|5795|billing=512,cpu=512,energy=14024965,gres/gpu:a100=16,gres/gpu=16,mem=919208M,node=4\n60894929|COMPLETED|6047|billing=64,cpu=64,energy=3925730,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1\n60896149|CANCELLED by 98231|0|\n60896651|COMPLETED|1833|billing=64,cpu=64,energy=973752,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1\n60896929|COMPLETED|1377|billing=256,cpu=256,energy=1967479,gres/gpu:a100=8,gres/gpu=8,mem=459604M,node=2\n60897021|COMPLETED|6859|billing=512,cpu=512,energy=26149452,gres/gpu:a100=16,gres/gpu=16,mem=919208M,node=4\n60897930|CANCELLED by 98231|5056|billing=512,cpu=512,energy=13226481,gres/gpu:a100=16,gres/gpu=16,mem=1693208M,node=4\n60898271|TIMEOUT|3602|billing=32,cpu=32,energy=1518702,gres/gpu:a100=1,gres/gpu=1,mem=57472M,node=1\n60899999|FAILED|229|billing=32,cpu=32,energy=140165,gres/gpu:a100=1,gres/gpu=1,mem=57472M,node=1\n60900491|COMPLETED|2958|billing=32,cpu=32,energy=1871253,gres/gpu:a100=1,gres/gpu=1,mem=57472M,node=1\n60925586|COMPLETED|2525|billing=512,cpu=512,energy=6655967,gres/gpu:a100=16,gres/gpu=16,mem=1435208M,node=4\n"
+  },
+  "queue_events": [
+    {
+      "job": 60896149,
+      "state": "CANCELLED_PENDING",
+      "elapsed_seconds": 0,
+      "action": "scancel--state=PENDINGthenconfirmedCANCELLED; moveidenticalMDdriverto60897021, no science killed or duplicated."
+    },
+    {
+      "job": 60897930,
+      "state": "CANCELLED_METADATA_ONLY_WAIT",
+      "step": "60897930.0 COMPLETED0:0",
+      "reason": "Allitsphysicscomplete; finalmissingtrajectorywasownedby60897021; release16idleGPUs. NativeownerthenCOMPLETEDbeforeexporttakeover."
+    }
+  ]
+}

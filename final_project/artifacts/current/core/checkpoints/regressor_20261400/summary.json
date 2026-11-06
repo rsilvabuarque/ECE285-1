@@ -1,0 +1,7 @@
+{
+  "best_epoch": 148,
+  "best_val_objective": 21.557804107666016,
+  "training_seconds": 15.507404522970319,
+  "epochs": 150,
+  "validation_note": "Posteriorconditionedcoordinatefit; actualprior-decodedEFSandrelaxationsavingsmustbeevaluatedseparately."
+}

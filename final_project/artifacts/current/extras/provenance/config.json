@@ -1,0 +1,67 @@
+{
+  "started_utc": "2026-11-06T07:16:53.800701+00:00",
+  "account": "m5397_g",
+  "gpu_node_hour_limit": 200,
+  "target_elapsed_hours": 8,
+  "no_DFT": true,
+  "models": [
+    "uma",
+    "mace",
+    "sevennet",
+    "chgnet",
+    "m3gnet"
+  ],
+  "precision": "float32",
+  "tf32": false,
+  "fixed_pilot": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/relaxation_pilot48_20261105",
+  "primary_N": 48,
+  "auxiliary_N": [
+    12,
+    24,
+    36
+  ],
+  "seed": 20261106,
+  "primary_target_per_composition": 512,
+  "symmetry_scope": "Exact species-preserving parent-cell site permutations; each split groups by canonical parent mask before augmentation or trajectories.",
+  "energy_namespaces": [
+    "model",
+    "parent",
+    "composition",
+    "geometry_stage"
+  ],
+  "force_target_eV_A": 0.05,
+  "stress_target_GPa": 0.1,
+  "stress_definition": "max absolute principal stress; zero external pressure for cell minimization",
+  "MD_targets": [
+    {
+      "T_K": 298.15,
+      "P_MPa": 0.101325
+    },
+    {
+      "T_K": 393.15,
+      "P_MPa": 0.08
+    },
+    {
+      "T_K": 433.15,
+      "P_MPa": 0.46
+    },
+    {
+      "T_K": 473.15,
+      "P_MPa": 1.32
+    },
+    {
+      "T_K": 493.15,
+      "P_MPa": 2.02
+    }
+  ],
+  "MD_target_sources": [
+    "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T393K_P0p08MPa/electrode/lith_91p67pct/T_393K__lith_91.67pct__POSCAR_000046/md_input_manifest.json",
+    "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T433K_P0p46MPa/electrode/lith_91p67pct/T_433K__lith_91.67pct__POSCAR_000196/md_input_manifest.json",
+    "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T473K_P1p32MPa/electrode/lith_91p67pct/T_473K__lith_91.67pct__POSCAR_000346/md_input_manifest.json",
+    "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T493K_P2p02MPa/electrode/lith_91p67pct/T_493K__lith_91.67pct__POSCAR_000496/md_input_manifest.json"
+  ],
+  "MD_pressure_conversion": "P_MPa*1e6/1.602176634e11 eV/A^3; compression positive target, ASE stress tensile positive",
+  "initial_iris_gpu_charged": 783.6,
+  "initial_account_allocation": 2000,
+  "cell_calibration": "2x2 FIRE/LBFGS x N/N4; reuse original-input FIRE/N baseline; physical-only stopping removes scaling-dependent generalized norm gate; do not change physicalforce/stress thresholds."
+}

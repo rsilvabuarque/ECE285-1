@@ -1,0 +1,42 @@
+{
+  "trace_columns": [
+    {
+      "name": "optimizer_step",
+      "unit": "integer"
+    },
+    {
+      "name": "potential_energy",
+      "unit": "eV/cell"
+    },
+    {
+      "name": "max_atomic_force_norm",
+      "unit": "eV/A"
+    },
+    {
+      "name": "max_abs_principal_configurational_stress",
+      "unit": "GPa"
+    },
+    {
+      "name": "cell_volume",
+      "unit": "A^3"
+    },
+    {
+      "name": "wall_elapsed",
+      "unit": "seconds"
+    },
+    {
+      "name": "relaxation_calculator_calls",
+      "unit": "integer"
+    }
+  ],
+  "snapshots": "Positions/forces/cell/stress sampled every declaredstride plus initial/final; scalartrace stores everyoptimizerstep. Allsnapshots sharefixedatomidentity/parent_slot mapping.",
+  "mask_convention": "1=vacancy",
+  "positions_A_shape": "snapshots,present_atoms,3",
+  "forces_eV_A_shape": "snapshots,present_atoms,3",
+  "cell_A_shape": "snapshots,3,3",
+  "stress_eV_A3_shape": "snapshots,6; xx yy zz yz xz xy; tensilepositive",
+  "parent_slot": "presentatom row -> full parent atom row, never inferredfromexportedsortedPOSCAR",
+  "scf_forces_parent": "fullparentpaddedforces,validonlywhereatom_presenceTrue; absentatomzerosnotlabels",
+  "energy_namespaces": "Separatecalculator,parentcell,composition,geometrystage; noabsoluteenergyorderingacrosscompositionorcalculators",
+  "sampling_units": "Distinctparentmaskisindependentlineage; optimizer/MDframesarecorrelated."
+}

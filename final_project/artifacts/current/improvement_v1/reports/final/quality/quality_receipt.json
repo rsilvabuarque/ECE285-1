@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "pool": "final",
+  "attempts": 64512,
+  "proposal_union_orbits": 63870,
+  "fresh_union_orbits": 63299,
+  "teachers": [
+    "uma",
+    "mace"
+  ],
+  "group_rows": 252,
+  "best_rows": 252,
+  "seed_rows": 84,
+  "method_teacher_rows": 28,
+  "original_training_references": "minimum_eV_atom and q20_eV_atom from original main_train threshold rows",
+  "adaptive_training_reference": "UMA training_round1.npz split=train only, separately within Li count",
+  "round1_UMA_train_minima_eV_atom": {
+    "12": -5.718091913082151,
+    "24": -5.7267384136020105,
+    "36": -5.727466003761968
+  },
+  "quantile_rule": "NumPy quantile(method=linear), each group's distinct fresh orbits only",
+  "aggregation": "Compute per-composition energy DIFFERENCES, macro-average across compositions within a seed, then average seeds equally. Global counts deduplicate across seeds within each method.",
+  "no_final_tuning": "This script reports frozen assessment only; it does not select or change a model.",
+  "sources": {
+    "proposals": "95bc067a2beb9d066e19891b8a84a7fc6ea58c6f95ff4d59de174b97023042b9",
+    "known_keys": "abf259d665aa45fcbee817647676c03c89996299e305e34014cb6d4f2d393862",
+    "round1_training": "5b7342efbb523dbee9c92c796f0ebd9aa79fdff5f0658056ed3099231e02f7b0",
+    "thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "identity_audit": "4e4fc54c169f61689be039a94b2285080ab2fddecf3d58fb685a76814eff75bb",
+    "collection": "93eaec8def89cd01160c7e95c58fec1d47f21db92a816b6b9f687c5b13a212b8",
+    "scores_uma": "0afc0c1c44299bee6c82bcb710269337de1f48628fa9810934c558e461a73001",
+    "scores_mace": "f40efb93a4a87a4ade002e5000d81ed3682ef88ef6e5e45e93adec6c0f5e646d"
+  },
+  "limitations": [
+    "MLIP energy quality, not DFT correctness or a global minimum guarantee.",
+    "Extreme energies depend on candidate count and are paired with p10/median and count columns.",
+    "Small negative reference gaps are not certified significant against FP32/repeat/model uncertainty.",
+    "MACE has its own original training reference; the UMA adaptive minimum is never compared to MACE energies.",
+    "Missing fresh candidates produce blank quality entries, not fabricated zero energy gaps.",
+    "Seed macro ranges are descriptive and do not constitute confidence intervals."
+  ]
+}

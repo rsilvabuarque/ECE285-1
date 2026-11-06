@@ -1,0 +1,80 @@
+Tasks for the ECE 285 midterm due 9 November
+
+These are proposed owners and concrete outputs for the shared repository. Plan
+roughly 6–8 focused hours per person before the midterm, then revisit the budget.
+Presentation dates are 24 November and 1 December; the final report is due
+12 December. The midterm is approximately five pages INCLUDING the revised
+proposal and EXCLUDING references. It must cover the mathematical method/algorithm
+and a discussion
+of novelty, advantages and limitations. Do not assume the CVAE must outperform
+the baselines for the project to be scientifically useful.
+
+Ricardo — chemistry, data, symmetry and scoring
+
+1. Verify the parent structure, occupancy convention, Li fraction, energy units
+   and distinction between deletion, coordinate prediction, and relaxation.
+   Check the supplied VESTA examples when included; record chemical concerns.
+2. Audit grouped splits and canonical-mask novelty. Document exactly which
+   symmetry operations define an orbit and which parent/cell the claim covers.
+   Different model labels or trajectory frames are not independent configurations.
+3. Write the short materials motivation and dataset/provenance paragraph. State
+   explicitly which labels are UMA/MACE/other MLIPs and which archived labels are
+   DFT. New large-cell MLIP labels must not be described as DFT truth.
+4. Propose a small later DFT verification set spanning low energy, model
+   disagreement and structural diversity. This task is selection/design only;
+   submitting DFT is a separate decision. Sampler comparison remains the core.
+
+Deliver: a checked data dictionary, a concise symmetry/provenance note, and the
+materials motivation plus physical interpretation/limitations text for the report.
+
+Beihao — generative model and controlled ablations
+
+1. Run the short portable fit/reload check, then reproduce one included model's
+   training settings in a NEW run directory. Preserve the shared frozen splits.
+2. Explain encoder, latent variable, decoder, energy/composition conditions,
+   exact Li-count handling and loss. Describe the actual implemented model,
+   including whether it uses independent or autoregressive occupancy probabilities.
+3. Compare latent KL, reconstruction and fresh prior-sample quality. Better
+   reconstruction alone does not establish improved discovery. Distinguish three
+   latent draws from three independently trained model seeds.
+4. Review the completed controlled changes and choose at most one further
+   ablation for the next development round. Freeze the hypothesis, controls,
+   setting and evaluation budget before running it; use fresh final proposals
+   after selection. Do not combine untracked architectural changes.
+
+Deliver: one reproducible configuration/learning-curve figure, the mathematical
+method paragraph, and an ablation table tied to measured oracle results.
+
+Varad — baselines, validation, uncertainty and figures
+
+1. Recompute the supplied low-tail yields from proposal IDs, canonical keys,
+   frozen known history, MLIP scores and ORIGINAL training thresholds. Include
+   every proposal attempt in the denominator; do not silently drop duplicates.
+2. Compare random fixed-count sampling, the previous CVAE, new model variants,
+   and low-energy training-mask mutation under equal attempt/oracle budgets.
+   State seed count and report seed-specific results. Composition/seed groups
+   and correlated optimizer frames are not interchangeable replications.
+3. Plot energy quality against novelty/diversity and distance to training when
+   those distances are available. Count all adaptive scoring calls in cost.
+   Do not treat a novelty rate or different teacher threshold as DFT accuracy.
+4. Check whether claimed improvements persist under the second MLIP teacher
+   when available. Give failure cases and a clear continue/pivot criterion.
+
+Deliver: a verified results CSV, one readable comparison figure with seed points,
+and the error-analysis/validation and baseline sections of the midterm.
+
+Shared integration before submission
+
+Suggested sequence: by 7 November, each owner completes the input/provenance or
+reproduction checks above and returns one draft paragraph plus concerns. On
+8 November, integrate the measured figures, revised proposal and method draft;
+resolve terminology and assign a single report editor. On 9 November, check the
+five-page body, references, figure/source-table agreement and submission rules.
+
+Meet once to agree on the final scope and scientific question. Use one person
+to integrate changes, with separate branches/run directories for everyone else.
+The report should distinguish observed results, interpretations, and proposed
+next tests. Freeze the current figures and source tables before submission.
+State that size/material transfer, DFT ground states, equilibrium thermodynamics
+and a CVAE-specific geometry advantage have not been established unless new
+direct evidence in the package actually demonstrates them.

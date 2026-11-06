@@ -1,0 +1,9 @@
+Tested learning environment
+{
+  "torch": "2.13.0+cu130",
+  "numpy": "2.3.4",
+  "dtype": "float32",
+  "tf32": false,
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}
+Training requires NumPy and PyTorch. Matplotlib is used for plots; ASE only for the optional VESTA format export. NumPy2 or later is required for the bitwise_count-based exact diversity analysis. CUDA runtime and MLIP physical-label environments are separate; pinned worker receipts identify those. No MLIP installation is required to train from these labeled arrays. CPU two-epoch fit/reload and all4 GPU model/count checks were executed. Those are operability checks, not evidence of scientific convergence.

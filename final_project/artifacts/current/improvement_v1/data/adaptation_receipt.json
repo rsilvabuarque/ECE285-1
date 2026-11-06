@@ -1,0 +1,18 @@
+{
+  "status": "ADAPTATION_PREPARED",
+  "selected_family": "ar_adapt_cvae",
+  "selection": "Highest development UMA mean novel low yield among expanded-data energy-conditioned dense and AR CVAEs; no final scores seen.",
+  "selected_development_yield": 0.3776041666666667,
+  "added_development_orbits": 25000,
+  "rows": 75247,
+  "split_counts": {
+    "train": 60152,
+    "val": 7493,
+    "test": 7602
+  },
+  "training_sha256": "5b7342efbb523dbee9c92c796f0ebd9aa79fdff5f0658056ed3099231e02f7b0",
+  "final_known_keys": 101046,
+  "final_known_keys_sha256": "abf259d665aa45fcbee817647676c03c89996299e305e34014cb6d4f2d393862",
+  "changes": "One adaptive data round, train-only energy classes recomputed; class-balanced loss; beta0.1 versus beta1. Coupled exploration, not pure sample-size effect.",
+  "final_protocol": "All24 newfits and frozen legacy/uniform/mutation controls get512 independent final attempts percomposition/seed. No model changes after final scores."
+}

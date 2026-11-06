@@ -1,0 +1,30 @@
+{
+  "best_epoch": 33,
+  "best_val_negative_ELBO": 32.941593170166016,
+  "val_projected_hamming_fraction": 0.27534180879592896,
+  "val_unprojected_mean_absolute_Li_count_error": 8.706270217895508,
+  "posterior_mu_variance_per_dimension": [
+    1.019805669784546,
+    0.9214491844177246,
+    0.9819212555885315,
+    1.0532214641571045,
+    0.999168872833252,
+    0.9802369475364685,
+    1.0260801315307617,
+    0.9891921877861023
+  ],
+  "mean_KL_per_dimension": [
+    1.3544670343399048,
+    1.3367648124694824,
+    1.354603886604309,
+    1.3868218660354614,
+    1.4375168085098267,
+    1.3358697891235352,
+    1.3960922956466675,
+    1.5331469774246216
+  ],
+  "training_seconds": 6.570874054974411,
+  "completed_epochs": 58,
+  "checkpoint_sha256": "681629952b4ff9a815b4af23e2af64f6ec9d427bb571c3f958a29ebed7d4783c",
+  "generation_quality": "Requires independent frozenMLIP scoring; reconstruction/ELBO do notprove discovery utility."
+}

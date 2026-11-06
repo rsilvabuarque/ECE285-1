@@ -1,0 +1,226 @@
+{
+  "status": "PASS",
+  "utc_seconds": 1794000711.4845476,
+  "scope": "Completed implementation, adaptation, fresh assessment and scientific audit. ZIP payload integrity is checked by the archive validation sidecar.",
+  "science_receipt_sha256": "3d786ffd75a0d10f2bd7d96934c33dc2a875eac04b490c4e3048734b66be21fe",
+  "resources_sha256": "04dbdc174f89b4bb4d3d0f3a3719f7f335989bb4a7d7242bb28a1dcc97e6eb6a",
+  "allocation": {
+    "job_id": 60925586,
+    "state": "COMPLETED",
+    "elapsed_seconds": 2525,
+    "gpus": 16,
+    "device_hours": 11.222222222222221
+  },
+  "allocation_absent_from_queue": true,
+  "cumulative_fourGPU_node_hours": 40.72354166666667,
+  "allowed_cumulative_fourGPU_node_hours": 200,
+  "this_goal_fourGPU_node_hours": 2.8055555555555554,
+  "new_fits": 24,
+  "new_MLIP_structure_labels": 176598,
+  "datasets": {
+    "training_original": {
+      "rows": 1536,
+      "train": 1227,
+      "val": 153,
+      "test": 156
+    },
+    "training_round0": {
+      "rows": 50247,
+      "train": 40157,
+      "val": 4967,
+      "test": 5123
+    },
+    "training_round1": {
+      "rows": 75247,
+      "train": 60152,
+      "val": 7493,
+      "test": 7602
+    }
+  },
+  "final_assessment": {
+    "attempts": 64512,
+    "fresh_orbits": 63299,
+    "teachers": [
+      "uma",
+      "mace"
+    ],
+    "fixed_original_q20": true,
+    "all_development_excluded_from_final_novelty": true,
+    "independent_metric_rows_verified": 252
+  },
+  "recommended_CVAE_family": "ar_adapt_cvae",
+  "recommended_CVAE_training_data": "training_round0.npz; match each checkpoint configuration and SHA, not the largest dataset by default",
+  "recommendation": "Keep the development-selected AR CVAE as the improved reference, retain mutation as strongest baseline. Additional adaptive fine-tuning did not improve the final primary yield.",
+  "selected_final_results": [
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "adaptive_ar_adapt_cvae_beta01",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.38910590277777773",
+      "minimum_seed_macro_yield": "0.376953125",
+      "maximum_seed_macro_yield": "0.404296875",
+      "seed_macro_standard_deviation": "0.013922756017660975",
+      "mean_duplicate_fraction": "0.023654513888888888",
+      "mean_novel_orbit_yield": "0.9631076388888888"
+    },
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "adaptive_ar_adapt_cvae_beta1",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.30425347222222227",
+      "minimum_seed_macro_yield": "0.287109375",
+      "maximum_seed_macro_yield": "0.3151041666666667",
+      "seed_macro_standard_deviation": "0.01502106118113908",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "0.9986979166666666"
+    },
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "ar_adapt_cvae",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.40060763888888884",
+      "minimum_seed_macro_yield": "0.37890625",
+      "maximum_seed_macro_yield": "0.4270833333333333",
+      "seed_macro_standard_deviation": "0.024440812891147714",
+      "mean_duplicate_fraction": "0.018229166666666668",
+      "mean_novel_orbit_yield": "0.9607204861111112"
+    },
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "legacy_uma_cvae_topk",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.18663194444444442",
+      "minimum_seed_macro_yield": "0.08723958333333333",
+      "maximum_seed_macro_yield": "0.2532552083333333",
+      "seed_macro_standard_deviation": "0.08772489518719725",
+      "mean_duplicate_fraction": "0.024305555555555556",
+      "mean_novel_orbit_yield": "0.9047309027777778"
+    },
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "mutation_round1",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.5407986111111112",
+      "minimum_seed_macro_yield": "0.5325520833333334",
+      "maximum_seed_macro_yield": "0.5462239583333334",
+      "seed_macro_standard_deviation": "0.007259430852290668",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "0.9993489583333334"
+    },
+    {
+      "pool": "final",
+      "teacher": "mace",
+      "method": "uniform",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.19748263888888892",
+      "minimum_seed_macro_yield": "0.177734375",
+      "maximum_seed_macro_yield": "0.21028645833333334",
+      "seed_macro_standard_deviation": "0.01735161415593809",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "1.0"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "adaptive_ar_adapt_cvae_beta01",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.3381076388888889",
+      "minimum_seed_macro_yield": "0.3359375",
+      "maximum_seed_macro_yield": "0.33984375",
+      "seed_macro_standard_deviation": "0.001988965145380141",
+      "mean_duplicate_fraction": "0.023654513888888888",
+      "mean_novel_orbit_yield": "0.9631076388888888"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "adaptive_ar_adapt_cvae_beta1",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.2784288194444444",
+      "minimum_seed_macro_yield": "0.263671875",
+      "maximum_seed_macro_yield": "0.3040364583333333",
+      "seed_macro_standard_deviation": "0.022262705908389156",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "0.9986979166666666"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "ar_adapt_cvae",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.3556857638888889",
+      "minimum_seed_macro_yield": "0.328125",
+      "maximum_seed_macro_yield": "0.37890625",
+      "seed_macro_standard_deviation": "0.02566734007024937",
+      "mean_duplicate_fraction": "0.018229166666666668",
+      "mean_novel_orbit_yield": "0.9607204861111112"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "legacy_uma_cvae_topk",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.1714409722222222",
+      "minimum_seed_macro_yield": "0.08463541666666667",
+      "maximum_seed_macro_yield": "0.22395833333333334",
+      "seed_macro_standard_deviation": "0.07572634274690518",
+      "mean_duplicate_fraction": "0.024305555555555556",
+      "mean_novel_orbit_yield": "0.9047309027777778"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "mutation_round1",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.5264756944444443",
+      "minimum_seed_macro_yield": "0.513671875",
+      "maximum_seed_macro_yield": "0.5338541666666666",
+      "seed_macro_standard_deviation": "0.011131352954194563",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "0.9993489583333334"
+    },
+    {
+      "pool": "final",
+      "teacher": "uma",
+      "method": "uniform",
+      "seed_count": "3",
+      "composition_seed_groups": "9",
+      "mean_low_yield": "0.1898871527777778",
+      "minimum_seed_macro_yield": "0.17317708333333334",
+      "maximum_seed_macro_yield": "0.19856770833333334",
+      "seed_macro_standard_deviation": "0.01447500533476761",
+      "mean_duplicate_fraction": "0.0",
+      "mean_novel_orbit_yield": "1.0"
+    }
+  ],
+  "primary_figure": "reports/final/primary_comparison.pdf",
+  "primary_figure_sha256": "28d93a407315531ccec44ab037bb17f939869663b76ab8a21a3c51c14637fe6b",
+  "root_visual_review": "Primary comparison labels, axes, seed points and bars inspected; measured values agree with summary.csv.",
+  "portable_relocation": "data/portable_relocated.json PASS; archived source/data must match its hashes.",
+  "operational_repair": "One CPU summary NPZ-array reread fixed; original source and attempt preserved. No physical jobs repeated.",
+  "delivery_zip": "ECE285_collaborator_data_20261106.zip",
+  "no_DFT_submitted": true,
+  "scientific_limits": [
+    "MLIP teacher consistency, not DFT ground truth",
+    "Three fitted seeds; sampling groups are not independent fit replications",
+    "Fixed48site parent and three compositions, no material/size transfer",
+    "No demonstrated end-to-end speedup",
+    "Final energy outcomes not used for further fitting"
+  ]
+}

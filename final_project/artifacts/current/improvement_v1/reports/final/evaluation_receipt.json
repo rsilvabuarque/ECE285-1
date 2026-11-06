@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "pool": "final",
+  "proposal_attempts": 64512,
+  "unique_orbits": 63870,
+  "teachers": [
+    "uma",
+    "mace"
+  ],
+  "group_rows": 252,
+  "source_hashes": {
+    "proposals": "95bc067a2beb9d066e19891b8a84a7fc6ea58c6f95ff4d59de174b97023042b9",
+    "known_keys": "abf259d665aa45fcbee817647676c03c89996299e305e34014cb6d4f2d393862",
+    "thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "catalog": "bb67f3ab7847171677221965723c84c4b056baa1f8d362a9fa7f2e4ba8a63b7a",
+    "scores_uma": "0afc0c1c44299bee6c82bcb710269337de1f48628fa9810934c558e461a73001",
+    "scores_mace": "f40efb93a4a87a4ade002e5000d81ed3682ef88ef6e5e45e93adec6c0f5e646d"
+  },
+  "frozen_history_keys": 101046,
+  "original_catalog_keys": 21294,
+  "novel_orbits": 63299,
+  "interpretation": "Fresh MLIP consistency under fixed deletion geometry; not DFT truth, ground states, or relaxed-energy optimization.",
+  "limitations": [
+    "Seed ranges are descriptive, not a confidence interval.",
+    "Different compositions and MLIP energy zero points are never pooled as raw energies.",
+    "This receipt verifies identities/coverage/metrics; separate oracle provenance and freeze timestamps must be audited.",
+    "Unique orbit yield penalizes repeated/known proposals; it does not establish broad structural diversity."
+  ]
+}

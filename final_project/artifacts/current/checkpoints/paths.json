@@ -1,0 +1,7 @@
+{
+  "uma": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/snapshots/ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1/checkpoints/uma-s-1p2p1.pt",
+  "mace": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+  "m3gnet": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--materialyze--M3GNet-PES-MatPES-PBE-2025.2/snapshots/a972e0dd982eaf2a4cf1e5c8de2c9e78c0013f72",
+  "chgnet": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/relaxation_pilot48_20261105/checkpoints/chgnet",
+  "sevennet": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/relaxation_pilot48_20261105/checkpoints/checkpoint_sevennet_omni.pth"
+}

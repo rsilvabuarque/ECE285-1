@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "pool": "final",
+  "attempts": 64512,
+  "proposal_union_orbits": 63870,
+  "fresh_union_orbits": 63299,
+  "teachers": [
+    "uma",
+    "mace"
+  ],
+  "group_rows": 252,
+  "best_rows": 252,
+  "seed_rows": 84,
+  "method_teacher_rows": 28,
+  "original_training_references": "minimum_eV_atom and q20_eV_atom from original main_train threshold rows",
+  "adaptive_training_reference": "UMA training_round1.npz split=train only, separately within Li count",
+  "round1_UMA_train_minima_eV_atom": {
+    "12": -5.718091913082151,
+    "24": -5.7267384136020105,
+    "36": -5.727466003761968
+  },
+  "quantile_rule": "NumPy quantile(method=linear), each group's distinct fresh orbits only",
+  "aggregation": "Compute per-composition energy DIFFERENCES, macro-average across compositions within a seed, then average seeds equally. Global counts deduplicate across seeds within each method.",
+  "no_final_tuning": "This script reports frozen assessment only; it does not select or change a model.",
+  "sources": {
+    "proposals": "95bc067a2beb9d066e19891b8a84a7fc6ea58c6f95ff4d59de174b97023042b9",
+    "known_keys": "abf259d665aa45fcbee817647676c03c89996299e305e34014cb6d4f2d393862",
+    "round1_training": "5b7342efbb523dbee9c92c796f0ebd9aa79fdff5f0658056ed3099231e02f7b0",
+    "thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "identity_audit": "4e4fc54c169f61689be039a94b2285080ab2fddecf3d58fb685a76814eff75bb",
+    "collection": "93eaec8def89cd01160c7e95c58fec1d47f21db92a816b6b9f687c5b13a212b8",
+    "scores_uma": "0afc0c1c44299bee6c82bcb710269337de1f48628fa9810934c558e461a73001",
+    "scores_mace": "f40efb93a4a87a4ade002e5000d81ed3682ef88ef6e5e45e93adec6c0f5e646d"
+  },
+  "limitations": [
+    "MLIP energy quality, not DFT correctness or a global minimum guarantee.",
+    "Extreme energies depend on candidate count and are paired with p10/median and count columns.",
+    "Small negative reference gaps are not certified significant against FP32/repeat/model uncertainty.",
+    "MACE has its own original training reference; the UMA adaptive minimum is never compared to MACE energies.",
+    "Missing fresh candidates produce blank quality entries, not fabricated zero energy gaps.",
+    "Seed macro ranges are descriptive and do not constitute confidence intervals."
+  ]
+}
+VESTA_EXPORT_PASS 3 lineages
+{"status": "PASS", "utc_seconds": 1794000574.3152578, "scope": "Scientific computation and data audit; archive integrity and final terminal allocation accounting are separate delivery checks.", "new_fits": 24, "fit_seeds": [20261106, 20261107, 20261108], "training_round1_rows": 75247, "development_new_orbits": 25000, "final_proposals": 64512, "final_new_orbits": 63299, "new_model_structure_labels": 176598, "independently_recomputed_final_metric_rows": 252, "receipts": {"data/model_tests.json": "fc032414922e2ca85e18d1d0fdf94313abe751571f5d8866edb2e877530277b2", "data/portable_relocated.json": "e683e4f207263b07751de0eee934810de11e33ad7eb7f38abd89b916fae3d9d9", "data/development_identity_audit.json": "8992aaa7ace79ab30931c6266e588896b139c81f0cb855f17d8bed03892d7de1", "data/development_collection.json": "06b9a3f1e29639df108b36a5626c061b3d169301f685d4a32b09db72801b2218", "reports/development/evaluation_receipt.json": "4b636f2e164ab6d4ae00c07a7228447a4f4d7699418f7c123dab50ab16610c7b", "data/final_identity_audit.json": "4e4fc54c169f61689be039a94b2285080ab2fddecf3d58fb685a76814eff75bb", "data/final_collection.json": "93eaec8def89cd01160c7e95c58fec1d47f21db92a816b6b9f687c5b13a212b8", "reports/final/evaluation_receipt.json": "7b89f3f02e560e4ce5351836e6e1667c88e89b931427d166ca4c2c2d8e729d75", "reports/final/quality/quality_receipt.json": "937d8b224abdc19d30d8c9a1d68a557bb757b42b5942808e363b6a4c7772b1cd", "reports/final_diversity64_receipt.json": "fa1af38d6ccb080c69690341cc2753e64b11561ef9eb994cbac987c10873620d"}, "RESULTS_sha256": "e35eb8e9758da4e58a4ff71c49592e06695349a7b0a7ba29136e4b417c35725c", "all_final_checkpoints_unchanged": true, "chronology_utc_seconds": {"latest_checkpoint": 1793999153.0637045, "proposal_freeze": 1793999204.721722, "first_final_oracle_claim": 1793999241.4027562}, "original_and_adaptation_splits_preserved": true, "CPU_and_GPU_operability": true, "no_DFT": true, "limitations": ["MLIP teacher consistency, not DFT ground truth", "Three fitted seeds; sampling groups are not independent fit replications", "Fixed48site parent and three compositions, no material/size transfer", "No demonstrated end-to-end speedup", "Final energy outcomes not used for further fitting"]}
+FINAL_SCIENCE_PASS

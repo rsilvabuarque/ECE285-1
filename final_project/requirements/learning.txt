@@ -1,0 +1,4 @@
+# Same numerical stack as the frozen learning checkpoints and measured results.
+torch==2.13.0
+numpy==2.3.4
+ase==3.26.0

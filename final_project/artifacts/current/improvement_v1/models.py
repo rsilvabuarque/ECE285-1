@@ -1,0 +1,240 @@
+"""Fixed-parent binary occupancy models for the bounded improvement experiment.
+
+Occupancy one means present Li. ``condition[:, 0]`` is n_Li/n_sites;
+the remaining condition is the low/not-low energy label. Exact-count losses
+and draws preserve that specified composition without post-hoc bit changes.
+No MLIP, coordinate relaxation, or energy gradient is part of these models.
+"""
+
+import torch
+from torch import nn
+from torch.nn import functional as F
+
+
+def gaussian_kl(mu, logvar):
+    """Per-row KL to N(0,I); empty baseline latent dimensions yield zero."""
+    return 0.5 * (mu.square() + logvar.exp() - 1 - logvar).sum(dim=-1)
+
+
+def _counts(n, batch, n_sites, device):
+    counts = torch.as_tensor(n, device=device, dtype=torch.long)
+    if counts.ndim == 0:
+        counts = counts.expand(batch)
+    if counts.shape != (batch,):
+        raise ValueError("n must be a scalar or one count per batch row")
+    return counts
+
+
+def _log_partitions(logits):
+    """Log partition for every cardinality, using a differentiable recurrence.
+
+State k sums weights of k occupied sites. A large finite negative sentinel
+avoids undefined logaddexp derivatives for two impossible (-inf) branches.
+It is far below any weight reachable by this finite-logit FP32 experiment.
+"""
+    batch, n_sites = logits.shape
+    negative = torch.finfo(logits.dtype).min / 100
+    dp = logits.new_full((batch, n_sites + 1), negative)
+    dp[:, 0] = 0
+    unavailable = logits.new_full((batch, 1), negative)
+    for i in range(n_sites):
+        occupied = torch.cat((unavailable, dp[:, :-1] + logits[:, i:i + 1]), dim=1)
+        dp = torch.logaddexp(dp, occupied)
+    return dp
+
+
+def exact_count_nll(logits, x, n=None):
+    """Per-row -log p(x|sum(x)=n), for binary x and factorized logits.
+
+The exact conditional likelihood is exp(sum_i logits_i*x_i)/Z_n.
+This trains a count-constrained decoder directly, rather than projecting a
+decoder trained with independent Bernoulli likelihood at inference time.
+"""
+    if logits.shape != x.shape:
+        raise ValueError("logits and x must have the same (batch, sites) shape")
+    if n is None:
+        n = x.sum(dim=1).round().long()
+    counts = _counts(n, len(x), x.shape[1], logits.device)
+    log_z = _log_partitions(logits).gather(1, counts[:, None]).squeeze(1)
+    return log_z - (logits * x).sum(dim=1)
+
+
+@torch.no_grad()
+def sample_exact_count(logits, n, generator=None):
+    """Exact conditional Bernoulli draws with row-specific target counts."""
+    batch, n_sites = logits.shape
+    remaining = _counts(n, batch, n_sites, logits.device).clone()
+    if bool(((remaining < 0) | (remaining > n_sites)).any()):
+        raise ValueError("Requested count must be between zero and n_sites")
+    negative = torch.finfo(logits.dtype).min / 100
+    suffix = [None] * (n_sites + 1)
+    dp = logits.new_full((batch, n_sites + 1), negative)
+    dp[:, 0] = 0
+    suffix[n_sites] = dp
+    unavailable = logits.new_full((batch, 1), negative)
+    for i in range(n_sites - 1, -1, -1):
+        occupied = torch.cat((unavailable, dp[:, :-1] + logits[:, i:i + 1]), dim=1)
+        dp = torch.logaddexp(dp, occupied)
+        suffix[i] = dp
+    result = torch.zeros_like(logits)
+    for i in range(n_sites):
+        denominator = suffix[i].gather(1, remaining[:, None]).squeeze(1)
+        numerator = logits[:, i] + suffix[i + 1].gather(
+            1, (remaining - 1).clamp_min(0)[:, None]).squeeze(1)
+        probability = (numerator - denominator).clamp_max(0).exp()
+        draw = torch.rand(batch, device=logits.device, generator=generator) < probability
+        take = ((remaining == n_sites - i) | draw) & (remaining > 0)
+        result[:, i] = take.to(logits.dtype)
+        remaining -= take.long()
+    return result
+
+
+class DenseCVAE(nn.Module):
+    """Exact legacy architecture and state_dict names; count loss is optional."""
+    def __init__(self, n_sites=48, condition_dim=2, latent_dim=8):
+        super().__init__()
+        self.n_sites = n_sites
+        self.condition_dim = condition_dim
+        self.latent_dim = latent_dim
+        self.has_latent = True
+        self.encoder = nn.Sequential(nn.Linear(n_sites + condition_dim, 128), nn.SiLU(),
+                                     nn.Linear(128, 64), nn.SiLU())
+        self.mu = nn.Linear(64, latent_dim)
+        self.logvar = nn.Linear(64, latent_dim)
+        self.decoder = nn.Sequential(nn.Linear(latent_dim + condition_dim, 64), nn.SiLU(),
+                                     nn.Linear(64, 128), nn.SiLU(), nn.Linear(128, n_sites))
+
+    def encode(self, x, c):
+        h = self.encoder(torch.cat((x, c), dim=-1))
+        return self.mu(h), self.logvar(h).clamp(-12, 8)
+
+    def decode_logits(self, z, c, x=None):
+        return self.decoder(torch.cat((z, c), dim=-1))
+
+    def decode(self, z, c):
+        return self.decode_logits(z, c)
+
+    def reconstruction(self, x, c, z, exact_count=True):
+        logits = self.decode_logits(z, c)
+        if exact_count:
+            return exact_count_nll(logits, x)
+        return F.binary_cross_entropy_with_logits(logits, x, reduction="none").sum(-1)
+
+    def forward(self, x, c):
+        mu, logvar = self.encode(x, c)
+        z = mu + torch.exp(0.5 * logvar) * torch.randn_like(mu)
+        return self.decode_logits(z, c), mu, logvar
+
+    @torch.no_grad()
+    def sample(self, c, n, z=None, generator=None):
+        if z is None:
+            z = torch.randn((len(c), self.latent_dim), device=c.device,
+                            dtype=c.dtype, generator=generator)
+        return sample_exact_count(self.decode_logits(z, c), n, generator)
+
+
+class ARCVAE(nn.Module):
+    """Dense encoder and teacher-forced GRU occupancy decoder.
+
+Training predicts each site's occupancy from previous true occupancies.
+Generation feeds back sampled occupancies. Forced zero/one choices needed to
+reach the requested count have conditional probability one and zero loss.
+Site order is the original fixed parent order, not an equivariance claim.
+"""
+    def __init__(self, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64):
+        super().__init__()
+        self.n_sites = n_sites
+        self.condition_dim = condition_dim
+        self.latent_dim = latent_dim
+        self.hidden_dim = hidden_dim
+        self.has_latent = latent_dim > 0
+        if self.has_latent:
+            self.encoder = nn.Sequential(nn.Linear(n_sites + condition_dim, 128), nn.SiLU(),
+                                         nn.Linear(128, 64), nn.SiLU())
+            self.mu = nn.Linear(64, latent_dim)
+            self.logvar = nn.Linear(64, latent_dim)
+        self.initial_hidden = nn.Linear(condition_dim + latent_dim, hidden_dim)
+        self.gru = nn.GRU(2 + condition_dim + latent_dim, hidden_dim, batch_first=True)
+        self.output = nn.Linear(hidden_dim, 1)
+
+    def encode(self, x, c):
+        if not self.has_latent:
+            empty = x.new_zeros((len(x), 0))
+            return empty, empty
+        h = self.encoder(torch.cat((x, c), dim=-1))
+        return self.mu(h), self.logvar(h).clamp(-12, 8)
+
+    def _context(self, z, c):
+        return torch.cat((c, z), dim=-1) if self.has_latent else c
+
+    def decode_logits(self, z, c, x=None):
+        if x is None:
+            raise ValueError("AR teacher-forced logits require x; use sample for new masks")
+        ctx = self._context(z, c)
+        previous = F.pad(x[:, :-1], (1, 0))[:, :, None]
+        index = torch.linspace(0, 1, self.n_sites, device=x.device, dtype=x.dtype)
+        site = index[None, :, None].expand(len(x), -1, -1)
+        inputs = torch.cat((previous, ctx[:, None, :].expand(-1, self.n_sites, -1), site), dim=-1)
+        h0 = torch.tanh(self.initial_hidden(ctx))[None]
+        values, _ = self.gru(inputs, h0)
+        return self.output(values).squeeze(-1)
+
+    def reconstruction(self, x, c, z, exact_count=True):
+        logits = self.decode_logits(z, c, x)
+        losses = F.binary_cross_entropy_with_logits(logits, x, reduction="none")
+        if exact_count:
+            target = x.sum(dim=1, keepdim=True)
+            used_before = x.cumsum(dim=1) - x
+            remaining = target - used_before
+            sites_left = torch.arange(self.n_sites, 0, -1, device=x.device)[None]
+            free = (remaining > 0) & (remaining < sites_left)
+            losses = losses * free
+        return losses.sum(dim=-1)
+
+    def forward(self, x, c):
+        mu, logvar = self.encode(x, c)
+        z = mu + torch.exp(0.5 * logvar) * torch.randn_like(mu)
+        return self.decode_logits(z, c, x), mu, logvar
+
+    @torch.no_grad()
+    def sample(self, c, n, z=None, generator=None):
+        batch = len(c)
+        if z is None:
+            z = torch.randn((batch, self.latent_dim), device=c.device,
+                            dtype=c.dtype, generator=generator)
+        remaining = _counts(n, batch, self.n_sites, c.device).clone()
+        if bool(((remaining < 0) | (remaining > self.n_sites)).any()):
+            raise ValueError("Requested count must be between zero and n_sites")
+        ctx = self._context(z, c)
+        hidden = torch.tanh(self.initial_hidden(ctx))[None]
+        previous = c.new_zeros((batch, 1))
+        result = c.new_zeros((batch, self.n_sites))
+        for i in range(self.n_sites):
+            site = c.new_full((batch, 1), i / max(1, self.n_sites - 1))
+            inputs = torch.cat((previous, ctx, site), dim=-1)[:, None, :]
+            values, hidden = self.gru(inputs, hidden)
+            probability = self.output(values[:, 0]).squeeze(-1).sigmoid()
+            draw = torch.rand(batch, device=c.device, generator=generator) < probability
+            take = ((remaining == self.n_sites - i) | draw) & (remaining > 0)
+            previous = take.to(c.dtype)[:, None]
+            result[:, i] = previous[:, 0]
+            remaining -= take.long()
+        return result
+
+
+class ARBaseline(ARCVAE):
+    """Same autoregressive decoder without latent variables or an encoder."""
+    def __init__(self, n_sites=48, condition_dim=2, hidden_dim=64):
+        super().__init__(n_sites, condition_dim, latent_dim=0, hidden_dim=hidden_dim)
+
+
+def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, cond_dim=None):
+    if cond_dim is not None:
+        condition_dim = cond_dim
+    if kind in {"dense", "dense_bce", "dense_count"}:
+        return DenseCVAE(n_sites, condition_dim, latent_dim)
+    if kind in {"ar", "ar_cvae"}:
+        return ARCVAE(n_sites, condition_dim, latent_dim, hidden_dim)
+    if kind == "ar_baseline":
+        return ARBaseline(n_sites, condition_dim, hidden_dim)
+    raise ValueError(f"Unknown model kind {kind!r}")

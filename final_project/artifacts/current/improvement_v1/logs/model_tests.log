@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "device": "cuda",
+  "torch": "2.13.0+cu130",
+  "checks": [
+    "Exact-K log partition and gradient match exhaustive 4-site enumeration",
+    "Dense conditional distributions normalize for counts 0..4; draws obey counts",
+    "ar_cvae: exhaustive likelihood normalization, finite gradients, count support",
+    "ar_baseline: exhaustive likelihood normalization, finite gradients, count support",
+    "Original dense state_dict loads strictly; 48-site sample and gradients pass"
+  ],
+  "scope": "Numerical/model API checks, not scientific sampler performance"
+}

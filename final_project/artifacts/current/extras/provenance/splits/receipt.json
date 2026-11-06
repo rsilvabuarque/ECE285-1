@@ -1,0 +1,29 @@
+{
+  "sha256": "e797668992cf77cfb371b1a38ad524f562d832043223e2804d3a5e875f0a81d9",
+  "rows": 32855,
+  "counts": {
+    "('Historical_O3_24', 'diagnostic')": 18,
+    "('Historical_O3_24', 'train')": 1688,
+    "('Historical_O3_24', 'val')": 215,
+    "('Historical_O3_24', 'test')": 217,
+    "('Hu_O3_12', 'diagnostic')": 44,
+    "('Hu_O3_12', 'train')": 33,
+    "('Hu_O3_12', 'test')": 6,
+    "('Hu_O3_12', 'val')": 4,
+    "('O3_N36_compact', 'diagnostic')": 4,
+    "('O3_N36_compact', 'train')": 3158,
+    "('O3_N36_compact', 'val')": 403,
+    "('O3_N36_compact', 'test')": 403,
+    "('O3_N48_compact', 'diagnostic')": 20,
+    "('O3_N48_compact', 'train')": 4262,
+    "('O3_N48_compact', 'test')": 543,
+    "('O3_N48_compact', 'val')": 543,
+    "('O3_N48_pilot', 'pilot_holdout')": 14,
+    "('O3_N48_pilot', 'test')": 2162,
+    "('O3_N48_pilot', 'train')": 16997,
+    "('O3_N48_pilot', 'val')": 2121
+  },
+  "group": "parent+canonical mask, shared across all calculators/cohorts/temperatures/frames",
+  "small_support": "fewerthan12orbitspercomposition isdiagnostic; no train/val/test performanceclaim",
+  "cross_size": "Auxiliary cells are separate diagnostic/transfer assets; dense48CVAE does notclaimcrosssizegeneralization. Periodically reducible cross-parent aliases mustbeexcluded beforefuturemixedsizegraphbenchmark."
+}

@@ -1,0 +1,277 @@
+{
+  "status": "PASS",
+  "date_utc": "2026-11-06",
+  "snapshot_files": 434,
+  "snapshot_verification": "All byte sizes and SHA256 values match SNAPSHOT_MANIFEST.json",
+  "fresh_environment_validation": {
+    "status": "PASS",
+    "time_unix": 1794007454.0969746,
+    "backend_imports": {
+      "uma": {
+        "import_ok": true
+      },
+      "mace": {
+        "import_ok": true
+      },
+      "sevennet": {
+        "import_ok": true
+      },
+      "matgl": {
+        "import_ok": true
+      }
+    },
+    "torch": "2.13.0+cpu",
+    "numpy": "2.3.4",
+    "scope": "Fresh CPU SDK installation/pip check, exact cached metric reproduction, numerical tests, short fit/reload and frozen checkpoint decoding. No new MLIP inference/DFT/MD.",
+    "gpu_prediction_parity": "Not tested by this CPU validation"
+  },
+  "profiles": {
+    "learning": {
+      "pip_check": "PASS",
+      "resolved_packages_file": "cpu_learning_packages.txt",
+      "cpu_torch": "2.13.0+cpu"
+    },
+    "uma": {
+      "pip_check": "PASS",
+      "resolved_packages_file": "cpu_uma_packages.txt",
+      "cpu_torch": "2.13.0+cpu"
+    },
+    "mace": {
+      "pip_check": "PASS",
+      "resolved_packages_file": "cpu_mace_packages.txt",
+      "cpu_torch": "2.13.0+cpu"
+    },
+    "sevennet": {
+      "pip_check": "PASS",
+      "resolved_packages_file": "cpu_sevennet_packages.txt",
+      "cpu_torch": "2.13.0+cpu"
+    },
+    "matgl": {
+      "pip_check": "PASS",
+      "resolved_packages_file": "cpu_matgl_packages.txt",
+      "cpu_torch": "2.13.0+cpu"
+    }
+  },
+  "model_constructors": {
+    "uma": {
+      "required_package": "fairchem-core",
+      "required_version": "2.25.0",
+      "head": "omat",
+      "installed_version": "2.25.0",
+      "package_version_ok": true,
+      "pip_check_ok": true,
+      "checkpoint_ok": true,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "loaded": {
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cpu",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cpu"
+      },
+      "load_test_elapsed_seconds": 29.107000827789307
+    },
+    "mace": {
+      "required_package": "mace-torch",
+      "required_version": "0.3.16",
+      "head": "omat_pbe",
+      "installed_version": "0.3.16",
+      "package_version_ok": true,
+      "pip_check_ok": true,
+      "checkpoint_ok": true,
+      "checkpoint_hashes": {
+        "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+      },
+      "loaded": {
+        "checkpoint_name": "MACE-MH-1",
+        "head": "omat_pbe",
+        "package_version": "0.3.16",
+        "torch": "2.13.0+cpu",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cpu"
+      },
+      "load_test_elapsed_seconds": 13.260836839675903
+    },
+    "sevennet": {
+      "required_package": "sevenn",
+      "required_version": "0.13.0",
+      "head": "mpa",
+      "installed_version": "0.13.0",
+      "package_version_ok": true,
+      "pip_check_ok": true,
+      "checkpoint_ok": true,
+      "checkpoint_hashes": {
+        "checkpoint_sevennet_omni.pth": "ca81bd3aac9fc2696c93dd386615f5a0fe41b92ab9ed7f69fa9526baaa9bab64"
+      },
+      "loaded": {
+        "checkpoint_name": "SevenNet-Omni",
+        "head": "mpa",
+        "package_version": "0.13.0",
+        "torch": "2.13.0+cpu",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cpu"
+      },
+      "load_test_elapsed_seconds": 14.952809572219849
+    },
+    "chgnet": {
+      "required_package": "matgl",
+      "required_version": "4.1.4",
+      "head": "MatPES-PBE",
+      "installed_version": "4.1.4",
+      "package_version_ok": true,
+      "pip_check_ok": true,
+      "checkpoint_ok": true,
+      "checkpoint_hashes": {
+        "model.json": "ef0a447a9989168ee326605fb21a4e9c9807ee15a61f6682f7be474ba028dc9e",
+        "model.pt": "523d3da637687e82e2a4645197810e7aaaf89c51421d4d1708cfcd98f74370a6",
+        "state.pt": "e9da73c92dc50734db276029936768e27a26a506fc226c98de2f08106488c6d4"
+      },
+      "loaded": {
+        "checkpoint_name": "CHGNet-PES-MatPES-PBE-1M-2026.9",
+        "head": "MatPES-PBE",
+        "package_version": "4.1.4",
+        "torch": "2.13.0+cpu",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cpu"
+      },
+      "load_test_elapsed_seconds": 14.110969305038452
+    },
+    "m3gnet": {
+      "required_package": "matgl",
+      "required_version": "4.1.4",
+      "head": "MatPES-PBE",
+      "installed_version": "4.1.4",
+      "package_version_ok": true,
+      "pip_check_ok": true,
+      "checkpoint_ok": true,
+      "checkpoint_hashes": {
+        "model.json": "96266a10e1b7f15baaed9cb6329c28138d2d3dbec09d754f60c42bd0812359e1",
+        "model.pt": "8204c34dc4df513e03d080017c30d7628fa3e4fcc13b9fe47076da0bcd3129da",
+        "state.pt": "ba5b96249e366456cb3e518fcc93f58c49353f564c79648f309b916926b10fa0"
+      },
+      "loaded": {
+        "checkpoint_name": "M3GNet-PES-MatPES-PBE-2025.2",
+        "head": "MatPES-PBE",
+        "package_version": "4.1.4",
+        "torch": "2.13.0+cpu",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cpu"
+      },
+      "load_test_elapsed_seconds": 11.43375301361084
+    }
+  },
+  "numerical_tests": [
+    {
+      "tests": 27,
+      "result": "PASS",
+      "torch": "2.13.0+cpu",
+      "execution": "CPU compute allocation"
+    },
+    {
+      "tests": 28,
+      "result": "PASS",
+      "torch": "2.8.0",
+      "execution": "Lightweight numerical/unit checks, adding species-independent spglib parent integration"
+    }
+  ],
+  "cached_result_reproduction": [
+    "metrics.csv",
+    "seed_metrics.csv",
+    "summary.csv",
+    "teacher_agreement.csv"
+  ],
+  "cached_result_comparison": "Exact CSV field equality to frozen final records",
+  "geometry_reproduction": {
+    "direct_score_rows": 3200,
+    "matched_lineages": 32,
+    "median_steps": {
+      "deletion": 40,
+      "regressor": 24,
+      "cvae_draw0": 24
+    }
+  },
+  "learning_operability": {
+    "mask_fit_epochs": 2,
+    "mask_optimizer_updates": 6,
+    "mask_fit_quality": "Not a scientific convergence/reproduction result",
+    "frozen_mask_checkpoint_reload": true,
+    "geometry_cvae_decode": true,
+    "geometry_regressor_decode": true
+  },
+  "latex": {
+    "body_pages": 5,
+    "reference_pages": 1,
+    "compiled": true,
+    "visual_review": true
+  },
+  "resource_summary": {
+    "cpu_node_seconds": 1221,
+    "cpu_node_hours": 0.33916666666666667,
+    "gpu_node_hours": 0,
+    "owned_allocations_remaining": 0
+  },
+  "preserved_attempts": [
+    {
+      "job": "60932801",
+      "state": "FAILED",
+      "reason": "Validation script was not yet present at launch; corrected before retry",
+      "cpu_node_seconds": 10
+    },
+    {
+      "job": "60932866",
+      "state": "CANCELLED",
+      "reason": "Package installation blocked on DVS filesystem I/O; logs retained, retry moved environments/cache to native scratch",
+      "cpu_node_seconds": 529
+    }
+  ],
+  "limitations": [
+    "No new MLIP single-point labels, DFT, MD, relaxation data, or scientific CVAE training campaign were generated.",
+    "CPU model construction tests do not test lazy graph construction, GPU execution, force/stress derivatives or prediction parity on collaborators hardware.",
+    "Model download endpoints/revisions and expected hashes are provided; this validation reused existing authorized pinned checkpoint files, not a fresh gated model download.",
+    "Class GPU environment and model access must be checked on that platform."
+  ],
+  "source_hashes": {
+    "src/cathode_cvae/__init__.py": "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402",
+    "src/cathode_cvae/cli.py": "8b912a92bfcd2f59df3b1ebdaa0379b7e04dc71ed3f235d370ac59f140715564",
+    "src/cathode_cvae/data.py": "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101",
+    "src/cathode_cvae/evaluation.py": "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face",
+    "src/cathode_cvae/geometry_evaluation.py": "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9",
+    "src/cathode_cvae/learning/__init__.py": "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18",
+    "src/cathode_cvae/learning/generate_geometry.py": "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a",
+    "src/cathode_cvae/learning/generate_mask.py": "71063b5a1f32252e523968976cd85f02c0b459b12b80f2fa36637ccf816cb372",
+    "src/cathode_cvae/learning/geometry_model.py": "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e",
+    "src/cathode_cvae/learning/models.py": "2f3bdcf69f85bdaa8f5ace5224435d867e5f0694263968d4e5d504b1d6ce3a05",
+    "src/cathode_cvae/learning/runtime.py": "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9",
+    "src/cathode_cvae/learning/train_geometry.py": "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae",
+    "src/cathode_cvae/learning/train_mask.py": "21112f1026708c7affa676ee62c93adfab1ba3e03195cd883cb5af7a3bf9d77d",
+    "src/cathode_cvae/mlip/__init__.py": "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968",
+    "src/cathode_cvae/mlip/calculators.py": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "src/cathode_cvae/mlip/checkpoints.py": "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f",
+    "src/cathode_cvae/mlip/cli.py": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+    "src/cathode_cvae/mlip/registry.py": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+    "src/cathode_cvae/runtime.py": "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7"
+  }
+}

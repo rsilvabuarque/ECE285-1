@@ -1,0 +1,52 @@
+/global/cfs/cdirs/m4537/rsb/envs/fairchem/lib/python3.12/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+/global/cfs/cdirs/m4537/rsb/envs/fairchem/lib/python3.12/site-packages/mace/calculators/mace.py:226: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+ORACLE_LOADED mace 60925586_nid001485_2137667
+SCORED development_mace_001984
+SCORED development_mace_019584
+SCORED development_mace_018944
+SCORED development_mace_024256
+SCORED development_mace_023232
+SCORED development_mace_013184
+SCORED development_mace_007424
+SCORED development_mace_017856
+SCORED development_mace_003904
+SCORED development_mace_017408
+SCORED development_mace_000512
+SCORED development_mace_022272
+SCORED development_mace_019840
+SCORED development_mace_022848
+SCORED development_mace_010048
+SCORED development_mace_003392
+SCORED development_mace_009472
+SCORED development_mace_018432
+SCORED development_mace_024896
+SCORED development_mace_009344
+SCORED development_mace_002368
+SCORED development_mace_011648
+SCORED development_mace_004608
+SCORED development_mace_017792
+SCORED development_mace_014272
+SCORED development_mace_020992
+SCORED development_mace_015168
+SCORED development_mace_023040
+SCORED development_mace_012352
+SCORED development_mace_007168
+SCORED development_mace_006784
+SCORED development_mace_014336
+SCORED development_mace_013120
+SCORED development_mace_013312
+SCORED development_mace_021952
+SCORED development_mace_023744
+SCORED development_mace_002816
+SCORED development_mace_015360
+SCORED development_mace_011136
+SCORED development_mace_019072
+SCORED development_mace_011840
+SCORED development_mace_000320
+SCORED development_mace_000960
+SCORED development_mace_017664
+ORACLE_STOP 60925586_nid001485_2137667

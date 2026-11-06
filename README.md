@@ -1,3 +1,8 @@
+## ECE 285 final project
+
+The cathode CVAE midterm package, current data, installation instructions and
+collaborator tasks are in [final_project/README.md](final_project/README.md).
+
 # ECE/CS 285 HW1: a REYES renderer
 
 For the Deep Generative Models chest X-ray VAE homework, see

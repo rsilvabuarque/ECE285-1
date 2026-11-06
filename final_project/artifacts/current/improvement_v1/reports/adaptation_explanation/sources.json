@@ -1,0 +1,21 @@
+{
+  "scope": "Descriptive plots from existing completed runs. No new simulation, training, inference, or data split. Curves do not isolate effects of the coupled adaptive changes.",
+  "sources": {
+    "reports/final/metrics.csv": "470429d7bd4ba88da9dd72fed74695f13e059284ed9c6e0256be0537b4ca957d",
+    "reports/final/quality/fresh_group_quality.csv": "ce83fae9662ebb4ab112c7c88473051fef69bc4d8b87eff15eb4fb63c5f01f2a",
+    "runs/adaptive_ar_adapt_cvae_beta01_20261106/history.csv": "8c02c058edad013759e06fe6b5219c2c8303e76430fa9dadca85d6be574222fc",
+    "runs/adaptive_ar_adapt_cvae_beta01_20261107/history.csv": "28f3c16da424fd59010696bc2f2510314d31d38bed517ce7468fbe69cabe8413",
+    "runs/adaptive_ar_adapt_cvae_beta01_20261108/history.csv": "28cf36a0bd48c8642dd7ca556ea78384a533e55fddaa1f4009abca2cd3f97865",
+    "runs/adaptive_ar_adapt_cvae_beta1_20261106/history.csv": "a103fbfacdcdc55ac3c4c772140119db77478137bda12413a1850f1d23780783",
+    "runs/adaptive_ar_adapt_cvae_beta1_20261107/history.csv": "6d1a494a96a1a8d8556d0ec681a74efb94f300e4a16ebc4f4a5bf3dd598171df",
+    "runs/adaptive_ar_adapt_cvae_beta1_20261108/history.csv": "8b9f556be9ef10b43a80b2cfa9aaaea35241a08c46c0a0f9d85caba07454f53b"
+  },
+  "outputs": {
+    "adaptive_learning_diagnostics.png": "4d57fd22eec404082b632d60f0fe557c4564c02c75fc612ecec2ffa0ff72debb",
+    "adaptation_energy_quality.png": "463b65f14905e99d69299f3af200e8dbb0cf04eb731e0f31683302a2f1b3ec84",
+    "adaptation_yield_by_composition.png": "aaf3c8f996b1249b9258408a7179a8476068202e5e7a764f1e88e53f9fde3012",
+    "adaptation_energy_quality.pdf": "696f49f1310f2f95d506adcbcbaca5e42167ef915c9fe5ebf5bb5c490db9a9d3",
+    "adaptive_learning_diagnostics.pdf": "e41140e97b21a4b3350dd7405b6e65aa6f828aa116f24cf26c9bdd06dc52a242",
+    "adaptation_yield_by_composition.pdf": "f315b72794b43fd58be773b1c86801937ba1353f9feb5218540079736ac80b14"
+  }
+}

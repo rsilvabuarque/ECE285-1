@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "relocated_root": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/validation_export_copy",
+  "checks": [
+    "Learning-only source/data relocation",
+    "CPU two-epoch AR-CVAE fit",
+    "Checkpoint CPU reload",
+    "100exact-count samples each atLi12/24/36"
+  ],
+  "copied_hashes": {
+    "improvement_v1/models.py": "2f3bdcf69f85bdaa8f5ace5224435d867e5f0694263968d4e5d504b1d6ce3a05",
+    "improvement_v1/train.py": "f4dcb58e59b45400b3f3ce9fb1f33f33b6c782de21c3d0f82dced5140accd408",
+    "improvement_v1/training_original.npz": "52d4724a066a5fe26d337295fa7dfe19328ad7bc82420841477d9737cabab630",
+    "data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "scope": "Portable operation, not scientific model convergence."
+}

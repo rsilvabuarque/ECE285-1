@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "seconds": 12.171939195948653,
+  "maximum_seconds": 300.0,
+  "sample_per_group": 12,
+  "selected_distinct_queries": 1512,
+  "completed_distinct_queries": 1512,
+  "completed_group_query_rows": 1512,
+  "reference_counts": {
+    "12": {
+      "original": {
+        "train_orbits": 409,
+        "distinct_orientations": 78048
+      },
+      "round1": {
+        "train_orbits": 19961,
+        "distinct_orientations": 3827328
+      }
+    },
+    "24": {
+      "original": {
+        "train_orbits": 409,
+        "distinct_orientations": 78528
+      },
+      "round1": {
+        "train_orbits": 20247,
+        "distinct_orientations": 3886368
+      }
+    },
+    "36": {
+      "original": {
+        "train_orbits": 409,
+        "distinct_orientations": 78240
+      },
+      "round1": {
+        "train_orbits": 19944,
+        "distinct_orientations": 3822912
+      }
+    }
+  },
+  "parent_permutations": 192,
+  "inputs": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/data/final_attempts.csv": "95bc067a2beb9d066e19891b8a84a7fc6ea58c6f95ff4d59de174b97023042b9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/training_round1.npz": "5b7342efbb523dbee9c92c796f0ebd9aa79fdff5f0658056ed3099231e02f7b0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/training_original.npz": "52d4724a066a5fe26d337295fa7dfe19328ad7bc82420841477d9737cabab630",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/known_keys_final.json": "abf259d665aa45fcbee817647676c03c89996299e305e34014cb6d4f2d393862",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "script_sha256": "bbf14f4663da5b8402db1ded410273b87cd4fcdc996f0f793e24f4786b20e11a",
+  "outputs": {
+    "queries": "9b3f3382591a27b775c95bf0c306e87f353066c513c2d4aea6ac68d4b632dd0d",
+    "groups": "6beda739af03486d9dd6081baf02b5544b78115b90f0ad96d85c02aed73854af",
+    "methods": "6ba6574c255b5201c95db11cc4389a08862a3e5145754630d2b2af6f632ff219"
+  },
+  "selection": "Up to 12 distinct fresh orbits/group by stable SHA256 order; reused query cache across groups",
+  "scope": "Exact fixed-composition minimum Hamming/2 over all retained periodic parent permutations. Sampled proposal subset only; no all-candidate, phase or population guarantee. Partial runs must not be reported as complete samples."
+}

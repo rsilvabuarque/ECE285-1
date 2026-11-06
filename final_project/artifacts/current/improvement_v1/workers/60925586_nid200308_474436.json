@@ -1,0 +1,23 @@
+{
+  "model": "uma",
+  "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/snapshots/ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1/checkpoints/uma-s-1p2p1.pt",
+  "checkpoint_hashes": {
+    "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+  },
+  "dtype": "float32",
+  "tf32": false,
+  "package_version": "2.25.0",
+  "torch": "2.13.0+cu130",
+  "ase": "3.26.0",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "load_seconds": 79.90854560595471,
+  "job_id": "60925586",
+  "host": "nid200308",
+  "gpu_visibility": "0",
+  "package": "fairchem-core",
+  "task": "omat",
+  "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+  "worker": "60925586_nid200308_474436",
+  "source_sha256": "763572a4c15425084dd13a8d7b4aa54f88ee7ebaa781895be79862b910ff3307",
+  "calculator_source_sha256": "dbfbbf1723cef56185ec7a17ca0389bd51dc29030bd478ed0032bc69773f1ce9"
+}

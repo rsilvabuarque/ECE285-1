@@ -1,0 +1,74 @@
+{
+  "kind": "dense_bce",
+  "condition_mode": "energy",
+  "condition_dim": 2,
+  "n_sites": 48,
+  "latent_dim": 8,
+  "seed": 20261106,
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "train_rows": 1227,
+  "val_rows": 153,
+  "test_rows": 156,
+  "excluded_split_rows": 0,
+  "data": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/improvement_v1/training_original.npz",
+  "data_sha256": "52d4724a066a5fe26d337295fa7dfe19328ad7bc82420841477d9737cabab630",
+  "parent": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/parents/O3_N48_pilot.npz",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "trainer_sha256": "f4dcb58e59b45400b3f3ce9fb1f33f33b6c782de21c3d0f82dced5140accd408",
+  "model_source_sha256": "2f3bdcf69f85bdaa8f5ace5224435d867e5f0694263968d4e5d504b1d6ce3a05",
+  "source_id_sha256": "a148cad06af6b16596be1ecfa8a23d6a83ac5be24dae9321b542aece1f4e9e31",
+  "condition_stats": {
+    "12": {
+      "train_rows": 409,
+      "q20_eV_atom": -5.713762325899244,
+      "low_fraction_train": 0.20048899755501223,
+      "low_weight_fraction_train": 0.20048899755501223
+    },
+    "24": {
+      "train_rows": 409,
+      "q20_eV_atom": -5.720235370096042,
+      "low_fraction_train": 0.20048899755501223,
+      "low_weight_fraction_train": 0.20048899755501223
+    },
+    "36": {
+      "train_rows": 409,
+      "q20_eV_atom": -5.723019642218121,
+      "low_fraction_train": 0.20048899755501223,
+      "low_weight_fraction_train": 0.20048899755501223
+    }
+  },
+  "energy_condition": "Unweighted train-only bottom20% threshold within Li count; exact ties retained",
+  "orientation": "canonical",
+  "canonicalization": "Exact minimum 48-bit vacancy code under parent permutations",
+  "symmetry_augmentation": "None; one canonical orientation per orbit",
+  "class_balance": false,
+  "class_balance_scope": "Train only within each composition; keeps its total base weight",
+  "input_weight_scope": "Inherited row weights; normalized to mean 1 over train rows",
+  "count_likelihood": false,
+  "beta_final": 0.1,
+  "beta_warmup_epochs": 20,
+  "maximum_epochs": 100,
+  "minimum_epochs": 20,
+  "early_stop_patience": 15,
+  "maximum_seconds": 600.0,
+  "batch_size": 512,
+  "learning_rate": 0.001,
+  "validation_samples": 2,
+  "validation_noise": "Fixed seeded standard-normal samples; no train RNG consumption",
+  "checkpoint_selection": "Minimum validation weighted reconstruction plus KL at beta=1, within this model likelihood only",
+  "warm_start": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/cvae/runs/uma_cvae_beta01_main_20261106/best.pt",
+    "sha256": "681629952b4ff9a815b4af23e2af64f6ec9d427bb571c3f958a29ebed7d4783c"
+  },
+  "torch": "2.13.0+cu130",
+  "numpy": "2.3.4",
+  "dtype": "float32",
+  "tf32": false,
+  "device": "cuda",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "scientific_scope": "Deletion vacancy masks, not relaxed geometry; no force/stress inputs or energy gradients; no global minimum guarantee"
+}

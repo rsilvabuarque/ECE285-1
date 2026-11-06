@@ -1,0 +1,358 @@
+ENQUEUED development 25000 782
+COLLECT_WAIT development 782 of 782
+COLLECT_WAIT development 782 of 782
+COLLECT_WAIT development 774 of 782
+COLLECT_WAIT development 767 of 782
+COLLECT_WAIT development 758 of 782
+COLLECT_WAIT development 749 of 782
+COLLECT_WAIT development 742 of 782
+COLLECT_WAIT development 734 of 782
+COLLECT_WAIT development 721 of 782
+COLLECT_WAIT development 689 of 782
+COLLECT_WAIT development 660 of 782
+COLLECT_WAIT development 630 of 782
+COLLECT_WAIT development 599 of 782
+COLLECT_WAIT development 569 of 782
+COLLECT_WAIT development 535 of 782
+COLLECT_WAIT development 503 of 782
+COLLECT_WAIT development 474 of 782
+COLLECT_WAIT development 440 of 782
+COLLECT_WAIT development 412 of 782
+COLLECT_WAIT development 381 of 782
+COLLECT_WAIT development 346 of 782
+COLLECT_WAIT development 318 of 782
+COLLECT_WAIT development 285 of 782
+COLLECT_WAIT development 259 of 782
+COLLECT_WAIT development 227 of 782
+COLLECT_WAIT development 196 of 782
+COLLECT_WAIT development 163 of 782
+COLLECT_WAIT development 133 of 782
+COLLECT_WAIT development 117 of 782
+COLLECT_WAIT development 105 of 782
+COLLECT_WAIT development 92 of 782
+COLLECT_WAIT development 79 of 782
+COLLECT_WAIT development 64 of 782
+COLLECT_WAIT development 51 of 782
+COLLECT_WAIT development 40 of 782
+COLLECT_WAIT development 26 of 782
+COLLECT_WAIT development 13 of 782
+{"status": "PASS", "pool": "development", "fresh_unique_orbits": 25000, "shards": 782, "scores": {"uma": {"all_scored": 25198, "fresh": 25000, "cached": 198, "sha256": "e760220371897fee033a1025b143d4b3b82845bf761ad6905043935188c224fb"}, "mace": {"all_scored": 25198, "fresh": 25000, "cached": 198, "sha256": "350db8f81930d7e7aef4b20546df1392c7c163046cd0eddbe34169042d132b5f"}}, "workers": ["60925586_nid001484_304867", "60925586_nid001484_304868", "60925586_nid001484_304869", "60925586_nid001484_304870", "60925586_nid001485_2137666", "60925586_nid001485_2137667", "60925586_nid001485_2137668", "60925586_nid001485_2137669", "60925586_nid200308_472200", "60925586_nid200308_472201", "60925586_nid200308_472202", "60925586_nid200308_472203", "60925586_nid200372_852245", "60925586_nid200372_852246", "60925586_nid200372_852247", "60925586_nid200372_852248"], "fresh_input_sha256": "fb963a0a48a3b72f4e079930b3d02b97b0db99d066f673020f8cdbea0adb2792", "scope": "All fresh shards identity/shape/finite EFS/padding/hash checked. Cached scalar energies retain old orientation/model provenance; cached hits do not count as novel."}
+{
+  "receipt": {
+    "status": "PASS",
+    "pool": "development",
+    "proposal_attempts": 25344,
+    "unique_orbits": 25198,
+    "teachers": [
+      "uma",
+      "mace"
+    ],
+    "group_rows": 198,
+    "source_hashes": {
+      "proposals": "88861de46a623a2b17a43019aeb9a4676b639af4da4d9fa25baeb875b6ff5577",
+      "known_keys": "119773f2e3792c1b616e5ecab2686759ab03d8390e4f83f85cad3afd96bd0f46",
+      "thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+      "catalog": "bb67f3ab7847171677221965723c84c4b056baa1f8d362a9fa7f2e4ba8a63b7a",
+      "scores_uma": "e760220371897fee033a1025b143d4b3b82845bf761ad6905043935188c224fb",
+      "scores_mace": "350db8f81930d7e7aef4b20546df1392c7c163046cd0eddbe34169042d132b5f"
+    },
+    "frozen_history_keys": 76046,
+    "original_catalog_keys": 21294,
+    "novel_orbits": 25000,
+    "interpretation": "Fresh MLIP consistency under fixed deletion geometry; not DFT truth, ground states, or relaxed-energy optimization.",
+    "limitations": [
+      "Seed ranges are descriptive, not a confidence interval.",
+      "Different compositions and MLIP energy zero points are never pooled as raw energies.",
+      "This receipt verifies identities/coverage/metrics; separate oracle provenance and freeze timestamps must be audited.",
+      "Unique orbit yield penalizes repeated/known proposals; it does not establish broad structural diversity."
+    ]
+  },
+  "summary": [
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "ar_adapt_baseline",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.2534722222222222,
+      "minimum_seed_macro_yield": 0.23046875,
+      "maximum_seed_macro_yield": 0.2864583333333333,
+      "seed_macro_standard_deviation": 0.029299286166211223,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "ar_adapt_composition",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.37109375,
+      "minimum_seed_macro_yield": 0.3151041666666667,
+      "maximum_seed_macro_yield": 0.421875,
+      "seed_macro_standard_deviation": 0.05357562659229422,
+      "mean_duplicate_fraction": 0.009548611111111112,
+      "mean_novel_orbit_yield": 0.9904513888888888
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "ar_adapt_cvae",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.4205729166666667,
+      "minimum_seed_macro_yield": 0.3932291666666667,
+      "maximum_seed_macro_yield": 0.453125,
+      "seed_macro_standard_deviation": 0.030285685806283866,
+      "mean_duplicate_fraction": 0.010416666666666666,
+      "mean_novel_orbit_yield": 0.9895833333333334
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "dense_adapt_count",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.2682291666666667,
+      "minimum_seed_macro_yield": 0.22786458333333334,
+      "maximum_seed_macro_yield": 0.29296875,
+      "seed_macro_standard_deviation": 0.035252568673648135,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "dense_original_bce",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.2265625,
+      "minimum_seed_macro_yield": 0.21744791666666666,
+      "maximum_seed_macro_yield": 0.24088541666666666,
+      "seed_macro_standard_deviation": 0.012556836928376242,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "dense_original_count",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.2309027777777778,
+      "minimum_seed_macro_yield": 0.21223958333333334,
+      "maximum_seed_macro_yield": 0.25,
+      "seed_macro_standard_deviation": 0.018883949581429763,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "legacy_uma_beta01_topk",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.22352430555555555,
+      "minimum_seed_macro_yield": 0.13411458333333334,
+      "maximum_seed_macro_yield": 0.3059895833333333,
+      "seed_macro_standard_deviation": 0.08614768068689649,
+      "mean_duplicate_fraction": 0.004340277777777778,
+      "mean_novel_orbit_yield": 0.98046875
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "legacy_uma_cvae_topk",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.1953125,
+      "minimum_seed_macro_yield": 0.078125,
+      "maximum_seed_macro_yield": 0.26953125,
+      "seed_macro_standard_deviation": 0.10268312053199152,
+      "mean_duplicate_fraction": 0.014322916666666666,
+      "mean_novel_orbit_yield": 0.9184027777777778
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "mutation_adapt",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.5173611111111112,
+      "minimum_seed_macro_yield": 0.5078125,
+      "maximum_seed_macro_yield": 0.53125,
+      "seed_macro_standard_deviation": 0.012306811526699496,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "mutation_original",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.46527777777777773,
+      "minimum_seed_macro_yield": 0.45703125,
+      "maximum_seed_macro_yield": 0.4778645833333333,
+      "seed_macro_standard_deviation": 0.01107408925535856,
+      "mean_duplicate_fraction": 0.00043402777777777775,
+      "mean_novel_orbit_yield": 0.99609375
+    },
+    {
+      "pool": "development",
+      "teacher": "mace",
+      "method": "uniform",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.1987847222222222,
+      "minimum_seed_macro_yield": 0.18098958333333334,
+      "maximum_seed_macro_yield": 0.21354166666666666,
+      "seed_macro_standard_deviation": 0.016487343674672368,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "ar_adapt_baseline",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.23784722222222224,
+      "minimum_seed_macro_yield": 0.21875,
+      "maximum_seed_macro_yield": 0.2643229166666667,
+      "seed_macro_standard_deviation": 0.023665461597596513,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "ar_adapt_composition",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.3346354166666667,
+      "minimum_seed_macro_yield": 0.28125,
+      "maximum_seed_macro_yield": 0.3802083333333333,
+      "seed_macro_standard_deviation": 0.049939606538450795,
+      "mean_duplicate_fraction": 0.009548611111111112,
+      "mean_novel_orbit_yield": 0.9904513888888888
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "ar_adapt_cvae",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.3776041666666667,
+      "minimum_seed_macro_yield": 0.34375,
+      "maximum_seed_macro_yield": 0.4153645833333333,
+      "seed_macro_standard_deviation": 0.03596673780451336,
+      "mean_duplicate_fraction": 0.010416666666666666,
+      "mean_novel_orbit_yield": 0.9895833333333334
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "dense_adapt_count",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.2578125,
+      "minimum_seed_macro_yield": 0.20442708333333334,
+      "maximum_seed_macro_yield": 0.2864583333333333,
+      "seed_macro_standard_deviation": 0.046274363656033476,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "dense_original_bce",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.21397569444444445,
+      "minimum_seed_macro_yield": 0.20442708333333334,
+      "maximum_seed_macro_yield": 0.22135416666666666,
+      "seed_macro_standard_deviation": 0.008669698070936701,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "dense_original_count",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.21397569444444442,
+      "minimum_seed_macro_yield": 0.1953125,
+      "maximum_seed_macro_yield": 0.22526041666666666,
+      "seed_macro_standard_deviation": 0.016280381365895005,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "legacy_uma_beta01_topk",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.1875,
+      "minimum_seed_macro_yield": 0.10416666666666667,
+      "maximum_seed_macro_yield": 0.2565104166666667,
+      "seed_macro_standard_deviation": 0.0771752162121742,
+      "mean_duplicate_fraction": 0.004340277777777778,
+      "mean_novel_orbit_yield": 0.98046875
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "legacy_uma_cvae_topk",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.1879340277777778,
+      "minimum_seed_macro_yield": 0.07942708333333333,
+      "maximum_seed_macro_yield": 0.24869791666666666,
+      "seed_macro_standard_deviation": 0.09419502783945619,
+      "mean_duplicate_fraction": 0.014322916666666666,
+      "mean_novel_orbit_yield": 0.9184027777777778
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "mutation_adapt",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.513454861111111,
+      "minimum_seed_macro_yield": 0.5026041666666666,
+      "maximum_seed_macro_yield": 0.5234375,
+      "seed_macro_standard_deviation": 0.010443758173190959,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "mutation_original",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.4622395833333333,
+      "minimum_seed_macro_yield": 0.44921875,
+      "maximum_seed_macro_yield": 0.4778645833333333,
+      "seed_macro_standard_deviation": 0.014499386361536503,
+      "mean_duplicate_fraction": 0.00043402777777777775,
+      "mean_novel_orbit_yield": 0.99609375
+    },
+    {
+      "pool": "development",
+      "teacher": "uma",
+      "method": "uniform",
+      "seed_count": 3,
+      "composition_seed_groups": 9,
+      "mean_low_yield": 0.18315972222222224,
+      "minimum_seed_macro_yield": 0.17578125,
+      "maximum_seed_macro_yield": 0.19661458333333334,
+      "seed_macro_standard_deviation": 0.01167042505186524,
+      "mean_duplicate_fraction": 0.0,
+      "mean_novel_orbit_yield": 1.0
+    }
+  ]
+}

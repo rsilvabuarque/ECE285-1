@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "pool": "final",
+  "fresh_unique_orbits": 63299,
+  "shards": 1980,
+  "scores": {
+    "uma": {
+      "all_scored": 63870,
+      "fresh": 63299,
+      "cached": 571,
+      "sha256": "0afc0c1c44299bee6c82bcb710269337de1f48628fa9810934c558e461a73001"
+    },
+    "mace": {
+      "all_scored": 63870,
+      "fresh": 63299,
+      "cached": 571,
+      "sha256": "f40efb93a4a87a4ade002e5000d81ed3682ef88ef6e5e45e93adec6c0f5e646d"
+    }
+  },
+  "workers": [
+    "60925586_nid001484_306828",
+    "60925586_nid001484_306829",
+    "60925586_nid001484_306830",
+    "60925586_nid001484_306831",
+    "60925586_nid001485_2140096",
+    "60925586_nid001485_2140097",
+    "60925586_nid001485_2140098",
+    "60925586_nid001485_2140099",
+    "60925586_nid200308_474436",
+    "60925586_nid200308_474437",
+    "60925586_nid200308_474438",
+    "60925586_nid200308_474439",
+    "60925586_nid200372_855332",
+    "60925586_nid200372_855333",
+    "60925586_nid200372_855334",
+    "60925586_nid200372_855335"
+  ],
+  "fresh_input_sha256": "ca716a34d43f9102a10de81d7df16ae9c58a015bc156b81f36dfdd2e01c0fa34",
+  "scope": "All fresh shards identity/shape/finite EFS/padding/hash checked. Cached scalar energies retain old orientation/model provenance; cached hits do not count as novel."
+}
