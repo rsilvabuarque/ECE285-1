@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "completed_UTC": "2026-11-07T12:22:01.692431+00:00",
+  "scientific_commit": "3013a4bdcfa39387316714c14c11c860c2c70745",
+  "base_commit": "7f7485bda6aaa441b8bd88eebc6cbd64210dccc3",
+  "branch": "overnight/multibin-acquisition-20261107",
+  "review_URL": "https://github.com/rsilvabuarque/ECE285-1/tree/overnight/multibin-acquisition-20261107/final_project",
+  "GitHub_CI": {
+    "status": "success",
+    "scientific_commit": "3013a4bdcfa39387316714c14c11c860c2c70745",
+    "url": "https://github.com/rsilvabuarque/ECE285-1/actions/runs/42371784881"
+  },
+  "phase1": {
+    "status": "COMPLETE",
+    "gate": "artifacts/overnight_20261107/phase1_gate.json",
+    "new_fitted_seeds": 3,
+    "balanced_attempts": 41472,
+    "allocation_demo_attempts": 11520,
+    "all_UMA_MACE_scores_complete": true,
+    "historical_data_preserved": true,
+    "measured_CVAE_win": false,
+    "report_body_pages": 5,
+    "reference_pages": 1,
+    "public_packet_download_and_all_hashes_verified": true,
+    "public_replay_primary_tables_byte_identical": true
+  },
+  "phase2": {
+    "status": "COMPLETED_BOUNDED_DIAGNOSTIC",
+    "fixed_cell_minima": 3,
+    "positive_internal_modes_each": 537,
+    "hessian_displacement_cases": 4,
+    "primary_MD_trajectories": 4,
+    "production_ps_each": 20,
+    "controls": 2,
+    "confirmed_neighbor_hops": 2,
+    "hop_times_ps": [
+      16.702,
+      16.882
+    ],
+    "full20_initial_basin_free_energy_interpretation": false,
+    "common_prefix_ps": 10,
+    "prefix_scope": "Posthoc first planned half-window; assignment-stable at saved2fs resolution, exploratory not independently validated equilibrium",
+    "three_PT_ordering_resolved": false,
+    "raw_archive_payload_files": 3371,
+    "raw_archive_SHA256": "142e9d9807635250ba9580c687ab37218757ed087c62a18532d29f7fe1b67d7c",
+    "raw_archive_verified": true,
+    "DFT_reference_candidates": 13,
+    "further_optional_campaigns_started": false
+  },
+  "software": {
+    "core_tests_passed": 67,
+    "analytic_thermal_runner_tests": 6,
+    "transport_control_cases_passed": 24,
+    "optional_CPU_forward_backends_passed": [
+      "sevennet",
+      "chgnet",
+      "m3gnet"
+    ],
+    "primary_GPU_forward_backends_passed": [
+      "uma",
+      "mace"
+    ],
+    "new_foundation_model_weights_in_Git": false,
+    "new_CVAE_weights": "External verified GitHub release, not Git blobs"
+  },
+  "resources": {
+    "allocated_GPU_device_hours": 30.954444444444444,
+    "four_GPU_node_equivalent_hours": 7.738611111111111,
+    "physical_node_hours": 8.274444444444445,
+    "maximum_concurrently_allocated_GPUs": 18,
+    "maximum_authorized_GPUs": 36,
+    "new_GPU_node_hour_ceiling": 250,
+    "old_attached_resource_limits_superseded": true
+  },
+  "all_owned_allocations_released": true,
+  "new_DFT_run_submitted_or_scheduled": false,
+  "new_MLIP_finetuning_campaign": false,
+  "physical_accuracy_and_TI_validation_established": false,
+  "DFT_stop": "Exact structures and audited historical parameters are prepared. New reference labels, main-cell k-point/magnetic decisions, and physical accuracy remain outside this authorization; no DFT executable deck or job was prepared.",
+  "remaining_external_contributions": {
+    "Beihao": "Independent class-GPU multibin fit/reload, learning curves and controlled training-weight ablation; approx6\u20138 focusedhours",
+    "Varad": "Independent cached historical/new metrics, baselines/novelty/cost/multiplicity/allocation checks and figures; approx6\u20138 focusedhours",
+    "Ricardo": "Review and integrate returned independent contributions; verify current course format; manual Nov9 23:59Pacific submission"
+  },
+  "manual_course_submission_done": false,
+  "file_hashes": {
+    "README.md": "f86679bf9b607d861e66b0796cbb576c9863b196d49b9a86aa9d95d38a72ddce",
+    "docs/midterm1/main.pdf": "14281614f7340a3be1cef0b2aace30f4ae8552d48bd5dd57752ed3aaf450817f",
+    "docs/midterm1/claim_sources.json": "29b54bb754f0f446f34c6e22fe40f432623b6619e0610d49be82420ea7246210",
+    "docs/RICARDO_CONTRIBUTION.md": "2376378c480f9f81a2b87c99812ec3053e589a4cc2917b852cf093c5625ef1b3",
+    "docs/COLLABORATOR_TASKS.md": "383f2f3925050684e3172340957303c806a06bf1b897db9aa5a64a5261cd31a7",
+    "docs/INTEGRATION_CHECKLIST.md": "209ae03cece3bfd2f8c3878acb0558e9857265f215005acae0bd4f08a1fced6c",
+    "docs/thermal_pilot/RESEARCH_REPORT.md": "23c4c27644915ef01616b26b371ee10e30082e22ac37c28fcd5c4bd9c1ec0c6c",
+    "docs/thermal_pilot/DFT_REQUIRED_NEXT.md": "ee8ef0d0962bddb72b82a7a1b32fd516844211d4ef764b7bf7e724176b0ce0d0",
+    "reports/thermal_pilot_20261107/DFT_candidates/candidate_manifest.json": "a661aa31ca05ad2fb3367ac25f6f29f48f8d9ab20e64b6d5513bfb9efade385c",
+    "reports/thermal_pilot_20261107/DFT_candidates/candidate_validation.json": "e10795d95c1a249b793f820bb04acdbe78bb3d446f81cf8bc7ebc7b8a0895da3",
+    "reports/thermal_pilot_20261107/raw_manifest.json": "cd52668ac13e280110e287f9536fdde3b2437a0840fee364182b191159115898",
+    "reports/thermal_pilot_20261107/raw_archive_verification.json": "44f52747233a4579135f1b8b1ad003a564611f80cbe416feae97336d0296fc3d",
+    "reports/thermal_pilot_20261107/cost_receipt.json": "157bd14488f82b454101c440735104cef23a0af6f28cc71b8ae51948fdeb2483",
+    "reports/portable_backend_smoke_20261107/receipt.json": "0be4cbef3b1bb5a120f27f74beac3c39ac9be46788463914eda692a24b90573a"
+  },
+  "scope": "Completion of this authorized preparation, measured benchmark and bounded diagnostic, not a claim of global minima, real-LCO accuracy, converged3PT populations or teammates independent work."
+}
