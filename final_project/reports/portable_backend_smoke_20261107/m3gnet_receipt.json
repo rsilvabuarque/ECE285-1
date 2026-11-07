@@ -1,0 +1,122 @@
+{
+  "model": "m3gnet",
+  "engineering_status": "PASS",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 8.717398531967774,
+  "device": "cpu",
+  "threads": 4,
+  "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--materialyze--M3GNet-PES-MatPES-PBE-2025.2/snapshots/a972e0dd982eaf2a4cf1e5c8de2c9e78c0013f72",
+  "checkpoint_hashes": {
+    "model.json": "96266a10e1b7f15baaed9cb6329c28138d2d3dbec09d754f60c42bd0812359e1",
+    "model.pt": "8204c34dc4df513e03d080017c30d7628fa3e4fcc13b9fe47076da0bcd3129da",
+    "state.pt": "ba5b96249e366456cb3e518fcc93f58c49353f564c79648f309b916926b10fa0"
+  },
+  "versions": {
+    "torch": "2.13.0+cpu",
+    "numpy": "2.3.4",
+    "ase": "3.26.0",
+    "sevenn": null,
+    "e3nn": null,
+    "matgl": "4.1.4",
+    "torch-geometric": "2.7.0",
+    "torch-cluster": null,
+    "torch-sparse": null,
+    "pyg-lib": null,
+    "pymatgen-core": "2026.10.31"
+  },
+  "command": [
+    "/pscratch/sd/r/rsb/ece285_midterm_20261106/venvs/learning/bin/python",
+    "-m",
+    "cathode_cvae.mlip.cli",
+    "score",
+    "--model",
+    "m3gnet",
+    "--device",
+    "cpu",
+    "--threads",
+    "4",
+    "--input",
+    "runs/thermal_pilot_20261107/selection/basin_1_deletion.vasp",
+    "--checkpoint",
+    "/global/cfs/cdirs/m4537/rsb/hf/hub/models--materialyze--M3GNet-PES-MatPES-PBE-2025.2/snapshots/a972e0dd982eaf2a4cf1e5c8de2c9e78c0013f72",
+    "--environment-map",
+    "environments.json",
+    "--output",
+    "runs/thermal_pilot_20261107/backend_smoke/m3gnet"
+  ],
+  "output_dir": "runs/thermal_pilot_20261107/backend_smoke/m3gnet",
+  "checks": {
+    "one_geometry": true,
+    "atoms_180": true,
+    "Li_36": true,
+    "force_shape": true,
+    "stress_shape": true,
+    "finite": true
+  },
+  "energy_eV": -1135.06884765625,
+  "forces_shape": [
+    180,
+    3
+  ],
+  "stress_shape": [
+    1,
+    6
+  ],
+  "model_receipt": {
+    "model": "m3gnet",
+    "checkpoint_name": "M3GNet-PES-MatPES-PBE-2025.2",
+    "head": "MatPES-PBE",
+    "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--materialyze--M3GNet-PES-MatPES-PBE-2025.2/snapshots/a972e0dd982eaf2a4cf1e5c8de2c9e78c0013f72",
+    "checkpoint_hashes": {
+      "model.json": "96266a10e1b7f15baaed9cb6329c28138d2d3dbec09d754f60c42bd0812359e1",
+      "model.pt": "8204c34dc4df513e03d080017c30d7628fa3e4fcc13b9fe47076da0bcd3129da",
+      "state.pt": "ba5b96249e366456cb3e518fcc93f58c49353f564c79648f309b916926b10fa0"
+    },
+    "package": "matgl",
+    "package_version": "4.1.4",
+    "torch": "2.13.0+cpu",
+    "ase": "3.26.0",
+    "dtype": "float32",
+    "tf32": false,
+    "nitro": false,
+    "compile": false,
+    "dispersion": false,
+    "device": "cpu",
+    "device_name": "CPU",
+    "load_seconds": 4.584987739101052,
+    "job_id": "60956668",
+    "host": "nid200473",
+    "gpu_visibility": "",
+    "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3",
+    "units": {
+      "energy": "eV/cell",
+      "energy_per_atom": "eV/atom",
+      "forces": "eV/Angstrom",
+      "stress": "eV/Angstrom^3",
+      "stress_order": "xx yy zz yz xz xy",
+      "stress_sign": "tensile positive"
+    },
+    "cli_source_sha256": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+    "target": "Li",
+    "parent_sha256": null
+  },
+  "run_receipt": {
+    "operation": "score",
+    "attempts": 1,
+    "successes": 1,
+    "failures": 0,
+    "units": {
+      "energy": "eV/cell",
+      "energy_per_atom": "eV/atom",
+      "forces": "eV/Angstrom",
+      "stress": "eV/Angstrom^3",
+      "stress_order": "xx yy zz yz xz xy",
+      "stress_sign": "tensile positive"
+    },
+    "status": "complete",
+    "no_new_DFT": true,
+    "physical_validation": "Not established by a successful API call."
+  }
+}

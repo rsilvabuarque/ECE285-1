@@ -1,0 +1,33 @@
+{
+  "status": "CALCULATED_TRANSPORT_SENSITIVITY",
+  "command": "apply",
+  "rows": 24,
+  "target_temperature_K": 433.15,
+  "reference_hashes": {
+    "wrapper": "1019fb739af11cf107dae2967fd39fd1ce3dbb00d7789661d4539a220707a894",
+    "basin_1": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz",
+      "hessian_sha256": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051"
+    },
+    "basin_2": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz",
+      "hessian_sha256": "fff2cdc20d0beb703c8403c45db7f511a32c0dde614fe28ccde05d64d61dd3b6",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+      "minimum_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f"
+    }
+  },
+  "native_csv_hashes": {
+    "reports/thermal_pilot_20261107/xpt/prefix10_analysis/native_results.csv": "5960b50416fc58bec3d3ab6d59f5eabfbf67abd070cdcb82048e54516ed94f9c"
+  },
+  "source_sha256": "25a8b614ccc082715316ca6728472b4d239ddf935c9bab227ded4fa308a96bbe",
+  "units": {
+    "F": "eV/cell",
+    "S": "eV/(cell K)",
+    "T": "K"
+  },
+  "unknown_residual_curvature": "Not measured or bounded; both transports retained, no ordering selected",
+  "numerical_test_tolerance_eV": 1e-10,
+  "scope": "Known harmonic curvature retained exactly; only xPT-minus-harmonic residual transported to first order"
+}

@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "expected_dynamics_source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/thermal_pilot_20261107/executed_sources/thermal_dynamics_serialization_v2.py",
+  "expected_dynamics_source_sha256": "bf25cfca95c3210b02e7cc1588571b925951d089611f9ff68b9cd524bb3b1316",
+  "adapter_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+  "task_manifest_sha256": "5ce1d9510f8bd3fe462edd2fd2c1cf49e3d2f2c7f7177274dc62abc28f8e39cd",
+  "runs": [
+    {
+      "identity": "basin_1/half_dt_control",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "identity": "basin_1/nvt_control",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "identity": "basin_1/repeat1",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "identity": "basin_1/repeat2",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "identity": "basin_2/repeat1",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "identity": "basin_2/repeat2",
+      "source_matches_frozen_v2": true,
+      "adapter_matches": true,
+      "declared_task_numerics_match": true,
+      "teacher": "UMA-S-1.2.1",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    }
+  ]
+}

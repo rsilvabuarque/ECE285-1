@@ -1,0 +1,187 @@
+{
+  "status": "CALCULATED_FINITE_CELL_REFERENCE",
+  "temperature_K": 433.15,
+  "modes": "Exactly3N\u22123 projected internal modes",
+  "script_sha256": "afa731b220e602fc53f5f4a86e66e29b35223c50da0f3c4c9bf4f312abb91a4c",
+  "sources": {
+    "basin_1_delta01": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz",
+      "hessian_sha256": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/receipt.json",
+        "sha256": "25f660a58ba217c2775a29ed43be703b9ebe842e82d7796098a39cebf8f810aa",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      }
+    },
+    "basin_1_delta02": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.02/hessian.npz",
+      "hessian_sha256": "41261c18fb91b852d8ee7df9ac0aa6d0634c49a4a6aa86028558c9c33a91c4a4",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/receipt.json",
+        "sha256": "25f660a58ba217c2775a29ed43be703b9ebe842e82d7796098a39cebf8f810aa",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      }
+    },
+    "basin_2_delta01": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz",
+      "hessian_sha256": "fff2cdc20d0beb703c8403c45db7f511a32c0dde614fe28ccde05d64d61dd3b6",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+      "minimum_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/receipt.json",
+        "sha256": "18a6984e95ea0067412d4b954f20e10a3c5ebc9a83c471c72788cce64500a7e5",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      }
+    },
+    "basin_3_delta01": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_3/delta_.01/hessian.npz",
+      "hessian_sha256": "d3e25e2307ac294dd16a6e5e8b0eea72b7b7bc1eebae25135eab015ef48af915",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/final.npz",
+      "minimum_sha256": "332b024d7e35006a3ff7429cf2a899a455948bc2a5b35da561c8674556a754eb",
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/receipt.json",
+        "sha256": "d4618e3b6427315050407319786ec48e07c917bcd0c60b24d4930e196c8b67a4",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "status": "CALCULATED",
+      "modes": 537,
+      "temperature_K": 433.15,
+      "F_classical_eV": -1027.8010313417901,
+      "F_quantum_eV": -1026.0548696814194,
+      "S_classical_eV_K": 0.035151084505436574,
+      "S_quantum_eV_K": 0.03900754108619603,
+      "U_quantum_eV": -1009.1587532599336,
+      "Cv_classical_eV_K": 0.04627507961771865,
+      "Cv_quantum_eV_K": 0.039054757898054134,
+      "zero_point_eV": 13.883590233961684,
+      "basin_id": "basin_1_delta01",
+      "minimum_energy_eV": -1032.6193898246752,
+      "minimum_frequency_THz": 0.9750764325745244,
+      "maximum_frequency_THz": 19.211700256260535,
+      "expected_modes": 537,
+      "delta_A": 0.01
+    },
+    {
+      "status": "CALCULATED",
+      "modes": 537,
+      "temperature_K": 433.15,
+      "F_classical_eV": -1027.8007330395599,
+      "F_quantum_eV": -1026.0544860735774,
+      "S_classical_eV_K": 0.03515039582430928,
+      "S_quantum_eV_K": 0.03900703059674238,
+      "U_quantum_eV": -1009.1585907705985,
+      "Cv_classical_eV_K": 0.04627507961771865,
+      "Cv_quantum_eV_K": 0.0390544531037403,
+      "zero_point_eV": 13.883874817896393,
+      "basin_id": "basin_1_delta02",
+      "minimum_energy_eV": -1032.6193898246752,
+      "minimum_frequency_THz": 0.9750628923550799,
+      "maximum_frequency_THz": 19.211172262902572,
+      "expected_modes": 537,
+      "delta_A": 0.02
+    },
+    {
+      "status": "CALCULATED",
+      "modes": 537,
+      "temperature_K": 433.15,
+      "F_classical_eV": -1027.9479368483037,
+      "F_quantum_eV": -1026.2354889928429,
+      "S_classical_eV_K": 0.035669543301038144,
+      "S_quantum_eV_K": 0.03945408855090392,
+      "U_quantum_eV": -1009.1459505370188,
+      "Cv_classical_eV_K": 0.04627507961771865,
+      "Cv_quantum_eV_K": 0.03918233379611318,
+      "zero_point_eV": 13.7371535508136,
+      "basin_id": "basin_2_delta01",
+      "minimum_energy_eV": -1032.541724903874,
+      "minimum_frequency_THz": 0.9990687016966641,
+      "maximum_frequency_THz": 19.047079738254865,
+      "expected_modes": 537,
+      "delta_A": 0.01
+    },
+    {
+      "status": "CALCULATED",
+      "modes": 537,
+      "temperature_K": 433.15,
+      "F_classical_eV": -1027.80160751571,
+      "F_quantum_eV": -1026.0673449920987,
+      "S_classical_eV_K": 0.035278610601106604,
+      "S_quantum_eV_K": 0.03911012121507652,
+      "U_quantum_eV": -1009.1267959877882,
+      "Cv_classical_eV_K": 0.04627507961771865,
+      "Cv_quantum_eV_K": 0.039097784249921816,
+      "zero_point_eV": 13.839304836392023,
+      "basin_id": "basin_3_delta01",
+      "minimum_energy_eV": -1032.5647280702556,
+      "minimum_frequency_THz": 0.9847448391670495,
+      "maximum_frequency_THz": 19.529694695852523,
+      "expected_modes": 537,
+      "delta_A": 0.01
+    }
+  ],
+  "limitations": [
+    "Single common cell and finiteGamma sampling",
+    "Harmonic force/mode convergence is independently audited; no negative frequency isabs-valued",
+    "SameMLIP reference, not DFT or thermodynamic integration"
+  ]
+}

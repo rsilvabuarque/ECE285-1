@@ -1,0 +1,34 @@
+{
+  "status": "CALCULATED_NATIVE_PARTITION_DIAGNOSTICS",
+  "rows": 6,
+  "source_sha256": "5ccc98b0d35d238561f47ee30d47aac574c8a36b0d33ad5b8e9bbee3b06725b5",
+  "sources": {
+    "reports/thermal_pilot_20261107/xpt/nvt_control_native/native_results.csv": {
+      "native_csv_sha256": "b6490d09b2db0ea27a9ac91a2a2d45a561a88cf96f4688253d97b66ceb0edb56",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/1PT/spectrum.npz": "214f838cad981fccc9c38916d72b3f5d80edc578e33171a92df4b7822f5592cd",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/2PT/spectrum.npz": "5059e70f89fecdcd3f8f933896c40ee08ea298811a2f2dce187953e3043985e5",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/3PT/spectrum.npz": "e4c65ba03f68ec4d38f57d103169b9481a84950003ba3989f6a8aa96667b33fe"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/half_dt_control_native/native_results.csv": {
+      "native_csv_sha256": "4354061633400f66de0977cd760c2d9fdb8c71b48b2a9fd735ed5eb72150142a",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/1PT/spectrum.npz": "f7b491fa97b0c69fd556b5426113d2ad062e9f3be30a6e041713214344fd5cb4",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/2PT/spectrum.npz": "ef7ee5b1d14685a908f3a36aa0a519d051b0572f92c8dab3230a2ecb6f091e92",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/3PT/spectrum.npz": "aeae73e1cd945e3be9b7a4f98073999b1f1c5cb6ff04430bf0c00c69d6458ce3"
+      }
+    }
+  },
+  "units": {
+    "DOS_integral": "modes/cell",
+    "S": "eV/(cell K)",
+    "TS": "eV/cell"
+  },
+  "pinned_source": "https://github.com/atlas-nano/codes/blob/197bdcf5f57c9d04b5527f9e7d6f4fdb8bf3b82d/py-xPT/src/pyxpt/thermo/utility.py#L1952",
+  "limitations": [
+    "No spectrum or thermodynamic field changed",
+    "Gas-mode fraction is an estimator assignment, not a fraction of Li atoms observed to diffuse",
+    "Gate formula value does not establish successful kernel inversion or physical cage entropy"
+  ]
+}

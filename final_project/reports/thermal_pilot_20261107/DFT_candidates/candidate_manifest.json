@@ -1,0 +1,1828 @@
+{
+  "status": "DFT_HANDOFF_COMPLETE_OBSERVED_EVENTS_PRESERVED_NO_DFT_EXECUTED",
+  "candidates": [
+    {
+      "candidate_id": "DFT_001",
+      "priority": 0,
+      "category": "competing_fixedcell_minimum",
+      "status": "EXACT_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "basin_id": "basin_1",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Completed UMA fixed-cell local relaxation, not DFT relaxed",
+      "source_selection": {
+        "basin_id": "basin_1",
+        "source_structure_id": "gen48_0001088147c5",
+        "source_row": 7395,
+        "vacancy_mask": "000000000000000100001000100000010100011111000101",
+        "n_Li": 36,
+        "n_Co": 48,
+        "n_atoms": 180,
+        "source_energy_eV_atom": -5.727466003761968,
+        "source_total_energy_eV": -1030.9438806771543,
+        "deletion_POSCAR": "basin_1_deletion.vasp",
+        "POSCAR_sha256": "78f8e525c21458e49dd899c266b8ef5721a7ef991d11a5ba8738e9ee07b0d5b2"
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-80GB",
+        "load_seconds": 111.25843936298043,
+        "job_id": "60956668",
+        "host": "nid200473",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.6193898246752,
+      "existing_max_force_eV_A": 0.000936305383220315,
+      "existing_stress_eV_A3": [
+        0.018618415360293072,
+        0.018836176962042043,
+        -0.020577928264429963,
+        -0.00014773671582319275,
+        0.0006538342972134273,
+        -0.0001931765248310118
+      ],
+      "required_observables": [
+        "DFT e_0_energy and smeared free energy, eV/cell",
+        "all atomic forces, eV/A",
+        "stress tensor with documented sign/units",
+        "total/site magnetic moments",
+        "electronic convergence record"
+      ],
+      "resolves": "Relative energies at matched UMA stationary geometries and DFT force residuals; does not establish DFT-relaxed basin free energies",
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/receipt.json",
+        "sha256": "25f660a58ba217c2775a29ed43be703b9ebe842e82d7796098a39cebf8f810aa",
+        "bytes": 13040,
+        "source": null
+      },
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_001_basin_1_UMA_fixedcell_minimum.POSCAR",
+          "sha256": "7289d1b6f0dbdd684fb20e632891e8e51a64e37092632a8129122aea72978e80",
+          "bytes": 11246,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.POSCAR"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_001_basin_1_UMA_fixedcell_minimum.npz",
+          "sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+          "bytes": 8506,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_001_MACE_singlepoint.npz",
+          "sha256": "241bea42afb11b16af3844e5752a600dce8cad178883cadf8c6863d0040a8270",
+          "bytes": 7915,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/basin_1.npz"
+        }
+      ],
+      "existing_MACE_singlepoint": {
+        "teacher": {
+          "model": "mace",
+          "checkpoint_name": "MACE-MH-1",
+          "head": "omat_pbe",
+          "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+          "checkpoint_hashes": {
+            "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+          },
+          "package": "mace-torch",
+          "package_version": "0.3.16",
+          "torch": "2.13.0+cu130",
+          "ase": "3.26.0",
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false,
+          "device": "cuda",
+          "device_name": "NVIDIA A100-SXM4-40GB",
+          "load_seconds": 42.205315620987676,
+          "job_id": "60956668",
+          "host": "nid001324",
+          "gpu_visibility": "0",
+          "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+        },
+        "energy_eV": -1024.8116455078125,
+        "maximum_force_eV_A": 0.30604561635042316,
+        "force_teacher_difference_component_RMSE_eV_A": 0.06466759378570004,
+        "stress_eV_A3": [
+          -0.02512475848197937,
+          -0.024817541241645813,
+          -0.045928001403808594,
+          -0.0001255921961273998,
+          0.0005597120034508407,
+          -0.0003417943953536451
+        ],
+        "comparison": {
+          "basin_id": "basin_1",
+          "UMA_minimum_E_eV": -1032.6193898246752,
+          "MACE_E_eV": -1024.8116455078125,
+          "MACE_Fmax_eV_A": 0.30604561635042316,
+          "force_teacher_difference_component_RMSE_eV_A": 0.06466759378570004,
+          "stress_teacher_difference_max_eV_A3": 0.04374317384227244,
+          "input_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+          "UMA_gap_eV": 0.0,
+          "MACE_gap_eV": 0.258544921875
+        },
+        "interpretation": "Exact UMA geometry; not a MACE-relaxed minimum or DFT reference"
+      },
+      "source_MACE_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/receipt.json",
+        "sha256": "8ad4a3cc39bc95c60ca9ddf6e136ab6b78a81ff93afb60359e0ae20add99362f",
+        "bytes": 2664,
+        "source": null
+      }
+    },
+    {
+      "candidate_id": "DFT_002",
+      "priority": 0,
+      "category": "competing_fixedcell_minimum",
+      "status": "EXACT_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "basin_id": "basin_2",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Completed UMA fixed-cell local relaxation, not DFT relaxed",
+      "source_selection": {
+        "basin_id": "basin_2",
+        "source_structure_id": "gen48_0003070814d4",
+        "source_row": 12263,
+        "vacancy_mask": "000000000000001100000111000010000001010011010100",
+        "n_Li": 36,
+        "n_Co": 48,
+        "n_atoms": 180,
+        "source_energy_eV_atom": -5.727017693148519,
+        "source_total_energy_eV": -1030.8631847667334,
+        "deletion_POSCAR": "basin_2_deletion.vasp",
+        "POSCAR_sha256": "004191faa8ee473bf37823645ceba17c1bc1dcd759c4e15c203e1aa0a50e6482"
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-80GB",
+        "load_seconds": 111.16966153099202,
+        "job_id": "60956668",
+        "host": "nid200473",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.541724903874,
+      "existing_max_force_eV_A": 0.0009757238440215588,
+      "existing_stress_eV_A3": [
+        0.017556978253243927,
+        0.018596462094395222,
+        -0.01987339163111403,
+        -0.00012081861038863691,
+        -0.00034361215550356324,
+        0.00010907508869692522
+      ],
+      "required_observables": [
+        "DFT e_0_energy and smeared free energy, eV/cell",
+        "all atomic forces, eV/A",
+        "stress tensor with documented sign/units",
+        "total/site magnetic moments",
+        "electronic convergence record"
+      ],
+      "resolves": "Relative energies at matched UMA stationary geometries and DFT force residuals; does not establish DFT-relaxed basin free energies",
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/receipt.json",
+        "sha256": "18a6984e95ea0067412d4b954f20e10a3c5ebc9a83c471c72788cce64500a7e5",
+        "bytes": 13030,
+        "source": null
+      },
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_002_basin_2_UMA_fixedcell_minimum.POSCAR",
+          "sha256": "3bff03424dcb3503646beeb02a5d360bd436851a2ba6bbb76f0ae2f38b919bef",
+          "bytes": 11246,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.POSCAR"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_002_basin_2_UMA_fixedcell_minimum.npz",
+          "sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+          "bytes": 8491,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_002_MACE_singlepoint.npz",
+          "sha256": "a3878e4b39e304db8039076fc8e6a9823348359274bd9a7c83675591f35d0758",
+          "bytes": 7892,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/basin_2.npz"
+        }
+      ],
+      "existing_MACE_singlepoint": {
+        "teacher": {
+          "model": "mace",
+          "checkpoint_name": "MACE-MH-1",
+          "head": "omat_pbe",
+          "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+          "checkpoint_hashes": {
+            "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+          },
+          "package": "mace-torch",
+          "package_version": "0.3.16",
+          "torch": "2.13.0+cu130",
+          "ase": "3.26.0",
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false,
+          "device": "cuda",
+          "device_name": "NVIDIA A100-SXM4-40GB",
+          "load_seconds": 42.205315620987676,
+          "job_id": "60956668",
+          "host": "nid001324",
+          "gpu_visibility": "0",
+          "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+        },
+        "energy_eV": -1025.0701904296875,
+        "maximum_force_eV_A": 0.2587081142813171,
+        "force_teacher_difference_component_RMSE_eV_A": 0.06768855207090907,
+        "stress_eV_A3": [
+          -0.027186689898371696,
+          -0.026331868022680283,
+          -0.0476006343960762,
+          -5.436454375740141e-05,
+          -0.00026926305145025253,
+          0.00015409807383548468
+        ],
+        "comparison": {
+          "basin_id": "basin_2",
+          "UMA_minimum_E_eV": -1032.541724903874,
+          "MACE_E_eV": -1025.0701904296875,
+          "MACE_Fmax_eV_A": 0.2587081142813171,
+          "force_teacher_difference_component_RMSE_eV_A": 0.06768855207090907,
+          "stress_teacher_difference_max_eV_A3": 0.044928330117075505,
+          "input_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+          "UMA_gap_eV": 0.07766492080122589,
+          "MACE_gap_eV": 0.0
+        },
+        "interpretation": "Exact UMA geometry; not a MACE-relaxed minimum or DFT reference"
+      },
+      "source_MACE_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/receipt.json",
+        "sha256": "8ad4a3cc39bc95c60ca9ddf6e136ab6b78a81ff93afb60359e0ae20add99362f",
+        "bytes": 2664,
+        "source": null
+      }
+    },
+    {
+      "candidate_id": "DFT_003",
+      "priority": 0,
+      "category": "competing_fixedcell_minimum",
+      "status": "EXACT_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "basin_id": "basin_3",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Completed UMA fixed-cell local relaxation, not DFT relaxed",
+      "source_selection": {
+        "basin_id": "basin_3",
+        "source_structure_id": "gen48_000058914165",
+        "source_row": 5153,
+        "vacancy_mask": "000000000000000001011000100100010100000101100101",
+        "n_Li": 36,
+        "n_Co": 48,
+        "n_atoms": 180,
+        "source_energy_eV_atom": -5.726754991766897,
+        "source_total_energy_eV": -1030.8158985180414,
+        "deletion_POSCAR": "basin_3_deletion.vasp",
+        "POSCAR_sha256": "b725d93f100d7683d250f41a6b2bb0b4f1bb5a4af869e6e890ea341db772d8b5"
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-80GB",
+        "load_seconds": 111.05971990397666,
+        "job_id": "60956668",
+        "host": "nid200473",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.5647280702556,
+      "existing_max_force_eV_A": 0.0008995803655125201,
+      "existing_stress_eV_A3": [
+        0.0188974094157983,
+        0.01923809078599922,
+        -0.020730505412783606,
+        0.00029693382688755006,
+        -5.2690120307493004e-05,
+        -6.56316921313851e-05
+      ],
+      "required_observables": [
+        "DFT e_0_energy and smeared free energy, eV/cell",
+        "all atomic forces, eV/A",
+        "stress tensor with documented sign/units",
+        "total/site magnetic moments",
+        "electronic convergence record"
+      ],
+      "resolves": "Relative energies at matched UMA stationary geometries and DFT force residuals; does not establish DFT-relaxed basin free energies",
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/receipt.json",
+        "sha256": "d4618e3b6427315050407319786ec48e07c917bcd0c60b24d4930e196c8b67a4",
+        "bytes": 13020,
+        "source": null
+      },
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_003_basin_3_UMA_fixedcell_minimum.POSCAR",
+          "sha256": "251a0345f3871b0527f8167faabbe442d10cb6254d6bd2a0c03a556169ebd434",
+          "bytes": 11246,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/final.POSCAR"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_003_basin_3_UMA_fixedcell_minimum.npz",
+          "sha256": "332b024d7e35006a3ff7429cf2a899a455948bc2a5b35da561c8674556a754eb",
+          "bytes": 8501,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/final.npz"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_003_MACE_singlepoint.npz",
+          "sha256": "e8eebb466a5df2221cf7036c332453bc1bda844005253767a1ce5351317959b4",
+          "bytes": 7899,
+          "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/basin_3.npz"
+        }
+      ],
+      "existing_MACE_singlepoint": {
+        "teacher": {
+          "model": "mace",
+          "checkpoint_name": "MACE-MH-1",
+          "head": "omat_pbe",
+          "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+          "checkpoint_hashes": {
+            "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+          },
+          "package": "mace-torch",
+          "package_version": "0.3.16",
+          "torch": "2.13.0+cu130",
+          "ase": "3.26.0",
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false,
+          "device": "cuda",
+          "device_name": "NVIDIA A100-SXM4-40GB",
+          "load_seconds": 42.205315620987676,
+          "job_id": "60956668",
+          "host": "nid001324",
+          "gpu_visibility": "0",
+          "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+        },
+        "energy_eV": -1024.9554443359375,
+        "maximum_force_eV_A": 0.2618100690549721,
+        "force_teacher_difference_component_RMSE_eV_A": 0.06874887515227422,
+        "stress_eV_A3": [
+          -0.02576039731502533,
+          -0.02526816353201866,
+          -0.046406716108322144,
+          0.0002749745617620647,
+          -3.9066166209522635e-05,
+          -2.124614411513903e-06
+        ],
+        "comparison": {
+          "basin_id": "basin_3",
+          "UMA_minimum_E_eV": -1032.5647280702556,
+          "MACE_E_eV": -1024.9554443359375,
+          "MACE_Fmax_eV_A": 0.2618100690549721,
+          "force_teacher_difference_component_RMSE_eV_A": 0.06874887515227422,
+          "stress_teacher_difference_max_eV_A3": 0.04465780673082363,
+          "input_sha256": "332b024d7e35006a3ff7429cf2a899a455948bc2a5b35da561c8674556a754eb",
+          "UMA_gap_eV": 0.05466175441961241,
+          "MACE_gap_eV": 0.11474609375
+        },
+        "interpretation": "Exact UMA geometry; not a MACE-relaxed minimum or DFT reference"
+      },
+      "source_MACE_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/mace_minima_check/receipt.json",
+        "sha256": "8ad4a3cc39bc95c60ca9ddf6e136ab6b78a81ff93afb60359e0ae20add99362f",
+        "bytes": 2664,
+        "source": null
+      }
+    },
+    {
+      "candidate_id": "DFT_004",
+      "priority": 2,
+      "category": "centered_teacher_disagreement",
+      "status": "EXACT_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "structure_id": "mask48_000304344d88",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Unrelaxed canonical parent deletion; no geometry optimization",
+      "vacancy_mask": "000000000000001100000100001101000100110110001000",
+      "existing_teacher_labels": {
+        "uma": {
+          "energy_eV": -1029.3844396975326,
+          "force_component_rms_eV_A": 0.3916766633430753,
+          "max_force_eV_A": 1.6577273351793467,
+          "stress_eV_A3": [
+            0.02987280999611396,
+            0.030353133512367434,
+            -0.0006134474916960932,
+            0.0001533578289758162,
+            -5.9664070920209684e-05,
+            0.0002199331874226854
+          ]
+        },
+        "mace": {
+          "energy_eV": -1022.5125732421875,
+          "force_component_rms_eV_A": 0.39869017543168683,
+          "max_force_eV_A": 1.7452081627592044,
+          "stress_eV_A3": [
+            -0.01572703942656517,
+            -0.01485070027410984,
+            -0.02679542265832424,
+            5.957879329798743e-05,
+            -1.037375841406174e-05,
+            0.00021122931502759457
+          ]
+        }
+      },
+      "existing_teacher_metadata": {
+        "uma": {
+          "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+          "provenance": {
+            "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+            "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+            "split_sha256": "887bb1f347c7e27f68f7abcc87b8e20ac33e05a3c795714f48d1600c1e885620",
+            "teacher": "uma",
+            "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+            "energy_label_origin": "Existing round0 training corpus, same protected splits; quantiles describe this training corpus, not DOS",
+            "teacher_head": "omat",
+            "teacher_checkpoint_name": "UMA-S-1.2.1",
+            "teacher_checkpoint_hashes": {
+              "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+            }
+          },
+          "schema_sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "precision": "float32",
+          "tf32": false,
+          "label_source": "Completed Phase1 exact canonical deletion scoring"
+        },
+        "mace": {
+          "schema_id": "bd5c067d4645871e3f86292dfdc54f054a87dc98133d4a2cf2a95fcc07dd76f1",
+          "provenance": {
+            "teacher": "mace",
+            "teacher_head": "omat_pbe",
+            "teacher_checkpoint_name": "MACE-MH-1",
+            "teacher_checkpoint_hashes": {
+              "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+            },
+            "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+            "geometry_protocol": "pristine-derived deletion; unrelaxed; symmetry-orbit scalar labels from original H0 sources",
+            "source_labels": [
+              {
+                "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/core/data/learning_O3_N48_pilot_mace.npz",
+                "sha256": "5c267dd74a356d3c76fc3aa8e0573f029230d63ab957746f92f88b5e5e4402b6"
+              },
+              {
+                "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/generated_scalar_mace.npz",
+                "sha256": "a27d4b44b43d693ffd8b8f2ac5ed4005c54a2951d012bd6f9d5ca78db43ffa64"
+              }
+            ],
+            "protected_split_sha256": "20e1b71cd372ce69c7c2331f3f0177d8139933d29b6aad112fb43e3f0ac8dd0c",
+            "use": "MACE evaluation namespace only; generative model remains UMA-conditioned",
+            "orientation_note": "H0 inherited symmetry-orbit scalar labels; no force vectors or relaxed geometries reused"
+          },
+          "schema_sha256": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+          "precision": "float32",
+          "tf32": false,
+          "label_source": "Completed Phase1 exact canonical deletion scoring"
+        }
+      },
+      "disagreement": {
+        "selection": "minimum_centered_MACE_minus_UMA",
+        "complete_candidate_pool": 13721,
+        "median_MACE_minus_UMA_eV": 7.2088564244929785,
+        "centered_MACE_minus_UMA_eV": -0.3369899691479077,
+        "offset_removal": "Subtract median model difference within the same composition/geometry cohort"
+      },
+      "required_observables": [
+        "DFT relative energy against the other disagreement endpoint, eV/cell",
+        "all forces, eV/A",
+        "stress with documented sign/units",
+        "magnetic and electronic convergence record"
+      ],
+      "resolves": "Which teacher describes this within-composition energy-gap contrast; large forces are expected in unrelaxed deletions",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_004_minimum_centered_MACE_minus_UMA_deletion.POSCAR",
+          "sha256": "d63c2384677178a3625fdc4e4d4dcfb393f9d1bfc281dd9056c255bd19c07527",
+          "bytes": 11246,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_005",
+      "priority": 2,
+      "category": "centered_teacher_disagreement",
+      "status": "EXACT_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "structure_id": "mask48_00081c921690",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Unrelaxed canonical parent deletion; no geometry optimization",
+      "vacancy_mask": "000000000000100000011100100100100001011010010000",
+      "existing_teacher_labels": {
+        "uma": {
+          "energy_eV": -1030.2804674011659,
+          "force_component_rms_eV_A": 0.3807370557997091,
+          "max_force_eV_A": 1.5315996372898295,
+          "stress_eV_A3": [
+            0.030075829176106725,
+            0.029140617063854717,
+            -0.003731709786068282,
+            -0.00041578959023137664,
+            -0.0003965510379760974,
+            0.000571169265065544
+          ]
+        },
+        "mace": {
+          "energy_eV": -1022.550537109375,
+          "force_component_rms_eV_A": 0.37878294071535196,
+          "max_force_eV_A": 1.7484481869549866,
+          "stress_eV_A3": [
+            -0.014418696984648705,
+            -0.015409547835588455,
+            -0.026902202516794205,
+            9.652218432165682e-05,
+            -9.127007069764659e-05,
+            0.0007170543540269136
+          ]
+        }
+      },
+      "existing_teacher_metadata": {
+        "uma": {
+          "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+          "provenance": {
+            "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+            "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+            "split_sha256": "887bb1f347c7e27f68f7abcc87b8e20ac33e05a3c795714f48d1600c1e885620",
+            "teacher": "uma",
+            "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+            "energy_label_origin": "Existing round0 training corpus, same protected splits; quantiles describe this training corpus, not DOS",
+            "teacher_head": "omat",
+            "teacher_checkpoint_name": "UMA-S-1.2.1",
+            "teacher_checkpoint_hashes": {
+              "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+            }
+          },
+          "schema_sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "precision": "float32",
+          "tf32": false,
+          "label_source": "Completed Phase1 exact canonical deletion scoring"
+        },
+        "mace": {
+          "schema_id": "bd5c067d4645871e3f86292dfdc54f054a87dc98133d4a2cf2a95fcc07dd76f1",
+          "provenance": {
+            "teacher": "mace",
+            "teacher_head": "omat_pbe",
+            "teacher_checkpoint_name": "MACE-MH-1",
+            "teacher_checkpoint_hashes": {
+              "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+            },
+            "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+            "geometry_protocol": "pristine-derived deletion; unrelaxed; symmetry-orbit scalar labels from original H0 sources",
+            "source_labels": [
+              {
+                "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/core/data/learning_O3_N48_pilot_mace.npz",
+                "sha256": "5c267dd74a356d3c76fc3aa8e0573f029230d63ab957746f92f88b5e5e4402b6"
+              },
+              {
+                "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/generated_scalar_mace.npz",
+                "sha256": "a27d4b44b43d693ffd8b8f2ac5ed4005c54a2951d012bd6f9d5ca78db43ffa64"
+              }
+            ],
+            "protected_split_sha256": "20e1b71cd372ce69c7c2331f3f0177d8139933d29b6aad112fb43e3f0ac8dd0c",
+            "use": "MACE evaluation namespace only; generative model remains UMA-conditioned",
+            "orientation_note": "H0 inherited symmetry-orbit scalar labels; no force vectors or relaxed geometries reused"
+          },
+          "schema_sha256": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+          "precision": "float32",
+          "tf32": false,
+          "label_source": "Completed Phase1 exact canonical deletion scoring"
+        }
+      },
+      "disagreement": {
+        "selection": "maximum_centered_MACE_minus_UMA",
+        "complete_candidate_pool": 13721,
+        "median_MACE_minus_UMA_eV": 7.2088564244929785,
+        "centered_MACE_minus_UMA_eV": 0.5210738672979005,
+        "offset_removal": "Subtract median model difference within the same composition/geometry cohort"
+      },
+      "required_observables": [
+        "DFT relative energy against the other disagreement endpoint, eV/cell",
+        "all forces, eV/A",
+        "stress with documented sign/units",
+        "magnetic and electronic convergence record"
+      ],
+      "resolves": "Which teacher describes this within-composition energy-gap contrast; large forces are expected in unrelaxed deletions",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_005_maximum_centered_MACE_minus_UMA_deletion.POSCAR",
+          "sha256": "343306f72dc38f6fbd395b97ae3212aa278830f950aaee23554d666ea8258428",
+          "bytes": 11246,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_006",
+      "priority": 1,
+      "category": "Cartesian_force_constant_spotcheck",
+      "status": "EXACT_ALREADY_EVALUATED_MLIP_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "One Cartesian displacement of a completed UMA fixed-cell minimum; not relaxed after displacement",
+      "displacement": {
+        "element": "Li",
+        "local_atom_index_zero_based": 48,
+        "parent_atom_index_zero_based": 48,
+        "axis": "x",
+        "column_index": 144,
+        "signed_delta_A": 0.01
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 53.0891213939758,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.61923353782,
+      "existing_max_force_eV_A": 0.030602829019472897,
+      "existing_stress_status": "Not retained for these individual finite-displacement calls; no minimum stress substituted",
+      "source_minimum": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+        "sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+        "bytes": 8506,
+        "source": null
+      },
+      "source_raw_column": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_1/delta_.01/shard_0/column_0144.npz",
+        "sha256": "34576455a83adf3849ce55f37f57be62bdd2caa54c092562da9f20a7f1436f32",
+        "bytes": 6476,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_1/delta_.01/shard_0/receipt.json",
+        "sha256": "dc5a9cac4f7295a550ccfc2c14e823fded45ea0e4a40af895a14240b120f078a",
+        "bytes": 40132,
+        "source": null
+      },
+      "required_observables": [
+        "all DFT forces in exact POSCAR atom order, eV/A",
+        "DFT extrapolated and smeared energy, eV/cell",
+        "electronic and magnetic convergence record"
+      ],
+      "resolves": "Selected force-constant columns at matched geometries; not a full DFT phonon spectrum or phonon free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_006_basin_1_Li_atom48_x_plus_0p01A.POSCAR",
+          "sha256": "f6e216d3739cd8e3c023893e01fe298f3b8da92aef43be416672f614dcf1bdbb",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_006_basin_1_Li_atom48_x_plus_0p01A.npz",
+          "sha256": "d90f7328a0fe9ab1a9200e8d7ae56bd3d9d4dfc34138be8fe6921e7682f3f4ad",
+          "bytes": 8794,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_007",
+      "priority": 1,
+      "category": "Cartesian_force_constant_spotcheck",
+      "status": "EXACT_ALREADY_EVALUATED_MLIP_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "One Cartesian displacement of a completed UMA fixed-cell minimum; not relaxed after displacement",
+      "displacement": {
+        "element": "Li",
+        "local_atom_index_zero_based": 48,
+        "parent_atom_index_zero_based": 48,
+        "axis": "x",
+        "column_index": 144,
+        "signed_delta_A": -0.01
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 53.0891213939758,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.6192299607926,
+      "existing_max_force_eV_A": 0.030491450118810087,
+      "existing_stress_status": "Not retained for these individual finite-displacement calls; no minimum stress substituted",
+      "source_minimum": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+        "sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+        "bytes": 8506,
+        "source": null
+      },
+      "source_raw_column": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_1/delta_.01/shard_0/column_0144.npz",
+        "sha256": "34576455a83adf3849ce55f37f57be62bdd2caa54c092562da9f20a7f1436f32",
+        "bytes": 6476,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_1/delta_.01/shard_0/receipt.json",
+        "sha256": "dc5a9cac4f7295a550ccfc2c14e823fded45ea0e4a40af895a14240b120f078a",
+        "bytes": 40132,
+        "source": null
+      },
+      "required_observables": [
+        "all DFT forces in exact POSCAR atom order, eV/A",
+        "DFT extrapolated and smeared energy, eV/cell",
+        "electronic and magnetic convergence record"
+      ],
+      "resolves": "Selected force-constant columns at matched geometries; not a full DFT phonon spectrum or phonon free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_007_basin_1_Li_atom48_x_minus_0p01A.POSCAR",
+          "sha256": "020c12b36fe832893dac5f67961a931deac5deacb9ee0f5b12e6728eee892ec8",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_007_basin_1_Li_atom48_x_minus_0p01A.npz",
+          "sha256": "3aa9a9fee289c77a008dee5a56d6cca78a0b813117415922758eb357af014a81",
+          "bytes": 8778,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_008",
+      "priority": 1,
+      "category": "Cartesian_force_constant_spotcheck",
+      "status": "EXACT_ALREADY_EVALUATED_MLIP_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_2",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "One Cartesian displacement of a completed UMA fixed-cell minimum; not relaxed after displacement",
+      "displacement": {
+        "element": "O",
+        "local_atom_index_zero_based": 84,
+        "parent_atom_index_zero_based": 96,
+        "axis": "x",
+        "column_index": 252,
+        "signed_delta_A": 0.01
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 53.66906450397801,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.5410191970946,
+      "existing_max_force_eV_A": 0.14387557945866358,
+      "existing_stress_status": "Not retained for these individual finite-displacement calls; no minimum stress substituted",
+      "source_minimum": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+        "sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+        "bytes": 8491,
+        "source": null
+      },
+      "source_raw_column": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_2/delta_.01/shard_0/column_0252.npz",
+        "sha256": "f567a2881e516519d9b42634314cbc801fd99a1096d38083d5ff05e57d9b0c27",
+        "bytes": 6475,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_2/delta_.01/shard_0/receipt.json",
+        "sha256": "61baed72477606f816d81de101293a9a8391a3dbf36a6c0102e08790051ef615",
+        "bytes": 40134,
+        "source": null
+      },
+      "required_observables": [
+        "all DFT forces in exact POSCAR atom order, eV/A",
+        "DFT extrapolated and smeared energy, eV/cell",
+        "electronic and magnetic convergence record"
+      ],
+      "resolves": "Selected force-constant columns at matched geometries; not a full DFT phonon spectrum or phonon free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_008_basin_2_O_atom84_x_plus_0p01A.POSCAR",
+          "sha256": "d75fc0092dbe2accd15a1d72815ff0bbf609faa27b5e990657b4f9c1c4681bb9",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_008_basin_2_O_atom84_x_plus_0p01A.npz",
+          "sha256": "6abd5ca524ee7637fb96fb0dd41906ec43634fc216a941e8d37f733260e9910b",
+          "bytes": 8777,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_009",
+      "priority": 1,
+      "category": "Cartesian_force_constant_spotcheck",
+      "status": "EXACT_ALREADY_EVALUATED_MLIP_STRUCTURE_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_2",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "One Cartesian displacement of a completed UMA fixed-cell minimum; not relaxed after displacement",
+      "displacement": {
+        "element": "O",
+        "local_atom_index_zero_based": 84,
+        "parent_atom_index_zero_based": 96,
+        "axis": "x",
+        "column_index": 252,
+        "signed_delta_A": -0.01
+      },
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 53.66906450397801,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1032.5410494655964,
+      "existing_max_force_eV_A": 0.1432122456041082,
+      "existing_stress_status": "Not retained for these individual finite-displacement calls; no minimum stress substituted",
+      "source_minimum": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+        "sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+        "bytes": 8491,
+        "source": null
+      },
+      "source_raw_column": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_2/delta_.01/shard_0/column_0252.npz",
+        "sha256": "f567a2881e516519d9b42634314cbc801fd99a1096d38083d5ff05e57d9b0c27",
+        "bytes": 6475,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian/basin_2/delta_.01/shard_0/receipt.json",
+        "sha256": "61baed72477606f816d81de101293a9a8391a3dbf36a6c0102e08790051ef615",
+        "bytes": 40134,
+        "source": null
+      },
+      "required_observables": [
+        "all DFT forces in exact POSCAR atom order, eV/A",
+        "DFT extrapolated and smeared energy, eV/cell",
+        "electronic and magnetic convergence record"
+      ],
+      "resolves": "Selected force-constant columns at matched geometries; not a full DFT phonon spectrum or phonon free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_009_basin_2_O_atom84_x_minus_0p01A.POSCAR",
+          "sha256": "c38fe889095102f88fb93bc40c3fd7f1095ee547c969417c8e45eb2187aecde9",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_009_basin_2_O_atom84_x_minus_0p01A.npz",
+          "sha256": "a90afdc1cdee604ff1d0214013e4456dab853938d54caae86269aad3a2c7bb9e",
+          "bytes": 8783,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_010",
+      "priority": 1,
+      "category": "selected_production_force_environment",
+      "status": "EXACT_COMPLETE_PRODUCTION_FRAME_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_1",
+      "repeat_id": "repeat1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Exact 2-fs detailed frame from completed fixed-cell UMA NVE production; not relaxed",
+      "selection": "closest to median potential energy among admissible detailed production frames; earliest index resolves a tie",
+      "selection_policy_sha256": "9d26b669950767da30563e9aceeb47ddba112bbc8d22255d5f9d182e667c4103",
+      "selection_frame_count": 9001,
+      "production_frame_index_zero_based": 9520,
+      "production_time_fs": 19040.0,
+      "target_temperature_K": 433.15,
+      "instantaneous_kinetic_temperature_K": 454.24051210961136,
+      "full_rate_production_mean_temperature_K": 454.4501630848552,
+      "minimum_nearest_second_margin_A": 1.7341822743964845,
+      "atom_resolved_assignment_changes_from_initial": 0,
+      "changed_occupancy_sites": 0,
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 45.44338158995379,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1022.115260774487,
+      "existing_max_force_eV_A": 3.648625135421753,
+      "existing_stress_eV_A3": [
+        0.002130539334879483,
+        0.0020013958598602086,
+        -0.03446484837685909,
+        -0.0010693892005092616,
+        0.004975491742974056,
+        0.0005960040902350914
+      ],
+      "existing_stress_interpretation": "Calculator/configurational stress; no ionic kinetic term, not full finite-temperature pressure",
+      "source_trajectory": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/production.npz",
+        "sha256": "f56cd4f62efea94f7ed784862e74cf8443ac7c04b26bb87312b5f1b9b857aa3a",
+        "bytes": 480549023,
+        "source": null
+      },
+      "source_mapping": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/production_mapping.jsonl",
+        "sha256": "5e5d71bd122399a9c7567eb0afd6fb86d812d72263338558f64dfc53d04a03fd",
+        "bytes": 35623374,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/receipt.json",
+        "sha256": "220cc293bf023b1d34e3318ab67b68580a43d21d40217ca0d8ec9c4298890d3a",
+        "bytes": 17872,
+        "source": null
+      },
+      "required_observables": [
+        "DFT extrapolated and smeared single-point energies, eV/cell",
+        "all force components in exact POSCAR order, eV/A",
+        "stress tensor with documented sign/units",
+        "magnetic/electronic convergence record"
+      ],
+      "resolves": "Targeted finite-temperature force/stress reference at one exact sampled geometry; not a mean DFT error or an equilibrium ensemble estimate",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_010_basin_1_repeat1_thermal_frame09520.POSCAR",
+          "sha256": "f1a69dc56701370f9280ed4c70a65ebd8a8748770ee27081e465bb521c44503d",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_010_basin_1_repeat1_thermal_frame09520.npz",
+          "sha256": "c9fdce403ee3683cd93ef9af71f861aec3d597f5d771b3a84715ba815116f31b",
+          "bytes": 9023,
+          "source": null
+        }
+      ],
+      "median_admissible_potential_eV": -1022.115260774487,
+      "selection_distance_eV": 0.0
+    },
+    {
+      "candidate_id": "DFT_011",
+      "priority": 1,
+      "category": "selected_production_force_environment",
+      "status": "EXACT_COMPLETE_PRODUCTION_FRAME_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_2",
+      "repeat_id": "repeat1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Exact 2-fs detailed frame from completed fixed-cell UMA NVE production; not relaxed",
+      "selection": "largest maximum atomic force among admissible detailed production frames; earliest index resolves a tie",
+      "selection_policy_sha256": "9d26b669950767da30563e9aceeb47ddba112bbc8d22255d5f9d182e667c4103",
+      "selection_frame_count": 7441,
+      "production_frame_index_zero_based": 4363,
+      "production_time_fs": 8726.0,
+      "target_temperature_K": 433.15,
+      "instantaneous_kinetic_temperature_K": 459.7884087637859,
+      "full_rate_production_mean_temperature_K": 435.77693222937376,
+      "minimum_nearest_second_margin_A": 1.9129041513070375,
+      "atom_resolved_assignment_changes_from_initial": 0,
+      "changed_occupancy_sites": 0,
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 44.226582280010916,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1023.0854797452761,
+      "existing_max_force_eV_A": 5.8762359619140625,
+      "existing_stress_eV_A3": [
+        0.0018009941457934628,
+        0.0068315871045940306,
+        -0.03403603405083556,
+        -0.005206702896810544,
+        -0.002390002690411997,
+        -0.0006795725774257485
+      ],
+      "existing_stress_interpretation": "Calculator/configurational stress; no ionic kinetic term, not full finite-temperature pressure",
+      "source_trajectory": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz",
+        "sha256": "f9a85d1a749b838c082b310545f418df720d88380e8fa2e19d46d4e11816abbb",
+        "bytes": 480547624,
+        "source": null
+      },
+      "source_mapping": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production_mapping.jsonl",
+        "sha256": "1aa964dde890d7f124c8784494646dd47db8884adc3a0cf68167dcc21cb4be58",
+        "bytes": 35614385,
+        "source": null
+      },
+      "source_receipt": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/receipt.json",
+        "sha256": "1039ccb5e0b2597c14b7c9208d4acc320ff803dc2c03496dceba0e2ab3fb10d4",
+        "bytes": 17860,
+        "source": null
+      },
+      "required_observables": [
+        "DFT extrapolated and smeared single-point energies, eV/cell",
+        "all force components in exact POSCAR order, eV/A",
+        "stress tensor with documented sign/units",
+        "magnetic/electronic convergence record"
+      ],
+      "resolves": "Targeted finite-temperature force/stress reference at one exact sampled geometry; not a mean DFT error or an equilibrium ensemble estimate",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_011_basin_2_repeat1_thermal_frame04363.POSCAR",
+          "sha256": "5253f10c886de16aa9357e70344fa65116ca1b64540d0705e4c0e2ad9f4381b7",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_011_basin_2_repeat1_thermal_frame04363.npz",
+          "sha256": "ec116a184eef12703b5811510b50f19c9b747de426b9a0e2b93a6dd6f5323116",
+          "bytes": 9034,
+          "source": null
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_012",
+      "priority": 1,
+      "category": "observed_UMA_Li_transition",
+      "status": "EXACT_REVIEWED_PRODUCTION_EVENT_FRAME_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_2",
+      "repeat_id": "repeat1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Exact saved thermal frame; no new inference or minimization",
+      "event_tag": "first_changed_assignment",
+      "production_frame_index_zero_based": 8441,
+      "production_time_ps": 16.882,
+      "affected_local_atom_index_zero_based": 59,
+      "assigned_parent_Li_site_zero_based": 40,
+      "nearest_second_margin_A": 0.009354585745055877,
+      "distance_original_site_A": 1.4304508430716818,
+      "distance_final_site_A": 2.233735315026873,
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 44.226582280010916,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1022.245407060228,
+      "existing_max_force_eV_A": 3.411205768585205,
+      "existing_stress_eV_A3": [
+        0.002719174296652288,
+        0.005911612453107745,
+        -0.036436319230656065,
+        -0.0044394248476394916,
+        0.003501501889983805,
+        0.0012597738597956586
+      ],
+      "existing_stress_interpretation": "Calculator/configurational stress only; no ionic kinetic term",
+      "source_trajectory": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz",
+        "sha256": "f9a85d1a749b838c082b310545f418df720d88380e8fa2e19d46d4e11816abbb"
+      },
+      "source_event_audit": {
+        "path": "reports/thermal_pilot_20261107/numerics/md_audit_events.json",
+        "sha256": "1d325ae46741ce569218062ee0e1c9b19caa368276b769ef165f20a003bfc28f",
+        "bytes": 38092,
+        "source": null
+      },
+      "source_geometry_manifest": {
+        "path": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry_manifest.json",
+        "sha256": "2f2ddf637944786ed7c0366494f28bdd7da85aebb9b2ff9f6c466e95d0f4137f",
+        "bytes": 24137,
+        "source": null
+      },
+      "selection_reason": "Observed persistent nearest-neighbor Li hop makes the full20ps stream unsuitable as initial-basin vibrational entropy; retain the first transition and a clear post-hop environment",
+      "interpretation": "Transition geometry has ambiguous nearest-site assignment during a transit, not a separate confirmed intermediate basin",
+      "required_observables": [
+        "DFT extrapolated and smeared energy at exact geometry, eV/cell",
+        "all forces in POSCAR atom order, eV/A",
+        "configurational stress with sign/units recorded",
+        "magnetic/electronic convergence record"
+      ],
+      "resolves": "Electronic energy and force response at the model's observed transition/new-site geometry; not a migration barrier, rate, diffusion coefficient or DFT free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_012_basin2_repeat1_first_transition_16p882ps.POSCAR",
+          "sha256": "58edb9afbd5e3f3b0139a0fdb66a59ada8fa5a8d315645c4149af35beaa0bb43",
+          "bytes": 11246,
+          "source": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/first_changed_assignment.POSCAR"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_012_basin2_repeat1_first_transition_16p882ps.npz",
+          "sha256": "27d9da237d9d552f88db9e5fbbd2d122ae356451b64b93a2b53ea8f8d7cc9d94",
+          "bytes": 13170,
+          "source": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/first_changed_assignment.npz"
+        }
+      ]
+    },
+    {
+      "candidate_id": "DFT_013",
+      "priority": 2,
+      "category": "observed_UMA_posthop_environment",
+      "status": "EXACT_REVIEWED_PRODUCTION_EVENT_FRAME_PREPARED_DFT_NOT_STARTED",
+      "composition": "Li36Co48O96",
+      "n_atoms": 180,
+      "basin_id": "basin_2",
+      "repeat_id": "repeat1",
+      "cell_A": [
+        [
+          5.622513953597004,
+          0.0,
+          0.0
+        ],
+        [
+          -5.622513953597001,
+          9.738479833894973,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          27.818912865135857
+        ]
+      ],
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "geometry_protocol": "Exact saved thermal frame; no new inference or minimization",
+      "event_tag": "settled_after_100fs",
+      "production_frame_index_zero_based": 8512,
+      "production_time_ps": 17.024,
+      "affected_local_atom_index_zero_based": 59,
+      "assigned_parent_Li_site_zero_based": 23,
+      "nearest_second_margin_A": 2.5145337221744315,
+      "distance_original_site_A": 2.763152125243964,
+      "distance_final_site_A": 0.18181050931748874,
+      "existing_teacher": {
+        "model": "uma",
+        "checkpoint_name": "UMA-S-1.2.1",
+        "head": "omat",
+        "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+        "checkpoint_hashes": {
+          "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+        },
+        "package": "fairchem-core",
+        "package_version": "2.25.0",
+        "torch": "2.13.0+cu130",
+        "ase": "3.26.0",
+        "dtype": "float32",
+        "tf32": false,
+        "nitro": false,
+        "compile": false,
+        "dispersion": false,
+        "device": "cuda",
+        "device_name": "NVIDIA A100-SXM4-40GB",
+        "load_seconds": 44.226582280010916,
+        "job_id": "60956668",
+        "host": "nid001324",
+        "gpu_visibility": "0",
+        "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+      },
+      "existing_energy_eV": -1022.3980223429122,
+      "existing_max_force_eV_A": 3.9738123416900635,
+      "existing_stress_eV_A3": [
+        -0.0010716991714433154,
+        0.004910348609970115,
+        -0.03583527807356592,
+        -0.004779957317284665,
+        0.007068841499302562,
+        0.0021291821185705916
+      ],
+      "existing_stress_interpretation": "Calculator/configurational stress only; no ionic kinetic term",
+      "source_trajectory": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz",
+        "sha256": "f9a85d1a749b838c082b310545f418df720d88380e8fa2e19d46d4e11816abbb"
+      },
+      "source_event_audit": {
+        "path": "reports/thermal_pilot_20261107/numerics/md_audit_events.json",
+        "sha256": "1d325ae46741ce569218062ee0e1c9b19caa368276b769ef165f20a003bfc28f",
+        "bytes": 38092,
+        "source": null
+      },
+      "source_geometry_manifest": {
+        "path": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry_manifest.json",
+        "sha256": "2f2ddf637944786ed7c0366494f28bdd7da85aebb9b2ff9f6c466e95d0f4137f",
+        "bytes": 24137,
+        "source": null
+      },
+      "selection_reason": "Observed persistent nearest-neighbor Li hop makes the full20ps stream unsuitable as initial-basin vibrational entropy; retain the first transition and a clear post-hop environment",
+      "interpretation": "Clearly assigned new site, 100fs after first persistent final-site assignment; still an unrelaxed thermal snapshot",
+      "required_observables": [
+        "DFT extrapolated and smeared energy at exact geometry, eV/cell",
+        "all forces in POSCAR atom order, eV/A",
+        "configurational stress with sign/units recorded",
+        "magnetic/electronic convergence record"
+      ],
+      "resolves": "Electronic energy and force response at the model's observed transition/new-site geometry; not a migration barrier, rate, diffusion coefficient or DFT free energy",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_013_basin2_repeat1_clear_posthop_17p024ps.POSCAR",
+          "sha256": "61d1172a584a0670b8590a2787bb2ef3b787206983abd0841a064fcd8dea0584",
+          "bytes": 11246,
+          "source": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/settled_after_100fs.POSCAR"
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/DFT_013_basin2_repeat1_clear_posthop_17p024ps.npz",
+          "sha256": "97cb498a977ca90c4b4fcf68f7a1967bf709200e815d2c18074d8dbfb73be2a2",
+          "bytes": 13168,
+          "source": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/settled_after_100fs.npz"
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "runs/thermal_pilot_20261107/selection/selection.json": "56499c1b34fa6f6cd78a03a49c36c1e84370f966ba6c15b56abe79d2def7aaa9",
+    "artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "artifacts/overnight_20261107/benchmark/candidates.npz": "8277d4cb939a070170e948c1fb1c899ed0dac44a2938d87d6b67918e628dd5bf",
+    "artifacts/overnight_20261107/benchmark/scores_uma.npz": "a55eafc91bed08ebe0b2676291d9d7bcdbfdf57d18111eae9e145ec35fa41e0d",
+    "artifacts/overnight_20261107/benchmark/scores_mace.npz": "afe8e5175229cb8e067bb6afd90db9c8c848e178d97df0bf330647a5dfef63c0"
+  },
+  "protocol_status": "Historical source protocol audited; main-cell k mesh, species ordering and magnetic-state strategy require manual review",
+  "no_POTCAR_redistributed": true,
+  "no_executable_DFT_deck_prepared": true,
+  "no_DFT_run_submitted_or_scheduled": true,
+  "pending_additions": "None",
+  "script_sha256": "85f2156d8eb2cb7601b11ffd4d1226894e9b1612633a180a776762b652e2fba5",
+  "finite_difference_pairs": [
+    {
+      "basin_id": "basin_1",
+      "displaced_element": "Li",
+      "local_atom_index_zero_based": 48,
+      "parent_atom_index_zero_based": 48,
+      "axis": "x",
+      "column_index": 144,
+      "delta_A": 0.01,
+      "plus_candidate": "DFT_006",
+      "minus_candidate": "DFT_007",
+      "formula": "Phi[:,column]=-(F_plus-F_minus)/(2*delta_A), units eV/A^2",
+      "raw_column_copy": {
+        "path": "reports/thermal_pilot_20261107/DFT_candidates/finite_difference_basin_1_Li_x_column0144.npz",
+        "sha256": "34576455a83adf3849ce55f37f57be62bdd2caa54c092562da9f20a7f1436f32",
+        "bytes": 6476,
+        "source": null
+      }
+    },
+    {
+      "basin_id": "basin_2",
+      "displaced_element": "O",
+      "local_atom_index_zero_based": 84,
+      "parent_atom_index_zero_based": 96,
+      "axis": "x",
+      "column_index": 252,
+      "delta_A": 0.01,
+      "plus_candidate": "DFT_008",
+      "minus_candidate": "DFT_009",
+      "formula": "Phi[:,column]=-(F_plus-F_minus)/(2*delta_A), units eV/A^2",
+      "raw_column_copy": {
+        "path": "reports/thermal_pilot_20261107/DFT_candidates/finite_difference_basin_2_O_x_column0252.npz",
+        "sha256": "f567a2881e516519d9b42634314cbc801fd99a1096d38083d5ff05e57d9b0c27",
+        "bytes": 6475,
+        "source": null
+      }
+    }
+  ],
+  "finite_difference_preparer_sha256": "a8eb506fd4594e02e6bbd335f7840f36179da524dcd150d195d2a06dcbf3f70b",
+  "thermal_selection_policy": {
+    "path": "reports/thermal_pilot_20261107/DFT_candidates/thermal_selection_policy.json",
+    "sha256": "9d26b669950767da30563e9aceeb47ddba112bbc8d22255d5f9d182e667c4103",
+    "bytes": 1670,
+    "source": null
+  },
+  "thermal_selection_receipt": [
+    {
+      "candidate_id": "DFT_010",
+      "basin_id": "basin_1",
+      "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/production.npz",
+      "all_detailed_frames": 10001,
+      "admissible_frames": 9001,
+      "excluded_by_time_floor": 1000,
+      "excluded_by_changed_mask": 0,
+      "frames_with_atom_resolved_changes": 0,
+      "frames_with_assignment_uniqueness_flags": 0,
+      "selected_frame": 9520,
+      "production_time_fs": 19040.0,
+      "median_admissible_potential_eV": -1022.115260774487,
+      "selection_distance_eV": 0.0
+    },
+    {
+      "candidate_id": "DFT_011",
+      "basin_id": "basin_2",
+      "source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz",
+      "all_detailed_frames": 10001,
+      "admissible_frames": 7441,
+      "excluded_by_time_floor": 1000,
+      "excluded_by_changed_mask": 1560,
+      "frames_with_atom_resolved_changes": 1560,
+      "frames_with_assignment_uniqueness_flags": 0,
+      "selected_frame": 4363,
+      "production_time_fs": 8726.0
+    }
+  ],
+  "production_diagnostic_events": [
+    {
+      "basin_id": "basin_2",
+      "scope": "First production diagnostic; equilibration audited separately",
+      "frame_index": 8441,
+      "time_fs": 16882.0,
+      "atom_resolved_changes": 1,
+      "changed_mask_sites": 2,
+      "unique_assignment": true,
+      "interpretation": "Requires event review; a diagnostic assignment change alone is not a proven Li hop",
+      "files": [
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/diagnostic_event_basin_2_production_frame08441.POSCAR",
+          "sha256": "58edb9afbd5e3f3b0139a0fdb66a59ada8fa5a8d315645c4149af35beaa0bb43",
+          "bytes": 11246,
+          "source": null
+        },
+        {
+          "path": "reports/thermal_pilot_20261107/DFT_candidates/diagnostic_event_basin_2_production_frame08441.npz",
+          "sha256": "78f80eeaeecc75fb63cded1e7a57b34ae7f32ac71ab2f26ec781139936eab990",
+          "bytes": 9030,
+          "source": null
+        }
+      ]
+    }
+  ],
+  "thermal_preparer_sha256": "76ee4d096f1dc98e8628b95c62e24b91009ffa540759ed9165c863142c7fac81",
+  "no_new_MLIP_calls_for_handoff": true,
+  "event_review": {
+    "status": "REVIEWED_PERSISTENT_LI_NEIGHBOR_HOP_UNDER_UMA",
+    "audit": {
+      "path": "reports/thermal_pilot_20261107/numerics/md_audit_events.json",
+      "sha256": "1d325ae46741ce569218062ee0e1c9b19caa368276b769ef165f20a003bfc28f",
+      "bytes": 38092,
+      "source": null
+    },
+    "interpretation": "Transient32/40fs nearest-site segments are transit labels; persistent final site and continuous coordinates support a hop under UMA, not validated real-LCO diffusion",
+    "original_high_force_selection_preserved": true,
+    "extra_transition_and_posthop_candidates": [
+      "DFT_012",
+      "DFT_013"
+    ],
+    "other_event_preserved_at": "reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_1/repeat2"
+  },
+  "reviewed_event_preparer_sha256": "6766d915ba7474780ff63bafc64123685a6e975dfa2cad6d0ab5ab444a2ac303"
+}

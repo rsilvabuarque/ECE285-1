@@ -1,0 +1,6 @@
+{"identity": "basin_1", "phase": "equilibration", "mean_temperature_K": 308.27181826567784, "tail_temperature_K": 374.68880245471837, "total_energy_slope_eV_ps": 32.87235320179119, "any_changed_occupation": false}
+{"identity": "basin_1", "phase": "production", "mean_temperature_K": 389.4218037530396, "tail_temperature_K": 387.2575094265173, "total_energy_slope_eV_ps": 3.911688210412655e-05, "any_changed_occupation": false}
+{"identity": "basin_2", "phase": "equilibration", "mean_temperature_K": 300.4485948684585, "tail_temperature_K": 363.4936165680649, "total_energy_slope_eV_ps": 30.16643925967746, "any_changed_occupation": false}
+{"identity": "basin_2", "phase": "production", "mean_temperature_K": 370.93342423486547, "tail_temperature_K": 366.86861730432787, "total_energy_slope_eV_ps": 1.4460491672611669e-05, "any_changed_occupation": false}
+{"identity": "basin_3", "phase": "equilibration", "mean_temperature_K": 295.16556379265694, "tail_temperature_K": 346.16417200031356, "total_energy_slope_eV_ps": 27.85178533780786, "any_changed_occupation": false}
+{"identity": "basin_3", "phase": "production", "mean_temperature_K": 340.614477840258, "tail_temperature_K": 341.4028814876935, "total_energy_slope_eV_ps": 1.0539125683443052e-05, "any_changed_occupation": false}

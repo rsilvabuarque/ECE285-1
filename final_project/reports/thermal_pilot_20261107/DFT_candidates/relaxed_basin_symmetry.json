@@ -1,0 +1,118 @@
+{
+  "status": "DISTINCT_RELAXED_OCCUPANCY_ORBITS_UNDER_DECLARED_PARENT_ACTION",
+  "rows": [
+    {
+      "basin_id": "basin_1",
+      "canonical_assigned_vacancy_mask": "000000000000000100001000100000010100011111000101",
+      "occupancy_changed_sites": 0,
+      "nearest_collision_count": 0,
+      "hungarian_differs_from_nearest": 0,
+      "maximum_assigned_distance_A": 0.17518759829510322,
+      "minimum_nearest_second_margin_A": 2.4648799260379572,
+      "host_displacement_rms_A": 0.04085025277084152,
+      "final_energy_eV": -1032.6193898246752,
+      "max_force_eV_A": 0.000936305383220315,
+      "steps": 84,
+      "relaxation_seconds": 8.470864175003953,
+      "parent_action_orbit_size": 192,
+      "orbit_interpretation": "Trivial parent-mask stabilizer plus unique equivariant parent-site assignment; no nonidentity retained parent operation can fix this geometry",
+      "relative_energy_eV": 0.0,
+      "static_selected_three_probability_equal_representatives": 0.7374375185474279
+    },
+    {
+      "basin_id": "basin_2",
+      "canonical_assigned_vacancy_mask": "000000000000001100000111000010000001010011010100",
+      "occupancy_changed_sites": 0,
+      "nearest_collision_count": 0,
+      "hungarian_differs_from_nearest": 0,
+      "maximum_assigned_distance_A": 0.24365122866138067,
+      "minimum_nearest_second_margin_A": 2.354465801836025,
+      "host_displacement_rms_A": 0.03944801425696009,
+      "final_energy_eV": -1032.541724903874,
+      "max_force_eV_A": 0.0009757238440215588,
+      "steps": 80,
+      "relaxation_seconds": 8.137981986044906,
+      "parent_action_orbit_size": 192,
+      "orbit_interpretation": "Trivial parent-mask stabilizer plus unique equivariant parent-site assignment; no nonidentity retained parent operation can fix this geometry",
+      "relative_energy_eV": 0.07766492080122589,
+      "static_selected_three_probability_equal_representatives": 0.09206189324227722
+    },
+    {
+      "basin_id": "basin_3",
+      "canonical_assigned_vacancy_mask": "000000000000000001011000100100010100000101100101",
+      "occupancy_changed_sites": 0,
+      "nearest_collision_count": 0,
+      "hungarian_differs_from_nearest": 0,
+      "maximum_assigned_distance_A": 0.19630558756997063,
+      "minimum_nearest_second_margin_A": 2.4204965428572183,
+      "host_displacement_rms_A": 0.04074930808975156,
+      "final_energy_eV": -1032.5647280702556,
+      "max_force_eV_A": 0.0008995803655125201,
+      "steps": 83,
+      "relaxation_seconds": 8.383131364011206,
+      "parent_action_orbit_size": 192,
+      "orbit_interpretation": "Trivial parent-mask stabilizer plus unique equivariant parent-site assignment; no nonidentity retained parent operation can fix this geometry",
+      "relative_energy_eV": 0.05466175441961241,
+      "static_selected_three_probability_equal_representatives": 0.17050058821029487
+    }
+  ],
+  "initial_symmetry": {
+    "status": "INITIAL_OCCUPANCY_SYMMETRY_VERIFIED",
+    "selection_sha256": "56499c1b34fa6f6cd78a03a49c36c1e84370f966ba6c15b56abe79d2def7aaa9",
+    "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "rows": [
+      {
+        "basin_id": "basin_1",
+        "initial_vacancy_mask": "000000000000000100001000100000010100011111000101",
+        "canonical_mask": "000000000000000100001000100000010100011111000101",
+        "is_canonical": true,
+        "group_size": 192,
+        "stabilizer_size": 1,
+        "parent_mask_orbit_size": 192
+      },
+      {
+        "basin_id": "basin_2",
+        "initial_vacancy_mask": "000000000000001100000111000010000001010011010100",
+        "canonical_mask": "000000000000001100000111000010000001010011010100",
+        "is_canonical": true,
+        "group_size": 192,
+        "stabilizer_size": 1,
+        "parent_mask_orbit_size": 192
+      },
+      {
+        "basin_id": "basin_3",
+        "initial_vacancy_mask": "000000000000000001011000100100010100000101100101",
+        "canonical_mask": "000000000000000001011000100100010100000101100101",
+        "is_canonical": true,
+        "group_size": 192,
+        "stabilizer_size": 1,
+        "parent_mask_orbit_size": 192
+      }
+    ],
+    "pairs": [
+      {
+        "first": "basin_1",
+        "second": "basin_2",
+        "symmetry_minimized_site_hamming_distance": 8,
+        "minimum_Li_vacancy_swaps": 4
+      },
+      {
+        "first": "basin_1",
+        "second": "basin_3",
+        "symmetry_minimized_site_hamming_distance": 8,
+        "minimum_Li_vacancy_swaps": 4
+      },
+      {
+        "first": "basin_2",
+        "second": "basin_3",
+        "symmetry_minimized_site_hamming_distance": 8,
+        "minimum_Li_vacancy_swaps": 4
+      }
+    ],
+    "limitation": "Parent occupation-mask multiplicities only. Relaxed geometry symmetries, basin merging and finite-temperature transitions require separate checks; not physical basin populations."
+  },
+  "distinct_canonical_assigned_masks": 3,
+  "all_initial_orbit_multiplicities_equal_192": true,
+  "interpretation": "No relaxed endpoint merge under the retained parent symmetry action with unique site assignments. This is not a proof of finite-temperature basin retention or global phase identity.",
+  "weight_scope": "Static context normalized over these three representatives only; a thermal two-basin comparison must renormalize the static baseline over the same two basins."
+}

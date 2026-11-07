@@ -7,4 +7,6 @@ artifacts/current/** -text
 *.zip -text
 artifacts/overnight_20261107/** -text
 reports/overnight_20261107/**/*.csv -text
+reports/thermal_pilot_20261107/** -text
+reports/portable_backend_smoke_20261107/** -text
 reports/ranking_audit_20261107/**/*.csv -text

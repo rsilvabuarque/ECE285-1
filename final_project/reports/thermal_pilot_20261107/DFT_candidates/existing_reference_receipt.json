@@ -1,0 +1,31 @@
+{
+  "status": "PASS_EXISTING_REFERENCE_AUDIT",
+  "source_sha256": "899bc40788bf1a7ce9d4072467d3fcefe5db69809816b7918923f3cbf2e7b348",
+  "source_rows": 34368,
+  "source_unique_geometries": 11456,
+  "composition_x075_unique_geometries": 620,
+  "main_Li36Co48O96_matched_DFT_count": 0,
+  "cobalt_sizes_present": [
+    12,
+    16,
+    24
+  ],
+  "historical_protocol_cases": 10,
+  "distinct_historical_incar_hashes": 2,
+  "distinct_historical_kpoint_hashes": 1,
+  "all_historical_archive_energies_match_xml_e0": true,
+  "source_geometry_conventions": "Exact archived geometries; FP64 older model audit; ASE tensile-positive stress",
+  "limitation": "Smaller cells and different geometry cohorts do not validate new main-parent minima, forces, phonons or finite-T free energies",
+  "source_script_sha256": "c4d9c52ed29a2eeaf8ed728024fd8e80206fae5c160b11978c940d8052dd874f",
+  "outputs": {
+    "archived_x075_EFS.csv": "f7d96141b004fb8a5759d2666550a9b67119bbd2de796629cde7be6bb0d47a4a",
+    "archived_x075_summary.csv": "f3d4d1029925ee94108c5e5c36f37e79a72b02a92006bb7c3d909ab48570d64a",
+    "existing_dft_protocols.json": "9f8c7cabf2014170b1dca1bd06ac0f673587a6335cb4e4ce184bf59df42a8725"
+  },
+  "archived_force_definition": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/analyze_models.py",
+    "sha256": "0cf42f813e5ad52386c64f5f689fd6903e9c0a153b14644ac3a314f9d611ba44",
+    "quantity": "sqrt(mean((F_model-F_DFT)^2)) across Cartesian force components; table reports median across frames",
+    "units": "eV/A"
+  }
+}

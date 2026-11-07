@@ -1,0 +1,116 @@
+[
+  {
+    "identity": "basin_1/half_dt_control",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    }
+  },
+  {
+    "identity": "basin_1/nvt_control",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    }
+  },
+  {
+    "identity": "basin_1/repeat1",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 10001,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    }
+  },
+  {
+    "identity": "basin_1/repeat2",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000000100001000100000010100011111000101",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": 16.702,
+      "first_atom_assignment_change_ps": 16.702,
+      "changed_atom_assignment_frames": 1650,
+      "frames": 10001,
+      "final_mask": "000000000000000100101000100000000100011111000101",
+      "final_atom_assignment_changed": true
+    }
+  },
+  {
+    "identity": "basin_2/repeat1",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000001100000111000010000001010011010100",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": 16.882,
+      "first_atom_assignment_change_ps": 16.882,
+      "changed_atom_assignment_frames": 1560,
+      "frames": 10001,
+      "final_mask": "000000000001001100000110000010000001010011010100",
+      "final_atom_assignment_changed": true
+    }
+  },
+  {
+    "identity": "basin_2/repeat2",
+    "equilibration": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 2501,
+      "final_mask": "000000000000001100000111000010000001010011010100",
+      "final_atom_assignment_changed": false
+    },
+    "production": {
+      "first_mask_change_ps": null,
+      "first_atom_assignment_change_ps": null,
+      "changed_atom_assignment_frames": 0,
+      "frames": 10001,
+      "final_mask": "000000000000001100000111000010000001010011010100",
+      "final_atom_assignment_changed": false
+    }
+  }
+]

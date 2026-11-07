@@ -1,0 +1,17 @@
+{
+  "operation": "score",
+  "attempts": 1,
+  "successes": 1,
+  "failures": 0,
+  "units": {
+    "energy": "eV/cell",
+    "energy_per_atom": "eV/atom",
+    "forces": "eV/Angstrom",
+    "stress": "eV/Angstrom^3",
+    "stress_order": "xx yy zz yz xz xy",
+    "stress_sign": "tensile positive"
+  },
+  "status": "complete",
+  "no_new_DFT": true,
+  "physical_validation": "Not established by a successful API call."
+}

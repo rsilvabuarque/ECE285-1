@@ -1,0 +1,196 @@
+{
+  "status": "PASS_CANDIDATE_SERIALIZATION_AND_HASH_CHECK",
+  "candidates": 13,
+  "manifest_sha256": "a661aa31ca05ad2fb3367ac25f6f29f48f8d9ab20e64b6d5513bfb9efade385c",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "exact_array_geometries_distinct": true,
+  "checks": [
+    {
+      "candidate_id": "DFT_001",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "333775ec85f39979f1940fa9b6163fe711ee8e697e59047c6021ea190ecd3a39"
+    },
+    {
+      "candidate_id": "DFT_002",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "50a162f9a79c4edcdfe80971278ed8e778c6b92d0837098ba93de10ee8a747d1"
+    },
+    {
+      "candidate_id": "DFT_003",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "0f5223e8a35d1543c0fe27643365d50f3cceb36577b1b76019ea7c92ff821c7e"
+    },
+    {
+      "candidate_id": "DFT_004",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.5527136788005005e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "d1808157c21096ea75eb146cb601a904baa25ce327bb026bef0dfdbf874a8b4d"
+    },
+    {
+      "candidate_id": "DFT_005",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.5527136788005005e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "b30774724f35b11e2c8d18ef071f453e7b51246119f0d4dce86de85e4767c5e4"
+    },
+    {
+      "candidate_id": "DFT_006",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "85779cfa5fcc6bb83eef4e0337674a3ff3d87cd06f4108f6293ff5f6913d3471"
+    },
+    {
+      "candidate_id": "DFT_007",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "301c0b8b697ffa9ca6850fbb959b01da654c449b159313b068878d20c63c9a9b"
+    },
+    {
+      "candidate_id": "DFT_008",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "aba1938472becc992f4c7fcceab4f9819a95c7d8547fcc38d8f9232fcfa38387"
+    },
+    {
+      "candidate_id": "DFT_009",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "02a377d50c6de9f797d1e517225ed9baf47ad36696f9626b8c90b088b854bcff"
+    },
+    {
+      "candidate_id": "DFT_010",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.688882027804963e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "206ffd82b8303223888cdea29e0edc9ff42ecf1b80330d8659007372e5b02b73"
+    },
+    {
+      "candidate_id": "DFT_011",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.76822190084106e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "4ffa147380eb28349926342738b59df2aa2cfd67bed9004bccd7a3e3e6046e4b"
+    },
+    {
+      "candidate_id": "DFT_012",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.688882027804963e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "cdb88e7888289af52b9df5e83022a182054412f1dec298fd21282fff01d54ca9"
+    },
+    {
+      "candidate_id": "DFT_013",
+      "all_declared_file_hashes_match": true,
+      "composition": "Li36Co48O96",
+      "element_order": [
+        "Co",
+        "Li",
+        "O"
+      ],
+      "numbers_match_label_array": true,
+      "maximum_serialization_displacement_A": 3.761776556280244e-15,
+      "maximum_cell_serialization_error_A": 0.0,
+      "exact_array_geometry_hash": "58907e6d089f7153d0fab8c45eebdec0dab01bd2bdd2049b256b1f2b9f43aa7d"
+    }
+  ],
+  "maximum_serialization_displacement_A": 3.76822190084106e-15,
+  "tolerance_scope": "Numerical serialization only; 1e-10 A positions and 1e-12 A cell, not chemical equivalence criteria",
+  "no_new_force_calls": true,
+  "no_DFT_run_submitted_or_scheduled": true,
+  "script_sha256": "68c87682da22529988c57c56b1df19bc812c2b128e12d14041d265f551d23400"
+}

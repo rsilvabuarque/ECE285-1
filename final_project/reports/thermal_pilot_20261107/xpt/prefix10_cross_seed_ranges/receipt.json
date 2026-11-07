@@ -1,0 +1,14 @@
+{
+  "status": "CALCULATED_OBSERVED_CROSS_SEED_RANGES",
+  "strata": 12,
+  "cross_combinations": 48,
+  "transport_csv": "reports/thermal_pilot_20261107/xpt/prefix10_transport_sensitivity/transports_per_repeat.csv",
+  "transport_csv_sha256": "5f85ef5a5c0e5055b9da218019282d00304fde8f708f7c996821e72406e9e075",
+  "limitations": [
+    "Observed min-max sensitivity over the available trajectories, not a confidence interval",
+    "Cross combinations reuse trajectories and are not independent replicates",
+    "No validated equilibrium or thermodynamic weight inferred",
+    "A sign change means the observed ordering depends on cross-seed pairing; no sign change is not a population-level guarantee"
+  ],
+  "source_sha256": "b5a57eef52f7e0c55d4920494602da24eaecd5d19a57a38649892e90c193bfee"
+}

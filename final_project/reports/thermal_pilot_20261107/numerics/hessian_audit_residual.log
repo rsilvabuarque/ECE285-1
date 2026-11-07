@@ -1,0 +1,64 @@
+{
+  "status": "CALCULATED_LOCAL_QUADRATIC_ESTIMATE",
+  "source_sha256": "2c12d2c11c2cbe288288abbc3c51d3fb8eadea2729001b2462aa8a22239a7dee",
+  "inputs": {
+    "reports/thermal_pilot_20261107/numerics/hessian_audit.json": "af500b9a5b24eb97bf2a49c4dac62756a9aae59aa98d3d7bf820e736abb7e3ed",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz": "fff2cdc20d0beb703c8403c45db7f511a32c0dde614fe28ccde05d64d61dd3b6",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/final.npz": "332b024d7e35006a3ff7429cf2a899a455948bc2a5b35da561c8674556a754eb",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_3/delta_.01/hessian.npz": "d3e25e2307ac294dd16a6e5e8b0eea72b7b7bc1eebae25135eab015ef48af915"
+  },
+  "rows": [
+    {
+      "basin_id": "basin_1",
+      "residual_max_force_eV_A": 0.000936305383220315,
+      "estimated_energy_correction_eV": -4.653696210348934e-06,
+      "estimated_max_atom_shift_A": 0.0006387290185768807,
+      "estimated_RMS_atom_shift_A": 0.0003651662100777145,
+      "estimated_max_shift_over_0p01_A": 0.06387290185768807,
+      "abs_estimated_energy_over_quantum_delta_sensitivity": 0.012131389665282084,
+      "reference_quantum_delta_sensitivity_eV": 0.0003836078420320632,
+      "quadratic_identity_error_eV": 1.3552527156068805e-20,
+      "mass_weighted_COM_shift_norm": 1.8132185755133765e-16,
+      "minimum_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "hessian_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz"
+    },
+    {
+      "basin_id": "basin_2",
+      "residual_max_force_eV_A": 0.0009757238440215588,
+      "estimated_energy_correction_eV": -6.742067560956736e-06,
+      "estimated_max_atom_shift_A": 0.0007882842841782256,
+      "estimated_RMS_atom_shift_A": 0.00042167322170247296,
+      "estimated_max_shift_over_0p01_A": 0.07882842841782256,
+      "abs_estimated_energy_over_quantum_delta_sensitivity": 0.017575416407658348,
+      "reference_quantum_delta_sensitivity_eV": 0.0003836078420320632,
+      "quadratic_identity_error_eV": 2.795208725939191e-20,
+      "mass_weighted_COM_shift_norm": 3.598500493518153e-16,
+      "minimum_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+      "hessian_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz"
+    },
+    {
+      "basin_id": "basin_3",
+      "residual_max_force_eV_A": 0.0008995803655125201,
+      "estimated_energy_correction_eV": -4.621243301751073e-06,
+      "estimated_max_atom_shift_A": 0.0006418644627611634,
+      "estimated_RMS_atom_shift_A": 0.0004137072378006178,
+      "estimated_max_shift_over_0p01_A": 0.06418644627611633,
+      "abs_estimated_energy_over_quantum_delta_sensitivity": 0.012046790486011007,
+      "reference_quantum_delta_sensitivity_eV": 0.0003836078420320632,
+      "quadratic_identity_error_eV": 1.7787691892340307e-20,
+      "mass_weighted_COM_shift_norm": 3.329233219996241e-16,
+      "minimum_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_3/final.npz",
+      "hessian_source": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_3/delta_.01/hessian.npz"
+    }
+  ],
+  "equations": {
+    "projected_force": "f_k = u_k.T M^(-1/2) F_final",
+    "energy_correction_eV": "DeltaE_quadratic = -1/2 sum_k f_k^2 / lambda_k",
+    "atomic_shift_A": "deltaR = M^(-1/2) U (f/lambda)"
+  },
+  "interpretation": "Local constant-Hessian estimate around the already relaxed endpoint; not a new geometry optimization, actual model energy, rigorous anharmonic error bound, or universal force-tolerance criterion. No force target changed and no new MLIP/DFT calculation performed.",
+  "comparison": "All three minima use existing positive537-mode Hessians at0.01Angstrom. The0.000384eV reference is basin1 harmonic vibrational free-energy sensitivity to0.01 versus0.02Angstrom at433.15K, not a statistical uncertainty bound."
+}

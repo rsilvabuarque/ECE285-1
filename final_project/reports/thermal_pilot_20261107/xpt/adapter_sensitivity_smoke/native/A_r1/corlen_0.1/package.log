@@ -1,0 +1,11 @@
+INFO pyxpt.thermo.engine: Allocating velocity array: shape=(1, 10000, 8, 3) dtype=float32
+INFO pyxpt.thermo.engine: System COM drift subtracted; ⟨|v_sys|²⟩^½ = 3.405e-16 Å/ps over 10000 frames (set [thermodynamics] subtract_com_velocity = 0 to disable).
+INFO pyxpt.thermo.engine: Accumulated 10000 frames  Δt = 0.002 ps
+INFO pyxpt.thermo.engine: Computing VAC via FFT ...
+INFO pyxpt.thermo.engine: Avg T=433.15 K  P=0.0000 GPa  V=1000.00 Å³  E=-2287.979 kcal/mol
+INFO pyxpt.thermo.engine: Integrating thermodynamic weighting functions ...
+INFO pyxpt.thermo.utility: cage_memory_entropy(grp1): kernel t_cut=0.676 ps (nK=338, nf_run=3), taper=none, gamma=479.8 1/ps
+WARNING pyxpt.thermo.utility: cage_memory_entropy(grp1): unphysical fluidicity f=0.000
+INFO pyxpt.thermo.engine: Computation complete.
+INFO pyxpt.thermo.engine: Computation complete.
+INFO pyxpt.thermo.engine: Output written to /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/adapter_sensitivity_smoke/native/A_r1/corlen_0.1/atlas.*

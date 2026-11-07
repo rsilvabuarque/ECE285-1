@@ -1,0 +1,30 @@
+[
+  {
+    "identity": "basin_1/repeat2",
+    "atom": {
+      "Li_ordinal_0based": 17,
+      "atom_index_0based": 65,
+      "original_parent_index_0based": 66,
+      "original_parent_Li_site_0based": 18,
+      "final_assigned_parent_Li_site_0based": 31,
+      "assignment_transitions": 2,
+      "original_to_final_parent_site_distance_A": 2.8112569767985023
+    },
+    "late_mean_original_distance_A": 2.678036423631413,
+    "late_mean_final_distance_A": 0.2786844974124324
+  },
+  {
+    "identity": "basin_2/repeat1",
+    "atom": {
+      "Li_ordinal_0based": 11,
+      "atom_index_0based": 59,
+      "original_parent_index_0based": 59,
+      "original_parent_Li_site_0based": 11,
+      "final_assigned_parent_Li_site_0based": 23,
+      "assignment_transitions": 2,
+      "original_to_final_parent_site_distance_A": 2.8112569767985027
+    },
+    "late_mean_original_distance_A": 2.596958179462384,
+    "late_mean_final_distance_A": 0.31211815225531675
+  }
+]

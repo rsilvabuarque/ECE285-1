@@ -1,0 +1,11 @@
+{
+  "source_spectrum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/3PT/spectrum.npz",
+  "source_spectrum_sha256": "e4c65ba03f68ec4d38f57d103169b9481a84950003ba3989f6a8aa96667b33fe",
+  "native_csv_sha256": "b6490d09b2db0ea27a9ac91a2a2d45a561a88cf96f4688253d97b66ceb0edb56",
+  "plot_source_sha256": "39d9c3bdd82d00b0edb83b566dc933f387d9cf7eed97bab626d9b3393e0de56e",
+  "scope": "Completed5ps NVT control only; original generic figure with incorrect NVE title preserved; numerical arrays unchanged",
+  "outputs": {
+    "nvt_spectral_diagnostics.pdf": "26483b5d9f7a5f814d06360a0b7098209fafe5cbf72c14bd64344683243f14c0",
+    "nvt_spectral_diagnostics.png": "ead111e951611725e02e2e24c15a18495e4c2bbc7141be47e7c631d5d6a9da3c"
+  }
+}

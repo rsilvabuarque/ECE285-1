@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETE",
+  "logical_single_point_EFS_calls": 3,
+  "teacher": {
+    "model": "mace",
+    "checkpoint_name": "MACE-MH-1",
+    "head": "omat_pbe",
+    "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+    "checkpoint_hashes": {
+      "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+    },
+    "package": "mace-torch",
+    "package_version": "0.3.16",
+    "torch": "2.13.0+cu130",
+    "ase": "3.26.0",
+    "dtype": "float32",
+    "tf32": false,
+    "nitro": false,
+    "compile": false,
+    "dispersion": false,
+    "device": "cuda",
+    "device_name": "NVIDIA A100-SXM4-40GB",
+    "load_seconds": 42.205315620987676,
+    "job_id": "60956668",
+    "host": "nid001324",
+    "gpu_visibility": "0",
+    "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+  },
+  "source_sha256": "86d31ff9dfcba1ab0b31b8bce040c1be4a04fe84f927d5985cb952978109c358",
+  "rows": [
+    {
+      "basin_id": "basin_1",
+      "UMA_minimum_E_eV": -1032.6193898246752,
+      "MACE_E_eV": -1024.8116455078125,
+      "MACE_Fmax_eV_A": 0.30604561635042316,
+      "force_teacher_difference_component_RMSE_eV_A": 0.06466759378570004,
+      "stress_teacher_difference_max_eV_A3": 0.04374317384227244,
+      "input_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+      "UMA_gap_eV": 0.0,
+      "MACE_gap_eV": 0.258544921875
+    },
+    {
+      "basin_id": "basin_2",
+      "UMA_minimum_E_eV": -1032.541724903874,
+      "MACE_E_eV": -1025.0701904296875,
+      "MACE_Fmax_eV_A": 0.2587081142813171,
+      "force_teacher_difference_component_RMSE_eV_A": 0.06768855207090907,
+      "stress_teacher_difference_max_eV_A3": 0.044928330117075505,
+      "input_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+      "UMA_gap_eV": 0.07766492080122589,
+      "MACE_gap_eV": 0.0
+    },
+    {
+      "basin_id": "basin_3",
+      "UMA_minimum_E_eV": -1032.5647280702556,
+      "MACE_E_eV": -1024.9554443359375,
+      "MACE_Fmax_eV_A": 0.2618100690549721,
+      "force_teacher_difference_component_RMSE_eV_A": 0.06874887515227422,
+      "stress_teacher_difference_max_eV_A3": 0.04465780673082363,
+      "input_sha256": "332b024d7e35006a3ff7429cf2a899a455948bc2a5b35da561c8674556a754eb",
+      "UMA_gap_eV": 0.05466175441961241,
+      "MACE_gap_eV": 0.11474609375
+    }
+  ],
+  "interpretation": "MACE predictions on UMA minima. Teacher disagreement is not a DFT error or a MACE-relaxed minimum."
+}

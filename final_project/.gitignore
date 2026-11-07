@@ -35,3 +35,15 @@ docs/midterm1/*.out
 /artifacts/overnight_20261107/evaluation/**/attempt_outcomes.csv
 /artifacts/overnight_20261107/evaluation/**/candidate_measurements.csv
 /artifacts/overnight_20261107/evaluation/**/budget_curves.csv
+
+# Retain the original mislabeled control plots locally as execution evidence;
+# the report links the separately regenerated, correctly labeled NVT figures.
+/reports/thermal_pilot_20261107/xpt/nvt_control_native/spectral_diagnostics.pdf
+/reports/thermal_pilot_20261107/xpt/nvt_control_native/spectral_diagnostics.png
+# Generic plots are retained locally; publish the explicitly scoped replacements.
+/reports/thermal_pilot_20261107/xpt/full20_diagnostic/free_energy_differences.pdf
+/reports/thermal_pilot_20261107/xpt/full20_diagnostic/free_energy_differences.png
+/reports/thermal_pilot_20261107/xpt/full20_diagnostic/spectral_diagnostics.pdf
+/reports/thermal_pilot_20261107/xpt/full20_diagnostic/spectral_diagnostics.png
+/reports/thermal_pilot_20261107/xpt/prefix10_analysis/free_energy_differences.pdf
+/reports/thermal_pilot_20261107/xpt/prefix10_analysis/free_energy_differences.png

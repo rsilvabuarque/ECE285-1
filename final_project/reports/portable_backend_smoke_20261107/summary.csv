@@ -1,0 +1,4 @@
+model,engineering_status,exit_code,timed_out,wall_seconds,device,threads
+sevennet,PASS,0,False,33.13670711603481,cpu,4
+chgnet,PASS,0,False,14.609272163943388,cpu,4
+m3gnet,PASS,0,False,8.717398531967774,cpu,4

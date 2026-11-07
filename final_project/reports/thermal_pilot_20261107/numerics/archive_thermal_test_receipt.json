@@ -1,0 +1,20 @@
+{
+  "status": "PASS_SYNTHETIC_ONLY",
+  "checked_utc": "2026-11-07T10:46:10.727416+00:00",
+  "script": "scripts/overnight_20261107/archive_thermal.py",
+  "script_sha256": "d36106fc4befa91f26efdb4305b9191bd3d2495927b87475c391072bfe18bdf9",
+  "allocation": "60956668",
+  "execution": "srun --overlap -N1 -n1 -c4 --gres=none; scratch learning Python; temporary toy files only",
+  "checks": [
+    "tar payload SHA matches internal manifest and external archive SHA",
+    "run whitelist excludes vendor weights and live execution.json",
+    "existing destinations refused",
+    "unfinished MD receipts refused by default",
+    "explicit terminated-incomplete diagnostic opt-in retains diagnostic status",
+    "source symlinks rejected",
+    "foundation weight suffixes rejected",
+    "mutation during streaming rejected and partial plus error receipt preserved",
+    "dangling destination symlinks refused before resolution"
+  ],
+  "actual_results_archived": false
+}

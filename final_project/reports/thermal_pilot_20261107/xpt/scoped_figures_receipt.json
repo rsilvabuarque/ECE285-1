@@ -1,0 +1,62 @@
+{
+  "status": "SCOPED_DIAGNOSTIC_FIGURES_AND_TABLES",
+  "source_sha256": "b5816547228306490597f5cfad6c737574ee33f3ee3d2547d93df65b45e81943",
+  "inputs": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_events.json": "1d325ae46741ce569218062ee0e1c9b19caa368276b769ef165f20a003bfc28f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/full20_diagnostic/native_results.csv": "87828dff5042380e7fe4b9d713cac78d0ba1057e6e2af85752049487ccdf217b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/prefix10_cross_seed_ranges/observed_unpaired_ranges.csv": "9c859ff1100d2750939ceb35143c4d060e2e7a42ef88ea76b4aad053cc713e3c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/prefix10_cross_seed_ranges/correlated_cross_combinations.csv": "12b95347fe63dd242d4bab7ac3c068c08bbbf5bccc6b9575165c42feb4840497",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/prefix10_analysis/difference_summary.csv": "b9223c17c534da5b8d3d87b37544812348577a828dbaed0aa22e0c68cb112bf0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/matched5ps_transport_sensitivity/transports_per_repeat.csv": "c64a6c5bc8ad64a94dc89bd7b836115e1c101cf4fae4799bd6eeb853f73e7fbb",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/completed_partition_diagnostics/partition_diagnostics.csv": "9da0f2088b4bcada013b76aca80285d6b5d77c0aebf623e247b6edca056b2763",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/baseline_prefix5_matched_controls/native_results.csv": "ecf90e16cb825465270b0d8b51f568bfb0313a3bd5acfd575961beadfbe42804",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/nvt_control_native/native_results.csv": "b6490d09b2db0ea27a9ac91a2a2d45a561a88cf96f4688253d97b66ceb0edb56",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/half_dt_observation05/native_results.csv": "f23c6b2fab08203204054f2d6c8377d543079284fb2dc7eb1817854744006bd1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/full20_diagnostic/receipt.json": "9c6458e3f7d677c6edf1c643e8894875fbef0633e47f9d5c1fde0634849964ff",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/prefix10_analysis/native_results.csv": "5960b50416fc58bec3d3ab6d59f5eabfbf67abd070cdcb82048e54516ed94f9c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/prefix10_analysis/receipt.json": "b08cd79e61eeb6e33b69c96cea9981f3af419e40157a556c20066cf0a4191f22",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/reports/thermal_pilot_20261107/xpt/baseline_prefix5_matched_controls/receipt.json": "fce76d40e57ce35c3b01669b53e98d838a7d6b0064d347a5ec72e54bfdc3d62e"
+  },
+  "verification": {
+    "full20_diagnostic": {
+      "main_analyses": 12,
+      "sensitivity_analyses": 0,
+      "scope": [
+        "full20ps_assignment_event_diagnostic_NOT_basin_freeenergies"
+      ],
+      "maximum_mode_integral_error": 2.9466366413544165e-07,
+      "maximum_energy_anchor_error_eV": 0.0,
+      "maximum_quantum_identity_error_eV": 9.237055564881302e-14,
+      "maximum_dt_Omega0": 0.04298645931043689
+    },
+    "prefix10_analysis": {
+      "main_analyses": 12,
+      "sensitivity_analyses": 40,
+      "scope": [
+        "posthoc_first10ps_assignment_stable_exploratory_NOT_validated_equilibrium"
+      ],
+      "maximum_mode_integral_error": 1.0842247775144642e-06,
+      "maximum_energy_anchor_error_eV": 1.1368683772161603e-13,
+      "maximum_quantum_identity_error_eV": 1.5276668818842154e-13,
+      "maximum_dt_Omega0": 0.0438298204074416
+    },
+    "baseline_prefix5_matched_controls": {
+      "main_analyses": 3,
+      "sensitivity_analyses": 0,
+      "scope": [
+        "baseline_5ps_NVE_prefix_matched_observation_control"
+      ],
+      "maximum_mode_integral_error": 4.564070991364133e-06,
+      "maximum_energy_anchor_error_eV": 1.1368683772161603e-13,
+      "maximum_quantum_identity_error_eV": 6.394884621840902e-14,
+      "maximum_dt_Omega0": 0.04537863974678602
+    }
+  },
+  "interpretation": [
+    "No thermodynamic weights computed",
+    "Full20ps hopping/event trajectories are not initial-basin free energies",
+    "First10ps is a posthoc restricted-window diagnostic, not independently validated equilibrium",
+    "Cross ranges are observed correlated2\u00d72combinations, not confidence intervals",
+    "Matched observation does not match nativeT or equilibration paths"
+  ]
+}

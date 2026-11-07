@@ -1,0 +1,8 @@
+{
+  "status": "CALCULATED_SAME_TRAJECTORY_OBSERVATION_SENSITIVITY",
+  "native_csv_sha256": "4354061633400f66de0977cd760c2d9fdb8c71b48b2a9fd735ed5eb72150142a",
+  "matched_csv_sha256": "f23c6b2fab08203204054f2d6c8377d543079284fb2dc7eb1817854744006bd1",
+  "source_sha256": "47ed65a54aafe0b337c684629b40483cc38b9fc4b9cb3825d63fe930a641fd48",
+  "comparison": "Same completed0.25fs integration trajectory observed every0.25 or0.5fs; same5ps window/1.25ps lag",
+  "limitations": "No causal integrator convergence-order or thermostat effect established"
+}

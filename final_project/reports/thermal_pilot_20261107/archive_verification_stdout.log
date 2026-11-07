@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "archive": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/thermal_pilot_20261107/thermal_raw_results_20261107.tar",
+  "archive_sha256": "142e9d9807635250ba9580c687ab37218757ed087c62a18532d29f7fe1b67d7c",
+  "archive_bytes": 4310732800,
+  "payload_files": 3371,
+  "total_payload_bytes": 4303680575,
+  "internal_manifest_verified": true,
+  "all_member_hashes_verified": true,
+  "source_manifest_sha256": "cd52668ac13e280110e287f9536fdde3b2437a0840fee364182b191159115898",
+  "verification_source_sha256": "744580496c7a8d92681efe2d6ef7f6ec313e8055e60397ab81e55f3afeffd3fc",
+  "elapsed_seconds": 11.913350271992385,
+  "scope": "Archive integrity only, not scientific accuracy"
+}

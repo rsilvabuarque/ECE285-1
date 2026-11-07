@@ -294,10 +294,26 @@ midterm; the new core is multibin controllability and acquisition. See
 ## Verification and boundaries
 
 The preserved [November6 validation](docs/VALIDATION.md) covers the portable base.
-The new completion receipt, tests and claim-source map identify the actual
+The November7 core suite passed 67 tests, the public run bundle passed download
+and hash verification, and its cached benchmark tables replayed byte for byte.
+UMA and MACE produced the actual GPU campaign labels. The three optional
+backends also passed [single-point CPU interface checks](reports/portable_backend_smoke_20261107/README.md)
+in their installed environments: SevenNet, CHGNet and M3GNet returned finite
+energy/force/stress arrays without changing the input geometry. Those one-case
+checks establish operability; their startup-inclusive timings are not a model
+speed or accuracy comparison. Fresh gated downloads and the class GPU remain
+separate platform/access checks.
+The [completion receipt](artifacts/overnight_20261107/phase1_gate.json), tests and claim-source map identify the actual
 November7 campaign. Reports distinguish old evidence, new completed measurements,
 prepared infrastructure and independent teammate work. Good teacher ranks or
 correct request totals do not establish DFT accuracy, global minima, physical
 entropy, reactor equilibrium or downstream MLIP improvement. The later MLIP-only
 thermal pilot and prioritized DFT-required-next package are separate from the
 class result. Nothing submits or schedules DFT or sends messages to teammates.
+
+The separate [thermal method pilot](docs/thermal_pilot/RESEARCH_REPORT.md) and
+[DFT-required-next package](docs/thermal_pilot/DFT_REQUIRED_NEXT.md) document
+Ricardo's later research extension. They are not prerequisites for Beihao's or
+Varad's required cached-data tasks. The extension keeps same-MLIP numerical
+comparisons distinct from physical DFT validation and stores large raw results
+outside Git with retrieval manifests.

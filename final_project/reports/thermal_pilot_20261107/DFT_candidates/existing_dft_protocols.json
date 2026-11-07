@@ -1,0 +1,540 @@
+{
+  "historical": [
+    {
+      "case_id": "T_393K__lith_75.00pct__POSCAR_000001",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/INCAR",
+          "sha256": "6a2bdacc2567251a31e72b49abc3838ed62dbf712e6a539bcd61df662e82b49c"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/POSCAR",
+          "sha256": "41153e3778489835119fb80784345ab3a5eb6d20c4f06664f2f7a93dd93fad1d"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/vasprun.xml",
+          "sha256": "f2b9d42ef19cefbae53660c5d4c5def6492a019c56dd30c942426a08d856f382"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/OUTCAR",
+          "sha256": "2f05452e616ddba36613eb23dd35bad74e5a8555f9a394215fb1a42a205d9fb8"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000001/run_manifest.json",
+          "sha256": "d6a7ff9efe32e5fb33f627da4639676fc273ba96af78104da128554647062d60"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = All\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -513.87208173,
+        "e_wo_entrp": -513.85048619,
+        "e_0_energy": -513.86128396
+      },
+      "archived_energy_eV": -513.86128396,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 187,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_393K__lith_75.00pct__POSCAR_000002",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/POSCAR",
+          "sha256": "01fcb63e213f0ed3da9d478cfebd0191f4f2a4b87a38ea953cab09ee1cc59db0"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/vasprun.xml",
+          "sha256": "48bea010d0c77761541f2b781b15dbf646db896501da3d5854836fda1511ca84"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/OUTCAR",
+          "sha256": "9a26bd1df2082008a56b202e0fdc83a9c44120b01aba5a885a0e0571fc4a9114"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000002/run_manifest.json",
+          "sha256": "01b94f86e6e7afa9cbca28eabfe860c3f43cb2cba48bad585130c790b573cfea"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.8586229,
+        "e_wo_entrp": -511.83437717,
+        "e_0_energy": -511.84650004
+      },
+      "archived_energy_eV": -511.84650004,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 160,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_393K__lith_75.00pct__POSCAR_000003",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/POSCAR",
+          "sha256": "7d95c022581a02500b87dd89dbee10abc46231f936c2d54006f5fceb99a8b0ff"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/vasprun.xml",
+          "sha256": "d1e4cd143d2cdcdd4112d989c86f3b209fdbab4627cb8b9761c919b2a6f5706c"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/OUTCAR",
+          "sha256": "fe1e0d8764b57961a028192bdf219cb9a21684e309b2e32d3fd6ad25e01ee7a8"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_393K__lith_75.00pct__POSCAR_000003/run_manifest.json",
+          "sha256": "80bffc941329859074691db0132cc0dc5e81d78d456c740968ec688f07e67990"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -512.31679249,
+        "e_wo_entrp": -512.28413851,
+        "e_0_energy": -512.3004655
+      },
+      "archived_energy_eV": -512.3004655,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 299,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_433K__lith_75.00pct__POSCAR_000152",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/POSCAR",
+          "sha256": "a87c8c0d42d35885e7f3d8b5df8aeb85d8a9e8479f75d3cdcd103f4a35d81b06"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/vasprun.xml",
+          "sha256": "6bc1f41e603f65a14c6559fb33bad6724bedb67170ce3e68e3701907e271dd51"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/OUTCAR",
+          "sha256": "008181b93aa5bc13db6f9d31db06f991b3c66a2f4687f0ff68fe5965c987848c"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000152/run_manifest.json",
+          "sha256": "3e69f1062479630bd2930aaafcfc527887523d003d35f2b4356666b34957c12f"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.83762178,
+        "e_wo_entrp": -511.82305126,
+        "e_0_energy": -511.83033652
+      },
+      "archived_energy_eV": -511.83033652,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 171,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_433K__lith_75.00pct__POSCAR_000162",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/POSCAR",
+          "sha256": "0914f779613e732ab60476827af97fe05eae484a5a1fcaedd9ceb631d8d2ab43"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/vasprun.xml",
+          "sha256": "28660ce195ba6310afade7da4077a226becd5bff7450dc7af8cc21015f7cdcb6"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/OUTCAR",
+          "sha256": "9b7877bf073a5b2066d3002cbe7bd1165abc28ad750633795fd72514e31c5a2c"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_433K__lith_75.00pct__POSCAR_000162/run_manifest.json",
+          "sha256": "b9cf3925c373d9bbec42563b53bfaa61b1630c70fec0adb35d35b70b0f6c429e"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.02589474,
+        "e_wo_entrp": -511.00205635,
+        "e_0_energy": -511.01397554
+      },
+      "archived_energy_eV": -511.01397554,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 290,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_473K__lith_75.00pct__POSCAR_000303",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/POSCAR",
+          "sha256": "faa82d93fa3a06bb2b5b331c6e56c635e536b6804e2b72d2d5dd886591bf7d38"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/vasprun.xml",
+          "sha256": "fba8e14a0ecc970ad984c93f18744c715f87f6ffbffcaf7007b934deba0173ab"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/OUTCAR",
+          "sha256": "ea9bfd2f92835e4e27537ea52f2017c285a54e5db3ee135bf8285bfa3233148c"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000303/run_manifest.json",
+          "sha256": "2f4c594c622dc3f9064aeb6eb8150c0c2ca3e1cf4ac3d3397d1c17733939e0bd"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.73857349,
+        "e_wo_entrp": -511.72000146,
+        "e_0_energy": -511.72928748
+      },
+      "archived_energy_eV": -511.72928748,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 289,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_473K__lith_75.00pct__POSCAR_000307",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/POSCAR",
+          "sha256": "6ce5009618a1fe032125f31fbd73b413582db84f083c19b4e5715443c6ec06a4"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/vasprun.xml",
+          "sha256": "03f7ef4772d4fd7814b27826698fb8ca5acc695a2d9c8834cc39aa49c0dfd025"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/OUTCAR",
+          "sha256": "07ea3450a1813cfe397050be872e183d15f97bcaa0062742459022b0cdf48c30"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000307/run_manifest.json",
+          "sha256": "6dd7438553f48b5f6b15011974b986aacff20d6738a9d7aa9d71d9b9e92efd37"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.79330535,
+        "e_wo_entrp": -511.76550805,
+        "e_0_energy": -511.7794067
+      },
+      "archived_energy_eV": -511.7794067,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 206,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_473K__lith_75.00pct__POSCAR_000308",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/POSCAR",
+          "sha256": "ed584cacf1cabe21da48de3eae9aee84ff4f615c47c3d72245d1d3caaf0dadb9"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/vasprun.xml",
+          "sha256": "7d89e4e1246cdd221e71b230727383e434ce00b58599d10493d2cefc4126fa48"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/OUTCAR",
+          "sha256": "8437a5aa1516cdf088b3a3dcadc92a09a703e80a18fb46717c54bf77b86cf325"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_473K__lith_75.00pct__POSCAR_000308/run_manifest.json",
+          "sha256": "52993e1f458c3d3404d5fc6587be9bbd81195730531c6d842ad2fce9c10848f9"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -509.92650952,
+        "e_wo_entrp": -509.90121848,
+        "e_0_energy": -509.913864
+      },
+      "archived_energy_eV": -509.913864,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 271,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_493K__lith_75.00pct__POSCAR_000461",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/POSCAR",
+          "sha256": "d2a0a5c1862e59286e2eb53b7eb16e83b57c3dab69a7c203361af3f41503f646"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/vasprun.xml",
+          "sha256": "b0953c59e7b3bfe452b72f85f058eeded5d2bbac96e2b359f7e071baec29d991"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/OUTCAR",
+          "sha256": "50ac469ed8147b38de68b9b071480c4d188200f1177e97efac17b8e2365bd1a7"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000461/run_manifest.json",
+          "sha256": "15fc9b2531c8ee6895cf3a36f6df95bb81c224bd5bc96d2c04f56730612f2ccf"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -511.8205829,
+        "e_wo_entrp": -511.78852175,
+        "e_0_energy": -511.80455233
+      },
+      "archived_energy_eV": -511.80455233,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 226,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    },
+    {
+      "case_id": "T_493K__lith_75.00pct__POSCAR_000463",
+      "source_folder": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463",
+      "files": {
+        "INCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/INCAR",
+          "sha256": "f6330104966ffaa21781b022cd4cdd297f8c152edb8c918d9cafe1467ef4b742"
+        },
+        "KPOINTS": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/KPOINTS",
+          "sha256": "b459b5c31a911c509aa149194cf60f25c5ed53b8692660311e57073e72254582"
+        },
+        "POSCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/POSCAR",
+          "sha256": "5963de791b911cb42eb4f824461c853c7d5c3be7872bfd5ddbc954bf507ff776"
+        },
+        "POTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/POTCAR",
+          "sha256": "ca5f74ab72d4a3974ee1c31bf06d60508eabbdfd07b37325a3755e416a748a58"
+        },
+        "vasprun.xml": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/vasprun.xml",
+          "sha256": "56078450e6eb7c1e5dc00a19f6fc7dfe05e5440ad771539d60a85af190a89ed3"
+        },
+        "OUTCAR": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/OUTCAR",
+          "sha256": "578e5accddad1072bba0e35db4f7b6fb482ce3d5b903b584e7e4e12688b82b72"
+        },
+        "run_manifest.json": {
+          "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/electrode/LCO_mp-22526/structure_generation_tiny/vasp_workflow/cases/T_493K__lith_75.00pct__POSCAR_000463/run_manifest.json",
+          "sha256": "74d56795c593a051a8c641c57e27d66703edf1851dc7facd8c99825baeccf508"
+        }
+      },
+      "incar_text": "SYSTEM = LixCoO2 static universal\n\nPREC = Accurate\nENCUT = 680\nEDIFF = 1E-6\nNELM = 300\nNELMDL = -6\n\nISMEAR = 0\nSIGMA = 0.05\n\nISPIN = 2\nISYM = 0\nMAGMOM = 18*0.0 24*0.4 48*0.0\n\nLDAU = .TRUE.\nLDAUTYPE = 2\nLDAUL = 0 2 0\nLDAUU = 0 3.32 0\nLDAUJ = 0 0 0\nLMAXMIX = 4\nLASPH = .TRUE.\n\nLREAL = .FALSE.\nNSW = 0\n\nALGO = Normal\nISEARCH = 1\nTIME = 0.05\n\nAMIX = 0.05\nBMIX = 0.0001\nAMIX_MAG = 0.10\nBMIX_MAG = 0.0001\n\nKPAR = 8\nNCORE = 8\n\nLCHARG = .TRUE.\nLWAVE = .TRUE.\n",
+      "kpoints_text": "pymatgen with grid density = 3127 / number of atoms\n0\nGamma\n5 5 1\n",
+      "potential_titles": [
+        "PAW_PBE Li_sv 10Sep2004",
+        "PAW_PBE Co 02Aug2007",
+        "PAW_PBE O 08Apr2002"
+      ],
+      "vasp_version": "vasp.6.4.3 19Mar24 (build Jun  3 2025 16:21:13) complex",
+      "final_xml_energies_eV": {
+        "e_fr_energy": -509.86717573,
+        "e_wo_entrp": -509.83530188,
+        "e_0_energy": -509.8512388
+      },
+      "archived_energy_eV": -509.8512388,
+      "archived_energy_matches_e0": true,
+      "final_electronic_steps": 189,
+      "electronic_ediff_message_present": true,
+      "magnetic_state_validation": "Initial ISPIN/MAGMOM verified; no alternate-spin ground-state comparison certified"
+    }
+  ],
+  "hu": {
+    "source": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/LiCoO2_All_data/param_run.json",
+    "sha256": "f7ec232c597a334ff81f057200501013834d5a09888537cc8b30f2336d12da69",
+    "fp_style": "vasp",
+    "fp_incar": "INCAR",
+    "fp_pp_files": [
+      "POTCAR_Li",
+      "POTCAR_Co",
+      "POTCAR_O"
+    ],
+    "referenced_incar_exists": false,
+    "protocol_status": "Original frame-level VASP inputs/SCF and spin comparisons not present in this archive; unresolved"
+  },
+  "no_POTCAR_content_copied": true,
+  "no_inputs_prepared": true,
+  "no_DFT_run_submitted_or_scheduled": true
+}

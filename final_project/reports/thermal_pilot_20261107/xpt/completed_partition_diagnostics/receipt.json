@@ -1,0 +1,84 @@
+{
+  "status": "CALCULATED_NATIVE_PARTITION_DIAGNOSTICS",
+  "rows": 36,
+  "source_sha256": "5ccc98b0d35d238561f47ee30d47aac574c8a36b0d33ad5b8e9bbee3b06725b5",
+  "sources": {
+    "reports/thermal_pilot_20261107/xpt/full20_diagnostic/native_results.csv": {
+      "native_csv_sha256": "87828dff5042380e7fe4b9d713cac78d0ba1057e6e2af85752049487ccdf217b",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat1/1PT/spectrum.npz": "ee2ae6ec3f9d3738f063ceced32e4cff300376f47cbbeac7292f74b3f1d390c6",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat1/2PT/spectrum.npz": "186ee015415e837d212323cf3b501d9b7d1ac9003d9486e66f0d857a1e7bda41",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat1/3PT/spectrum.npz": "e23299d0eeec425f7de52d9c2628ca968b42f1be3623c8f645ef5bc436f63cbd",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat2/1PT/spectrum.npz": "a473560d689dc58cc0d496d832302b0e353bb07f5f9b2eba97cb94f68a3954a3",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat2/2PT/spectrum.npz": "e3521613336568fe5a581edd1bb71c263a0e9d1016b8528db916992a69d95cd5",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_1_repeat2/3PT/spectrum.npz": "015bd614d4af1492ba2fd08179116c4c5180c93015f710b9c4ad79b35f6f2a85",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat1/1PT/spectrum.npz": "0f346be515bc7969ac781ecd155a82b5782300067f4bf88f4f0542bad3691b75",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat1/2PT/spectrum.npz": "6bed34189754230f40f4a3f07761b297cd826a4582354f6484da0c60720f0d4f",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat1/3PT/spectrum.npz": "bbcef029f5bdc8043f5c9ad33e23c41df8965bfffaab34283e85f24003761f2a",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat2/1PT/spectrum.npz": "5bf379f0e25106c00e40ced4facef651adf1c2b40bbc7ae2f8b4c1b7fd6db5f8",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat2/2PT/spectrum.npz": "4b792d5d60c79d039d5bebb9c383e6ea4829ade3abfb2a17c89c17101822bf15",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_full20_diagnostic/basin_2_repeat2/3PT/spectrum.npz": "4b01205a1f52f363112bfe590c93c3220bfd95d89ed1828fe37d24771e037109"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/prefix10_analysis/native_results.csv": {
+      "native_csv_sha256": "5960b50416fc58bec3d3ab6d59f5eabfbf67abd070cdcb82048e54516ed94f9c",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat1/1PT/spectrum.npz": "0c2836b8318c14f82f0c35168320a45dcf28381616cbd5be5ec602dbca764628",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat1/2PT/spectrum.npz": "02674b89cc56197864b39b7b69503b9ffe79ade8cfc28eabb56c69fea6bf7bc8",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat1/3PT/spectrum.npz": "57177658f4a6636220f7d8e7c69b11e4e91fc03c55e0513db8aecdc718d20015",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat2/1PT/spectrum.npz": "6b30654dcfa054788d0aa65131d2c5b71fd5122dd7ea89ee48991b96cec1a57b",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat2/2PT/spectrum.npz": "65ccc68639620a2413f315272f8f22fb308e57ce2f304c19b86ac42537c02efc",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_1_repeat2/3PT/spectrum.npz": "c6f43d624d7f34992825def376479dc793968156ccfb1ba09e51bee73fb75491",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat1/1PT/spectrum.npz": "1346c4fdd5443b9ae936b4bad57f077d4b31ee7a01a4aea2a4c77c200c4e3430",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat1/2PT/spectrum.npz": "fef60d443edfc493d96d3c9f1da86bd9841b57eb3c5e482fc5b8e3299a8d2b93",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat1/3PT/spectrum.npz": "449de417cd950c5b1d37154e918aa87f057337af862d956112c4e6d877ac49bf",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat2/1PT/spectrum.npz": "0145ace251377fda01e39b448f4c2c7bfa33d809c74ff876dc1bcb80df4e5c59",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat2/2PT/spectrum.npz": "99dba5b0036376c1e1c2627619b307d29a422f749903635e022a10f20f1a0bfa",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_prefix10/basin_2_repeat2/3PT/spectrum.npz": "b5d927dd6d4fc97f9293b08d237614e3456f2baaf4b8b4dbc8753769429090c0"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/baseline_prefix5_matched_controls/native_results.csv": {
+      "native_csv_sha256": "ecf90e16cb825465270b0d8b51f568bfb0313a3bd5acfd575961beadfbe42804",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_baseline_prefix5/basin_1_repeat1/1PT/spectrum.npz": "7a32eff0fb2b6618b92e65269178056d2be3d32ee15d9ead5c86ff28dd8f83d2",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_baseline_prefix5/basin_1_repeat1/2PT/spectrum.npz": "7965da9b38343a6058df113318542b8dc2253c45ee1106b06e50d2075345ca0b",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_baseline_prefix5/basin_1_repeat1/3PT/spectrum.npz": "3f959e0cc0d6ed5b1ce61e56f93ea7df9d985075b9f2d7720b6598e252f7461e"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/nvt_control_native/native_results.csv": {
+      "native_csv_sha256": "b6490d09b2db0ea27a9ac91a2a2d45a561a88cf96f4688253d97b66ceb0edb56",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/1PT/spectrum.npz": "214f838cad981fccc9c38916d72b3f5d80edc578e33171a92df4b7822f5592cd",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/2PT/spectrum.npz": "5059e70f89fecdcd3f8f933896c40ee08ea298811a2f2dce187953e3043985e5",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_nvt_control/basin_1_nvt_control/3PT/spectrum.npz": "e4c65ba03f68ec4d38f57d103169b9481a84950003ba3989f6a8aa96667b33fe"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/half_dt_control_native/native_results.csv": {
+      "native_csv_sha256": "4354061633400f66de0977cd760c2d9fdb8c71b48b2a9fd735ed5eb72150142a",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/1PT/spectrum.npz": "f7b491fa97b0c69fd556b5426113d2ad062e9f3be30a6e041713214344fd5cb4",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/2PT/spectrum.npz": "ef7ee5b1d14685a908f3a36aa0a519d051b0572f92c8dab3230a2ecb6f091e92",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_control/basin_1_half_dt_control/3PT/spectrum.npz": "aeae73e1cd945e3be9b7a4f98073999b1f1c5cb6ff04430bf0c00c69d6458ce3"
+      }
+    },
+    "reports/thermal_pilot_20261107/xpt/half_dt_observation05/native_results.csv": {
+      "native_csv_sha256": "f23c6b2fab08203204054f2d6c8377d543079284fb2dc7eb1817854744006bd1",
+      "spectra": {
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_observation05/1PT/spectrum.npz": "f699bcc74a000dc7cfb1b584e1af63a58e20558503a0d13b22946e56a5258c69",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_observation05/2PT/spectrum.npz": "bb8c31170e00e45ad32c0e9f9727670f6f7b7766ae3c17f8e26a38b0cc8459ad",
+        "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/xpt_half_dt_observation05/3PT/spectrum.npz": "e404c5ebb177052b0541241c04f71a4667757cbbdda471cfdd532b4f14c84880"
+      }
+    }
+  },
+  "units": {
+    "DOS_integral": "modes/cell",
+    "S": "eV/(cell K)",
+    "TS": "eV/cell"
+  },
+  "pinned_source": "https://github.com/atlas-nano/codes/blob/197bdcf5f57c9d04b5527f9e7d6f4fdb8bf3b82d/py-xPT/src/pyxpt/thermo/utility.py#L1952",
+  "limitations": [
+    "No spectrum or thermodynamic field changed",
+    "Gas-mode fraction is an estimator assignment, not a fraction of Li atoms observed to diffuse",
+    "Gate formula value does not establish successful kernel inversion or physical cage entropy"
+  ]
+}

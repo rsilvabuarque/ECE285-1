@@ -1,0 +1,45 @@
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                                                              │
+│           py-xPT — Two- and Three-Phase Thermodynamics (2PT / 3PT)           │
+│          absolute entropy & free energy from a single MD trajectory          │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Authors:                                                                    │
+│    Tod A. Pascal          (tpascal@ucsd.edu) - UCSD                          │
+│    Shiang-Tai Lin         (stlin@ntu.edu.tw) - National Taiwan University    │
+│    Prabal K. Maiti        (maiti@physics.iisc.ernet.in) - IISc Bangalore     │
+│    William A. Goddard III (wag@wag.caltech.edu) - Caltech                    │
+│                                                                              │
+│  Copyright (c) 2026 Pascal, Lin, Maiti, Goddard.                             │
+│                                                                              │
+│  Please Cite:                                                                │
+│    1. Lin, Blanco, Goddard. J. Chem. Phys., 2003, 119, 11792-11805           │
+│    2. Lin, Maiti, Goddard. J. Phys. Chem. B., 2010, 114, 8191-8198           │
+│    3. Pascal, Lin, Goddard. PCCP, 2011, 13 (1), 169-181                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+ Calculation of Thermodynamic Properties
+  Property                        G1_Trans.g  G1_Trans.s  G1_Trans.t
+ ────────────────────────────────────────────────────────────────────
+  DOF                                  0.281      20.719      21.000
+  Temperature (K)                     433.15      433.15      433.15
+  Pressure (GPa)                      0.0000      0.0000      0.0000
+  Volume (Å³)                        1000.00     1000.00     1000.00
+  ZPE (eV/SimBox)                      0.000       0.000       0.000
+  E_md (eV/SimBox)                    -1.328     -97.888     -99.216
+  E_q (eV/SimBox)                     -1.333     -97.838     -99.171
+  S_q (eV/K/SimBox)                    0.000       0.002       0.003
+  S_cage (eV/K/SimBox)                 0.000       0.000       0.000
+  A_q (eV/SimBox)                     -1.363     -98.919    -100.310
+  μ_q (eV/SimBox)                     -1.262     -98.919    -100.209
+  Cv_q (eV/K/SimBox)                   0.000       0.002       0.002
+  E_c (eV/SimBox)                      0.005       0.773       0.779
+  S_c (eV/K/SimBox)                    0.000       0.002       0.003
+  A_c (eV/SimBox)                     -0.025      -0.285      -0.339
+  μ_c (eV/SimBox)                      0.076      -0.285      -0.238
+  Cv_c (eV/K/SimBox)                   0.000       0.002       0.002
+  S(0) (cm/mol/SimBox)                0.0007      0.0000      0.0007
+  Diffusivity (cm²/s)             3.5735e-07  0.0000e+00  3.5735e-07
+  Fluidicity (trans)              1.7231e-02  0.0000e+00  1.7231e-02
+

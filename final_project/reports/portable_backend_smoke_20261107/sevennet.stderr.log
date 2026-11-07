@@ -1,0 +1,2 @@
+/pscratch/sd/r/rsb/ece285_midterm_20261106/venvs/sevennet/lib64/python3.11/site-packages/sevenn/calculator.py:93: UserWarning: No tensor product accelerator is enabled for SevenNetCalculator. SevenNet may run much slower without a TP accelerator. Please refer to the accelerator section of the documentation.
+  util.warn_no_tp_accelerator('SevenNetCalculator')

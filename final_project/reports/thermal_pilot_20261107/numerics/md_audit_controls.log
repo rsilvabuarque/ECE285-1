@@ -1,0 +1,4 @@
+{"identity": "basin_1/half_dt_control", "phase": "equilibration", "mean_temperature_K": 419.39440001356013, "tail_temperature_K": 422.25261062733665, "total_energy_slope_eV_ps": 0.3987992551912474, "any_changed_occupation": false}
+{"identity": "basin_1/half_dt_control", "phase": "production", "mean_temperature_K": 438.26667885550853, "tail_temperature_K": 439.2542842383108, "total_energy_slope_eV_ps": 7.2582117034588064e-06, "any_changed_occupation": false}
+{"identity": "basin_1/nvt_control", "phase": "equilibration", "mean_temperature_K": 419.8253918270372, "tail_temperature_K": 430.4364530285856, "total_energy_slope_eV_ps": 0.34097840340849866, "any_changed_occupation": false}
+{"identity": "basin_1/nvt_control", "phase": "production", "mean_temperature_K": 430.6348689782194, "tail_temperature_K": 435.2649028818053, "total_energy_slope_eV_ps": -0.053653610370390604, "any_changed_occupation": false}

@@ -1,0 +1,7 @@
+# pyxpt diagnostics — atlas.summary
+# (results in .thermo / .pwr / .vac / .3n; this file is diagnostics only)
+# n_warnings = 0
+# ensemble = nvt   V_disp = std(V)/<V> = 1.137e-16
+# gas_gate = debye_warn   fired = 0   (WARN-ONLY would remove the gas entropy below)
+#  gi  plat_t plat_r   gg
+    1       0      0    0

@@ -1,0 +1,55 @@
+{
+  "status": "INITIAL_OCCUPANCY_SYMMETRY_VERIFIED",
+  "selection_sha256": "56499c1b34fa6f6cd78a03a49c36c1e84370f966ba6c15b56abe79d2def7aaa9",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "rows": [
+    {
+      "basin_id": "basin_1",
+      "initial_vacancy_mask": "000000000000000100001000100000010100011111000101",
+      "canonical_mask": "000000000000000100001000100000010100011111000101",
+      "is_canonical": true,
+      "group_size": 192,
+      "stabilizer_size": 1,
+      "parent_mask_orbit_size": 192
+    },
+    {
+      "basin_id": "basin_2",
+      "initial_vacancy_mask": "000000000000001100000111000010000001010011010100",
+      "canonical_mask": "000000000000001100000111000010000001010011010100",
+      "is_canonical": true,
+      "group_size": 192,
+      "stabilizer_size": 1,
+      "parent_mask_orbit_size": 192
+    },
+    {
+      "basin_id": "basin_3",
+      "initial_vacancy_mask": "000000000000000001011000100100010100000101100101",
+      "canonical_mask": "000000000000000001011000100100010100000101100101",
+      "is_canonical": true,
+      "group_size": 192,
+      "stabilizer_size": 1,
+      "parent_mask_orbit_size": 192
+    }
+  ],
+  "pairs": [
+    {
+      "first": "basin_1",
+      "second": "basin_2",
+      "symmetry_minimized_site_hamming_distance": 8,
+      "minimum_Li_vacancy_swaps": 4
+    },
+    {
+      "first": "basin_1",
+      "second": "basin_3",
+      "symmetry_minimized_site_hamming_distance": 8,
+      "minimum_Li_vacancy_swaps": 4
+    },
+    {
+      "first": "basin_2",
+      "second": "basin_3",
+      "symmetry_minimized_site_hamming_distance": 8,
+      "minimum_Li_vacancy_swaps": 4
+    }
+  ],
+  "limitation": "Parent occupation-mask multiplicities only. Relaxed geometry symmetries, basin merging and finite-temperature transitions require separate checks; not physical basin populations."
+}

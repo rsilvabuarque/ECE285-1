@@ -1,0 +1,8 @@
+{
+  "status": "ARCHIVED_COMPLETE_EVIDENCE",
+  "archive": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/thermal_pilot_20261107/thermal_raw_results_20261107.tar",
+  "archive_sha256": "142e9d9807635250ba9580c687ab37218757ed087c62a18532d29f7fe1b67d7c",
+  "archive_bytes": 4310732800,
+  "file_count": 3371,
+  "total_source_bytes": 4303680575
+}

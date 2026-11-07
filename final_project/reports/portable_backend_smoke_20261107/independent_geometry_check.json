@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": {
+    "sevennet": {
+      "numbers_unchanged": true,
+      "coordinates_unchanged": true,
+      "cell_unchanged": true,
+      "finiteEFS": true
+    },
+    "chgnet": {
+      "numbers_unchanged": true,
+      "coordinates_unchanged": true,
+      "cell_unchanged": true,
+      "finiteEFS": true
+    },
+    "m3gnet": {
+      "numbers_unchanged": true,
+      "coordinates_unchanged": true,
+      "cell_unchanged": true,
+      "finiteEFS": true
+    }
+  }
+}

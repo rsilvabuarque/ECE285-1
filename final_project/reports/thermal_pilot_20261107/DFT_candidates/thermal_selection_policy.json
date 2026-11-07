@@ -1,0 +1,34 @@
+{
+  "schema_version": "DFT-thermal-selection-v1",
+  "frozen_UTC": "2026-11-07T10:27:33.668634+00:00",
+  "source": "Root instruction before completed production outputs were inspected",
+  "temperature_target_K": 433.15,
+  "required_receipt_status": "COMPLETE",
+  "required_production_duration_ps": 20.0,
+  "minimum_production_time_fs": 2000.0,
+  "transient_exclusion_interpretation": "Provisional frame-selection rule only, not proof of equilibration",
+  "admissibility": [
+    "unchanged parent occupation mask",
+    "no nearest-site collisions",
+    "Hungarian and nearest assignments agree",
+    "strictly positive minimum nearest/second-nearest distance gap"
+  ],
+  "admissibility_interpretation": "Operational uniqueness at saved numerical precision, not proof of physical basin retention; actual margins and atom-resolved changes remain visible",
+  "candidates": [
+    {
+      "candidate_id": "DFT_010",
+      "basin_id": "basin_1",
+      "repeat": 1,
+      "selection": "closest to median potential energy among admissible detailed production frames; earliest index resolves a tie"
+    },
+    {
+      "candidate_id": "DFT_011",
+      "basin_id": "basin_2",
+      "repeat": 1,
+      "selection": "largest maximum atomic force among admissible detailed production frames; earliest index resolves a tie"
+    }
+  ],
+  "event_policy": "Preserve the first production diagnostic change/ambiguity as an exact event file and require review; atom-resolved Li assignment changes are monitored even if the binary mask is unchanged. Equilibration events remain covered by the separate full MD audit.",
+  "no_new_MLIP_calls": true,
+  "no_DFT_run_submitted_or_scheduled": true
+}

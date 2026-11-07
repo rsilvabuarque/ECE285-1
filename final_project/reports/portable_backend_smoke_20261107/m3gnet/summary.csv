@@ -1,0 +1,2 @@
+structure_id,model,operation,status,n_atoms,n_target,energy_eV,energy_eV_atom,force_component_rms_eV_A,force_max_eV_A,max_abs_principal_stress_GPa,pressure_GPa,elapsed_seconds
+basin_1_deletion_0,m3gnet,score,success,180,36,-1135.06884765625,-6.305938042534722,0.2725056710536499,1.1000875575306395,1.2655182080322922,0.7511087054616975,0.39278345298953354

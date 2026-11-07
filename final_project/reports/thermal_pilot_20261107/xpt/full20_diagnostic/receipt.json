@@ -1,0 +1,273 @@
+{
+  "status": "CALCULATED_DIAGNOSTIC",
+  "source": {
+    "repository": "https://github.com/atlas-nano/codes",
+    "commit": "197bdcf5f57c9d04b5527f9e7d6f4fdb8bf3b82d",
+    "package_version": "2.1.0",
+    "imported_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/thermal_pilot_20261107/vendor/atlas-codes/py-xPT/src/pyxpt/__init__.py",
+    "source_hashes": {
+      "py-xPT/src/pyxpt/__init__.py": "ddce230f286a871d5c0cb75ac843916d37158caeb3598e76d2616101c7db591f",
+      "py-xPT/src/pyxpt/__main__.py": "a6c05a55a67bbff8d8349f00bab53d3d876d2d7c31b8c51eaa19d05a040e8aa9",
+      "py-xPT/src/pyxpt/analysis.py": "6a7e6993d2793cfafece643aad7b5ea214abed57974e0e4a17d63ac21e189e5b",
+      "py-xPT/src/pyxpt/config/__init__.py": "d9a12ca860c24d68029f7f2a40f3fb99b193e16f6d72b650aa956d662b3f1ecc",
+      "py-xPT/src/pyxpt/config/base.py": "830eeff6cc37b1f099e4bb4e4474b1cc81fff66c57c957a30d36fbd688062286",
+      "py-xPT/src/pyxpt/config/keycheck.py": "56fea0fe13273f9fc55923dc44a09df743e7eaf63ab64f5b4bd319209ac8be34",
+      "py-xPT/src/pyxpt/config/loader.py": "e548ae4e16196b8137b31e8f90caf8a33e684d3bf11a60524f36708b28001d37",
+      "py-xPT/src/pyxpt/config/thermo.py": "3765e40a62291a789c3eacd5bb91f26c79b84dd362a257bc6afcbff685a5550f",
+      "py-xPT/src/pyxpt/constants.py": "197d5c86733b016d113e1a3f7b2a63e3fbd1ee39053cd6993cbf1620acd39f96",
+      "py-xPT/src/pyxpt/core/__init__.py": "a7d4fbc27d3b34227835459ffbfbf60aafea10a406556939a84774466a255702",
+      "py-xPT/src/pyxpt/core/fft.py": "645b3fd941038ca25c0d8d8a8ff62bfe73f9ef93a343978445fee770ce331709",
+      "py-xPT/src/pyxpt/core/gpu.py": "a1352fde72f6ccaab1538c166035b33e9ca6ce7fa49b6b4425bda08fefff43f3",
+      "py-xPT/src/pyxpt/core/vac.py": "e4fcd9a69bc7009599f23aac011e87519a9dd6b8339c3aba011abecc1a1033be",
+      "py-xPT/src/pyxpt/io/__init__.py": "e2f3a8108de38cee56833f851c670d16b482361c57e329df491cd46bcf9d2ddb",
+      "py-xPT/src/pyxpt/io/trajectory.py": "8623fa012e3bae22506445242b16a0c3880ceeea6feba2e3f9cd2723c6cc0d8d",
+      "py-xPT/src/pyxpt/memory_budget.py": "e86d24c15c852856b648668c885719c5abf2750b1431e1f5ccea119d4e99e6b2",
+      "py-xPT/src/pyxpt/thermo/__init__.py": "e587f5e2f52c7766e45a14f19931bfed4958c3a0cd13a80f884e75c9b12f3603",
+      "py-xPT/src/pyxpt/thermo/_integrate.py": "bf1fbb9d0a45b2776860e131cca89e2a7fcb8bb6dd09012c7ebcd308aa4a0f71",
+      "py-xPT/src/pyxpt/thermo/_partition.py": "60e4e610ff74babad4f1123c2d3b1e83739906048480b447aebe4797bb9b61d0",
+      "py-xPT/src/pyxpt/thermo/_xpt_compute.py": "b8d2b2e258dc740f123f386cd9a341bea4d68a6fde03375c32594215c3ab51d3",
+      "py-xPT/src/pyxpt/thermo/engine.py": "c78f4324705733cbc5547dc8e5e8335262d5270ac6ffe504670290ce6a409888",
+      "py-xPT/src/pyxpt/thermo/utility.py": "95f2d57996453877ae58b29fc8361544a726cb814da8e372c7cb81ee750ac291"
+    }
+  },
+  "input_hashes": {
+    "basin_1:repeat1": {
+      "trajectory": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/production.npz",
+      "trajectory_sha256": "f56cd4f62efea94f7ed784862e74cf8443ac7c04b26bb87312b5f1b9b857aa3a",
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz",
+      "hessian_sha256": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+      "MD_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat1/receipt.json",
+        "sha256": "220cc293bf023b1d34e3318ab67b68580a43d21d40217ca0d8ec9c4298890d3a",
+        "status": "COMPLETE",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/receipt.json",
+        "sha256": "25f660a58ba217c2775a29ed43be703b9ebe842e82d7796098a39cebf8f810aa",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "teacher_identity_verified": true
+    },
+    "basin_1:repeat2": {
+      "trajectory": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/production.npz",
+      "trajectory_sha256": "1a8983682dafc966d99f85d8ff957be5824b384911c7c82f3b8d71a4c48f1b52",
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz",
+      "hessian_sha256": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051",
+      "MD_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/receipt.json",
+        "sha256": "e3afce82eb1788995f7a5e8d8e8ba291331ebf9816511f0ad4d1edd1e2544e58",
+        "status": "COMPLETE",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/receipt.json",
+        "sha256": "25f660a58ba217c2775a29ed43be703b9ebe842e82d7796098a39cebf8f810aa",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "teacher_identity_verified": true
+    },
+    "basin_2:repeat1": {
+      "trajectory": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz",
+      "trajectory_sha256": "f9a85d1a749b838c082b310545f418df720d88380e8fa2e19d46d4e11816abbb",
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz",
+      "hessian_sha256": "fff2cdc20d0beb703c8403c45db7f511a32c0dde614fe28ccde05d64d61dd3b6",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+      "minimum_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+      "MD_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/receipt.json",
+        "sha256": "1039ccb5e0b2597c14b7c9208d4acc320ff803dc2c03496dceba0e2ab3fb10d4",
+        "status": "COMPLETE",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/receipt.json",
+        "sha256": "18a6984e95ea0067412d4b954f20e10a3c5ebc9a83c471c72788cce64500a7e5",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "teacher_identity_verified": true
+    },
+    "basin_2:repeat2": {
+      "trajectory": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat2/production.npz",
+      "trajectory_sha256": "22ec3a70405e6c6e63a7096a201249ec0d5133822fede03bcfd40f997ca1079a",
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_2/delta_.01/hessian.npz",
+      "hessian_sha256": "fff2cdc20d0beb703c8403c45db7f511a32c0dde614fe28ccde05d64d61dd3b6",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/final.npz",
+      "minimum_sha256": "d79f72346763100221f01e30ca1b73a1168a0c8938df2e43896a8ef86698537f",
+      "MD_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat2/receipt.json",
+        "sha256": "d69d86954723911da5a92ddff9ea158deccd76740019e001d1a56307885b7014",
+        "status": "COMPLETE",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "minimum_producer": {
+        "path": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_2/receipt.json",
+        "sha256": "18a6984e95ea0067412d4b954f20e10a3c5ebc9a83c471c72788cce64500a7e5",
+        "status": "CONVERGED",
+        "teacher_identity": {
+          "model": "uma",
+          "checkpoint_name": "UMA-S-1.2.1",
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "dtype": "float32",
+          "tf32": false,
+          "nitro": false,
+          "compile": false,
+          "dispersion": false
+        }
+      },
+      "teacher_identity_verified": true
+    }
+  },
+  "script_sha256": "1019fb739af11cf107dae2967fd39fd1ce3dbb00d7789661d4539a220707a894",
+  "python": "3.11.15",
+  "package_requirements": [
+    "ase==3.29.0",
+    "cloudpickle==3.1.2",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "filelock==4.2.9",
+    "fonttools==4.68.0",
+    "GridDataFormats==1.2.0",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "matplotlib==3.11.2",
+    "mda-xdrlib==0.2.0",
+    "MDAnalysis==2.11.0",
+    "mmtf-python==1.1.3",
+    "mrcfile==1.5.4",
+    "msgpack==1.2.4",
+    "nersc-pymon==0.5.0",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pillow==13.0.0",
+    "-e git+https://github.com/atlas-nano/codes.git@197bdcf5f57c9d04b5527f9e7d6f4fdb8bf3b82d#egg=py_xpt&subdirectory=py-xPT",
+    "pyparsing==3.3.3",
+    "python-dateutil==4.0.0",
+    "scipy==1.17.1",
+    "threadpoolctl==3.8.0",
+    "tqdm==4.70.1",
+    "typing_extensions==4.16.0",
+    "tzdata==2026.6"
+  ],
+  "main_analyses": 12,
+  "sensitivity_analyses": 0,
+  "target_temperature_K": 433.15,
+  "max_duration_ps": null,
+  "analysis_scope": "full20ps_assignment_event_diagnostic_NOT_basin_freeenergies",
+  "conventions": {
+    "atomic": true,
+    "whole_system": true,
+    "per_cell": true,
+    "COM_removed_physical_dof": 3,
+    "additional_package_constraints": 0,
+    "native_temperature": "VAC-derived kinetic temperature",
+    "classical_anchor": "mean total MD energy - T * native classical entropy",
+    "quantum_anchor": "native MD energy + quantum-classical DOS correction - T * quantum entropy",
+    "common_temperature": "explicit first-order -S deltaT transport, not exact canonical reweighting",
+    "full_rate_velocity_axis": "velocity_time_fs when available; energy anchor from exactly matching velocity_energy_total_eV",
+    "unused_FrameData_positions": "first detailed saved positions; positions are unused in atomic thermodynamics; no interpolated geometry is claimed"
+  },
+  "limitations": [
+    "No same-potential thermodynamic integration validates anharmonic free-energy accuracy.",
+    "Same-MLIP agreement is not physical DFT validation.",
+    "Native package classical A is unanchored and retained separately.",
+    "Native NVE total-energy fluctuations are not a canonical heat-capacity estimator.",
+    "Negative DOS mass, mode-integral error, warnings and cage resolution are retained.",
+    "Native source replaces some non-finite thermodynamic intermediates with zero; raw diagnostics and warnings must be inspected.",
+    "Basin labels require the separate occupation/host stability checks; xPT does not establish non-hopping."
+  ]
+}

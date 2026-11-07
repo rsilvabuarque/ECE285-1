@@ -1,0 +1,39 @@
+{
+  "model": "chgnet",
+  "checkpoint_name": "CHGNet-PES-MatPES-PBE-1M-2026.9",
+  "head": "MatPES-PBE",
+  "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+  "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/relaxation_pilot48_20261105/checkpoints/chgnet",
+  "checkpoint_hashes": {
+    "model.json": "ef0a447a9989168ee326605fb21a4e9c9807ee15a61f6682f7be474ba028dc9e",
+    "model.pt": "523d3da637687e82e2a4645197810e7aaaf89c51421d4d1708cfcd98f74370a6",
+    "state.pt": "e9da73c92dc50734db276029936768e27a26a506fc226c98de2f08106488c6d4"
+  },
+  "package": "matgl",
+  "package_version": "4.1.4",
+  "torch": "2.13.0+cpu",
+  "ase": "3.26.0",
+  "dtype": "float32",
+  "tf32": false,
+  "nitro": false,
+  "compile": false,
+  "dispersion": false,
+  "device": "cpu",
+  "device_name": "CPU",
+  "load_seconds": 6.904483648948371,
+  "job_id": "60956668",
+  "host": "nid200473",
+  "gpu_visibility": "",
+  "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3",
+  "units": {
+    "energy": "eV/cell",
+    "energy_per_atom": "eV/atom",
+    "forces": "eV/Angstrom",
+    "stress": "eV/Angstrom^3",
+    "stress_order": "xx yy zz yz xz xy",
+    "stress_sign": "tensile positive"
+  },
+  "cli_source_sha256": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+  "target": "Li",
+  "parent_sha256": null
+}

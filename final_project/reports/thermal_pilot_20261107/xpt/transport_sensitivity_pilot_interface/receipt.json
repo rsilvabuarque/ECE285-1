@@ -1,0 +1,27 @@
+{
+  "status": "CALCULATED_TRANSPORT_SENSITIVITY",
+  "command": "apply",
+  "rows": 6,
+  "target_temperature_K": 433.15,
+  "reference_hashes": {
+    "wrapper": "1019fb739af11cf107dae2967fd39fd1ce3dbb00d7789661d4539a220707a894",
+    "basin_1": {
+      "hessian": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/hessian_assembled/basin_1/delta_.01/hessian.npz",
+      "hessian_sha256": "3efbf022a7182901e6e108b507e91c03998bcaec1eb5768aefe53d507544f706",
+      "minimum": "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/relax/basin_1/final.npz",
+      "minimum_sha256": "054457cb070ff860af3c77b8a488bd7d710a8ab0ad857507e79d023649ba2051"
+    }
+  },
+  "native_csv_hashes": {
+    "reports/thermal_pilot_20261107/xpt/short_pilot_interface/native_results.csv": "91f268ca3ead94bacb3966640ec6c1664cc9beef92d9ad8e81d320bad748ade3"
+  },
+  "source_sha256": "25a8b614ccc082715316ca6728472b4d239ddf935c9bab227ded4fa308a96bbe",
+  "units": {
+    "F": "eV/cell",
+    "S": "eV/(cell K)",
+    "T": "K"
+  },
+  "unknown_residual_curvature": "Not measured or bounded; both transports retained, no ordering selected",
+  "numerical_test_tolerance_eV": 1e-10,
+  "scope": "Known harmonic curvature retained exactly; only xPT-minus-harmonic residual transported to first order"
+}

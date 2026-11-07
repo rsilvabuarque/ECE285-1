@@ -1,0 +1,2 @@
+structure_id,model,operation,status,n_atoms,n_target,energy_eV,energy_eV_atom,force_component_rms_eV_A,force_max_eV_A,max_abs_principal_stress_GPa,pressure_GPa,elapsed_seconds
+basin_1_deletion_0,sevennet,score,success,180,36,-1014.5215454101562,-5.636230807834202,0.1640050434295162,0.7010075820105713,5.277749165421572,5.23738005193404,19.189414076972753

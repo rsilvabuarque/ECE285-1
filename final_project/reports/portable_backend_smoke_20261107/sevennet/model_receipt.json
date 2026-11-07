@@ -1,0 +1,37 @@
+{
+  "model": "sevennet",
+  "checkpoint_name": "SevenNet-Omni",
+  "head": "mpa",
+  "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+  "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/relaxation_pilot48_20261105/checkpoints/checkpoint_sevennet_omni.pth",
+  "checkpoint_hashes": {
+    "checkpoint_sevennet_omni.pth": "ca81bd3aac9fc2696c93dd386615f5a0fe41b92ab9ed7f69fa9526baaa9bab64"
+  },
+  "package": "sevenn",
+  "package_version": "0.13.0",
+  "torch": "2.13.0+cpu",
+  "ase": "3.26.0",
+  "dtype": "float32",
+  "tf32": false,
+  "nitro": false,
+  "compile": false,
+  "dispersion": false,
+  "device": "cpu",
+  "device_name": "CPU",
+  "load_seconds": 7.727359458920546,
+  "job_id": "60956668",
+  "host": "nid200473",
+  "gpu_visibility": "",
+  "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3",
+  "units": {
+    "energy": "eV/cell",
+    "energy_per_atom": "eV/atom",
+    "forces": "eV/Angstrom",
+    "stress": "eV/Angstrom^3",
+    "stress_order": "xx yy zz yz xz xy",
+    "stress_sign": "tensile positive"
+  },
+  "cli_source_sha256": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+  "target": "Li",
+  "parent_sha256": null
+}
