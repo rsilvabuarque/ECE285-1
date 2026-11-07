@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "phase": "Phase1",
+  "status": "MEASURED_ALLOCATIONS_RELEASED",
+  "account": "m5397_g",
+  "provenance": "Slurm sacct -X with TZ=UTC, including startup, failure, analysis and idle allocation time",
+  "jobs": [
+    {
+      "job_id": 60954645,
+      "queue": "shared_interactive",
+      "GPUs": 2,
+      "nodes": 1,
+      "start_UTC": "2026-11-07T08:35:06Z",
+      "end_UTC": "2026-11-07T09:39:24Z",
+      "elapsed_seconds": 3858,
+      "state": "COMPLETED",
+      "allocated_GPU_device_hours": 2.1433333333333335,
+      "physical_node_hours": 1.0716666666666668
+    },
+    {
+      "job_id": 60955384,
+      "queue": "regular interactive",
+      "GPUs": 16,
+      "nodes": 4,
+      "start_UTC": "2026-11-07T08:49:08Z",
+      "end_UTC": "2026-11-07T09:27:36Z",
+      "elapsed_seconds": 2308,
+      "state": "COMPLETED",
+      "allocated_GPU_device_hours": 10.257777777777777,
+      "physical_node_hours": 2.5644444444444443
+    }
+  ],
+  "allocated_GPU_device_hours": 12.40111111111111,
+  "four_GPU_node_equivalent_hours": 3.1002777777777775,
+  "physical_node_hours": 3.636111111111111,
+  "budget": {
+    "new_goal_ceiling_GPU_node_hours": 250,
+    "maximum_concurrent_GPUs": 36,
+    "old_prompt_budgets_superseded": true
+  },
+  "inference": {
+    "new_logical_EFS_calls": 127481,
+    "primary_UMA": 76016,
+    "secondary_MACE": 51441,
+    "interface_pilot_UMA": 12,
+    "interface_pilot_MACE": 12,
+    "reference_UMA": 24575,
+    "balanced_benchmark_both_teachers": 81324,
+    "demo_additional_both_teachers": 21558,
+    "demo_reused_existing_geometry_model_pairs": 602,
+    "registered_shards": 1995,
+    "failed_scoring_shards": 0,
+    "definition": "One logical ASE single-point energy/force/stress evaluation per exact geometry and teacher, not instrumented neural backbone forward calls"
+  },
+  "historical_reuse": {
+    "training_round0_unique_orbits": 50247,
+    "training_orbits": 40157,
+    "validation_orbits": 4967,
+    "test_orbits": 5123,
+    "reference_and_history_are_separate_from_assessment": true,
+    "limitation": "Historical data generation costs precede this goal and are not recharged as new allocation use; they are not zero-cost inputs to an end-to-end method comparison."
+  },
+  "counts": {
+    "benchmark_attempts": 41472,
+    "benchmark_unique": 40662,
+    "demo_attempts": 11520,
+    "demo_unique": 11080,
+    "reference_raw_draws": 24576,
+    "reference_unique": 24575,
+    "frozen_history_unique": 188919
+  },
+  "failures_preserved": [
+    "Strict geometry-protocol mismatch rejected first fits before epochs",
+    "Initial benchmark generator canonicalization failed before scientific outputs; preserved attempt0",
+    "Allocation CSV flattening failed after valid allocation JSON; fixed without changing energies or weights"
+  ],
+  "new_DFT_jobs": 0,
+  "new_MLIP_finetuning_jobs": 0,
+  "new_geometry_CVAE_campaigns": 0,
+  "notes": [
+    "All allocation time is included, not just active kernels.",
+    "Both physical node-hours and four-GPU-equivalent hours are stated because shared allocations reserve a fraction of node GPUs.",
+    "This receipt covers Phase1 only; any authorized Phase2 accounting is separate."
+  ]
+}

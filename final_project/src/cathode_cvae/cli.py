@@ -8,6 +8,10 @@ def main(argv=None):
     argv = list(sys.argv[1:] if argv is None else argv)
     commands = {
         "train-mask": ("cathode_cvae.learning.train_mask", True),
+        "allocate": ("cathode_cvae.acquisition", True),
+        "generate-allocation": ("cathode_cvae.acquisition_generate", True),
+        "evaluate-conditions": ("cathode_cvae.condition_evaluation", True),
+        "fetch-artifact": ("cathode_cvae.artifact_fetch", False),
         "generate-mask": ("cathode_cvae.learning.generate_mask", True),
         "train-geometry": ("cathode_cvae.learning.train_geometry", True),
         "generate-geometry": ("cathode_cvae.learning.generate_geometry", True),

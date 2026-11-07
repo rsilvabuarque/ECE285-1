@@ -1,0 +1,26 @@
+{
+  "model": "uma",
+  "checkpoint_name": "UMA-S-1.2.1",
+  "head": "omat",
+  "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+  "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+  "checkpoint_hashes": {
+    "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+  },
+  "package": "fairchem-core",
+  "package_version": "2.25.0",
+  "torch": "2.13.0+cu130",
+  "ase": "3.26.0",
+  "dtype": "float32",
+  "tf32": false,
+  "nitro": false,
+  "compile": false,
+  "dispersion": false,
+  "device": "cuda",
+  "device_name": "NVIDIA A100-SXM4-80GB",
+  "load_seconds": 104.36233052797616,
+  "job_id": "60954645",
+  "host": "nid200276",
+  "gpu_visibility": "0",
+  "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+}

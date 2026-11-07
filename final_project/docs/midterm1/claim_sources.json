@@ -1,0 +1,391 @@
+{
+  "schema_version": "report-claim-map-v1",
+  "report": "docs/midterm1/main.tex",
+  "status": "PASS_MEASURED_REPORT_READY",
+  "claims": [
+    {
+      "id": "parent48",
+      "claim": "Li48Co48O96, Li rows48..95, 192 retained site permutations, fixed cell",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "details": "Read numbers/cell_A/positions_A/li_indices/permutations; physical units Angstrom"
+        }
+      ]
+    },
+    {
+      "id": "half_orbit_capacity",
+      "claim": "At nLi24: 32247603683100 raw masks and168025313938 orbits under this parent action",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/make_examples.py",
+          "sha256": "35f3cbfc226d57aeb637eefcce935a0fcd75976390dde99df3860ecb0a2b0915",
+          "details": "Independent Burnside cycle-polynomial calculation matched all saved orbit_capacities"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/examples/manifest.json",
+          "sha256": "0ea8ddf54d9fde1e3be40b9d9eb0c428189a178c09155705520cf822812c5c10",
+          "details": "Executed existing-example and count receipt"
+        }
+      ]
+    },
+    {
+      "id": "hu12_support",
+      "claim": "87 representatives across allcounts; n6 has17orbits covering924rawmasks; group144",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/hu_finite_support/finite_support.json",
+          "sha256": "24ed02a9fb39b7b78bbc76818a149f464e01e85609c8e4932b16d0a134f965ea",
+          "details": "Actual CLI finite-support audit; every count sum matched binomial12n"
+        },
+        {
+          "path": "tests/test_acquisition.py",
+          "sha256": "b0ff3e3474556ac94e213192f9d0e230a8346d170815415bb11b352532229f7f",
+          "details": "Actual Hu energy weights at433.15K compared with direct924rawmasks; distinct from generative performance"
+        }
+      ]
+    },
+    {
+      "id": "training_round0",
+      "claim": "50247 rows; train40157/val4967/test5123",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "artifacts/current/improvement_v1/data/preparation.json",
+          "sha256": "4824f7fb85580450ec429f7a97ca7db7563b62247d0b10cb41ab1f17127ef0a5",
+          "details": "Frozen split/source receipt"
+        },
+        {
+          "path": "artifacts/current/improvement_v1/training_round0.npz",
+          "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+          "details": "Protected split array"
+        }
+      ]
+    },
+    {
+      "id": "historical_yields",
+      "claim": "Old UMA/MACE AR35.57/40.06%; uniform18.99/19.75%; strongestmutation52.65/54.08%; adaptive33.81/38.91%",
+      "status": "VERIFIED_HISTORICAL",
+      "sources": [
+        {
+          "path": "artifacts/current/improvement_v1/reports/final/summary.csv",
+          "sha256": "043581c0f0fa27d1e8c0d14c2b24ca5f77576b1a3172ab0304d6d9fbdc3289fc",
+          "details": "mean_low_yield by teacher/method"
+        },
+        {
+          "path": "artifacts/current/improvement_v1/reports/final/metrics.csv",
+          "sha256": "470429d7bd4ba88da9dd72fed74695f13e059284ed9c6e0256be0537b4ca957d",
+          "details": "512attempts per method/seed/count; historical novelty/q20 boundary"
+        }
+      ]
+    },
+    {
+      "id": "ranking_context",
+      "claim": "34368 matched rows/11456geometries; cohort-specific rho/topk/regret/gap metrics",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/receipt.json",
+          "sha256": "ae9c6ef9a73151ac9b111017ed52a23a42ba3af4a08ebb3989f8d854b9bdb3bb",
+          "details": "Sourcehash and432individualarchivedmetricmatches"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/cohort_summary.csv",
+          "sha256": "d7c0b75ab923955c6e7d379fc2afa527aada661b62610a1541511cbca45108b9",
+          "details": "Unweighted medians across informative composition pools"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/pool_metrics.csv",
+          "sha256": "0746594803bbbdd539c35677a2e53a4fec3edf7888335688cef15d6f7f533767",
+          "details": "Full source/phase/composition/cohort pool definitions and spans"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/topk_metrics.csv",
+          "sha256": "ca71450548bc9a7b0cd6fc58daaa5bc13b5e74b566da2b6ab4d3595e7387b933",
+          "details": "Tie-expanded k sizes and precision/recall/regret"
+        }
+      ]
+    },
+    {
+      "id": "hu_five_counterexample",
+      "claim": "CompleteHuoptimizedO3Li10poolN5; UMAstructure4159rank1versusDFTrank5; regret7.9710587meV/atom",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/Hu_O3_Li10_optimized_counterexample.csv",
+          "sha256": "027a2ddeda3b772bada30fd8b67bf583c228fbf2347dfca7718de3f36bb59bf1",
+          "details": "All five members under allthree MLIPs; no larger-pool recall claim"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/five_member_counterexample.pdf",
+          "sha256": "7bea2bb5745e7119f6680dda011df4b10ebdcc9b5a1d1c4e7cbf9209d87faffb",
+          "details": "Generated directly from the complete five-member table"
+        }
+      ]
+    },
+    {
+      "id": "representative_examples",
+      "claim": "Two existing unrelaxedLi24training deletion patterns, not newCVAE samples",
+      "status": "VERIFIED_HISTORICAL",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/examples/manifest.json",
+          "sha256": "0ea8ddf54d9fde1e3be40b9d9eb0c428189a178c09155705520cf822812c5c10",
+          "details": "Sourceids/energies/parent/geometry/filehashes"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/occupation_examples.pdf",
+          "sha256": "a107ce50f231abffd8b2f6aaef54ca1aa50bab20f10398b34f308be4d85a952f",
+          "details": "Li-plane indexed occupancy diagram"
+        }
+      ]
+    },
+    {
+      "id": "geometry_secondary",
+      "claim": "Old32maskUMAmedianoptimizersteps40deletion,24regressor,24CVAE; noCVAE-specificadvantage",
+      "status": "VERIFIED_HISTORICAL",
+      "sources": [
+        {
+          "path": "artifacts/current/reports/decoded_matched_relaxations.csv",
+          "sha256": "c322ee217439ef339c9a4c18410a5d461f021dc29490263f05a01fe73b72439d",
+          "details": "Matched fixed-cell source-mask/method rows"
+        },
+        {
+          "path": "artifacts/current/reports/decoded_geometry_summary.csv",
+          "sha256": "320aa25a97851907499403f755577eb99241ed95a430204a844e843f0a6b4cd5",
+          "details": "Direct geometry force/energy summaries; not new physical evidence"
+        }
+      ]
+    },
+    {
+      "id": "energy_units_example",
+      "claim": "168atomcell1meV/atom=.168eV; at433.15K ratioexp(-.168/kBT)approximately.0111",
+      "status": "EXACT_UNIT_CONVERSION_AND_CALCULATION",
+      "sources": [
+        {
+          "path": "src/cathode_cvae/acquisition.py",
+          "sha256": "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad",
+          "details": "KB_EV_K=8.617333262145e-5 and whole-cell weighting; illustrative1meV/atom assumption"
+        }
+      ]
+    },
+    {
+      "id": "reactor_temperature_grid",
+      "claim": "393.15,433.15,473.15,493.15K",
+      "status": "VERIFIED_EXISTING_TARGETS",
+      "sources": [
+        {
+          "source": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T393K_P0p08MPa/electrode/lith_91p67pct/T_393K__lith_91.67pct__POSCAR_000046/md_input_manifest.json",
+          "source_sha256": "b2ab6c7307d78a2d700230e4c29b2fbd312148c0aac088a4159c134cd269bdba",
+          "target_T_K": 393.15,
+          "target_C": 120,
+          "use": "Temperaturegridonly; no pressure weighting or calibrated reactor populations"
+        },
+        {
+          "source": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T433K_P0p46MPa/electrode/lith_91p67pct/T_433K__lith_91.67pct__POSCAR_000196/md_input_manifest.json",
+          "source_sha256": "fb08027e7b907b5a3d0f5b8c7bc328a1295a3bbddf528b3f88898bc63297bf48",
+          "target_T_K": 433.15,
+          "target_C": 160,
+          "use": "Temperaturegridonly; no pressure weighting or calibrated reactor populations"
+        },
+        {
+          "source": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T473K_P1p32MPa/electrode/lith_91p67pct/T_473K__lith_91.67pct__POSCAR_000346/md_input_manifest.json",
+          "source_sha256": "6f40fdb4b6a1a2d63912201ae5dd7e9420998571592c2023d4fec60724c62a7c",
+          "target_T_K": 473.15,
+          "target_C": 200,
+          "use": "Temperaturegridonly; no pressure weighting or calibrated reactor populations"
+        },
+        {
+          "source": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/fairchem_uma_electrode_electrolyte/T493K_P2p02MPa/electrode/lith_91p67pct/T_493K__lith_91.67pct__POSCAR_000496/md_input_manifest.json",
+          "source_sha256": "9d0bf2e3a23cfd1ea1666d146f46ee218d56bbaf521b6cbccfd22897a4cc1f58",
+          "target_T_K": 493.15,
+          "target_C": 220,
+          "use": "Temperaturegridonly; no pressure weighting or calibrated reactor populations"
+        }
+      ]
+    },
+    {
+      "id": "independent_reference_acquisition",
+      "claim": "All 24,575 exact geometries from 24,576 uniform raw draws scored; concentrated finite-pool static weights and prefix sensitivity",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "reports/overnight_20261107/reference_diagnostics/receipt.json",
+          "sha256": "dc7a96182b1a16152ed6f0b5bac9cd36ccb9df7679b4543524549eab4432ce03",
+          "details": "Complete score and model/geometry/schema provenance"
+        },
+        {
+          "path": "reports/overnight_20261107/reference_diagnostics/prefix_metrics.csv",
+          "sha256": "65cb300619262948964b641763839940a0fdc3310339444bcdc6c5a7f6370cca",
+          "details": "All compositions, temperatures and nested prefix sizes; particle ESS and minimum shifts"
+        },
+        {
+          "path": "reports/overnight_20261107/reference_diagnostics/allocation_fractions.csv",
+          "sha256": "87d2cc79f2d0edc80860a6c70d2e0bdb358969e741a68fd351e2f8421734c886",
+          "details": "Static/floor bin probabilities and integer requests"
+        },
+        {
+          "path": "reports/overnight_20261107/reference_diagnostics/reference_population.csv",
+          "sha256": "a8cf1a47ebaac8007ee12750a032497d163aa90c588bebda2113ba7536ea70ae",
+          "details": "Complete reference energy-bin population"
+        }
+      ]
+    },
+    {
+      "id": "new_multibin_benchmark",
+      "claim": "Balanced 41,472-attempt benchmark, 40,662 unique geometries; complete current UMA/MACE scoring; three-bin yield does not beat controls",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/receipt.json",
+          "sha256": "8f4497d305d88e0efa0d322f7e0fe73f0bd5f35c887ae5c0174d43a4dc9790c1",
+          "details": "Complete valid-count/scoring and frozen-history receipt"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/summary.csv",
+          "sha256": "b6ce7575f7335f8a5480507c4d0dc308464f2d509a29b353e01b3b284f2526a2",
+          "details": "Equal composition/request-bin/design-seed macro means and descriptive seed standard deviations"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/summary_by_request.csv",
+          "sha256": "9a9cd69cea9a14f4f122ad98c4dcce4200de01aa199c27de3b34d5cbf10f9df4",
+          "details": "Separate low/middle/high hit rates and useful yield"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/fixed_q20_low_request.csv",
+          "sha256": "e694d968287da0fd06f012e744420d926beece4cae6475721a3af77b5765eb66",
+          "details": "Requested-low original-teacher-q20 only; new history and budget"
+        },
+        {
+          "path": "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
+          "sha256": "57bfef701ab9299f1a696fe22960c95a4a66b086f6d9ed20790eb0e2147c5651",
+          "details": "Independent recomputation from raw attempt masks and teacher energies, without evaluator implementation"
+        }
+      ]
+    },
+    {
+      "id": "new_acquisition_demonstration",
+      "claim": "90 executed schedules; 11,520 attempts/11,080 geometries; requested and measured energy bins differ substantially",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "artifacts/overnight_20261107/demo/generation_receipt.json",
+          "sha256": "c11eddf599574fa9c6e2cea068b09c9114a1ef5772e3e298054dbad7ee695528",
+          "details": "Executed all declared schedules across three actual fit seeds; failed and zero allocations retained"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/demo/receipt.json",
+          "sha256": "e628141552597868927936f1dc0fea2037e6d5545a2ba760447fc58453eaf1a6",
+          "details": "Both teacher score coverage and canonical counts"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/demo/allocation_realization.csv",
+          "sha256": "7cf51257acc197c48876d39fbf98dde1136114a865aa0e096710e58af0e36222",
+          "details": "Attempt-weighted requested and measured bin fractions, per-temperature scope"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/demo/allocation_joint_summary.csv",
+          "sha256": "4641a42eebd4a397ed7412a4ed052fa09b37b3357ca04a104a956541637236ee",
+          "details": "Whole joint-schedule deduplicated success and coverage"
+        },
+        {
+          "path": "reports/overnight_20261107/evaluation_audit/demo_audit.json",
+          "sha256": "c01cd93921ec2f9799a1fb1e970a453f61c09c2fdcf19b9e84e1ae242ba3fb25",
+          "details": "Independent recomputation from raw attempt masks and teacher energies, without evaluator implementation"
+        }
+      ]
+    },
+    {
+      "id": "new_fit_receipts",
+      "claim": "Three completed fits: epochs 53/44/49, updates 4187/3476/3871, wall seconds 30.806/27.761/27.707; selection by validation objective",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "artifacts/overnight_20261107/fits/multibin_v2_20261106/summary.json",
+          "sha256": "b4d4a6317949e00f33f9dc29e6d745c4b73290157b77fc51fa3006e4cfeb3f40",
+          "details": "Actual completed fit receipt; excludes prior label acquisition"
+        },
+        {
+          "path": "artifacts/overnight_20261107/fits/multibin_v2_20261107/summary.json",
+          "sha256": "6feafc9a475bc8414e9046907981e66461976a16d54640152bdac4aebefe4414",
+          "details": "Actual completed fit receipt; excludes prior label acquisition"
+        },
+        {
+          "path": "artifacts/overnight_20261107/fits/multibin_v2_20261108/summary.json",
+          "sha256": "2c6f14e29a2d57bfa1bdb37ef7846d2a45a03ca0f8123710638f90b6e91c3ef5",
+          "details": "Actual completed fit receipt; excludes prior label acquisition"
+        }
+      ]
+    },
+    {
+      "id": "new_cost_receipt",
+      "claim": "127,481 new logical EFS calls including 24 pilot calls; 12.401111 GPU-device hours / 3.100278 four-GPU-equivalent node-hours; both allocations completed and released",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "artifacts/overnight_20261107/cost_receipt.json",
+          "sha256": "7a2262eee09e2b1843c551e5a41d7fd85a7c04e338b9be19fc69124f18b365df",
+          "details": "Slurm elapsed allocated resources, startup/failure/idle time included; historical label-generation costs remain additional"
+        }
+      ]
+    }
+  ],
+  "primary_references": [
+    {
+      "key": "shi2018",
+      "url": "https://doi.org/10.1039/C7GC02831H",
+      "checked": "Publisher abstract/metadata retrieved; fullHTML403unavailable",
+      "supports": "Hydrothermal regeneration followed by annealing of degradedLCO; no costfraction or detailednewconditions claimed"
+    },
+    {
+      "key": "vanderVen1998",
+      "url": "https://doi.org/10.1103/PhysRevB.58.2975",
+      "checked": "Author-hosted full13pagePDF, introduction andsectionsII/III",
+      "supports": "Li/vacancy ordering and structural-family relevance; does not validate currentMLIP"
+    },
+    {
+      "key": "omat2026",
+      "url": "https://arxiv.org/pdf/2410.12771",
+      "checked": "v2May2026 PDFsection2.1.2",
+      "supports": "Broadnonequilibriumcoverage withdefect/nonstoichiometry/magneticreference limitations; notonlypristineclaim"
+    }
+  ],
+  "assignment": {
+    "source": "User-supplied Project mid-term report and project-overview screenshots in the Codex conversation; currentovernightinstructions; discussionPDFpage52",
+    "requirements": [
+      "About5bodypages excludingreferences",
+      "Revisedproposal",
+      "Detailedmethods/math/model/algorithm/theoryifapplicable",
+      "Novelty/advantages/limitations"
+    ],
+    "deadline": "2026-11-09 23:59 America/Los_Angeles",
+    "format": "NeurIPS explicitlynamed forproposal only; noadditionalmidtermtemplate identified inprovided sources",
+    "available_pdf": "for_chat_gpt/Evaluate Generative Model Project.pdf",
+    "discussion_pdf_sha256": "5378bc5086e12180288d547d107d3fd33248ccfb13e816bdb67e8e00de610f3f",
+    "export_note": "No separate Codex text export was available in the user-designated for_chat_gpt directory. PDFimages were inspected: citationicons and croppedfigurethumbnails, notassignment screenshots; those requirements are visible in supplied conversationimages."
+  },
+  "limitations": [
+    "No new DFT",
+    "Primaryreference verification scope explicitlystated",
+    "ArchivedDFTspin/SCF convergence notrecertified"
+  ],
+  "report_outputs": {
+    "docs/midterm1/main.tex": "38af573ca2c52dd570209f696ba1b0fb601f4570ee406e8afc161d1b7d7ed736",
+    "docs/midterm1/generated_results.tex": "309d16dec09c68ac087e7d5551cdc4a77380d80e67263e8034939723f3541c8b",
+    "docs/midterm1/main.pdf": "14281614f7340a3be1cef0b2aace30f4ae8552d48bd5dd57752ed3aaf450817f",
+    "docs/midterm1/references.bib": "4d75acdd5c5924a71e993ea80904f4da198878bcedddd146c226981b13fc380d"
+  },
+  "report_verification": {
+    "total_pages": 6,
+    "body_pages": 5,
+    "references_pages": 1,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "visual_review": "All six page layouts inspected; final cost insertion confined to page4, re-rendered and inspected after final build",
+    "independent_teammate_checks": "Remain assigned; not falsely marked complete"
+  }
+}

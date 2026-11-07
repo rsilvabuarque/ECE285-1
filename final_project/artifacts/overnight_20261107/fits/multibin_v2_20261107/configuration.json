@@ -1,0 +1,239 @@
+{
+  "kind": "ar_cvae",
+  "condition_mode": "multibin",
+  "condition_dim": 4,
+  "n_sites": 48,
+  "latent_dim": 8,
+  "seed": 20261107,
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "train_rows": 40157,
+  "val_rows": 4967,
+  "test_rows": 5123,
+  "excluded_split_rows": 0,
+  "data": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+  "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+  "parent": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "trainer_sha256": "7fe799e6003b7a8d15abe5822f5888d3ad3010d734f9f48dd2feccc0b4094e5a",
+  "model_source_sha256": "2f3bdcf69f85bdaa8f5ace5224435d867e5f0694263968d4e5d504b1d6ce3a05",
+  "source_id_sha256": "45cfc58ac3ed32cee4a11ec5e06523363a28ab49b3566cb0c9afa7999fd0a72f",
+  "condition_stats": {
+    "12": {
+      "train_rows": 13332,
+      "q20_eV_atom": -5.71382273856002,
+      "low_threshold_eV_atom": -5.71382273856002,
+      "low_fraction_train": 0.20004500450045004,
+      "low_weight_fraction_train": 0.20004500450045004,
+      "class_weight_fractions": {
+        "high": 0.19996999699969997,
+        "low": 0.20004500450045004,
+        "middle": 0.59998499849985
+      },
+      "bin_counts_train": {
+        "low": 2667,
+        "middle": 7999,
+        "high": 2666
+      }
+    },
+    "24": {
+      "train_rows": 13546,
+      "q20_eV_atom": -5.720447034353375,
+      "low_threshold_eV_atom": -5.720447034353375,
+      "low_fraction_train": 0.20005905802450907,
+      "low_weight_fraction_train": 0.20005905802450907,
+      "class_weight_fractions": {
+        "high": 0.19998523549387273,
+        "low": 0.20005905802450907,
+        "middle": 0.5999557064816182
+      },
+      "bin_counts_train": {
+        "low": 2710,
+        "middle": 8127,
+        "high": 2709
+      }
+    },
+    "36": {
+      "train_rows": 13279,
+      "q20_eV_atom": -5.723115913445555,
+      "low_threshold_eV_atom": -5.723115913445555,
+      "low_fraction_train": 0.20001506137510355,
+      "low_weight_fraction_train": 0.20001506137510355,
+      "class_weight_fractions": {
+        "high": 0.19993975449958581,
+        "low": 0.20001506137510355,
+        "middle": 0.6000451841253106
+      },
+      "bin_counts_train": {
+        "low": 2656,
+        "middle": 7968,
+        "high": 2655
+      }
+    }
+  },
+  "condition_schema": {
+    "schema_version": "cathode-energy-bins-v1",
+    "n_sites": 48,
+    "units": "eV/atom",
+    "bin_names": [
+      "low",
+      "middle",
+      "high"
+    ],
+    "quantiles": [
+      0.2,
+      0.8
+    ],
+    "quantile_estimator": "unweighted nearest rank; one-based index ceil(p*m)",
+    "tie_policy": "low: e<=lower; middle: lower<e<=upper; high: e>upper; equal energies never split",
+    "sparse_policy": "retain actual nonempty training bins; unsupported requests fail explicitly; no automatic merging",
+    "fitting_scope": "train rows only, separately within each target count",
+    "compositions": {
+      "12": {
+        "train_rows": 13332,
+        "unique_training_energies": 13331,
+        "edges_eV_atom": [
+          -5.71382273856002,
+          -5.7100170364049445
+        ],
+        "lower_quantile_eV_atom": -5.71382273856002,
+        "upper_quantile_eV_atom": -5.7100170364049445,
+        "q20_eV_atom": -5.71382273856002,
+        "q80_eV_atom": -5.7100170364049445,
+        "bin_counts": {
+          "low": 2667,
+          "middle": 7999,
+          "high": 2666
+        },
+        "supported_bins": [
+          "low",
+          "middle",
+          "high"
+        ],
+        "empty_bins": [],
+        "support_status": "full",
+        "sparse": false,
+        "coincident_edges": false,
+        "merged_bins": {}
+      },
+      "24": {
+        "train_rows": 13546,
+        "unique_training_energies": 13546,
+        "edges_eV_atom": [
+          -5.720447034353375,
+          -5.715183590122562
+        ],
+        "lower_quantile_eV_atom": -5.720447034353375,
+        "upper_quantile_eV_atom": -5.715183590122562,
+        "q20_eV_atom": -5.720447034353375,
+        "q80_eV_atom": -5.715183590122562,
+        "bin_counts": {
+          "low": 2710,
+          "middle": 8127,
+          "high": 2709
+        },
+        "supported_bins": [
+          "low",
+          "middle",
+          "high"
+        ],
+        "empty_bins": [],
+        "support_status": "full",
+        "sparse": false,
+        "coincident_edges": false,
+        "merged_bins": {}
+      },
+      "36": {
+        "train_rows": 13279,
+        "unique_training_energies": 13279,
+        "edges_eV_atom": [
+          -5.723115913445555,
+          -5.719421628222362
+        ],
+        "lower_quantile_eV_atom": -5.723115913445555,
+        "upper_quantile_eV_atom": -5.719421628222362,
+        "q20_eV_atom": -5.723115913445555,
+        "q80_eV_atom": -5.719421628222362,
+        "bin_counts": {
+          "low": 2656,
+          "middle": 7968,
+          "high": 2655
+        },
+        "supported_bins": [
+          "low",
+          "middle",
+          "high"
+        ],
+        "empty_bins": [],
+        "support_status": "full",
+        "sparse": false,
+        "coincident_edges": false,
+        "merged_bins": {}
+      }
+    },
+    "provenance": {
+      "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+      "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+      "split_sha256": "887bb1f347c7e27f68f7abcc87b8e20ac33e05a3c795714f48d1600c1e885620",
+      "teacher": "uma",
+      "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+      "energy_label_origin": "Existing round0 training corpus, same protected splits; quantiles describe this training corpus, not DOS",
+      "teacher_head": "omat",
+      "teacher_checkpoint_name": "UMA-S-1.2.1",
+      "teacher_checkpoint_hashes": {
+        "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    "identity": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c"
+  },
+  "condition_schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+  "split_sha256": "20e1b71cd372ce69c7c2331f3f0177d8139933d29b6aad112fb43e3f0ac8dd0c",
+  "observed_rows_outside_training_bin_support": {
+    "test": 0,
+    "train": 0,
+    "val": 0
+  },
+  "condition_schema_source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/overnight_20261107/data/condition_schema_uma.json",
+    "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+  },
+  "teacher": "uma",
+  "teacher_head": "omat",
+  "teacher_checkpoint_name": "UMA-S-1.2.1",
+  "teacher_checkpoint_hashes": {
+    "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+  },
+  "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+  "energy_condition": "Versioned train-only composition-specific energy partition; exact ties retained; encoder mode recorded separately",
+  "orientation": "canonical",
+  "canonicalization": "Exact minimum vacancy bit code under supplied parent permutations",
+  "symmetry_augmentation": "None; one canonical orientation per orbit",
+  "class_balance": false,
+  "class_balance_scope": "Train only within each composition and actual nonempty encoded classes; keeps total base weight",
+  "input_weight_scope": "Inherited row weights; normalized to mean 1 over train rows",
+  "count_likelihood": true,
+  "beta_final": 0.1,
+  "beta_warmup_epochs": 20,
+  "maximum_epochs": 100,
+  "minimum_epochs": 20,
+  "early_stop_patience": 15,
+  "maximum_seconds": 600.0,
+  "batch_size": 512,
+  "learning_rate": 0.001,
+  "validation_samples": 2,
+  "validation_noise": "Fixed seeded standard-normal samples; no train RNG consumption",
+  "checkpoint_selection": "Minimum validation weighted reconstruction plus validation_beta*KL, within this model likelihood only",
+  "validation_beta": 1.0,
+  "maximum_updates": null,
+  "warm_start": null,
+  "torch": "2.13.0+cu130",
+  "numpy": "2.3.4",
+  "dtype": "float32",
+  "tf32": false,
+  "device": "cuda",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "scientific_scope": "Deletion vacancy masks, not relaxed geometry; no force/stress inputs or energy gradients; no global minimum guarantee"
+}

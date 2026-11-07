@@ -1,0 +1,10 @@
+{
+  "status": "MEASURED",
+  "rows": 12,
+  "finite": true,
+  "median_seconds": 0.09161453309934586,
+  "max_abs_energy_cache_difference_eV": 5.1153242793589015e-05,
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "source_sha256": "d226f124e0b61ee64da8436d58a8cbf53bcb44a558328d928765a221623c747a",
+  "interpretation": "Interface/throughput and numerical reproduction on twelve archived exact canonical geometries; not new DFT validation."
+}

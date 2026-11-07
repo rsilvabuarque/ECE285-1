@@ -1,219 +1,316 @@
-# What each person should do before November 9
+# Midterm work for Beihao, Varad, and Ricardo
 
-We already have enough calculated data for the midterm. The remaining work is
-to reproduce the important comparisons, explain the actual models, investigate
-one well-controlled improvement, and write a coherent approximately five-page
-report. Use the existing frozen data. **Do not start a new DFT, MD, MLIP
-fine-tuning, or broad inference campaign for these tasks.**
+The current scope is composition-and-energy-range vacancy generation plus a
+measured temperature-dependent acquisition demonstration. The November 7
+extension authorizes bounded new CVAE training and MLIP checks; it does not
+authorize new DFT or a new MLIP fine-tuning campaign. Use the existing frozen
+historical data and the new completed campaign packet for the required checks.
+The separate geometry CVAE remains a secondary historical result.
 
-The midterm should contain the revised proposal, mathematical method/algorithm,
-and discussion of novelty, advantages, and limitations. Results make the method
-concrete, but a positive result against every baseline is not required. The
-present scientific finding is that the AR CVAE beats random sampling while
-strong mutation remains better, and that learned geometry starts help an
-optimizer without yet showing a CVAE-specific advantage.
+The midterm is due **November 9, 2026, 11:59 p.m. Pacific**. The supplied announcement
+asks for approximately five body pages excluding references: revised proposal,
+mathematical/model/algorithm details, and novelty/advantages/limitations. The
+provided project overview explicitly names NeurIPS format for the proposal; no
+additional midterm template is specified in the supplied evidence. The editable
+article draft should be checked against any newer course instructions before
+submission. Nothing in this package submits to Gradescope or messages teammates.
 
-## Shared working rules
+## Start, inputs, and working rules
 
-Use a separate branch and a new run/output directory. Preserve the supplied
-lineage/orbit splits; never randomly split individual trajectory frames. Record
-the input SHA256, command, seed, checkpoint selection rule, and environment.
-Agree on one integrating editor. Training and substantial analysis belong in
-the class's permitted GPU/compute allocation; the commands do not choose an
-account or submit a job for you.
+Work from the review branch named in the README and make a personal branch.
+From the repository's `final_project` directory, activate the learning environment.
+A fresh class machine only needs the core installation for the required cached
+analyses and fits:
 
-Cached labels are the default for all midterm analysis. If a generated mask is
-not in the supplied cache, its energy is **unknown**. Save it as pending. Do not
-assign it the nearest mask's energy, treat it as a failed low-energy sample, or
-drop it and report a supposedly complete success rate. A score computed only
-where the cache has coverage must be labeled as such. Scoring a new candidate
-is a new oracle query and needs to be part of a separately agreed budget.
+```bash
+bash scripts/install.sh --python python3 --prefix .venvs --core-only
+source .venvs/learning/bin/activate
+cathode-cvae data verify --snapshot artifacts/current
+```
 
-The completed final pool is a fixed historical comparison. It can be
-independently recomputed and checked. If we use its results to select a model,
-we cannot call that pool an untouched final evaluation of the selected model.
-For the next model, use the supplied development/validation data for selection
-and retain an assessment boundary that the training run has not seen.
+Python 3.11–3.13 is supported; use a PyTorch wheel compatible with the class GPU.
+The default full installer also prepares isolated MLIP environments and
+hash-checked weights. UMA requires the actual user's approved model access.
+Use a permitted compute allocation on a cluster; package commands select no
+account or queue. Preserve all protected splits and use a new output directory
+for every run. Save commands, input hashes, seed, environment and checkpoint rule.
 
-## Beihao: model training, controlled ablations, and mathematical method
+Required inputs are:
 
-### Required for this midterm
+| Purpose | Path |
+| --- | --- |
+| Common parent | `artifacts/current/core/data/parents/O3_N48_pilot.npz` |
+| Training data | `artifacts/current/improvement_v1/training_round0.npz` |
+| Historical assessment | `artifacts/current/improvement_v1/data/` and `reports/final/` |
+| New schemas/reference/history | `artifacts/overnight_20261107/data/` |
+| New proposal/score records | `artifacts/overnight_20261107/benchmark/` and `demo/` |
+| Allocation requests and diagnostics | `artifacts/overnight_20261107/allocation/` |
+| New completed assessment | `artifacts/overnight_20261107/evaluation/` |
+| New fits and learning curves | `artifacts/overnight_20261107/fits/` |
+| Label/training/evaluation costs | `artifacts/overnight_20261107/cost_receipt.json` |
+| Paired DFT ranking context | `reports/ranking_audit_20261107/` |
 
-1. **Reproduce one fit and verify reload/sampling.** Start with the original
-   three-count original data for a two-epoch operability check. For the full
-   reference reproduction, switch to `training_round0.npz` with `ar_cvae`,
-   energy conditioning, canonical orientation, and β = 0.1, using the archived
-   reference settings in `configs/learning/README.md`. Run in the class
-   allocation. Check that generated occupancies are binary and
-   have exactly the requested Li count. Compare the new history with the saved
-   configuration; numerical agreement depends on software/hardware, so report
-   deviations rather than forcing matching output.
-2. **Write the model equations in your own words.** Describe encoder, latent
-   dimension, GRU decoder, teacher forcing versus generation, exact count,
-   training-only low-class condition, and reconstruction/KL objective. Explain
-   what the AR baseline and composition-only model control for. State that the
-   model does not optimize an energy function or guarantee a minimum.
-3. **Run one interpretable adaptation ablation using existing data.** The
-   hypothesis is that the last update changed the learned distribution or
-   optimization tradeoff, rather than simply lacking more labels. Fix a common
-   starting checkpoint, β, threshold definition, validation set, random seed,
-   optimizer, and **number of optimizer updates**. Compare continued training
-   on round 0 with training on round 1 under the same unbalanced weighting.
-   If time permits, a second factor toggles class balancing on/off. Keep energy
-   labels and all other settings fixed. Do not change architecture and weighting
-   simultaneously and then attribute the difference to one cause.
-4. **Report more than posterior reconstruction.** Plot train/validation
-   reconstruction and KL with the selected epoch marked. On the protected
-   existing validation masks, report held-out likelihood/reconstruction and
-   conditional response. For prior samples, measure exact count, orbit
-   uniqueness, distance to training, and lookup coverage. Quality claims require
-   an actual cached energy for that exact geometry; new uncached samples remain
-   pending. Do not choose a new checkpoint on the historical final yield.
+The new packet's manifest and completion receipt identify actual contents and
+checksums; pending files are not a completed experiment. Large raw force shards,
+trajectories, model environments and foundation weights remain outside Git with
+retrieval manifests. Follow the README if a packet must be downloaded first.
+Do not copy absolute paths from historical configurations onto the class machine.
 
-Use the existing run configuration as the reference for all parameters. A
-comparison that changes the class labels requires an explicit new experiment
-label. For the clean data-only ablation, freeze the round-0 training-derived
-thresholds for both branches rather than silently recomputing them. If the
-provided CLI lacks a setting needed for this control, add a small explicit
-option and test the labels/weights rather than approximating the experiment.
-After a warm start, `--beta-warmup 1` holds β constant from the first epoch;
-match validation at common update intervals as well. The portable trainer
-exposes `--max-updates` and `--validation-beta`, but its current warmup and
-validation schedule are epoch-based. Equal update caps alone do not control
-those schedules when training set sizes differ.
+## Beihao: one reproduction and a controlled model check
 
-Deliver a new run configuration and history, a learning-curve figure, a compact
-ablation table with its controls/limits, and roughly one page of model/method
-text. Three independent fit seeds are preferable for the final report; one
-reproduction plus the already completed three-seed results is sufficient for
-the midterm if time is tight.
+Budget about 6–8 focused hours. Your deliverables are one reproduced multibin fit,
+checkpoint/reload checks, a learning-curve figure, the method explanation, and one
+bounded controlled ablation. These are your independent contributions; the
+prepared campaign and draft do not mean you have completed them.
 
-### Geometry contribution using the existing data
+### 1. Reproduce a multibin reference fit
 
-Reproduce **both** the geometry CVAE and deterministic regressor with the same
-lineage split and training budget. Check that scalers, condition statistics,
-displacement normalization, and requested endpoint tuples are training-only.
-Keep absent atoms masked in the loss. Compare held-out coordinate errors by Li
-count and cohort. A useful bounded ablation removes the four scalar property
-conditions from both models while keeping occupancy/cell/cohort inputs, then
-asks whether those properties add predictive information. A smaller alternative
-is to compare endpoint-only training with the existing weighted trajectory
-training, using the same held-out endpoint lineages and update budget. If
-subsetting frames, renormalize the remaining frame weights to sum to one per
-lineage. For a property-input ablation, zero the same four standardized features
-in training, validation, and generation, rather than removing them only at test
-time. Refit the models under that explicitly recorded condition policy.
+Run in the class compute environment. The actual campaign configurations are the
+reference; record any hardware/software/time-cap deviation. A representative
+full-fit command is:
 
-The geometry task is displacement prediction at a supplied cell, not guaranteed
-force minimization. Do not claim that a lower coordinate error establishes
-better energy or fewer optimizer steps. Those claims must be checked against
-the existing decoded-score and matched-relaxation tables, or remain proposed
-tests if a new model has not been scored.
+```bash
+cathode-cvae train-mask \
+  --data artifacts/current/improvement_v1/training_round0.npz \
+  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+  --condition-schema-in artifacts/overnight_20261107/data/condition_schema_uma.json \
+  --kind ar_cvae --condition-mode multibin --counts 12 24 36 \
+  --teacher uma --teacher-head omat --orientation canonical \
+  --geometry-protocol "pristine-derived deletion; unrelaxed; exact canonical parent coordinates" \
+  --beta-final .1 --beta-warmup 20 --validation-beta 1 \
+  --epochs 100 --minimum-epochs 20 --patience 15 --max-seconds 600 \
+  --seed 20261106 --output-dir runs/beihao_multibin_reference
+```
 
-## Varad: baselines, validation, statistics, and figures
+Expected outputs: `best.pt`, `configuration.json`, `condition_schema.json`,
+`history.csv`, and `summary.json`. Acceptance checks:
 
-### Required for this midterm
+- Protected train/validation/test rows and parent hash match the input receipt.
+- Schema identity, q20/q80 edges, actual class support and teacher/head agree.
+- Edges use training energies only; ties are not split and empty bins fail.
+- Model dimension is four: Li fraction plus three one-hot components.
+- The selected checkpoint and completed optimizer updates/stop reason are saved.
+- A short smoke fit is labeled as such, not reported as scientific reproduction.
 
-1. **Independently recompute the existing primary result.** Run the package
-   evaluation on the supplied snapshot. Check proposal counts, canonical
-   keys, frozen history, teacher-specific original thresholds, and duplicates.
-   Verify the numerator counts distinct novel low-tail orbits and the
-   denominator includes every attempt. Reproduce the UMA and MACE table and
-   retain seed-specific values.
-2. **Make the comparison figure.** Include uniform fixed-count sampling,
-   low-energy-mask mutation, the legacy dense CVAE, exact-count dense model,
-   no-latent AR baseline, composition-only AR CVAE, energy-conditioned AR CVAE,
-   and adaptive versions. Use the same attempt budget. Show individual fit
-   seeds and label which methods use a larger seed/training pool. Keep UMA and
-   MACE as separate teacher panels. A second teacher is a robustness check,
-   not DFT validation.
-3. **Separate quality, uniqueness, and local exploration.** Report orbit
-   uniqueness, historical novelty, low-tail membership, their combined yield,
-   and the supplied symmetry-minimized distance-to-training diagnostic. Plot
-   energy quantiles and best energy versus attempt count from the existing
-   ordered proposal/energy records. Lower single best energy and higher yield
-   are different objectives. Mark any record for which cache reuse or missing
-   labels limits the statistic.
-4. **Explain uncertainty and cost.** Three training seeds are three fitted
-   models; 512 draws from one model are correlated outputs of that model, not
-   512 independent training experiments. Use descriptive seed variation and
-   paired comparisons where appropriate. Count adaptive labels and model
-   training in computational-cost statements. Do not claim a net savings from
-   generation time alone.
+### 2. Reload and make explicit requests
 
-Deliver a verified summary CSV plus receipt, one primary figure with seed
-points, one quality/diversity or best-energy-budget figure, and the validation
-and baseline paragraphs. Flag a discrepancy rather than editing a frozen
-result to match an expected conclusion.
+```bash
+for bin in low middle high; do
+  cathode-cvae generate-mask \
+    --checkpoint runs/beihao_multibin_reference/best.pt \
+    --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+    --n-li 24 --requested-bin "$bin" --count 64 --seed 20261117 \
+    --temperature-K 433.15 --allocation-policy independent-bin-check \
+    --output "runs/beihao_multibin_reference/${bin}_attempts.npz"
+done
+```
 
-### Broader composition analysis with current labels
+Every valid occupancy must be binary with exactly 24 Li. Inspect each
+`.attempts.csv`: requested/effective bin, fit seed, sampling seed, schema identity,
+physical temperature, policy, checkpoint and status must be recorded. Keep all
+192 attempts, including repeats/failures. The `.unique.npz` files contain unique
+canonical geometries for scoring. A requested class is not a measured energy.
+Physical temperature here is provenance for request allocation, not a softmax
+or latent-sampling temperature.
 
-The wider main-parent dataset already covers all Li counts 0–48. First show a
-histogram of available symmetry-unique masks per count and its split. The
-current improved-model result covers only 12, 24, and 36. Wider coverage in the
-report is useful if clearly labeled as dataset coverage or a separate test.
+Use exact cached labels where present. Uncached generated structures have
+**unknown energy**. Do not transfer a neighbor's label, drop misses, or report a
+complete new energy-yield statistic without scoring the complete declared pool.
+A small separately budgeted interface check can use the MLIP wrapper; a broad
+new inference campaign is not required for this midterm reproduction.
 
-For a controlled model test, agree with Beihao on held-out interior Li counts
-and a composition-balanced training set using the existing arrays. State
-whether the test is interpolation between trained compositions or extrapolation
-beyond them. The current 12/24/36-trained decoder can be queried at other
-counts, but the cache may not contain all its proposals. Use held-out likelihood,
-exact-count/novelty, and exact labeled-mask lookup coverage where valid. Do not
-invent energy scores for missing geometries. Endpoint counts with only one
-possible orbit are useful plumbing checks, not meaningful generative discovery
-successes.
+### 3. Explain the model and supply a controlled ablation
 
-### Small-cell exact benchmark, if time permits
+Write the encoder, Gaussian latent prior, GRU/teacher-forcing decoder, exact-count
+rule, reconstruction/KL objective, and train-only class schema in your own words.
+Plot train/validation reconstruction and KL against updates or epochs, marking
+checkpoint selection. Distinguish posterior reconstruction from prior generation
+and independent fit seeds from repeated latent draws.
 
-The prepared 12-site O3 parent has 87 symmetry orbits across all compositions,
-including 17 at six Li. Its full supplied MLIP lookup can evaluate any occupancy
-proposal in that finite parent without new calculations. This is a useful exact
-test of novelty accounting and coverage. Train a **separate compatible 12-site
-model**; do not apply the 48-site weights to a padded or truncated vector and
-call it size transfer. Near-empty/full compositions contain too few orbits for
-independent train/validation/test inference; state that limitation and begin
-with the six-Li 17-orbit subproblem if necessary. Report the small sample size.
+A bounded ablation can toggle **training-only class balancing**, with the same
+round-0 data, schema, starting checkpoint, fit seed, beta, validation objective,
+optimizer reset, schedule and update budget in both arms. For example, use `--warm-start runs/beihao_multibin_reference/best.pt` in both
+arms, set `--beta-warmup 1 --beta-final .1`,
+`--max-updates 500 --epochs 100 --minimum-epochs 1 --patience 100`, and a generous
+common time cap; add `--class-balance` only to the second arm. Use distinct output
+directories. Both optimizers start fresh. Pass the same frozen schema and exact
+geometry-protocol string used above in both arms. Confirm both actually complete
+500 updates. With the same dataset, validation/warmup exposure can be held common;
+equal update caps alone are insufficient if dataset sizes differ.
 
-These 87 MLIP labels are not 87 newly computed DFT references. The historical Hu
-DFT archive contains geometries and settings that must be matched explicitly
-before assigning its labels to a benchmark.
+Do not combine new data, label thresholds, beta schedules and balancing then
+attribute the difference to one cause. Evaluate the same protected validation
+masks and report the objective's actual weighting. New prior-sample physical
+quality requires exact labels; do not select a new checkpoint on the historical
+final yield and call that pool untouched. Three seeds are desirable for the final
+report, but one independent reproduction plus the supplied three-seed experiment
+is enough for the midterm if time is tight.
 
-### Geometry validation contribution
+**Report insertion:** methods in Sections 3–4; new fit/ablation evidence in Section
+5; independent-check status in Section 6. Supply one concise model paragraph,
+one learning curve and a small configuration/result table.
 
-Recompute the existing decoded-coordinate and 32-mask paired-relaxation summary
-with `cathode-cvae evaluate-geometry --snapshot artifacts/current --output-dir
-runs/varad_geometry`, then independently check a few lineages against the source
-CSV records.
-Keep the same teacher, input mask, optimizer, cell mode, and stopping tolerance
-within each comparison. Report direct decoded maximum force and component RMS,
-energy change, minimum atomic separation, and subsequent iterations/calls where
-available. Include the deterministic regressor. Show per-lineage paired
-differences and final endpoint energies, since stopping faster in a different
-high-energy basin is not automatically better. Cross-teacher direct scores
-test robustness to the potential; they do not measure a new generative fit.
+## Varad: independent metrics, baselines, and allocation validation
 
-## Ricardo: chemistry, data, symmetry, and interpretation
+Budget about 6–8 focused hours. Required deliverables are an independently checked
+results CSV/receipt, seed-resolved comparison, conditioning/allocation figures,
+and the validation/cost interpretation. No MLIP is required for these cached checks.
 
-Verify the parent, Li-site indexing, occupancy/vacancy convention, energy
-normalization, and VESTA examples. Check that symmetry grouping applies to the
-stated parent/cell and that no trajectory lineage crosses a split. Explain the
-difference between pristine-derived deletion, decoded coordinates, and a
-converged relaxation. Supply a concise recycling motivation and the physical
-limits of the present MLIP-label benchmark. Check any comparison with Hu's DFT
-archive against the actual coordinates, phase, system size, and DFT setup.
+### 1. Recompute the historical benchmark
 
-For a later DFT audit, propose a compact selection covering CVAE, mutation,
-random sampling, and teacher disagreement at matched composition. Selection
-is planning only; no additional DFT is needed for the present midterm tasks.
+```bash
+cathode-cvae evaluate --snapshot artifacts/current \
+  --output-dir runs/varad_historical_recompute
+```
 
-## Integration schedule
+Compare `metrics.csv`, `seed_metrics.csv`, `summary.csv` and
+`teacher_agreement.csv` with the frozen source tables. Preserve original q20 and
+its old novelty history. Check that each success is a distinct novel low-tail
+orbit but every generation attempt is a denominator contribution. Reproduce the
+historical 35.57%/40.06% AR binary, 18.99%/19.75% random, and 52.65%/54.08%
+strongest-mutation means. They are not the new multibin results.
 
-| Date | Beihao | Varad | Ricardo / shared |
+### 2. Recompute the new condition-aware benchmark
+
+```bash
+python -m cathode_cvae.condition_evaluation \
+  --attempts artifacts/overnight_20261107/benchmark/attempts.csv \
+  --candidates artifacts/overnight_20261107/benchmark/candidates.npz \
+  --scores uma=artifacts/overnight_20261107/benchmark/scores_uma.npz \
+           mace=artifacts/overnight_20261107/benchmark/scores_mace.npz \
+  --schemas uma=artifacts/overnight_20261107/data/condition_schema_uma.json \
+            mace=artifacts/overnight_20261107/data/condition_schema_mace.json \
+  --training-keys artifacts/overnight_20261107/data/training_keys.json \
+  --history artifacts/overnight_20261107/data/history_assessment.json \
+  --historical-thresholds artifacts/current/reports/generation_thresholds.csv \
+  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+  --cost-receipt artifacts/overnight_20261107/cost_receipt.json \
+  --output-dir runs/varad_new_benchmark
+```
+
+Use the same command for `demo/` inputs, adding
+`--reference-plans artifacts/overnight_20261107/allocation/allocation.json`, with a
+new output directory. Compare with the packet's completed `evaluation/` tables.
+Preserve requested bin, teacher, temperature/policy, fit seed and sampling seed
+in grouping. MACE uses its own train-derived schema; applying UMA's absolute
+energy boundaries to MACE would confuse energy zero points with controllability.
+
+Check validity/count, orbit uniqueness, novelty to **training** and to **prior
+history** separately, requested/measured confusion, in-bin hit rates, unique
+novel in-bin yield, fixed-original-q20 yield on requested-low attempts and energy
+quantiles. Check `fixed_q20_low_request.csv` for the fixed-threshold comparison
+and `allocation_joint_summary.csv` for the deduplicated mixture result.
+Do not compare a pooled low/middle/high q20 score with the old low-only
+benchmark. Uniform/mutation replicates are random seeds, not fitted models. Missing or
+failed labels must remain visible. Compare multibin, binary, composition-only,
+uniform raw sampling, bin-seeded mutation and the low-energy mutation control at
+matched attempt budgets and declared training information.
+
+Plot individual fit seeds, best energy/useful unique structures against attempts
+and scoring calls, and supplied structural diversity diagnostics. Count all
+reference labeling, cache misses, rejected prefiltered proposals, adaptation and
+training costs. Generation time alone is not an end-to-end saving. Correlated
+frames/draws do not create independent fitted models or justify tiny error bars.
+
+### 3. Check multiplicities and temperature allocation
+
+The exact finite-support command is:
+
+```bash
+python -m cathode_cvae.acquisition \
+  --reference artifacts/current/extras/learning_all_parents/learning_Hu_O3_12_uma.npz \
+  --parent artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz \
+  --reference-kind exhaustive_orbits --validate-exhaustive \
+  --output-dir runs/varad_hu_support
+```
+
+Expected: `finite_support.json` reports 87 orbits and 144 distinct parent
+permutations; at n=6, 17 orbits have total multiplicity 924. Every count sums to
+binomial(12,n). With no condition schema, zero allocation plans is expected:
+this command audits support only. The focused test
+`test_hu12_finite_support_multiplicities_and_exact_weights` additionally compares
+actual teacher-weight sums against all 924 raw masks at 433.15 K.
+
+Recompute the 48-site acquisition plans:
+
+```bash
+python -m cathode_cvae.acquisition \
+  --reference artifacts/overnight_20261107/data/reference.npz \
+  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+  --schema artifacts/overnight_20261107/data/condition_schema_uma.json \
+  --reference-kind uniform_raw_sample --counts 12 24 36 \
+  --temperatures 393.15 433.15 473.15 493.15 \
+  --mixture-weights 1 1 1 1 --exploration .1 --budget 128 \
+  --output-dir runs/varad_allocation
+```
+
+Verify total cell energies in eV, actual atom counts, complete reference scoring,
+raw sampling frequencies and no extra degeneracy factor. Check pure and 10%
+exploration policies, exact integer budget totals, temperature mixtures, ESS,
+maximum masses, and nested-prefix sensitivity. Per-temperature plans each have
+their own budget; a mixture budget is joint. The generator executes every
+schedule in its input, including both pure/exploration per-temperature and
+mixture schedules; its total is therefore larger than one `--budget`. Strong concentration is a finding,
+not proof of thermal equilibrium. Compare requested proportions with measured
+bins of generated masks; these can differ substantially.
+
+### 4. Check the physical ranking context and interpretation
+
+```bash
+python reports/ranking_audit_20261107/recompute.py \
+  --input reports/ranking_audit_20261107/paired_energies.csv \
+  --output runs/varad_ranking_recompute
+```
+
+Keep source/phase/composition/cohort pools separate; inspect top-k set sizes/ties,
+regret and energy-gap errors. In Hu's five-member optimized Li10 pool, matching
+all identities is trivial top-five overlap, while UMA selects the DFT fifth-ranked
+structure first. Avoid interpreting aggregate rattled-frame rank agreement as
+universal optimized-configuration accuracy.
+
+**Report insertion:** conditional/acquisition figures and new tables in Section
+5; uncertainty, physical limitations and historical context in Section 6.
+Provide one primary seed figure and one requested-versus-realized allocation or
+confusion figure, with source CSV and plotting command.
+
+## Ricardo: prepared material and final integration
+
+`RICARDO_CONTRIBUTION.md` and the integrated LaTeX supply the motivation,
+DFT/MLIP/MD definitions, parent/site map, geometry protocol, orbit/multiplicity
+explanation, representative structures, recomputed ranking context, primary
+materials references, and physical interpretation. The complete source/claim
+manifest accompanies the report. Review the supplied POSCAR/CIFs in VESTA and
+flag physical concerns. A new mask's low teacher energy does not establish a
+DFT ground state or thermodynamically stable phase.
+
+Ricardo integrates the independently checked team additions and chooses a compact
+later DFT validation set from the prepared handoff. No new DFT is submitted or
+scheduled in this overnight work. MD/3PT/phonon method-pilot results remain outside
+the class report except a clearly identified future-work sentence.
+
+## Optional work after the required checks
+
+Broader Li-count learning can use the existing all-count labels and
+`data prepare-learning` while preserving protected splits; endpoint compositions
+with one orbit are not meaningful discovery tests. The exact 12-site reference
+can support a separate compatible model, with novelty relative to a protected
+training subset (not all 87 known orbits). Neither padding a 48-site vector nor
+applying its weights establishes size transfer.
+
+A geometry-CVAE reproduction, property-input ablation or endpoint-only comparison
+is optional for this midterm. Keep the deterministic regressor control, full
+lineage splits, train-only scalers, and frame weights summing to one per lineage.
+Coordinate error alone does not establish low forces or optimizer savings. Do
+not let that optional campaign displace the new multibin/acquisition checks.
+
+## Integration schedule and acceptance
+
+| Date | Beihao | Varad | Ricardo/shared |
 | --- | --- | --- | --- |
-| November 7 | Fit/reload check, model paragraph, controlled ablation specification | Recomputed table, discrepancy check, figure draft | Parent/provenance/symmetry check, motivation paragraph |
-| November 8 | Learning curves and bounded ablation result, geometry-method check | Final seed figure, geometry paired summary, limits | Integrate report; freeze numerical tables and identify one editor |
-| November 9 | Verify equations, implemented method, and configurations | Verify figure/table numbers and statistical wording | Check approximately five-page body, references, and submission rules |
+| November 7 | Fit/reload, schema/method check, ablation configuration | Historical/new recomputation, support/units/budget checks | Parent/ranking/materials review; collect discrepancies |
+| November 8 | Learning curves and bounded ablation result | Seed/conditioning/allocation figures and cost statement | Integrate, freeze tables and claim-source manifest |
+| November 9 | Verify equations and implemented settings | Verify all numbers, denominators, grouping and uncertainty | Final five-page body/references/format check; manual submission before 11:59 p.m. Pacific |
 
-Plan roughly 6–8 focused hours each before this deadline; prioritize the required
-outputs before optional wider-composition or small-cell experiments. Presentation
-dates are November 24 and December 1, and the final report is due December 12.
+Use the [integration checklist](INTEGRATION_CHECKLIST.md). Mark each contribution
+complete only after its owner returns the stated evidence. Presentation dates
+are November 24 and December 1; the final report is due December 12.

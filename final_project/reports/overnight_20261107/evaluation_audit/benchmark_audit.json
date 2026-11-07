@@ -1,0 +1,439 @@
+{
+  "status": "PASS",
+  "scope": "Independent recomputation directly from actual attempts,candidate arrays and teacher total energies; evaluator functions were not called",
+  "attempts": 41472,
+  "unique_candidates": 40662,
+  "all_generated": true,
+  "score_coverage_each_teacher": 1.0,
+  "groups_per_teacher": 162,
+  "attempts_per_group": 256,
+  "parent_canonicality_full_check": true,
+  "teacher_specific_quantiles_verified": true,
+  "training_novelty_keys": 40157,
+  "history_keys": 188919,
+  "summary": [
+    {
+      "teacher": "uma",
+      "method": "binary",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.31915509259259256,
+      "replicate_yields": [
+        0.3177083333333333,
+        0.3298611111111111,
+        0.3098958333333333
+      ],
+      "minimum_replicate": 0.3098958333333333,
+      "maximum_replicate": 0.3298611111111111,
+      "replicate_standard_deviation": 0.010060959867311182
+    },
+    {
+      "teacher": "uma",
+      "method": "composition",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.3172743055555556,
+      "replicate_yields": [
+        0.3159722222222222,
+        0.3255208333333333,
+        0.3103298611111111
+      ],
+      "minimum_replicate": 0.3103298611111111,
+      "maximum_replicate": 0.3255208333333333,
+      "replicate_standard_deviation": 0.0076787352486780034
+    },
+    {
+      "teacher": "uma",
+      "method": "multibin",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.31004050925925924,
+      "replicate_yields": [
+        0.3025173611111111,
+        0.3185763888888889,
+        0.3090277777777778
+      ],
+      "minimum_replicate": 0.3025173611111111,
+      "maximum_replicate": 0.3185763888888889,
+      "replicate_standard_deviation": 0.008077271326509181
+    },
+    {
+      "teacher": "uma",
+      "method": "mutation_bin",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.5839120370370371,
+      "replicate_yields": [
+        0.5872395833333334,
+        0.5876736111111112,
+        0.5768229166666666
+      ],
+      "minimum_replicate": 0.5768229166666666,
+      "maximum_replicate": 0.5876736111111112,
+      "replicate_standard_deviation": 0.006143192634711315
+    },
+    {
+      "teacher": "uma",
+      "method": "mutation_low",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.3392650462962963,
+      "replicate_yields": [
+        0.3294270833333333,
+        0.3502604166666667,
+        0.3381076388888889
+      ],
+      "minimum_replicate": 0.3294270833333333,
+      "maximum_replicate": 0.3502604166666667,
+      "replicate_standard_deviation": 0.010464780856496039
+    },
+    {
+      "teacher": "uma",
+      "method": "uniform",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.33000578703703703,
+      "replicate_yields": [
+        0.3294270833333333,
+        0.3237847222222222,
+        0.3368055555555556
+      ],
+      "minimum_replicate": 0.3237847222222222,
+      "maximum_replicate": 0.3368055555555556,
+      "replicate_standard_deviation": 0.006529678296525921
+    },
+    {
+      "teacher": "mace",
+      "method": "binary",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.3103298611111111,
+      "replicate_yields": [
+        0.3077256944444444,
+        0.3224826388888889,
+        0.30078125
+      ],
+      "minimum_replicate": 0.30078125,
+      "maximum_replicate": 0.3224826388888889,
+      "replicate_standard_deviation": 0.011082591436461555
+    },
+    {
+      "teacher": "mace",
+      "method": "composition",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.3194444444444445,
+      "replicate_yields": [
+        0.3168402777777778,
+        0.3289930555555556,
+        0.3125
+      ],
+      "minimum_replicate": 0.3125,
+      "maximum_replicate": 0.3289930555555556,
+      "replicate_standard_deviation": 0.008549355730725797
+    },
+    {
+      "teacher": "mace",
+      "method": "multibin",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.31235532407407407,
+      "replicate_yields": [
+        0.3068576388888889,
+        0.3263888888888889,
+        0.3038194444444444
+      ],
+      "minimum_replicate": 0.3038194444444444,
+      "maximum_replicate": 0.3263888888888889,
+      "replicate_standard_deviation": 0.01224799422065792
+    },
+    {
+      "teacher": "mace",
+      "method": "mutation_bin",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.5753761574074074,
+      "replicate_yields": [
+        0.5746527777777778,
+        0.5772569444444444,
+        0.57421875
+      ],
+      "minimum_replicate": 0.57421875,
+      "maximum_replicate": 0.5772569444444444,
+      "replicate_standard_deviation": 0.0016432026463542291
+    },
+    {
+      "teacher": "mace",
+      "method": "mutation_low",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.34403935185185186,
+      "replicate_yields": [
+        0.3346354166666667,
+        0.3493923611111111,
+        0.3480902777777778
+      ],
+      "minimum_replicate": 0.3346354166666667,
+      "maximum_replicate": 0.3493923611111111,
+      "replicate_standard_deviation": 0.008170027721930257
+    },
+    {
+      "teacher": "mace",
+      "method": "uniform",
+      "replicate_count": 3,
+      "mean_novel_inbin_yield": 0.3337673611111111,
+      "replicate_yields": [
+        0.3350694444444444,
+        0.3355034722222222,
+        0.3307291666666667
+      ],
+      "minimum_replicate": 0.3307291666666667,
+      "maximum_replicate": 0.3355034722222222,
+      "replicate_standard_deviation": 0.0026400879037752484
+    }
+  ],
+  "fixed_q20_low_request": [
+    {
+      "teacher": "uma",
+      "method": "binary",
+      "mean_novel_fixed_q20_low_request_yield": 0.33940972222222227,
+      "replicate_yields": [
+        0.3177083333333333,
+        0.3385416666666667,
+        0.3619791666666667
+      ]
+    },
+    {
+      "teacher": "uma",
+      "method": "composition",
+      "mean_novel_fixed_q20_low_request_yield": 0.3125,
+      "replicate_yields": [
+        0.2708333333333333,
+        0.3515625,
+        0.3151041666666667
+      ]
+    },
+    {
+      "teacher": "uma",
+      "method": "multibin",
+      "mean_novel_fixed_q20_low_request_yield": 0.3298611111111111,
+      "replicate_yields": [
+        0.33203125,
+        0.3359375,
+        0.3216145833333333
+      ]
+    },
+    {
+      "teacher": "uma",
+      "method": "mutation_bin",
+      "mean_novel_fixed_q20_low_request_yield": 0.5164930555555555,
+      "replicate_yields": [
+        0.5299479166666666,
+        0.5143229166666666,
+        0.5052083333333334
+      ]
+    },
+    {
+      "teacher": "uma",
+      "method": "mutation_low",
+      "mean_novel_fixed_q20_low_request_yield": 0.5199652777777778,
+      "replicate_yields": [
+        0.5065104166666666,
+        0.5299479166666666,
+        0.5234375
+      ]
+    },
+    {
+      "teacher": "uma",
+      "method": "uniform",
+      "mean_novel_fixed_q20_low_request_yield": 0.17491319444444442,
+      "replicate_yields": [
+        0.17447916666666666,
+        0.16666666666666666,
+        0.18359375
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "binary",
+      "mean_novel_fixed_q20_low_request_yield": 0.36762152777777773,
+      "replicate_yields": [
+        0.3567708333333333,
+        0.3645833333333333,
+        0.3815104166666667
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "composition",
+      "mean_novel_fixed_q20_low_request_yield": 0.3546006944444444,
+      "replicate_yields": [
+        0.296875,
+        0.3984375,
+        0.3684895833333333
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "multibin",
+      "mean_novel_fixed_q20_low_request_yield": 0.3723958333333333,
+      "replicate_yields": [
+        0.3932291666666667,
+        0.3736979166666667,
+        0.3502604166666667
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "mutation_bin",
+      "mean_novel_fixed_q20_low_request_yield": 0.5243055555555555,
+      "replicate_yields": [
+        0.5286458333333334,
+        0.5260416666666666,
+        0.5182291666666666
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "mutation_low",
+      "mean_novel_fixed_q20_low_request_yield": 0.5442708333333334,
+      "replicate_yields": [
+        0.5299479166666666,
+        0.5494791666666666,
+        0.5533854166666666
+      ]
+    },
+    {
+      "teacher": "mace",
+      "method": "uniform",
+      "mean_novel_fixed_q20_low_request_yield": 0.18359375,
+      "replicate_yields": [
+        0.18619791666666666,
+        0.18229166666666666,
+        0.18229166666666666
+      ]
+    }
+  ],
+  "checkpoint_evidence": [
+    {
+      "method": "multibin",
+      "fit_seed": 20261106,
+      "checkpoint_sha256": "293604d4b515a443f9870b8baba99b0d6dbac34c55ec7338c3a8184e363a7e9c",
+      "condition_dim": 4,
+      "condition_mode": "multibin",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "binary",
+      "fit_seed": 20261106,
+      "checkpoint_sha256": "f1781946fa192760d64c0b31bfbc9c681b2a1e9cfb289fb19ad66d7f2a9d2b26",
+      "condition_dim": 2,
+      "condition_mode": "energy",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "composition",
+      "fit_seed": 20261106,
+      "checkpoint_sha256": "abbb35ba2aa386390b17876203c6fe9cd90e8f6dadb56d238a2f224abf03adfc",
+      "condition_dim": 1,
+      "condition_mode": "composition",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "multibin",
+      "fit_seed": 20261107,
+      "checkpoint_sha256": "b483bcfe6d4b2c65bc6607b831c86092e3abd88d9a614589c192864a2e64d389",
+      "condition_dim": 4,
+      "condition_mode": "multibin",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "binary",
+      "fit_seed": 20261107,
+      "checkpoint_sha256": "8bc7d6466f0abbc2f1bc48f7ec4243503af3995b186765792cba3b077f24dd77",
+      "condition_dim": 2,
+      "condition_mode": "energy",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "composition",
+      "fit_seed": 20261107,
+      "checkpoint_sha256": "70b344fbaa21b33faa5099a940c7fb2055067db5716221b5674ba3d5e8297bf5",
+      "condition_dim": 1,
+      "condition_mode": "composition",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "multibin",
+      "fit_seed": 20261108,
+      "checkpoint_sha256": "ca89ac8e4e3496d3446eaeb1f1685e96f902d6a3eddb81dd67d8f4a21f6ba2a8",
+      "condition_dim": 4,
+      "condition_mode": "multibin",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "binary",
+      "fit_seed": 20261108,
+      "checkpoint_sha256": "5ce587f440e4c928fe38607006b81e62c703145cb9855495a1a46ac5bc7a956b",
+      "condition_dim": 2,
+      "condition_mode": "energy",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    },
+    {
+      "method": "composition",
+      "fit_seed": 20261108,
+      "checkpoint_sha256": "3d8cf4c409727e11eb3128b41d90ad09032d0938d5d64c2555f6a3ef8c38dde7",
+      "condition_dim": 1,
+      "condition_mode": "composition",
+      "train_rows": 40157,
+      "val_rows": 4967,
+      "test_rows": 5123,
+      "tf32": false
+    }
+  ],
+  "source_hashes": {
+    "attempts": "69ab152c73e335a095874ff4929c7b6a88ba3faf0a5a48a6b0ec8faf11e514a7",
+    "candidates": "8277d4cb939a070170e948c1fb1c899ed0dac44a2938d87d6b67918e628dd5bf",
+    "training_keys": "3da713f0fbaa0237819dda06c08ba85c6556042bc357c7942075a9c033c18e13",
+    "history": "2c2636d7e23b751f75bc079b71f30d5c79fde3eb61300e67a14ec0e1a6da0e71",
+    "historical_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "scores_uma": "c32bf5e8d99e9a07dbafc3c0c1de79907f7f49ddb25dce46407a1f4be717041c",
+    "schema_uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "scores_mace": "94583efca304256aad742cf4423d6f192da65220b2898722f3fc20950ef42ac1",
+    "schema_mace": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769"
+  },
+  "script_sha256": "156eabb2fb02e378df4b734fda07e97a7772aefe59341f562b6872142acc2acb",
+  "plot_paths": [
+    "runs/overnight_20261107/evaluation/benchmark/figures/condition_quality_mace_fixed-balanced-bin-budget_fixed_6c7d5ec1_bd5c067d.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/condition_quality_mace_fixed-balanced-bin-budget_fixed_6c7d5ec1_bd5c067d.png",
+    "runs/overnight_20261107/evaluation/benchmark/figures/condition_quality_uma_fixed-balanced-bin-budget_fixed_6c7d5ec1_6c7d5ec1.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/condition_quality_uma_fixed-balanced-bin-budget_fixed_6c7d5ec1_6c7d5ec1.png",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_proposal_budget_mace_fixed-balanced-bin-budget_6c7d5ec1_bd5c067d.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_proposal_budget_mace_fixed-balanced-bin-budget_6c7d5ec1_bd5c067d.png",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_proposal_budget_uma_fixed-balanced-bin-budget_6c7d5ec1_6c7d5ec1.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_proposal_budget_uma_fixed-balanced-bin-budget_6c7d5ec1_6c7d5ec1.png",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_query_budget_mace_fixed-balanced-bin-budget_6c7d5ec1_bd5c067d.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_query_budget_mace_fixed-balanced-bin-budget_6c7d5ec1_bd5c067d.png",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_query_budget_uma_fixed-balanced-bin-budget_6c7d5ec1_6c7d5ec1.pdf",
+    "runs/overnight_20261107/evaluation/benchmark/figures/low_yield_query_budget_uma_fixed-balanced-bin-budget_6c7d5ec1_6c7d5ec1.png"
+  ],
+  "interpretation": [
+    "New multibin does not improve equal-requested-bin novelty yield over uniform in this experiment.",
+    "Old35.57/40.06 values are a separate historical low-only experiment, not these new multibin numbers.",
+    "Layer descriptor is a coordinate-frame proposal statistic, not phase/basin diversity."
+  ]
+}

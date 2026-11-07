@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "reference_rows": 24575,
+  "raw_draws": 24576,
+  "required_missing_ids": 0,
+  "scored_reference_rows": 24575,
+  "all_reference_energies_finite": true,
+  "complete_reference_required": true,
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "condition_schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+  "teacher": "uma",
+  "head": "omat",
+  "checkpoint_name": "UMA-S-1.2.1",
+  "checkpoint_hashes": {
+    "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+  },
+  "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+  "energy_units": "eV/cell",
+  "physical_temperature_units": "K",
+  "reference_measure": "Independent uniform raw fixed-count masks, collapsed with retained raw frequencies; no extra orbit multiplicity",
+  "prefix_sizes": [
+    512,
+    1024,
+    2048,
+    4096,
+    8192
+  ],
+  "temperatures_K": [
+    393.15,
+    433.15,
+    473.15,
+    493.15
+  ],
+  "source_hashes": {
+    "reference": "0928bd23a05ca5189d1f35125af44380a5bbaf044f92644a545f09c416670bac",
+    "scores": "3d5a728ba0e8f3554688e48f77de00d74348e6c89c01f58291662790c247dfef",
+    "schema": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "joined_reference": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+    "script": "3640df1a2962be28ed58dddfd48631ddeee3d9b7fc80fe81e3cc995d098127e8"
+  },
+  "source_score_collector_receipt": {
+    "status": "PASS",
+    "tasks": 811,
+    "missing_tasks": [],
+    "failed_structures": [],
+    "model_counts": {
+      "uma": 24575,
+      "mace": 27240
+    },
+    "registry_sha256": "15a4cb22734a0cf48d001a670b308d36d71e72ee296ac40cb5ac4c6acd0f1acd",
+    "scope": "Exact canonical deletion geometries, fixed parent/teacher/precision; raw force vectors retain evaluated orientation"
+  },
+  "uma_worker_receipts": [
+    {
+      "receipt_sha256": "dd1bf332d89f1055b32857f569afe858e44e28215be7cda52ad34374a770bc0d",
+      "worker": "60955384_nid002837_651718",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "5a2e8f3b876c1b6bbd8fe17379a546e18011dc83c34b8db1cd3d525ab225011e",
+      "worker": "60955384_nid002837_651721",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "046ab7ad34d495958c95c152823cff60d0d1a05a8cc69f5ece827d94708eb5d6",
+      "worker": "60955384_nid002840_449043",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "b89206fa71aa0751a4cdeab2e540e0e1a20551b4311aab38aef22939aaf645c0",
+      "worker": "60955384_nid002840_449046",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "6b068c328d4d0a2da4a12ee06e17db445909ecfa84b8bc605a3f7423eabf85ae",
+      "worker": "60955384_nid200473_769789",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "39840c8d9100c16c9e23b90b100a4ec5e0ce64f047db96bd8e3db7f398cf43ad",
+      "worker": "60955384_nid200473_769792",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "361ccde2635cfbb8d93c96e0ba5bd984b1a220b3a824edc8dce0049de786c6b4",
+      "worker": "60955384_nid200476_563466",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    },
+    {
+      "receipt_sha256": "d273a97ab23df6dfe11014c6ee11ba931e9cd4754f4f86cac85bf3c797d85c7d",
+      "worker": "60955384_nid200476_563469",
+      "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "package_version": "2.25.0",
+      "head": "omat",
+      "dtype": "float32",
+      "tf32": false,
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      }
+    }
+  ],
+  "outputs": {
+    "allocation_fractions.csv": "87d2cc79f2d0edc80860a6c70d2e0bdb358969e741a68fd351e2f8421734c886",
+    "prefix_metrics.csv": "65cb300619262948964b641763839940a0fdc3310339444bcdc6c5a7f6370cca",
+    "prefix_sensitivity.pdf": "985b853595e00cc51b8eb9b2ea5ca796fe28b50e7d974a022baa8b6159a08430",
+    "prefix_sensitivity.png": "3eea9a6a59d47d76b825ae07addbb2946646eea554322512fa39ea87977af10a",
+    "reference_population.csv": "a8cf1a47ebaac8007ee12750a032497d163aa90c588bebda2113ba7536ea70ae",
+    "requested_bin_fractions.pdf": "b2d5263530e0e4cd4a935cc5f3a38012f35c4b56c96d78dd5a67f9cb18b39b43",
+    "requested_bin_fractions.png": "ab43ab9bee64168a57dfaa6df94790163a01a89ff83a02c4afd1d1f2d863547c"
+  },
+  "interpretation": "Measured complete-reference acquisition under a static UMA surrogate; nested prefixes are not independent replicates or confidence intervals; finite samples can miss rare low-energy states"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "PREPARED",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "reference_sha256": "0928bd23a05ca5189d1f35125af44380a5bbaf044f92644a545f09c416670bac",
+  "raw_draws": 24576,
+  "unique_geometries": 24575,
+  "per_composition_raw": 8192,
+  "seed": 20261107,
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "prior_history": 164345,
+  "assessment_history": 188919,
+  "reference_measure": "Independent uniform raw fixed-count masks; canonical physical scoring; raw frequencies retained; no multiplicity double count",
+  "condition_schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+  "provenance": {
+    "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "split_sha256": "887bb1f347c7e27f68f7abcc87b8e20ac33e05a3c795714f48d1600c1e885620",
+    "teacher": "uma",
+    "head": "omat",
+    "checkpoint": "UMA-S-1.2.1",
+    "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+    "energy_label_origin": "Existing round0 training corpus, same protected splits; quantiles describe this training corpus, not DOS"
+  },
+  "schema_provenance_repair": "Attempt0 strict trainer rejected mismatched geometry_protocol string and incomplete teacher keys; failed runs preserved, labels/edges/refpool unchanged."
+}

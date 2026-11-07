@@ -1,0 +1,2608 @@
+{
+  "schema_version": "static-acquisition-run-v1",
+  "source": {
+    "reference_sha256": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+    "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "reference_kind": "uniform_raw_sample",
+    "reference_rows": 24575,
+    "reference_metadata": {
+      "teacher": "uma",
+      "head": "omat",
+      "checkpoint_sha256": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+      "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+      "sampling_measure": "independent uniform raw fixed-count masks; frequencies retained",
+      "sampling_seed": 20261107
+    },
+    "condition_schema_sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "condition_schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c"
+  },
+  "plans": [
+    {
+      "schema_version": "static-acquisition-v1",
+      "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "reference_id": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+      "composition": 12,
+      "n_target": 12,
+      "reference_measure": "uniform_raw_sample",
+      "temperature_units": "K",
+      "energy_units": "eV/cell",
+      "k_B_eV_K": 8.617333262145e-05,
+      "temperatures_K": [
+        393.15,
+        433.15,
+        473.15,
+        493.15
+      ],
+      "mixture_condition_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "supported_bins": [
+        "low",
+        "middle",
+        "high"
+      ],
+      "per_temperature": [
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 0.9999953691525519,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 4.630847388038346e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 6.003165631377419e-14,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 0.9005501730382053,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 3.7926606332766832,
+            "microstate_or_particle_ess": 3.7926606332766797,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.40634603759673527,
+            "maximum_single_microstate_or_particle_probability": 0.4063460375967354,
+            "mean_energy_eV": -891.8987297040869,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333291655706301,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333750109598257,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333338736,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 0.9005501730382053,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 3.7926606332766832,
+            "microstate_or_particle_ess": 3.7926606332766797,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.40634603759673527,
+            "maximum_single_microstate_or_particle_probability": 0.4063460375967354,
+            "mean_energy_eV": -891.8987297040869,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 0.9999779288193367,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 2.2071179228603126e-05,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 1.4347345593151667e-12,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.0178623394455448,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 4.629263564037121,
+            "microstate_or_particle_ess": 4.629263564037117,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.36136659422619255,
+            "maximum_single_microstate_or_particle_probability": 0.36136659422619255,
+            "mean_energy_eV": -891.8868275288196,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333134692707363,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03335319739463907,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333462459,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.0178623394455448,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 4.629263564037121,
+            "microstate_or_particle_ess": 4.629263564037117,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.36136659422619255,
+            "maximum_single_microstate_or_particle_probability": 0.36136659422619255,
+            "mean_energy_eV": -891.8868275288196,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 0.9999208489674786,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 7.915101291437863e-05,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 1.960724162604958e-11,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.144224605591917,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 5.747833432503821,
+            "microstate_or_particle_ess": 5.747833432503821,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.31847076252543816,
+            "maximum_single_microstate_or_particle_probability": 0.318470762525438,
+            "mean_energy_eV": -891.8732462394144,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9332620974040641,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03340456924495627,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333335097985,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.144224605591917,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 5.747833432503821,
+            "microstate_or_particle_ess": 5.747833432503821,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.31847076252543816,
+            "maximum_single_microstate_or_particle_probability": 0.318470762525438,
+            "mean_energy_eV": -891.8732462394144,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 0.9998623960190507,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 0.00013760391964910636,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 6.130012418310548e-11,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.2103725297091406,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.439128438839554,
+            "microstate_or_particle_ess": 6.439128438839544,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.2980862127732139,
+            "maximum_single_microstate_or_particle_probability": 0.29808621277321395,
+            "mean_energy_eV": -891.8659079233402,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.933209489750479,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.033457176861017526,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.033333333388503444,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -891.9361578848925,
+            "log_partition_relative": 1.2103725297091406,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.439128438839554,
+            "microstate_or_particle_ess": 6.439128438839544,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.2980862127732139,
+            "maximum_single_microstate_or_particle_probability": 0.29808621277321395,
+            "mean_energy_eV": -891.8659079233402,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        }
+      ],
+      "temperature_mixtures": [
+        {
+          "allocation_policy": "temperature_mixture_static",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999884228813798,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.1577118470095865e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.5007914078443546e-14,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999448220483417,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 5.5177948071507814e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 3.586836398287917e-13,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24998021224186964,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.978775322859466e-05,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 4.901810406512395e-12,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24996559900476267,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 3.440097991227659e-05,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.532503104577637e-11,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "exploration_fraction": 0.0
+        },
+        {
+          "allocation_policy": "temperature_mixture_static_exploration",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333229139265751,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008334375273995642,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.00833333333334684,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23332836731768408,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008338299348659768,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333656148,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23331552435101602,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008351142311239068,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333337744962,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23330237243761975,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008364294215254382,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333347125861,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 12
+            }
+          ],
+          "exploration_fraction": 0.1
+        }
+      ],
+      "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; not a thermodynamic population estimate",
+      "allocation_id": "ea580986311fa3f06c36edc513b50ce9e67949d5f332a395726fe6a1a201eff8"
+    },
+    {
+      "schema_version": "static-acquisition-v1",
+      "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "reference_id": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+      "composition": 24,
+      "n_target": 24,
+      "reference_measure": "uniform_raw_sample",
+      "temperature_units": "K",
+      "energy_units": "eV/cell",
+      "k_B_eV_K": 8.617333262145e-05,
+      "temperatures_K": [
+        393.15,
+        433.15,
+        473.15,
+        493.15
+      ],
+      "mixture_condition_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "supported_bins": [
+        "low",
+        "middle",
+        "high"
+      ],
+      "per_temperature": [
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 0.9999999982307182,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 1.7692817073693594e-09,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 5.5284751137549485e-21,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.31651283632289584,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 1.8499832314546385,
+            "microstate_or_particle_ess": 1.8499832314546378,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.7286856578553571,
+            "maximum_single_microstate_or_particle_probability": 0.7286856578553571,
+            "mean_energy_eV": -961.849325295658,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333333317409797,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333492568687,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333333333,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.31651283632289584,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 1.8499832314546385,
+            "microstate_or_particle_ess": 1.8499832314546378,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.7286856578553571,
+            "maximum_single_microstate_or_particle_probability": 0.7286856578553571,
+            "mean_energy_eV": -961.849325295658,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 0.9999999823017767,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 1.7698223310068155e-08,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 6.094423937298248e-19,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.4246960465924942,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 2.270854170360188,
+            "microstate_or_particle_ess": 2.2708541703601854,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.6539685308869564,
+            "maximum_single_microstate_or_particle_probability": 0.6539685308869567,
+            "mean_energy_eV": -961.8370920118165,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333333174049323,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333334926173431,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333333333,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.4246960465924942,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 2.270854170360188,
+            "microstate_or_particle_ess": 2.2708541703601854,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.6539685308869564,
+            "maximum_single_microstate_or_particle_probability": 0.6539685308869567,
+            "mean_energy_eV": -961.8370920118165,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 0.9999998825146624,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 1.1748533758358183e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 2.966307571204221e-17,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.5437291090661358,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 2.8375004370197496,
+            "microstate_or_particle_ess": 2.83750043701975,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.5805791674735242,
+            "maximum_single_microstate_or_particle_probability": 0.5805791674735241,
+            "mean_energy_eV": -961.8236659110057,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333332275965295,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333343907013716,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333333336,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.5437291090661358,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 2.8375004370197496,
+            "microstate_or_particle_ess": 2.83750043701975,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.5805791674735242,
+            "maximum_single_microstate_or_particle_probability": 0.5805791674735241,
+            "mean_energy_eV": -961.8236659110057,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 0.9999997322523102,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 2.677476896551388e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 1.6205646473766932e-16,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.6063905879179395,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 3.1867996222880723,
+            "microstate_or_particle_ess": 3.1867996222880715,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.545315589876628,
+            "maximum_single_microstate_or_particle_probability": 0.5453155898766281,
+            "mean_energy_eV": -961.8166412081756,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333330923604125,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333357430625402,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333333348,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -961.8832130120569,
+            "log_partition_relative": 0.6063905879179395,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 3.1867996222880723,
+            "microstate_or_particle_ess": 3.1867996222880715,
+            "total_measure": 8192.0,
+            "representative_count": 8192,
+            "maximum_representative_mass": 0.545315589876628,
+            "maximum_single_microstate_or_particle_probability": 0.5453155898766281,
+            "mean_energy_eV": -961.8166412081756,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        }
+      ],
+      "temperature_mixtures": [
+        {
+          "allocation_policy": "temperature_mixture_static",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999999955767954,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 4.4232042684233984e-10,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.3821187784387371e-21,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999999557544417,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 4.424555827517039e-09,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.523605984324562e-19,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.2499999706286656,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 2.9371334395895456e-08,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 7.415768928010552e-18,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999993306307755,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 6.69369224137847e-08,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 4.051411618441733e-17,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "exploration_fraction": 0.0
+        },
+        {
+          "allocation_policy": "temperature_mixture_static_exploration",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.2333333329352449,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333731421717,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333333333,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333332935123308,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333337315433578,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333333333,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333330689913237,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.00833335976753429,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.00833333333333334,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333327309010313,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333393576563505,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.00833333333333337,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 24
+            }
+          ],
+          "exploration_fraction": 0.1
+        }
+      ],
+      "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; not a thermodynamic population estimate",
+      "allocation_id": "832435db225024b1845f8499812a18837211d4d8c9cfbf07d2e2a3223dc49647"
+    },
+    {
+      "schema_version": "static-acquisition-v1",
+      "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "reference_id": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+      "composition": 36,
+      "n_target": 36,
+      "reference_measure": "uniform_raw_sample",
+      "temperature_units": "K",
+      "energy_units": "eV/cell",
+      "k_B_eV_K": 8.617333262145e-05,
+      "temperatures_K": [
+        393.15,
+        433.15,
+        473.15,
+        493.15
+      ],
+      "mixture_condition_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "supported_bins": [
+        "low",
+        "middle",
+        "high"
+      ],
+      "per_temperature": [
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 0.999999897469841,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 1.0253015876056581e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static",
+              "probability": 2.0088772504099272e-16,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.123142165588824,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 4.900196577784441,
+            "microstate_or_particle_ess": 4.900196577784439,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.3252561785079104,
+            "maximum_single_microstate_or_particle_probability": 0.3252561785079104,
+            "mean_energy_eV": -1030.8266868989126,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 393.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333332410561902,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333342561047622,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333333351,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.123142165588824,
+            "temperature_K": 393.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 4.900196577784441,
+            "microstate_or_particle_ess": 4.900196577784439,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.3252561785079104,
+            "maximum_single_microstate_or_particle_probability": 0.3252561785079104,
+            "mean_energy_eV": -1030.8266868989126,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 0.9999993075831761,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 6.92416815812239e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static",
+              "probability": 8.190479413112354e-15,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.2073186914619634,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 5.480123376344296,
+            "microstate_or_particle_ess": 5.480123376344297,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.29899791123201264,
+            "maximum_single_microstate_or_particle_probability": 0.29899791123201264,
+            "mean_energy_eV": -1030.8205981718565,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 433.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333327101581919,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.033333956508467565,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.0333333333333407,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.2073186914619634,
+            "temperature_K": 433.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 5.480123376344296,
+            "microstate_or_particle_ess": 5.480123376344297,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.29899791123201264,
+            "maximum_single_microstate_or_particle_probability": 0.29899791123201264,
+            "mean_energy_eV": -1030.8205981718565,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 0.9999966354569646,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 3.36454285854564e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static",
+              "probability": 1.7681819019060382e-13,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.2924162908213617,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.158032100790452,
+            "microstate_or_particle_ess": 6.158032100790449,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.2746064517552592,
+            "maximum_single_microstate_or_particle_probability": 0.27460645175525916,
+            "mean_energy_eV": -1030.8132638686266,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 473.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333303052446015,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.033336361421906026,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333349247,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.2924162908213617,
+            "temperature_K": 473.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.158032100790452,
+            "microstate_or_particle_ess": 6.158032100790449,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.2746064517552592,
+            "maximum_single_microstate_or_particle_probability": 0.27460645175525916,
+            "mean_energy_eV": -1030.8132638686266,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static",
+          "exploration_fraction": 0.0,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 0.9999932829197298,
+              "attempts": 128,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 6.717079591381693e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static",
+              "probability": 6.788954280137674e-13,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.3356683770895643,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.543587047762842,
+            "microstate_or_particle_ess": 6.5435870477628395,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.2629823453275828,
+            "maximum_single_microstate_or_particle_probability": 0.2629823453275828,
+            "mean_energy_eV": -1030.8090941452851,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        },
+        {
+          "temperature_K": 493.15,
+          "allocation_policy": "static_exploration",
+          "exploration_fraction": 0.1,
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.9333272879610901,
+              "attempts": 120,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.033339378704965575,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "allocation_policy": "static_exploration",
+              "probability": 0.03333333333394434,
+              "attempts": 4,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "reference_diagnostics": {
+            "E_ref_eV": -1030.8547202248626,
+            "log_partition_relative": 1.3356683770895643,
+            "temperature_K": 493.15,
+            "measure_kind": "uniform_raw_sample",
+            "representative_ess": 6.543587047762842,
+            "microstate_or_particle_ess": 6.5435870477628395,
+            "total_measure": 8192.0,
+            "representative_count": 8191,
+            "maximum_representative_mass": 0.2629823453275828,
+            "maximum_single_microstate_or_particle_probability": 0.2629823453275828,
+            "mean_energy_eV": -1030.8090941452851,
+            "ess_interpretation": "IID uniform-raw reference importance-sampling particle ESS; duplicates retained"
+          }
+        }
+      ],
+      "temperature_mixtures": [
+        {
+          "allocation_policy": "temperature_mixture_static",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999997436746024,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 2.5632539690141452e-08,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 5.022193126024818e-17,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999982689579403,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.7310420395305975e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 2.0476198532780886e-15,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999915886424115,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 8.4113571463641e-07,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 4.4204547547650956e-14,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 0.24999832072993244,
+              "attempts": 32,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.6792698978454233e-06,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static",
+              "probability": 1.6972385700344185e-13,
+              "attempts": 0,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "exploration_fraction": 0.0
+        },
+        {
+          "allocation_policy": "temperature_mixture_static_exploration",
+          "budget": 128,
+          "requests": [
+            {
+              "requested_bin": "low",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333331026404755,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333356402619055,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 393.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333333378,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333317753954796,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333489127116891,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 433.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333335175,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333257631115037,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008334090355476506,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 473.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333373117,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "low",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.23333182199027253,
+              "attempts": 30,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "middle",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008334844676241394,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            },
+            {
+              "requested_bin": "high",
+              "temperature_K": 493.15,
+              "temperature_condition_weight": 0.25,
+              "allocation_policy": "temperature_mixture_static_exploration",
+              "probability": 0.008333333333486084,
+              "attempts": 1,
+              "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+              "n_target": 36
+            }
+          ],
+          "exploration_fraction": 0.1
+        }
+      ],
+      "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; not a thermodynamic population estimate",
+      "allocation_id": "9df1471bffb633e910ec0c04a9f5cf0093d2c1a339f60745ff4a57ca89606d50"
+    }
+  ],
+  "reference_pool_sensitivity": [
+    {
+      "temperature_K": 393.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999965121634851,
+            "middle": 3.4878364680374986e-06,
+            "high": 4.6768440646007083e-14
+          },
+          "l1_difference_to_full_pool": 2.2860218663885854e-06,
+          "particle_ess": 1.4436659366389397,
+          "maximum_representative_mass": 0.8197309933074914
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999973529265413,
+            "middle": 2.6470734215649245e-06,
+            "high": 3.697447184910338e-14
+          },
+          "l1_difference_to_full_pool": 3.967547978941903e-06,
+          "particle_ess": 2.7998099701670953,
+          "maximum_representative_mass": 0.4753818479331355
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999953691525519,
+            "middle": 4.630847388038346e-06,
+            "high": 6.003165631377419e-14
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 3.7926606332766797,
+          "maximum_representative_mass": 0.40634603759673527
+        }
+      ],
+      "n_target": 12
+    },
+    {
+      "temperature_K": 433.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.999982829309594,
+            "middle": 1.7170689253659823e-05,
+            "high": 1.1522176158099228e-12
+          },
+          "l1_difference_to_full_pool": 9.800980514824855e-06,
+          "particle_ess": 1.5839762725272666,
+          "maximum_representative_mass": 0.7781010019996814
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999867435683637,
+            "middle": 1.3256430714142801e-05,
+            "high": 9.221115943564332e-13
+          },
+          "l1_difference_to_full_pool": 1.762949805411401e-05,
+          "particle_ess": 3.1285007991918294,
+          "maximum_representative_mass": 0.4432552817497131
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999779288193367,
+            "middle": 2.2071179228603126e-05,
+            "high": 1.4347345593151667e-12
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 4.629263564037117,
+          "maximum_representative_mass": 0.36136659422619255
+        }
+      ],
+      "n_target": 12
+    },
+    {
+      "temperature_K": 473.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999360339445734,
+            "middle": 6.396603909101656e-05,
+            "high": 1.633550554180281e-11
+          },
+          "l1_difference_to_full_pool": 3.0369954189949052e-05,
+          "particle_ess": 1.764426018734403,
+          "maximum_representative_mass": 0.7325022899492956
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999499533367846,
+            "middle": 5.004665003093457e-05,
+            "high": 1.3184564002885012e-11
+          },
+          "l1_difference_to_full_pool": 5.8208738612153904e-05,
+          "particle_ess": 3.548492210249916,
+          "maximum_representative_mass": 0.41042058970099243
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999208489674786,
+            "middle": 7.915101291437863e-05,
+            "high": 1.960724162604958e-11
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 5.747833432503821,
+          "maximum_representative_mass": 0.31847076252543816
+        }
+      ],
+      "n_target": 12
+    },
+    {
+      "temperature_K": 493.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9998865320001262,
+            "middle": 0.00011346794778723666,
+            "high": 5.208668553197786e-11
+          },
+          "l1_difference_to_full_pool": 4.8271962150843175e-05,
+          "particle_ess": 1.8737886916041606,
+          "maximum_representative_mass": 0.7083497440895681
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.999910718595993,
+            "middle": 8.928136182832609e-05,
+            "high": 4.2178759772780024e-11
+          },
+          "l1_difference_to_full_pool": 9.664515388446146e-05,
+          "particle_ess": 3.8009999804359262,
+          "maximum_representative_mass": 0.3938309725433785
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9998623960190507,
+            "middle": 0.00013760391964910636,
+            "high": 6.130012418310548e-11
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 6.439128438839544,
+          "maximum_representative_mass": 0.2980862127732139
+        }
+      ],
+      "n_target": 12
+    },
+    {
+      "temperature_K": 393.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999999934251487,
+            "middle": 6.574851780372946e-09,
+            "high": 1.8819320313296183e-20
+          },
+          "l1_difference_to_full_pool": 9.611139570906785e-09,
+          "particle_ess": 2.261401811451944,
+          "maximum_representative_mass": 0.6134449740041545
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999999914010805,
+            "middle": 8.59891971688025e-09,
+            "high": 2.7069441887267736e-20
+          },
+          "l1_difference_to_full_pool": 1.3659275642742418e-08,
+          "particle_ess": 4.741046015494333,
+          "maximum_representative_mass": 0.40331393896721435
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999999982307182,
+            "middle": 1.7692817073693594e-09,
+            "high": 5.5284751137549485e-21
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 1.8499832314546378,
+          "maximum_representative_mass": 0.7286856578553571
+        }
+      ],
+      "n_target": 24
+    },
+    {
+      "temperature_K": 433.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.999999947616532,
+            "middle": 5.238346802116872e-08,
+            "high": 1.655468416516701e-18
+          },
+          "l1_difference_to_full_pool": 6.937048938857112e-08,
+          "particle_ess": 2.5299703061764744,
+          "maximum_representative_mass": 0.5708726756066747
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999999350232259,
+            "middle": 6.497677409617098e-08,
+            "high": 2.2567380049983726e-18
+          },
+          "l1_difference_to_full_pool": 9.455710152879793e-08,
+          "particle_ess": 5.711282356724459,
+          "maximum_representative_mass": 0.35589785450016115
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999999823017767,
+            "middle": 1.7698223310068155e-08,
+            "high": 6.094423937298248e-19
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 2.2708541703601854,
+          "maximum_representative_mass": 0.6539685308869564
+        }
+      ],
+      "n_target": 24
+    },
+    {
+      "temperature_K": 473.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999997080604082,
+            "middle": 2.919395915655574e-07,
+            "high": 6.785324376869818e-17
+          },
+          "l1_difference_to_full_pool": 3.489085082849322e-07,
+          "particle_ess": 2.841423872407994,
+          "maximum_representative_mass": 0.5301173814340447
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999996544989904,
+            "middle": 3.4550100978376496e-07,
+            "high": 8.809683388497121e-17
+          },
+          "l1_difference_to_full_pool": 4.5603134426886794e-07,
+          "particle_ess": 6.817753749600526,
+          "maximum_representative_mass": 0.31515490247025835
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999998825146624,
+            "middle": 1.1748533758358183e-07,
+            "high": 2.966307571204221e-17
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 2.83750043701975,
+          "maximum_representative_mass": 0.5805791674735242
+        }
+      ],
+      "n_target": 24
+    },
+    {
+      "temperature_K": 493.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999993808543925,
+            "middle": 6.191456074895584e-07,
+            "high": 3.4559104206220184e-16
+          },
+          "l1_difference_to_full_pool": 7.027958356707724e-07,
+          "particle_ess": 3.015685217314346,
+          "maximum_representative_mass": 0.510434968953002
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999992827395657,
+            "middle": 7.172604339600414e-07,
+            "high": 4.3872414709634974e-16
+          },
+          "l1_difference_to_full_pool": 8.9902548905304e-07,
+          "particle_ess": 7.4266757493246205,
+          "maximum_representative_mass": 0.2969433306259817
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8192,
+          "bin_probability": {
+            "low": 0.9999997322523102,
+            "middle": 2.677476896551388e-07,
+            "high": 1.6205646473766932e-16
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 3.1867996222880715,
+          "maximum_representative_mass": 0.545315589876628
+        }
+      ],
+      "n_target": 24
+    },
+    {
+      "temperature_K": 393.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999998192641555,
+            "middle": 1.807358442648496e-07,
+            "high": 3.719096698518476e-16
+          },
+          "l1_difference_to_full_pool": 1.564113711584183e-07,
+          "particle_ess": 1.2507855668291599,
+          "maximum_representative_mass": 0.8927703215257792
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999997721438831,
+            "middle": 2.2785611649698988e-07,
+            "high": 4.833661753426416e-16
+          },
+          "l1_difference_to_full_pool": 2.5065191585266873e-07,
+          "particle_ess": 2.306621922486908,
+          "maximum_representative_mass": 0.5919876480352558
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8191,
+          "bin_probability": {
+            "low": 0.999999897469841,
+            "middle": 1.0253015876056581e-07,
+            "high": 2.0088772504099272e-16
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 4.900196577784439,
+          "maximum_representative_mass": 0.3252561785079104
+        }
+      ],
+      "n_target": 36
+    },
+    {
+      "temperature_K": 433.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999988450371178,
+            "middle": 1.1549628680434512e-06,
+            "high": 1.42949585823497e-14
+          },
+          "l1_difference_to_full_pool": 9.250921166797514e-07,
+          "particle_ess": 1.386134670323352,
+          "maximum_representative_mass": 0.8469494092057993
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999985797909664,
+            "middle": 1.4202090153789248e-06,
+            "high": 1.808237123148511e-14
+          },
+          "l1_difference_to_full_pool": 1.4555844191789901e-06,
+          "particle_ess": 2.6337156385383818,
+          "maximum_representative_mass": 0.5457944139141307
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8191,
+          "bin_probability": {
+            "low": 0.9999993075831761,
+            "middle": 6.92416815812239e-07,
+            "high": 8.190479413112354e-15
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 5.480123376344297,
+          "maximum_representative_mass": 0.29899791123201264
+        }
+      ],
+      "n_target": 36
+    },
+    {
+      "temperature_K": 473.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999946669131565,
+            "middle": 5.333086551106648e-06,
+            "high": 2.924008524323321e-13
+          },
+          "l1_difference_to_full_pool": 3.937087616216657e-06,
+          "particle_ess": 1.5686665928982553,
+          "maximum_representative_mass": 0.794584291760317
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999935860374333,
+            "middle": 6.41396220570303e-06,
+            "high": 3.6093936434282856e-13
+          },
+          "l1_difference_to_full_pool": 6.0988390626098734e-06,
+          "particle_ess": 3.0583957308811787,
+          "maximum_representative_mass": 0.4991551699624626
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8191,
+          "bin_probability": {
+            "low": 0.9999966354569646,
+            "middle": 3.36454285854564e-06,
+            "high": 1.7681819019060382e-13
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 6.158032100790449,
+          "maximum_representative_mass": 0.2746064517552592
+        }
+      ],
+      "n_target": 36
+    },
+    {
+      "temperature_K": 493.15,
+      "sampling_seed": 20261107,
+      "order_source": "Original prespecified raw-sample order",
+      "interpretation": "Nested-prefix numerical sensitivity, not independent replication or statistical convergence proof",
+      "rows": [
+        {
+          "raw_pool_size": 2048,
+          "unique_orbits": 2048,
+          "bin_probability": {
+            "low": 0.9999896100032954,
+            "middle": 1.0389995610319997e-05,
+            "high": 1.0942354581741669e-12
+          },
+          "l1_difference_to_full_pool": 7.345832868605767e-06,
+          "particle_ess": 1.6810529912618117,
+          "maximum_representative_mass": 0.7665867428585447
+        },
+        {
+          "raw_pool_size": 4096,
+          "unique_orbits": 4096,
+          "bin_probability": {
+            "low": 0.9999876295213694,
+            "middle": 1.2370477294654258e-05,
+            "high": 1.3356384180800094e-12
+          },
+          "l1_difference_to_full_pool": 1.1306796720354624e-05,
+          "particle_ess": 3.315006600765784,
+          "maximum_representative_mass": 0.47599332996417876
+        },
+        {
+          "raw_pool_size": 8192,
+          "unique_orbits": 8191,
+          "bin_probability": {
+            "low": 0.9999932829197298,
+            "middle": 6.717079591381693e-06,
+            "high": 6.788954280137674e-13
+          },
+          "l1_difference_to_full_pool": 0.0,
+          "particle_ess": 6.5435870477628395,
+          "maximum_representative_mass": 0.2629823453275828
+        }
+      ],
+      "n_target": 36
+    }
+  ],
+  "finite_support_verified": false,
+  "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; energies are not basin free energies",
+  "physical_temperature_is_not_decoder_temperature": true,
+  "complete_reference_required": true,
+  "run_id": "7dd1e46b0e47edbf1d3c830c369c09f8c5e868b6954dd1017bf913bd1b431a69"
+}

@@ -1,0 +1,68 @@
+Three new multibin fits completed with seeds 20261106--08, 3,476--4,187 optimizer
+updates, and 27.7--30.8 s fit wall time on an A100 (Adam, rate $10^{-3}$,
+batch 512, 20-epoch warmup to $\beta=0.1$). This excludes acquisition
+and scoring. The frozen balanced benchmark contains 41,472 attempts (256 per
+method/count/request/replicate) and 40,662 distinct geometries. All masks were
+valid and exact-count, with complete UMA and MACE scalar labels and no request
+failures. Novelty is absent from both 40,157 training keys and 188,919 frozen
+prior-history keys. CVAE fit seeds and baseline random replicates are distinct.
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule
+Method & UMA useful yield (\%) & MACE useful yield (\%)\\
+\midrule
+Uniform raw masks & 33.00 $\pm$ 0.65 & 33.38 $\pm$ 0.26\\
+AR, composition only & 31.73 $\pm$ 0.77 & 31.94 $\pm$ 0.85\\
+AR, binary energy & 31.92 $\pm$ 1.01 & 31.03 $\pm$ 1.11\\
+AR, three energy bins & 31.00 $\pm$ 0.81 & 31.24 $\pm$ 1.22\\
+Requested-bin seed mutation & 58.39 $\pm$ 0.61 & 57.54 $\pm$ 0.16\\
+Low-bin seed mutation & 33.93 $\pm$ 1.05 & 34.40 $\pm$ 0.82\\
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize Distinct novel in-requested-bin orbits / all attempts, macro-averaged
+equally over three counts and three requested bins, then three design seeds.
+$\pm$ is descriptive seed standard deviation, not a confidence interval.
+MACE uses its own train-derived energy boundaries. Mutation controls use the same round-0 training information, with no fitted model.}
+
+The multibin extension did not improve this balanced objective. UMA requested-bin
+hit rates for low/middle/high were 35.59/54.43/8.42\%, versus
+16.02/63.32/19.70\% for uniform sampling and 49.18/71.48/54.60\% for
+bin-seeded mutation. The generator favors low energies but does not reliably
+distinguish all three requests. This does not isolate why; a controlled
+training-weight ablation and condition-sensitivity checks remain assigned.
+On requested-low attempts, the separate original-$q_{20}$ UMA yield was
+32.99\% for multibin, 33.94\% binary, 17.49\% uniform and 51.65\% bin mutation.
+These use the new history/budget and are not the historical values on page 5.
+
+\subsection{Executed acquisition demonstration}
+The three fits executed all 90 prespecified per-temperature and mixture
+schedules: 11,520 attempts, 11,080 geometries, no failed requests, complete
+two-teacher scoring. Under pure per-temperature requests, 100\% were asked to
+be low, but measured low fractions were only 36.48\% UMA and 40.26\% MACE.
+The floor requested 93.75/3.125/3.125\% after rounding; measured low fractions
+were 35.79\% and 39.24\%. Correct budget execution did not overcome weak
+conditional control.
+The independent reference is fully scored: 24,576 raw draws collapse to
+24,575 geometries. At 433.15 K its particle ESS is 4.629/2.271/5.480 for
+$n=12/24/36$, with maximum representative mass 0.361/0.654/0.299.
+Across the temperature grid, low-bin mass exceeds 99.986\%, so every rounded
+128-attempt static request is 128/0/0 and the exploration request is 120/4/4.
+Temperature changes weights/ESS, but not these coarse integer bin allocations.
+Nested 512-to-8,192-draw prefixes find minimum-energy decreases of
+0.0101/0.1758/0.2459 eV/cell. Thus stable bin fractions do not establish
+adequate low-tail coverage or equilibrium accuracy.
+
+The new campaign used 127,481 logical single-point energy/force/stress calls,
+including 24 interface-pilot calls, and 12.401 allocated GPU-device hours
+(3.100 four-GPU-equivalent node-hours). Both allocations are released. These
+costs include startup, failures, analysis and idle time; inherited historical
+labels are additional prior costs, not free end-to-end inputs. Neural-backbone
+forward calls were not separately instrumented.
+
+{\footnotesize Sources: new benchmark \texttt{summary.csv},
+\texttt{summary\_by\_request.csv}, \texttt{fixed\_q20\_low\_request.csv}
+and \texttt{receipt.json}; reference diagnostics \texttt{prefix\_metrics.csv}
+and \texttt{allocation\_fractions.csv}; demo \texttt{receipt.json} and
+\texttt{allocation\_realization.csv}; \texttt{cost\_receipt.json}.}

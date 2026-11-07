@@ -21,6 +21,8 @@ import torch
 from .models import gaussian_kl, make_model
 from .runtime import device_name, trusted_checkpoint
 from ..runtime import require_compute_allocation
+from ..conditions import (fit_schema, load_schema, save_schema, schema_identity,
+                          classify, encode_observations, condition_dimension)
 
 
 HERE = Path(__file__).resolve().parent
@@ -79,7 +81,13 @@ def arguments(argv=None):
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--kind", choices=["dense_bce", "dense_count", "ar_cvae", "ar_baseline"],
                         default="ar_cvae")
-    parser.add_argument("--condition-mode", choices=["energy", "composition"], default="energy")
+    parser.add_argument("--condition-mode", choices=["energy", "composition", "multibin"], default="energy")
+    parser.add_argument("--condition-schema-in", type=Path,
+                        help="Frozen train-fitted energy partition; do not refit its edges")
+    parser.add_argument("--schema-quantiles", type=float, nargs=2, default=[0.2, 0.8])
+    parser.add_argument("--teacher", default="uma", help="Declared label teacher; recorded with pinned head/checkpoint identity")
+    parser.add_argument("--teacher-head", help="Explicit label head; default omat for UMA, omat_pbe for MACE")
+    parser.add_argument("--geometry-protocol", default="pristine-derived deletion; unrelaxed")
     parser.add_argument("--orientation", choices=["canonical", "augment"], default="canonical")
     parser.add_argument("--seed", type=int, default=20261106)
     parser.add_argument("--counts", type=int, nargs="+", default=None)
@@ -163,28 +171,55 @@ def main(argv=None):
             assert seen[code] == split, "A canonical vacancy orbit crosses protected splits"
         seen[code] = split
     assert len(seen) == len(codes), "Input must contain one row per canonical vacancy orbit"
-    conditions = np.zeros((len(x), 2), dtype=np.float32)
-    conditions[:, 0] = d["n_Li"] / n_sites
+    split_hash = hashlib.sha256("\n".join(f"{sid}\t{split}" for sid, split in
+                                         zip(d["structure_ids"].tolist(), splits.tolist())).encode()).hexdigest()
+    from ..mlip.registry import MODELS
+    teacher_spec = MODELS.get(a.teacher, {})
+    teacher_head = a.teacher_head or teacher_spec.get("head", "user-declared")
+    provenance = dict(teacher=a.teacher, teacher_head=teacher_head,
+        teacher_checkpoint_name=teacher_spec.get("name", "user-declared"),
+        teacher_checkpoint_hashes=teacher_spec.get("files", {}),
+        geometry_protocol=a.geometry_protocol, parent_sha256=sha256(a.parent),
+        data_sha256=sha256(a.data), split_sha256=split_hash,
+        training_ids_sha256=hashlib.sha256("\n".join(d["structure_ids"][train].tolist()).encode()).hexdigest())
+    if a.condition_schema_in:
+        schema = load_schema(a.condition_schema_in)
+        if schema["n_sites"] != n_sites:
+            raise ValueError("Frozen condition schema and parent dimensions differ")
+        for key in ["parent_sha256", "teacher", "teacher_head", "geometry_protocol"]:
+            old = schema.get("provenance", {}).get(key)
+            if old is not None and old != provenance[key]:
+                raise ValueError(f"Frozen condition schema has incompatible {key}")
+    else:
+        schema = fit_schema(d["n_Li"], d["energy_eV_atom"], splits, n_sites=n_sites,
+                            quantiles=tuple(a.schema_quantiles), provenance=provenance)
+    save_schema(schema, a.output_dir / "condition_schema.json")
+    conditions = encode_observations(schema, d["n_Li"], d["energy_eV_atom"], mode=a.condition_mode)
+    observed_bins = classify(schema, d["n_Li"], d["energy_eV_atom"])
+    unsupported_observations = {split: sum(
+        label not in schema["compositions"][str(int(n))]["supported_bins"]
+        for n, label, actual in zip(d["n_Li"], observed_bins, splits) if actual == split)
+        for split in sorted(set(splits.tolist()))}
     statistics = {}
     weights = d["weight"].astype(np.float64).copy()
     for n in sorted(set(d["n_Li"].tolist())):
         ids = train[d["n_Li"][train] == n]
         assert len(ids) > 0, "Each requested composition needs training reference energies"
         values = d["energy_eV_atom"][ids]
-        q = float(np.sort(values)[math.ceil(0.2 * len(values)) - 1])
-        same_count = d["n_Li"] == n
-        low = d["energy_eV_atom"] <= q
-        conditions[same_count, 1] = low[same_count]
+        q20 = float(np.sort(values)[math.ceil(0.2 * len(values)) - 1])
+        low = observed_bins == "low"
         low_weight_fraction = float(weights[ids[low[ids]]].sum() / weights[ids].sum())
-        statistics[int(n)] = dict(train_rows=len(ids), q20_eV_atom=q,
-                                  low_fraction_train=float(low[ids].mean()),
-                                  low_weight_fraction_train=low_weight_fraction)
+        classes = observed_bins if a.condition_mode == "multibin" else np.where(low, "low", "rest")
+        class_fractions = {label: float(weights[ids[classes[ids] == label]].sum() / weights[ids].sum())
+                           for label in sorted(set(classes[ids].tolist()))}
+        statistics[int(n)] = dict(train_rows=len(ids), q20_eV_atom=q20,
+            low_threshold_eV_atom=schema["compositions"][str(int(n))]["edges_eV_atom"][0],
+            low_fraction_train=float(low[ids].mean()), low_weight_fraction_train=low_weight_fraction,
+            class_weight_fractions=class_fractions,
+            bin_counts_train={label: int(np.sum(observed_bins[ids] == label)) for label in ["low", "middle", "high"]})
         if a.class_balance:
-            assert 0 < low_weight_fraction < 1
-            weights[ids[low[ids]]] /= 2 * low_weight_fraction
-            weights[ids[~low[ids]]] /= 2 * (1 - low_weight_fraction)
-    if a.condition_mode == "composition":
-        conditions = conditions[:, :1]
+            for label, fraction in class_fractions.items():
+                weights[ids[classes[ids] == label]] /= len(class_fractions) * fraction
     weights /= weights[train].mean()
     c = torch.as_tensor(conditions, dtype=torch.float32, device=a.device)
     w = torch.as_tensor(weights, dtype=torch.float32, device=a.device)
@@ -192,8 +227,10 @@ def main(argv=None):
     val_t = torch.as_tensor(val, device=a.device)
     model = make_model(a.kind, n_sites=n_sites, cond_dim=conditions.shape[1]).to(a.device)
     if a.warm_start:
-        assert a.condition_mode == "energy"  # state_dict loading enforces architecture compatibility.
         checkpoint = trusted_checkpoint(a.warm_start, a.device)
+        prior_cfg = checkpoint.get("configuration", {})
+        if prior_cfg.get("condition_dim", model.condition_dim) != model.condition_dim:
+            raise ValueError("Warm-start condition dimensions differ; binary weights cannot silently become multibin weights")
         model.load_state_dict(checkpoint["state_dict"], strict=True)
     optimizer = torch.optim.Adam(model.parameters(), lr=a.learning_rate)
     noise_generator = torch.Generator(device=a.device).manual_seed(a.seed + 8191)
@@ -209,11 +246,17 @@ def main(argv=None):
         parent=str(a.parent.resolve()), parent_sha256=sha256(a.parent),
         trainer_sha256=sha256(__file__), model_source_sha256=sha256(HERE / "models.py"),
         source_id_sha256=hashlib.sha256("\n".join(d["structure_ids"].tolist()).encode()).hexdigest(),
-        condition_stats=statistics,
-        energy_condition="Unweighted train-only bottom20% threshold within Li count; exact ties retained",
+        condition_stats=statistics, condition_schema=schema,
+        condition_schema_id=schema_identity(schema), split_sha256=split_hash,
+        observed_rows_outside_training_bin_support=unsupported_observations,
+        condition_schema_source=None if a.condition_schema_in is None else dict(path=str(a.condition_schema_in.resolve()), sha256=sha256(a.condition_schema_in)),
+        teacher=a.teacher, teacher_head=teacher_head,
+        teacher_checkpoint_name=teacher_spec.get("name", "user-declared"),
+        teacher_checkpoint_hashes=teacher_spec.get("files", {}), geometry_protocol=a.geometry_protocol,
+        energy_condition="Versioned train-only composition-specific energy partition; exact ties retained; encoder mode recorded separately",
         orientation=a.orientation, canonicalization="Exact minimum vacancy bit code under supplied parent permutations",
         symmetry_augmentation="Random retained parent permutation on train batches only" if a.orientation == "augment" else "None; one canonical orientation per orbit",
-        class_balance=a.class_balance, class_balance_scope="Train only within each composition; keeps its total base weight",
+        class_balance=a.class_balance, class_balance_scope="Train only within each composition and actual nonempty encoded classes; keeps total base weight",
         input_weight_scope="Inherited row weights; normalized to mean 1 over train rows",
         count_likelihood=exact_count, beta_final=a.beta_final, beta_warmup_epochs=a.beta_warmup,
         maximum_epochs=a.epochs, minimum_epochs=a.minimum_epochs, early_stop_patience=a.patience,

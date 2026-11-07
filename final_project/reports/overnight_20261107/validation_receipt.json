@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "tests": 67,
+  "elapsed_seconds": 8.08,
+  "command": "python -m pytest -q",
+  "allocation": 60954645,
+  "pip_check": "No broken requirements found",
+  "artifact_replay": {
+    "benchmark_status": "PASS",
+    "allocation_status": "PASS",
+    "paths": [
+      "runs/overnight_20261107/public_replay/benchmark",
+      "runs/overnight_20261107/public_replay/allocation"
+    ]
+  },
+  "independent_audits": [
+    "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
+    "reports/overnight_20261107/evaluation_audit/demo_audit.json"
+  ],
+  "limitations": "Software/interface and cached-data checks do not establish DFT accuracy or physical optimality."
+}

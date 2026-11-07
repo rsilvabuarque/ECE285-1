@@ -1,332 +1,290 @@
 \documentclass[10pt]{article}
-\usepackage[margin=0.78in]{geometry}
+\usepackage[margin=0.76in]{geometry}
 \usepackage{amsmath,amssymb,booktabs,graphicx,url,microtype}
 \usepackage[T1]{fontenc}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{5pt}
-\newcommand{\owner}[2]{\par\noindent\textbf{#1 to complete:} #2\par}
+\setlength{\parskip}{4pt}
 \newcommand{\snapshot}{../../artifacts/current}
+\newcommand{\rankaudit}{../../reports/ranking_audit_20261107}
 \begin{document}
 \begin{center}
-{\Large\bfseries Conditional generation of cathode vacancy patterns and\\
-improved starting geometries: midterm working draft}\par
-\vspace{5pt}
+{\Large\bfseries Conditional generation of cathode vacancy patterns\\
+at requested compositions and energy ranges}\par
+\vspace{4pt}
 Ricardo Silva Buarque, Beihao Gu, and Varad Kottawar\\
-ECE 285 --- November 9, 2026
+ECE 285 midterm draft --- November 9, 2026
 \end{center}
 \begin{abstract}
-We study whether conditional generative models can propose novel, low-energy
-vacancy configurations in a layered cathode more effectively than simple
-sampling methods. Our current benchmark uses pristine-derived O3
-$\mathrm{Li}_n\mathrm{Co}_{48}\mathrm{O}_{96}$ geometries and machine-learned
-interatomic potential (MLIP) labels. An energy-conditioned autoregressive
-conditional variational autoencoder (AR CVAE) improves novel low-tail yield
-over uniform fixed-count sampling, but a low-energy training-mask mutation
-baseline remains stronger. A separate displacement CVAE improves atomic
-starting positions for a fixed-cell optimizer; a deterministic regressor gives
-similar savings. We report the actual scope of these observations and propose
-controlled validation using the available data. They do not establish DFT
-ground states, size transfer, or a CVAE-specific relaxation advantage.
+We extend an existing energy-conditioned autoregressive (AR) conditional variational
+autoencoder (CVAE) to request low, middle, or high energy Li/vacancy patterns in
+one fixed layered LiCoO$_2$ (O3) parent. A separate acquisition policy allocates requests using
+static machine-learned interatomic-potential (MLIP) energies at relevant
+operating temperatures. Under UMA, novel in-bin yield is 31.0\% for multibin, 33.0\% for uniform sampling
+and 58.4\% for bin-seeded mutation: the extension does not improve control.
+These are teacher-defined generation and acquisition tests,
+not measurements of physical configurational entropy or reactor equilibrium.
 \end{abstract}
 
-\section{Revised objective and motivation}
-Removing Li from a cathode leaves many possible vacancy arrangements. Even at
-one composition, different arrangements can have different energies and
-different responses to relaxation. Directly enumerating and evaluating every
-arrangement becomes impractical as the number of sites grows. A useful
-generator would concentrate a fixed evaluation budget on new, physically
-useful structures rather than repeatedly proposing equivalent configurations.
-The longer-term application is efficient selection of reference structures for
-potential improvement and simulations relevant to cathode recycling.
+\section{Physical motivation and revised objective}
+Direct cathode recycling seeks to recover useful composition and structure.
+Hydrothermal treatment and subsequent annealing have regenerated degraded
+LiCoO$_2$ (LCO) \cite{shi2018}. Our longer-term application is to select
+informative reference structures for better models of lithium replenishment.
+The present class problem is controlled generation, rather than a simulation of
+the recycling liquid or reaction pathway.
 
-The course question is deliberately narrower: \emph{does a conditional latent
-generator improve the discovery of distinct low-energy configurations over
-simple controls?} We also test whether a separate conditional displacement
-model offers useful optimizer starting points. DFT-based potential fine-tuning
-and experimental thermodynamic validation are later extensions, not claims of
-the present benchmark.
+Density functional theory (DFT) computes an electronic-structure reference at
+specified atoms and cell under a stated approximation and numerical protocol.
+An MLIP approximates the energy and its force/cell derivatives cheaply.
+Molecular dynamics (MD) propagates atoms with those forces; appropriately sampled
+trajectories can estimate thermal observables. A single-point call fixes
+coordinates; a relaxation moves them toward a local minimum. Drawing a vacancy
+mask does neither operation.
 
-An MLIP predicts potential energy from atoms and cell and supplies forces and
-stress for evaluation or atomistic simulation. A single-point call measures
-these properties at unchanged coordinates. Geometry relaxation instead moves
-atoms repeatedly using a chosen optimizer. DFT provides an independently
-computed electronic-structure reference when coordinates and numerical setup
-are matched. The newly generated large-cell labels in this work are MLIP
-predictions, not new DFT calculations.
+Li/vacancy ordering can change energies at a fixed lithium content, as established
+in first-principles LCO studies \cite{vanderVen1998}. Foundation datasets have
+broad equilibrium and displaced-structure coverage, but do not guarantee the
+needed defect/order coverage; OMat24 discusses these limitations explicitly
+\cite{omat2026}. We do not assume all teacher errors are constant offsets or
+that every foundation model was trained only on pristine LCO.
 
-\section{Data and independent units}
-The main pristine parent is $\mathrm{Li}_{48}\mathrm{Co}_{48}\mathrm{O}_{96}$:
-48 possible Li sites and 144 other atoms. A deletion mask with $n$ retained Li
-therefore has $144+n$ atoms. Occupancy $o_i=1$ means Li is present at site $i$;
-vacancy masks use $v_i=1-o_i$. The main improved-model comparison uses
-$n\in\{12,24,36\}$, or 25\%, 50\%, and 75\% lithiation, in the same parent.
-The wider available main-parent corpus covers every integer count 0--48.
+\section{Parent, geometry protocol, and symmetry}
+The main parent is Li$_{48}$Co$_{48}$O$_{96}$. Retaining $n$ Li gives
+$N_a=144+n$ present atoms and dimensionless Li fraction $x=n/48$.
+Occupancy $o_j=1$ means parent Li site $j$ is occupied; vacancy $v_j=1-o_j$ means
+removed. Li are full-parent atom rows 48--95 (zero based), not the first rows.
+The controlled comparison uses $n=12,24,36$. Labels refer to unchanged,
+pristine-derived deletion coordinates, not relaxed minima.
 
-Parent translations and point operations induce 192 retained site
-permutations. Masks related by those permutations form one symmetry orbit.
-The smallest transformed vacancy bit string is the canonical key. Splits and
-novelty checks group by this key; all frames and teacher labels of a mask stay
-together. This removes within-parent aliases, not automatically aliases between
-different supercells. The current networks use a fixed parent site list.
-
-\owner{Ricardo}{Check the parent description, the short recycling motivation,
-and the distinction between this MLIP benchmark and the historical/Hu DFT
-archive. Add the appropriate materials references without implying that their
-geometries or DFT setups are identical to this deletion benchmark.}
-\newpage
-
-\section{Conditional occupancy models}
-At a fixed composition, let $E$ be the total single-point energy in eV and
-$e=E/(144+n)$ the energy per atom. Sort the $m$ training energies at count $n$.
-The element at one-based index $\lceil0.2m\rceil$ defines the training low-tail
-threshold $q_{20}(n)$. The binary label and energy condition are
-\begin{equation}
-b=\mathbb{1}[e\leq q_{20}(n)],\qquad c=(n/48,b).
-\end{equation}
-Both classes train the model; the composition-only control receives $n/48$.
-All thresholds are training-derived and teacher-specific. Requesting $b=1$
-does not enforce an energy inequality or follow an energy gradient.
-
-The encoder $q_\phi(z\mid o,c)$ predicts a diagonal Gaussian with latent
-dimension eight. The decoder $p_\theta(o\mid z,c)$ receives $z,c$. Training uses
-the regularized variational objective
-\begin{equation}
-\mathcal L_\beta=\mathbb E_{q_\phi}[-\log p_\theta(o\mid z,c)]
-+\beta D_{\mathrm{KL}}\!\left(q_\phi(z\mid o,c)\Vert\mathcal N(0,I)\right).
-\end{equation}
-The reconstruction term measures probability assigned to observed masks; KL
-compares the encoded Gaussian with the prior used for generation. At
-$\beta=1$ this is a negative conditional evidence lower bound for the model;
-$\beta=0.1$ gives a different regularized objective
-\cite{kingma2014,sohn2015}. Good posterior reconstruction alone does not prove
-good generation from $z\sim\mathcal N(0,I)$.
-
-\subsection{Dense likelihoods and count constraints}
-The legacy dense decoder outputs logits $\ell_i$ and uses independent
-Bernoulli reconstruction. Taking the top $n$ logits at generation gives the
-requested count, but introduces a training--sampling mismatch. The exact-count
-variant instead uses
-\begin{equation}
-p(o\mid z,c,\textstyle\sum_i o_i=n)=
-\frac{\exp(\sum_i\ell_i o_i)}{Z_n(\ell)},\qquad
-Z_n(\ell)=\sum_{u:\sum_i u_i=n}\exp(\textstyle\sum_i\ell_i u_i).
-\end{equation}
-A dynamic program computes the normalization and samples from this conditional
-distribution. Count is then enforced in the likelihood and sampling rule.
-
-\subsection{Autoregressive decoder}
-The AR decoder models the occupancy sequence through the exact chain rule,
-\begin{equation}
-p(o\mid z,c)=\prod_{i=1}^{48}p(o_i\mid o_{<i},z,c).
-\end{equation}
-A GRU with hidden size 64 carries information about earlier choices. Teacher
-forcing supplies observed earlier occupancies during training; generation feeds
-back sampled choices. If the remaining count forces a bit to zero or one, that
-choice has probability one and contributes zero negative log likelihood. The
-sequence is site order, not physical time or relaxation. Autoregressive
-normalized sampling also appears in statistical-mechanics generative models
-\cite{wu2019}, although our training objective differs from theirs.
-
-An AR control removes the latent variable and encoder while retaining the
-stochastic decoder. A composition-only AR CVAE removes the energy class. These
-controls distinguish contributions of the latent model and energy input from
-the expressive sequential decoder. Discrete canonicalization handles the
-retained parent symmetries; the current GRU is not an equivariant atomic graph
-network.
-
-\owner{Beihao}{Verify these equations against the portable implementation and
-one reproduced fit. State all hyperparameters and the actual checkpoint rule.
-Include reconstruction/KL curves and distinguish fit seeds from latent draws.}
-\newpage
-
-\section{Adaptation and occupancy evaluation}
-The original three-count dataset contains 1,536 masks: 1,227 training, 153
-validation, and 156 test. Round 0 adds previously evaluated proposals, giving
-50,247 masks (40,157/4,967/5,123). Round 1 adds 25,000 fresh development masks,
-giving 75,247 (60,152/7,493/7,602). Original splits stay protected; new canonical
-keys receive deterministic hash-based splits. Promoting old assessment data to
-training means that it is no longer untouched final evidence.
-
-The extra adaptive round warmed from the round-0 AR CVAE, added data,
-recomputed training low-class thresholds, and balanced training classes. It
-compared $\beta=0.1$ and $\beta=1$. This coupled update is not a pure
-sample-size experiment. The original AR family was selected on development
-results before the final pool was scored.
-
-For each method, fit seed, and composition, the final assessment retains 512
-attempts. A success must be a distinct orbit absent from frozen history and
-below the \emph{original} teacher-specific training threshold. The metric is
-\begin{equation}
-Y=\frac{\#\{\text{distinct novel orbits with }e\leq
-q_{20}^{\mathrm{original}}(n)\}}{\#\{\text{all generation attempts}\}}.
-\end{equation}
-Repeated or known proposals remain in the denominator. Frozen history includes
-all original and development masks. UMA-S-1.2.1 with task \texttt{omat} and
-MACE-MH-1 with head \texttt{omat\_pbe} scored the same canonical deletion
-geometries in FP32 with TF32 disabled.
+The parent's 192 retained site permutations identify equivalent masks. Their
+orbit is the set of distinct related raw occupation patterns; its canonical key
+is the smallest transformed vacancy string. Grouping precedes splitting and
+augmentation; all frames/teacher labels of a lineage stay together. At $n=24$,
+Burnside counting gives 168,025,313,938 orbits for this group, compared with
+32,247,603,683,100 raw masks. This is a count for the specified cell, not all
+48-site cell shapes or host phases. O1/spinel transitions and size/material
+transfer are outside this fixed-parent generator.
 
 \begin{center}
-\small
+\includegraphics[width=.52\linewidth]{\rankaudit/occupation_examples.pdf}
+\end{center}
+\vspace{-5pt}
+{\footnotesize Two existing Li$_{24}$ training deletion patterns: filled dots are
+occupied indexed sites in each Li plane. The columns are site labels, not an
+$x$--$y$ projection. Teacher energies are in eV/atom; these are neither new CVAE
+discoveries nor relaxed structures. POSCAR/CIF and source hashes are supplied.}
+\newpage
+
+\section{Composition-and-energy-range CVAE}
+The model already used composition and a binary low-energy class. The new schema
+extends this condition to three energy ranges. At each composition, define
+$e_i=E_i/N_a$ in eV/atom, where $E_i$ is total cell energy in eV. Sort the $m$
+\emph{training} energies; the one-based element at $\lceil pm\rceil$ defines
+$q_p$. The requested bin $b$ is
+\begin{equation}
+b(e)=\begin{cases}
+\mathrm{low},&e\le q_{0.2},\\
+\mathrm{middle},&q_{0.2}<e\le q_{0.8},\\
+\mathrm{high},&e>q_{0.8}.
+\end{cases}
+\end{equation}
+Exact ties stay together. Empty bins are explicitly unsupported; sparse
+compositions are not forced to have three classes. The versioned schema stores
+edges, support, units, teacher/head, geometry protocol, parent/data/split hashes,
+and content identity. It is shared by fitting, generation, allocation and
+assessment. It uses no validation or assessment energies to fit the boundaries.
+
+The condition is $c=[x,\mathrm{onehot}(b)]$, with four components. Historical
+binary $[x,\mathbf{1}_{\rm low}]$ and composition-only $[x]$ controls remain
+functional with their original input dimensions. Binary middle/high requests
+explicitly map to its rest class. Incompatible checkpoint shapes are rejected;
+energy conditioning itself is not a new invention here.
+
+The encoder $q_\phi(z\mid o,c)$ predicts the mean and diagonal variance of an
+eight-dimensional Gaussian. At generation, $z\sim\mathcal N(0,I)$ and $c$ enter
+a gated recurrent unit (GRU) decoder with hidden size 64. Its normalized autoregressive likelihood is
+\begin{equation}
+p_\theta(o\mid z,c)=\prod_{j=1}^{48}p_\theta(o_j\mid o_{<j},z,c).
+\end{equation}
+Site index $j$ is a sequence position, not MD time. Observed preceding bits are
+used during fitting (teacher forcing); sampled bits are fed back at generation.
+When the remaining Li count forces a zero or one, that choice has probability
+one and zero reconstruction penalty. Thus every valid sample has exactly $n$ Li.
+The chain-rule construction is related to variational autoregressive approaches
+\cite{wu2019}, but our supervised conditional objective differs.
+
+The loss is
+\begin{equation}
+\mathcal L_\beta=\mathbb E_{q_\phi}[-\log p_\theta(o\mid z,c)]
++\beta D_{\rm KL}\!\left[q_\phi(z\mid o,c)\Vert\mathcal N(0,I)\right].
+\end{equation}
+Parameters $\phi,\theta$ belong to encoder and decoder; $I$ is the identity
+matrix, and $\mathbb E$ denotes expectation. KL measures the encoded Gaussian's
+difference from the prior, with weight $\beta$. At $\beta=1$, this is a negative
+conditional evidence lower bound; $\beta=0.1$ is a different regularized objective
+\cite{kingma2014,sohn2015}. Good reconstruction or large KL alone does not prove
+good prior samples \cite{alemi2018}. Requesting low energy does not impose an
+energy inequality or provide a minimization gradient.
+
+\subsection{Data, controls, and assessment}
+The primary expanded round-0 set contains 50,247 orbit masks: 40,157 training,
+4,967 validation and 5,123 test rows in protected splits. New fit configurations record
+actual seeds, update/stopping limits and checkpoint selection. Previously
+assessed data promoted to training become development evidence. A fresh
+assessment boundary and prior-history cache are frozen before new proposals.
+
+Controls are binary/composition CVAEs, uniform raw fixed-count sampling,
+bin-seeded mutations with one to three Li/vacancy swaps, and the low-bin mutation baseline.
+Mutation seeds come from the requested training bin; available information and
+attempt/oracle budgets are identified. Rejected filtered draws, duplicates and
+failed requests remain in accounting. Requested and measured bins, physical
+$T$, policy, teacher, schema, fit seed and sampling seed stay separate. We report
+confusion/hits, exact count, uniqueness, novelty to training and prior history,
+and distinct novel in-bin yield per all attempts. The original fixed $q_{20}$
+yield is compared only within requested-low attempts, not pooled with middle/high
+requests; teacher agreement is not DFT truth.
+\newpage
+
+\section{Temperature-dependent static acquisition}
+The outer policy decides how often to request each bin. Physical temperature
+$T$ in kelvin does not alter the latent normal prior or introduce a decoder
+softmax temperature. Confirmed reactor targets motivate
+$T\in\{393.15,433.15,473.15,493.15\}$ K; no calibrated pressure dependence or
+hydrothermal occupation population is assumed.
+
+For a complete list of symmetry representatives at one composition, let $i$
+index a representative, $g_i$ its number of distinct raw occupancy patterns,
+and $E_{\rm ref}$ a common reference energy. Define
+\begin{equation}
+a_i(T)=\exp\!\left[-\frac{E_i-E_{\rm ref}}{k_B T}\right],\qquad
+w_i=g_i a_i,\qquad
+W_b(T)=\frac{\sum_{i:b_i=b}w_i}{\sum_iw_i}.
+\end{equation}
+Here $k_B=8.617333262145\times10^{-5}$ eV/K; $E_i,E_{\rm ref}$ are total eV per
+same-composition cell. The factors $a_i,w_i$ and bin fraction $W_b$ are
+dimensionless. Stable logarithmic normalization avoids underflow. A common
+energy offset cancels; distorted gaps do not. Multiplicity counts physical
+occupation masks, not permutations of identical atom labels.
+
+For a prespecified independent uniform \emph{raw-mask} reference, repeated orbit
+identities are collapsed for energy calls but retain their raw sampling frequency
+$f_i$. Then $w_i=f_i a_i$; multiplying by $g_i$ again would count degeneracy twice.
+The entire prespecified pool is scored, including exact-geometry cache coverage;
+using only convenient cache hits would bias the reference. Proposal-biased
+training or CVAE histograms are not a density of states.
+
+The exhaustive Hu 12-site reference tests the measure: its 87 representatives
+cover every Li count, and orbit multiplicities sum to $\binom{12}{n}$ at each
+count. At $n=6$, 17 representatives cover all 924 raw masks. Direct enumeration
+checks the numerical weighted sum. This small reference is not evidence for
+large-data generation or size transfer. For the 48-site reference, finite pool
+size, missing rare states and concentration remain limitations.
+
+\subsection{Concentration, mixtures, and exploration}
+With $Z=\sum_iw_i$ and $p_i=w_i/Z$, representative effective sample size (ESS)
+is $1/\sum_i p_i^2$. It describes concentration over representatives. A distinct
+quantity,
+\begin{equation}
+\mathrm{ESS}_{\rm particle}=\frac{Z^2}{\sum_i m_i a_i^2},
+\end{equation}
+uses $m_i=f_i$ for sampled raw draws, or $m_i=g_i$ for complete raw microstates.
+For equal energies it equals the number of raw draws/microstates. It is not a
+confidence interval. We also inspect the maximum weight and nested-prefix
+pool-size sensitivity; correlated prefixes are not independent repeats.
+
+Both pure weights and an exploration policy are saved:
+\begin{equation}
+P_b(T)=(1-\epsilon)W_b(T)+\frac{\epsilon}{K},\qquad\epsilon=0.1,
+\end{equation}
+where $K$ is the number of supported bins. The floor is a chosen acquisition
+setting, not a thermodynamic constant. Chosen temperature priorities
+$\alpha_t\ge0$, $\sum_t\alpha_t=1$, define mixtures. Largest-remainder rounding
+allocates exactly the declared attempt budget. Per-temperature and joint-mixture
+budgets are distinguished in the plan and every attempt record.
+
+\subsection{Why units and measured outcomes matter}
+At Li$_{24}$, $N_a=168$. An illustrative $1$ meV/atom gap is $0.168$ eV/cell.
+At 433.15 K, $k_BT\simeq0.03733$ eV and its equal-multiplicity relative weight is
+approximately 0.0111. Incorrectly using $0.001$ eV gives approximately 0.974.
+Large-cell static weights can legitimately concentrate on very few reference
+samples; an exploration floor does not repair their physical accuracy.
+
+Finally, teacher evaluations determine the generated masks' \emph{actual} bins.
+Correct request totals do not establish conditional control or correct
+within-bin sampling. Because the current labels are deletion energies, this is
+\emph{temperature-dependent acquisition under a static MLIP surrogate}. It is
+not a relaxed-basin free-energy calculation or measured configurational entropy.
+\newpage
+
+\section{Completed generation and acquisition measurements}
+\input{generated_results.tex}
+\newpage
+
+\section{Historical context, interpretation, and remaining checks}
+The completed November 6 binary experiment used three CVAE fit seeds and three
+random replicates for sampler controls, three Li counts, and 512 attempts per group. Its original teacher-specific low-tail thresholds
+and novelty boundary differ from a later assessment and are preserved as
+historical evidence. Yield counts distinct novel below-threshold orbits per all
+attempts, including repeats:
+\begin{center}\small
 \begin{tabular}{lrr}
 \toprule
-Method & UMA $Y$ (\%) & MACE $Y$ (\%)\\
+Historical method & UMA yield (\%) & MACE yield (\%)\\
 \midrule
-Uniform fixed-count & 18.99 & 19.75\\
-Legacy dense CVAE, $\beta=0.1$ & 20.29 & 23.57\\
-Expanded dense, exact count & 27.86 & 29.58\\
-AR, no latent & 25.17 & 27.08\\
-AR CVAE, composition only & 31.88 & 35.76\\
-AR CVAE, energy condition & \textbf{35.57} & \textbf{40.06}\\
-Extra adaptive AR, $\beta=0.1$ & 33.81 & 38.91\\
-Extra adaptive AR, $\beta=1$ & 27.84 & 30.43\\
-Mutation, original seed pool & 45.40 & 46.96\\
-Mutation, newest seed pool & 52.65 & 54.08\\
+Uniform fixed count &18.99&19.75\\
+AR CVAE, composition only &31.88&35.76\\
+AR CVAE, binary energy &35.57&40.06\\
+Additional adaptive AR, $\beta=0.1$ &33.81&38.91\\
+Strongest mutation seed pool &52.65&54.08\\
 \bottomrule
 \end{tabular}
 \end{center}
+The binary CVAE beat random sampling but not strong mutation. Additional
+adaptation coupled data, thresholds and class weights, so its decline does not
+isolate a cause. A separate geometry CVAE reduced the matched optimizer's median
+steps from 40 to 24, but a deterministic regressor also reached 24; no
+CVAE-specific geometry advantage was established. These are secondary older
+results, not outcomes of the new multibin extension.
 
-These means cover three independently trained seeds and three compositions.
-The energy-conditioned AR CVAE improves on uniform sampling, while low-energy
-mask mutation remains better. Broader model/data comparisons are complete
-method comparisons, not isolated causal architecture tests. Mutation from the
-newest pool also benefits from more labeled history.
+\subsection{How far can teacher rankings be trusted?}
+A new recomputation of the existing exact-geometry audit keeps DFT source,
+phase, composition and cohort separate. Across seven historical O3 rattled
+pools (524 frames), UMA median Spearman correlation is 0.97366, low-quintile
+precision 96.30\%, and pair-gap root-mean-square error (RMSE) 2.047 meV/atom. Across ten informative Hu O3
+optimized pools (104 frames), these medians are 0.73177, 41.67\%, and
+4.077 meV/atom. Pool sizes/ties and all three models are tabulated separately.
+Strongly displaced frames can give more favorable rank correlations than
+nearly degenerate optimized structures.
 
-Extra fine-tuning did not improve average yield. Assessment thresholds stayed
-fixed; the decline is not caused by tightening that gate. Stronger KL weighting
-was associated with small latent KL and lower yield, but neither collapse nor
-the cause of the coupled update's decline has been isolated. Reconstruction,
-latent information, and generation are distinct quantities \cite{alemi2018}.
-The $\beta=0.1$ update found lower individual extremes at some compositions,
-so best energy and many-success yield should both be reported.
+Hu's optimized Li$_{10}$Co$_{12}$O$_{24}$ pool contains five structures. UMA picks
+\texttt{structure\_4159} first although DFT ranks it fifth; its selection regret
+is 7.9711 meV/atom relative to the best DFT member of that complete pool. Matching
+all five identities is trivial top-five overlap here, not recall from a larger
+pool. Historical/Hu DFT settings differ, and archived electronic/spin convergence
+is not recertified. This audit used FP64; the new deletion benchmark uses its
+separately pinned FP32 protocol. Good ranks do not establish accurate gaps,
+forces, phonons, or thermal weights.
 
-\owner{Varad}{Recompute the table from stored attempts/energies, add a
-seed-resolved figure, and check novelty, threshold, missing-label, and cost
-accounting. Preserve this final pool as a completed experiment.}
-\newpage
+\subsection{Novelty, limits, and the DFT boundary}
+The contribution is a reproducible test of composition/energy-range control,
+strong baselines, symmetry-aware novelty/cost, and a measured acquisition layer.
+It does not require the CVAE to win. It does not establish global minima,
+DFT accuracy of new 48-site structures, physical entropy, full phase stability,
+reactor optima, downstream MLIP improvement, or size/material transfer.
+A later same-potential thermal pilot is kept separate from this class report.
+Physical accuracy requires consistent matched DFT references; no new DFT is
+submitted or scheduled in this work.
 
-\section{Separate conditional displacement model}
-Vacancy occupancy leaves all retained atoms at pristine coordinates. To learn
-improved starting geometries, a separate model predicts displacement
-$u_{a\alpha}$ in angstroms for each present atom $a$ and Cartesian component
-$\alpha$. The fixed parent atom-index frame retains each input orientation; it is not a
-whole-geometry symmetry canonicalization. Reference fractional sites are mapped
-through the supplied frame cell; mass-weighted global translation is removed and periodic differences use
-the minimum-image convention. Missing Li rows are zero padding excluded by a
-presence mask. The cell is supplied, not predicted.
-
-The fixed-cell UMA corpus contains 1,000 independent masks and 6,000 frames:
-deletion, four intermediate optimizer frames, and one endpoint for each mask.
-The split is 787 training, 107 validation, and 106 test masks. A lineage's
-weights total one. The decoder context contains occupancy (48), Li fraction
-(1), cohort flag (3), cell deformation (9), and four properties: energy per
-atom, log-transformed force-component RMS, configurational pressure, and
-log-transformed deviatoric stress norm. The resulting context has 65 components.
-Statistics are fitted only to training frames within composition/cohort groups.
-
-Requested endpoint conditions come from attained training endpoints: choose the
-lowest-energy one among endpoints below the training median force RMS. We do
-not supply a held-out structure's oracle properties as its desired condition.
-The encoder reads 576 normalized displacement coordinates and context and
-predicts a 16-dimensional Gaussian. The decoder predicts coordinates using a
-presence-masked Gaussian reconstruction objective plus KL. A deterministic
-regressor receives the same context without a latent variable. Each has one
-fitted model; three CVAE draws are not three independent fits.
-
-\subsection{Observed geometry performance}
-On 128 fresh vacancy masks, direct geometry-CVAE predictions lowered UMA energy
-relative to deletion by approximately 19.1 meV/atom (median) and reduced median
-force-component RMS to about 24\% of the deletion value. The regressor gave
-similar changes. However, no direct output in these groups met maximum force
-$<0.05$ eV/\AA. The model therefore predicts improved coordinates, not
-guaranteed minimized geometries.
-
-On a matched 32-mask UMA fixed-cell optimizer check, all methods converged under
-the same operational force tolerance. Median steps were 40 from deletion,
-24 from the regressor, and 24 from CVAE draw 0. Median wall times in that run
-were 3.71, 2.19, and 2.19 seconds, respectively. The paired step comparison is
-more portable than wall time. The measured benefit is a learned-start benefit;
-a CVAE-specific advantage has not been established.
-
-Force-component RMS and maximum force answer different questions:
-\begin{equation}
-F_{\rm RMS}=\sqrt{\frac{1}{3N}\sum_{a,\alpha}F_{a\alpha}^2},
-\qquad F_{\max}=\max_a\|F_a\|_2.
-\end{equation}
-Here $N$ is the number of present atoms. A small RMS does not guarantee every
-atom meets the maximum-force threshold. The stated $0.05$ eV/\AA\ tolerance is
-the pilot's operational setting, not a universal standard.
-
-\owner{Beihao and Varad}{Reproduce the geometry CVAE/regressor on frozen
-lineages and inspect held-out coordinate errors by composition/cohort. Recompute
-the stored direct-force and paired-step summaries. Separate posterior
-reconstruction, prior-decoded physical quality, and optimizer savings. Any
-newly trained model not yet scored has no measured new force/step result.}
-\newpage
-
-\section{Validation plan using the current data}
-The next useful tests isolate model behavior rather than simply adding more
-calculated structures. For adaptation, compare continued training on round 0
-with round-1 training from the same checkpoint at fixed $\beta$, training-derived
-thresholds, validation set, optimizer, and number of updates. Class balancing
-can be a separate factor. This distinguishes extra data from changes in
-weighting or optimization. Select on development evidence and state explicitly
-which historical assessments have been reused.
-
-The wider original main-parent data contain all integer Li counts. A
-composition-balanced fit and protected interior-count evaluation can test
-interpolation; an evaluation outside the trained range tests extrapolation.
-Only exact cached geometries have measured energies. Missing cache entries
-must remain unknown rather than being dropped from an apparent complete yield.
-The exactly enumerated 12-site O3 benchmark provides 87 orbit masks across
-compositions, including 17 at half lithiation. It supports finite-support
-coverage checks, but requires a compatible separate model. Applying 48-site
-weights to a padded/truncated vector does not establish size transfer. These
-prepared labels are MLIP labels, not 87 new DFT calculations.
-
-For vacancy generation, report valid count, orbit uniqueness, novelty relative
-to frozen history, teacher-specific energy quality, and their combined yield.
-Best energy versus attempt budget complements low-tail yield. Symmetry-minimized
-distance to training distinguishes local exploration from broader novelty.
-Independent fit seeds, not correlated trajectory frames or repeated latent
-draws, define the main model-replication unit. Include adaptation labels and
-training cost before claiming computational savings.
-
-For geometry prediction, compare the CVAE against the deterministic regressor
-using held-out lineages, the same supplied cells, and the same context policy.
-Check coordinate error, minimum separation, directly measured forces/energies,
-and paired optimizer steps where existing labels permit. Removing scalar
-property conditions or comparing endpoint-only with weighted trajectory
-training are bounded, interpretable ablations. Coordinate error alone does not
-demonstrate an energy advantage or convergence.
-
-\section{Novelty, limitations, and team contributions}
-The current contribution is a reproducible, symmetry-aware evaluation of
-conditional vacancy generation with strong local-search controls, together with
-a separate learned-geometry-start prototype. The useful negative findings are
-that a stronger model need not beat mutation and that latent stochasticity has
-not yet improved geometry starts beyond regression. Both guide the next
-generative-model design choices.
-
-The present data do not prove DFT accuracy, global minima, phase stability,
-finite-temperature equilibrium, experimental recycling conditions, or transfer
-between sizes/materials. Different teachers are independent prediction
-comparisons, not replacements for matched DFT validation. A later DFT audit can
-select composition-matched CVAE, mutation, random, and teacher-disagreement
-structures; it is not required to complete the current midterm comparison.
-
-Beihao owns model reproduction, the controlled adaptation study, and the method
-equations. Varad owns independent metric recomputation, baselines, uncertainty,
-and figures. Ricardo owns parent/symmetry/provenance checks, materials
-motivation, and physical interpretation. On November 7 each provides a checked
-paragraph and result; on November 8 we integrate and freeze tables; on November
-9 we verify the approximately five-page body and references. The presentation
-dates are November 24 and December 1; the final report is due December 12.
-
-\owner{All authors}{Replace the owner notes with completed contributions,
-verify author names and course formatting, and select one integrating editor.
-This editable document is a draft; its scientific statements must remain tied
-to the archived configurations, source tables, and validation receipts.}
+\textbf{Independent team contributions remain:} Beihao reproduces a multibin fit
+on the class GPU, explains the implemented model, and supplies learning curves
+and one controlled ablation. Varad independently recomputes historical/new
+metrics, multiplicities, allocation and costs, and prepares seed-resolved figures.
+Ricardo's physical motivation, data/site/symmetry provenance, ranking audit and
+interpretation are supplied here. Individual checks are targeted for November 7,
+integration/table freeze November 8, and final verification November 9 before
+11:59 p.m. Pacific. Prepared infrastructure does not count as collaborators'
+completed checks; no Gradescope submission is automated.
 
 \clearpage
 \bibliographystyle{plain}

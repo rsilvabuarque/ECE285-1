@@ -1,34 +1,47 @@
-# Midterm 1 editable draft
+# Midterm 1 report and insertion map
 
-The report source is [midterm1/main.tex](midterm1/main.tex), with references in
-[midterm1/references.bib](midterm1/references.bib). The draft reserves five body
-pages, including the revised proposal, and places references afterward. Confirm
-the final class formatting before submission; the supplied `article` layout is
-an editable working format.
+The editable report is [midterm1/main.tex](midterm1/main.tex), compiled as
+[midterm1/main.pdf](midterm1/main.pdf), with
+[midterm1/references.bib](midterm1/references.bib). It targets five body pages,
+including the revised proposal, with references afterward. The provided
+screenshots specify NeurIPS format for the proposal; no additional midterm
+layout was found in those sources. Verify any newer course instruction before
+manual submission.
 
-Build from `final_project/`:
+Build from `final_project/` with TeX Live or an equivalent LaTeX installation:
 
 ```bash
 bash docs/midterm1/build.sh
 ```
 
-The source has owner notes that must be replaced with completed contributions:
+The report centers on the new composition-and-energy-range CVAE and the
+static-energy temperature-acquisition demonstration. The old binary benchmark,
+rank-audit context, and geometry/regressor comparison are clearly historical.
+Ricardo's completed physical contribution is also available as editable text in
+[RICARDO_CONTRIBUTION.md](RICARDO_CONTRIBUTION.md).
 
-- Ricardo checks materials motivation, parent structure, symmetry, and label
-  provenance. Add materials references matched to the claims actually retained.
-- Beihao checks the implemented equations, supplies a reproduced fit and
-  learning curves, and reports the controlled adaptation study if completed.
-- Varad independently recomputes the table, supplies a seed-resolved comparison
-  figure, and checks geometry and uncertainty statements.
+| Report location | Content | Owner's independent follow-up |
+| --- | --- | --- |
+| Sections 1–2 | Motivation, computational tools, parent, geometry and symmetry | Ricardo reviews physical interpretation and representative structures |
+| Section 3 | Shared condition schema, encoder/AR decoder, loss and assessment | Beihao reproduces a fit, checks equations, supplies learning curves/ablation |
+| Section 4 | Reference measure, static weights, ESS, temperature mixtures and floor | Varad independently checks multiplicities, units, allocation and concentration |
+| Section 5 / `generated_results.tex` | New measured generation/acquisition results | Varad checks source metrics and prepares seed/condition figures |
+| Section 6 | Preserved historical evidence, DFT rank limitations and integration | All authors approve limits and their actual contributions |
 
-The numerical comparison in the draft is the frozen completed experiment, not
-an evaluation of future collaborator fits. If an ablation has only held-out
-likelihood or coordinate errors so far, report those observables and leave
-fresh physical sample quality as unmeasured.
+The numerical claim map is [midterm1/claim_sources.json](midterm1/claim_sources.json),
+with a [readable source table](midterm1/CLAIM_SOURCE_MAP.md). The measured
+`generated_results.tex` includes completed benchmark, acquisition demonstration
+and allocated-resource accounting. Its negative result is retained. Passing code
+tests alone did not establish that result: complete teacher scores, exact-geometry
+joins and independent raw-input audits support it.
 
-The expected storyline is already supported by the data: AR conditioning helps
-relative to uniform sampling; low-energy mutation remains stronger; further
-adaptation does not improve average yield; learned geometry starts reduce
-optimizer iterations, but the regressor matches the geometry CVAE. The draft
-keeps size/material transfer, DFT accuracy, and equilibrium claims outside the
-established result.
+Beihao's and Varad's exact inputs, commands, expected outputs and acceptance
+checks are in [COLLABORATOR_TASKS.md](COLLABORATOR_TASKS.md). Preparing those
+commands does not complete their independent checks. Use
+[INTEGRATION_CHECKLIST.md](INTEGRATION_CHECKLIST.md) for November 7/8/9.
+
+No class result in this draft establishes DFT accuracy of new structures,
+physical configurational entropy, phase stability, reactor equilibrium or
+post-fine-tuning improvement. Any subsequent MLIP-only thermal-method pilot is
+kept outside the class report except as future work. No DFT or Gradescope
+submission is automated.

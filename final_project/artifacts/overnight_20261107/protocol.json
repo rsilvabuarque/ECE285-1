@@ -1,0 +1,49 @@
+{
+  "base_commit": "7f7485bda6aaa441b8bd88eebc6cbd64210dccc3",
+  "branch": "overnight/multibin-acquisition-20261107",
+  "started_utc": "2026-11-07 08:30:40 UTC",
+  "stop_by_utc": "2026-11-07 15:00:40 UTC",
+  "resource_authorization": {
+    "account": "m5397_g",
+    "maximum_concurrent_GPUs": 36,
+    "maximum_GPU_node_hours": 250,
+    "new_budget": true,
+    "overrides_attached_prompt_resource_rules": true
+  },
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "reference_raw_draws_per_count": 8192,
+  "fit_seeds": [
+    20261106,
+    20261107,
+    20261108
+  ],
+  "new_training": "H0 sameprotecteddata/splits, AR8latent64GRU, multibin4inputvsbinary2; otheroptimizationssame",
+  "methods": [
+    "multibin",
+    "binary",
+    "composition",
+    "uniform",
+    "mutation_bin",
+    "mutation_low"
+  ],
+  "fixed_benchmark_attempts_per_condition": 256,
+  "fixed_benchmark_total_attempts": 41472,
+  "temperature_grid_K": [
+    393.15,
+    433.15,
+    473.15,
+    493.15
+  ],
+  "temperature_demo_budget_per_schedule_n_fit": 128,
+  "temperature_policy_exploration_floor": 0.1,
+  "new_oracle_geometry_model_pair_ceiling": 150000,
+  "checkpoint_selection": "validation reconstruction+KL beta1; no neworacle result usedforselection",
+  "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+  "DFT_authorization": false,
+  "MLIP_finetuning_authorization": false,
+  "note": "Frozen experiment design. Completion and final accounting are recorded in the Git-tracked phase1_gate.json and cost_receipt.json beside this packet."
+}

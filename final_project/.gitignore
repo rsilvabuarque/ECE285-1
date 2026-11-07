@@ -20,3 +20,18 @@ docs/midterm1/*.fdb_latexmk
 docs/midterm1/*.fls
 docs/midterm1/*.log
 docs/midterm1/*.out
+
+# New-run binary checkpoints and full replay records are released as a run bundle.
+/artifacts/overnight_20261107/data/*.npz
+/artifacts/overnight_20261107/data/training_keys.json
+/artifacts/overnight_20261107/data/history_assessment.json
+/artifacts/overnight_20261107/benchmark/attempts.csv
+/artifacts/overnight_20261107/benchmark/candidates.npz
+/artifacts/overnight_20261107/benchmark/scores_*.npz
+/artifacts/overnight_20261107/demo/attempts.csv
+/artifacts/overnight_20261107/demo/candidates.npz
+/artifacts/overnight_20261107/demo/scores_*.npz
+/artifacts/overnight_20261107/fits/**/*.pt
+/artifacts/overnight_20261107/evaluation/**/attempt_outcomes.csv
+/artifacts/overnight_20261107/evaluation/**/candidate_measurements.csv
+/artifacts/overnight_20261107/evaluation/**/budget_curves.csv

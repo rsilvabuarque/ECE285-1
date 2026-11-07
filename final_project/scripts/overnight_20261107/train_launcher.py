@@ -1,0 +1,5 @@
+import argparse,os,sys
+from pathlib import Path
+p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--seed-offset',type=int,default=0);a=p.parse_args();rank=int(os.environ.get('SLURM_PROCID','0'));seed=20261106+a.seed_offset+rank;root=a.root
+cmd=[sys.executable,'-m','cathode_cvae.learning.train_mask','--data',str(root/'artifacts/current/improvement_v1/training_round0.npz'),'--parent',str(root/'artifacts/current/core/data/parents/O3_N48_pilot.npz'),'--kind','ar_cvae','--condition-mode','multibin','--condition-schema-in',str(root/'runs/overnight_20261107/data/condition_schema_uma.json'),'--orientation','canonical','--seed',str(seed),'--epochs','100','--batch-size','512','--learning-rate','.001','--beta-final','.1','--beta-warmup','20','--validation-beta','1','--patience','15','--minimum-epochs','20','--max-seconds','600','--device','cuda','--teacher','uma','--teacher-head','omat','--geometry-protocol','pristine-derived deletion; unrelaxed; exact canonical parent coordinates','--output-dir',str(root/f'runs/overnight_20261107/fits/multibin_v2_{seed}')]
+os.execv(sys.executable,cmd)

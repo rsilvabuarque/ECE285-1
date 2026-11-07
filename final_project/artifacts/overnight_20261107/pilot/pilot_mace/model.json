@@ -1,0 +1,26 @@
+{
+  "model": "mace",
+  "checkpoint_name": "MACE-MH-1",
+  "head": "omat_pbe",
+  "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+  "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model",
+  "checkpoint_hashes": {
+    "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+  },
+  "package": "mace-torch",
+  "package_version": "0.3.16",
+  "torch": "2.13.0+cu130",
+  "ase": "3.26.0",
+  "dtype": "float32",
+  "tf32": false,
+  "nitro": false,
+  "compile": false,
+  "dispersion": false,
+  "device": "cuda",
+  "device_name": "NVIDIA A100-SXM4-80GB",
+  "load_seconds": 64.97085890104063,
+  "job_id": "60954645",
+  "host": "nid200276",
+  "gpu_visibility": "0",
+  "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+}

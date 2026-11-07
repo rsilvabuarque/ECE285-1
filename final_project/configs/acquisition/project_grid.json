@@ -1,0 +1,9 @@
+{
+  "schema_version": "static-acquisition-defaults-v1",
+  "temperatures_K": [393.15, 433.15, 473.15, 493.15],
+  "mixture_condition_weights": [0.25, 0.25, 0.25, 0.25],
+  "exploration_fraction": 0.1,
+  "k_B_eV_K": 8.617333262145e-5,
+  "energy_units": "eV/cell",
+  "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; not basin free energies or calibrated reactor populations"
+}

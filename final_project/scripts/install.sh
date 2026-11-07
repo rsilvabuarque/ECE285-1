@@ -8,6 +8,9 @@ prefix="$project_dir/.venvs"
 model_dir="${CATHODE_CVAE_MODEL_DIR:-$project_dir/.models}"
 core_only=0
 download_weights=1
+backend_selection="uma,mace,sevennet,matgl"
+backends_explicit=0
+dry_run=0
 torch_index_url=""
 
 usage() {
@@ -21,8 +24,10 @@ pip check, pinned model download and SHA256 verification. No jobs are submitted.
   --prefix DIR              Environment directory (default .venvs)
   --model-dir DIR           Model cache (default .models)
   --core-only               Install learning/report workflow only; no MLIP envs
+  --backends LIST           Comma-separated uma,mace,sevennet,matgl (matgl=2 models)
   --no-weights              Install all packages but defer checkpoint download
   --torch-index-url URL     Official PyTorch wheel channel matching your driver
+  --dry-run                 Print selected environments/models without installing
   --help                    Show this text
 
 The installer fails on missing/incompatible dependencies. On a partial failure,
@@ -38,7 +43,9 @@ while (($#)); do
     --model-dir) model_dir="$2"; shift 2 ;;
     --torch-index-url) torch_index_url="$2"; shift 2 ;;
     --core-only) core_only=1; shift ;;
+    --backends) backend_selection="$2"; backends_explicit=1; shift 2 ;;
     --no-weights) download_weights=0; shift ;;
+    --dry-run) dry_run=1; shift ;;
     --help|-h) usage; exit 0 ;;
     *) printf 'Unknown option: %s\n' "$1" >&2; usage >&2; exit 2 ;;
   esac
@@ -49,11 +56,31 @@ import sys
 if not (3, 11) <= sys.version_info[:2] <= (3, 13):
     raise SystemExit('Use Python 3.11–3.13; Python 3.12 is the verified campaign version.')
 PY
+profiles=(learning)
+if (( core_only && backends_explicit )); then printf 'Choose --core-only or --backends, not both.\n' >&2; exit 2; fi
+if (( ! core_only )); then
+  IFS=',' read -r -a requested_backends <<< "$backend_selection"
+  for backend in "${requested_backends[@]}"; do
+    case "$backend" in uma|mace|sevennet|matgl) ;; *) printf 'Unknown backend: %s\n' "$backend" >&2; exit 2 ;; esac
+    if [[ " ${profiles[*]} " != *" $backend "* ]]; then profiles+=("$backend"); fi
+  done
+fi
+weight_models=()
+for profile in "${profiles[@]}"; do
+  case "$profile" in uma|mace|sevennet) weight_models+=("$profile");; matgl) weight_models+=(chgnet m3gnet);; esac
+done
+
+if (( ! core_only && ${#weight_models[@]} == 0 )); then printf 'Select at least one backend or use --core-only.\n' >&2; exit 2; fi
+if (( dry_run )); then
+  "$python_command" - "$prefix" "$model_dir" "$torch_index_url" "${profiles[@]}" <<'PYPLAN'
+import json,sys
+print(json.dumps(dict(prefix=sys.argv[1],model_dir=sys.argv[2],torch_index_url=sys.argv[3],profiles=sys.argv[4:]),indent=2))
+PYPLAN
+  exit 0
+fi
 mkdir -p "$prefix" "$model_dir"
 prefix="$(cd -- "$prefix" && pwd)"
 model_dir="$(cd -- "$model_dir" && pwd)"
-profiles=(learning)
-if (( ! core_only )); then profiles+=(uma mace sevennet matgl); fi
 
 for profile in "${profiles[@]}"; do
   env_dir="$prefix/$profile"
@@ -84,13 +111,13 @@ config={'schema_version':1,'interpreters':{p:str(prefix/p/'bin/python') for p in
 (project/'environments.json').write_text(json.dumps(config,indent=2)+'\n')
 PY
 
-if (( ! core_only && download_weights )); then
-  "$prefix/learning/bin/python" -m cathode_cvae.mlip.cli fetch-models \
-    --models uma mace sevennet chgnet m3gnet --model-dir "$model_dir"
-fi
-
 printf '\nInstalled environments under %s\nActivate: source "%s/learning/bin/activate"\n' "$prefix" "$prefix"
 printf 'Backend paths recorded in %s/environments.json\n' "$project_dir"
+if (( ! core_only && download_weights )); then
+  "$prefix/learning/bin/python" -m cathode_cvae.mlip.cli fetch-models \
+    --models "${weight_models[@]}" --model-dir "$model_dir"
+fi
+
 if (( ! core_only && ! download_weights )); then
-  printf 'Weights deferred. Next: cathode-cvae mlip fetch-models --models uma mace sevennet chgnet m3gnet\n'
+  printf 'Weights deferred. Next: cathode-cvae mlip fetch-models --models %s\n' "${weight_models[*]}"
 fi

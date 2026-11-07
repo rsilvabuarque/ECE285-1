@@ -1,0 +1,8 @@
+{
+  "status": "IMPLEMENTATION_FAILURE_BEFORE_SCORING",
+  "cause": "Optimized custom Torch canonicalizer used min result as tensor; repaired by reusing tested train canonicalize function; explicit FP32/TF32-off controls added",
+  "planned_attempts_reached": 512,
+  "geometry_outputs_saved": false,
+  "energy_labels_requested": false,
+  "reproducibility": "Same deterministic per-group RNG recipe and frozen checkpoints retained; no energy-based sample rejection"
+}

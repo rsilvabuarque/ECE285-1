@@ -1,0 +1,17 @@
+{
+  "schema_version": "static-acquisition-run-v1",
+  "source": {
+    "reference_sha256": "00e79fca72a9453c934653f8d952d23522c6b09c28842e9d3f934b52df5dc00c",
+    "parent_sha256": "3f2cb6acd3fa6c07d22109cce01f9e1e44aa815953f9e7b8f7c8de336999b4ce",
+    "reference_kind": "exhaustive_orbits",
+    "reference_rows": 87,
+    "reference_metadata": {}
+  },
+  "plans": [],
+  "reference_pool_sensitivity": [],
+  "finite_support_verified": true,
+  "interpretation": "Temperature-dependent acquisition under a static MLIP surrogate; energies are not basin free energies",
+  "physical_temperature_is_not_decoder_temperature": true,
+  "complete_reference_required": true,
+  "run_id": "cb7d3ccc66cfb37d6ad5c534f0cc55c28cac27bde94351929506ea393697bf16"
+}

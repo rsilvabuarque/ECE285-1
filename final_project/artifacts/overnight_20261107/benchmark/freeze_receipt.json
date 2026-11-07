@@ -1,0 +1,111 @@
+{
+  "status": "FROZEN_BEFORE_MEASURED_RESULT_SELECTION",
+  "attempts": 41472,
+  "unique_geometries": 40662,
+  "replicate_receipts": [
+    {
+      "status": "GENERATED_AND_FROZEN_BEFORE_SCORING",
+      "fit_seed": 20261106,
+      "attempts": 13824,
+      "unique_geometries": 13662,
+      "count_per_group": 256,
+      "conditions": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "generator_sha256": "bd56385666f2d98db2138a666329120b9508209da86109cf061903291d49ad66",
+      "frozen_checkpoints": [
+        {
+          "method": "multibin",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/overnight_20261107/fits/multibin_v2_20261106/best.pt",
+          "sha256": "293604d4b515a443f9870b8baba99b0d6dbac34c55ec7338c3a8184e363a7e9c"
+        },
+        {
+          "method": "binary",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_cvae_20261106/best.pt",
+          "sha256": "f1781946fa192760d64c0b31bfbc9c681b2a1e9cfb289fb19ad66d7f2a9d2b26"
+        },
+        {
+          "method": "composition",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_composition_20261106/best.pt",
+          "sha256": "abbb35ba2aa386390b17876203c6fe9cd90e8f6dadb56d238a2f224abf03adfc"
+        }
+      ],
+      "generated_unix": 1794041801.2576113,
+      "outputs": {
+        "attempts.csv": "426206e9cdd1a56a011bc9e714788306e0db5c7d30a7dff23ccaedb0f0a41268",
+        "candidates.npz": "667e460a5d01132987f01ed13dcb8d7b40a5a6f814ab168f6b66d88714681617"
+      },
+      "no_energy_filtering": true,
+      "benchmark_scope": "Sixmethods equalattempts, new multibin vs existing H0 controls; fixed pretraineddata and precision; newassesshistoryincludesindependentreference"
+    },
+    {
+      "status": "GENERATED_AND_FROZEN_BEFORE_SCORING",
+      "fit_seed": 20261107,
+      "attempts": 13824,
+      "unique_geometries": 13662,
+      "count_per_group": 256,
+      "conditions": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "generator_sha256": "bd56385666f2d98db2138a666329120b9508209da86109cf061903291d49ad66",
+      "frozen_checkpoints": [
+        {
+          "method": "multibin",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/overnight_20261107/fits/multibin_v2_20261107/best.pt",
+          "sha256": "b483bcfe6d4b2c65bc6607b831c86092e3abd88d9a614589c192864a2e64d389"
+        },
+        {
+          "method": "binary",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_cvae_20261107/best.pt",
+          "sha256": "8bc7d6466f0abbc2f1bc48f7ec4243503af3995b186765792cba3b077f24dd77"
+        },
+        {
+          "method": "composition",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_composition_20261107/best.pt",
+          "sha256": "70b344fbaa21b33faa5099a940c7fb2055067db5716221b5674ba3d5e8297bf5"
+        }
+      ],
+      "generated_unix": 1794041801.2601075,
+      "outputs": {
+        "attempts.csv": "6b1403f609db501a1ec581c7d18ff3763cd92cd64a6fd72cbb8ece1ed247f501",
+        "candidates.npz": "1c387ed745ff842fc209ba666457cf123daea9c7713c4f88b1d32c3752c9c271"
+      },
+      "no_energy_filtering": true,
+      "benchmark_scope": "Sixmethods equalattempts, new multibin vs existing H0 controls; fixed pretraineddata and precision; newassesshistoryincludesindependentreference"
+    },
+    {
+      "status": "GENERATED_AND_FROZEN_BEFORE_SCORING",
+      "fit_seed": 20261108,
+      "attempts": 13824,
+      "unique_geometries": 13584,
+      "count_per_group": 256,
+      "conditions": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+      "generator_sha256": "bd56385666f2d98db2138a666329120b9508209da86109cf061903291d49ad66",
+      "frozen_checkpoints": [
+        {
+          "method": "multibin",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/runs/overnight_20261107/fits/multibin_v2_20261108/best.pt",
+          "sha256": "ca89ac8e4e3496d3446eaeb1f1685e96f902d6a3eddb81dd67d8f4a21f6ba2a8"
+        },
+        {
+          "method": "binary",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_cvae_20261108/best.pt",
+          "sha256": "5ce587f440e4c928fe38607006b81e62c703145cb9855495a1a46ac5bc7a956b"
+        },
+        {
+          "method": "composition",
+          "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree/final_project/artifacts/current/improvement_v1/runs/ar_adapt_composition_20261108/best.pt",
+          "sha256": "3d8cf4c409727e11eb3128b41d90ad09032d0938d5d64c2555f6a3ef8c38dde7"
+        }
+      ],
+      "generated_unix": 1794041836.2039654,
+      "outputs": {
+        "attempts.csv": "805a6a604be1fe0a08e5c511139e6c9580877ad153df2d8e5d13736ec3bc79db",
+        "candidates.npz": "396603fc615220154cf863fbf7cc28d9469911c68852029fd6a39f130b364d02"
+      },
+      "no_energy_filtering": true,
+      "benchmark_scope": "Sixmethods equalattempts, new multibin vs existing H0 controls; fixed pretraineddata and precision; newassesshistoryincludesindependentreference"
+    }
+  ],
+  "combined_unix": 1794042237.9897,
+  "outputs": {
+    "attempts.csv": "69ab152c73e335a095874ff4929c7b6a88ba3faf0a5a48a6b0ec8faf11e514a7",
+    "candidates.npz": "8277d4cb939a070170e948c1fb1c899ed0dac44a2938d87d6b67918e628dd5bf"
+  }
+}

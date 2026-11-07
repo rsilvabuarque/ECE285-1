@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "source_sha256": "899bc40788bf1a7ce9d4072467d3fcefe5db69809816b7918923f3cbf2e7b348",
+  "source_rows": 34368,
+  "unique_geometries": 11456,
+  "models": [
+    "m3gnet",
+    "mace",
+    "uma"
+  ],
+  "pools": 258,
+  "independent_field_checks": 432,
+  "script_sha256": "dd0f80de674703affc411e94f77cfdb6bc01348f383a33fb0b7061d2ca092f97",
+  "definitions": {
+    "pool": "source/phase/nCo/nLi/nAtoms/cohort; alternate all-cohort summary is separately named",
+    "ties": "Exact stored-energy ties have average ranks and expand top-k boundaries",
+    "regret": "DFT penalty relative to minimum DFT member of complete evaluated pool",
+    "gaps": "All unordered pair-gap RMSE via exact O(n) variance identity; per atom",
+    "summary": "Unweighted across informative composition pools, not independent-frame inference"
+  },
+  "limitations": [
+    "No new DFT or inference",
+    "Historical and Hu DFT protocols are separate",
+    "Correlated frames are not independent structures",
+    "FP64 audit differs from FP32 new deletion teacher campaign",
+    "No certification of archived SCF or magnetic convergence"
+  ]
+}

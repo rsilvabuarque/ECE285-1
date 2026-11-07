@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-11-07T09:39:52.126105+00:00",
+  "scope": "Read-only hashes, public packet payload, Git exclusions, secret signatures and executed trainer/generator identity; no GPU or MLIP calculations",
+  "historical_snapshot": {
+    "path": "artifacts/current/SNAPSHOT_MANIFEST.json",
+    "entries": 434,
+    "bytes": 191183684,
+    "missing": [],
+    "mismatches": [],
+    "manifest_identical_to_HEAD": true
+  },
+  "new_packet": {
+    "path": "artifacts/overnight_20261107/manifest.json",
+    "entries": 143,
+    "bytes": 186304283,
+    "missing": [],
+    "mismatches": [],
+    "source_entries": 25,
+    "source_mismatches": []
+  },
+  "fit_and_benchmark_receipts": [
+    {
+      "seed": 20261106,
+      "trainer_matches": true,
+      "model_matches": true,
+      "checkpoint_matches": true,
+      "benchmark_generator_matches": true,
+      "all_frozen_checkpoints_match": true
+    },
+    {
+      "seed": 20261107,
+      "trainer_matches": true,
+      "model_matches": true,
+      "checkpoint_matches": true,
+      "benchmark_generator_matches": true,
+      "all_frozen_checkpoints_match": true
+    },
+    {
+      "seed": 20261108,
+      "trainer_matches": true,
+      "model_matches": true,
+      "checkpoint_matches": true,
+      "benchmark_generator_matches": true,
+      "all_frozen_checkpoints_match": true
+    }
+  ],
+  "temperature_generator_source_matches": {
+    "generator_source_sha256": true,
+    "canonicalizer_source_sha256": true,
+    "request_resolver_source_sha256": true,
+    "model_source_sha256": true
+  },
+  "new_checkpoint_git_exclusion": [
+    {
+      "path": "artifacts/overnight_20261107/fits/multibin_v2_20261108/best.pt",
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "artifacts/overnight_20261107/fits/multibin_v2_20261106/best.pt",
+      "tracked": false,
+      "ignored": true
+    },
+    {
+      "path": "artifacts/overnight_20261107/fits/multibin_v2_20261107/best.pt",
+      "tracked": false,
+      "ignored": true
+    }
+  ],
+  "git_publication_candidates": 208,
+  "forbidden_publication_paths": [],
+  "secret_signature_hits": [],
+  "archive": {
+    "sha256_matches": true,
+    "bytes_match": true,
+    "entries": 144,
+    "entry_set_matches": true,
+    "manifest_matches": true,
+    "missing": [],
+    "extra": [],
+    "unsafe_names": [],
+    "payload_mismatches": []
+  },
+  "limitations": [
+    "Secret scan checks concrete common token/private-key signatures in changed/new text files up to2MB; it is not an exhaustive security certification.",
+    "Remote release availability, replay and Git push are verified separately by the parent agent."
+  ]
+}

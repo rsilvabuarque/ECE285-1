@@ -5,3 +5,6 @@ artifacts/current/** -text
 *.pdf -text
 *.png -text
 *.zip -text
+artifacts/overnight_20261107/** -text
+reports/overnight_20261107/**/*.csv -text
+reports/ranking_audit_20261107/**/*.csv -text

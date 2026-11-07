@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "independent_scope": "Raw attempts, canonical candidate masks, total teacher energies and per-teacher schemas; no evaluator functions imported",
+  "attempts": 11520,
+  "teacher_attempt_rows": 23040,
+  "unique_candidates": 11080,
+  "schedules": 90,
+  "schedule_budget": 128,
+  "mixture_budget_is_joint_over_four_temperatures": true,
+  "zero_count_bin_requests": 144,
+  "allocation_realization_rows_checked": 1728,
+  "all_energy_coverage_each_teacher": 1.0,
+  "policy_attempts": {
+    "static": 4608,
+    "static_exploration": 4608,
+    "temperature_mixture_static": 1152,
+    "temperature_mixture_static_exploration": 1152
+  },
+  "summary": [
+    {
+      "teacher": "uma",
+      "allocation_policy": "static",
+      "attempts": 4608,
+      "requested_low_fraction": 1.0,
+      "requested_middle_fraction": 0.0,
+      "requested_high_fraction": 0.0,
+      "measured_low_fraction": 0.3648003472222222,
+      "measured_middle_fraction": 0.5659722222222222,
+      "measured_high_fraction": 0.06922743055555555,
+      "bin_hit_rate": 0.3648003472222222,
+      "unique_generated_orbits": 4483
+    },
+    {
+      "teacher": "uma",
+      "allocation_policy": "static_exploration",
+      "attempts": 4608,
+      "requested_low_fraction": 0.9375,
+      "requested_middle_fraction": 0.03125,
+      "requested_high_fraction": 0.03125,
+      "measured_low_fraction": 0.3578559027777778,
+      "measured_middle_fraction": 0.5740017361111112,
+      "measured_high_fraction": 0.0681423611111111,
+      "bin_hit_rate": 0.3619791666666667,
+      "unique_generated_orbits": 4477
+    },
+    {
+      "teacher": "uma",
+      "allocation_policy": "temperature_mixture_static",
+      "attempts": 1152,
+      "requested_low_fraction": 1.0,
+      "requested_middle_fraction": 0.0,
+      "requested_high_fraction": 0.0,
+      "measured_low_fraction": 0.3602430555555556,
+      "measured_middle_fraction": 0.5581597222222222,
+      "measured_high_fraction": 0.08159722222222222,
+      "bin_hit_rate": 0.3602430555555556,
+      "unique_generated_orbits": 1132
+    },
+    {
+      "teacher": "uma",
+      "allocation_policy": "temperature_mixture_static_exploration",
+      "attempts": 1152,
+      "requested_low_fraction": 0.9375,
+      "requested_middle_fraction": 0.03125,
+      "requested_high_fraction": 0.03125,
+      "measured_low_fraction": 0.3715277777777778,
+      "measured_middle_fraction": 0.5598958333333334,
+      "measured_high_fraction": 0.0685763888888889,
+      "bin_hit_rate": 0.3689236111111111,
+      "unique_generated_orbits": 1131
+    },
+    {
+      "teacher": "mace",
+      "allocation_policy": "static",
+      "attempts": 4608,
+      "requested_low_fraction": 1.0,
+      "requested_middle_fraction": 0.0,
+      "requested_high_fraction": 0.0,
+      "measured_low_fraction": 0.4025607638888889,
+      "measured_middle_fraction": 0.5258246527777778,
+      "measured_high_fraction": 0.07161458333333333,
+      "bin_hit_rate": 0.4025607638888889,
+      "unique_generated_orbits": 4483
+    },
+    {
+      "teacher": "mace",
+      "allocation_policy": "static_exploration",
+      "attempts": 4608,
+      "requested_low_fraction": 0.9375,
+      "requested_middle_fraction": 0.03125,
+      "requested_high_fraction": 0.03125,
+      "measured_low_fraction": 0.3923611111111111,
+      "measured_middle_fraction": 0.5373263888888888,
+      "measured_high_fraction": 0.0703125,
+      "bin_hit_rate": 0.3927951388888889,
+      "unique_generated_orbits": 4477
+    },
+    {
+      "teacher": "mace",
+      "allocation_policy": "temperature_mixture_static",
+      "attempts": 1152,
+      "requested_low_fraction": 1.0,
+      "requested_middle_fraction": 0.0,
+      "requested_high_fraction": 0.0,
+      "measured_low_fraction": 0.3897569444444444,
+      "measured_middle_fraction": 0.5338541666666666,
+      "measured_high_fraction": 0.0763888888888889,
+      "bin_hit_rate": 0.3897569444444444,
+      "unique_generated_orbits": 1132
+    },
+    {
+      "teacher": "mace",
+      "allocation_policy": "temperature_mixture_static_exploration",
+      "attempts": 1152,
+      "requested_low_fraction": 0.9375,
+      "requested_middle_fraction": 0.03125,
+      "requested_high_fraction": 0.03125,
+      "measured_low_fraction": 0.40625,
+      "measured_middle_fraction": 0.5251736111111112,
+      "measured_high_fraction": 0.0685763888888889,
+      "bin_hit_rate": 0.4010416666666667,
+      "unique_generated_orbits": 1131
+    }
+  ],
+  "reference_diagnostics": [
+    {
+      "n_Li": 12,
+      "temperature_K": 393.15,
+      "particle_ess": 3.7926606332766797,
+      "maximum_particle_mass": 0.4063460375967354,
+      "low_probability": 0.9999953691525519
+    },
+    {
+      "n_Li": 12,
+      "temperature_K": 433.15,
+      "particle_ess": 4.629263564037117,
+      "maximum_particle_mass": 0.36136659422619255,
+      "low_probability": 0.9999779288193367
+    },
+    {
+      "n_Li": 12,
+      "temperature_K": 473.15,
+      "particle_ess": 5.747833432503821,
+      "maximum_particle_mass": 0.318470762525438,
+      "low_probability": 0.9999208489674786
+    },
+    {
+      "n_Li": 12,
+      "temperature_K": 493.15,
+      "particle_ess": 6.439128438839544,
+      "maximum_particle_mass": 0.29808621277321395,
+      "low_probability": 0.9998623960190507
+    },
+    {
+      "n_Li": 24,
+      "temperature_K": 393.15,
+      "particle_ess": 1.8499832314546378,
+      "maximum_particle_mass": 0.7286856578553571,
+      "low_probability": 0.9999999982307182
+    },
+    {
+      "n_Li": 24,
+      "temperature_K": 433.15,
+      "particle_ess": 2.2708541703601854,
+      "maximum_particle_mass": 0.6539685308869567,
+      "low_probability": 0.9999999823017767
+    },
+    {
+      "n_Li": 24,
+      "temperature_K": 473.15,
+      "particle_ess": 2.83750043701975,
+      "maximum_particle_mass": 0.5805791674735241,
+      "low_probability": 0.9999998825146624
+    },
+    {
+      "n_Li": 24,
+      "temperature_K": 493.15,
+      "particle_ess": 3.1867996222880715,
+      "maximum_particle_mass": 0.5453155898766281,
+      "low_probability": 0.9999997322523102
+    },
+    {
+      "n_Li": 36,
+      "temperature_K": 393.15,
+      "particle_ess": 4.900196577784439,
+      "maximum_particle_mass": 0.3252561785079104,
+      "low_probability": 0.999999897469841
+    },
+    {
+      "n_Li": 36,
+      "temperature_K": 433.15,
+      "particle_ess": 5.480123376344297,
+      "maximum_particle_mass": 0.29899791123201264,
+      "low_probability": 0.9999993075831761
+    },
+    {
+      "n_Li": 36,
+      "temperature_K": 473.15,
+      "particle_ess": 6.158032100790449,
+      "maximum_particle_mass": 0.27460645175525916,
+      "low_probability": 0.9999966354569646
+    },
+    {
+      "n_Li": 36,
+      "temperature_K": 493.15,
+      "particle_ess": 6.5435870477628395,
+      "maximum_particle_mass": 0.2629823453275828,
+      "low_probability": 0.9999932829197298
+    }
+  ],
+  "overlap_with_benchmark_or_reference": 301,
+  "incremental_demo_geometry_teacher_evaluations": 21558,
+  "source_hashes": {
+    "attempts": "7d3d06c48942ab8fed9c8102646afd048f34a3024d822179d4ed04bdfec6295f",
+    "candidates": "66f49383fce3e9339b44cfa65cbf55ca8779b56d16a96a4edb86a0f3a48f47fc",
+    "training_keys": "3da713f0fbaa0237819dda06c08ba85c6556042bc357c7942075a9c033c18e13",
+    "history": "2c2636d7e23b751f75bc079b71f30d5c79fde3eb61300e67a14ec0e1a6da0e71",
+    "historical_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "reference_plans": "65813eb33686026268e37a6efb93d42801cc40766baa10e983d68e2596138117",
+    "scores_uma": "a55eafc91bed08ebe0b2676291d9d7bcdbfdf57d18111eae9e145ec35fa41e0d",
+    "schema_uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "scores_mace": "afe8e5175229cb8e067bb6afd90db9c8c848e178d97df0bf330647a5dfef63c0",
+    "schema_mace": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769"
+  },
+  "script_sha256": "f54d6292de596586f084746d92671d21ed61fb2950bff2d9b600bf43f9002846",
+  "limitations": [
+    "Bins and model proposals are coarse, non-equilibrium static-energy acquisition, not a physical finite-temperature ensemble.",
+    "All pure schedules request only low after integer allocation, but generated bin fractions show imperfect conditional fidelity.",
+    "All four physical temperatures have the same integer allocation on this grid; differences in achieved proportions reflect sampling variation rather than changed integer policies.",
+    "ESS is only about 2-7 raw reference particles out of 8192, so near-unit low-bin mass is not evidence that the energy tail was exhaustively found.",
+    "Novelty is relative to frozen pre-assessment history; benchmark/demo overlap is shared within-campaign evidence.",
+    "Per-teacher measured bins use that teacher own H0 training energy quantiles; UMA allocation is not a separate MACE-derived policy."
+  ]
+}

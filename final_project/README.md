@@ -1,298 +1,303 @@
-# Cathode CVAEs: midterm working package
+# Cathode vacancy CVAEs: midterm package
 
-**Beihao and Varad: start here, then read [your tasks](docs/COLLABORATOR_TASKS.md).**
-The immediate question is whether a conditional generative model can produce many
-**new, symmetry-distinct, low-energy vacancy configurations** more efficiently
-than simple samplers. A second prototype predicts atomic displacements to give a
-geometry optimizer a better starting point. The current data and checkpoints
-are sufficient for the November 9 midterm; the tasks below use those data and do
-not require new DFT, MD, or MLIP training.
+**Beihao and Varad: read [your tasks](docs/COLLABORATOR_TASKS.md), then use the
+commands below.** The class question is whether a conditional generator can
+produce new Li/vacancy arrangements at requested Li counts and low, middle, or
+high teacher-energy ranges. A separate temperature-dependent acquisition policy
+decides how often to request each range. The current parent is O3 LiCoO₂ with
+48 removable Li sites.
 
-The current occupancy experiment uses one O3 LiCoO₂ parent with **48 removable
-Li sites**. For a requested Li count, a sampler decides which sites remain
-occupied. It does not move atoms. A fast learned potential (an MLIP) evaluates
-the resulting structure's energy, forces, and stress. These MLIP values are our
-current *labels*; they are not newly computed DFT reference values. The longer
-term motivation is to choose useful structures for reference calculations and
-potential improvement, ultimately supporting simulations of cathode recycling.
+This extends the existing binary energy-conditioned AR CVAE; energy conditioning
+itself was already present. The benchmark uses MLIP energies of pristine-derived,
+unrelaxed deletion structures. A low-energy request is not a certificate of a
+minimum or a geometry relaxation. The temperature policy is **acquisition under
+a static MLIP surrogate**, not measured configurational entropy or calibrated
+reactor equilibrium.
 
-Read the documents in this order:
+The completed balanced benchmark is a negative result for the extension:
+UMA unique-novel in-bin yield is 31.00% for multibin, 33.00% for uniform raw
+sampling and 58.39% for requested-bin mutation. MACE gives the same ordering.
+The useful course result is a reproducible comparison and a diagnosis of limited
+conditional control, not an assumed CVAE win. See the exact denominator, seeds,
+new versus historical results and figures in [results](docs/RESULTS.md).
 
-1. [Method and data guide](docs/METHODS_AND_DATA.md): what each model learns,
-   what the conditions mean, and what one data row represents.
-2. [Measured results and limits](docs/RESULTS.md): the current comparison,
-   adaptation diagnostics, and geometry results.
-3. [Collaborator tasks](docs/COLLABORATOR_TASKS.md): concrete outputs, controls,
-   and division of work before November 9.
-4. [Midterm text draft](docs/MIDTERM_DRAFT.md) and [editable LaTeX source](docs/midterm1/main.tex)
-   ([compiled PDF](docs/midterm1/main.pdf)): five body pages plus references, with
-   owner notes to resolve before submission. Check the course's final formatting
-   requirements when integrating the report.
+Read these in order:
 
-The [validation record](docs/VALIDATION.md) covers fresh dependency installation,
-all five checkpoint constructors, 28 numerical tests, and exact reproduction of
-the cached comparison tables. New GPU prediction parity remains a check for the
-class platform; no new physical data were generated while preparing this branch.
+1. [Methods and data](docs/METHODS_AND_DATA.md): variables, bins, symmetry,
+   autoregressive model, acquisition measure and units.
+2. [Measured results](docs/RESULTS.md): historical versus new experiments,
+   baselines, DFT ranking context and limitations.
+3. [Collaborator tasks](docs/COLLABORATOR_TASKS.md): exact inputs, commands,
+   expected outputs, acceptance checks and report insertion points.
+4. [Report PDF](docs/midterm1/main.pdf), [LaTeX source](docs/midterm1/main.tex),
+   [Ricardo's prepared contribution](docs/RICARDO_CONTRIBUTION.md), and
+   [integration checklist](docs/INTEGRATION_CHECKLIST.md).
 
-## Install
-
-Use Python 3.12 (3.11–3.13 supported) and a compatible GPU driver. The package itself can train and
-evaluate on CPU or CUDA. On a cluster, obtain a permitted compute allocation
-before training or invoking the MLIPs; the package does not request allocations
-or select an account for you. It respects the GPUs made visible by your platform.
-
-To obtain this midterm branch in a new checkout:
+## Obtain the review branch
 
 ```bash
-git clone --branch midterm/portable-cvae-20261106 \
+git clone --branch overnight/multibin-acquisition-20261107 \
   https://github.com/rsilvabuarque/ECE285-1.git ECE285-midterm
 cd ECE285-midterm/final_project
 ```
 
-Install from `final_project`:
+Use a personal branch and new run directories. The historical
+`artifacts/current/` snapshot, original splits and completed results remain
+immutable. The new extension permits bounded CVAE training and MLIP checks;
+**no new DFT or new MLIP fine-tuning campaign is authorized by this package.**
 
-```bash
-bash scripts/install.sh --help
-bash scripts/install.sh --python python3 --prefix .venvs
-source .venvs/learning/bin/activate
-```
+## Install without materials-specific setup
 
-The installer creates a learning environment and backend-specific environments for
-all five MLIP models. It installs their declared dependencies and checks package
-consistency. Separate environments prevent one potential's dependency versions
-from silently changing another's. Model weights are downloaded separately from
-the Python packages, with the model/head and checkpoint identity recorded.
-UMA requires legitimate access to its gated model repository; follow the
-installer's message to authenticate once. Do not put tokens or downloaded model
-weights in Git.
+Python 3.11–3.13 is supported (3.12 was used in the historical GPU campaign).
+Training works on CPU or a visible CUDA GPU. Use a PyTorch wheel compatible with
+your platform's GPU driver; Python installation cannot upgrade that driver.
+On a cluster, obtain the class's permitted compute allocation first. Commands
+respect `CUDA_VISIBLE_DEVICES` and do not select an account or submit jobs.
 
-For the midterm's stored-data analysis and learning tasks, the core-only
-installation is enough:
+For the required fits and cached analyses:
 
 ```bash
 bash scripts/install.sh --python python3 --prefix .venvs --core-only
 source .venvs/learning/bin/activate
+python -m pip check
 ```
 
-`--no-weights` skips model downloads while still installing the selected Python
-dependencies. `--torch-index-url URL` selects a compatible official PyTorch
-wheel channel when your platform requires it. For CPU-only checks use
-`--torch-index-url https://download.pytorch.org/whl/cpu`. Package installation
-cannot upgrade the host GPU driver. The scientific campaign used NVIDIA A100s;
-other hardware should pass the interface check before a new benchmark.
-On NERSC, put environments and the pip cache on native scratch with `--prefix`
-and `PIP_CACHE_DIR` rather than installing thousands of files on the project
-filesystem. On a workstation, the default local `.venvs` is appropriate.
-No MLIP needs to be loaded to
-recompute the existing figures. Record the environment receipt with any new run.
+Existing users can activate their existing learning environment and update only
+the project code:
 
-## Existing data and results
-
-The frozen snapshot is under `artifacts/current/`. Use the packaged data, not
-machine-specific absolute paths from historical run configurations. The
-snapshot preserves original files and hashes; the portable package code lives
-under `src/cathode_cvae/`. Scripts inside the frozen snapshot preserve historical
-provenance and can contain old machine paths; use the package commands below.
-
-```text
-artifacts/current/
-  core/data/                         Original learning arrays and geometry frames
-  core/data/parents/                 Parent coordinates and site permutations
-  core/checkpoints/                  Original mask and geometry checkpoints
-  improvement_v1/training_*.npz       Three-count original/adaptation datasets
-  improvement_v1/runs/               New frozen fits and learning curves
-  improvement_v1/data/               Proposal attempts and cached MLIP scores
-  improvement_v1/reports/final/       Final measured sampler comparison
-  reports/                           Original report and supporting tables
-  extras/learning_all_parents/        Existing 12/24/36/alternate-48 labels, all 5 models
-  extras/geometry/                    Existing UMA/MACE additional geometry exports
+```bash
+python -m pip install -e '.[dev]'
+python -m pip check
 ```
 
-Verify the snapshot and reproduce the stored-energy comparison:
+The new schema/allocation code needs no new MLIP backend installation. For
+optional UMA/MACE inference on a fresh machine, install those providers:
+
+```bash
+bash scripts/install.sh --python python3 --prefix .venvs --backends uma,mace
+source .venvs/learning/bin/activate
+```
+
+The default installer without `--core-only` or `--backends` installs all five
+models in backend-specific environments (M3GNet and CHGNet share MatGL).
+It installs all declared/transitive dependencies, runs `pip check`, records
+resolved packages, and downloads hash-checked weights unless `--no-weights` is
+supplied. Separate environments avoid incompatible backend dependencies.
+UMA requires each model user's own approved Hugging Face access; authenticate
+as instructed, and never put tokens or foundation weights in Git.
+
+Use `--torch-index-url` for an appropriate official wheel channel. CPU-only
+checks can use `https://download.pytorch.org/whl/cpu`. On NERSC, put environments
+and the pip cache on native scratch via `--prefix` and `PIP_CACHE_DIR`; installing
+thousands of files on the project filesystem can be slow. On a workstation the
+local `.venvs` default is suitable. See `bash scripts/install.sh --help`.
+
+## Retrieve and verify the measured packet
+
+The frozen historical data/checkpoints are already under `artifacts/current/`.
+The new packet keeps small tables/figures and its download manifest in Git;
+new CVAE weights and larger attempt/scalar arrays are in a checksum-protected
+release asset. The small `cost_receipt.json` is tracked separately in Git. Foundation-model weights and raw trajectories are not in it.
 
 ```bash
 cathode-cvae data verify --snapshot artifacts/current
-cathode-cvae evaluate --snapshot artifacts/current --output-dir runs/varad_recompute
-cathode-cvae evaluate-geometry --snapshot artifacts/current --output-dir runs/varad_geometry
+python - <<'PY'
+import json, subprocess
+from pathlib import Path
+record = json.loads(Path('artifacts/overnight_20261107/download.json').read_text())
+subprocess.run(['cathode-cvae', 'fetch-artifact', '--url', record['url'],
+                '--sha256', record['sha256'], '--output-dir', record['extract_to']],
+               check=True)
+PY
 ```
 
-The evaluation command uses existing proposal IDs and energies. It does not
-generate structures or start MLIP calculations. Use a new output directory for
-each run, preserve the supplied splits, and retain the command/configuration
-with the outputs.
+The fetch command verifies the archive before extraction, rejects unsafe paths,
+and preserves differing existing files. An unavailable asset or missing label is
+not a successful experiment. Its manifest and completion receipt identify the
+actual run, hashes, models, counts, and evaluation boundary.
 
-## Train and sample
+```text
+artifacts/current/                    Frozen November6 evidence and original data
+artifacts/overnight_20261107/
+  data/                              Schemas, independent reference, frozen keys
+  fits/                              New multibin checkpoints/configurations/curves
+  benchmark/                         Every benchmark attempt and unique scalar scores
+  allocation/                        Temperature policies and request budgets
+  demo/                              Executed acquisition-guided proposals/scores
+  evaluation/benchmark/               Condition-aware benchmark tables/figures
+  evaluation/demo/                    Requested-versus-realized acquisition results
+  cost_receipt.json                   Label acquisition, training and evaluation cost
+reports/ranking_audit_20261107/        Recomputed matched DFT context and examples
+```
 
-The command help documents all options and defaults:
+Raw force shards, foundation environments and later research trajectories stay
+on HPC storage with retrieval manifests. Use the portable paths above; absolute
+paths inside historical receipts are provenance, not runtime defaults.
+
+## Reproduce the cached results
+
+No MLIP is loaded by these evaluations:
 
 ```bash
-cathode-cvae train-mask --help
-cathode-cvae generate-mask --help
-cathode-cvae train-geometry --help
-cathode-cvae generate-geometry --help
+cathode-cvae evaluate --snapshot artifacts/current \
+  --output-dir runs/historical_recompute
+cathode-cvae evaluate-geometry --snapshot artifacts/current \
+  --output-dir runs/geometry_recompute
 ```
 
-A small installation check, followed by generation from its checkpoint:
+The new evaluator separates requested bin, teacher, temperature/policy, fit seed
+and sampling seed. The complete benchmark command and its demo variation are in
+[Varad's tasks](docs/COLLABORATOR_TASKS.md). Its entry point is:
+
+```bash
+cathode-cvae evaluate-conditions --help
+```
+
+Retain all attempts, including duplicates and failures. Novelty to the training
+set differs from novelty to all prior history. MACE has its own training-derived
+energy-bin boundaries; UMA absolute energy thresholds cannot classify MACE values.
+Compare historical fixed-q20 yield on requested-low attempts, not a pooled mix of
+low/middle/high requests. Fit seeds are not interchangeable with random baseline
+replicates or latent draws.
+
+## Train, reload, and request an energy range
+
+The full reference reproduction is in [Beihao's tasks](docs/COLLABORATOR_TASKS.md).
+The common inputs are protected round-0 data, the 48-site parent, and the frozen
+UMA condition schema. Preserve its protocol string exactly:
 
 ```bash
 cathode-cvae train-mask \
-  --data artifacts/current/improvement_v1/training_original.npz \
+  --data artifacts/current/improvement_v1/training_round0.npz \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --kind ar_cvae --condition-mode energy --orientation canonical \
-  --beta-final .1 --validation-beta 1 --device auto --epochs 2 \
-  --output-dir runs/beihao_ar_smoke
+  --condition-schema-in artifacts/overnight_20261107/data/condition_schema_uma.json \
+  --condition-mode multibin --kind ar_cvae --counts 12 24 36 \
+  --teacher uma --teacher-head omat --orientation canonical \
+  --geometry-protocol "pristine-derived deletion; unrelaxed; exact canonical parent coordinates" \
+  --beta-final .1 --beta-warmup 20 --validation-beta 1 \
+  --epochs 100 --minimum-epochs 20 --patience 15 --max-seconds 600 \
+  --seed 20261106 --output-dir runs/new_multibin_fit
 
 cathode-cvae generate-mask \
-  --checkpoint runs/beihao_ar_smoke/best.pt \
+  --checkpoint runs/new_multibin_fit/best.pt \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --n-li 24 --count 32 --condition 1 --device auto --seed 20261106 \
-  --output runs/beihao_ar_smoke/proposals.npz
+  --n-li 24 --requested-bin middle --count 128 --seed 20261117 \
+  --temperature-K 433.15 --allocation-policy independent-bin-check \
+  --output runs/new_multibin_fit/middle_attempts.npz
 ```
 
-For a full reference fit, use the supplied run configuration rather than the
-two-epoch smoke setting; the current new fits used up to 100 epochs and a
-600-second fit cap. Hardware-dependent time caps can give different update
-counts, so match optimizer updates for a controlled ablation.
+Each valid row has exactly the requested Li count. `.attempts.csv` retains every
+request with condition, schema, temperature/policy, seeds, checkpoint and status.
+The main NPZ retains attempts, and `.unique.npz` contains unique canonical
+geometries for physical scoring. Unsupported bins fail explicitly instead of
+being silently redirected. Historical binary/composition checkpoints remain
+loadable; their conditions have dimensions two/one, versus four for multibin.
 
-The geometry model and its deterministic control use the same data:
+A requested low/middle/high class does not prove the measured energy is in that
+class. Use exact existing labels or a declared complete new scoring batch.
+Uncached proposals remain unknown; do not substitute a nearby mask's energy or
+drop misses from a supposedly complete yield. Temperature annotates the
+acquisition request; it is not a decoder softmax temperature.
+
+## Allocate a finite request budget by temperature
+
+The completed packet used budget 128. This fresh example doubles it to 256:
 
 ```bash
-cathode-cvae train-geometry \
-  --data artifacts/current/core/data/geometry_uma_fixed.npz \
+cathode-cvae allocate \
+  --reference artifacts/overnight_20261107/data/reference.npz \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --kind cvae --device auto --epochs 150 --output-dir runs/beihao_geometry_cvae
-
-cathode-cvae train-geometry \
-  --data artifacts/current/core/data/geometry_uma_fixed.npz \
+  --schema artifacts/overnight_20261107/data/condition_schema_uma.json \
+  --reference-kind uniform_raw_sample --counts 12 24 36 \
+  --temperatures 393.15 433.15 473.15 493.15 \
+  --mixture-weights 1 1 1 1 --exploration .1 --budget 256 \
+  --output-dir runs/new_allocation
+cathode-cvae generate-allocation \
+  --allocation runs/new_allocation/allocation.json \
+  --checkpoints \
+    20261106=artifacts/overnight_20261107/fits/multibin_v2_20261106/best.pt \
+    20261107=artifacts/overnight_20261107/fits/multibin_v2_20261107/best.pt \
+    20261108=artifacts/overnight_20261107/fits/multibin_v2_20261108/best.pt \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --kind regressor --device auto --epochs 150 --output-dir runs/beihao_geometry_regressor
-
-cathode-cvae generate-geometry \
-  --checkpoint artifacts/current/core/checkpoints/cvae_20261400/best.pt \
-  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --input runs/beihao_ar_smoke/proposals.unique.npz --draws 3 --device auto \
-  --output runs/beihao_ar_smoke/decoded.npz
+  --device auto --sampling-seed 20261107 --output-dir runs/new_acquisition
 ```
 
-The recommended current mask family is `ar_cvae`, trained on
-`improvement_v1/training_round0.npz`, using the energy condition and canonical
-orientation. This is the model **before** the extra adaptive fine-tuning round;
-the largest dataset did not produce the best average result. The exact frozen
-configurations and checkpoints remain in `improvement_v1/runs/`.
+`allocation.json`/`requests.csv` save pure static-weight and exploration plans.
+A per-temperature plan independently totals its budget; a mixture plan has one
+joint temperature/bin budget. `generate-allocation` executes **all** schedules
+in the file, for every supplied fit: pure and exploration per-temperature
+schedules plus both temperature-mixture schedules. With three compositions,
+four temperatures, three fits and the budget 256 above, that is
+3 × (2 × 4 + 2) × 3 × 256 = **23,040 attempts**, not 256. Use a smaller
+allocation budget for a quick check. The receipt records each schedule and its
+integer request counts. See [the acquisition guide](configs/acquisition/README.md)
+and the completed demo receipt for its executed schedules.
 
-A short CPU fit is an installation check. A scientific comparison needs the
-planned training budget and independent fit seeds. Sampled latent draws from
-one checkpoint do not count as independent fitted models. Follow
-[the controlled experiments](docs/COLLABORATOR_TASKS.md) before changing data,
-loss weights, thresholds, or validation rules.
+Weights use total eV per cell at fixed composition. In an exhaustive orbit list,
+multiplicity counts raw occupation patterns. In a uniformly sampled raw-mask
+reference, retained raw frequencies already carry that measure: never multiply
+by multiplicity again. The entire prespecified reference must have energies;
+cache-hit-only selection would bias it. Report ESS, largest weights and
+pool-size sensitivity. The 10% exploration floor is a chosen algorithmic setting,
+not a thermodynamic constant. Actual generated energy-bin proportions can differ
+from the requested allocation.
 
-## Get energy, forces, and stress without operating an MLIP directly
+The 12-site exact reference and its multiplicities can be checked without fitting
+a model; the command and acceptance criteria are in Varad's tasks. Its 87 known
+orbits are a numerical reference, not a large-data generation test or 87 new DFT
+calculations.
 
-The MLIP commands load the configured model and convert the results to the
-common project units. The same commands work on a workstation, notebook GPU,
-or allocated cluster GPU when the correct environment and driver are present.
-They do not assume a Slurm hostname or a particular computing account.
+## Get energy, force, and stress through the common interface
+
+The wrapper selects the pinned model/head and backend environment. Default
+precision matches the campaign: FP32, TF32 off, and no implicit dispersion or
+accelerator substitution. On an allocated/class GPU:
 
 ```bash
-cathode-cvae mlip doctor --help
-cathode-cvae mlip fetch-models --help
-cathode-cvae mlip score --help
-cathode-cvae mlip relax --help
-```
-
-For example, after installing the backends and obtaining checkpoint access:
-
-```bash
-cathode-cvae mlip fetch-models --models uma mace sevennet chgnet m3gnet
 cathode-cvae mlip doctor --model uma --device cuda --load
 cathode-cvae mlip score --model uma --device cuda \
-  --input runs/beihao_ar_smoke/proposals.unique.npz \
+  --input runs/new_multibin_fit/middle_attempts.unique.npz \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
   --output runs/uma_interface_check
 ```
 
-This last command makes new inference calls. It is an example of the interface,
-not a required step in the current-data-only midterm tasks. To evaluate supplied
-POSCAR/CIF files, replace the NPZ input with the structure paths and omit
-`--parent`. The corresponding `relax` command accepts `--cell fixed|variable`,
-`--fmax`, `--stress-gpa`, and `--steps`; a successful process exit is not itself
-physical convergence, so inspect the recorded final criteria.
+This makes new inference calls. Required cached midterm analyses do not need it.
+The same `score` accepts POSCAR/CIF/extxyz paths without `--parent`. Energies are
+eV per cell, forces eV/Å, and stress eV/Å³ in ASE tensile-positive
+`xx yy zz yz xz xy` order. Force vectors belong to the evaluated orientation.
+`relax` is a separate operation with explicit fixed/variable-cell mode, force/
+stress criteria and step cap; successful process exit alone is not physical
+convergence. Frame archives need frame-specific IDs before individual scoring.
 
-`score` is a **single-point evaluation** of the input coordinates: it returns
-energy in eV per cell, per-atom forces in eV/Å, and stress in eV/Å³. It does not
-perform the electronic self-consistent iterations of DFT. `relax` moves atoms
-(and optionally the cell) iteratively; it is a different operation. Requesting
-a low-energy CVAE sample does not replace either measurement.
+The default teachers available through the infrastructure are UMA, MACE, SevenNet,
+CHGNet and M3GNet. The current class extension uses UMA-S-1.2.1/`omat` and
+MACE-MH-1/`omat_pbe`; changing a checkpoint/head/protocol changes the experiment.
+No new MLIP fine-tuning or DFT is performed by these commands.
 
-Generation saves every attempt in `proposals.npz` and `proposals.attempts.csv`,
-and also saves a canonical, unique-row `proposals.unique.npz` for physical
-scoring. Keep the attempt table for the denominator; score each unique geometry
-once. Force vectors apply to the evaluated orientation, not any arbitrary
-symmetry-related representation. Trajectory archives contain repeated lineage
-IDs: export frame-specific IDs before scoring their individual frames.
+## Wider counts, other parents, and the secondary geometry model
 
-Available teachers are UMA, MACE, SevenNet, CHGNet, and M3GNet. The current
-occupancy comparison uses **UMA-S-1.2.1 / `omat`** and **MACE-MH-1 /
-`omat_pbe`**, with FP32 and TF32 disabled. Changing a model head or precision
-changes the experiment and must be recorded. Failed structures remain visible
-in the output; do not silently remove them from a benchmark's denominator.
+The original main-parent labels cover counts0–48. `data prepare-learning` joins
+those existing labels to protected splits; diagnostics/pilot holdouts remain
+excluded. Separate 12/24/36/alternate-48 parent labels are available in the frozen
+snapshot. Parent preparation accepts a user-provided pristine structure and
+removable element (for example Na), and scoring uses the actual site map.
+The current networks use a fixed site list; new material/cell requires a
+compatible fit. The fast integer trainer supports1–62 removable sites. Padding
+or truncating 48-site weights does not establish size transfer.
 
-For this midterm, use cached scores first. New inference is useful for checking
-the package or a separately agreed candidate set, but no additional oracle
-campaign is needed to reproduce the reported comparison.
+The displacement CVAE is a separate fixed-cell learned-start model. Its old
+regressor control and data remain supplied. It predicts unminimized coordinates,
+not guaranteed force-minimized structures. Its reproduction is optional for this
+midterm; the new core is multibin controllability and acquisition. See
+[methods](docs/METHODS_AND_DATA.md) and [results](docs/RESULTS.md).
 
-## Current finding
+## Verification and boundaries
 
-Across three independently trained seeds and Li counts 12, 24, and 36, the
-energy-conditioned AR CVAE produced **35.57% / 40.06%** novel low-tail orbits
-under UMA / MACE, versus **18.99% / 19.75%** for uniform fixed-count sampling.
-The strongest low-energy training-mask mutation baseline reached **52.65% /
-54.08%**. The CVAE improves on random sampling but does not yet beat this strong
-local search baseline. The geometry CVAE improves starting coordinates, but a
-deterministic regressor gives similar savings; a CVAE-specific geometry advantage
-has not been established. [Read the definitions and controls](docs/RESULTS.md)
-before interpreting these percentages.
-
-## Use the wider existing label sets
-
-The all-count and smaller-cell label files use the original scalar-label schema.
-Convert them to trainer input without changing the protected splits:
-
-```bash
-cathode-cvae data prepare-learning \
-  --labels artifacts/current/core/data/learning_O3_N48_pilot_uma.npz \
-  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --splits artifacts/current/core/splits/lineage_splits.csv \
-  --weighting equal-composition --output runs/main_all_counts_uma.npz
-```
-
-This command measures no new energies. It validates parent identity and canonical
-keys, preserves the original split table, and excludes diagnostic/pilot-holdout
-rows. For the main parent, trainable counts are 2–46; counts 0, 1, 47 and 48
-remain available for coverage and deterministic endpoint checks. For the 12-site
-parent, use `extras/learning_all_parents/learning_Hu_O3_12_uma.npz` and its
-`parents/Hu_O3_12.npz`; the existing non-diagnostic split covers counts 5–7.
-All 87 label rows remain available in the source for exact finite-support lookup.
-Change the teacher suffix to use the other supplied MLIP labels. Train separate
-compatible models for different parents; this adapter does not create size transfer.
-
-## Other cathodes and structure sizes
-
-Parent preparation and MLIP scoring take a user-supplied pristine structure and
-target species, so the surrounding workflow can use Na instead of Li or a
-different cathode. The supplied dense and recurrent networks/checkpoints use a
-fixed site list and coordinate frame. The current fast training/export canonicalizer supports 1–62 removable sites;
-parent preparation and MLIP scoring can handle larger structures. The networks
-must be trained for a compatible parent; the 48-site checkpoint cannot be applied to a 12-site structure by
-changing a command-line count. Cross-size and cross-material transfer are
-future model-design and validation questions.
-
-## Collaboration
-
-Beihao owns generative training/methods; Varad owns baselines, evaluation, and
-figures; Ricardo owns chemistry, data provenance, symmetry, and physical
-interpretation. Work on separate branches and use new run directories. Commit
-source, small configuration files, and checked summary tables; keep personal
-tokens, environments, large raw calculations, and new unreviewed checkpoints
-out of Git. Freeze the report tables on November 8 and check the approximately
-five-page midterm body plus references before submission on November 9.
+The preserved [November6 validation](docs/VALIDATION.md) covers the portable base.
+The new completion receipt, tests and claim-source map identify the actual
+November7 campaign. Reports distinguish old evidence, new completed measurements,
+prepared infrastructure and independent teammate work. Good teacher ranks or
+correct request totals do not establish DFT accuracy, global minima, physical
+entropy, reactor equilibrium or downstream MLIP improvement. The later MLIP-only
+thermal pilot and prioritized DFT-required-next package are separate from the
+class result. Nothing submits or schedules DFT or sends messages to teammates.
