@@ -11,11 +11,24 @@
     "paths": [
       "runs/overnight_20261107/public_replay/benchmark",
       "runs/overnight_20261107/public_replay/allocation"
-    ]
+    ],
+    "primary_CSVs_byte_identical": true,
+    "allocation_plans_and_sensitivity_identical": true
   },
   "independent_audits": [
     "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
     "reports/overnight_20261107/evaluation_audit/demo_audit.json"
   ],
-  "limitations": "Software/interface and cached-data checks do not establish DFT accuracy or physical optimality."
+  "limitations": "Software/interface and cached-data checks do not establish DFT accuracy or physical optimality.",
+  "GitHub_CI": {
+    "status": "success",
+    "scientific_commit": "bd4ce17fe0ed3c04878189107d20ae7a801434d1",
+    "url": "https://github.com/rsilvabuarque/ECE285-1/actions/runs/42360864244"
+  },
+  "public_download": {
+    "status": "PASS",
+    "files": 144,
+    "sha256": "932a798c73755a8b924ba0c4df8fa2062f783ee264b4b08ae09fcfe1ceb32a58",
+    "all_payload_hashes_verified": true
+  }
 }

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE",
+  "completed_UTC": "2026-11-07T09:46:13.622293+00:00",
+  "scientific_commit": "bd4ce17fe0ed3c04878189107d20ae7a801434d1",
+  "branch": "overnight/multibin-acquisition-20261107",
+  "review_url": "https://github.com/rsilvabuarque/ECE285-1/tree/overnight/multibin-acquisition-20261107/final_project",
+  "release": "https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-midterm-20261107",
+  "checks": {
+    "multibin_and_allocator_implemented_tested": true,
+    "three_new_fits_completed": true,
+    "actual_benchmark_attempts": 41472,
+    "actual_demo_attempts": 11520,
+    "complete_UMA_MACE_scoring": true,
+    "requested_vs_measured_bins_reported": true,
+    "negative_findings_preserved": true,
+    "historical_snapshot_434_files_preserved": true,
+    "independent_benchmark_and_demo_audits": "PASS",
+    "tests": 67,
+    "GitHub_CI": "success",
+    "public_download_144_files_verified": true,
+    "public_replay_primary_tables_byte_identical": true,
+    "report_five_body_pages_plus_references": true,
+    "report_all_pages_visually_reviewed": true,
+    "claim_source_families": 16,
+    "Ricardo_material_complete": true,
+    "collaborator_tasks_executable": true
+  },
+  "file_hashes": {
+    "docs/midterm1/main.pdf": "14281614f7340a3be1cef0b2aace30f4ae8552d48bd5dd57752ed3aaf450817f",
+    "docs/midterm1/main.tex": "38af573ca2c52dd570209f696ba1b0fb601f4570ee406e8afc161d1b7d7ed736",
+    "docs/midterm1/claim_sources.json": "29b54bb754f0f446f34c6e22fe40f432623b6619e0610d49be82420ea7246210",
+    "docs/RICARDO_CONTRIBUTION.md": "2376378c480f9f81a2b87c99812ec3053e589a4cc2917b852cf093c5625ef1b3",
+    "docs/COLLABORATOR_TASKS.md": "383f2f3925050684e3172340957303c806a06bf1b897db9aa5a64a5261cd31a7",
+    "docs/INTEGRATION_CHECKLIST.md": "209ae03cece3bfd2f8c3878acb0558e9857265f215005acae0bd4f08a1fced6c",
+    "artifacts/overnight_20261107/cost_receipt.json": "7a2262eee09e2b1843c551e5a41d7fd85a7c04e338b9be19fc69124f18b365df",
+    "reports/overnight_20261107/validation_receipt.json": "9a931767ac625510d515d535d247f69cea506fcc55597f21471471951bf3f757"
+  },
+  "remaining_external_contributions": {
+    "Beihao": "Independent class-GPU fit, reload/count check, model explanation, learning curves and controlled ablation; approximately6\u20138 focusedhours",
+    "Varad": "Independent historical/new metrics, baselines, novelty/cost/multiplicity/allocation checks and seed-resolved figures; approximately6\u20138 focusedhours",
+    "Ricardo": "Review and integrate returned independent contributions, final course-format/deadline verification and manual submission"
+  },
+  "phase2_started_at_gate": false,
+  "scope": "Completion of the prepared midterm package, not completion of collaborators independent work, final course submission, or physical validation",
+  "new_DFT_jobs": 0
+}
