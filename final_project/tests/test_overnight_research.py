@@ -145,3 +145,17 @@ def test_interruption_reserves_inflight_position_update_and_original_budget(tmp_
     assert facts['conservative_charged_optimizer_steps']==431
     assert facts['previous_elapsed_seconds_reserved']==560
     assert facts['remaining_seconds']==2140
+
+
+def test_projected_saddle_hessian_removes_only_translations_and_retains_negative_mode():
+    m=script('research_saddle_modes');masses=np.array([1.,2.]);translation=np.zeros((6,3))
+    for a in range(3):translation[a::3,a]=np.sqrt(masses)
+    q=np.linalg.qr(translation,mode='complete')[0][:,3:];expected=np.array([-.5,1.,2.])
+    dynamical=q@np.diag(expected)@q.T;rootmass=np.repeat(np.sqrt(masses),3)
+    hessian=dynamical*rootmass[:,None]*rootmass[None,:]
+    result=m.internal_modes(hessian,masses)
+    np.testing.assert_allclose(result['internal_eigenvalues'],expected,atol=1e-12)
+    assert len(result['internal_eigenvalues'])==3
+    assert np.sum(result['frequencies_signed_THz']<0)==1
+    assert result['eigenpair_projected_residuals'].max()<1e-12
+    np.testing.assert_allclose(result['translation_basis'].T@result['eigenvectors_mass_weighted'],0,atol=1e-12)

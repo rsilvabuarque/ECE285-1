@@ -56,6 +56,19 @@ def array_sha(array):
     return h.hexdigest()
 
 
+def augment_row(row,seed,length,frequencies,minimum_energy,anchor,target):
+    row=dict(row);native=row['observed_temperature_K'];ref=matched_references(frequencies,native,minimum_energy,anchor)
+    row.update(phase_seed=seed,nominal_length_ps=length,target_temperature_K=target,
+        exact_entropy_classical_native_eV_K=ref['exact']['S_classical_eV_K'],
+        exact_entropy_quantum_native_eV_K=ref['exact']['S_quantum_eV_K'],
+        entropy_error_classical_eV_K=row['S_classical_eV_K']-ref['exact']['S_classical_eV_K'],
+        entropy_error_quantum_eV_K=row['S_quantum_eV_K']-ref['exact']['S_quantum_eV_K'],
+        F_error_classical_anchor_matched_eV=row['F_classical_MD_anchored_eV']-ref['classical_anchor_matched_F_eV'],
+        F_error_quantum_anchor_matched_eV=row['F_quantum_MD_anchored_eV']-ref['quantum_anchor_matched_F_eV'],
+        finite_window_anchor_minus_canonical_native_mean_eV=ref['anchor_minus_canonical_mean_eV'])
+    return row
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--hessian',type=Path,required=True)
     p.add_argument('--minimum',type=Path,required=True);p.add_argument('--vendor',type=Path,required=True)
@@ -64,6 +77,7 @@ def main():
     p.add_argument('--lengths-ps',nargs='+',type=float,default=[10.,20.,50.]);p.add_argument('--dt-fs',type=float,default=.5)
     p.add_argument('--modes',nargs='+',choices=['1PT','2PT','3PT'],default=['1PT','2PT','3PT'])
     p.add_argument('--temperature-K',type=float,default=433.15);p.add_argument('--corlen',type=float,default=.25)
+    p.add_argument('--resume-from',type=Path,help='Read completed immutable result.json files from an interrupted same-protocol run; all new work goes to a fresh output')
     p.add_argument('--max-seconds',type=float,default=3600);args=p.parse_args();require_compute_allocation()
     started=time.monotonic();json.loads(args.root_protocol.read_text());h,minimum=xpt.bound_hessian(args.hessian,args.minimum)
     nu=h['frequencies_signed_THz'];q=h['eigenvectors_mass_weighted'];mass=h['masses_amu'];count=len(mass);ndof=3*count-3
@@ -85,10 +99,26 @@ def main():
         positions_scope='Constant minimum coordinates broadcast only for unused atomic FrameData positions; no synthetic atomic geometry trajectory is claimed',
         exact_reference_target=xpt.harmonic(nu,args.temperature_K,emin),no_new_MLIP_DFT_or_MD=True)
     xpt.write_json(args.output/'protocol.json',protocol)
-    rows=[];phases=[];failures=[];velocity_records=[]
+    rows=[];phases=[];failures=[];velocity_records=[];reuse={}
+    if args.resume_from:
+        original=json.loads((args.resume_from/'protocol.json').read_text())
+        for key in ['hessian','minimum','phase_seeds','lengths_ps','dt_fs','modes','temperature_K','corlen_fraction','apodization','gas_gate','amplitude_convention','energy_anchor_eV']:
+            if original[key]!=protocol[key]:raise ValueError(f'Interrupted scientific protocol differs in {key}')
+        for seed in args.phase_seeds:
+            for length in args.lengths_ps:
+                for mode in args.modes:
+                    saved=args.resume_from/f'seed{seed}'/f'{length:g}ps_{mode}'/'result.json'
+                    if saved.exists():reuse[(seed,length,mode)]=saved
+        protocol['immutable_completed_results_reused']=[dict(path=str(file.resolve()),sha256=sha256(file)) for file in reuse.values()]
+        protocol['interrupted_source_protocol']=dict(path=str((args.resume_from/'protocol.json').resolve()),sha256=sha256(args.resume_from/'protocol.json'))
+        xpt.write_json(args.output/'protocol.json',protocol)
+    # Store all phases before analysis; interruption cannot lose their identity.
+    all_phases=np.asarray([np.random.default_rng(seed).uniform(0,2*np.pi,ndof) for seed in args.phase_seeds])
+    np.savez_compressed(args.output/'phases.npz',phase_seeds=np.asarray(args.phase_seeds),phases=all_phases,
+        frequencies_THz=nu,temperature_K=args.temperature_K,dt_fs=args.dt_fs)
     for seed in args.phase_seeds:
         if time.monotonic()-started>=args.max_seconds:break
-        phase=np.random.default_rng(seed).uniform(0,2*np.pi,ndof);phases.append(phase)
+        phase=all_phases[args.phase_seeds.index(seed)];phases.append(phase)
         velocity=generate_velocities(nu,q,mass,time_ps,phase,args.temperature_K)
         com=(velocity*mass[None,:,None]).sum(1)/mass.sum()
         kinetic=.5*xpt.KINETIC_EV_PER_AMU_A2_PS2*np.sum(velocity**2*mass[None,:,None],axis=(1,2))
@@ -105,22 +135,19 @@ def main():
                 if time.monotonic()-started>=args.max_seconds:break
                 output=args.output/f'seed{seed}'/f'{length:g}ps_{mode}'
                 try:
-                    row=xpt.run_package(d,indices,output,mode=mode,corlen=args.corlen,apodization='none',gas_gate='debye_warn',target_K=args.temperature_K)
-                    native=row['observed_temperature_K'];ref=matched_references(nu,native,emin,anchor)
-                    row.update(phase_seed=seed,nominal_length_ps=length,target_temperature_K=args.temperature_K,
-                        exact_entropy_classical_native_eV_K=ref['exact']['S_classical_eV_K'],
-                        exact_entropy_quantum_native_eV_K=ref['exact']['S_quantum_eV_K'],
-                        entropy_error_classical_eV_K=row['S_classical_eV_K']-ref['exact']['S_classical_eV_K'],
-                        entropy_error_quantum_eV_K=row['S_quantum_eV_K']-ref['exact']['S_quantum_eV_K'],
-                        F_error_classical_anchor_matched_eV=row['F_classical_MD_anchored_eV']-ref['classical_anchor_matched_F_eV'],
-                        F_error_quantum_anchor_matched_eV=row['F_quantum_MD_anchored_eV']-ref['quantum_anchor_matched_F_eV'],
-                        finite_window_anchor_minus_canonical_native_mean_eV=ref['anchor_minus_canonical_mean_eV'])
+                    if (seed,length,mode) in reuse:row=json.loads(reuse[(seed,length,mode)].read_text())
+                    else:row=xpt.run_package(d,indices,output,mode=mode,corlen=args.corlen,apodization='none',gas_gate='debye_warn',target_K=args.temperature_K)
+                    row=augment_row(row,seed,length,nu,emin,anchor,args.temperature_K)
+                    row['raw_result_path']=str(reuse.get((seed,length,mode),output/'result.json').resolve())
+                    row['raw_result_sha256']=sha256(row['raw_result_path'])
+                    row['reused_completed_analysis']=(seed,length,mode) in reuse
                     rows.append(row)
+                    xpt.save_rows(args.output/'analyses_partial.csv',rows)
+                    xpt.write_json(args.output/'progress.json',dict(completed=len(rows),failed=len(failures),last_case=[seed,length,mode]))
                 except Exception as e:
                     failures.append(dict(phase_seed=seed,length_ps=length,mode=mode,exception_type=type(e).__name__,error=str(e)))
+                    xpt.write_json(args.output/'failures_partial.json',failures)
         del velocity,d,kinetic,com
-    np.savez_compressed(args.output/'phases.npz',phase_seeds=np.asarray(args.phase_seeds[:len(phases)]),phases=np.asarray(phases),
-        frequencies_THz=nu,temperature_K=args.temperature_K,dt_fs=args.dt_fs)
     if rows:xpt.save_rows(args.output/'analyses.csv',rows)
     xpt.write_json(args.output/'failures.json',failures)
     expected=len(args.phase_seeds)*len(args.lengths_ps)*len(args.modes)
