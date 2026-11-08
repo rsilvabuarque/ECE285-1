@@ -1,0 +1,2 @@
+teacher,method,temperature_K,allocation_policy,request_schema_id,measured_schema_id,requested_bin,design_seed_count,mean_novel_inbin_yield,mean_novel_fixed_q20_yield,mean_bin_hit_rate_per_attempt,comparison_scope
+uma,graph_context_pilot,,conditioning-development-spatial-20261107-v1,6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c,6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c,low,2,0.6015625,0.625,0.6015625,Requested low only; original teacher-specific q20. New pool/history/budget remain distinct from the historical experiment.

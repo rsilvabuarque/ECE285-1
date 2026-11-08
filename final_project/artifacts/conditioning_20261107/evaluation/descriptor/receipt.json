@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "unknown_by_teacher": {
+    "uma": []
+  },
+  "all_attempts_in_denominator": true,
+  "attempts": 2304,
+  "candidate_pool_including_mutation_seeds": 2546,
+  "energy_scope": "Teacher-specific frozen middle bin; descriptor schema is the same training-only structural definition for all teachers",
+  "neural_replication": "One independently fitted descriptor model and one plain control; descriptive pilot, no fit-variation confidence interval",
+  "distance_scope": "Exact symmetry-aware distance to the bounded recorded training reference; upper bound on full-training nearest distance",
+  "scoring_cost_scope": "Unique per-method queries are stand-alone costs and overlap; use global oracle receipts for actual NEW calls and allocation time",
+  "input_hashes": {
+    "generation_receipt": "0b9df4dd606fec8b263517f7708f39e31e2fe40386c4b2a85cd504bb82350627",
+    "scores": {
+      "uma": "8152ff1eced06a4b71c4c33238746dc38fa419c20216c55e9a65616f189265a5"
+    },
+    "schemas": {
+      "uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+    }
+  },
+  "evaluator_sha256": "319bd15e2219eb6744a1dace1b118666ae5e27ad41aaffaa2520546c35f17ca5",
+  "elapsed_seconds": 27.871643402031623,
+  "no_new_oracle_calls": true
+}

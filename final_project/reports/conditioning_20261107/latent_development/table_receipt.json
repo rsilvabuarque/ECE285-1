@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Latent-size development comparison; samehistory, newnamespace, reusedD8fit",
+  "source_hashes": {
+    "runs/conditioning_20261107/fits/latent_d4_20261106/summary.json": "a01bc271eb31053a00b63fb518eb99765eeab9797270617f026e64522c566255",
+    "runs/conditioning_20261107/fits/latent_d4_20261107/summary.json": "d047ae319d0ea2c00b3db22f6d17ca84240bf77c85352f7431bebe01f55cf391",
+    "runs/conditioning_20261107/fits/latent_d4_20261108/summary.json": "19ebe91581719aa25bc942e0d089082bab8d783676022e64fedf576225d04417",
+    "runs/conditioning_20261107/fits/balance_1_d8_20261106/summary.json": "48e6e4836a4a662134f1eb336e6ca7f19c4168f8bc9993001c5c045b385dfe9e",
+    "runs/conditioning_20261107/fits/balance_1_d8_20261107/summary.json": "f336bc2ba3b92239cca029c1d2a0c5654e3954d894e86ca7e8e69c83d030a16c",
+    "runs/conditioning_20261107/fits/balance_1_d8_20261108/summary.json": "5b6da7b6bb3ecc55774ea43588a60b5f054b78524058e2f4f927872d3a09fb76",
+    "runs/conditioning_20261107/fits/latent_d16_20261106/summary.json": "cc8ed0c80c3d989a4ff4318ee4fe67c6d1845c0764ae1f22f336daedc58fddb0",
+    "runs/conditioning_20261107/fits/latent_d16_20261107/summary.json": "170cde3a3d40528534e086f3f35ec11fbcbafbb16533fdd0b205e4629c38732c",
+    "runs/conditioning_20261107/fits/latent_d16_20261108/summary.json": "2daa27a4bea6352c1ede545f0ab0dfe8eac811d91c9d078cc5f06dccbc2e72ae",
+    "runs/conditioning_20261107/fits/latent_d32_20261106/summary.json": "4eccf6641b510a2b44492ff6db03b1c11a5c5c46acf267c2ac1a4f7b8f47f247",
+    "runs/conditioning_20261107/fits/latent_d32_20261107/summary.json": "63135f1709e4d9a9720d40920a5d63d58c9f010c224f297bdf178ada7cd75145",
+    "runs/conditioning_20261107/fits/latent_d32_20261108/summary.json": "e60fbe764cc7122617b71c35df6115ba0d1cc27d406a5173213e654c85655e3f",
+    "runs/conditioning_20261107/fits/no_latent_20261106/summary.json": "7a8e31364d4ec863b4b6e28a11c1a9c98ba0b1abbea955be2976d710ce415116",
+    "runs/conditioning_20261107/fits/no_latent_20261107/summary.json": "f524a435cdcd3434572a5434eb002185ded34cacc6c8a1752159e67f55290926",
+    "runs/conditioning_20261107/fits/no_latent_20261108/summary.json": "ac2f2b80e66ad08dc05d9ee77965d5641416d2bedb35c1e9aa72fce496a385f7",
+    "runs/conditioning_20261107/evaluation/latent/summary.csv": "de9b0a576d17585d606de9430590a54766dbc5679cad8e0c5b160033afd788c9",
+    "runs/conditioning_20261107/evaluation/latent/fixed_q20_low_request.csv": "868b95923a0fa445d109483cd94a3baca97fe1d336d196abdcd787138de50597",
+    "runs/conditioning_20261107/evaluation/latent/metrics.csv": "a6bfa654f432f75e4e54bc0d3018d6c58b2b5b6b512b5e6395b07c81633283e7",
+    "runs/conditioning_20261107/evaluation/latent/seed_metrics.csv": "e4f581785fb597350637208e468dea7e716dac5ea15b07586332b62e76fe2af4"
+  },
+  "output_sha256": "ccfbf46d06a50673f918f84e2150efe0b7f348e60b78ab9edd81d14306a8fba0",
+  "seeds": 21,
+  "models": 7,
+  "uncertainty": "Descriptive SD across independentfits or samplerreplicates; no physical convergence claim"
+}

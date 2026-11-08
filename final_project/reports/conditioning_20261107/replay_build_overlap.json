@@ -1,0 +1,6 @@
+{
+  "status": "VERIFICATION_COPY_RETIRED_AFTER_CONCURRENT_STANDALONE_BUILD",
+  "reason": "Report rebuilt in verification payload while cached replay used the same copy. Keep that archive and qualify its replay; use a new clean extraction for authoritative portable replay.",
+  "frozen_original_changed": false,
+  "new_MLIP_calls": 0
+}

@@ -1,0 +1,9 @@
+Collecting pymupdf==1.26.7
+  Downloading pymupdf-1.26.7-cp310-abi3-manylinux_2_28_x86_64.whl.metadata (3.4 kB)
+Downloading pymupdf-1.26.7-cp310-abi3-manylinux_2_28_x86_64.whl (24.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.1/24.1 MB 20.8 MB/s eta 0:00:00
+Installing collected packages: pymupdf
+Successfully installed pymupdf-1.26.7
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

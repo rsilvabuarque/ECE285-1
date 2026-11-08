@@ -1,316 +1,326 @@
-# Midterm work for Beihao, Varad, and Ricardo
+# Independent midterm work for Beihao, Varad, and Ricardo
 
-The current scope is composition-and-energy-range vacancy generation plus a
-measured temperature-dependent acquisition demonstration. The November 7
-extension authorizes bounded new CVAE training and MLIP checks; it does not
-authorize new DFT or a new MLIP fine-tuning campaign. Use the existing frozen
-historical data and the new completed campaign packet for the required checks.
-The separate geometry CVAE remains a secondary historical result.
+The current study diagnoses conditional energy control and tests training policy,
+latent dimension, physical-neighbor information, symmetry and structural targets.
+It retains a genuine CVAE and the strong frozen mutation baseline. Its scientific
+contract is `artifacts/conditioning_20261107/protocol.json`; actual status and
+outputs are in `reports/conditioning_20261107/experiment_ledger.json`.
+Prepared infrastructure and results do not mean your independent checks are done.
 
-The midterm is due **November 9, 2026, 11:59 p.m. Pacific**. The supplied announcement
-asks for approximately five body pages excluding references: revised proposal,
-mathematical/model/algorithm details, and novelty/advantages/limitations. The
-provided project overview explicitly names NeurIPS format for the proposal; no
-additional midterm template is specified in the supplied evidence. The editable
-article draft should be checked against any newer course instructions before
-submission. Nothing in this package submits to Gradescope or messages teammates.
+The midterm is due **November 9, 2026, 11:59 p.m. Pacific**. The supplied
+announcement requests approximately five body pages excluding references,
+covering the revised proposal, mathematical/model/algorithm details, and
+novelty/advantages/limitations. Verify any newer course formatting instructions.
+The supplied overview explicitly requires NeurIPS for the proposal, without
+stating an additional midterm template. No coursework submission or messages are
+automated.
 
-## Start, inputs, and working rules
-
-Work from the review branch named in the README and make a personal branch.
-From the repository's `final_project` directory, activate the learning environment.
-A fresh class machine only needs the core installation for the required cached
-analyses and fits:
+## Start from the review branch and install
 
 ```bash
+git clone --branch midterm/conditioning-graph-edit-20261107 \
+  https://github.com/rsilvabuarque/ECE285-1.git ECE285-midterm
+cd ECE285-midterm/final_project
 bash scripts/install.sh --python python3 --prefix .venvs --core-only
 source .venvs/learning/bin/activate
+python -m pip check
 cathode-cvae data verify --snapshot artifacts/current
 ```
 
-Python 3.11–3.13 is supported; use a PyTorch wheel compatible with the class GPU.
-The default full installer also prepares isolated MLIP environments and
-hash-checked weights. UMA requires the actual user's approved model access.
-Use a permitted compute allocation on a cluster; package commands select no
-account or queue. Preserve all protected splits and use a new output directory
-for every run. Save commands, input hashes, seed, environment and checkpoint rule.
+Use your own branch and a new run directory for every experiment. Python
+3.11–3.13 is supported; select a PyTorch wheel compatible with the class GPU.
+The core installs ordinary and transitive dependencies, including ASE, SciPy and
+spglib for physical graphs. Training and cached analyses do not load an MLIP.
+Obtain the class's permitted compute allocation first on a cluster. Commands
+respect visible GPUs and do not choose an account, queue or scheduler.
 
-Required inputs are:
+The new larger packet is retrieved from the checksum-protected release described
+by `artifacts/conditioning_20261107/download.json` once publication completes:
 
-| Purpose | Path |
-| --- | --- |
-| Common parent | `artifacts/current/core/data/parents/O3_N48_pilot.npz` |
-| Training data | `artifacts/current/improvement_v1/training_round0.npz` |
-| Historical assessment | `artifacts/current/improvement_v1/data/` and `reports/final/` |
-| New schemas/reference/history | `artifacts/overnight_20261107/data/` |
-| New proposal/score records | `artifacts/overnight_20261107/benchmark/` and `demo/` |
-| Allocation requests and diagnostics | `artifacts/overnight_20261107/allocation/` |
-| New completed assessment | `artifacts/overnight_20261107/evaluation/` |
-| New fits and learning curves | `artifacts/overnight_20261107/fits/` |
-| Label/training/evaluation costs | `artifacts/overnight_20261107/cost_receipt.json` |
-| Paired DFT ranking context | `reports/ranking_audit_20261107/` |
+```bash
+python - <<'PY_FETCH'
+import json, subprocess
+from pathlib import Path
+r = json.loads(Path('artifacts/conditioning_20261107/download.json').read_text())
+subprocess.run(['cathode-cvae', 'fetch-artifact', '--url', r['url'],
+                '--sha256', r['sha256'], '--output-dir', r['extract_to']], check=True)
+PY_FETCH
+```
 
-The new packet's manifest and completion receipt identify actual contents and
-checksums; pending files are not a completed experiment. Large raw force shards,
-trajectories, model environments and foundation weights remain outside Git with
-retrieval manifests. Follow the README if a packet must be downloaded first.
-Do not copy absolute paths from historical configurations onto the class machine.
+This installs measured project artifacts, not foundation-model weights.
+A missing file or incomplete score batch is not a successful reproduction.
+Historical absolute paths inside receipts are provenance, not portable defaults.
+Keep protected train/validation/test orbit roles and old artifacts unchanged.
 
-## Beihao: one reproduction and a controlled model check
+## Beihao: reproduce a fit and explain the model
 
-Budget about 6–8 focused hours. Your deliverables are one reproduced multibin fit,
-checkpoint/reload checks, a learning-curve figure, the method explanation, and one
-bounded controlled ablation. These are your independent contributions; the
-prepared campaign and draft do not mean you have completed them.
+Budget about 6–8 focused hours. Your deliverables are an independent fit receipt,
+checkpoint/count/latent/graph checks, learning curves and one controlled ablation.
 
-### 1. Reproduce a multibin reference fit
+### 1. Reproduce the dense reference and inspect the retained spatial design
 
-Run in the class compute environment. The actual campaign configurations are the
-reference; record any hardware/software/time-cap deviation. A representative
-full-fit command is:
+The completed development comparisons selected class balancing, validation
+selection beta 0.1, and latent dimension 4. Inspect
+`artifacts/conditioning_20261107/selected_policy.json` and `selected_models.json`:
+they bind the actual retained checkpoint identities. The trajectory writer
+retains primary validation beta 1 for its legacy `best.pt`; the selected checkpoint
+is explicitly `best_validation_beta_0p1.pt`. The following reproduces the selected
+dense reference. The separate spatial development comparison recommends graph
+encoder plus causal decoder context; its exact checkpoint identities and
+development-only status are in
+`artifacts/conditioning_20261107/architecture_selection.json`. Final assessment
+and any later editor retain separate roles.
 
 ```bash
 cathode-cvae train-mask \
   --data artifacts/current/improvement_v1/training_round0.npz \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
   --condition-schema-in artifacts/overnight_20261107/data/condition_schema_uma.json \
-  --kind ar_cvae --condition-mode multibin --counts 12 24 36 \
-  --teacher uma --teacher-head omat --orientation canonical \
+  --kind ar_cvae --condition-mode multibin --latent-dim 4 --encoder dense \
+  --orientation canonical --counts 12 24 36 --teacher uma --teacher-head omat \
   --geometry-protocol "pristine-derived deletion; unrelaxed; exact canonical parent coordinates" \
-  --beta-final .1 --beta-warmup 20 --validation-beta 1 \
-  --epochs 100 --minimum-epochs 20 --patience 15 --max-seconds 600 \
-  --seed 20261106 --output-dir runs/beihao_multibin_reference
+  --seed 20261106 --epochs 100 --minimum-epochs 100 --patience 100 \
+  --max-updates 4000 --batch-size 512 --learning-rate .001 \
+  --beta-final .1 --beta-warmup 20 --validation-beta 1 --selection-betas 1 .1 \
+  --class-balance --max-seconds 1200 --device auto --threads 4 \
+  --output-dir runs/beihao_selected_d4
 ```
 
-Expected outputs: `best.pt`, `configuration.json`, `condition_schema.json`,
-`history.csv`, and `summary.json`. Acceptance checks:
+Expected files are `configuration.json`, `history.csv`, `latent_history.jsonl`,
+`summary.json`, `best_validation_beta_1.pt`, `best_validation_beta_0p1.pt`, and
+`best.pt` for the primary validation rule. Inspect the summary: the trajectory
+must actually reach 4000 updates, rather than merely exit successfully. A time-cap
+stop on another GPU is a bounded partial reproduction; report it as such.
 
-- Protected train/validation/test rows and parent hash match the input receipt.
-- Schema identity, q20/q80 edges, actual class support and teacher/head agree.
-- Edges use training energies only; ties are not split and empty bins fail.
-- Model dimension is four: Li fraction plus three one-hot components.
-- The selected checkpoint and completed optimizer updates/stop reason are saved.
-- A short smoke fit is labeled as such, not reported as scientific reproduction.
+To reproduce the recommended spatial configuration on your class GPU, repeat
+this exact command with `--encoder graph --graph-context` in place of
+`--encoder dense`, and use `--output-dir runs/beihao_graph_context_d4`. Keep
+`--latent-dim 4`, the canonical orientation, seed, data, 4000 updates and both
+selection rules unchanged. This second run is a separately recorded reference,
+not another seed in the already frozen integrating campaign. Record the expected
+37,821 parameters, versus 30,793 for the dense reference. If available time only
+permits one full fit, prioritize the spatial design and inspect the saved dense
+checkpoint rather than representing a partial dense run as complete.
 
-### 2. Reload and make explicit requests
+Acceptance checks:
+
+- Parent/data/schema hashes and 40157/4967/5123 protected rows match the source.
+- Condition dimension 4 means Li fraction plus low/middle/high one-hot. It happens
+  to equal the retained latent dimension 4; those are independent concepts.
+- Explicit latent dimension 4, hidden 64, optimizer settings, orientation and weighted
+  reconstruction/KL conventions agree. KL remains summed across latent dimensions.
+- Both checkpoint rules use the same trajectory and fixed validation noise.
+  Record selected epochs and the checkpoint actually used for generation.
+- No protected test labels select a checkpoint or a new policy.
+
+### 2. Reload and check exact composition
 
 ```bash
 for bin in low middle high; do
   cathode-cvae generate-mask \
-    --checkpoint runs/beihao_multibin_reference/best.pt \
+    --checkpoint runs/beihao_selected_d4/best_validation_beta_0p1.pt \
     --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
     --n-li 24 --requested-bin "$bin" --count 64 --seed 20261117 \
-    --temperature-K 433.15 --allocation-policy independent-bin-check \
-    --output "runs/beihao_multibin_reference/${bin}_attempts.npz"
+    --output "runs/beihao_selected_d4/${bin}_attempts.npz"
 done
+
+python -m pytest -q tests/test_latent_policy.py tests/test_parent_graph.py \
+  tests/test_descriptor_conditions.py
 ```
 
-Every valid occupancy must be binary with exactly 24 Li. Inspect each
-`.attempts.csv`: requested/effective bin, fit seed, sampling seed, schema identity,
-physical temperature, policy, checkpoint and status must be recorded. Keep all
-192 attempts, including repeats/failures. The `.unique.npz` files contain unique
-canonical geometries for scoring. A requested class is not a measured energy.
-Physical temperature here is provenance for request allocation, not a softmax
-or latent-sampling temperature.
+Every valid mask is binary and contains exactly 24 Li. Keep all 192 attempts,
+including duplicates or known masks. The command records a requested condition,
+not a measured energy. Uncached generated structures have unknown energy until
+scored; never transfer a neighbor mask's label or report cache-only yield.
 
-Use exact cached labels where present. Uncached generated structures have
-**unknown energy**. Do not transfer a neighbor's label, drop misses, or report a
-complete new energy-yield statistic without scoring the complete declared pool.
-A small separately budgeted interface check can use the MLIP wrapper; a broad
-new inference campaign is not required for this midterm reproduction.
+Explain the encoder Gaussian, prior sampling, teacher-forced GRU decoder, hard
+count constraint and reconstruction/KL objective. Plot reconstruction and KL
+against actual updates with both selected checkpoints marked. Explain the
+per-component KL and encoded-mean variance, including cutoff sensitivity. A
+larger latent dimension is not a physical convergence parameter.
 
-### 3. Explain the model and supply a controlled ablation
+For graphs, independently verify periodic image edges, host/mobile chemistry,
+vacant-site nodes, nearest-shell descriptor invariance, and the no-future-feature
+test. Explain why a graph encoder alone does not directly provide the generation
+decoder with physical neighborhoods. An engineered causal neighbor summary is
+not a learned graph decoder or a proof of full equivariance.
 
-Write the encoder, Gaussian latent prior, GRU/teacher-forcing decoder, exact-count
-rule, reconstruction/KL objective, and train-only class schema in your own words.
-Plot train/validation reconstruction and KL against updates or epochs, marking
-checkpoint selection. Distinguish posterior reconstruction from prior generation
-and independent fit seeds from repeated latent draws.
+Explain the important negative diagnostic in the spatial result. Despite stronger
+energy control, graph-context has KL only 0.007–0.011 nats, no pooled active mean
+component even at variance cutoff 0.001, and little response to latent changes.
+Its generation can remain random because the AR decoder samples uniform random
+numbers at every free step. Distinguish useful conditional AR sampling from an
+established benefit of the variational latent. Independently review the actual
+trained-checkpoint future-gradient and future-mask tests under
+`reports/conditioning_20261107/trained_causality_audit.json`; a synthetic test alone
+does not establish this property of trained weights.
 
-A bounded ablation can toggle **training-only class balancing**, with the same
-round-0 data, schema, starting checkpoint, fit seed, beta, validation objective,
-optimizer reset, schedule and update budget in both arms. For example, use `--warm-start runs/beihao_multibin_reference/best.pt` in both
-arms, set `--beta-warmup 1 --beta-final .1`,
-`--max-updates 500 --epochs 100 --minimum-epochs 1 --patience 100`, and a generous
-common time cap; add `--class-balance` only to the second arm. Use distinct output
-directories. Both optimizers start fresh. Pass the same frozen schema and exact
-geometry-protocol string used above in both arms. Confirm both actually complete
-500 updates. With the same dataset, validation/warmup exposure can be held common;
-equal update caps alone are insufficient if dataset sizes differ.
+### 3. Priority controlled ablation: does the spatial sampler need a latent?
 
-Do not combine new data, label thresholds, beta schedules and balancing then
-attribute the difference to one cause. Evaluate the same protected validation
-masks and report the objective's actual weighting. New prior-sample physical
-quality requires exact labels; do not select a new checkpoint on the historical
-final yield and call that pool untouched. Three seeds are desirable for the final
-report, but one independent reproduction plus the supplied three-seed experiment
-is enough for the midterm if time is tight.
+The strongest current model responds to energy requests but nearly ignores its
+latent, so isolate that question before another balancing or latent-size sweep.
+Compare your reproduced graph-context CVAE with a no-latent spatial AR control.
+Use the same parent, data, split, conditions, canonical orientation, hidden size
+64, fit seed, batch size, learning rate, class balancing and 4000-update budget.
+Fit both from scratch; do not warm-start an incompatible zero-latent model from
+a D4 checkpoint. Repeat the full command above, replacing its model/output flags
+with these control arguments:
 
-**Report insertion:** methods in Sections 3–4; new fit/ablation evidence in Section
-5; independent-check status in Section 6. Supply one concise model paragraph,
-one learning curve and a small configuration/result table.
+```bash
+--kind ar_baseline --encoder dense --graph-context --latent-dim 0 \
+--output-dir runs/beihao_spatial_ar_no_latent
+```
 
-## Varad: independent metrics, baselines, and allocation validation
+Here `--encoder dense` is the required CLI default for an AR model with **no
+encoder**; `--graph-context` still constructs the physical parent graph and the
+same six causal decoder summaries. Do not pass `--encoder graph`: that requests
+an encoder the no-latent model does not have, and is rejected. The control removes
+the variational channel and its training encoder while retaining the generation
+context/GRU/count mechanism. Save actual parameter counts; this is not an exact
+equal-parameter comparison. Keep both checkpoint-selection settings recorded;
+the no-latent KL is identically zero, so their objectives coincide.
 
-Budget about 6–8 focused hours. Required deliverables are an independently checked
-results CSV/receipt, seed-resolved comparison, conditioning/allocation figures,
-and the validation/cost interpretation. No MLIP is required for these cached checks.
+First run a separately labeled two-update smoke test, reload it, check exact
+count and the no-future-feature behavior, then launch the full bounded fit in
+another directory. Compare protected validation reconstruction, sampled novelty,
+and paired low/middle/high response under a new independent DEVELOPMENT namespace
+with shared uniforms and equal attempt/scoring budgets. If energy checking uses
+the class GPU, call the package's MLIP scorer; no new DFT is needed. Unknown
+labels remain unknown, never a cache-only success denominator. This control has
+not been performed in the integrating campaign; record negative outcomes too.
 
-### 1. Recompute the historical benchmark
+**Report return:** one model paragraph, one learning-curve figure, and a small
+configuration/results table for Sections 2–4, with actual run commands and limits.
+Your independent fit does not retrospectively create another seed in the
+integrating campaign's frozen final assessment.
+
+## Varad: recompute outcomes and validate the comparison
+
+Budget about 6–8 focused hours. Your main outputs are an independent metric
+receipt, seed-resolved plots and an explanation of the actual denominators and
+costs. No fresh MLIP or DFT labels are required for these cached checks.
+
+### 1. Check historical and new scopes separately
 
 ```bash
 cathode-cvae evaluate --snapshot artifacts/current \
   --output-dir runs/varad_historical_recompute
+cathode-cvae evaluate-geometry --snapshot artifacts/current \
+  --output-dir runs/varad_geometry_recompute
 ```
 
-Compare `metrics.csv`, `seed_metrics.csv`, `summary.csv` and
-`teacher_agreement.csv` with the frozen source tables. Preserve original q20 and
-its old novelty history. Check that each success is a distinct novel low-tail
-orbit but every generation attempt is a denominator contribution. Reproduce the
-historical 35.57%/40.06% AR binary, 18.99%/19.75% random, and 52.65%/54.08%
-strongest-mutation means. They are not the new multibin results.
+Reproduce historical binary UMA/MACE yields 35.57/40.06%, uniform 18.99/19.75%,
+and strongest mutation 52.65/54.08%. These use the original history and 512 attempts
+per group. The November 7 balanced multibin figures 31.00/33.00/58.39%UMA and its
+requested-low figures 32.99/17.49/51.65% are a separate assessment. They do not
+become new training-policy results by being placed in a common table.
 
-### 2. Recompute the new condition-aware benchmark
+The new policy development table compares six 4000-update trajectories and two
+checkpoint rules. Verify selected-policy mean balanced yield 32.118%, versus
+uniform 33.623% and frozen mutation 58.970%. Its requested-low/original-q20 yield is
+30.729%, versus 21.354% uniform and 51.736% mutation. Those are distinct metrics.
+The public payload retains the attempts, scalar scores and frozen history needed
+to reproduce the corresponding `evaluate-conditions` command. The exact
+final-study replay is:
 
 ```bash
-python -m cathode_cvae.condition_evaluation \
-  --attempts artifacts/overnight_20261107/benchmark/attempts.csv \
-  --candidates artifacts/overnight_20261107/benchmark/candidates.npz \
-  --scores uma=artifacts/overnight_20261107/benchmark/scores_uma.npz \
-           mace=artifacts/overnight_20261107/benchmark/scores_mace.npz \
-  --schemas uma=artifacts/overnight_20261107/data/condition_schema_uma.json \
-            mace=artifacts/overnight_20261107/data/condition_schema_mace.json \
-  --training-keys artifacts/overnight_20261107/data/training_keys.json \
-  --history artifacts/overnight_20261107/data/history_assessment.json \
-  --historical-thresholds artifacts/current/reports/generation_thresholds.csv \
+python scripts/conditioning_20261107/replay_cached_results.py \
+  --packet artifacts/conditioning_20261107 \
+  --output-dir runs/varad_final_replay --plots
+```
+
+It requires only the published checksum payload and learning environment, not
+a GPU/MLIP call. Verify frozen-final graph-context balanced UMA/MACE yield
+62.037/63.455%, versus mutation 58.623/57.292%. Separate original-q20 low results
+are UMA 63.542/52.517% and MACE 67.622/52.951%. Check all ten UMA families and the
+prespecified matched six-family MACE subset, rather than only the headline rows.
+
+Also reproduce the confirmed spatial development table: graph-context balanced
+60.880% and original-q20 low 61.111%, versus mutation 58.796/50.347%. The matched
+graph encoder without decoder context gives 34.491/24.306%, and symmetry-only
+32.118/29.340%. Use `evaluation/spatial_confirmed` source tables and the full
+`spatial_confirmed_diagnostics` evidence, not the earlier one-fit pilot. Check the
+three individual graph-context balanced yields 59.028/60.938/62.674%. Verify the
+one-fit structural-condition pilot separately: joint yield 28.125%, plain CVAE
+28.516%, mutation 44.792%. No result from these development comparisons is
+silently renamed final performance.
+
+### 2. Check paired response, latent use and novelty
+
+Use the saved output tables/figures under
+`reports/conditioning_20261107/policy_diagnostics_v2/` and the later retained-model
+diagnostics. The paired analysis command is
+`scripts/conditioning_20261107/analyze_diagnostics.py --help`; its receipt binds
+the exact proposal arrays, manifest, schemas, score file and history.
+
+Verify that low/middle/high pairs share actual latent and AR-uniform fingerprints.
+Changing latent vectors must hold the uniforms fixed. Posterior diagnostics use
+only the documented validation targets. Recompute target Hamming distances from
+raw masks; a saved Hamming scalar alone is not an independent check.
+Show individual fit seeds, mean energy shifts and complete distributions rather
+than treating generated draws as independent model replications.
+
+For every useful success, check binary/count validity, measured bin, canonical
+orbit identity, uniqueness and novelty to both training and frozen history.
+All attempts remain denominators. A condition-independent proposal distribution
+has average three-bin hit rate 1/3 before novelty filtering, even if it favors low
+energies; this explains why balanced and requested-low metrics differ.
+
+### 3. Check physical/data audits without new calculations
+
+```bash
+python reports/conditioning_20261107/audit_relaxed_targets.py \
+  --snapshot artifacts/current --output-dir runs/varad_relaxed_target_audit
+
+python scripts/conditioning_20261107/audit_parent_graph.py \
   --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --cost-receipt artifacts/overnight_20261107/cost_receipt.json \
-  --output-dir runs/varad_new_benchmark
+  --data artifacts/current/improvement_v1/training_round0.npz \
+  --energy-schema artifacts/overnight_20261107/data/condition_schema_uma.json \
+  --output-dir runs/varad_parent_graph_audit
 ```
 
-Use the same command for `demo/` inputs, adding
-`--reference-plans artifacts/overnight_20261107/allocation/allocation.json`, with a
-new output directory. Compare with the packet's completed `evaluation/` tables.
-Preserve requested bin, teacher, temperature/policy, fit seed and sampling seed
-in grouping. MACE uses its own train-derived schema; applying UMA's absolute
-energy boundaries to MACE would confuse energy zero points with controllability.
+The first audit must retain 1000 lineages, match fixed-cell convergence and support,
+and distinguish occupation classes from true PES basins. The second must verify
+full host chemistry, periodic edge images, connected interlayer communication and
+symmetry-invariant vacancy-pair counts. Descriptor thresholds and joint support
+must use training rows only. Do not treat the descriptor as an independent
+thermodynamic property merely because it adds another condition component.
 
-Check validity/count, orbit uniqueness, novelty to **training** and to **prior
-history** separately, requested/measured confusion, in-bin hit rates, unique
-novel in-bin yield, fixed-original-q20 yield on requested-low attempts and energy
-quantiles. Check `fixed_q20_low_request.csv` for the fixed-threshold comparison
-and `allocation_joint_summary.csv` for the deduplicated mixture result.
-Do not compare a pooled low/middle/high q20 score with the old low-only
-benchmark. Uniform/mutation replicates are random seeds, not fitted models. Missing or
-failed labels must remain visible. Compare multibin, binary, composition-only,
-uniform raw sampling, bin-seeded mutation and the low-energy mutation control at
-matched attempt budgets and declared training information.
+### 4. Check mutation, edit and cost accounting
 
-Plot individual fit seeds, best energy/useful unique structures against attempts
-and scoring calls, and supplied structural diversity diagnostics. Count all
-reference labeling, cache misses, rejected prefiltered proposals, adaptation and
-training costs. Generation time alone is not an end-to-end saving. Correlated
-frames/draws do not create independent fitted models or justify tiny error bars.
+Frozen mutation chooses 1/2/3 distinct occupied-to-vacant swaps uniformly from a
+fixed training seed pool. It has no distance rule, energetic acceptance or online
+population update. If the learned editor is evaluated, verify identical seed
+identities, requested classes, exact swap counts and budgets. A seed and child
+must share a coordinate frame; independently canonicalized masks do not prove
+local edits. Every evaluated outcome, including unfavorable children, matters.
 
-### 3. Check multiplicities and temperature allocation
+Count decoder attempts, unique physical labels, exact cache hits, fit time,
+relaxation/NEB calls if any, and allocated resource time separately. Summing
+per-method encountered labels double-counts shared oracle evaluations. Use the
+campaign cost receipt for actual fresh calls; a generic evaluator without
+fresh/cache flags cannot infer those calls. Preserve failed attempts and their
+repairs. Do not infer physical accuracy from a successful job or checkpoint.
 
-The exact finite-support command is:
+**Report return:** one verified table, one paired-response or seed-resolved figure,
+one concise validation/cost paragraph for Sections 3–5, and your exact commands.
 
-```bash
-python -m cathode_cvae.acquisition \
-  --reference artifacts/current/extras/learning_all_parents/learning_Hu_O3_12_uma.npz \
-  --parent artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz \
-  --reference-kind exhaustive_orbits --validate-exhaustive \
-  --output-dir runs/varad_hu_support
-```
+## Ricardo: physical interpretation and final integration
 
-Expected: `finite_support.json` reports 87 orbits and 144 distinct parent
-permutations; at n=6, 17 orbits have total multiplicity 924. Every count sums to
-binomial(12,n). With no condition schema, zero allocation plans is expected:
-this command audits support only. The focused test
-`test_hu12_finite_support_multiplicities_and_exact_weights` additionally compares
-actual teacher-weight sums against all 924 raw masks at 433.15 K.
+Review the definition of the parent/mobile sites, occupation symmetry, teacher
+and geometry protocol. Explain why deletion and relaxed labels can reorder
+structures; the current paired primary cohort has only 49 train/11 validation/9 test
+lineages and low-endpoint validation support 0/1/0, so a new label-target CVAE was
+not manufactured from repeated frames. The geometry CVAE/regressor comparison
+remains separate from occupation generation.
 
-Recompute the 48-site acquisition plans:
+Review any optional edit/NEB supplement independently of the class core. Defined
+MLIP barriers are neither DFT-validated barriers nor a trained kinetic generator;
+no new DFT is submitted or scheduled. Keep claims of material/size transfer,
+physical entropy, reactor optima and downstream MLIP improvement outside the
+current evidence. Integrate the collaborators' actual returned work, verify the
+current rubric/format, and submit manually before the deadline.
 
-```bash
-python -m cathode_cvae.acquisition \
-  --reference artifacts/overnight_20261107/data/reference.npz \
-  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --schema artifacts/overnight_20261107/data/condition_schema_uma.json \
-  --reference-kind uniform_raw_sample --counts 12 24 36 \
-  --temperatures 393.15 433.15 473.15 493.15 \
-  --mixture-weights 1 1 1 1 --exploration .1 --budget 128 \
-  --output-dir runs/varad_allocation
-```
-
-Verify total cell energies in eV, actual atom counts, complete reference scoring,
-raw sampling frequencies and no extra degeneracy factor. Check pure and 10%
-exploration policies, exact integer budget totals, temperature mixtures, ESS,
-maximum masses, and nested-prefix sensitivity. Per-temperature plans each have
-their own budget; a mixture budget is joint. The generator executes every
-schedule in its input, including both pure/exploration per-temperature and
-mixture schedules; its total is therefore larger than one `--budget`. Strong concentration is a finding,
-not proof of thermal equilibrium. Compare requested proportions with measured
-bins of generated masks; these can differ substantially.
-
-### 4. Check the physical ranking context and interpretation
-
-```bash
-python reports/ranking_audit_20261107/recompute.py \
-  --input reports/ranking_audit_20261107/paired_energies.csv \
-  --output runs/varad_ranking_recompute
-```
-
-Keep source/phase/composition/cohort pools separate; inspect top-k set sizes/ties,
-regret and energy-gap errors. In Hu's five-member optimized Li10 pool, matching
-all identities is trivial top-five overlap, while UMA selects the DFT fifth-ranked
-structure first. Avoid interpreting aggregate rattled-frame rank agreement as
-universal optimized-configuration accuracy.
-
-**Report insertion:** conditional/acquisition figures and new tables in Section
-5; uncertainty, physical limitations and historical context in Section 6.
-Provide one primary seed figure and one requested-versus-realized allocation or
-confusion figure, with source CSV and plotting command.
-
-## Ricardo: prepared material and final integration
-
-`RICARDO_CONTRIBUTION.md` and the integrated LaTeX supply the motivation,
-DFT/MLIP/MD definitions, parent/site map, geometry protocol, orbit/multiplicity
-explanation, representative structures, recomputed ranking context, primary
-materials references, and physical interpretation. The complete source/claim
-manifest accompanies the report. Review the supplied POSCAR/CIFs in VESTA and
-flag physical concerns. A new mask's low teacher energy does not establish a
-DFT ground state or thermodynamically stable phase.
-
-Ricardo integrates the independently checked team additions and chooses a compact
-later DFT validation set from the prepared handoff. No new DFT is submitted or
-scheduled in this overnight work. MD/3PT/phonon method-pilot results remain outside
-the class report except a clearly identified future-work sentence.
-
-## Optional work after the required checks
-
-Broader Li-count learning can use the existing all-count labels and
-`data prepare-learning` while preserving protected splits; endpoint compositions
-with one orbit are not meaningful discovery tests. The exact 12-site reference
-can support a separate compatible model, with novelty relative to a protected
-training subset (not all 87 known orbits). Neither padding a 48-site vector nor
-applying its weights establishes size transfer.
-
-A geometry-CVAE reproduction, property-input ablation or endpoint-only comparison
-is optional for this midterm. Keep the deterministic regressor control, full
-lineage splits, train-only scalers, and frame weights summing to one per lineage.
-Coordinate error alone does not establish low forces or optimizer savings. Do
-not let that optional campaign displace the new multibin/acquisition checks.
-
-## Integration schedule and acceptance
-
-| Date | Beihao | Varad | Ricardo/shared |
-| --- | --- | --- | --- |
-| November 7 | Fit/reload, schema/method check, ablation configuration | Historical/new recomputation, support/units/budget checks | Parent/ranking/materials review; collect discrepancies |
-| November 8 | Learning curves and bounded ablation result | Seed/conditioning/allocation figures and cost statement | Integrate, freeze tables and claim-source manifest |
-| November 9 | Verify equations and implemented settings | Verify all numbers, denominators, grouping and uncertainty | Final five-page body/references/format check; manual submission before 11:59 p.m. Pacific |
-
-Use the [integration checklist](INTEGRATION_CHECKLIST.md). Mark each contribution
-complete only after its owner returns the stated evidence. Presentation dates
-are November 24 and December 1; the final report is due December 12.
+Complete independent checks on November 8, freeze the integrated tables/figures
+that day, and reserve November 9 for final verification. Prepared commands do not
+substitute for the named owners' independent contributions.

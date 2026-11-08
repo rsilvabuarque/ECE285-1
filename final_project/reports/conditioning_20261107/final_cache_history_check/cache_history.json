@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "frozen_history_rows": 278382,
+  "frozen_history_sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+  "teachers": [
+    {
+      "teacher": "uma",
+      "cache_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_uma.npz",
+      "cache_sha256": "9bc814ac0f3a16fbf7b01473fe1c4d6ccc092a82ea3f63c16616da6ff5082295",
+      "cache_rows": 76016,
+      "convertible_mask48_ids": 76016,
+      "unsupported_ids": [],
+      "missing_history_keys": [],
+      "all_cache_orbits_known_before_final": true,
+      "energy_arrays_read": 0
+    },
+    {
+      "teacher": "mace",
+      "cache_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_mace.npz",
+      "cache_sha256": "d11609eed3bc32039d627c6cde07819517dd3e6f86b97ebef5bdfef0778c5ee7",
+      "cache_rows": 51441,
+      "convertible_mask48_ids": 51441,
+      "unsupported_ids": [],
+      "missing_history_keys": [],
+      "all_cache_orbits_known_before_final": true,
+      "energy_arrays_read": 0
+    }
+  ],
+  "distinct_missing_history_keys": [],
+  "history_modified": false
+}

@@ -1,0 +1,54 @@
+\textbf{Development selects a spatial conditional sampler.}
+Six dimension 8 fits tested balancing and both checkpoint rules on shared
+trajectories; twelve more tested dimensions 4, 16, 32 and no-latent AR controls.
+Balancing and selection weight 0.1 were retained; increasing latent size improved
+reconstruction without monotonic discovery benefit. The frozen size rule retained
+D4 using practical 1 percentage-point balanced and 2 point low-yield margins,
+not confidence bounds. Graph-context development gave 60.88\% balanced yield
+versus mutation's 58.80\%; its initial fit was replicated at two more seeds before
+final generation. All 28 core fits completed 4000 updates, within the 30-fit cap.
+Full policy/size tables and individual seeds are supplied separately.
+
+\textbf{Frozen final assessment.} The method list and 278,382-orbit history were
+frozen before 34,560 UMA attempts. Six prespecified families, the same 20,736
+attempts, were also evaluated with MACE:
+
+\input{generated_final_table.tex}
+
+Rows average counts/bins equally, then three fit or sampler replicates;
+$\pm$ is descriptive seed standard deviation. ``In-bin'' measures distinct novel
+orbits in the requested teacher-specific class; ``low'' uses only low requests
+and the original UMA $q_{20}$. MACE remeasures UMA-requested proposals under its own
+training-derived boundaries, not a separately retrained MACE generator.
+Its original-$q_{20}$ low yields are 67.62\% for context versus 52.95\% mutation.
+UMA balanced gain over mutation is 3.41 percentage points, versus 11.02 points
+on its low metric. This is a teacher-defined sampling advantage, not DFT accuracy.
+
+Paired low/middle/high requests share $z$ and AR uniforms. For graph context,
+high-minus-low energy averages $+5.263$ meV/atom, positive in 97.40\% of pairs;
+middle-minus-low averages $+2.100$ meV/atom. Dense D4's corresponding means are
+$+0.026$ and $-0.135$ meV/atom. Actual-checkpoint tests found zero future-bit
+gradients and unchanged logits under future-mask changes, supporting the tested
+causal implementation rather than an obvious future-label shortcut.
+
+\textbf{Better conditional sampling is not evidence of useful latent variables.}
+Graph-context validation KL is only 0.007--0.011 nats; no pooled mean component
+exceeds variance 0.01. Resampling $z$ at fixed uniforms changes 0.795 sites on
+average and leaves 68.23\% in the same orbit. Posterior/prior Hamming distances
+are 16.78/16.81. In contrast, dense D4 has KL 11.58--11.95 nats and changes
+12.72 sites. Thus the positive result primarily supports a condition-sensitive
+spatial AR sampler; the variational pathway is nearly unused by these diagnostics.
+An explicit matched no-latent spatial control is a discriminating later test.
+
+Symmetry-minimized Hamming distances to a fixed 1024-training-orbit reference per
+count average 6.858 sites for context, 6.891 uniform and 6.498 mutation.
+These are upper bounds on full-training nearest distance, not evidence of a large
+diversity gain. All 3456 mutation attempts have their exact $2k$ edits verified.
+
+\textbf{The second structural condition remains a negative pilot.}
+One middle-energy fit requesting low/high vacancy-pair fractions gave 28.13\%
+joint useful yield, versus 28.52\% plain CVAE and 44.79\% matched mutation.
+The descriptor strongly correlates with teacher energy; it is not an independent
+thermodynamic property. No multi-fit improvement is claimed. This separate pilot
+and the paired conditional diagnostics are development evidence; the table is
+the frozen final assessment.

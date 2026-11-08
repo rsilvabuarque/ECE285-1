@@ -1,0 +1,120 @@
+{
+  "status": "PASS_COMPLETE_ORACLE_COVERAGE",
+  "attempts": 13824,
+  "primary_attempts": 10368,
+  "diagnostic_attempts": 3456,
+  "unknown_generated_attempts": 0,
+  "invalid_mask_attempts": 0,
+  "condition_pairs": 6912,
+  "latent_pairs": 2304,
+  "posterior_prior_pairs": 576,
+  "posterior_or_prior_raw_target_Hamming_verified": 1152,
+  "training_novelty_known": true,
+  "history_novelty_known": true,
+  "posterior_targets_verified": "Protected validation identities and exact source energies; never test",
+  "comparison_scope": "CVAE paired conditions use shared latent and AR uniforms; sampler controls are paired by attempt index without common conditional draws; latent pairs hold uniforms fixed; posterior/prior share target condition and uniforms",
+  "uncertainty": "Individual design replicates retained. No confidence interval from proposal draws or trajectory frames.",
+  "active_unit_definition": "Validation posterior-mean variance > cutoff; .001/.01/.1 sensitivity is descriptive, not physical convergence",
+  "fit_diagnostic_scope": "Only model-manifest fit directories when supplied; other concurrently completed fits cannot enter this stage",
+  "fit_input_hashes": {
+    "graph_context_20261106": {
+      "configuration_sha256": "a272685d48ba7832e0f33a9d90f04de3a8c839717dd9f49bc0d3e0bb3d2d2044",
+      "summary_sha256": "01e88aed1a8663ce206810a6c09e823ca87c5e15bd618eee2d5b7169cdd44d6b",
+      "history_sha256": "54ac14f658e4ec0dc7f70b62bca03d70fe30e754584fad990c249d611f7d5ab0",
+      "latent_history_sha256": "e571cb183b29a2a4d50ab45c26235c177419119ce65d64990c1d1bf10f3c6e5c"
+    },
+    "graph_context_20261107": {
+      "configuration_sha256": "8a4c00a03995ff4a5da561240ba8453238b064e0c96375ba61cdb767cc85164e",
+      "summary_sha256": "40c4621547795f831368feae3c60fa6d594b09e2604c997836530051c5820a3b",
+      "history_sha256": "810622e7ce307c0c5e9bfb7ebb1605adcc0f999b910ec1466264ed155eee96ea",
+      "latent_history_sha256": "468c3c3de137b145d200b78ca335d5fb41b12ef61765f171f118a38caf9c4974"
+    },
+    "graph_context_20261108": {
+      "configuration_sha256": "a4f54ea8b7780b191156d3899df10929fc33c0359b42b984824eb4c651d55710",
+      "summary_sha256": "2aa8c43702c5200fa660ffab79f9a28e0ee5f525e88660d7f2efe5b2e02eff5d",
+      "history_sha256": "bcc4a5bf497a103cbd21c61e9347a0e6405f1f6e625632a4a93fffb252bbd4f3",
+      "latent_history_sha256": "cd6bd8273071e133fb30a888bf96987d95cb55d3b7f3f4c82a3804a9aa551a48"
+    },
+    "graph_encoder_20261106": {
+      "configuration_sha256": "5b83ff1bfeb256eaf06a1ddeee50f6cb390e0b81cf72d8ed7f0fec7823cc1222",
+      "summary_sha256": "96a0470f7aed0f3bc143c1e74cb14d967702e18a9fdb3814db8dafb88fd3a1ef",
+      "history_sha256": "afdfdd5bf6163c08ee5f00f785645099025a8738056284b41e1b1024f7548062",
+      "latent_history_sha256": "fd503ab89593270e8d6332f2e1d87344dca0f4f89fdebeae0e95bc501905db26"
+    },
+    "graph_encoder_20261107": {
+      "configuration_sha256": "1105ed4ae269bcf86494f4649912fd4e816ac5d75cf39aac9f7d698f90bba390",
+      "summary_sha256": "12c6f318653bf5b8e0b1a50c83f96511723ce600203f9cff148cc0cd9671d0d1",
+      "history_sha256": "de2e04ca6e944a1fdf1acc10008601eafacbff4d7c789d03b218fb5c7dc0500c",
+      "latent_history_sha256": "b84b8dc9362262741f1913345631a742540fa21385bbd1a01238de82229c68cf"
+    },
+    "graph_encoder_20261108": {
+      "configuration_sha256": "50e821c6e6e05b6e47da61fb658afc7391c182dd56da2165827ff41ab66a5ed7",
+      "summary_sha256": "465401586f6145166dfdf040ed34b8399aa891f9533a4e88b950b143877e806d",
+      "history_sha256": "03be8b2d09e272b17af7e25f39714dcea4567891d459efefb9af28e10491731a",
+      "latent_history_sha256": "2d41a3d270826397f8a3abe2232b1189b293a2852656c2f1bd4a6babc3acde04"
+    },
+    "latent_d4_20261106": {
+      "configuration_sha256": "8b01eb1ee5491007580b1db5a551fc889bceaea1b9e241d1a949d741d8263d2b",
+      "summary_sha256": "a01bc271eb31053a00b63fb518eb99765eeab9797270617f026e64522c566255",
+      "history_sha256": "53d0aaa1c455ef257e75576618cf4b64b01d6456a7fb4fd8c90d6e269e5a8663",
+      "latent_history_sha256": "84b851093b8276289b78b3d62d856c6635c243261fef84c0612a8402771b9a6e"
+    },
+    "latent_d4_20261107": {
+      "configuration_sha256": "43b0420439a0337a9c573bbbeffabaf3a1fe842fe47b3423d41a125d30e037ef",
+      "summary_sha256": "d047ae319d0ea2c00b3db22f6d17ca84240bf77c85352f7431bebe01f55cf391",
+      "history_sha256": "17bd1ee987b52017732f9dbbbce8679e7ac0419d218a5952a99dc4e9c1025d73",
+      "latent_history_sha256": "610aff3e7514195143982c45e9e387881e525f0cccdbaf659573375b9b9e5757"
+    },
+    "latent_d4_20261108": {
+      "configuration_sha256": "c9ddf2ca4ff2217e03115865919ec29c1ccb484d3b124a05e0cfc9115b67cafc",
+      "summary_sha256": "19ebe91581719aa25bc942e0d089082bab8d783676022e64fedf576225d04417",
+      "history_sha256": "dc9d0f902265e681235c2c9928e3af079af9ed36aeb185fa34ea226567ad9912",
+      "latent_history_sha256": "55b121ebe98ef0d9c8e8467e5520dd282021deb50b62464311d49046bb04205e"
+    },
+    "symmetry_augment_20261106": {
+      "configuration_sha256": "557258f123771b66335f1d00948a690195349b5da7193f51a0637d79238a84dd",
+      "summary_sha256": "8fb9f74c45b3c87c73e3563454a1855170fa091711cc1bceeb1610aa33f26f28",
+      "history_sha256": "0640f617bde3f5c10bd000a91f86181e385178bcccd6c9ba08dc826fd326fad0",
+      "latent_history_sha256": "ae985a582275f355346ac2d5127cfa57c2d0deafe208541b1c465b089653eab1"
+    },
+    "symmetry_augment_20261107": {
+      "configuration_sha256": "2484dcead884bfb8632e3ffd487521450a59c5060228f9f42e157c045a8c172f",
+      "summary_sha256": "8ff2825b96265b5c04619e95a3d52f94ce6566ea1ef114e84db11d0c07b2317a",
+      "history_sha256": "94db6aa305aa3b347af8f05eebb924cc6b1a1cf610534e1df391b004eeb519d6",
+      "latent_history_sha256": "0ddcee24e72a6cfc2470cbb3b66781690b02f5107ae4bfb38e0c59bfc83f6c8d"
+    },
+    "symmetry_augment_20261108": {
+      "configuration_sha256": "b1538460c1fffbf0379da0fa8395768c8076a4b0ab98451acaf600b847a02958",
+      "summary_sha256": "d07b6d32b2fa63b37a36928e71be45d0cb86e7cd44f393e6f41794debc6e541a",
+      "history_sha256": "316d533816cc52dd5cdf78a8108d26f6158c7316d8cc96242dd91df9e2297e70",
+      "latent_history_sha256": "673ecbfba4193a464d7f8b47e5a71dfd135020f880db192ad24471f61b1226fe"
+    }
+  },
+  "metric_scope": "Balanced low/middle/high useful yield is separate from requested-low original fixed-q20 yield",
+  "input_hashes": {
+    "attempts_all": "265b76c83778a059f4a74e2cf528021f72f23773644c3d7ee2de028d88d5320f",
+    "raw": "9557b5a9fb2e0b69ff8bd78b01b22466b739cc6be06af2f46af07d0792406442",
+    "scores_uma": "8391d432c46a305357e141dcabf47baef2be9a60f98d64df639178f9d61e6106",
+    "schema": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "training_data": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "history": "8ec3d93252af5c9258ba7c1dc92abd82599b64a831f3f6bcaf8ca1cf402dfbfa",
+    "original_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "model_manifest": "40a5e2885b152d8d11397113307f9f73d97555f0f2d1f56d10ad0df579ba3ba3"
+  },
+  "source_sha256": "4add2707899e492fb5779c0942f2999cb510591bd5cfba4f4c82b5bc4f2a9605",
+  "output_hashes": {
+    "attempt_outcomes.csv": "b56acb8b484dd6d26fbffa765838fe60030a78624b2eb11843b145056fad5f7a",
+    "bin_confusion.csv": "14f247bc7bbd647b45f77898b206f81b0abe56bcbbf5cf0df379b004cb959ea3",
+    "condition_summary.csv": "46031b474d3b9ebd8ce56130fbb893336787518a99561f270f1e29a2ef3c18d5",
+    "distinct_metric_scopes.csv": "2c230f291f3092feb696a583af05de55a959c5ff333461b5200e344fc9110e92",
+    "fit_history.csv": "12e1d8828ff29f9f216e21785b95418c1f16bfb1f21847cc86e264104fc69b42",
+    "latent_components.csv": "9b149c095629f7887d09abdb6b5123eb3ae0f4ba6e342a9e0d3735eb97c431a3",
+    "latent_summary.csv": "07f3375dd0effb9d51006720f9daef90e4d98eeca6f1dc75574274e4b942a28b",
+    "paired_conditions.csv": "ea02f39ce4707cdae004bf2267c7b30be11cc2d282574d68743cb89868c4ed7d",
+    "paired_latents.csv": "dafe84621310e3073f7262164b16ea0e2f5d7cb7f1fb1cc4a9eabdfcaa19015b",
+    "posterior_prior_pairs.csv": "eeebdeb4ffa5bf2bf4a35f77dfd6887f891a1348b779e4143a8fce4a32235a65",
+    "posterior_prior_summary.csv": "399db930d1cf503860f2e615e88f67fde1841ae8fb7161816c34b2c1b2a72367",
+    "primary_condition_cells.csv": "54ca5c278d0b2c9e9beaaec2b35c51ac4b317e67c94ce42cc52f2a33d714e9cd",
+    "selected_latent_diagnostics.csv": "44359360548be8755efb02fff3fc772bf765a2465eabeca4b0382a1cf7c3840f"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "status": "PASS_COMPLETE_ORACLE_COVERAGE",
+  "attempts": 13824,
+  "primary_attempts": 10368,
+  "diagnostic_attempts": 3456,
+  "unknown_generated_attempts": 0,
+  "invalid_mask_attempts": 0,
+  "condition_pairs": 6912,
+  "latent_pairs": 2304,
+  "posterior_prior_pairs": 576,
+  "posterior_or_prior_raw_target_Hamming_verified": 1152,
+  "training_novelty_known": true,
+  "history_novelty_known": true,
+  "posterior_targets_verified": "Protected validation identities and exact source energies; never test",
+  "comparison_scope": "CVAE paired conditions use shared latent and AR uniforms; sampler controls are paired by attempt index without common conditional draws; latent pairs hold uniforms fixed; posterior/prior share target condition and uniforms",
+  "uncertainty": "Individual design replicates retained. No confidence interval from proposal draws or trajectory frames.",
+  "active_unit_definition": "Validation posterior-mean variance > cutoff; .001/.01/.1 sensitivity is descriptive, not physical convergence",
+  "fit_diagnostic_scope": "Only model-manifest fit directories when supplied; other concurrently completed fits cannot enter this stage",
+  "fit_input_hashes": {
+    "balance_0_d8_20261106": {
+      "configuration_sha256": "785f686338fac4d5c04602a12294575203a938c931315e897b356ed4d6771ddd",
+      "summary_sha256": "ea66d6df74f5e0bd5f69748322f71224f5afcec3d76add179ef2c46c18593d3a",
+      "history_sha256": "74bd5de1e8c5fd076f308533b9e7dd5376a42751f918ac236a1154ec6e26ef4f",
+      "latent_history_sha256": "4f3ed0987645d5f6af24ba86b6d9ec55f0aaa85805de4fa260bf4f79c6ab0c40"
+    },
+    "balance_0_d8_20261107": {
+      "configuration_sha256": "d5d5fb143bc53b2fd80ec25626f65b0e907e908eb7d697a4265c915c2c11d124",
+      "summary_sha256": "8a17ed9d509acb4aaea79f2ec296c4773ba625701a263b4a7fd0f9daf8fec237",
+      "history_sha256": "3614ba9633716d8fc0b5e04d37d459556a4b93aa9a69097df078b77c0689ecec",
+      "latent_history_sha256": "f56e10f4f9d831cdb5806aa2de4afe44c61988c0d56f36b2316162e5e5400bb1"
+    },
+    "balance_0_d8_20261108": {
+      "configuration_sha256": "f33ac9a2490fadf2fbc789664b9fbe0d45dba00207c2498c00a20f75d305d951",
+      "summary_sha256": "9974e0e45551132e97eef30149da8bc7717dab758389459fd67b6286b4e45161",
+      "history_sha256": "1a38cde9f8e1013d4611f1a31c32c20a28a87580b1e87d6d8b86f9f834eb2e3b",
+      "latent_history_sha256": "6fba922ccf20f6f89dc34894337b0ef1c8ff00f6144c04f0ea7803c7f58b7e48"
+    },
+    "balance_1_d8_20261106": {
+      "configuration_sha256": "1474a5bc55088c4047b8b87b48e647c7ef40aff00ece82e3fd38f599f22952b4",
+      "summary_sha256": "48e6e4836a4a662134f1eb336e6ca7f19c4168f8bc9993001c5c045b385dfe9e",
+      "history_sha256": "98fb48ec7522b5fc30b9c2fae99ce7183fb908516eb3f9ca8b3b5ac17a2a9ffa",
+      "latent_history_sha256": "5fcb1c51451052531c3828c66f330075c46b8913018555e8eb6914a1eab73f8c"
+    },
+    "balance_1_d8_20261107": {
+      "configuration_sha256": "8af76304b3eefb4b7f635a52ff2d02f26f9245e43d5e754f9e2e36800c8ef18b",
+      "summary_sha256": "f336bc2ba3b92239cca029c1d2a0c5654e3954d894e86ca7e8e69c83d030a16c",
+      "history_sha256": "26d4be095e0352d4dab18c809a7a3558da2d622880c6c6ada1c43e56fbde49ed",
+      "latent_history_sha256": "ac01310c78aa0e6ad30a68ade4ff05f26b54ddb133a159e26199a2c352c38e37"
+    },
+    "balance_1_d8_20261108": {
+      "configuration_sha256": "843dd200de8a32b945e8a7c106355c587a1cdd06e0283135093f4aa0ebe7653d",
+      "summary_sha256": "5b6da7b6bb3ecc55774ea43588a60b5f054b78524058e2f4f927872d3a09fb76",
+      "history_sha256": "62d05b9bc6a15d9641b1a08f9fee483b9fd8fa73bc247f74e8a6f42771c2bbb6",
+      "latent_history_sha256": "ce780d7ec0c291209d24164b56d6d647735ba9de36821510af8e34db580abc91"
+    }
+  },
+  "metric_scope": "Balanced low/middle/high useful yield is separate from requested-low original fixed-q20 yield",
+  "input_hashes": {
+    "attempts_all": "103bcade2bfc7a1c15a42bcd4fe40d77f094fad52aa6afcb79c315de1e50e9cb",
+    "raw": "ded32c11b02f087ea58d1783a434706c5d38695ad52ab16eedaad7febdf589ca",
+    "scores_uma": "15a2edba529e5ab32f7952684a95f85446f757d16529411a71780d6f731ddca5",
+    "schema": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "training_data": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "history": "8ec3d93252af5c9258ba7c1dc92abd82599b64a831f3f6bcaf8ca1cf402dfbfa",
+    "original_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "model_manifest": "42ff8bba599b3e2a87a12ae1793ce1aadb1a217acb499f378a06f111a60fcc9a"
+  },
+  "source_sha256": "e8c115d5cb1cec171a757af0deb0b6e362dfe0b692a29b93be697fca9efc5f9e",
+  "output_hashes": {
+    "attempt_outcomes.csv": "3a5f8faa11fb4b7b3e0edc556033578aba00db0b1a782076acad25347d957fba",
+    "bin_confusion.csv": "2e6b1aaa1956ed7a3f18b56c23fe78bb7907798937d88fc251a768332c7fb29c",
+    "condition_summary.csv": "a053ae711e7bac280c5ce2c58e5ec4d3bd50146b9f85ad1a757d64ba78b1df07",
+    "distinct_metric_scopes.csv": "c936a65c15e55a8ea20d5ea2e2beb8f80abd3d79d80b3cbe8a7384704ee45f04",
+    "fit_history.csv": "2b3d7be02b9aecfa58b530ba430ca155008e9772c90025daf779491c18311cf3",
+    "latent_components.csv": "424eba2b8be751264fe22b23d6abefbcdfbf05ed525204922a348205f0a68248",
+    "latent_summary.csv": "efb8e47a8e5c837e334ff3b08d79ce7407b8f688810b88786bde8b61b389813b",
+    "paired_conditions.csv": "922c92f59763e89043dbc41eb4c749b35ad113dd24fb2f7b1574d584b19fd513",
+    "paired_latents.csv": "808060ac4f5e23b953eb5a0d916134c6e80dd92740e4ef4700ef5854a8a676c9",
+    "posterior_prior_pairs.csv": "44bd1252b1bf35ec60df17357cb638e0cfba3cc121d1224df834121b5e8abf3f",
+    "posterior_prior_summary.csv": "d2a4afa985add1e02f5da89e053b6f808f3ec64dcc55191ea4936b2c7326b726",
+    "primary_condition_cells.csv": "7d41aebf06a493666c94d61d09ab3565e93b16701a6e7ec1fdb32f14058e66b8",
+    "selected_latent_diagnostics.csv": "b8099b1d7bb43d1020903e5ca9af7c51084a83acb4fc3c451331ee11bf84a98b"
+  }
+}

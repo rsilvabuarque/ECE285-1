@@ -1,0 +1,12 @@
+{
+  "status": "VISUALLY_CHECKED",
+  "figure": "latent_dimension_summary",
+  "source_sha256": "2c1f8877bb0a9dbd77833effe45e0c3500f14f66d1e521fa058f2889646c9e8f",
+  "selection_audit_sha256": "75ef718eca12b9c3f2722e5805e77ebf6dd57a53339046eafac9e0eeb9a0ce69",
+  "numerical_receipt_sha256": "e9bc03f1e1b40bac516580162d02e3dfdb3448861841ba1333f96f97ff6266c1",
+  "outputs": {
+    "latent_dimension_summary.pdf": "6948ab7ac1f6bb9e2ccc8dfbc036b3e550e4da363ba4b11010b421b63e2d8180",
+    "latent_dimension_summary.png": "79c1ed7ef402645269a7bc79a8f254f7e8c28fcb4df20a79133e06034566df9c",
+    "latent_fit_diagnostic_summary.csv": "ef7da16a564ef508de8f36e8f514909c54503c73a0e037ef35fcdfa37b6e7b34"
+  }
+}

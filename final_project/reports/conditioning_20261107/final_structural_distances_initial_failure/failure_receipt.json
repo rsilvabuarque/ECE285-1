@@ -1,0 +1,18 @@
+{
+  "status": "FAILED_PRESERVED",
+  "error": "'int' object is not callable",
+  "error_type": "TypeError",
+  "traceback": "Traceback (most recent call last):\n  File \"/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/audit_final_distances.py\", line 185, in main\n    observed_canonical=canonical_codes(raw,inverse)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/audit_final_distances.py\", line 64, in canonical_codes\n    best=np.full(len(x),np.iinfo(np.uint64).max(),np.uint64)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: 'int' object is not callable\n",
+  "elapsed_seconds": 2.220537513960153,
+  "source_sha256": "993bfecd91f219e804664e016e64ecf161d59531ee6181438e2709a8de43e2d9",
+  "input_hashes": {
+    "runs/conditioning_20261107/final_protocol.json": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+    "runs/conditioning_20261107/final/receipt.json": "30640aab83867781c024768c1eb74c4ca4db8616e72aa8dc311417f46f28c202",
+    "runs/conditioning_20261107/final/attempts.csv": "428285980dbb88d6ec8d42d9709b7a1881dac5b15e82066be8f9dd97fe9a8b46",
+    "runs/conditioning_20261107/final/raw_attempts.npz": "f109792542b2fcb92ca3201cc9c8ce4d16eacf346d9daecfb952fd0e0b137143",
+    "artifacts/current/improvement_v1/training_round0.npz": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "new_MLIP_calls": 0,
+  "new_training_trajectories": 0
+}

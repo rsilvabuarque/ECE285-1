@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "input_hashes": {
+    "artifacts/current/core/data/geometry_uma_fixed.npz": "1c71d8c340378c93d79f7db67c7ac503c2a1229f07c242897c1754d8f7e5d6fb",
+    "artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "frames": 6000,
+  "lineages": 1000,
+  "splits": {
+    "train": 787,
+    "val": 107,
+    "test": 106
+  },
+  "exact_fixed_cell": true,
+  "numerical_convergence_criterion_eV_A": 0.05,
+  "converged_lineages": 1000,
+  "endpoint_fmax_max_eV_A": 0.049989961087703705,
+  "changed_Li_assignment_lineages": 0,
+  "changed_host_assignment_lineages": 0,
+  "mobile_collision_lineages": 0,
+  "changed_occupation_orbits": 0,
+  "unique_initial_occupation_orbits": 1000,
+  "unique_endpoint_occupation_orbits": 1000,
+  "endpoint_orbit_merge_groups": 0,
+  "primary_composition_lineages": 69,
+  "primary_label_support": [
+    {
+      "n_Li": 12,
+      "target": "deletion",
+      "split": "train",
+      "lineages": 18,
+      "train_q20_eV": -891.601671309116,
+      "low_lineages": 4
+    },
+    {
+      "n_Li": 12,
+      "target": "deletion",
+      "split": "val",
+      "lineages": 1,
+      "train_q20_eV": -891.601671309116,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 12,
+      "target": "deletion",
+      "split": "test",
+      "lineages": 4,
+      "train_q20_eV": -891.601671309116,
+      "low_lineages": 2
+    },
+    {
+      "n_Li": 12,
+      "target": "endpoint",
+      "split": "train",
+      "lineages": 18,
+      "train_q20_eV": -896.2007260739624,
+      "low_lineages": 4
+    },
+    {
+      "n_Li": 12,
+      "target": "endpoint",
+      "split": "val",
+      "lineages": 1,
+      "train_q20_eV": -896.2007260739624,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 12,
+      "target": "endpoint",
+      "split": "test",
+      "lineages": 4,
+      "train_q20_eV": -896.2007260739624,
+      "low_lineages": 1
+    },
+    {
+      "n_Li": 24,
+      "target": "deletion",
+      "split": "train",
+      "lineages": 16,
+      "train_q20_eV": -961.444747591434,
+      "low_lineages": 4
+    },
+    {
+      "n_Li": 24,
+      "target": "deletion",
+      "split": "val",
+      "lineages": 6,
+      "train_q20_eV": -961.444747591434,
+      "low_lineages": 2
+    },
+    {
+      "n_Li": 24,
+      "target": "deletion",
+      "split": "test",
+      "lineages": 1,
+      "train_q20_eV": -961.444747591434,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 24,
+      "target": "endpoint",
+      "split": "train",
+      "lineages": 16,
+      "train_q20_eV": -964.6949119138476,
+      "low_lineages": 4
+    },
+    {
+      "n_Li": 24,
+      "target": "endpoint",
+      "split": "val",
+      "lineages": 6,
+      "train_q20_eV": -964.6949119138476,
+      "low_lineages": 1
+    },
+    {
+      "n_Li": 24,
+      "target": "endpoint",
+      "split": "test",
+      "lineages": 1,
+      "train_q20_eV": -964.6949119138476,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 36,
+      "target": "deletion",
+      "split": "train",
+      "lineages": 15,
+      "train_q20_eV": -1030.5262385908595,
+      "low_lineages": 3
+    },
+    {
+      "n_Li": 36,
+      "target": "deletion",
+      "split": "val",
+      "lineages": 4,
+      "train_q20_eV": -1030.5262385908595,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 36,
+      "target": "deletion",
+      "split": "test",
+      "lineages": 4,
+      "train_q20_eV": -1030.5262385908595,
+      "low_lineages": 1
+    },
+    {
+      "n_Li": 36,
+      "target": "endpoint",
+      "split": "train",
+      "lineages": 15,
+      "train_q20_eV": -1032.428595505276,
+      "low_lineages": 3
+    },
+    {
+      "n_Li": 36,
+      "target": "endpoint",
+      "split": "val",
+      "lineages": 4,
+      "train_q20_eV": -1032.428595505276,
+      "low_lineages": 0
+    },
+    {
+      "n_Li": 36,
+      "target": "endpoint",
+      "split": "test",
+      "lineages": 4,
+      "train_q20_eV": -1032.428595505276,
+      "low_lineages": 1
+    }
+  ],
+  "median_composition_spearman": 0.9378881987577641,
+  "minimum_composition_spearman": 0.6383399209486166,
+  "minimum_composition_low20_recall": 0.4,
+  "minimum_nearest_site_margin_A": 2.216175763654635,
+  "source_raw_scalar_records_checked": 1000,
+  "sampling": "Previously acquisition-selected: about50%random,25%lowUMA,25%teacherdisagreement,balancedcomposition; notpopulationrepresentative.",
+  "scope": "Sameinput deletion/fixedcellUMA endpoints. All attempts included; assignmentorbit collisions are a parent-site structural audit, not proof of unique energy minima or physical basin convergence.",
+  "label_target_fit": "DEFERRED: primary12/24/36cohort has69total lineages; exactprotectedlowclasssupport saved. Do not broadencompositions or resplit to make comparisonlookpowered."
+}

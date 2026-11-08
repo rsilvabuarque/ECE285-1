@@ -1,0 +1,254 @@
+{
+  "status": "PASS",
+  "method_summaries": [
+    {
+      "latent_dim": 0,
+      "method": "ar_baseline",
+      "model_role": "Autoregressive baseline, no latent variables",
+      "balanced_useful_yield": 0.3431712962962963,
+      "low_original_q20_yield": 0.2204861111111111,
+      "parameter_count": 14209,
+      "total_KL_nats_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_KL_per_dimension_by_seed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_active_at_0p01_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "validation_reconstruction_by_seed": [
+        23.014971271328267,
+        23.002082887683713,
+        22.995099885808838
+      ]
+    },
+    {
+      "latent_dim": 4,
+      "method": "latent4",
+      "model_role": "CVAE",
+      "balanced_useful_yield": 0.3263888888888889,
+      "low_original_q20_yield": 0.3315972222222222,
+      "parameter_count": 30793,
+      "total_KL_nats_by_seed": [
+        11.584275245666504,
+        11.94508171081543,
+        11.624883651733398
+      ],
+      "mean_KL_per_dimension_by_seed": [
+        2.896068811416626,
+        2.9862704277038574,
+        2.9062209129333496
+      ],
+      "pooled_active_at_0p01_by_seed": [
+        4,
+        4,
+        3
+      ],
+      "validation_reconstruction_by_seed": [
+        17.34117194971185,
+        16.93254876717586,
+        16.765623623729113
+      ]
+    },
+    {
+      "latent_dim": 8,
+      "method": "latent8",
+      "model_role": "CVAE",
+      "balanced_useful_yield": 0.29976851851851855,
+      "low_original_q20_yield": 0.2934027777777778,
+      "parameter_count": 32337,
+      "total_KL_nats_by_seed": [
+        15.424997329711914,
+        15.272903442382812,
+        13.902647018432617
+      ],
+      "mean_KL_per_dimension_by_seed": [
+        1.9281246662139893,
+        1.9091129302978516,
+        1.7378308773040771
+      ],
+      "pooled_active_at_0p01_by_seed": [
+        8,
+        8,
+        8
+      ],
+      "validation_reconstruction_by_seed": [
+        16.27151966651777,
+        16.186604440872255,
+        16.663949940702384
+      ]
+    },
+    {
+      "latent_dim": 16,
+      "method": "latent16",
+      "model_role": "CVAE",
+      "balanced_useful_yield": 0.2881944444444444,
+      "low_original_q20_yield": 0.2743055555555556,
+      "parameter_count": 35425,
+      "total_KL_nats_by_seed": [
+        17.996936798095703,
+        16.293785095214844,
+        16.228408813476562
+      ],
+      "mean_KL_per_dimension_by_seed": [
+        1.1248085498809814,
+        1.0183615684509277,
+        1.0142755508422852
+      ],
+      "pooled_active_at_0p01_by_seed": [
+        14,
+        9,
+        15
+      ],
+      "validation_reconstruction_by_seed": [
+        15.589625512759211,
+        15.237895992456462,
+        15.433248011091957
+      ]
+    },
+    {
+      "latent_dim": 32,
+      "method": "latent32",
+      "model_role": "CVAE",
+      "balanced_useful_yield": 0.3246527777777778,
+      "low_original_q20_yield": 0.3142361111111111,
+      "parameter_count": 41601,
+      "total_KL_nats_by_seed": [
+        17.805130004882812,
+        17.639190673828125,
+        18.201433181762695
+      ],
+      "mean_KL_per_dimension_by_seed": [
+        0.5564103126525879,
+        0.5512247085571289,
+        0.5687947869300842
+      ],
+      "pooled_active_at_0p01_by_seed": [
+        30,
+        26,
+        31
+      ],
+      "validation_reconstruction_by_seed": [
+        14.809320912554107,
+        14.806389357257903,
+        15.003151562028135
+      ]
+    }
+  ],
+  "core_metric_checks": [
+    {
+      "method": "ar_baseline",
+      "scope": "balanced_low_middle_high",
+      "value": 0.3431712962962963,
+      "archived": 0.3431712962962963
+    },
+    {
+      "method": "latent16",
+      "scope": "balanced_low_middle_high",
+      "value": 0.2881944444444444,
+      "archived": 0.2881944444444444
+    },
+    {
+      "method": "latent32",
+      "scope": "balanced_low_middle_high",
+      "value": 0.3246527777777778,
+      "archived": 0.3246527777777778
+    },
+    {
+      "method": "latent4",
+      "scope": "balanced_low_middle_high",
+      "value": 0.3263888888888889,
+      "archived": 0.3263888888888889
+    },
+    {
+      "method": "latent8",
+      "scope": "balanced_low_middle_high",
+      "value": 0.29976851851851855,
+      "archived": 0.29976851851851855
+    },
+    {
+      "method": "mutation",
+      "scope": "balanced_low_middle_high",
+      "value": 0.5972222222222222,
+      "archived": 0.5972222222222222
+    },
+    {
+      "method": "uniform",
+      "scope": "balanced_low_middle_high",
+      "value": 0.3304398148148148,
+      "archived": 0.3304398148148148
+    },
+    {
+      "method": "ar_baseline",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.2204861111111111,
+      "archived": 0.22048611111111108
+    },
+    {
+      "method": "latent16",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.2743055555555556,
+      "archived": 0.2743055555555556
+    },
+    {
+      "method": "latent32",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.3142361111111111,
+      "archived": 0.3142361111111111
+    },
+    {
+      "method": "latent4",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.3315972222222222,
+      "archived": 0.33159722222222227
+    },
+    {
+      "method": "latent8",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.2934027777777778,
+      "archived": 0.29340277777777773
+    },
+    {
+      "method": "mutation",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.5208333333333334,
+      "archived": 0.5208333333333334
+    },
+    {
+      "method": "uniform",
+      "scope": "requested_low_only_original_q20",
+      "value": 0.19618055555555555,
+      "archived": 0.19618055555555558
+    }
+  ],
+  "independent_selected_dimension": 4,
+  "eligible_dimensions": [
+    4,
+    32
+  ],
+  "no_latent_control": {
+    "model_role": "AR baseline, not a CVAE",
+    "latent_resampling_zero_in_all_9_groups": true,
+    "posterior_prior_identical_in_all_144_pairs": true
+  },
+  "activity_scope": "Pooled validation Var(mu)>.01 counts; per-composition and .001/.1 sensitivity remain in raw component tables. No physical-convergence interpretation.",
+  "interpretation": "D4 is the retained CVAE under the frozen rule. The no-latent AR control has higher observed balanced yield; mutation remains substantially stronger. Three-seed variation is descriptive, not a confidence interval.",
+  "source_hashes": {
+    "artifacts/conditioning_20261107/selected_policy.json": "f9fdba0d08b9f3379d4d69605d60103b8088682b2e706f21cce17f161fff81b2",
+    "artifacts/conditioning_20261107/selection_rule.json": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+    "runs/conditioning_20261107/evaluation/latent/summary.csv": "de9b0a576d17585d606de9430590a54766dbc5679cad8e0c5b160033afd788c9",
+    "runs/conditioning_20261107/evaluation/latent/fixed_q20_low_request.csv": "868b95923a0fa445d109483cd94a3baca97fe1d336d196abdcd787138de50597",
+    "reports/conditioning_20261107/latent_diagnostics/distinct_metric_scopes.csv": "2dd82d185a8a65bc65b1b886df2f5e37c8fd3da2e8e63d127e2c3621fb168a35",
+    "reports/conditioning_20261107/latent_diagnostics/selected_latent_diagnostics.csv": "43813166ccb6155ef46f89d9a69391657ac534efc02af89bb6fb653583c235ca",
+    "reports/conditioning_20261107/latent_diagnostics/latent_summary.csv": "f79c7150d3f548a24ae4d7963f142ecbde704fccd60452a059d0ab3fc239d711",
+    "reports/conditioning_20261107/latent_diagnostics/posterior_prior_pairs.csv": "3cd5d4032e7c3b9f1ac6a71d18d2b3a0edd331e115913af30a5dcba995f7b688"
+  },
+  "audit_source_sha256": "2c1f8877bb0a9dbd77833effe45e0c3500f14f66d1e521fa058f2889646c9e8f"
+}

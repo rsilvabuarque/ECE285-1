@@ -1,0 +1,199 @@
+{
+  "status": "PASS",
+  "elapsed_seconds": 19.71723909699358,
+  "raw_final_attempts": 34560,
+  "matched_attempts": 20736,
+  "teachers": "UMA full final; UMA/MACE exact predeclared matched subset",
+  "parent_operations": 192,
+  "protected_train_orbits": 40157,
+  "frozen_history_orbits": 278382,
+  "comparisons": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/metrics.csv",
+      "rows": 270,
+      "field_checks": 12150,
+      "maximum_absolute_float_difference": 5.551115123125783e-17,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "c2c742363a91fd63747d3594ba9eabef3aa744feff1b492cacc09f38f9e4d5d8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/confusion.csv",
+      "rows": 1620,
+      "field_checks": 24300,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "df8728f1ba34bd6a821948b7fb1e5aecf0725faa2012398a138c688737800f2d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/seed_metrics.csv",
+      "rows": 30,
+      "field_checks": 420,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "8356ae159b48f7c71599a43b541b791b6e87a3defb9cf81257216fa950d11756"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/summary.csv",
+      "rows": 10,
+      "field_checks": 150,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "8d21c1f6d65c80728855810cecf9e115ba2226dbb6e38cbca78aae346092d846"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/summary_by_request.csv",
+      "rows": 30,
+      "field_checks": 330,
+      "maximum_absolute_float_difference": 1.1102230246251565e-16,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "b58d1df15cb40c5c6110373abd0c5a147d8df0f174d46301e9e83a539aa8f325"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/fixed_q20_low_request.csv",
+      "rows": 10,
+      "field_checks": 110,
+      "maximum_absolute_float_difference": 5.551115123125783e-17,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "28e22b1c571185d0529ad15ea59dde11f5e95728e00ebd33d7465f9c8ce653eb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/budget_curves.csv",
+      "rows": 34560,
+      "field_checks": 691200,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "a8cf3dc1c028625cace6a659272b95a03fbb43eac2c101af26979ba2da453d87"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/attempt_outcomes.csv",
+      "rows": 34560,
+      "field_checks": 414720,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "72b2c8a99368cf58f96305cd8ff6a39b05fc30a5bb64ddadcd94e8b4eb247127"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/metrics.csv",
+      "rows": 324,
+      "field_checks": 14580,
+      "maximum_absolute_float_difference": 5.551115123125783e-17,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "31f4e73cc8d50e69ffb8e7e9b302e8a92e68f4b950c3ec30cc24d5481e641d9b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/confusion.csv",
+      "rows": 1944,
+      "field_checks": 29160,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "e31f25f88bbedc369d2cc75100d4d2bdfabae3b43352c2d146a1556358b1a364"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/seed_metrics.csv",
+      "rows": 36,
+      "field_checks": 504,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "996711f3a74c80ae345056adc5ffa586b66135dc98a282f5ac65934c6cd13163"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/summary.csv",
+      "rows": 12,
+      "field_checks": 180,
+      "maximum_absolute_float_difference": 1.1102230246251565e-16,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "7ffa05128e3db3a49a9ce88d08b96e972262484002ab64696c7591d501a9f584"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/summary_by_request.csv",
+      "rows": 36,
+      "field_checks": 396,
+      "maximum_absolute_float_difference": 1.1102230246251565e-16,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "6e5e9ecd835a991fbc08cfc1b66d6daac0474e0f0227c59059bdead37514d6ac"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/fixed_q20_low_request.csv",
+      "rows": 12,
+      "field_checks": 132,
+      "maximum_absolute_float_difference": 5.551115123125783e-17,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "9d4d5a77a9da41f9a86744575691d7550a4b867e27da3df652ef25d764f85326"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/budget_curves.csv",
+      "rows": 41472,
+      "field_checks": 829440,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "886565455a296f07eff17b9fbe80cea3f41807abcade4e99962c837c6180ec7a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final_matched/attempt_outcomes.csv",
+      "rows": 41472,
+      "field_checks": 497664,
+      "maximum_absolute_float_difference": 0.0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "sha256": "b089f71d9b646c829ac4d1798a38faa99a80413c6805029bff4d94a4b48aa54b"
+    }
+  ],
+  "field_checks": 2515436,
+  "mismatch_count": 0,
+  "selfcheck": {
+    "status": "PASS",
+    "exact_tie_cases": 5,
+    "symmetry_related_mask_pair": true,
+    "linear_quantile_check": true
+  },
+  "cache_history_status": "PASS",
+  "input_hashes": {
+    "runs/conditioning_20261107/final_protocol.json": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+    "runs/conditioning_20261107/final_generation_manifest.json": "19612ab7ace94225725e05fa5949bfe86440b34ca978f3dde39df96b4d2507f5",
+    "runs/conditioning_20261107/data/history_before_final.json": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+    "runs/conditioning_20261107/data/training_keys.json": "33b6f39c02b96bf8fa177718f799ee0e3d7eb0f25c0845e10e2998cdb73be959",
+    "artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "artifacts/current/improvement_v1/training_round0.npz": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "runs/conditioning_20261107/final/raw_attempts.npz": "f109792542b2fcb92ca3201cc9c8ce4d16eacf346d9daecfb952fd0e0b137143",
+    "runs/conditioning_20261107/final/attempts.csv": "428285980dbb88d6ec8d42d9709b7a1881dac5b15e82066be8f9dd97fe9a8b46",
+    "runs/conditioning_20261107/final/candidates.npz": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+    "runs/conditioning_20261107/final/receipt.json": "30640aab83867781c024768c1eb74c4ca4db8616e72aa8dc311417f46f28c202",
+    "runs/conditioning_20261107/final_matched_audit/attempts.csv": "74887500616066642df0f9f5a6e121344f08fe60927c5e901c43973c9b1688cc",
+    "runs/conditioning_20261107/final_matched_audit/candidates.npz": "36ffff7435a41d0a9f2147b3395589473f14d5aa96518d4da5dc96034ee27861",
+    "runs/conditioning_20261107/final_matched_audit/receipt.json": "5c3285d5378f3b1cb50a5a193cc5d64407c4f0634f97270e8e8a9b478f3ce657",
+    "artifacts/current/reports/generation_thresholds.csv": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "artifacts/overnight_20261107/data/condition_schema_uma.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "artifacts/overnight_20261107/data/condition_schema_mace.json": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+    "runs/conditioning_20261107/collected/final/uma.npz": "e33dc708bff292a814a90b20fc9fcffd88a08fd7a526d2937f4948e5e203dd18",
+    "runs/conditioning_20261107/collected/final/mace.npz": "1cf858bb343379b54ac89a65047e39aa61d2430429684c4ab1559ccf5fac7d6d"
+  },
+  "inputs_unchanged": true,
+  "float_comparison": {
+    "multiplier": 8,
+    "epsilon": 2.220446049250313e-16,
+    "formula": "abs(a-b)<=8*eps64*max(1,abs(a),abs(b)) only for arithmetic aggregates; integer counts, canonical identities, labels and boundary comparisons exact",
+    "interpretation": "Floating-point arithmetic allowance, never a scientific success threshold"
+  },
+  "source_sha256": "03a52bcb57a450dec87d69ecfd8895c42bf6e7dc215f8d6693e8739d6d4b8426",
+  "production_evaluator_helpers_imported": false,
+  "new_MLIP_calls": 0,
+  "new_training_trajectories": 0,
+  "final_used_for_policy_selection": false,
+  "job_id": "60985189",
+  "step_id": "106"
+}

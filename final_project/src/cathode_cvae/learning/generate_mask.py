@@ -46,24 +46,53 @@ def load_model(checkpoint, device):
     cfg = ck.get('configuration')
     if cfg is None:
         cfg = json.loads(Path(checkpoint).with_name('configuration.json').read_text())
-    kind = cfg.get('kind', 'dense_count')
+    format_version = cfg.get('model_format_version')
+    if format_version is not None:
+        if format_version != 2:
+            raise ValueError('Unsupported model_format_version; use its matching model loader')
+        required = {'kind', 'n_sites', 'condition_dim', 'latent_dim', 'hidden_dim',
+                    'encoder_kind', 'graph_context', 'graph'}
+        if not required.issubset(cfg):
+            raise ValueError('Versioned checkpoint is missing explicit architecture dimensions or graph metadata')
+    else:
+        # Recognized historical writers all stored these dimensions. We retain
+        # only their documented default hidden width/architecture, never infer a
+        # new latent width by reshaping tensors or silently padding a model.
+        required = {'kind', 'n_sites', 'condition_dim', 'latent_dim'}
+        if not required.issubset(cfg):
+            raise ValueError('Unrecognized legacy checkpoint lacks explicit kind/site/condition/latent dimensions')
+    kind = cfg['kind']
     if kind in {'cvae', 'composition', 'composition_only'}:
         kind = 'dense_bce'
+    if kind not in {'dense', 'dense_bce', 'dense_count', 'ar', 'ar_cvae', 'ar_baseline'}:
+        raise ValueError('Unrecognized checkpoint model kind')
+    if (not isinstance(cfg['latent_dim'], int) or cfg['latent_dim'] < 0 or
+            (kind != 'ar_baseline' and cfg['latent_dim'] < 1) or
+            (kind == 'ar_baseline' and cfg['latent_dim'] != 0)):
+        raise ValueError('Checkpoint latent dimension is inconsistent with its CVAE/AR model kind')
     if 'condition_schema' in cfg:
         validate_schema(cfg['condition_schema'])
-        expected = condition_dimension(cfg['condition_mode'])
+        descriptor_dim = cfg.get('descriptor_condition_dim', 0)
+        if descriptor_dim not in {0, 2} or bool(descriptor_dim) != bool(cfg.get('descriptor_schema')):
+            raise ValueError('Checkpoint descriptor dimension and schema disagree')
+        if descriptor_dim:
+            from ..descriptor import validate_schema as validate_descriptor_schema
+            validate_descriptor_schema(cfg['descriptor_schema'])
+        expected = condition_dimension(cfg['condition_mode']) + descriptor_dim
         if cfg.get('condition_dim') != expected:
             raise ValueError('Checkpoint condition dimension disagrees with its versioned encoding')
-    model = make_model(kind, n_sites=cfg.get('n_sites', 48),
-                       condition_dim=cfg.get('condition_dim', 2),
-                       latent_dim=cfg.get('latent_dim', 8),
-                       hidden_dim=cfg.get('hidden_dim', 64)).to(device)
+    model = make_model(kind, n_sites=cfg['n_sites'],
+                       condition_dim=cfg['condition_dim'], latent_dim=cfg['latent_dim'],
+                       hidden_dim=cfg.get('hidden_dim', 64),
+                       encoder_kind=cfg.get('encoder_kind', 'dense'),
+                       graph_data=cfg.get('graph'), graph_context=cfg.get('graph_context', False)).to(device)
     model.load_state_dict(ck['state_dict'], strict=True)
     model.eval()
     return model, cfg
 
 
-def resolve_request(cfg, n_target, requested_bin=None, binary_condition=None, request_schema=None):
+def resolve_request(cfg, n_target, requested_bin=None, binary_condition=None, request_schema=None,
+                    descriptor_range=None):
     """Resolve one request to its actual encoder/decoder vector and provenance.
 
     Legacy binary models can be asked to target middle/high under an external
@@ -109,13 +138,23 @@ def resolve_request(cfg, n_target, requested_bin=None, binary_condition=None, re
                     condition_stats=cfg.get('condition_stats', {}), parent_sha256=cfg.get('parent_sha256'))
         identity = 'legacy-' + hashlib.sha256(json.dumps(body, sort_keys=True).encode()).hexdigest()
     effective = requested if mode == 'multibin' else ('unconditioned' if mode == 'composition' else ('low' if requested == 'low' else 'rest'))
+    if cfg.get('descriptor_schema') is not None:
+        from ..descriptor import encode_requests as encode_descriptor_requests
+        if descriptor_range is None:
+            raise ValueError('This checkpoint requires an explicit descriptor low/high request')
+        extra = encode_descriptor_requests(cfg['descriptor_schema'], np.asarray(n_target),
+                                           np.asarray(requested), np.asarray(descriptor_range))
+        c = np.concatenate((c, extra), axis=-1)
+    elif descriptor_range is not None:
+        raise ValueError('A descriptor request needs a descriptor-conditioned checkpoint')
     return np.asarray(c, dtype=np.float32), requested, effective, identity, schema
 
 
 def attempt_records(count, ids, keys, *, method, fit_seed, sampling_seed, n_target,
                     requested_bin, effective_model_class, schema_id, checkpoint_sha256,
                     parent_sha256, geometry_protocol, temperature_K=None,
-                    allocation_policy="fixed-request", allocation_weight=None, error=None):
+                    allocation_policy="fixed-request", allocation_weight=None, error=None,
+                    descriptor_range=None, descriptor_schema_id=None):
     """One provenance row per planned attempt, including unsupported requests."""
     if count < 1 or (error is None and (len(ids) != count or len(keys) != count)):
         raise ValueError("Attempt count and generated identities disagree")
@@ -129,6 +168,7 @@ def attempt_records(count, ids, keys, *, method, fit_seed, sampling_seed, n_targ
             requested_bin=requested_bin, effective_model_class=effective_model_class,
             condition_schema_id=schema_id, temperature_K="" if temperature_K is None else temperature_K,
             allocation_policy=allocation_policy, allocation_weight="" if allocation_weight is None else allocation_weight,
+            descriptor_range=descriptor_range or "", descriptor_schema_id=descriptor_schema_id or "",
             checkpoint_sha256=checkpoint_sha256, parent_sha256=parent_sha256,
             geometry_protocol=geometry_protocol, error=error or ""))
     return rows
@@ -143,6 +183,7 @@ def arguments(argv=None):
     p.add_argument('--condition', type=int, choices=[0, 1], help='Legacy binary condition; defaults to low (1)')
     p.add_argument('--requested-bin', choices=list(BIN_NAMES), help='Requested measured-energy range')
     p.add_argument('--condition-schema-in', type=Path, help='Frozen request partition for legacy controls; new model partition must match exactly')
+    p.add_argument('--descriptor-range', choices=['low', 'high'], help='Required descriptor class for an augmented checkpoint')
     p.add_argument('--temperature-K', '--temperature-k', dest='temperature_K', type=float, help='Physical acquisition temperature in kelvin, not a decoder parameter')
     p.add_argument('--allocation-policy', default='fixed-request')
     p.add_argument('--allocation-weight', type=float, help='Declared fraction in the acquisition schedule')
@@ -189,7 +230,7 @@ def main(argv=None):
             if expected_parent is not None and expected_parent != parent_sha:
                 raise ValueError('Request schema belongs to a different parent structure')
         vector, requested, effective, schema_id, schema = resolve_request(
-            cfg, a.n_li, a.requested_bin, a.condition, request_schema)
+            cfg, a.n_li, a.requested_bin, a.condition, request_schema, a.descriptor_range)
         if a.temperature_K is not None and (not np.isfinite(a.temperature_K) or a.temperature_K <= 0):
             raise ValueError('Physical acquisition temperature must be positive kelvin')
         if a.allocation_weight is not None and (not np.isfinite(a.allocation_weight) or not 0 <= a.allocation_weight <= 1):
@@ -231,6 +272,8 @@ def main(argv=None):
     checkpoint_sha = digest(a.checkpoint)
     fit_seed = cfg.get('seed', cfg.get('fit_seed', 'unknown'))
     common = dict(requested_bin=np.asarray(requested), effective_model_class=np.asarray(effective),
+        descriptor_range=np.asarray(a.descriptor_range or ''),
+        descriptor_schema_id=np.asarray(cfg.get('descriptor_schema', {}).get('identity', '') if cfg.get('descriptor_schema') else ''),
         condition_schema_id=np.asarray(schema_id), temperature_K=np.asarray(np.nan if a.temperature_K is None else a.temperature_K),
         allocation_policy=np.asarray(a.allocation_policy), allocation_weight=np.asarray(np.nan if a.allocation_weight is None else a.allocation_weight),
         checkpoint_sha256=np.asarray(checkpoint_sha), fit_seed=np.asarray(str(fit_seed)), sampling_seed=np.asarray(a.seed),
@@ -252,13 +295,15 @@ def main(argv=None):
         effective_model_class=effective, schema_id=schema_id,
         checkpoint_sha256=checkpoint_sha, parent_sha256=parent_sha,
         geometry_protocol=common['geometry_protocol'].item(), temperature_K=a.temperature_K,
-        allocation_policy=a.allocation_policy, allocation_weight=a.allocation_weight, error=error)
+        allocation_policy=a.allocation_policy, allocation_weight=a.allocation_weight, error=error,
+        descriptor_range=a.descriptor_range, descriptor_schema_id=common['descriptor_schema_id'].item())
     with a.output.with_suffix('.attempts.csv').open('w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
     receipt = dict(status='GENERATED' if error is None else 'FAILED_REQUEST', attempts=a.count,
         generated_attempts=len(occupancy), failed_requests=0 if error is None else a.count,
         unique_orbits=len(set(keys)), n_Li=a.n_li, requested_bin=requested,
         effective_model_class=effective, condition_schema_id=schema_id,
+        descriptor_range=a.descriptor_range, descriptor_schema_id=common['descriptor_schema_id'].item(),
         temperature_K=a.temperature_K if a.temperature_K is None or np.isfinite(a.temperature_K) else None,
         requested_temperature_input=None if a.temperature_K is None else str(a.temperature_K),
         allocation_policy=a.allocation_policy,

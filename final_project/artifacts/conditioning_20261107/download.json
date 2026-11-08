@@ -1,0 +1,7 @@
+{
+  "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_required.zip",
+  "sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "extract_to": "artifacts/conditioning_20261107",
+  "bytes": 75814766,
+  "files": 2157
+}

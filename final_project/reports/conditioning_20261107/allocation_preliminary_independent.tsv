@@ -1,0 +1,4 @@
+JobIDRaw|Account|AllocNodes|AllocTRES|State|Start|End|ElapsedRaw
+60985189|m5397_g|1|billing=64,cpu=64,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1|RUNNING|2026-11-08T02:19:52|Unknown|3406
+60985612|m5397_g|4|billing=512,cpu=512,energy=4344327,gres/gpu:a100=16,gres/gpu=16,mem=919208M,node=4|COMPLETED|2026-11-08T02:35:29|2026-11-08T03:05:52|1823
+60985847|m5397_g|1|billing=64,cpu=64,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1|RUNNING|2026-11-08T02:48:36|Unknown|1682

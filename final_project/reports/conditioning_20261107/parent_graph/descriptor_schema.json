@@ -1,0 +1,177 @@
+{
+  "schema_version": "cathode-vacancy-pair-condition-v1",
+  "descriptor": "nearest-shell vacancy-vacancy pair fraction",
+  "units": "dimensionless",
+  "ranges": [
+    "low",
+    "high"
+  ],
+  "lower_fraction": 0.5,
+  "quantile_estimator": "nearest rank, ceil(p*n), using training rows only",
+  "tie_policy": "equal boundary values all belong to low; never split ties",
+  "sparse_policy": "unsupported joint energy/descriptor requests fail explicitly",
+  "compositions": {
+    "12": {
+      "train_rows": 13332,
+      "boundary": 0.5555555555555556,
+      "unique_training_values": 22,
+      "bin_counts": {
+        "low": 7729,
+        "high": 5603
+      },
+      "joint_support": {
+        "low": {
+          "low": 2667,
+          "high": 0
+        },
+        "middle": {
+          "low": 5062,
+          "high": 2937
+        },
+        "high": {
+          "low": 0,
+          "high": 2666
+        }
+      },
+      "supported_requests": [
+        {
+          "energy_bin": "low",
+          "descriptor_range": "low",
+          "training_rows": 2667
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "low",
+          "training_rows": 5062
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "high",
+          "training_rows": 2937
+        },
+        {
+          "energy_bin": "high",
+          "descriptor_range": "high",
+          "training_rows": 2666
+        }
+      ]
+    },
+    "24": {
+      "train_rows": 13546,
+      "boundary": 0.24305555555555555,
+      "unique_training_values": 30,
+      "bin_counts": {
+        "low": 7927,
+        "high": 5619
+      },
+      "joint_support": {
+        "low": {
+          "low": 2709,
+          "high": 1
+        },
+        "middle": {
+          "low": 5215,
+          "high": 2912
+        },
+        "high": {
+          "low": 3,
+          "high": 2706
+        }
+      },
+      "supported_requests": [
+        {
+          "energy_bin": "low",
+          "descriptor_range": "low",
+          "training_rows": 2709
+        },
+        {
+          "energy_bin": "low",
+          "descriptor_range": "high",
+          "training_rows": 1
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "low",
+          "training_rows": 5215
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "high",
+          "training_rows": 2912
+        },
+        {
+          "energy_bin": "high",
+          "descriptor_range": "low",
+          "training_rows": 3
+        },
+        {
+          "energy_bin": "high",
+          "descriptor_range": "high",
+          "training_rows": 2706
+        }
+      ]
+    },
+    "36": {
+      "train_rows": 13279,
+      "boundary": 0.05555555555555555,
+      "unique_training_values": 23,
+      "bin_counts": {
+        "low": 7609,
+        "high": 5670
+      },
+      "joint_support": {
+        "low": {
+          "low": 2637,
+          "high": 19
+        },
+        "middle": {
+          "low": 4971,
+          "high": 2997
+        },
+        "high": {
+          "low": 1,
+          "high": 2654
+        }
+      },
+      "supported_requests": [
+        {
+          "energy_bin": "low",
+          "descriptor_range": "low",
+          "training_rows": 2637
+        },
+        {
+          "energy_bin": "low",
+          "descriptor_range": "high",
+          "training_rows": 19
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "low",
+          "training_rows": 4971
+        },
+        {
+          "energy_bin": "middle",
+          "descriptor_range": "high",
+          "training_rows": 2997
+        },
+        {
+          "energy_bin": "high",
+          "descriptor_range": "low",
+          "training_rows": 1
+        },
+        {
+          "energy_bin": "high",
+          "descriptor_range": "high",
+          "training_rows": 2654
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "parent_hash": "b505ca2ec7d313e9490834580fca70f37d26e3c28e8a85a648b3cd94d7466708",
+    "graph_hash": "35b45dbcf02840859d7c3afd2253878fe5fed0f7d83f925e05cc993c937cbd52",
+    "occupancy": "1=present; vacancy=1-occupancy",
+    "pair_convention": "nearest-shell undirected periodic-image pairs, each once; divide by all eligible mobile pairs"
+  },
+  "identity": "e7a3efd04039b214a9fbef0a55a22728a178049400f399bfe8638a109db9c1d8"
+}

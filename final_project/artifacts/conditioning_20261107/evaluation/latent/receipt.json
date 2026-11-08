@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "Current 48-site pristine-derived deletion benchmark; not relaxed energies or independent DFT validation",
+  "attempt_rows": 12096,
+  "teacher_attempt_rows": 12096,
+  "unique_candidates": 14149,
+  "groups": 189,
+  "teachers": [
+    "uma"
+  ],
+  "canonical_keys_recomputed": true,
+  "layer_diagnostic": {
+    "axis": "third fractional cell coordinate",
+    "fractional_rounding_decimals": 6,
+    "layer_fractional_positions": [
+      0.0,
+      0.166667,
+      0.333333,
+      0.5,
+      0.666667,
+      0.833333
+    ],
+    "sites_per_layer": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "interpretation": "Standard deviation of layer filling fractions; coordinate-frame diagnostic, not phase identification"
+  },
+  "training_keys": 40157,
+  "frozen_history_keys": 239867,
+  "training_keys_absent_from_history": 0,
+  "novelty_success_requires": "Absent from both training and frozen prior history",
+  "global_unique_fresh_scored_geometries": {
+    "uma": 10516
+  },
+  "summary_weighting": "Within replicate_id: equal observed composition/requested-bin cells and equal sampling replicates; then equal replicate_id values. Actual fitted_seed_count requires a nonempty checkpoint identity. Condition grids recorded. Allocation table pools sampling seeds within its explicit schedule scope.",
+  "curve_cost_interpretation": "unique_score_queries_seen is a per-method stand-alone deduplicated query budget. unique_fresh_labels_encountered describes encountered labels; summing it across methods double-counts shared campaign calls. Actual acquisition/training/dispatch costs require the execution receipt.",
+  "source_hashes": {
+    "attempts": "f3fe5955bd7aa922d98f1f29cc62c4447030e54c63f7bdd1fc5b2eb7861afc49",
+    "candidates": "11371cd95fd11b6c1bb7b087fa0bd5fef874b50a14f3f18643e76cfb0db0700a",
+    "training_keys": "33b6f39c02b96bf8fa177718f799ee0e3d7eb0f25c0845e10e2998cdb73be959",
+    "history": "8ec3d93252af5c9258ba7c1dc92abd82599b64a831f3f6bcaf8ca1cf402dfbfa",
+    "historical_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "scores_uma": "c402199a8f5ad14d47ebb45bd99b14b0c5276a4df72d95101e0f3388fb506fa8",
+    "schema_uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "limitations": [
+    "Unknown energies and failed requests remain in all-attempt denominators; no neighbor energy is filled in.",
+    "Energy quantiles and best values describe observed scored-valid attempts; coverage is separate.",
+    "Design-seed spread is descriptive, not a confidence interval; baseline design seeds are not fitted models.",
+    "Layer filling is a coordinate-frame descriptor, not proof of phase diversity or mechanical stability."
+  ]
+}

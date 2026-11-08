@@ -1,0 +1,138 @@
+{
+  "status": "PASS_COMPLETE_ORACLE_COVERAGE",
+  "attempts": 16416,
+  "primary_attempts": 12096,
+  "diagnostic_attempts": 4320,
+  "unknown_generated_attempts": 0,
+  "invalid_mask_attempts": 0,
+  "condition_pairs": 8064,
+  "latent_pairs": 2880,
+  "posterior_prior_pairs": 720,
+  "posterior_or_prior_raw_target_Hamming_verified": 1440,
+  "training_novelty_known": true,
+  "history_novelty_known": true,
+  "posterior_targets_verified": "Protected validation identities and exact source energies; never test",
+  "comparison_scope": "CVAE paired conditions use shared latent and AR uniforms; sampler controls are paired by attempt index without common conditional draws; latent pairs hold uniforms fixed; posterior/prior share target condition and uniforms",
+  "uncertainty": "Individual design replicates retained. No confidence interval from proposal draws or trajectory frames.",
+  "active_unit_definition": "Validation posterior-mean variance > cutoff; .001/.01/.1 sensitivity is descriptive, not physical convergence",
+  "fit_diagnostic_scope": "Only model-manifest fit directories when supplied; other concurrently completed fits cannot enter this stage",
+  "fit_input_hashes": {
+    "balance_1_d8_20261106": {
+      "configuration_sha256": "1474a5bc55088c4047b8b87b48e647c7ef40aff00ece82e3fd38f599f22952b4",
+      "summary_sha256": "48e6e4836a4a662134f1eb336e6ca7f19c4168f8bc9993001c5c045b385dfe9e",
+      "history_sha256": "98fb48ec7522b5fc30b9c2fae99ce7183fb908516eb3f9ca8b3b5ac17a2a9ffa",
+      "latent_history_sha256": "5fcb1c51451052531c3828c66f330075c46b8913018555e8eb6914a1eab73f8c"
+    },
+    "balance_1_d8_20261107": {
+      "configuration_sha256": "8af76304b3eefb4b7f635a52ff2d02f26f9245e43d5e754f9e2e36800c8ef18b",
+      "summary_sha256": "f336bc2ba3b92239cca029c1d2a0c5654e3954d894e86ca7e8e69c83d030a16c",
+      "history_sha256": "26d4be095e0352d4dab18c809a7a3558da2d622880c6c6ada1c43e56fbde49ed",
+      "latent_history_sha256": "ac01310c78aa0e6ad30a68ade4ff05f26b54ddb133a159e26199a2c352c38e37"
+    },
+    "balance_1_d8_20261108": {
+      "configuration_sha256": "843dd200de8a32b945e8a7c106355c587a1cdd06e0283135093f4aa0ebe7653d",
+      "summary_sha256": "5b6da7b6bb3ecc55774ea43588a60b5f054b78524058e2f4f927872d3a09fb76",
+      "history_sha256": "62d05b9bc6a15d9641b1a08f9fee483b9fd8fa73bc247f74e8a6f42771c2bbb6",
+      "latent_history_sha256": "ce780d7ec0c291209d24164b56d6d647735ba9de36821510af8e34db580abc91"
+    },
+    "latent_d16_20261106": {
+      "configuration_sha256": "031544d1a7a45eec008c34fa828cb775035416073fdc15797bbdf3ab96d54ad5",
+      "summary_sha256": "cc8ed0c80c3d989a4ff4318ee4fe67c6d1845c0764ae1f22f336daedc58fddb0",
+      "history_sha256": "f4d39e709b52e425a0fb84a117d454cba76c3af2c51bf92abf972c73b9e0f9ef",
+      "latent_history_sha256": "c9bcd32d3d8903a53c89bff5526961713f3d1906432e34aa04f5315353113f75"
+    },
+    "latent_d16_20261107": {
+      "configuration_sha256": "c458689246a5274d4432c61c674a24c487f82fa23587a541452a8edaa55d8372",
+      "summary_sha256": "170cde3a3d40528534e086f3f35ec11fbcbafbb16533fdd0b205e4629c38732c",
+      "history_sha256": "c3ced6e8e0733226f9acfc55589f0d91bdb31d7f9e07c838e3fe7b1445a81317",
+      "latent_history_sha256": "03dac0d023c102b0fb7fd697fc3b1d516c68d9f43bd2fc3399f6859d80add575"
+    },
+    "latent_d16_20261108": {
+      "configuration_sha256": "63a917aeb19bf9339a5938c43e96b7e509e20286526bdff52f31ea509a5354c4",
+      "summary_sha256": "2daa27a4bea6352c1ede545f0ab0dfe8eac811d91c9d078cc5f06dccbc2e72ae",
+      "history_sha256": "4904d90dba22636a4a8e3ec47810d66500a82a58f167caae4e7b6f50c261a996",
+      "latent_history_sha256": "a39674d7c48003cc277f2ac92ee46f125274c6e000bdc238f915f4a47e7be544"
+    },
+    "latent_d32_20261106": {
+      "configuration_sha256": "850379bf356cb671e789aed36f3aa1467866383456c41acec9bc4304d3cbe49e",
+      "summary_sha256": "4eccf6641b510a2b44492ff6db03b1c11a5c5c46acf267c2ac1a4f7b8f47f247",
+      "history_sha256": "46c470a54e6bd63a2a0a8889438b761c9a273faaae5e8199a5954e13b4450cdb",
+      "latent_history_sha256": "b11831c731b53d0442e36175f8f7ee479e65ebe933d2eb7138a7de52acf703c5"
+    },
+    "latent_d32_20261107": {
+      "configuration_sha256": "a74d045264d95435c10cc3af18f49dfedad9c8d6919821f833da08a26addf18a",
+      "summary_sha256": "63135f1709e4d9a9720d40920a5d63d58c9f010c224f297bdf178ada7cd75145",
+      "history_sha256": "44e516efe98a1f2380b36be8e8178d1af7bfc802afa3f375e9ca6f5f212831cb",
+      "latent_history_sha256": "67a04c193502b8fb7b0487420a850f738abd683e180c194db2c432328da8feb9"
+    },
+    "latent_d32_20261108": {
+      "configuration_sha256": "794d1eee47405dbffbe4adc2a86727ebefe2f78d01ec3c9ebad18b0058b0e6f4",
+      "summary_sha256": "e60fbe764cc7122617b71c35df6115ba0d1cc27d406a5173213e654c85655e3f",
+      "history_sha256": "503c4fd9b47c2235448fa35df459d4ab9e7af82f373bd4d71658d0fcea9e2151",
+      "latent_history_sha256": "d916daca6343b9b03c3db152bbda8ae2fd0060dee2f994d1eaeb6f57546a5ed9"
+    },
+    "latent_d4_20261106": {
+      "configuration_sha256": "8b01eb1ee5491007580b1db5a551fc889bceaea1b9e241d1a949d741d8263d2b",
+      "summary_sha256": "a01bc271eb31053a00b63fb518eb99765eeab9797270617f026e64522c566255",
+      "history_sha256": "53d0aaa1c455ef257e75576618cf4b64b01d6456a7fb4fd8c90d6e269e5a8663",
+      "latent_history_sha256": "84b851093b8276289b78b3d62d856c6635c243261fef84c0612a8402771b9a6e"
+    },
+    "latent_d4_20261107": {
+      "configuration_sha256": "43b0420439a0337a9c573bbbeffabaf3a1fe842fe47b3423d41a125d30e037ef",
+      "summary_sha256": "d047ae319d0ea2c00b3db22f6d17ca84240bf77c85352f7431bebe01f55cf391",
+      "history_sha256": "17bd1ee987b52017732f9dbbbce8679e7ac0419d218a5952a99dc4e9c1025d73",
+      "latent_history_sha256": "610aff3e7514195143982c45e9e387881e525f0cccdbaf659573375b9b9e5757"
+    },
+    "latent_d4_20261108": {
+      "configuration_sha256": "c9ddf2ca4ff2217e03115865919ec29c1ccb484d3b124a05e0cfc9115b67cafc",
+      "summary_sha256": "19ebe91581719aa25bc942e0d089082bab8d783676022e64fedf576225d04417",
+      "history_sha256": "dc9d0f902265e681235c2c9928e3af079af9ed36aeb185fa34ea226567ad9912",
+      "latent_history_sha256": "55b121ebe98ef0d9c8e8467e5520dd282021deb50b62464311d49046bb04205e"
+    },
+    "no_latent_20261106": {
+      "configuration_sha256": "81f987f747ad05aca6f7b8ec2b4ea7ab0fc062349bd8ab86d9e012f68f32b2b4",
+      "summary_sha256": "7a8e31364d4ec863b4b6e28a11c1a9c98ba0b1abbea955be2976d710ce415116",
+      "history_sha256": "74f3ab7be3c1eb10098c8f2f5ab89532ad779a28e6c756b203565cb7dc4f25e8",
+      "latent_history_sha256": "2fde82c8b46ac545a3baa883b360924e8697b9d360c783b36de470ec28005cb4"
+    },
+    "no_latent_20261107": {
+      "configuration_sha256": "463f86e609a4ac0462244640e8f91384a15aa566634a4a07d4b282705d36e470",
+      "summary_sha256": "f524a435cdcd3434572a5434eb002185ded34cacc6c8a1752159e67f55290926",
+      "history_sha256": "133a84aec2b0e80300fa589ab1a77d992dd5d1d11d6a62543dbadb27e00b9b03",
+      "latent_history_sha256": "2fde82c8b46ac545a3baa883b360924e8697b9d360c783b36de470ec28005cb4"
+    },
+    "no_latent_20261108": {
+      "configuration_sha256": "d91dfd4b1503862a535f395842823ad59e99161d4ad1e96a80a900dd80dc9f98",
+      "summary_sha256": "ac2f2b80e66ad08dc05d9ee77965d5641416d2bedb35c1e9aa72fce496a385f7",
+      "history_sha256": "ad4cfa2623a68ece6a01649816127c1230114f7ba1a0ccae7123f92a9a22d413",
+      "latent_history_sha256": "2fde82c8b46ac545a3baa883b360924e8697b9d360c783b36de470ec28005cb4"
+    }
+  },
+  "metric_scope": "Balanced low/middle/high useful yield is separate from requested-low original fixed-q20 yield",
+  "input_hashes": {
+    "attempts_all": "53e982668a4c8e9b59cef208c620f3bfaef3769759d3cc259d67b1445ed8b7b9",
+    "raw": "22b3076b21648f3b1b96165968d614f7bbea23499eff85dbce57241c959ca4cc",
+    "scores_uma": "c402199a8f5ad14d47ebb45bd99b14b0c5276a4df72d95101e0f3388fb506fa8",
+    "schema": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "training_data": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "history": "8ec3d93252af5c9258ba7c1dc92abd82599b64a831f3f6bcaf8ca1cf402dfbfa",
+    "original_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "model_manifest": "2841cc4cbf8bec73f27c8f1ed51efc1fbd8a5b11a9bee290bf8189caa13569c8"
+  },
+  "source_sha256": "4add2707899e492fb5779c0942f2999cb510591bd5cfba4f4c82b5bc4f2a9605",
+  "output_hashes": {
+    "attempt_outcomes.csv": "95accf2b009def4f0a0f160e07c53db6afbaa135ceb51d769745549a843031f9",
+    "bin_confusion.csv": "8927ef262eb50af7da64d2a7e813687496647976fd3ba666f5bea42fe53a0d5e",
+    "condition_summary.csv": "039f6d091b434ad6db13f32719218505fb080097f21a961cb04229e73817cab6",
+    "distinct_metric_scopes.csv": "2dd82d185a8a65bc65b1b886df2f5e37c8fd3da2e8e63d127e2c3621fb168a35",
+    "fit_history.csv": "af84ba3f11d69851be08bfa62a8a7c2815d95a3fdde44fbc3a30722ba6272f7e",
+    "latent_components.csv": "e3a9859580d233814aacf097a99ebaf6486ee282d9c026237ed8db1a161a565b",
+    "latent_summary.csv": "f79c7150d3f548a24ae4d7963f142ecbde704fccd60452a059d0ab3fc239d711",
+    "paired_conditions.csv": "4d59359871d513edbe32db7ff22e84b7436579b6cfb22dcb4da7e8cbc9f4c9aa",
+    "paired_latents.csv": "448c2c9b5978ea6110540027e398b7040e7cacaa7302a6e904e257a7a960f32e",
+    "posterior_prior_pairs.csv": "3cd5d4032e7c3b9f1ac6a71d18d2b3a0edd331e115913af30a5dcba995f7b688",
+    "posterior_prior_summary.csv": "032f0cf8bc1c89358e0ba5555c11f9f0042cc0ba16bfeb814eda8633b351da0d",
+    "primary_condition_cells.csv": "edaa9be7c48f41ed6ca722697a86851db1426269a96fd5042b5fa74b9ad4e1e4",
+    "selected_latent_diagnostics.csv": "43813166ccb6155ef46f89d9a69391657ac534efc02af89bb6fb653583c235ca"
+  }
+}

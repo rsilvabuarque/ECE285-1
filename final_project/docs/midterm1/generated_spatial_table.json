@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "Confirmed three-fit spatial development; final pending",
+  "source_hashes": {
+    "runs/conditioning_20261107/evaluation/spatial_confirmed/summary.csv": "5ed911c5296c478bc9e87187ac0dbde38be5d5750451130b1601e93bf7f2388e",
+    "runs/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv": "e4fdee35d8ed29954c4ba4a51583de8f2c2305698ec1f07d819158b9ec92d20f"
+  },
+  "output_sha256": "7c59b919c5b01aa4a016499bc77fc7ae2a3a87352618487fd753e6c64c937808",
+  "uncertainty": "Three fit or sampler replicates, descriptive sample SD"
+}

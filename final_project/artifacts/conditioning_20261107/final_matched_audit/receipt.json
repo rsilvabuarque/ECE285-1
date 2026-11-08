@@ -1,0 +1,26 @@
+{
+  "status": "MATCHED_AUDIT_FROZEN_BEFORE_LABEL_ACCESS",
+  "attempts": 20736,
+  "unique_geometries": 17917,
+  "families": [
+    "cvae_d4",
+    "graph_context",
+    "graph_encoder",
+    "mutation",
+    "symmetry",
+    "uniform"
+  ],
+  "condition_groups": 162,
+  "selection": "Method membership only, exactly as in the pre-generation final protocol",
+  "raw_attempts_reference": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/raw_attempts.npz",
+  "source_protocol_sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+  "generation_receipt_sha256": "30640aab83867781c024768c1eb74c4ca4db8616e72aa8dc311417f46f28c202",
+  "source_attempts_sha256": "428285980dbb88d6ec8d42d9709b7a1881dac5b15e82066be8f9dd97fe9a8b46",
+  "source_candidates_sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+  "outputs": {
+    "attempts.csv": "74887500616066642df0f9f5a6e121344f08fe60927c5e901c43973c9b1688cc",
+    "candidates.npz": "36ffff7435a41d0a9f2147b3395589473f14d5aa96518d4da5dc96034ee27861"
+  },
+  "source_sha256": "b3011ec57ed7130ca23c2e64e05ffb85a6717516355ff313b4b9784e5a003142",
+  "energy_values_read": 0
+}

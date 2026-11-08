@@ -1,0 +1,5 @@
+srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env -u PYTHONPATH CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python reports/conditioning_20261107/fresh_install_verification_runner.py
+
+Working directory: /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project
+Runner subprocesses: this same fresh interpreter -m pip check; then -m pytest -q tests --junitxml=<recorded absolute path>.
+No installer rerun, foundation-model inference, or research training campaign.

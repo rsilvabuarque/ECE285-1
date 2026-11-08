@@ -1,0 +1,90 @@
+{
+  "status": "FAIL_OR_SOURCE_CHANGED",
+  "verified_UTC": "2026-11-08T04:03:57.346238+00:00",
+  "interpreter": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+  "python": "3.12.2",
+  "prefix": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning",
+  "package_import": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src/cathode_cvae/__init__.py",
+  "import_from_requested_worktree": true,
+  "commands": [
+    {
+      "argv": [
+        "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0,
+      "seconds": 3.3073524670908228
+    },
+    {
+      "argv": [
+        "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "--junitxml=/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_pytest.xml"
+      ],
+      "returncode": 0,
+      "seconds": 28.52816057903692
+    }
+  ],
+  "junit_counts": {
+    "tests": 110,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_files": 82,
+  "source_stable_during_checks": false,
+  "changed_source_files": [
+    "reports/conditioning_20261107/spatial_confirmed_diagnostics/summarize.py"
+  ],
+  "package_versions": {
+    "cathode-cvae": "0.1.0",
+    "numpy": "2.3.4",
+    "torch": "2.13.0+cpu",
+    "scipy": "1.18.1",
+    "ase": "3.26.0",
+    "spglib": "2.8.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0"
+  },
+  "job_id": "60985189",
+  "step_id": "87",
+  "host": "nid200449",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "PYTHONPATH": null
+  },
+  "evidence": {
+    "log": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification.log",
+      "sha256": "22acfe9a275e9ace0c02b70de0f29661163b66ab9fab400563f4104759e868e8"
+    },
+    "source_before": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_sources_before.json",
+      "sha256": "3792d45e7526550eb4127715573ae5b0a4c5349d7bab47631e8ba0a95213a6be"
+    },
+    "source_after": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_sources_after.json",
+      "sha256": "106e3b7bcb7cadd3387ec34af18dd8bec31e3bdbbb8b0f5b7bcaa53f9e25112e"
+    },
+    "package_list": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_packages.json",
+      "sha256": "93b7a3af9c53036f696dff47b1bbc2ecd18eaee80e99bfaca61144e11193ab2f"
+    },
+    "junit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_pytest.xml",
+      "sha256": "649b533c3da8b280c741d4f3c4f38d4a7c522e174eca98af97a01ae0c3e9dfaa"
+    }
+  },
+  "runner_sha256": "cd729ddd41e5f124d358c1865011c6a71943a5e42a85fbf2ac35a55cc0158acc",
+  "elapsed_seconds": 39.29350381297991,
+  "scope": "Fresh installed CORE package, full declared legacy+new unit suite and dependency check; no actual MLIP SDK/prediction parity is established by core mock/analytic tests",
+  "engineering_unit_scope": "Includes one synthetic6-row/two-update trainer/reload/checkpoint fixture. It is not an LCO fit, new scientific trajectory, SCF or new dataset."
+}

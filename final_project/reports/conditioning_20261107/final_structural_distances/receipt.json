@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "attempts": 34560,
+  "condition_seed_groups": 270,
+  "method_seed_groups": 30,
+  "families": [
+    "ar_baseline",
+    "cvae_d16",
+    "cvae_d32",
+    "cvae_d4",
+    "cvae_d8",
+    "graph_context",
+    "graph_encoder",
+    "mutation",
+    "symmetry",
+    "uniform"
+  ],
+  "family_replicates": {
+    "ar_baseline": 3,
+    "cvae_d16": 3,
+    "cvae_d32": 3,
+    "cvae_d4": 3,
+    "cvae_d8": 3,
+    "graph_context": 3,
+    "graph_encoder": 3,
+    "mutation": 3,
+    "symmetry": 3,
+    "uniform": 3
+  },
+  "valid_attempts": 34560,
+  "unique_generated_orbits": 27844,
+  "mutation_seed_checks": 3456,
+  "mutation_raw_distances_exact_2k": true,
+  "actual_parent_operations": 192,
+  "reference_orbits_per_count": {
+    "12": 1024,
+    "24": 1024,
+    "36": 1024
+  },
+  "reference_images_per_count": {
+    "12": 196416,
+    "24": 196512,
+    "36": 196320
+  },
+  "reference_namespace": "conditioning-final-distance-reference-20261107-v1",
+  "metric": "Exact symmetry-aware minimum site Hamming distance to the fixed TRAIN subset; upper bound on full-TRAIN nearest distance",
+  "all_attempts_preserved": true,
+  "novelty_scope": "Training/history novelty remains the separate main assessment metric",
+  "elapsed_seconds": 11.462457915069535,
+  "maximum_seconds": 300.0,
+  "device": "cpu",
+  "cpu_workers": 3,
+  "numpy": "2.3.4",
+  "job_id": "60985189",
+  "step_id": "99",
+  "independent_selfcheck": {
+    "status": "PASS",
+    "direct_pair_checks": 256,
+    "synthetic_sites": 4,
+    "operations": 4,
+    "packing_48_site_bitcount": 48
+  },
+  "input_hashes": {
+    "runs/conditioning_20261107/final_protocol.json": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+    "runs/conditioning_20261107/final/receipt.json": "30640aab83867781c024768c1eb74c4ca4db8616e72aa8dc311417f46f28c202",
+    "runs/conditioning_20261107/final/attempts.csv": "428285980dbb88d6ec8d42d9709b7a1881dac5b15e82066be8f9dd97fe9a8b46",
+    "runs/conditioning_20261107/final/raw_attempts.npz": "f109792542b2fcb92ca3201cc9c8ce4d16eacf346d9daecfb952fd0e0b137143",
+    "artifacts/current/improvement_v1/training_round0.npz": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "inputs_unchanged": true,
+  "energy_fields_read": 0,
+  "new_MLIP_calls": 0,
+  "new_training_trajectories": 0,
+  "selection_changed": false,
+  "source_sha256": "54c1782bd4cb27950c8de712d03dc781e34422462eb1fe7b3245014111afed51",
+  "output_hashes": {
+    "attempt_distances.csv": "b8be90b8a7e07ae8a77f4d5645e8d2d37cca688dc0f2b3d2bd1a228262f02a3c",
+    "METHOD.md": "564bd13bcd981d71b9a404eae649214f90d8049eca2a4fa530d0719e6949a3c9",
+    "reference_protocol.json": "6309dc5f3312dba086109377db361a335968d6c4878a0514cdc6a5c3ee5f6b48",
+    "metrics_by_seed.csv": "2c358caa07bd058beb79e5e3ecced33f9271ffc6097511cda2a2385884250953",
+    "metrics_by_condition_seed.csv": "f8fd2501eeff4c51338f122287acc276eb3079610aa8f2e524dfd0103877a9a0",
+    "TRAIN_reference.csv": "958be777eaa7e17c757d123b045847baa7a68fbfe9582d0fb991860d53fb08b7",
+    "unique_orbit_distances.csv": "66d3e1f0c7802133c5097e4a597ab2103b55efb94d7e31d86c3269941e402014"
+  }
+}

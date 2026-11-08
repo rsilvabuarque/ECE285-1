@@ -1,0 +1,132 @@
+{
+  "status": "PASS_CORE_PACKAGE_WITH_DISCLOSED_BROAD_SNAPSHOT_ADDITION",
+  "reviewed_UTC": "2026-11-08T04:08:31.869809+00:00",
+  "original_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification.json",
+    "sha256": "5fbd83cca6c031d13735c4839337d40cbecd0b16c328ea41d97dcfcddf3fc46a",
+    "status": "FAIL_OR_SOURCE_CHANGED"
+  },
+  "basis": "All110 tests and pipcheck passed. Every file present at the initial snapshot remains byte-identical. The sole broad-snapshot change was a new independent report-postprocessing helper, not imported by the tested runtime/tests/scripts.",
+  "original_broad_source_guard_preserved": true,
+  "tests": {
+    "tests": 110,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "freeze_final_tests": [
+    {
+      "name": "test_generator_enforces_actual_frozen_manifest_keys",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_primary_and_cross_teacher_budgets_match_replicated_families",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_geometry_byte_encoding_preserves_sites_and_never_pads_another_cell",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_candidate_parent_count_and_canonicality_are_checked",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_geometry_history_uses_exact_deletion_masks_not_endpoint_labels",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_publish_is_write_once_and_protocol_is_last",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_incompatible_checkpoint_dimensions_fail_before_publication",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    },
+    {
+      "name": "test_checkpoint_embedded_identity_and_selected_update_are_preserved",
+      "classname": "tests.test_freeze_final",
+      "passed": true
+    }
+  ],
+  "source_files_present_before": 82,
+  "existing_source_changes": [],
+  "current_existing_source_changes": [],
+  "added_report_helper": {
+    "path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/summarize.py",
+    "sha256": "7983e3f5f25d8d00f623055a26031a6f71553a247cdb9db6c5994780a7d7cca6",
+    "absent_at_start": true,
+    "explicit_file_references": [],
+    "AST_import_references": []
+  },
+  "directory_mentions": {
+    "paths": [
+      "scripts/conditioning_20261107/analyze_spatial_confirmed.py"
+    ],
+    "interpretation": "analyze_spatial_confirmed.py names the report output directory, not an import/execution of summarize.py; this new analysis script is outside the original tested snapshot"
+  },
+  "direct_file_imports_in_tests": [
+    {
+      "path": "tests/test_freeze_final.py",
+      "lines": [
+        "SOURCE = Path(__file__).resolve().parents[1]/\"scripts/conditioning_20261107/freeze_final.py\"",
+        "spec = importlib.util.spec_from_file_location(\"final_freezer\",SOURCE)",
+        "source = SOURCE.with_name(\"generate_study.py\")",
+        "module_spec = importlib.util.spec_from_file_location(\"frozen_generator\", source)"
+      ]
+    },
+    {
+      "path": "tests/test_execution_audit.py",
+      "lines": [
+        "FILE = Path(__file__).resolve().parents[1] / \"reports/conditioning_20261107/audit_execution.py\"",
+        "spec = importlib.util.spec_from_file_location(\"execution_audit\", FILE)",
+        "code = (\"import importlib.util,sys; s=importlib.util.spec_from_file_location('audit',sys.argv[1]); \"",
+        "mask_source, editor_source = source_dir / \"train_mask.py\", source_dir / \"train_edit.py\""
+      ]
+    },
+    {
+      "path": "tests/test_conditioning_diagnostics.py",
+      "lines": [
+        "SOURCE = Path(__file__).resolve().parents[1] / \"scripts/conditioning_20261107/analyze_diagnostics.py\"",
+        "spec = importlib.util.spec_from_file_location(\"conditioning_diagnostics\", SOURCE)"
+      ]
+    },
+    {
+      "path": "tests/test_descriptor_benchmark.py",
+      "lines": [
+        "SCRIPT = Path(__file__).resolve().parents[1] / \"scripts/conditioning_20261107/descriptor_benchmark.py\"",
+        "spec = importlib.util.spec_from_file_location(\"descriptor_benchmark\", SCRIPT)"
+      ]
+    }
+  ],
+  "package_versions": {
+    "cathode-cvae": "0.1.0",
+    "numpy": "2.3.4",
+    "torch": "2.13.0+cpu",
+    "scipy": "1.18.1",
+    "ase": "3.26.0",
+    "spglib": "2.8.0",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0"
+  },
+  "installation_import_verified": true,
+  "interpreter": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+  "evidence": {
+    "junit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification_pytest.xml",
+      "sha256": "649b533c3da8b280c741d4f3c4f38d4a7c522e174eca98af97a01ae0c3e9dfaa"
+    },
+    "log": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/fresh_install_verification.log",
+      "sha256": "22acfe9a275e9ace0c02b70de0f29661163b66ab9fab400563f4104759e868e8"
+    }
+  },
+  "scope": "Acceptance of the tested core snapshot only. This does not claim test coverage for the added report helper or any later editor/NEB code, nor MLIP SDK/GPU inference parity."
+}

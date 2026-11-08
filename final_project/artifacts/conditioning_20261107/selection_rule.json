@@ -1,0 +1,12 @@
+{
+  "status": "FROZEN_BEFORE_NEW_ENERGY_SUMMARIES",
+  "policy": "Maximize macro distinct-novel requested-bin yield on DEVELOPMENT, equal count/bin/fit weights; tie by original-q20 requested-low yield, then no-balancing simplicity",
+  "latent": "Choose smallest dimension within .01 absolute balanced yield of best tested dimension and within .02 absolute original-q20 low yield of best; show all seed values and both outcomes",
+  "competitive_margins": {
+    "balanced": 0.01,
+    "low": 0.02,
+    "units": "dimensionless probability;1and2percentagepoints",
+    "provenance": "Provisional decision heuristic for practical competitive performance; not a confidence interval or physical tolerance"
+  },
+  "protected_test_labels_used": false
+}

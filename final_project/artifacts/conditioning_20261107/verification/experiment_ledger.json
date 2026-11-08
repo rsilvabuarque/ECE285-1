@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+  "requirements": {
+    "policy": {
+      "status": "COMPLETE",
+      "hypothesis": "Class balancing and checkpoint selection affect conditional control",
+      "changed_factor": "balancing off/on; two selection weights reuse each trajectory",
+      "outputs": [
+        "artifacts/conditioning_20261107/training_policy_selection.json",
+        "runs/conditioning_20261107/evaluation/policy/receipt.json"
+      ],
+      "full_training_trajectories": 6,
+      "note": "All six trajectories completed 4000 updates and both checkpoint selectors evaluated; corrected cost provenance preserves identical scientific metrics",
+      "new_full_trajectories": 6,
+      "optimizer_updates_each": 4000
+    },
+    "latent": {
+      "status": "COMPLETE",
+      "hypothesis": "A larger latent improves useful prior generation only if actually used",
+      "changed_factor": "latent 4/8/16/32, reuse selected-policy 8; hidden64 unchanged",
+      "outputs": [
+        "artifacts/conditioning_20261107/selected_policy.json",
+        "runs/conditioning_20261107/evaluation/latent/receipt.json"
+      ],
+      "full_training_trajectories": 9,
+      "new_full_trajectories": 9
+    },
+    "no_latent": {
+      "status": "COMPLETE",
+      "hypothesis": "The latent contributes beyond stochastic AR decoding",
+      "changed_factor": "AR baseline, no latent and no KL",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/latent/receipt.json"
+      ],
+      "full_training_trajectories": 3,
+      "new_full_trajectories": 3
+    },
+    "symmetry": {
+      "status": "COMPLETE",
+      "hypothesis": "Training orientation affects generalization",
+      "changed_factor": "canonical versus joint parent-group augmentation",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/spatial_confirmed/receipt.json",
+        "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+        "artifacts/conditioning_20261107/architecture_selection.json"
+      ],
+      "full_training_trajectories": 3
+    },
+    "graph_encoder": {
+      "status": "COMPLETE",
+      "hypothesis": "Physical neighbors improve posterior feature extraction",
+      "changed_factor": "distance message-passing encoder; otherwise matched policy",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/spatial_confirmed/receipt.json",
+        "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+        "artifacts/conditioning_20261107/architecture_selection.json"
+      ],
+      "full_training_trajectories": 3
+    },
+    "graph_context": {
+      "status": "COMPLETE",
+      "hypothesis": "Causal physical neighbor features help generation",
+      "changed_factor": "Graph encoder plus strict-past decoder context, replicated at all three fit seeds under the phase-scope amendment",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/spatial_confirmed/receipt.json",
+        "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+        "artifacts/conditioning_20261107/architecture_selection.json"
+      ],
+      "full_training_trajectories": 3,
+      "protocol_amendment": "artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json"
+    },
+    "descriptor": {
+      "status": "COMPLETE",
+      "hypothesis": "Supported joint structural/energy requests can be controlled",
+      "changed_factor": "one supported energy+vacancy-pair descriptor pilot",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/descriptor/receipt.json"
+      ],
+      "full_training_trajectories": 1,
+      "note": "One-fit supported middle-energy joint descriptor pilot; negative result preserved"
+    },
+    "edit": {
+      "status": "PLANNED",
+      "hypothesis": "A seed-conditioned variational editor improves equal-budget swaps",
+      "changed_factor": "same seed families, exact one/two/three swaps versus mutation",
+      "outputs": [],
+      "full_training_trajectories": 3
+    },
+    "cached_reproduction": {
+      "status": "COMPLETE",
+      "outputs": [
+        "runs/conditioning_20261107/cached_reproduction/evaluation_receipt.json"
+      ]
+    },
+    "paired_relaxation_audit": {
+      "status": "COMPLETE",
+      "outputs": [
+        "reports/conditioning_20261107/relaxed_target_audit/receipt.json"
+      ],
+      "training_target_ablation": "DEFERRED: primary49train/11val/9test; endpoint-low validation counts0/1/0"
+    },
+    "descriptor_audit": {
+      "status": "COMPLETE",
+      "outputs": [
+        "reports/conditioning_20261107/parent_graph/receipt.json"
+      ]
+    },
+    "parent_graph_checks": {
+      "status": "COMPLETE",
+      "outputs": [
+        "reports/conditioning_20261107/parent_graph/receipt.json"
+      ]
+    },
+    "required_report": {
+      "status": "PLANNED",
+      "outputs": []
+    },
+    "final_assessment": {
+      "status": "RUNNING",
+      "outputs": [
+        "runs/conditioning_20261107/final_protocol.json",
+        "runs/conditioning_20261107/data/history_before_final_receipt.json"
+      ],
+      "note": "Protocol and 278382-orbit history frozen before new 34560-attempt generation; matched MACE audit20736 prespecified"
+    },
+    "NEB": {
+      "status": "PLANNED",
+      "outputs": []
+    },
+    "publication": {
+      "status": "PLANNED",
+      "outputs": []
+    }
+  },
+  "core_full_trajectories_completed": 28,
+  "optional_full_trajectories_completed": 0
+}

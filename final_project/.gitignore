@@ -47,3 +47,19 @@ docs/midterm1/*.out
 /reports/thermal_pilot_20261107/xpt/full20_diagnostic/spectral_diagnostics.png
 /reports/thermal_pilot_20261107/xpt/prefix10_analysis/free_energy_differences.pdf
 /reports/thermal_pilot_20261107/xpt/prefix10_analysis/free_energy_differences.png
+
+# Full conditioning replay arrays/tables are in the verified release payload.
+# Original diagnostic/failure evidence remains in the local raw run archive.
+/reports/conditioning_20261107/**/attempt_outcomes.csv
+/reports/conditioning_20261107/**/paired_conditions.csv
+/reports/conditioning_20261107/**/paired_latents.csv
+/reports/conditioning_20261107/final_structural_distances/attempt_distances.csv
+/reports/conditioning_20261107/policy_diagnostics/
+/reports/conditioning_20261107/parent_graph_initial_identity/
+/reports/conditioning_20261107/**/*.npz
+/reports/conditioning_20261107/parent_graph/periodic_graph.json
+/artifacts/conditioning_20261107/fits/
+/artifacts/conditioning_20261107/source/
+/artifacts/conditioning_20261107/diagnostics/
+/artifacts/conditioning_20261107/data/periodic_graph.json
+/artifacts/conditioning_20261107/data/parent_spec.json

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "completed_UTC": "2026-11-08T04:23:57.099933+00:00",
+  "scope": "Seven focused packaging/replay helper tests; no packet curation, MLIP calls, or training executed",
+  "allocation_id": "60985189",
+  "test_log": "reports/conditioning_20261107/package_helpers_tests_final.log",
+  "previous_six_test_log_preserved": "reports/conditioning_20261107/package_helpers_tests.log",
+  "passed_tests": 7,
+  "exact_command": "srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env -u PYTHONPATH CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q tests/test_conditioning_packet.py > reports/conditioning_20261107/package_helpers_tests_final.log 2>&1",
+  "source_hashes": {
+    "scripts/conditioning_20261107/package_results.py": "00ff5f5f1c602ee368b30246de5dcb8f0b5c3412405b5097d95c60b3b582cb64",
+    "scripts/conditioning_20261107/replay_cached_results.py": "b271eb648386a98a206023120938c5ecfae269e048caf22d1ffcb70e8f99dc72",
+    "tests/test_conditioning_packet.py": "9952f93aefcc66d17ee11a8d8953649cd498b3a9b02cf16f1ff0f54ee3534c21"
+  }
+}

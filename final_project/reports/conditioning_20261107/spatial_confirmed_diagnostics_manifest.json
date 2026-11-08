@@ -1,0 +1,114 @@
+{
+  "models": [
+    {
+      "method": "dense",
+      "fit_seed": 20261106,
+      "replicate_id": 20261106,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261106/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "dense",
+      "fit_seed": 20261107,
+      "replicate_id": 20261107,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261107/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "dense",
+      "fit_seed": 20261108,
+      "replicate_id": 20261108,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261108/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "symmetry",
+      "fit_seed": 20261106,
+      "replicate_id": 20261106,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/symmetry_augment_20261106/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "symmetry",
+      "fit_seed": 20261107,
+      "replicate_id": 20261107,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/symmetry_augment_20261107/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "symmetry",
+      "fit_seed": 20261108,
+      "replicate_id": 20261108,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/symmetry_augment_20261108/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "graph_encoder",
+      "fit_seed": 20261106,
+      "replicate_id": 20261106,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_encoder_20261106/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "graph_encoder",
+      "fit_seed": 20261107,
+      "replicate_id": 20261107,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_encoder_20261107/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "graph_encoder",
+      "fit_seed": 20261108,
+      "replicate_id": 20261108,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_encoder_20261108/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "graph_context",
+      "fit_seed": 20261106,
+      "replicate_id": 20261106,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "uniform",
+      "sampler": "uniform",
+      "replicate_id": 20261106
+    },
+    {
+      "method": "uniform",
+      "sampler": "uniform",
+      "replicate_id": 20261107
+    },
+    {
+      "method": "uniform",
+      "sampler": "uniform",
+      "replicate_id": 20261108
+    },
+    {
+      "method": "mutation",
+      "sampler": "mutation",
+      "replicate_id": 20261106
+    },
+    {
+      "method": "mutation",
+      "sampler": "mutation",
+      "replicate_id": 20261107
+    },
+    {
+      "method": "mutation",
+      "sampler": "mutation",
+      "replicate_id": 20261108
+    },
+    {
+      "method": "graph_context",
+      "fit_seed": 20261107,
+      "replicate_id": 20261107,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261107/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "graph_context",
+      "fit_seed": 20261108,
+      "replicate_id": 20261108,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261108/best_validation_beta_0p1.pt"
+    }
+  ],
+  "source_manifests": {
+    "runs/conditioning_20261107/spatial_generation_manifest.json": "dbb2d0b1299b57ce6e583d711e5da411b079bdcfc8e4fab3ce514d2511b625e5",
+    "runs/conditioning_20261107/graph_context_confirmation_manifest.json": "5ed12b991862b1422bea37345a6073673924e4067582afd541a2d1ef37466fa2"
+  },
+  "alias": {
+    "graph_context_pilot": "graph_context"
+  },
+  "scope": "Confirmed DEVELOPMENT only"
+}

@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "all34560fixedcount_distances_even_and_bounded": true,
+  "family_summary": [
+    {
+      "method": "ar_baseline",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.862847222222221,
+      "minimum_seed_mean": 6.847222222222222,
+      "maximum_seed_mean": 6.883680555555555
+    },
+    {
+      "method": "cvae_d16",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.876736111111112,
+      "minimum_seed_mean": 6.854166666666667,
+      "maximum_seed_mean": 6.90625
+    },
+    {
+      "method": "cvae_d32",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.840856481481482,
+      "minimum_seed_mean": 6.826388888888889,
+      "maximum_seed_mean": 6.857638888888889
+    },
+    {
+      "method": "cvae_d4",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.849537037037037,
+      "minimum_seed_mean": 6.838541666666667,
+      "maximum_seed_mean": 6.862847222222222
+    },
+    {
+      "method": "cvae_d8",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.851273148148148,
+      "minimum_seed_mean": 6.789930555555555,
+      "maximum_seed_mean": 6.907986111111111
+    },
+    {
+      "method": "graph_context",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.857638888888889,
+      "minimum_seed_mean": 6.835069444444445,
+      "maximum_seed_mean": 6.875
+    },
+    {
+      "method": "graph_encoder",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.869791666666667,
+      "minimum_seed_mean": 6.861111111111111,
+      "maximum_seed_mean": 6.881944444444445
+    },
+    {
+      "method": "mutation",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.497685185185186,
+      "minimum_seed_mean": 6.491319444444445,
+      "maximum_seed_mean": 6.503472222222222,
+      "mean_raw_seed_child_Hamming": 4.037037037037037,
+      "mean_symmetry_minimum_seed_child_Hamming": 4.034143518518518
+    },
+    {
+      "method": "symmetry",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.8396990740740735,
+      "minimum_seed_mean": 6.798611111111111,
+      "maximum_seed_mean": 6.899305555555555
+    },
+    {
+      "method": "uniform",
+      "design_seeds": 3,
+      "mean_nearest_TRAIN_reference_orbit_Hamming": 6.890625,
+      "minimum_seed_mean": 6.883680555555555,
+      "maximum_seed_mean": 6.897569444444445
+    }
+  ],
+  "input_hashes": {
+    "metrics_by_seed.csv": "2c358caa07bd058beb79e5e3ecced33f9271ffc6097511cda2a2385884250953",
+    "attempt_distances.csv": "b8be90b8a7e07ae8a77f4d5645e8d2d37cca688dc0f2b3d2bd1a228262f02a3c"
+  },
+  "output_hashes": {
+    "structural_distances.png": "223ba3ade0ec82116c0775a7be0ae2f28b89caf17d02354f84e4384d6b53ca46",
+    "structural_distances.pdf": "1554c5b2e453e2e660862adf792e09fa0d72e97861795345e634220d85bd26f0",
+    "family_summary.csv": "19ad283b15585c719be4aa9df9c1a6fb9ad67634235ad85244b4dafbe0315f25"
+  },
+  "source_sha256": "05b7460d8f1b6cd5e4e94e4c04cf0f278a608dc8fe8d3fbefcf06bf54d56043a",
+  "scope": "Descriptive only; no energy labels or selections; distances to the1024subset are upper bounds"
+}

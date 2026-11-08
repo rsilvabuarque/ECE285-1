@@ -1,0 +1,7 @@
+{
+  "status": "FAILED",
+  "attempt": "independent-check-v1",
+  "failure": "Expected bitwise equality of all historical gain values",
+  "diagnosis": "Energy gain converts the same differences with multiplication/division in opposite order; max7.11e-15meVatom difference. Rank fields and force arrays match exactly.",
+  "correction": "Replace inappropriate bitwise-energy-arithmetic criterion with documented8float64epsrelative bound. Physical convergence criterion remainsstrict0.05eVA."
+}

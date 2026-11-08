@@ -1,0 +1,16 @@
+{
+  "status": "PASS_VISUAL_REVIEW",
+  "pdf_sha256": "9f74656ecf5322ba0c03f18f5a51c244f04558217ffb54c9c26d35a5c75a48d3",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "body_pages": 5,
+  "reference_pages": 1,
+  "findings": "All rendered pages reviewed; readable tables/equations, no clipping, overlaps, blank or spillover pages; final/development scopes visible.",
+  "review_scope": "Layout and visible scientific scope wording; source claims and independent numerical audits remain separate."
+}

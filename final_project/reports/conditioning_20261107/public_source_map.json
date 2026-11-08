@@ -1,0 +1,521 @@
+{
+  "status": "PASS",
+  "packet_manifest_sha256": "583c5f16b7ce30a847af90b122b12ad87dbb6fe2b95512e170fd83f856ccf29d",
+  "claims": [
+    {
+      "claim_id": "parent48",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "portable_path": "artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "half_orbit_capacity",
+      "sources": [
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/make_examples.py",
+          "portable_path": "reports/ranking_audit_20261107/make_examples.py",
+          "sha256": "35f3cbfc226d57aeb637eefcce935a0fcd75976390dde99df3860ecb0a2b0915",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/examples/manifest.json",
+          "portable_path": "reports/ranking_audit_20261107/examples/manifest.json",
+          "sha256": "0ea8ddf54d9fde1e3be40b9d9eb0c428189a178c09155705520cf822812c5c10",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "training_round0",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/current/improvement_v1/data/preparation.json",
+          "portable_path": "artifacts/current/improvement_v1/data/preparation.json",
+          "sha256": "4824f7fb85580450ec429f7a97ca7db7563b62247d0b10cb41ab1f17127ef0a5",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/current/improvement_v1/training_round0.npz",
+          "portable_path": "artifacts/current/improvement_v1/training_round0.npz",
+          "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "historical_yields",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/current/improvement_v1/reports/final/summary.csv",
+          "portable_path": "artifacts/current/improvement_v1/reports/final/summary.csv",
+          "sha256": "043581c0f0fa27d1e8c0d14c2b24ca5f77576b1a3172ab0304d6d9fbdc3289fc",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/current/improvement_v1/reports/final/metrics.csv",
+          "portable_path": "artifacts/current/improvement_v1/reports/final/metrics.csv",
+          "sha256": "470429d7bd4ba88da9dd72fed74695f13e059284ed9c6e0256be0537b4ca957d",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "ranking_context",
+      "sources": [
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/receipt.json",
+          "portable_path": "reports/ranking_audit_20261107/receipt.json",
+          "sha256": "ae9c6ef9a73151ac9b111017ed52a23a42ba3af4a08ebb3989f8d854b9bdb3bb",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/cohort_summary.csv",
+          "portable_path": "reports/ranking_audit_20261107/cohort_summary.csv",
+          "sha256": "d7c0b75ab923955c6e7d379fc2afa527aada661b62610a1541511cbca45108b9",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/pool_metrics.csv",
+          "portable_path": "reports/ranking_audit_20261107/pool_metrics.csv",
+          "sha256": "0746594803bbbdd539c35677a2e53a4fec3edf7888335688cef15d6f7f533767",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/topk_metrics.csv",
+          "portable_path": "reports/ranking_audit_20261107/topk_metrics.csv",
+          "sha256": "ca71450548bc9a7b0cd6fc58daaa5bc13b5e74b566da2b6ab4d3595e7387b933",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "hu_five_counterexample",
+      "sources": [
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/Hu_O3_Li10_optimized_counterexample.csv",
+          "portable_path": "reports/ranking_audit_20261107/Hu_O3_Li10_optimized_counterexample.csv",
+          "sha256": "027a2ddeda3b772bada30fd8b67bf583c228fbf2347dfca7718de3f36bb59bf1",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/ranking_audit_20261107/five_member_counterexample.pdf",
+          "portable_path": "reports/ranking_audit_20261107/five_member_counterexample.pdf",
+          "sha256": "7bea2bb5745e7119f6680dda011df4b10ebdcc9b5a1d1c4e7cbf9209d87faffb",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "geometry_secondary",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/current/reports/decoded_matched_relaxations.csv",
+          "portable_path": "artifacts/current/reports/decoded_matched_relaxations.csv",
+          "sha256": "c322ee217439ef339c9a4c18410a5d461f021dc29490263f05a01fe73b72439d",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/current/reports/decoded_geometry_summary.csv",
+          "portable_path": "artifacts/current/reports/decoded_geometry_summary.csv",
+          "sha256": "320aa25a97851907499403f755577eb99241ed95a430204a844e843f0a6b4cd5",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "new_multibin_benchmark",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/overnight_20261107/evaluation/benchmark/receipt.json",
+          "portable_path": "artifacts/overnight_20261107/evaluation/benchmark/receipt.json",
+          "sha256": "8f4497d305d88e0efa0d322f7e0fe73f0bd5f35c887ae5c0174d43a4dc9790c1",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/overnight_20261107/evaluation/benchmark/summary.csv",
+          "portable_path": "artifacts/overnight_20261107/evaluation/benchmark/summary.csv",
+          "sha256": "b6ce7575f7335f8a5480507c4d0dc308464f2d509a29b353e01b3b284f2526a2",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/overnight_20261107/evaluation/benchmark/summary_by_request.csv",
+          "portable_path": "artifacts/overnight_20261107/evaluation/benchmark/summary_by_request.csv",
+          "sha256": "9a9cd69cea9a14f4f122ad98c4dcce4200de01aa199c27de3b34d5cbf10f9df4",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/overnight_20261107/evaluation/benchmark/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/overnight_20261107/evaluation/benchmark/fixed_q20_low_request.csv",
+          "sha256": "e694d968287da0fd06f012e744420d926beece4cae6475721a3af77b5765eb66",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
+          "portable_path": "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
+          "sha256": "57bfef701ab9299f1a696fe22960c95a4a66b086f6d9ed20790eb0e2147c5651",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "policy_development",
+      "sources": [
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/policy/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/policy_cost_repair/summary.csv",
+          "sha256": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/policy/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/policy_cost_repair/fixed_q20_low_request.csv",
+          "sha256": "081622ababe664be191c4cdb0486c8870da2ee1a102b5145a991d9e1eea2fdcc",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/training_policy_selection.json",
+          "portable_path": "artifacts/conditioning_20261107/training_policy_selection.json",
+          "sha256": "ec1b2bd1fab23e5d9f960bb8b5d023b1b938dabc50de9891f242725d2b365674",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/selection_rule.json",
+          "portable_path": "artifacts/conditioning_20261107/selection_rule.json",
+          "sha256": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "paired_condition_latent",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/policy_diagnostics_v2/condition_summary.csv",
+          "portable_path": "reports/conditioning_20261107/policy_diagnostics_v2/condition_summary.csv",
+          "sha256": "a053ae711e7bac280c5ce2c58e5ec4d3bd50146b9f85ad1a757d64ba78b1df07",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/policy_diagnostics_v2/latent_summary.csv",
+          "portable_path": "reports/conditioning_20261107/policy_diagnostics_v2/latent_summary.csv",
+          "sha256": "efb8e47a8e5c837e334ff3b08d79ce7407b8f688810b88786bde8b61b389813b",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/policy_diagnostics_v2/selected_latent_diagnostics.csv",
+          "portable_path": "reports/conditioning_20261107/policy_diagnostics_v2/selected_latent_diagnostics.csv",
+          "sha256": "b8099b1d7bb43d1020903e5ca9af7c51084a83acb4fc3c451331ee11bf84a98b",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/policy_diagnostics_v2/receipt.json",
+          "portable_path": "reports/conditioning_20261107/policy_diagnostics_v2/receipt.json",
+          "sha256": "575587185a6e658c3189d5d8ecb3aa910ae7735602e770424b9f219d01982f3b",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "physical_parent_graph",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/parent_graph/receipt.json",
+          "portable_path": "reports/conditioning_20261107/parent_graph/receipt.json",
+          "sha256": "4026ccb8eee31270034fba4999b87b5620c18af808152989c983cd795de0dfaa",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/parent_graph/descriptor_energy.csv",
+          "portable_path": "reports/conditioning_20261107/parent_graph/descriptor_energy.csv",
+          "sha256": "f7af4b16c3ca09df14edb2c3c134e37edac9c27f5e6ac02f1cceec23818377d1",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/parent_graph/descriptor_schema.json",
+          "portable_path": "reports/conditioning_20261107/parent_graph/descriptor_schema.json",
+          "sha256": "fb86fdcf58a0e425e93ddcf650217291cc898abd167e80e6205fc9029b83092f",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "paired_energy_target",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/relaxed_target_audit/receipt.json",
+          "portable_path": "reports/conditioning_20261107/relaxed_target_audit/receipt.json",
+          "sha256": "de597f788b74e276abebfe481f05cc4cdcf9fdbe93084f084f43c8396b8148fd",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/relaxed_target_audit/composition_ranking.csv",
+          "portable_path": "reports/conditioning_20261107/relaxed_target_audit/composition_ranking.csv",
+          "sha256": "b57540ca75f63416cbe06aa0636658e7ba085adfd22a91dfebad14a78a3dd491",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/relaxed_target_audit/label_target_support.csv",
+          "portable_path": "reports/conditioning_20261107/relaxed_target_audit/label_target_support.csv",
+          "sha256": "fb29b4b2d0ccf58247db5e726b2f9cbf4499d8bbe4960b3caf4de071cd3fb301",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/relaxed_target_audit/independent_checks.json",
+          "portable_path": "reports/conditioning_20261107/relaxed_target_audit/independent_checks.json",
+          "sha256": "bf82d840feb1936c5dcda606fd0f093e40c92603b021a7213b9b667a5e58f5a5",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "latent_development",
+      "sources": [
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/latent/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/latent/summary.csv",
+          "sha256": "de9b0a576d17585d606de9430590a54766dbc5679cad8e0c5b160033afd788c9",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/latent/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/latent/fixed_q20_low_request.csv",
+          "sha256": "868b95923a0fa445d109483cd94a3baca97fe1d336d196abdcd787138de50597",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/latent_development/seed_values.csv",
+          "portable_path": "reports/conditioning_20261107/latent_development/seed_values.csv",
+          "sha256": "e7670c2c033394e93f52be6cfc633187e5c02bb3dc7d1a4a8fadf168f751d086",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/latent_diagnostics/latent_fit_diagnostic_summary.csv",
+          "portable_path": "reports/conditioning_20261107/latent_diagnostics/latent_fit_diagnostic_summary.csv",
+          "sha256": "ef7da16a564ef508de8f36e8f514909c54503c73a0e037ef35fcdfa37b6e7b34",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/latent_diagnostics/latent_selection_audit.json",
+          "portable_path": "reports/conditioning_20261107/latent_diagnostics/latent_selection_audit.json",
+          "sha256": "75ef718eca12b9c3f2722e5805e77ebf6dd57a53339046eafac9e0eeb9a0ce69",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/selected_policy.json",
+          "portable_path": "artifacts/conditioning_20261107/selected_policy.json",
+          "sha256": "f9fdba0d08b9f3379d4d69605d60103b8088682b2e706f21cce17f161fff81b2",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/selected_models.json",
+          "portable_path": "artifacts/conditioning_20261107/selected_models.json",
+          "sha256": "7295fcfd9145f34642dbdb1eeba3f7870f20117acbbf07b673f235a646ef2ae5",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "spatial_development",
+      "sources": [
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/spatial_confirmed/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/spatial_confirmed/summary.csv",
+          "sha256": "5ed911c5296c478bc9e87187ac0dbde38be5d5750451130b1601e93bf7f2388e",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv",
+          "sha256": "e4fdee35d8ed29954c4ba4a51583de8f2c2305698ec1f07d819158b9ec92d20f",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/spatial_confirmed/seed_metrics.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/spatial_confirmed/seed_metrics.csv",
+          "sha256": "3c77d49f15518dde1a581dfeb4a66db1c8bbcce0ea84a2866423e9335cc669bb",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/architecture_selection.json",
+          "portable_path": "artifacts/conditioning_20261107/architecture_selection.json",
+          "sha256": "aa36153757a852092fb0a0cfee82d54a9aa7c2d48e43dbf9b17c47380f4b552d",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json",
+          "portable_path": "artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json",
+          "sha256": "3cb0b6466d91f0973941b5c4fd36922b659174480cebaa6ba20ef1b437c9c34f",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "spatial_condition_latent",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/family_diagnostic_summary.json",
+          "portable_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/family_diagnostic_summary.json",
+          "sha256": "2df7691ee19da839ac8f4746f806e0dbf1e092394abc46c048f13804e94965c5",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/paired_diagnostics_by_family_seed.csv",
+          "portable_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/paired_diagnostics_by_family_seed.csv",
+          "sha256": "9f5032e90cc7130a46db34ad441b915450b714c61b74dadb965ac892b9e6bb3f",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/selected_latent_diagnostics.csv",
+          "portable_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/selected_latent_diagnostics.csv",
+          "sha256": "44359360548be8755efb02fff3fc772bf765a2465eabeca4b0382a1cf7c3840f",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+          "portable_path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+          "sha256": "59e063950dd0ec6bfd2e744aa51f830af9bffdb6a24364bd6f9314e6e3f2f833",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "trained_decoder_causality",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/trained_causality_audit.json",
+          "portable_path": "reports/conditioning_20261107/trained_causality_audit.json",
+          "sha256": "c712ea3b4cf178516497989776225b1b350c84ab1294482d3e8cca62702fa618",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/trained_causality_audit.py",
+          "portable_path": "reports/conditioning_20261107/trained_causality_audit.py",
+          "sha256": "0494bbbe70dcfa21fca9e7c7c002dc28747d49919849fc035cfb52f669f869a5",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "descriptor_negative_pilot",
+      "sources": [
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/descriptor/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/descriptor/summary.csv",
+          "sha256": "02ef887af8615f0028d0afc446281d3aa3aa272f6760c118c4ebd5a92a8dc8f1",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/descriptor/receipt.json",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/descriptor/receipt.json",
+          "sha256": "a893ec8718768d7abfc4443c92189a5579c4c935805f726df09379995d081f4a",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "frozen_final_assessment",
+      "sources": [
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final/summary.csv",
+          "sha256": "8d21c1f6d65c80728855810cecf9e115ba2226dbb6e38cbca78aae346092d846",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final/fixed_q20_low_request.csv",
+          "sha256": "28e22b1c571185d0529ad15ea59dde11f5e95728e00ebd33d7465f9c8ce653eb",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final_matched/summary.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final_matched/summary.csv",
+          "sha256": "7ffa05128e3db3a49a9ce88d08b96e972262484002ab64696c7591d501a9f584",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final_matched/fixed_q20_low_request.csv",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final_matched/fixed_q20_low_request.csv",
+          "sha256": "9d4d5a77a9da41f9a86744575691d7550a4b867e27da3df652ef25d764f85326",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final/receipt.json",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final/receipt.json",
+          "sha256": "57a94a7ac3456b10c232a88e3898aa0f51cc1c1e26df6326dd420d57c44effbc",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/evaluation/final_matched/receipt.json",
+          "portable_path": "artifacts/conditioning_20261107/evaluation/final_matched/receipt.json",
+          "sha256": "53c75ab73f87922ecc1622290aed6b5e0aa79181d36d56196be6273df4914a10",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "runs/conditioning_20261107/final_protocol.json",
+          "portable_path": "artifacts/conditioning_20261107/execution/final_protocol.json",
+          "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "independent_final_replay",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/independent_final_metrics/receipt.json",
+          "portable_path": "reports/conditioning_20261107/independent_final_metrics/receipt.json",
+          "sha256": "99f56bb5e23d48b9cbadd92e8dedc7c8bcc5bfe3f67abfe754bf2d4cab843dbe",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "final_structural_distance",
+      "sources": [
+        {
+          "original_execution_path": "reports/conditioning_20261107/final_structural_distances/receipt.json",
+          "portable_path": "reports/conditioning_20261107/final_structural_distances/receipt.json",
+          "sha256": "3b8e87fad56927c4d8e43b78e9def3902441ba3eea902641cbeda22fae606b57",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/final_structural_distances/family_summary.csv",
+          "portable_path": "reports/conditioning_20261107/final_structural_distances/family_summary.csv",
+          "sha256": "19ad283b15585c719be4aa9df9c1a6fb9ad67634235ad85244b4dafbe0315f25",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/final_structural_distances/METHOD.md",
+          "portable_path": "reports/conditioning_20261107/final_structural_distances/METHOD.md",
+          "sha256": "564bd13bcd981d71b9a404eae649214f90d8049eca2a4fa530d0719e6949a3c9",
+          "availability": "Git"
+        }
+      ]
+    },
+    {
+      "claim_id": "current_scope",
+      "sources": [
+        {
+          "original_execution_path": "artifacts/conditioning_20261107/protocol.json",
+          "portable_path": "artifacts/conditioning_20261107/protocol.json",
+          "sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+          "availability": "Git"
+        },
+        {
+          "original_execution_path": "reports/conditioning_20261107/SOURCE_REVIEW.md",
+          "portable_path": "reports/conditioning_20261107/SOURCE_REVIEW.md",
+          "sha256": "44504c4669e67b084d09b58408d169ff1ed7f0ffe2e59f0dc62725abbd797e7e",
+          "availability": "Git"
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "scope": "Portable locations for original source hashes; execution provenance remains unchanged"
+}

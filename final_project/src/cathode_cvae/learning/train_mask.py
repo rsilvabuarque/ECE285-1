@@ -73,6 +73,43 @@ def canonicalize(x, inverse_permutations, batch_size=256):
     return result, codes.cpu().numpy()
 
 
+def selection_checkpoint_name(beta):
+    """Stable filename for a validation rule; beta is dimensionless."""
+    if not math.isfinite(beta) or beta < 0:
+        raise ValueError("Selection beta must be finite and nonnegative")
+    return "best_validation_beta_" + format(beta, ".12g").replace(".", "p") + ".pt"
+
+
+def latent_statistics(mu, logvar, weights=None, cutoffs=(0.001, 0.01, 0.1)):
+    """Weighted VAL latent summaries, not a diagnosis of useful generation.
+
+    KL is in nats and summed over latent coordinates. Active-component counts
+    use Var_config(mu_j)>cutoff; the three dimensionless cutoffs are provisional
+    descriptive thresholds, reported together rather than presented as a law.
+    """
+    if mu.shape != logvar.shape or mu.ndim != 2 or len(mu) == 0:
+        raise ValueError("Latent summaries need matching nonempty (rows, dimensions) tensors")
+    if weights is None:
+        weights = mu.new_ones(len(mu))
+    if weights.shape != (len(mu),) or not bool((weights > 0).all()):
+        raise ValueError("Latent summary weights must be positive per-row values")
+    ww = weights / weights.sum()
+    mean = (ww[:, None] * mu).sum(0)
+    variance = (ww[:, None] * (mu - mean).square()).sum(0)
+    kl = 0.5 * (mu.square() + logvar.exp() - 1 - logvar)
+    mean_kl = (ww[:, None] * kl).sum(0)
+    return dict(rows=len(mu), latent_dim=mu.shape[1],
+        total_KL_nats=float(mean_kl.sum()),
+        mean_KL_nats_per_dimension=float(mean_kl.mean()) if mu.shape[1] else 0.,
+        KL_nats_by_dimension=mean_kl.detach().cpu().tolist(),
+        posterior_mean_by_dimension=mean.detach().cpu().tolist(),
+        posterior_mean_variance_by_dimension=variance.detach().cpu().tolist(),
+        posterior_variance_mean_by_dimension=(ww[:, None] * logvar.exp()).sum(0).detach().cpu().tolist(),
+        active_definition="Weighted variance across validation configurations of posterior mean strictly exceeds cutoff",
+        active_components_by_cutoff={str(t): int((variance > t).sum()) for t in cutoffs},
+        active_cutoff_scope="Dimensionless provisional descriptive sensitivity; no physical convergence or useful-latent guarantee")
+
+
 def arguments(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, required=True)
@@ -82,8 +119,19 @@ def arguments(argv=None):
     parser.add_argument("--kind", choices=["dense_bce", "dense_count", "ar_cvae", "ar_baseline"],
                         default="ar_cvae")
     parser.add_argument("--condition-mode", choices=["energy", "composition", "multibin"], default="energy")
+    parser.add_argument("--latent-dim", type=int, default=8,
+                        help="CVAE latent dimension; --kind ar_baseline always has no latent variables")
+    parser.add_argument("--encoder", choices=["dense", "graph"], default="dense")
+    parser.add_argument("--graph-context", action="store_true",
+                        help="Append causal physical-neighbor features to each AR decoder step")
+    parser.add_argument("--graph-cutoff-A", type=float, default=5.0,
+                        help="Periodic parent-neighbor construction cutoff in angstrom")
     parser.add_argument("--condition-schema-in", type=Path,
                         help="Frozen train-fitted energy partition; do not refit its edges")
+    parser.add_argument("--descriptor-schema-in", type=Path,
+                        help="Frozen train-fitted descriptor partition with explicit joint energy support")
+    parser.add_argument("--descriptor-values", type=Path,
+                        help="NPZ structure_ids and descriptor_values; append descriptor low/high one-hot conditions")
     parser.add_argument("--schema-quantiles", type=float, nargs=2, default=[0.2, 0.8])
     parser.add_argument("--teacher", default="uma", help="Declared label teacher; recorded with pinned head/checkpoint identity")
     parser.add_argument("--teacher-head", help="Explicit label head; default omat for UMA, omat_pbe for MACE")
@@ -98,6 +146,8 @@ def arguments(argv=None):
     parser.add_argument("--beta-warmup", type=int, default=20)
     parser.add_argument("--validation-beta", type=float, default=1.,
                         help="Checkpoint selection uses reconstruction plus this times KL; historical fits used 1")
+    parser.add_argument("--selection-betas", type=float, nargs="+", default=[1., .1],
+                        help="Save independent best checkpoints for these validation rules on one training trajectory")
     parser.add_argument("--max-updates", type=int, default=None,
                         help="Optional exact optimizer-update budget for controlled ablations")
     parser.add_argument("--patience", type=int, default=15)
@@ -119,6 +169,15 @@ def main(argv=None):
     assert a.beta_final >= 0 and a.beta_warmup > 0 and a.max_seconds > 0
     assert a.patience > 0 and a.minimum_epochs > 0
     assert a.validation_beta >= 0
+    if a.kind != "ar_baseline" and a.latent_dim < 1:
+        raise ValueError("A CVAE needs latent_dim>=1; use --kind ar_baseline for the no-latent AR control")
+    if a.kind == "ar_baseline" and a.encoder != "dense":
+        raise ValueError("The no-latent AR control has no graph encoder")
+    if not math.isfinite(a.graph_cutoff_A) or a.graph_cutoff_A <= 0:
+        raise ValueError("Graph cutoff must be finite and positive angstrom")
+    selection_betas = sorted(set([a.validation_beta] + a.selection_betas), reverse=True)
+    for selection_beta in selection_betas:
+        selection_checkpoint_name(selection_beta)
     assert a.max_updates is None or a.max_updates > 0
     a.output_dir.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
@@ -160,6 +219,7 @@ def main(argv=None):
     assert len(train) > 0 and len(val) > 0
     with np.load(a.parent, allow_pickle=False) as archive:
         perms = archive["permutations"]
+        parent_arrays = {key: archive[key] for key in archive.files}
     assert perms.ndim == 2 and perms.shape[1] == n_sites
     assert np.array_equal(np.sort(perms, axis=1), np.tile(np.arange(n_sites), (len(perms), 1)))
     inv = torch.as_tensor(np.argsort(perms, axis=1), device=a.device)
@@ -196,6 +256,41 @@ def main(argv=None):
     save_schema(schema, a.output_dir / "condition_schema.json")
     conditions = encode_observations(schema, d["n_Li"], d["energy_eV_atom"], mode=a.condition_mode)
     observed_bins = classify(schema, d["n_Li"], d["energy_eV_atom"])
+    descriptor_schema = None
+    descriptor_values = None
+    if a.descriptor_schema_in is not None and a.descriptor_values is None:
+        raise ValueError("A descriptor schema requires aligned --descriptor-values")
+    if a.descriptor_values is not None:
+        if a.condition_mode != "multibin":
+            raise ValueError("The descriptor pilot extends multibin energy conditions explicitly")
+        from .. import descriptor as descriptor_module
+        with np.load(a.descriptor_values, allow_pickle=False) as archive:
+            ids = archive["structure_ids"].astype(str)
+            values = archive["descriptor_values"].astype(float)
+            descriptor_provenance = {key: str(np.asarray(archive[key]).item())
+                for key in ["parent_sha256", "parent_hash", "graph_hash"] if key in archive}
+        if descriptor_provenance.get("parent_sha256", sha256(a.parent)) != sha256(a.parent):
+            raise ValueError("Descriptor labels belong to a different parent source")
+        if ids.ndim != 1 or values.shape != ids.shape or len(set(ids.tolist())) != len(ids):
+            raise ValueError("Descriptor values need unique structure_ids and one scalar per row")
+        if not np.isfinite(values).all():
+            raise ValueError("Descriptor observations must be finite")
+        lookup = dict(zip(ids.tolist(), values.tolist()))
+        try:
+            descriptor_values = np.asarray([lookup[str(s)] for s in d["structure_ids"]], dtype=float)
+        except KeyError as failure:
+            raise ValueError("Descriptor labels do not cover every retained training/validation/test identity") from failure
+        descriptor_schema = (descriptor_module.load_schema(a.descriptor_schema_in)
+            if a.descriptor_schema_in is not None else
+            descriptor_module.fit_descriptor_schema(descriptor_values, d["n_Li"], observed_bins, splits,
+                parent_hash=descriptor_provenance.get("parent_hash"), graph_hash=descriptor_provenance.get("graph_hash")))
+        for key in ["parent_hash", "graph_hash"]:
+            expected = descriptor_schema.get("provenance", {}).get(key)
+            if expected is not None and descriptor_provenance.get(key) != expected:
+                raise ValueError("Descriptor observations and fitted schema have different " + key)
+        descriptor_module.save_schema(descriptor_schema, a.output_dir / "descriptor_schema.json")
+        extra = descriptor_module.encode_observations(descriptor_schema, d["n_Li"], observed_bins, descriptor_values)
+        conditions = np.concatenate((conditions, extra), axis=-1)
     unsupported_observations = {split: sum(
         label not in schema["compositions"][str(int(n))]["supported_bins"]
         for n, label, actual in zip(d["n_Li"], observed_bins, splits) if actual == split)
@@ -225,12 +320,28 @@ def main(argv=None):
     w = torch.as_tensor(weights, dtype=torch.float32, device=a.device)
     train_t = torch.as_tensor(train, device=a.device)
     val_t = torch.as_tensor(val, device=a.device)
-    model = make_model(a.kind, n_sites=n_sites, cond_dim=conditions.shape[1]).to(a.device)
+    graph_data = None
+    if a.encoder == "graph" or a.graph_context:
+        from ..parent_spec import ParentSpec
+        from ..graph import build_periodic_graph
+        parent_spec = ParentSpec.from_legacy(parent_arrays, source_sha256=sha256(a.parent))
+        graph_data = build_periodic_graph(parent_spec, cutoff_A=a.graph_cutoff_A).to_dict()
+    model = make_model(a.kind, n_sites=n_sites, cond_dim=conditions.shape[1],
+                       latent_dim=a.latent_dim, encoder_kind=a.encoder,
+                       graph_data=graph_data, graph_context=a.graph_context).to(a.device)
     if a.warm_start:
         checkpoint = trusted_checkpoint(a.warm_start, a.device)
         prior_cfg = checkpoint.get("configuration", {})
         if prior_cfg.get("condition_dim", model.condition_dim) != model.condition_dim:
             raise ValueError("Warm-start condition dimensions differ; binary weights cannot silently become multibin weights")
+        if prior_cfg.get("latent_dim", 8) != model.latent_dim:
+            raise ValueError("Warm-start latent dimensions differ")
+        if prior_cfg.get("n_sites", 48) != n_sites:
+            raise ValueError("Warm-start parent site dimensions differ")
+        if prior_cfg.get("encoder_kind", "dense") != a.encoder or prior_cfg.get("graph_context", False) != a.graph_context:
+            raise ValueError("Warm-start graph architecture differs")
+        if prior_cfg.get("parent_sha256") not in {None, sha256(a.parent)}:
+            raise ValueError("Warm-start parent identity differs")
         model.load_state_dict(checkpoint["state_dict"], strict=True)
     optimizer = torch.optim.Adam(model.parameters(), lr=a.learning_rate)
     noise_generator = torch.Generator(device=a.device).manual_seed(a.seed + 8191)
@@ -238,8 +349,11 @@ def main(argv=None):
                                    generator=noise_generator, device=a.device)
     exact_count = a.kind != "dense_bce"
     metadata = dict(
-        kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
+        model_format_version=2, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
         n_sites=n_sites, latent_dim=model.latent_dim, seed=a.seed, counts=a.counts,
+        hidden_dim=64, parameter_count=sum(p.numel() for p in model.parameters()),
+        encoder_kind=a.encoder, graph_context=a.graph_context, graph=graph_data,
+        graph_cutoff_A=a.graph_cutoff_A if graph_data is not None else None,
         train_rows=len(train), val_rows=len(val), test_rows=len(test),
         excluded_split_rows=int(len(x) - len(train) - len(val) - len(test)),
         data=str(a.data.resolve()), data_sha256=sha256(a.data),
@@ -247,6 +361,10 @@ def main(argv=None):
         trainer_sha256=sha256(__file__), model_source_sha256=sha256(HERE / "models.py"),
         source_id_sha256=hashlib.sha256("\n".join(d["structure_ids"].tolist()).encode()).hexdigest(),
         condition_stats=statistics, condition_schema=schema,
+        descriptor_schema=descriptor_schema,
+        descriptor_condition_dim=0 if descriptor_schema is None else 2,
+        descriptor_values_source=None if a.descriptor_values is None else dict(path=str(a.descriptor_values.resolve()), sha256=sha256(a.descriptor_values)),
+        descriptor_schema_source=None if a.descriptor_schema_in is None else dict(path=str(a.descriptor_schema_in.resolve()), sha256=sha256(a.descriptor_schema_in)),
         condition_schema_id=schema_identity(schema), split_sha256=split_hash,
         observed_rows_outside_training_bin_support=unsupported_observations,
         condition_schema_source=None if a.condition_schema_in is None else dict(path=str(a.condition_schema_in.resolve()), sha256=sha256(a.condition_schema_in)),
@@ -256,7 +374,7 @@ def main(argv=None):
         energy_condition="Versioned train-only composition-specific energy partition; exact ties retained; encoder mode recorded separately",
         orientation=a.orientation, canonicalization="Exact minimum vacancy bit code under supplied parent permutations",
         symmetry_augmentation="Random retained parent permutation on train batches only" if a.orientation == "augment" else "None; one canonical orientation per orbit",
-        class_balance=a.class_balance, class_balance_scope="Train only within each composition and actual nonempty encoded classes; keeps total base weight",
+        class_balance=a.class_balance, class_balance_scope="Train only within each composition and actual nonempty energy classes; descriptor classes are not separately reweighted; keeps total base weight",
         input_weight_scope="Inherited row weights; normalized to mean 1 over train rows",
         count_likelihood=exact_count, beta_final=a.beta_final, beta_warmup_epochs=a.beta_warmup,
         maximum_epochs=a.epochs, minimum_epochs=a.minimum_epochs, early_stop_patience=a.patience,
@@ -264,6 +382,10 @@ def main(argv=None):
         validation_samples=a.validation_samples, validation_noise="Fixed seeded standard-normal samples; no train RNG consumption",
         checkpoint_selection="Minimum validation weighted reconstruction plus validation_beta*KL, within this model likelihood only",
         validation_beta=a.validation_beta, maximum_updates=a.max_updates,
+        saved_checkpoint_selection_betas=selection_betas,
+        KL_convention="Per-row sum across latent dimensions, then row-weighted mean; never divided by latent dimension in training",
+        latent_activity_cutoffs=[0.001, 0.01, 0.1],
+        latent_activity_scope="Descriptive VAL posterior-mean variance sensitivity; no test rows, not physical convergence",
         warm_start=None if a.warm_start is None else dict(path=str(a.warm_start.resolve()), sha256=sha256(a.warm_start)),
         torch=torch.__version__, numpy=np.__version__, dtype="float32", tf32=False,
         device=a.device, gpu=torch.cuda.get_device_name() if a.device == "cuda" else None,
@@ -273,6 +395,7 @@ def main(argv=None):
     history = []
     best = float("inf")
     best_epoch = 0
+    selections = {b: dict(best=float("inf"), epoch=0) for b in selection_betas}
     stop_reason = "maximum_epochs"
     updates = 0
     for epoch in range(1, a.epochs + 1):
@@ -298,19 +421,23 @@ def main(argv=None):
             torch.nn.utils.clip_grad_norm_(model.parameters(), 10)
             optimizer.step()
             updates += 1
-            totals += np.array([float((objective * w[ids]).sum()),
-                                float((reconstruction * w[ids]).sum()),
-                                float((kl * w[ids]).sum()), float(w[ids].sum())])
+            totals += np.array([float((objective * w[ids]).sum().detach()),
+                                float((reconstruction * w[ids]).sum().detach()),
+                                float((kl * w[ids]).sum().detach()), float(w[ids].sum())])
             if a.max_updates is not None and updates >= a.max_updates:
                 break
         model.eval()
         val_reconstruction = 0.0
         val_kl = 0.0
         val_weight = 0.0
+        latent_mu, latent_logvar, latent_weights = [], [], []
         with torch.no_grad():
             for start in range(0, len(val_t), a.batch_size):
                 ids = val_t[start:start + a.batch_size]
                 mu, logvar = model.encode(x[ids], c[ids])
+                latent_mu.append(mu)
+                latent_logvar.append(logvar)
+                latent_weights.append(w[ids])
                 kl = gaussian_kl(mu, logvar)
                 rec = torch.zeros(len(ids), device=a.device)
                 for eps in validation_noise[:, start:start + len(ids)]:
@@ -328,12 +455,36 @@ def main(argv=None):
                    train_reconstruction=totals[1] / totals[3], train_KL=totals[2] / totals[3],
                    val_objective=objective, val_reconstruction=val_reconstruction,
                    val_KL=val_kl, elapsed_seconds=time.perf_counter() - started)
+        for selection_beta in selection_betas:
+            row["val_objective_beta_" + format(selection_beta, ".12g").replace(".", "p")] = val_reconstruction + selection_beta * val_kl
         history.append(row)
+        with torch.no_grad():
+            all_mu, all_logvar, all_weights = torch.cat(latent_mu), torch.cat(latent_logvar), torch.cat(latent_weights)
+            latent_record = dict(epoch=epoch, optimizer_updates=updates,
+                                 pooled=latent_statistics(all_mu, all_logvar, all_weights),
+                                 by_composition={})
+            for n in a.counts:
+                take = torch.as_tensor(d["n_Li"][val] == n, device=a.device)
+                if bool(take.any()):
+                    latent_record["by_composition"][str(n)] = latent_statistics(all_mu[take], all_logvar[take], all_weights[take])
+        with (a.output_dir / "latent_history.jsonl").open("a") as handle:
+            handle.write(json.dumps(latent_record) + "\n")
+        for selection_beta in selection_betas:
+            score = val_reconstruction + selection_beta * val_kl
+            if score < selections[selection_beta]["best"] - 1e-4:
+                selections[selection_beta] = dict(best=score, epoch=epoch)
+                selected_metadata = {**metadata, "selected_validation_beta": selection_beta}
+                checkpoint = dict(state_dict=model.state_dict(), configuration=selected_metadata,
+                                  epoch=epoch, optimizer_updates=updates, val_objective=score,
+                                  selection_beta=selection_beta, latent_statistics=latent_record)
+                torch.save(checkpoint, a.output_dir / selection_checkpoint_name(selection_beta))
+                (a.output_dir / (selection_checkpoint_name(selection_beta) + ".latent.json")).write_text(json.dumps(latent_record, indent=2) + "\n")
         if objective < best - 1e-4:
             best = objective
             best_epoch = epoch
-            torch.save(dict(state_dict=model.state_dict(), configuration=metadata,
-                            epoch=epoch, val_objective=best), a.output_dir / "best.pt")
+            torch.save(dict(state_dict=model.state_dict(), configuration={**metadata, "selected_validation_beta": a.validation_beta},
+                            epoch=epoch, optimizer_updates=updates, val_objective=best,
+                            selection_beta=a.validation_beta, latent_statistics=latent_record), a.output_dir / "best.pt")
         with (a.output_dir / "history.csv").open("w", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=list(row))
             writer.writeheader()
@@ -352,6 +503,9 @@ def main(argv=None):
                    completed_epochs=len(history), optimizer_updates=updates, best_epoch=best_epoch,
                    best_val_objective=best, training_seconds=time.perf_counter() - started,
                    checkpoint_sha256=sha256(a.output_dir / "best.pt"),
+                   parameter_count=metadata["parameter_count"], latent_dim=model.latent_dim,
+                   selection_checkpoints={str(b): dict(epoch=selections[b]["epoch"], val_objective=selections[b]["best"],
+                       filename=selection_checkpoint_name(b), sha256=sha256(a.output_dir / selection_checkpoint_name(b))) for b in selection_betas},
                    train_rows=len(train), val_rows=len(val), test_rows=len(test),
                    heldout_test_evaluated=False,
                    generation_quality="Requires new frozen MLIP-oracle proposal evaluation; validation fit is not discovery utility")

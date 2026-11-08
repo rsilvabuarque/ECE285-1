@@ -1,0 +1,10 @@
+{
+  "status": "FROZEN_BEFORE_GRAPH_FITS",
+  "encoder": "graph",
+  "causal_decoder_features": true,
+  "fit_seeds": [
+    20261106
+  ],
+  "control": "graph_encoder seed20261106; same selectedlatent/policy/updates; addscausalphysicalcontext",
+  "scope": "Single-fit pilot, not a repeated-family improvement claim; decoderfeatures are fixedgraph summaries, not a learned message-passing decoder"
+}

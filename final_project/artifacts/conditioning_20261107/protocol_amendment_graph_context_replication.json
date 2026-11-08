@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_ADDITIONAL_GRAPH_CONTEXT_FITS",
+  "created_UTC": "2026-11-08T03:42:24.287646+00:00",
+  "original_protocol_sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+  "authority": "User TXT section2 caps CORE experiment program at30 full training trajectories; section9 editor is a subsequent optional extension",
+  "independent_review": "next_graph_parent verified literal source section2 line59 and section9 line159",
+  "repair": "Original bootstrap maximum_full_training_trajectories30 counted optional editor too. Clarify phase-specific user scope rather than silently relaxing a scientific success rule.",
+  "core_full_fit_cap": 30,
+  "core_full_fits_before_replication": 26,
+  "additional_core_graph_context_fits": 2,
+  "planned_core_full_fits": 28,
+  "planned_optional_editor_full_fits": 3,
+  "planned_all_full_fits": 31,
+  "changed_factor": "Replicate identical graph encoder+causal decoder context design at fitseeds20261107/20261108; latent4/policy/4000updates unchanged",
+  "reason": "Single development pilot59.0278% balanced yield versus encoder-only34.4907%; replicate before retaining any family improvement claim",
+  "unchanged": [
+    "protected orbit roles",
+    "training-only thresholds",
+    "all-attempt success metrics",
+    "untouched new final boundary",
+    "resource authorization",
+    "no new DFT or MLIPfine-tuning"
+  ],
+  "final_attempts_per_composition_bin_fit": 128,
+  "final_primary_attempts": 34560,
+  "final_MACE_audit_attempts": 20736,
+  "editor_gate": "Required reviewable compiled packet first; editor still3 seeds"
+}

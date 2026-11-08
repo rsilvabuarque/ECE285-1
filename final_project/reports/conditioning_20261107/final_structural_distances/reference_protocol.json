@@ -1,0 +1,19 @@
+{
+  "status": "FROZEN_BEFORE_DISTANCE_COMPUTATION",
+  "namespace": "conditioning-final-distance-reference-20261107-v1",
+  "selection": "Lowest SHA256(namespace|parent_sha256|count|canonicalkey), TRAINonly",
+  "reference_rows": 3072,
+  "reference_size_per_count": {
+    "12": 1024,
+    "24": 1024,
+    "36": 1024
+  },
+  "training_rows_per_count": {
+    "12": 13332,
+    "24": 13546,
+    "36": 13279
+  },
+  "reference_sha256": "958be777eaa7e17c757d123b045847baa7a68fbfe9582d0fb991860d53fb08b7",
+  "protected_training_data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+  "energy_fields_read": 0
+}

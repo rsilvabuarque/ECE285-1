@@ -1,0 +1,990 @@
+{
+  "status": "PASS",
+  "scope": "Confirmed DEVELOPMENT only",
+  "conditions": [
+    {
+      "method": "dense",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "dense",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.16868077842133178,
+          "mean_absolute_shift_meV_atom": 1.4767534982609483,
+          "fraction_positive_shift": 0.484375,
+          "mean_Hamming": 4.5625,
+          "same_orbit_fraction": 0.052083333333333336
+        },
+        {
+          "method": "dense",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.1525525721624519,
+          "mean_absolute_shift_meV_atom": 1.7493601989586558,
+          "fraction_positive_shift": 0.4583333333333333,
+          "mean_Hamming": 5.052083333333333,
+          "same_orbit_fraction": 0.057291666666666664
+        },
+        {
+          "method": "dense",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.0937554057193248,
+          "mean_absolute_shift_meV_atom": 0.9915445973874882,
+          "fraction_positive_shift": 0.3541666666666667,
+          "mean_Hamming": 3.1458333333333335,
+          "same_orbit_fraction": 0.2760416666666667
+        }
+      ],
+      "mean_shift_meV_atom": 0.025875733153481642,
+      "mean_absolute_shift_meV_atom": 1.4058860982023642,
+      "fraction_positive_shift": 0.4322916666666667,
+      "mean_Hamming": 4.253472222222222,
+      "same_orbit_fraction": 0.12847222222222224
+    },
+    {
+      "method": "dense",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "dense",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.23534505209715784,
+          "mean_absolute_shift_meV_atom": 1.0286311098929672,
+          "fraction_positive_shift": 0.3333333333333333,
+          "mean_Hamming": 2.65625,
+          "same_orbit_fraction": 0.296875
+        },
+        {
+          "method": "dense",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": -0.2547698559839477,
+          "mean_absolute_shift_meV_atom": 1.5173592494110248,
+          "fraction_positive_shift": 0.3802083333333333,
+          "mean_Hamming": 4.552083333333333,
+          "same_orbit_fraction": 0.13541666666666666
+        },
+        {
+          "method": "dense",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.08494669187025332,
+          "mean_absolute_shift_meV_atom": 1.3293507950753782,
+          "fraction_positive_shift": 0.4322916666666667,
+          "mean_Hamming": 3.6145833333333335,
+          "same_orbit_fraction": 0.18229166666666666
+        }
+      ],
+      "mean_shift_meV_atom": -0.13505607207028406,
+      "mean_absolute_shift_meV_atom": 1.2917803847931235,
+      "fraction_positive_shift": 0.3819444444444444,
+      "mean_Hamming": 3.607638888888889,
+      "same_orbit_fraction": 0.20486111111111108
+    },
+    {
+      "method": "graph_context",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_context",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 5.075987095184498,
+          "mean_absolute_shift_meV_atom": 5.086906230524217,
+          "fraction_positive_shift": 0.9791666666666666,
+          "mean_Hamming": 6.708333333333333,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "graph_context",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 5.177917657747463,
+          "mean_absolute_shift_meV_atom": 5.203032857321756,
+          "fraction_positive_shift": 0.96875,
+          "mean_Hamming": 6.489583333333333,
+          "same_orbit_fraction": 0.005208333333333333
+        },
+        {
+          "method": "graph_context",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 5.535611634036134,
+          "mean_absolute_shift_meV_atom": 5.559146267478721,
+          "fraction_positive_shift": 0.9739583333333334,
+          "mean_Hamming": 6.78125,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": 5.263172128989365,
+      "mean_absolute_shift_meV_atom": 5.283028451774897,
+      "fraction_positive_shift": 0.9739583333333334,
+      "mean_Hamming": 6.659722222222221,
+      "same_orbit_fraction": 0.001736111111111111
+    },
+    {
+      "method": "graph_context",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_context",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 2.0212318851257396,
+          "mean_absolute_shift_meV_atom": 2.164540151463367,
+          "fraction_positive_shift": 0.8489583333333334,
+          "mean_Hamming": 3.5208333333333335,
+          "same_orbit_fraction": 0.036458333333333336
+        },
+        {
+          "method": "graph_context",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 2.13704674397489,
+          "mean_absolute_shift_meV_atom": 2.2268804129643667,
+          "fraction_positive_shift": 0.859375,
+          "mean_Hamming": 3.3020833333333335,
+          "same_orbit_fraction": 0.07291666666666667
+        },
+        {
+          "method": "graph_context",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 2.1412793071829603,
+          "mean_absolute_shift_meV_atom": 2.281703977615068,
+          "fraction_positive_shift": 0.8489583333333334,
+          "mean_Hamming": 3.7083333333333335,
+          "same_orbit_fraction": 0.03125
+        }
+      ],
+      "mean_shift_meV_atom": 2.099852645427863,
+      "mean_absolute_shift_meV_atom": 2.2243748473476006,
+      "fraction_positive_shift": 0.8524305555555557,
+      "mean_Hamming": 3.5104166666666665,
+      "same_orbit_fraction": 0.046875
+    },
+    {
+      "method": "graph_encoder",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 0.3062503329847403,
+          "mean_absolute_shift_meV_atom": 1.1810073342849725,
+          "fraction_positive_shift": 0.4739583333333333,
+          "mean_Hamming": 2.3958333333333335,
+          "same_orbit_fraction": 0.1875
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.21050342241288786,
+          "mean_absolute_shift_meV_atom": 1.0561063283510466,
+          "fraction_positive_shift": 0.484375,
+          "mean_Hamming": 2.3020833333333335,
+          "same_orbit_fraction": 0.19791666666666666
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.26133668765713586,
+          "mean_absolute_shift_meV_atom": 0.9591772399300629,
+          "fraction_positive_shift": 0.4427083333333333,
+          "mean_Hamming": 2.0,
+          "same_orbit_fraction": 0.23958333333333334
+        }
+      ],
+      "mean_shift_meV_atom": 0.2593634810182546,
+      "mean_absolute_shift_meV_atom": 1.0654303008553605,
+      "fraction_positive_shift": 0.46701388888888884,
+      "mean_Hamming": 2.232638888888889,
+      "same_orbit_fraction": 0.20833333333333334
+    },
+    {
+      "method": "graph_encoder",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 0.1087766627884355,
+          "mean_absolute_shift_meV_atom": 0.587467708656526,
+          "fraction_positive_shift": 0.2708333333333333,
+          "mean_Hamming": 1.125,
+          "same_orbit_fraction": 0.5104166666666666
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.21731568825020717,
+          "mean_absolute_shift_meV_atom": 0.5751626786443947,
+          "fraction_positive_shift": 0.3072916666666667,
+          "mean_Hamming": 1.1354166666666667,
+          "same_orbit_fraction": 0.5052083333333334
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.03613060386740974,
+          "mean_absolute_shift_meV_atom": 0.5147888669176232,
+          "fraction_positive_shift": 0.22395833333333334,
+          "mean_Hamming": 1.0833333333333333,
+          "same_orbit_fraction": 0.5520833333333334
+        }
+      ],
+      "mean_shift_meV_atom": 0.12074098496868413,
+      "mean_absolute_shift_meV_atom": 0.5591397514061813,
+      "fraction_positive_shift": 0.2673611111111111,
+      "mean_Hamming": 1.1145833333333333,
+      "same_orbit_fraction": 0.5225694444444445
+    },
+    {
+      "method": "mutation",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "mutation",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 4.635413994710125,
+          "mean_absolute_shift_meV_atom": 4.779172320197718,
+          "fraction_positive_shift": 0.9322916666666666,
+          "mean_Hamming": 18.333333333333332,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "mutation",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 4.668326024159943,
+          "mean_absolute_shift_meV_atom": 4.7960542160457775,
+          "fraction_positive_shift": 0.9479166666666666,
+          "mean_Hamming": 18.760416666666668,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "mutation",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 4.541052875783001,
+          "mean_absolute_shift_meV_atom": 4.730943060575718,
+          "fraction_positive_shift": 0.9270833333333334,
+          "mean_Hamming": 18.21875,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": 4.614930964884356,
+      "mean_absolute_shift_meV_atom": 4.768723198939738,
+      "fraction_positive_shift": 0.9357638888888888,
+      "mean_Hamming": 18.4375,
+      "same_orbit_fraction": 0.0
+    },
+    {
+      "method": "mutation",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "mutation",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 1.660218730937487,
+          "mean_absolute_shift_meV_atom": 2.3444305252863695,
+          "fraction_positive_shift": 0.7760416666666666,
+          "mean_Hamming": 17.84375,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "mutation",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 2.1960068438388234,
+          "mean_absolute_shift_meV_atom": 2.8243659207507767,
+          "fraction_positive_shift": 0.7708333333333334,
+          "mean_Hamming": 17.947916666666668,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "mutation",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 1.8288210039927681,
+          "mean_absolute_shift_meV_atom": 2.465447908374774,
+          "fraction_positive_shift": 0.765625,
+          "mean_Hamming": 18.177083333333332,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": 1.8950155262563595,
+      "mean_absolute_shift_meV_atom": 2.544748118137307,
+      "fraction_positive_shift": 0.7708333333333334,
+      "mean_Hamming": 17.989583333333332,
+      "same_orbit_fraction": 0.0
+    },
+    {
+      "method": "symmetry",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "symmetry",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 0.004608727414506797,
+          "mean_absolute_shift_meV_atom": 0.9237450735402423,
+          "fraction_positive_shift": 0.3072916666666667,
+          "mean_Hamming": 2.4583333333333335,
+          "same_orbit_fraction": 0.3802083333333333
+        },
+        {
+          "method": "symmetry",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.10602501108564662,
+          "mean_absolute_shift_meV_atom": 1.4389100674009105,
+          "fraction_positive_shift": 0.4114583333333333,
+          "mean_Hamming": 3.7604166666666665,
+          "same_orbit_fraction": 0.19270833333333334
+        },
+        {
+          "method": "symmetry",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.032334416073633486,
+          "mean_absolute_shift_meV_atom": 1.671653424000552,
+          "fraction_positive_shift": 0.5,
+          "mean_Hamming": 5.916666666666667,
+          "same_orbit_fraction": 0.03125
+        }
+      ],
+      "mean_shift_meV_atom": 0.02609977414217331,
+      "mean_absolute_shift_meV_atom": 1.344769521647235,
+      "fraction_positive_shift": 0.40625,
+      "mean_Hamming": 4.045138888888889,
+      "same_orbit_fraction": 0.20138888888888887
+    },
+    {
+      "method": "symmetry",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "symmetry",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.016684932809392834,
+          "mean_absolute_shift_meV_atom": 1.472146368578527,
+          "fraction_positive_shift": 0.4322916666666667,
+          "mean_Hamming": 4.104166666666667,
+          "same_orbit_fraction": 0.109375
+        },
+        {
+          "method": "symmetry",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": -0.16768111382157538,
+          "mean_absolute_shift_meV_atom": 1.3427337990152832,
+          "fraction_positive_shift": 0.4114583333333333,
+          "mean_Hamming": 4.197916666666667,
+          "same_orbit_fraction": 0.18229166666666666
+        },
+        {
+          "method": "symmetry",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.12714028256042195,
+          "mean_absolute_shift_meV_atom": 1.45170167760926,
+          "fraction_positive_shift": 0.359375,
+          "mean_Hamming": 3.9479166666666665,
+          "same_orbit_fraction": 0.20833333333333334
+        }
+      ],
+      "mean_shift_meV_atom": -0.10383544306379673,
+      "mean_absolute_shift_meV_atom": 1.4221939484010235,
+      "fraction_positive_shift": 0.4010416666666667,
+      "mean_Hamming": 4.083333333333333,
+      "same_orbit_fraction": 0.16666666666666666
+    },
+    {
+      "method": "uniform",
+      "comparison": "low_to_high",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "uniform",
+          "comparison": "low_to_high",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.17172354945646506,
+          "mean_absolute_shift_meV_atom": 2.727487930352453,
+          "fraction_positive_shift": 0.4479166666666667,
+          "mean_Hamming": 19.979166666666668,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "uniform",
+          "comparison": "low_to_high",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.16104689215528747,
+          "mean_absolute_shift_meV_atom": 2.7020605657516135,
+          "fraction_positive_shift": 0.5364583333333334,
+          "mean_Hamming": 19.697916666666668,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "uniform",
+          "comparison": "low_to_high",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.29915770056492447,
+          "mean_absolute_shift_meV_atom": 2.7699718047181627,
+          "fraction_positive_shift": 0.484375,
+          "mean_Hamming": 19.979166666666668,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": -0.10327811928870068,
+      "mean_absolute_shift_meV_atom": 2.73317343360741,
+      "fraction_positive_shift": 0.4895833333333333,
+      "mean_Hamming": 19.885416666666668,
+      "same_orbit_fraction": 0.0
+    },
+    {
+      "method": "uniform",
+      "comparison": "low_to_middle",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "uniform",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.07044302080271014,
+          "mean_absolute_shift_meV_atom": 2.867355916122745,
+          "fraction_positive_shift": 0.4739583333333333,
+          "mean_Hamming": 19.75,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "uniform",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.19797522629734035,
+          "mean_absolute_shift_meV_atom": 2.8186130049326352,
+          "fraction_positive_shift": 0.46875,
+          "mean_Hamming": 19.552083333333332,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "uniform",
+          "comparison": "low_to_middle",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.20986414485451668,
+          "mean_absolute_shift_meV_atom": 2.648409808188928,
+          "fraction_positive_shift": 0.4947916666666667,
+          "mean_Hamming": 20.0,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": -0.027443979786628825,
+      "mean_absolute_shift_meV_atom": 2.778126243081436,
+      "fraction_positive_shift": 0.4791666666666667,
+      "mean_Hamming": 19.76736111111111,
+      "same_orbit_fraction": 0.0
+    }
+  ],
+  "latents": [
+    {
+      "method": "dense",
+      "comparison": "change_latent_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "dense",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.1091025400619533,
+          "mean_absolute_shift_meV_atom": 2.225277398493814,
+          "fraction_positive_shift": 0.53125,
+          "mean_Hamming": 13.083333333333334,
+          "same_orbit_fraction": 0.005208333333333333
+        },
+        {
+          "method": "dense",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.06650387847374299,
+          "mean_absolute_shift_meV_atom": 2.422489510153216,
+          "fraction_positive_shift": 0.5104166666666666,
+          "mean_Hamming": 12.760416666666666,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "dense",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.32904945808664526,
+          "mean_absolute_shift_meV_atom": 2.17225890954006,
+          "fraction_positive_shift": 0.4427083333333333,
+          "mean_Hamming": 12.322916666666666,
+          "same_orbit_fraction": 0.005208333333333333
+        }
+      ],
+      "mean_shift_meV_atom": -0.12388270655828519,
+      "mean_absolute_shift_meV_atom": 2.273341939395697,
+      "fraction_positive_shift": 0.4947916666666666,
+      "mean_Hamming": 12.722222222222221,
+      "same_orbit_fraction": 0.003472222222222222
+    },
+    {
+      "method": "graph_context",
+      "comparison": "change_latent_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_context",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": -0.03339546075721104,
+          "mean_absolute_shift_meV_atom": 0.2300763746396021,
+          "fraction_positive_shift": 0.140625,
+          "mean_Hamming": 0.78125,
+          "same_orbit_fraction": 0.6927083333333334
+        },
+        {
+          "method": "graph_context",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": -0.037324159265444044,
+          "mean_absolute_shift_meV_atom": 0.29290691491548154,
+          "fraction_positive_shift": 0.15625,
+          "mean_Hamming": 0.71875,
+          "same_orbit_fraction": 0.703125
+        },
+        {
+          "method": "graph_context",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.08043629065718205,
+          "mean_absolute_shift_meV_atom": 0.2878734419635061,
+          "fraction_positive_shift": 0.19791666666666666,
+          "mean_Hamming": 0.8854166666666666,
+          "same_orbit_fraction": 0.6510416666666666
+        }
+      ],
+      "mean_shift_meV_atom": 0.00323889021150899,
+      "mean_absolute_shift_meV_atom": 0.2702855771728632,
+      "fraction_positive_shift": 0.16493055555555555,
+      "mean_Hamming": 0.7951388888888888,
+      "same_orbit_fraction": 0.6822916666666666
+    },
+    {
+      "method": "graph_encoder",
+      "comparison": "change_latent_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_encoder",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 0.0841496417448943,
+          "mean_absolute_shift_meV_atom": 0.30465911025549336,
+          "fraction_positive_shift": 0.19791666666666666,
+          "mean_Hamming": 0.6458333333333334,
+          "same_orbit_fraction": 0.6927083333333334
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": -0.03223489585978123,
+          "mean_absolute_shift_meV_atom": 0.3480934539750966,
+          "fraction_positive_shift": 0.14583333333333334,
+          "mean_Hamming": 0.71875,
+          "same_orbit_fraction": 0.671875
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": 0.016117972381629597,
+          "mean_absolute_shift_meV_atom": 0.3737958998957976,
+          "fraction_positive_shift": 0.16145833333333334,
+          "mean_Hamming": 0.6666666666666666,
+          "same_orbit_fraction": 0.703125
+        }
+      ],
+      "mean_shift_meV_atom": 0.022677572755580886,
+      "mean_absolute_shift_meV_atom": 0.3421828213754625,
+      "fraction_positive_shift": 0.1684027777777778,
+      "mean_Hamming": 0.6770833333333334,
+      "same_orbit_fraction": 0.6892361111111112
+    },
+    {
+      "method": "symmetry",
+      "comparison": "change_latent_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "symmetry",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261106",
+          "mean_shift_meV_atom": 0.04418391063050475,
+          "mean_absolute_shift_meV_atom": 2.310413325376103,
+          "fraction_positive_shift": 0.5052083333333334,
+          "mean_Hamming": 14.010416666666666,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "symmetry",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261107",
+          "mean_shift_meV_atom": 0.018671194087933423,
+          "mean_absolute_shift_meV_atom": 2.3723085143174347,
+          "fraction_positive_shift": 0.515625,
+          "mean_Hamming": 12.895833333333334,
+          "same_orbit_fraction": 0.0
+        },
+        {
+          "method": "symmetry",
+          "comparison": "change_latent_same_uniforms",
+          "replicate_id": "20261108",
+          "mean_shift_meV_atom": -0.32790166834432055,
+          "mean_absolute_shift_meV_atom": 2.6533846948818134,
+          "fraction_positive_shift": 0.46875,
+          "mean_Hamming": 14.1875,
+          "same_orbit_fraction": 0.0
+        }
+      ],
+      "mean_shift_meV_atom": -0.08834885454196079,
+      "mean_absolute_shift_meV_atom": 2.4453688448584505,
+      "fraction_positive_shift": 0.49652777777777785,
+      "mean_Hamming": 13.697916666666666,
+      "same_orbit_fraction": 0.0
+    }
+  ],
+  "posterior_prior": [
+    {
+      "method": "dense",
+      "comparison": "posterior_to_prior_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "dense",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261106",
+          "posterior_Hamming": 15.5,
+          "prior_Hamming": 18.166666666666668,
+          "posterior_target_energy_MAE_meV_atom": 3.070136814787738,
+          "prior_target_energy_MAE_meV_atom": 3.0787529706890098
+        },
+        {
+          "method": "dense",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261107",
+          "posterior_Hamming": 16.791666666666668,
+          "prior_Hamming": 18.458333333333332,
+          "posterior_target_energy_MAE_meV_atom": 3.3950404215001284,
+          "prior_target_energy_MAE_meV_atom": 2.7086802966984997
+        },
+        {
+          "method": "dense",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261108",
+          "posterior_Hamming": 15.916666666666666,
+          "prior_Hamming": 19.375,
+          "posterior_target_energy_MAE_meV_atom": 2.673580253974517,
+          "prior_target_energy_MAE_meV_atom": 2.4660320633720185
+        }
+      ],
+      "posterior_Hamming": 16.069444444444446,
+      "prior_Hamming": 18.666666666666668,
+      "posterior_target_energy_MAE_meV_atom": 3.046252496754128,
+      "prior_target_energy_MAE_meV_atom": 2.751155110253176
+    },
+    {
+      "method": "graph_context",
+      "comparison": "posterior_to_prior_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_context",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261106",
+          "posterior_Hamming": 16.541666666666668,
+          "prior_Hamming": 16.541666666666668,
+          "posterior_target_energy_MAE_meV_atom": 2.2668183369348727,
+          "prior_target_energy_MAE_meV_atom": 2.2760547498433445
+        },
+        {
+          "method": "graph_context",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261107",
+          "posterior_Hamming": 16.916666666666668,
+          "prior_Hamming": 16.958333333333332,
+          "posterior_target_energy_MAE_meV_atom": 2.0646171255988928,
+          "prior_target_energy_MAE_meV_atom": 2.001820810676532
+        },
+        {
+          "method": "graph_context",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261108",
+          "posterior_Hamming": 16.875,
+          "prior_Hamming": 16.916666666666668,
+          "posterior_target_energy_MAE_meV_atom": 1.970939646414908,
+          "prior_target_energy_MAE_meV_atom": 1.990216315907123
+        }
+      ],
+      "posterior_Hamming": 16.77777777777778,
+      "prior_Hamming": 16.805555555555557,
+      "posterior_target_energy_MAE_meV_atom": 2.100791702982891,
+      "prior_target_energy_MAE_meV_atom": 2.089363958809
+    },
+    {
+      "method": "graph_encoder",
+      "comparison": "posterior_to_prior_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "graph_encoder",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261106",
+          "posterior_Hamming": 16.75,
+          "prior_Hamming": 16.75,
+          "posterior_target_energy_MAE_meV_atom": 2.9197801958885106,
+          "prior_target_energy_MAE_meV_atom": 2.9342001220974416
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261107",
+          "posterior_Hamming": 17.125,
+          "prior_Hamming": 17.166666666666668,
+          "posterior_target_energy_MAE_meV_atom": 2.7278356323584547,
+          "prior_target_energy_MAE_meV_atom": 2.776254535421352
+        },
+        {
+          "method": "graph_encoder",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261108",
+          "posterior_Hamming": 17.25,
+          "prior_Hamming": 17.25,
+          "posterior_target_energy_MAE_meV_atom": 2.561220840183972,
+          "prior_target_energy_MAE_meV_atom": 2.50621485623546
+        }
+      ],
+      "posterior_Hamming": 17.041666666666668,
+      "prior_Hamming": 17.055555555555557,
+      "posterior_target_energy_MAE_meV_atom": 2.736278889476979,
+      "prior_target_energy_MAE_meV_atom": 2.738889837918084
+    },
+    {
+      "method": "symmetry",
+      "comparison": "posterior_to_prior_same_uniforms",
+      "design_seed_count": 3,
+      "seed_values": [
+        {
+          "method": "symmetry",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261106",
+          "posterior_Hamming": 16.083333333333332,
+          "prior_Hamming": 20.375,
+          "posterior_target_energy_MAE_meV_atom": 3.3687129066448294,
+          "prior_target_energy_MAE_meV_atom": 3.1648539055468827
+        },
+        {
+          "method": "symmetry",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261107",
+          "posterior_Hamming": 17.125,
+          "prior_Hamming": 20.666666666666668,
+          "posterior_target_energy_MAE_meV_atom": 3.3491452961846484,
+          "prior_target_energy_MAE_meV_atom": 3.132929986700931
+        },
+        {
+          "method": "symmetry",
+          "comparison": "posterior_to_prior_same_uniforms",
+          "replicate_id": "20261108",
+          "posterior_Hamming": 16.458333333333332,
+          "prior_Hamming": 20.916666666666668,
+          "posterior_target_energy_MAE_meV_atom": 2.4081021064386774,
+          "prior_target_energy_MAE_meV_atom": 2.708543080695236
+        }
+      ],
+      "posterior_Hamming": 16.555555555555554,
+      "prior_Hamming": 20.652777777777782,
+      "posterior_target_energy_MAE_meV_atom": 3.041986769756052,
+      "prior_target_energy_MAE_meV_atom": 3.0021089909810166
+    }
+  ],
+  "selected_fit_latent_diagnostics": [
+    {
+      "method": "graph_context",
+      "fit": "graph_context_20261106",
+      "fit_seed": 20261106,
+      "latent_dim": 4,
+      "parameters": 37821,
+      "validation_reconstruction_nats": 22.616211035805062,
+      "total_KL_nats": 0.011027365922927856,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "graph_context",
+      "fit": "graph_context_20261107",
+      "fit_seed": 20261107,
+      "latent_dim": 4,
+      "parameters": 37821,
+      "validation_reconstruction_nats": 22.640636010167103,
+      "total_KL_nats": 0.007472129538655281,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "graph_context",
+      "fit": "graph_context_20261108",
+      "fit_seed": 20261108,
+      "latent_dim": 4,
+      "parameters": 37821,
+      "validation_reconstruction_nats": 22.624010362926565,
+      "total_KL_nats": 0.00906995590776205,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "graph_encoder",
+      "fit": "graph_encoder_20261106",
+      "fit_seed": 20261106,
+      "latent_dim": 4,
+      "parameters": 36669,
+      "validation_reconstruction_nats": 23.01444199686682,
+      "total_KL_nats": 0.015049010515213013,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "graph_encoder",
+      "fit": "graph_encoder_20261107",
+      "fit_seed": 20261107,
+      "latent_dim": 4,
+      "parameters": 36669,
+      "validation_reconstruction_nats": 23.019296497508556,
+      "total_KL_nats": 0.010596565902233124,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "graph_encoder",
+      "fit": "graph_encoder_20261108",
+      "fit_seed": 20261108,
+      "latent_dim": 4,
+      "parameters": 36669,
+      "validation_reconstruction_nats": 23.024041879529896,
+      "total_KL_nats": 0.012555096298456192,
+      "active_at_0p001": 0,
+      "active_at_0p01": 0,
+      "active_at_0p1": 0
+    },
+    {
+      "method": "dense",
+      "fit": "latent_d4_20261106",
+      "fit_seed": 20261106,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 17.34117194971185,
+      "total_KL_nats": 11.584275245666504,
+      "active_at_0p001": 4,
+      "active_at_0p01": 4,
+      "active_at_0p1": 3
+    },
+    {
+      "method": "dense",
+      "fit": "latent_d4_20261107",
+      "fit_seed": 20261107,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 16.93254876717586,
+      "total_KL_nats": 11.94508171081543,
+      "active_at_0p001": 4,
+      "active_at_0p01": 4,
+      "active_at_0p1": 3
+    },
+    {
+      "method": "dense",
+      "fit": "latent_d4_20261108",
+      "fit_seed": 20261108,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 16.765623623729113,
+      "total_KL_nats": 11.624883651733398,
+      "active_at_0p001": 4,
+      "active_at_0p01": 3,
+      "active_at_0p1": 3
+    },
+    {
+      "method": "symmetry",
+      "fit": "symmetry_augment_20261106",
+      "fit_seed": 20261106,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 17.094988348883884,
+      "total_KL_nats": 16.77899932861328,
+      "active_at_0p001": 4,
+      "active_at_0p01": 4,
+      "active_at_0p1": 4
+    },
+    {
+      "method": "symmetry",
+      "fit": "symmetry_augment_20261107",
+      "fit_seed": 20261107,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 17.311931108597996,
+      "total_KL_nats": 14.095893859863281,
+      "active_at_0p001": 4,
+      "active_at_0p01": 3,
+      "active_at_0p1": 3
+    },
+    {
+      "method": "symmetry",
+      "fit": "symmetry_augment_20261108",
+      "fit_seed": 20261108,
+      "latent_dim": 4,
+      "parameters": 30793,
+      "validation_reconstruction_nats": 16.300455663629958,
+      "total_KL_nats": 17.695615768432617,
+      "active_at_0p001": 4,
+      "active_at_0p01": 4,
+      "active_at_0p1": 4
+    }
+  ],
+  "weighting": "Average proposal observables within each count, then equal counts within each design seed, then equal design seeds. Seeds are shown; no proposal-level confidence interval.",
+  "energy_units": "meV/atom; positive condition shift means the second requested condition produced higher UMA energy",
+  "active_definition": "Pooled validation posterior-mean variance greater than the descriptive dimensionless cutoff; neither physical accuracy nor a formal information test",
+  "input_hashes": {
+    "paired_conditions.csv": "ea02f39ce4707cdae004bf2267c7b30be11cc2d282574d68743cb89868c4ed7d",
+    "paired_latents.csv": "dafe84621310e3073f7262164b16ea0e2f5d7cb7f1fb1cc4a9eabdfcaa19015b",
+    "posterior_prior_pairs.csv": "eeebdeb4ffa5bf2bf4a35f77dfd6887f891a1348b779e4143a8fce4a32235a65",
+    "selected_latent_diagnostics.csv": "44359360548be8755efb02fff3fc772bf765a2465eabeca4b0382a1cf7c3840f"
+  },
+  "source_sha256": "7983e3f5f25d8d00f623055a26031a6f71553a247cdb9db6c5994780a7d7cca6"
+}

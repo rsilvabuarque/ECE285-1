@@ -5,6 +5,223 @@ campaign are separate experiments. Numerical claims must name the experiment,
 teacher, geometry protocol, reference pool, and novelty boundary. New campaign
 results below use completed score/evaluation receipts and independent raw-input audits.
 
+## Frozen final controlled-study assessment
+
+Development selected graph encoder plus strict-past decoder context before the
+final manifest and 278,382-orbit known-history boundary were frozen. There are
+34,560 final UMA attempts across ten families; a prespecified six-family subset
+of exactly 20,736 identical attempts was also scored by MACE. No final outcome
+changed model selection or thresholds. All attempts are valid exact-count masks;
+there are 27,844 distinct generated orbits across the full pool. Unique proposals
+are not all novel to the frozen history, and attempt counts are not scoring-call
+counts.
+
+| Frozen-final method | UMA balanced useful yield (%) | MACE balanced useful yield (%) | UMA original-q20 low (%) |
+| --- | ---: | ---: | ---: |
+| Dense D4 | 31.05 ±0.81 | 31.25 ±0.99 | 30.30 |
+| Dense + symmetry augmentation | 33.19 ±1.10 | 33.16 ±1.14 | 29.08 |
+| Graph encoder only | 34.43 ±0.18 | 34.55 ±0.09 | 25.09 |
+| Graph encoder + causal context | **62.04 ±1.70** | **63.45 ±1.51** | **63.54** |
+| Uniform | 34.14 ±0.36 | 34.03 ±0.17 | 19.97 |
+| Frozen mutation | 58.62 ±0.51 | 57.29 ±0.78 | 52.52 |
+
+These are equal means over composition/bin cells and then three fit or sampler
+replicates. The ± values are descriptive seed standard deviations. UMA balanced
+gain over mutation is 3.41 percentage points; its requested-low/original-q20 gain
+is 11.02 points. MACE original-q20 low yields are 67.62% for context, 52.95%
+mutation, 20.57% uniform and 34.98% dense D4. MACE labels the same proposals using
+its own training-derived schema; this is a second-teacher audit of an
+UMA-conditioned generator, not another retrained model or independent DFT truth.
+
+Sources: [full UMA summary](../runs/conditioning_20261107/evaluation/final/summary.csv),
+[matched UMA/MACE summary](../runs/conditioning_20261107/evaluation/final_matched/summary.csv),
+[separate matched low metric](../runs/conditioning_20261107/evaluation/final_matched/fixed_q20_low_request.csv),
+and [frozen final protocol](../runs/conditioning_20261107/final_protocol.json).
+The full table also retains D8/16/32 and the no-latent dense AR control; no family
+is omitted from the archived final assessment because of its outcome.
+
+An [independent raw-input checker](../reports/conditioning_20261107/independent_final_metrics/receipt.json)
+recomputed canonical identities with all 192 operations, exact counts, bins,
+novelty and outcomes without the production evaluator helpers. All 16 final
+tables agree: 2,515,436 field checks, zero mismatches, maximum floating difference
+1.11e−16. This is a numerical reproducibility check; it does not make teacher
+energies physically correct or replace the collaborators' assigned checks.
+
+### Structural distance and the limits of a diversity claim
+
+The [label-free distance audit](../reports/conditioning_20261107/final_structural_distances/receipt.json)
+uses all 34,560 attempts. It exactly minimizes site Hamming distance over all 192
+parent operations and a fixed 1024-training-orbit reference per composition.
+Because that reference is a subset, the result is an **upper bound** on distance
+to the full training set; it does not prove a positive full-training distance.
+Means are 6.858 changed sites for context, 6.850 for dense D4, 6.891 for uniform
+and 6.498 for mutation. This comparison does not indicate a substantial neural
+structural-distance gain. Mutation's actual seed/child raw Hamming mean is 4.037
+sites (symmetry-minimized 4.034); all 3456 recorded edits exactly equal twice
+their declared swap count. Distances are site counts, not Å. The audit read no
+energy labels, changed no selection and required no MLIP calls.
+
+The strong conditional response and nearly unused latent pathway described
+below concern the same trained checkpoints. They remain essential qualifications
+of the positive final yield: the benefit of the variational channel is unresolved.
+
+## Controlled-study development evidence (new goal)
+
+The current [frozen protocol](../artifacts/conditioning_20261107/protocol.json)
+and [actual ledger](../reports/conditioning_20261107/experiment_ledger.json)
+keep required, optional and incomplete work separate. This development comparison
+selects training policy; it is not the later final assessment. Previous numerical
+results below retain their own histories, budgets and thresholds.
+
+Six multibin D8 trajectories completed exactly 4,000 updates each: three fit seeds
+with train class balancing off and three with it on. Training beta warms to 0.1.
+Both checkpoint rules are applied to each trajectory, so four policy rows do not
+mean twelve independent full fits.
+
+| Train balancing | Validation selection beta | UMA balanced useful yield (%) | Requested-low/original-q20 yield (%) |
+| --- | ---: | ---: | ---: |
+| Off | 1 | 29.28 ±1.91 | 27.95 |
+| Off | 0.1 | 30.44 ±0.66 | 30.90 |
+| On | 1 | 30.61 ±0.27 | 31.42 |
+| On | 0.1 | **32.12 ±0.63** | 30.73 |
+| Uniform fixed count | — | 33.62 ±0.66 | 21.35 |
+| Frozen bin-seeded mutation | — | **58.97 ±1.91** | **51.74** |
+
+The predeclared rule selects balancing plus validation beta 0.1 by balanced
+requested-bin yield, even though a different rule has the highest requested-low
+CVAE result. The selected CVAE still loses to both controls on balanced yield.
+The ± values are descriptive standard deviations across three fits/sampler
+replicates, not confidence intervals from the proposal draws.
+
+The pool contains 10,368 primary and 3,456 diagnostic attempts, with 12,153 unique
+geometries and complete exact UMA coverage. The initial known history has 239,867
+orbits. There are 11,924 fresh geometry labels and 229 exact certified cache hits;
+actual resource cost is recorded separately by the integrating campaign receipt.
+The generic evaluator's earlier absent-provenance cost field is not used as a
+physical call count; its repaired replay preserves scientific metrics.
+
+Two outcome definitions remain separate. With three exhaustive bins, any
+condition-independent proposal distribution has average hit rate 1/3 before
+novelty filtering: the three class probabilities sum to one. It can therefore
+favor low energies while showing weak balanced control. Novelty/repeats can
+reduce useful yield further. Requested-low enrichment alone does not prove
+reliable low/middle/high controllability.
+
+Paired diagnostics for the selected policy use common latent draws and AR
+uniforms across energy requests. Observed per-seed/per-composition mean high-minus-
+low shifts range from −0.370 to +0.776 meV/atom. Both signs occur. Changing latent
+vectors at fixed uniforms changes 12.26 sites on average; selected validation KL
+is 13.90–15.43 nats and all eight pooled components exceed the descriptive encoded-mean
+variance cutoff 0.01, with six to eight within each composition. This is evidence against complete unused-latent collapse,
+not proof of useful energy targeting. The exact paired tables and fit-manifest-
+scoped plots are under
+[`policy_diagnostics_v2`](../reports/conditioning_20261107/policy_diagnostics_v2/receipt.json).
+
+The latent-size development comparison is now complete. Three fits per new
+size 4/16/32 and three no-latent AR fits completed 4000 updates; D8 reuses the
+selected policy trajectories. All methods were assessed under one new namespace
+and the same 239,867-orbit history. Different D8 yields across these two development
+pools therefore reflect new draws, not another update to its weights.
+
+| Model | Trainable parameters | Balanced UMA yield (%) | Requested-low/original-q20 (%) |
+| --- | ---: | ---: | ---: |
+| CVAE D4 | 30,793 | **32.64 ±0.30** | **33.16** |
+| CVAE D8 | 32,337 | 29.98 ±1.41 | 29.34 |
+| CVAE D16 | 35,425 | 28.82 ±1.83 | 27.43 |
+| CVAE D32 | 41,601 | 32.47 ±0.35 | 31.42 |
+| AR without latent | 14,209 | 34.32 ±0.61 | 22.05 |
+| Uniform | — | 33.04 ±1.84 | 19.62 |
+| Frozen mutation | — | **59.72 ±3.09** | **52.08** |
+
+The dimension rule was frozen before this comparison: choose the smallest size
+within one percentage point of the best balanced mean and two points of the best
+requested-low mean. These are provisional practical margins, not confidence
+intervals or physical convergence tolerances. D4 is selected; the results do not
+justify an automatic D64 extension. All individual seed values are saved in
+[`seed_values.csv`](../reports/conditioning_20261107/latent_development/seed_values.csv).
+Parameter counts include the training encoder; it is absent during prior sampling.
+The AR baseline has the higher observed balanced mean but substantially lower
+low-request yield than D4, and neither matches mutation on both outcomes.
+
+## Completed spatial development comparison
+
+The retained D4/balancing/selection policy is held fixed. All learned variants
+complete 4000 updates per fit. The initial graph-context seed was replicated at
+two further seeds under the pre-final
+[protocol amendment](../artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json),
+bringing the required core to 28 full fits within its 30-fit cap. Optional editor
+fits, if executed later, are separately scoped and are not counted as core fits.
+
+| Method | Balanced UMA useful yield (%) | Requested-low/original-q20 (%) |
+| --- | ---: | ---: |
+| Dense encoder | 31.83 ±1.05 | 29.69 |
+| Dense + symmetry augmentation | 32.12 ±0.97 | 29.34 |
+| Graph encoder only | 34.49 ±1.41 | 24.31 |
+| Graph encoder + causal decoder context | **60.88 ±1.82** | **61.11** |
+| Uniform | 32.75 ±0.50 | 19.79 |
+| Frozen mutation | 58.80 ±0.53 | 50.35 |
+
+Sources are the confirmed development
+[summary](../runs/conditioning_20261107/evaluation/spatial_confirmed/summary.csv),
+[separate low metric](../runs/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv),
+and [seed rows](../runs/conditioning_20261107/evaluation/spatial_confirmed/seed_metrics.csv).
+The three graph-context balanced replicate yields are 59.03/60.94/62.67%; mutation
+gives 58.68/59.38/58.33%. These are three fit/sampler replicates and descriptive
+variation, not a proposal-level confidence interval or an independent final win.
+All rows share the 239,867-orbit history. Reused dense weights were assessed on
+this namespace's draws; their changed numbers are not additional training.
+
+The intervention is graph encoder **plus** causal decoder features versus the
+same graph encoder without those features. It is not a dense-plus-features test.
+The graph-encoder and context models have 36,669 and 37,821 trainable parameters,
+respectively. Symmetry augmentation alone produces only a small observed change.
+The fresh final assessment must be evaluated before making a final-family claim.
+
+### Conditional control improves while latent use diminishes
+
+The confirmed [paired diagnostic receipt](../reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json)
+and [family summary](../reports/conditioning_20261107/spatial_confirmed_diagnostics/family_diagnostic_summary.json)
+retain all seed-level values. Holding latent draws and AR uniforms fixed,
+graph-context high-minus-low requests shift UMA energy upward by 5.263 meV/atom
+on average, with 97.40% positive shifts. Middle-minus-low shifts average
+2.100 meV/atom, positive in 85.24%. Dense D4's means are +0.026/−0.135 meV/atom;
+graph-encoder-only gives +0.259/+0.121. The
+[condition-response plot](../reports/conditioning_20261107/spatial_confirmed_diagnostics/condition_response.pdf)
+shows individual seeds and compositions. Positive energy shifts show that the
+model responds to the requested order; they do not establish correct physical
+energy values or a calibrated probability distribution.
+
+The graph-context checkpoints have validation KL 0.0110/0.00747/0.00907 nats.
+No pooled encoded-mean component exceeds variance 0.001, 0.01 or 0.1. Resampling
+the latent at fixed AR uniforms changes 0.795 sites on average, and 68.23% of pairs
+remain in the same symmetry orbit. Posterior versus prior target Hamming distance
+is 16.78 versus 16.81. The dense D4 model instead has KL 11.58–11.95 nats and
+12.72 changed sites. These combined diagnostics support a nearly unused
+variational pathway for the graph-context model. They do not imply a deterministic
+generator: AR sampling still uses random uniforms. The useful new result is a
+condition-sensitive spatial AR sampler, not demonstrated benefit from its latent
+variables. A matched spatial AR control without a latent is a later discriminating
+test, rather than an already completed comparison.
+
+An independent audit of all three actual trained checkpoints found exact zero
+future-bit gradients, unchanged logits after future-mask changes and agreement
+of teacher-forced and stepwise features within recorded FP32 arithmetic bounds:
+[trained causality receipt](../reports/conditioning_20261107/trained_causality_audit.json).
+The full-mask encoder was forbidden in those decoder tests. This checks the
+tested implementation against a future-target shortcut; it does not certify
+full equivariance, final predictive performance or physical accuracy.
+
+### The second-condition pilot remains negative
+
+One additional fit requested low/high nearest-shell vacancy-pair fractions within
+the middle-energy class. Over six composition/descriptor cells its joint useful
+yield was 28.13%, versus 28.52% for plain CVAE and 44.79% for matched mutation:
+[descriptor summary](../runs/conditioning_20261107/evaluation/descriptor/summary.csv).
+All 2304 attempts are retained. One fit supplies no fit-to-fit uncertainty estimate.
+The descriptor is strongly correlated with energy, including within the middle
+bin; it is a structural-diversity request, not an independent thermodynamic
+objective. The pilot does not support a claimed improvement.
+
 ## Reproduced historical occupancy result
 
 The completed November 6 assessment used 512 attempts per method, fit seed and

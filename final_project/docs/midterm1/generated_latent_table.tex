@@ -1,0 +1,15 @@
+\begin{center}\small
+\begin{tabular}{lrrr}
+\toprule
+Model / sampler & Parameters & Balanced yield (\%) & Fixed-$q_{20}$ low (\%)\\
+\midrule
+CVAE $D=4$ & 30793 & 32.64 $\pm$ 0.30 & 33.16\\
+CVAE $D=8$ & 32337 & 29.98 $\pm$ 1.41 & 29.34\\
+CVAE $D=16$ & 35425 & 28.82 $\pm$ 1.83 & 27.43\\
+CVAE $D=32$ & 41601 & 32.47 $\pm$ 0.35 & 31.42\\
+AR, no latent & 14209 & 34.32 $\pm$ 0.61 & 22.05\\
+Uniform & -- & 33.04 $\pm$ 1.84 & 19.62\\
+Mutation & -- & 59.72 $\pm$ 3.09 & 52.08\\
+\bottomrule
+\end{tabular}
+\end{center}

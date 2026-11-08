@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_NEW_PROPOSALS_AND_SCORING",
+  "base_commit": "73e6cee5fa43a26a1ac9e8700f81baaa3e40619f",
+  "branch": "midterm/conditioning-graph-edit-20261107",
+  "start_UTC": "2026-11-08T02:17:21+00:00",
+  "hard_stop_UTC": "2026-11-08T14:17:21+00:00",
+  "finalization_reserve_minutes": 45,
+  "user_resource_override": {
+    "account": "m5397_g",
+    "maximum_concurrent_GPUs": 36,
+    "maximum_new_GPU_node_hours": 250,
+    "maximum_elapsed_hours": 12,
+    "static_candidate_cap": null,
+    "old_prompt_accounting_limits_superseded": true
+  },
+  "nonresource_science_bounds": {
+    "maximum_full_training_trajectories": 30,
+    "planned_full_training_trajectories": 29,
+    "optional_NEB_maximum_events": 3,
+    "new_DFT": false,
+    "new_MLIP_finetuning": false
+  },
+  "data": {
+    "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "round0_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "protected_split_counts": {
+      "train": 40157,
+      "validation": 4967,
+      "test": 5123
+    },
+    "original_role_preservation": true,
+    "counts": [
+      12,
+      24,
+      36
+    ],
+    "occupancy_one": "present",
+    "canonical_string_one": "vacancy",
+    "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates"
+  },
+  "sources": {
+    "ECE285_next_goal_prompt_20261107.txt": "1dcadaf9875e70899c0d67a86513a7cd68ceef439b55f9d2d8d757b56a927406",
+    "Evaluate Generative Model Project.pdf": "e6b0ccdf2cce470119c80634cd3e57031e85460401e42a1bd56abf7a9bc84217"
+  },
+  "teacher": {
+    "primary": "UMA-S-1.2.1",
+    "head": "omat",
+    "precision": "float32",
+    "tf32": false,
+    "audit": "MACE-MH-1/omat_pbe, prespecified final matched subset"
+  },
+  "fit": {
+    "seeds": [
+      20261106,
+      20261107,
+      20261108
+    ],
+    "max_updates": 4000,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "training_beta_final": 0.1,
+    "beta_warmup_epochs": 20,
+    "validation_selection_betas": [
+      1.0,
+      0.1
+    ],
+    "hidden_dim": 64,
+    "maximum_seconds_each": 1200,
+    "note": "Graph pilot time caps recorded; no criterion relaxed for success"
+  },
+  "development": {
+    "attempts_per_count_bin_fit": 64,
+    "paired_conditions": true,
+    "common_latents": true,
+    "common_AR_uniforms": true,
+    "sampling_namespace": "conditioning-development-20261107-v1",
+    "permitted_for_selection": true,
+    "protected_test_used_for_selection": false
+  },
+  "final": {
+    "attempts_per_count_bin_fit": 128,
+    "sampling_namespace": "conditioning-final-20261107-v1",
+    "history_frozen_after_development_before_any_final_generation": true,
+    "final_method_list_frozen_after_development_before_generation": true,
+    "no_final_labels_reused_for_training_or_selection": true
+  },
+  "controls": {
+    "mutation": "uniform training seed in requested bin; uniform1/2/3 distinct occupied/vacant swaps; frozen before scoring",
+    "uniform": "raw fixed-count masks, all attempts counted",
+    "editor": "paired identical seed keys, edit counts and proposal budgets; preserve joint orientation"
+  },
+  "outcomes": [
+    "exact-count validity",
+    "requested-bin confusion",
+    "novel in-bin orbits/all attempts",
+    "original-fixed-q20 low requests",
+    "energy distributions/budget curves",
+    "novelty to train and history separately",
+    "structural diversity/edit distances",
+    "posterior/prior and latent/condition sensitivity",
+    "measured allocated cost"
+  ],
+  "stages": [
+    {
+      "id": "policy",
+      "hypothesis": "Class balancing and checkpoint selection affect conditional control",
+      "changed_factor": "balancing off/on; two selection weights reuse each trajectory",
+      "full_trajectories": 6
+    },
+    {
+      "id": "latent",
+      "hypothesis": "A larger latent improves useful prior generation only if actually used",
+      "changed_factor": "latent 4/8/16/32, reuse selected-policy 8; hidden64 unchanged",
+      "full_trajectories": 9
+    },
+    {
+      "id": "no_latent",
+      "hypothesis": "The latent contributes beyond stochastic AR decoding",
+      "changed_factor": "AR baseline, no latent and no KL",
+      "full_trajectories": 3
+    },
+    {
+      "id": "symmetry",
+      "hypothesis": "Training orientation affects generalization",
+      "changed_factor": "canonical versus joint parent-group augmentation",
+      "full_trajectories": 3
+    },
+    {
+      "id": "graph_encoder",
+      "hypothesis": "Physical neighbors improve posterior feature extraction",
+      "changed_factor": "distance message-passing encoder; otherwise matched policy",
+      "full_trajectories": 3
+    },
+    {
+      "id": "graph_context",
+      "hypothesis": "Causal physical neighbor features help generation",
+      "changed_factor": "one bounded generation-context pilot, no future occupations",
+      "full_trajectories": 1
+    },
+    {
+      "id": "descriptor",
+      "hypothesis": "Supported joint structural/energy requests can be controlled",
+      "changed_factor": "one supported energy+vacancy-pair descriptor pilot",
+      "full_trajectories": 1
+    },
+    {
+      "id": "edit",
+      "hypothesis": "A seed-conditioned variational editor improves equal-budget swaps",
+      "changed_factor": "same seed families, exact one/two/three swaps versus mutation",
+      "full_trajectories": 3
+    }
+  ],
+  "gates": {
+    "optional_extensions": "Required experiments, audits and compiled supported midterm packet first",
+    "NEB": "only after required packet and editor comparison; bounded event/force/cost feasibility"
+  }
+}

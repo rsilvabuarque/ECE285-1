@@ -1,0 +1,212 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 11 Dec. 2024. Version 4.86.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  generated_conditioning_results.tex
+  main.tex
+Category 'changed_user':
+  generated_conditioning_results.tex
+  main.tex
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-11-02>
+
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/base/size10.clo))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/geometry/geometry.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/keyval.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsmath/amstext.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/graphicx.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/graphics.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/trig.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/url/url.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/microtype.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/tools/array.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/base/fontenc.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hyperref/nameref.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/refcount/refcount.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hyperref/puenc.def)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/bitset/bitset.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (./main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/color.sty
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (./main.out) (./main.out)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+[1{/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0a
+b76a21df/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/global/common/software/
+nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/e
+nc/dvips/cm-super/cm-super-t1.enc}]
+[2]
+[3] (./generated_conditioning_results.tex (./generated_final_table.tex))
+[4] (./generated_energy_audit.tex)
+[5] (./main.bbl)
+[6] (./main.aux) )</global/common/software/nersc9/texlive/2024-17c650b50c05ee82
+3c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a
+21df/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></global/common/softw
+are/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></global/common/software/nersc9/texlive/
+2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></global/common/software/nersc9/texlive/2024-17c650b50c05ee8
+23c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76
+a21df/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></global/common/softw
+are/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></global/common/software/nersc9/texlive/2
+024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></global/common/software/nersc9/texlive/2024-17c650b50c05ee823
+c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></gl
+obal/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21
+df/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></global/common/software/
+nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></global/common/software/nersc9/texlive/2024
+-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy9.pfb></global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6
+093081103ed0ab76a21df/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+></global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab
+76a21df/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></global/common/sof
+tware/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/f
+onts/type1/public/cm-super/sfbx1000.pfb></global/common/software/nersc9/texlive
+/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/cm
+-super/sfbx1200.pfb></global/common/software/nersc9/texlive/2024-17c650b50c05ee
+823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb>
+</global/common/software/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab7
+6a21df/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></global/common/soft
+ware/nersc9/texlive/2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fo
+nts/type1/public/cm-super/sfrm1000.pfb></global/common/software/nersc9/texlive/
+2024-17c650b50c05ee823c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/cm-
+super/sfti1000.pfb></global/common/software/nersc9/texlive/2024-17c650b50c05ee8
+23c6093081103ed0ab76a21df/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (6 pages, 315043 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (main.pdf) are up-to-date
+

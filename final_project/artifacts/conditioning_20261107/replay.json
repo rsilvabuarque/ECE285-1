@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "jobs": {
+    "final_uma": {
+      "attempts": "final/attempts.csv",
+      "candidates": "final/candidates.npz",
+      "teachers": [
+        "uma"
+      ],
+      "reference": "evaluation/final"
+    },
+    "matched_uma_mace": {
+      "attempts": "final_matched_audit/attempts.csv",
+      "candidates": "final_matched_audit/candidates.npz",
+      "teachers": [
+        "uma",
+        "mace"
+      ],
+      "reference": "evaluation/final_matched"
+    }
+  },
+  "parent": "data/parent.npz",
+  "training_keys": "data/training_keys.json",
+  "history": "data/history_before_final.json",
+  "historical_thresholds": "data/generation_thresholds.csv",
+  "source_hashes": {
+    "src/cathode_cvae/__init__.py": "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402",
+    "src/cathode_cvae/acquisition.py": "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad",
+    "src/cathode_cvae/acquisition_generate.py": "07d44571ca2617e99dccd387adbff573787b4c04a7fc8c77e87e42678d84054b",
+    "src/cathode_cvae/artifact_fetch.py": "97af7db046be632929d8b61ee843212f9614053af934071a381a7b603a3ad154",
+    "src/cathode_cvae/cli.py": "d97a0cb862677703982a748b256a977c991232e48dbbf9cdc02edf6391662029",
+    "src/cathode_cvae/condition_evaluation.py": "6ebf82854080ee5406fe83baba51848ff18d56967e592ebb6ee5e82106711634",
+    "src/cathode_cvae/conditions.py": "777a4872c130a8b1d3e30af083c8d83e81bcb019f947e37541717f303328bd14",
+    "src/cathode_cvae/data.py": "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101",
+    "src/cathode_cvae/descriptor.py": "2ef6946e251ff16cd653e9eee534e143df2ee25ba2f891b134837e9c1d71c234",
+    "src/cathode_cvae/evaluation.py": "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face",
+    "src/cathode_cvae/geometry_evaluation.py": "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9",
+    "src/cathode_cvae/graph.py": "b8cd856d9444644b3fe6f106d5ea00da93c81c03331aa5912d0098357facbc7d",
+    "src/cathode_cvae/learning/__init__.py": "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18",
+    "src/cathode_cvae/learning/generate_geometry.py": "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a",
+    "src/cathode_cvae/learning/generate_mask.py": "05ca03006a67b6c6dbf268a42f63c01899ad97bc6fe4d2167cbee13ea6c60031",
+    "src/cathode_cvae/learning/geometry_model.py": "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e",
+    "src/cathode_cvae/learning/graph_model.py": "c83aba743e3f45b538b567e969b2d6e7941d61fe7ef14447ea96ba516eac8440",
+    "src/cathode_cvae/learning/models.py": "ec5374be60a1d3f62c4eca2447103f52352782182e739f11498a9a778eeccd89",
+    "src/cathode_cvae/learning/runtime.py": "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9",
+    "src/cathode_cvae/learning/train_geometry.py": "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae",
+    "src/cathode_cvae/learning/train_mask.py": "90bb5d6ff9e2aa7cc5b8d7925c5d1b79cc0683a562a61a4bbbac9df34a71c06f",
+    "src/cathode_cvae/mlip/__init__.py": "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968",
+    "src/cathode_cvae/mlip/calculators.py": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "src/cathode_cvae/mlip/checkpoints.py": "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f",
+    "src/cathode_cvae/mlip/cli.py": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+    "src/cathode_cvae/mlip/registry.py": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+    "src/cathode_cvae/parent_spec.py": "1f337e9f383862f389834d9521428e2158cadbb20d66d08d481a9341dd633f30",
+    "src/cathode_cvae/pool_scoring.py": "03eaf1c036ad22cdab687fbd25aeec64883fa1993549ed2c8f8a31cacfb84b13",
+    "src/cathode_cvae/runtime.py": "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7"
+  },
+  "scores": {
+    "uma": "scores/uma.npz",
+    "mace": "scores/mace.npz"
+  },
+  "schemas": {
+    "uma": "data/condition_schema_uma.json",
+    "mace": "data/condition_schema_mace.json"
+  },
+  "final_protocol": "execution/final_protocol.json",
+  "cost_receipt": "execution/required.json"
+}

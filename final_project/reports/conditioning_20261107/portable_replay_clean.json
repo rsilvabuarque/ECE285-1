@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "completed_UTC": "2026-11-08T04:46:20.765086+00:00",
+  "manifest_sha256": "583c5f16b7ce30a847af90b122b12ad87dbb6fe2b95512e170fd83f856ccf29d",
+  "scope": "Cached table reproduction, not independent physical validation or generation resampling",
+  "jobs": {
+    "final_uma": {
+      "status": "PASS",
+      "tables": {
+        "metrics.csv": {
+          "rows_including_header": 271,
+          "byte_identical": true,
+          "actual_sha256": "c2c742363a91fd63747d3594ba9eabef3aa744feff1b492cacc09f38f9e4d5d8",
+          "reference_sha256": "c2c742363a91fd63747d3594ba9eabef3aa744feff1b492cacc09f38f9e4d5d8"
+        },
+        "confusion.csv": {
+          "rows_including_header": 1621,
+          "byte_identical": true,
+          "actual_sha256": "df8728f1ba34bd6a821948b7fb1e5aecf0725faa2012398a138c688737800f2d",
+          "reference_sha256": "df8728f1ba34bd6a821948b7fb1e5aecf0725faa2012398a138c688737800f2d"
+        },
+        "attempt_outcomes.csv": {
+          "rows_including_header": 34561,
+          "byte_identical": true,
+          "actual_sha256": "72b2c8a99368cf58f96305cd8ff6a39b05fc30a5bb64ddadcd94e8b4eb247127",
+          "reference_sha256": "72b2c8a99368cf58f96305cd8ff6a39b05fc30a5bb64ddadcd94e8b4eb247127"
+        },
+        "candidate_measurements.csv": {
+          "rows_including_header": 27845,
+          "byte_identical": true,
+          "actual_sha256": "67e478475dbc6044f116bae22fd76ec98eb99176b74c536bb163ceb401906cc7",
+          "reference_sha256": "67e478475dbc6044f116bae22fd76ec98eb99176b74c536bb163ceb401906cc7"
+        },
+        "budget_curves.csv": {
+          "rows_including_header": 34561,
+          "byte_identical": true,
+          "actual_sha256": "a8cf3dc1c028625cace6a659272b95a03fbb43eac2c101af26979ba2da453d87",
+          "reference_sha256": "a8cf3dc1c028625cace6a659272b95a03fbb43eac2c101af26979ba2da453d87"
+        },
+        "summary.csv": {
+          "rows_including_header": 11,
+          "byte_identical": true,
+          "actual_sha256": "8d21c1f6d65c80728855810cecf9e115ba2226dbb6e38cbca78aae346092d846",
+          "reference_sha256": "8d21c1f6d65c80728855810cecf9e115ba2226dbb6e38cbca78aae346092d846"
+        },
+        "seed_metrics.csv": {
+          "rows_including_header": 31,
+          "byte_identical": true,
+          "actual_sha256": "8356ae159b48f7c71599a43b541b791b6e87a3defb9cf81257216fa950d11756",
+          "reference_sha256": "8356ae159b48f7c71599a43b541b791b6e87a3defb9cf81257216fa950d11756"
+        },
+        "summary_by_request.csv": {
+          "rows_including_header": 31,
+          "byte_identical": true,
+          "actual_sha256": "b58d1df15cb40c5c6110373abd0c5a147d8df0f174d46301e9e83a539aa8f325",
+          "reference_sha256": "b58d1df15cb40c5c6110373abd0c5a147d8df0f174d46301e9e83a539aa8f325"
+        },
+        "fixed_q20_low_request.csv": {
+          "rows_including_header": 11,
+          "byte_identical": true,
+          "actual_sha256": "28e22b1c571185d0529ad15ea59dde11f5e95728e00ebd33d7465f9c8ce653eb",
+          "reference_sha256": "28e22b1c571185d0529ad15ea59dde11f5e95728e00ebd33d7465f9c8ce653eb"
+        },
+        "allocation_realization.csv": {
+          "rows_including_header": 541,
+          "byte_identical": true,
+          "actual_sha256": "ff1cce8f8c95f8c2596564e7430d7ff58514110d3b3e04af018a8bb96477151f",
+          "reference_sha256": "ff1cce8f8c95f8c2596564e7430d7ff58514110d3b3e04af018a8bb96477151f"
+        },
+        "allocation_joint_realization.csv": {
+          "rows_including_header": 541,
+          "byte_identical": true,
+          "actual_sha256": "47890bb7667c1ba2fff8a26ecdf445f63839398e22afc3de3885a2625d7099d9",
+          "reference_sha256": "47890bb7667c1ba2fff8a26ecdf445f63839398e22afc3de3885a2625d7099d9"
+        },
+        "allocation_joint_summary.csv": {
+          "rows_including_header": 91,
+          "byte_identical": true,
+          "actual_sha256": "f1e2a0b99808773476410e28572249fc474865acce56305b1017daf31b7b0340",
+          "reference_sha256": "f1e2a0b99808773476410e28572249fc474865acce56305b1017daf31b7b0340"
+        }
+      },
+      "attempt_rows": 34560,
+      "teachers": [
+        "uma"
+      ],
+      "source_hashes": {
+        "attempts": "428285980dbb88d6ec8d42d9709b7a1881dac5b15e82066be8f9dd97fe9a8b46",
+        "candidates": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+        "training_keys": "33b6f39c02b96bf8fa177718f799ee0e3d7eb0f25c0845e10e2998cdb73be959",
+        "history": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+        "historical_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+        "scores_uma": "e33dc708bff292a814a90b20fc9fcffd88a08fd7a526d2937f4948e5e203dd18",
+        "schema_uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+        "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+        "reference_plans": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+        "cost_receipt": "fea81e790b1116f1fea1eeddf2664b96f0d9c599281966e4a520ddf3ceea2cc3"
+      }
+    },
+    "matched_uma_mace": {
+      "status": "PASS",
+      "tables": {
+        "metrics.csv": {
+          "rows_including_header": 325,
+          "byte_identical": true,
+          "actual_sha256": "31f4e73cc8d50e69ffb8e7e9b302e8a92e68f4b950c3ec30cc24d5481e641d9b",
+          "reference_sha256": "31f4e73cc8d50e69ffb8e7e9b302e8a92e68f4b950c3ec30cc24d5481e641d9b"
+        },
+        "confusion.csv": {
+          "rows_including_header": 1945,
+          "byte_identical": true,
+          "actual_sha256": "e31f25f88bbedc369d2cc75100d4d2bdfabae3b43352c2d146a1556358b1a364",
+          "reference_sha256": "e31f25f88bbedc369d2cc75100d4d2bdfabae3b43352c2d146a1556358b1a364"
+        },
+        "attempt_outcomes.csv": {
+          "rows_including_header": 41473,
+          "byte_identical": true,
+          "actual_sha256": "b089f71d9b646c829ac4d1798a38faa99a80413c6805029bff4d94a4b48aa54b",
+          "reference_sha256": "b089f71d9b646c829ac4d1798a38faa99a80413c6805029bff4d94a4b48aa54b"
+        },
+        "candidate_measurements.csv": {
+          "rows_including_header": 35835,
+          "byte_identical": true,
+          "actual_sha256": "09ee314238cb9d9a3ec570659fbbbf9b2dc7ba568749ab8b8106c3877b63d176",
+          "reference_sha256": "09ee314238cb9d9a3ec570659fbbbf9b2dc7ba568749ab8b8106c3877b63d176"
+        },
+        "budget_curves.csv": {
+          "rows_including_header": 41473,
+          "byte_identical": true,
+          "actual_sha256": "886565455a296f07eff17b9fbe80cea3f41807abcade4e99962c837c6180ec7a",
+          "reference_sha256": "886565455a296f07eff17b9fbe80cea3f41807abcade4e99962c837c6180ec7a"
+        },
+        "summary.csv": {
+          "rows_including_header": 13,
+          "byte_identical": true,
+          "actual_sha256": "7ffa05128e3db3a49a9ce88d08b96e972262484002ab64696c7591d501a9f584",
+          "reference_sha256": "7ffa05128e3db3a49a9ce88d08b96e972262484002ab64696c7591d501a9f584"
+        },
+        "seed_metrics.csv": {
+          "rows_including_header": 37,
+          "byte_identical": true,
+          "actual_sha256": "996711f3a74c80ae345056adc5ffa586b66135dc98a282f5ac65934c6cd13163",
+          "reference_sha256": "996711f3a74c80ae345056adc5ffa586b66135dc98a282f5ac65934c6cd13163"
+        },
+        "summary_by_request.csv": {
+          "rows_including_header": 37,
+          "byte_identical": true,
+          "actual_sha256": "6e5e9ecd835a991fbc08cfc1b66d6daac0474e0f0227c59059bdead37514d6ac",
+          "reference_sha256": "6e5e9ecd835a991fbc08cfc1b66d6daac0474e0f0227c59059bdead37514d6ac"
+        },
+        "fixed_q20_low_request.csv": {
+          "rows_including_header": 13,
+          "byte_identical": true,
+          "actual_sha256": "9d4d5a77a9da41f9a86744575691d7550a4b867e27da3df652ef25d764f85326",
+          "reference_sha256": "9d4d5a77a9da41f9a86744575691d7550a4b867e27da3df652ef25d764f85326"
+        },
+        "allocation_realization.csv": {
+          "rows_including_header": 649,
+          "byte_identical": true,
+          "actual_sha256": "c21bf170d10dbcbb14f36e66286fcd2fb3f7dcfd3eaae39241e2c239866e4a00",
+          "reference_sha256": "c21bf170d10dbcbb14f36e66286fcd2fb3f7dcfd3eaae39241e2c239866e4a00"
+        },
+        "allocation_joint_realization.csv": {
+          "rows_including_header": 649,
+          "byte_identical": true,
+          "actual_sha256": "95639df64b3e049fbc057854d46f05251e1764857028812ef4e4001ee51bec0d",
+          "reference_sha256": "95639df64b3e049fbc057854d46f05251e1764857028812ef4e4001ee51bec0d"
+        },
+        "allocation_joint_summary.csv": {
+          "rows_including_header": 109,
+          "byte_identical": true,
+          "actual_sha256": "22a65eaf76b097d14364fff0def8a526e74c71d6e0c3aaccecfdcf51cf18e360",
+          "reference_sha256": "22a65eaf76b097d14364fff0def8a526e74c71d6e0c3aaccecfdcf51cf18e360"
+        }
+      },
+      "attempt_rows": 20736,
+      "teachers": [
+        "uma",
+        "mace"
+      ],
+      "source_hashes": {
+        "attempts": "74887500616066642df0f9f5a6e121344f08fe60927c5e901c43973c9b1688cc",
+        "candidates": "36ffff7435a41d0a9f2147b3395589473f14d5aa96518d4da5dc96034ee27861",
+        "training_keys": "33b6f39c02b96bf8fa177718f799ee0e3d7eb0f25c0845e10e2998cdb73be959",
+        "history": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+        "historical_thresholds": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+        "scores_uma": "e33dc708bff292a814a90b20fc9fcffd88a08fd7a526d2937f4948e5e203dd18",
+        "scores_mace": "1cf858bb343379b54ac89a65047e39aa61d2430429684c4ab1559ccf5fac7d6d",
+        "schema_uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+        "schema_mace": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+        "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+        "reference_plans": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+        "cost_receipt": "fea81e790b1116f1fea1eeddf2664b96f0d9c599281966e4a520ddf3ceea2cc3"
+      }
+    }
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "numeric_replay_tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-10,
+    "units": "Each floating column's units; exact categorical/integer identities and row order"
+  }
+}

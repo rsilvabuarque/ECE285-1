@@ -35,15 +35,47 @@ work ([Van der Ven et al., Physical Review B 58, 2975 (1998), §§I–III](https
 Our generator keeps one O3 parent and cannot establish the most stable phase
 among O3, O1, spinel, or reconstructed hosts.
 
+## New controlled-study contribution
+
+The controlled study diagnoses conditional response using shared latent vectors and AR
+random streams, separates training balancing from checkpoint selection, and
+compares latent dimensions and physical-neighbor features under frozen roles.
+The details and measured status belong to [CONDITIONING_STUDY.md](CONDITIONING_STUDY.md)
+and the new experiment ledger. This extends the class question below; it does
+not turn the historical tables into results of the new models.
+
+Its frozen final comparison now gives graph-context balanced useful yield
+62.04% under UMA and 63.45% under MACE, versus mutation 58.62/57.29%. The
+variational latent is nearly unused by KL, resampling and posterior/prior tests,
+so describe this as a useful conditional spatial AR mechanism and an unresolved
+latent-benefit question. The descriptor pilot is negative, and the new class
+task is a matched spatial no-latent control. The independent raw numerical audit
+does not replace Beihao's/Varad's assigned reproductions or later physical DFT
+validation of teacher-ranked structures.
+
+The paired physical audit is complete: all 1000 existing fixed-cell UMA lineages
+were retained, with exact source-energy and teacher-setting checks. Deletion and
+endpoint rankings are broadly correlated but not identical. At nLi 12/24/36,
+Spearman correlations are 0.9022/0.9723/0.9140 and low-quintile overlap is four of
+five in each cohort. No endpoint parent-site occupation change or occupation-
+class merge occurs; this does not certify distinct PES minima. Primary protected
+support is only 49 training/11 validation/9 test lineages, with endpoint-low
+validation counts 0/1/0, so a matched label-target CVAE is deferred. Full
+[results, conventions and future design](../reports/conditioning_20261107/relaxed_target_audit/README.md)
+are supplied. No new relaxation or DFT was needed for that audit.
+
 ## Revised project objective
 
 Develop and evaluate a conditional variational autoencoder (CVAE) that proposes
-novel, valid Li/vacancy occupation patterns at requested Li counts and
-composition-specific energy ranges. Then demonstrate how a separate
-**temperature-dependent acquisition policy** allocates generation requests among
-those ranges under static MLIP energy weights. The classifier condition changes
-which distribution the model is asked to learn; it does not enforce an energy
-inequality, minimize an energy gradient, or compute entropy.
+novel, valid mobile-ion occupation patterns at requested counts and
+composition-specific energy ranges. Isolate the effects of training policy,
+latent size and physical-neighbor information, then compare a learned local
+editor with frozen seed mutation using identical starting information and swap
+budgets. Audit the physical meaning of deletion versus relaxed energy labels and
+whether a structural descriptor can control diversity. The retained temperature
+acquisition demonstration is secondary. A classifier condition changes which
+distribution the model is asked to learn; it does not enforce an energy inequality,
+minimize a physical energy gradient, or compute entropy.
 
 The teacher benchmark is useful even when physical reference accuracy is
 incomplete. Large foundation datasets provide broad equilibrium and displaced

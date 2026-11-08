@@ -1,0 +1,182 @@
+[
+  {
+    "name": "anyio",
+    "version": "4.16.0"
+  },
+  {
+    "name": "ase",
+    "version": "3.26.0"
+  },
+  {
+    "name": "build",
+    "version": "1.6.1"
+  },
+  {
+    "name": "cathode-cvae",
+    "version": "0.1.0"
+  },
+  {
+    "name": "cathode-cvae",
+    "version": "0.1.0"
+  },
+  {
+    "name": "certifi",
+    "version": "2026.10.23"
+  },
+  {
+    "name": "click",
+    "version": "8.5.1"
+  },
+  {
+    "name": "contourpy",
+    "version": "1.4.0"
+  },
+  {
+    "name": "cycler",
+    "version": "0.12.1"
+  },
+  {
+    "name": "filelock",
+    "version": "4.2.4"
+  },
+  {
+    "name": "fonttools",
+    "version": "4.68.0"
+  },
+  {
+    "name": "fsspec",
+    "version": "2026.9.0"
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0"
+  },
+  {
+    "name": "hf-xet",
+    "version": "1.8.0"
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9"
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1"
+  },
+  {
+    "name": "huggingface_hub",
+    "version": "1.33.0"
+  },
+  {
+    "name": "idna",
+    "version": "3.20"
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.1"
+  },
+  {
+    "name": "Jinja2",
+    "version": "3.1.6"
+  },
+  {
+    "name": "kiwisolver",
+    "version": "1.5.1"
+  },
+  {
+    "name": "MarkupSafe",
+    "version": "3.0.3"
+  },
+  {
+    "name": "matplotlib",
+    "version": "3.11.2"
+  },
+  {
+    "name": "mpmath",
+    "version": "1.3.0"
+  },
+  {
+    "name": "networkx",
+    "version": "3.7"
+  },
+  {
+    "name": "numpy",
+    "version": "2.3.4"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3"
+  },
+  {
+    "name": "pillow",
+    "version": "13.0.0"
+  },
+  {
+    "name": "pip",
+    "version": "26.3"
+  },
+  {
+    "name": "pluggy",
+    "version": "1.7.0"
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0"
+  },
+  {
+    "name": "pyparsing",
+    "version": "3.3.3"
+  },
+  {
+    "name": "pyproject_hooks",
+    "version": "1.3.3"
+  },
+  {
+    "name": "pytest",
+    "version": "9.2.0"
+  },
+  {
+    "name": "python-dateutil",
+    "version": "4.0.0"
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3"
+  },
+  {
+    "name": "scipy",
+    "version": "1.18.1"
+  },
+  {
+    "name": "setuptools",
+    "version": "80.10.2"
+  },
+  {
+    "name": "spglib",
+    "version": "2.8.0"
+  },
+  {
+    "name": "sympy",
+    "version": "1.14.0"
+  },
+  {
+    "name": "torch",
+    "version": "2.13.0+cpu"
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1"
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0"
+  },
+  {
+    "name": "tzdata",
+    "version": "2026.6"
+  },
+  {
+    "name": "wheel",
+    "version": "0.48.0"
+  }
+]

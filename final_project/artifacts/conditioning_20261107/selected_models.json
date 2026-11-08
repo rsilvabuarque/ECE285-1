@@ -1,0 +1,23 @@
+{
+  "root": "artifacts/conditioning_20261107",
+  "models": [
+    {
+      "method": "selected_dense",
+      "fit_seed": 20261106,
+      "checkpoint": "fits/latent_d4_20261106/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "c18971a891285d85a1fa059d1af55d1c854ee830be8fba3493c371dfdc3b31d4"
+    },
+    {
+      "method": "selected_dense",
+      "fit_seed": 20261107,
+      "checkpoint": "fits/latent_d4_20261107/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "ce8f3f76d93ee19e7f7b8b6d5ea86e31dd8f332fae249d2a51bb3d9bfc51b03e"
+    },
+    {
+      "method": "selected_dense",
+      "fit_seed": 20261108,
+      "checkpoint": "fits/latent_d4_20261108/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "ef74ad87332aebf88d99875cc80c724897218044eaa8968a2b82d7133460ba1d"
+    }
+  ]
+}

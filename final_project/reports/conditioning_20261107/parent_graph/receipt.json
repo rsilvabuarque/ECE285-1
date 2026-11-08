@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "data_rows": 50247,
+  "protected_split_counts": {
+    "test": 5123,
+    "train": 40157,
+    "val": 4967
+  },
+  "parent_source_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "data_source_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+  "energy_schema_identity": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+  "descriptor_schema_identity": "e7a3efd04039b214a9fbef0a55a22728a178049400f399bfe8638a109db9c1d8",
+  "parent_hash": "b505ca2ec7d313e9490834580fca70f37d26e3c28e8a85a648b3cd94d7466708",
+  "graph_hash": "35b45dbcf02840859d7c3afd2253878fe5fed0f7d83f925e05cc993c937cbd52",
+  "parent_symmetry": {
+    "status": "PASS",
+    "operations": 192,
+    "full_space_group_operations": 192,
+    "maximum_match_residual_A": 1.857312519030039e-14,
+    "tolerance_A": 1e-05,
+    "tolerance_provenance": "Provisional numerical coordinate-match audit; not energetic or magnetic equivalence",
+    "method": "spglib operations plus explicit species-preserving full-parent bijection",
+    "spglib_version": "2.6.0",
+    "pbc_provenance": "legacy preparation required 3-D periodic parent"
+  },
+  "graph_audit": {
+    "parent_hash": "b505ca2ec7d313e9490834580fca70f37d26e3c28e8a85a648b3cd94d7466708",
+    "cutoff_A": 5.0,
+    "graph_rule": "ase-neighbor-list-directed-cutoff-v1",
+    "full_parent_nodes": 192,
+    "mobile_nodes": 48,
+    "host_species": [
+      8,
+      27
+    ],
+    "directed_full_image_edges": 14784,
+    "directed_mobile_image_edges": 864,
+    "nonzero_image_self_edges": 0,
+    "reverse_edge_complete": true,
+    "full_connected_components": 1,
+    "full_component_sizes": [
+      192
+    ],
+    "mobile_connected_components": 1,
+    "mobile_component_sizes": [
+      48
+    ],
+    "mobile_shells": [
+      {
+        "distance_A": 2.811256976798501,
+        "directed_image_edges": 288
+      },
+      {
+        "distance_A": 4.8692399169474845,
+        "directed_image_edges": 288
+      },
+      {
+        "distance_A": 4.912370729068715,
+        "directed_image_edges": 288
+      }
+    ],
+    "shell_merge_tolerance_A": 1e-05,
+    "shell_tolerance_provenance": "Provisional numerical grouping of nearly equal parent distances; no barrier interpretation",
+    "cartesian_z_plane_diagnostic": {
+      "planes": 6,
+      "plane_values_A": [
+        0.0,
+        4.63649,
+        9.27297,
+        13.90946,
+        18.54594,
+        23.18243
+      ],
+      "rounding_decimals": 5,
+      "cross_plane_directed_edges": 288,
+      "warning": "Diagnostic for this orientation only; no automatic layer grouping is put in ParentSpec"
+    }
+  },
+  "descriptor_invariance": {
+    "status": "PASS",
+    "descriptor": "nearest-shell vacancy-vacancy pair fraction",
+    "units": "dimensionless",
+    "nearest_shell_A": 2.811256976798501,
+    "directed_pairs": 288,
+    "undirected_image_pairs": 144,
+    "operations": 192,
+    "maximum_kernel_residual": 0.0,
+    "tolerance": 1e-12,
+    "convention": "vacancy=1-occupancy; each undirected periodic-image pair counted once"
+  },
+  "condition_pilot_support": "Full joint counts are saved; decide pilot from training support and within-bin variation, not test correlations",
+  "teacher_inference_calls": 0
+}

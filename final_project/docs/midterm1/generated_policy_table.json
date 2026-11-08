@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Development policy comparison, not final assessment",
+  "source_hashes": {
+    "runs/conditioning_20261107/evaluation/policy/summary.csv": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+    "runs/conditioning_20261107/evaluation/policy/fixed_q20_low_request.csv": "081622ababe664be191c4cdb0486c8870da2ee1a102b5145a991d9e1eea2fdcc"
+  },
+  "output_sha256": "ec692959fe81a5b7704afc1d4e859738866e47fe062974adea0fe739b79d3023",
+  "rows": 6,
+  "percentage_rounding": 2,
+  "uncertainty": "Descriptive sample standard deviation over three design replicates"
+}

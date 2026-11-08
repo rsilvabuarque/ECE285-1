@@ -1,3 +1,9 @@
+The new controlled study is explained in [CONDITIONING_STUDY.md](CONDITIONING_STUDY.md).
+Its protocol and actual ledger distinguish completed experiments from planned
+extensions. The material below preserves the November 7 method/data definitions;
+its reported fit policy is a historical reference, not a silent default for the
+new latent/graph comparisons.
+
 # Current methods and data
 
 The November 7 extension keeps the existing energy-conditioned autoregressive

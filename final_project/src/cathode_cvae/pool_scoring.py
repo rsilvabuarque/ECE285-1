@@ -117,8 +117,9 @@ def collect(root,output):
   if cache.exists() and wanted:
    certify_cache(root,model,registry['parent_sha256'])
    with np.load(cache,allow_pickle=False) as z:
-    for i,sid in enumerate(z['structure_ids'].astype(str)):
-     if sid in wanted:by_model.setdefault(model,{})[sid]=dict(energy_eV=z['energy_eV'][i],n_atoms=z['n_atoms'][i],n_Li=z['n_Li'][i],force_component_rms_eV_A=np.nan,force_max_eV_A=np.nan,stress_eV_A3=np.full(6,np.nan),seconds=0.)
+    cached={k:z[k] for k in ['structure_ids','energy_eV','n_atoms','n_Li']}
+   for i,sid in enumerate(cached['structure_ids'].astype(str)):
+    if sid in wanted:by_model.setdefault(model,{})[sid]=dict(energy_eV=cached['energy_eV'][i],n_atoms=cached['n_atoms'][i],n_Li=cached['n_Li'][i],force_component_rms_eV_A=np.nan,force_max_eV_A=np.nan,stress_eV_A3=np.full(6,np.nan),seconds=0.,provenance='cached',status='cached')
  for task in registry['tasks']:
   p=root/'scores'/task['model']/(task['task_id']+'.npz')
   if not p.exists():missing.append(task['task_id']);continue
@@ -127,12 +128,16 @@ def collect(root,output):
   if receipt['task']!=task:raise ValueError('Score receipt task differs from registry')
   with np.load(task['input_npz'],allow_pickle=False) as original:expected=original['structure_ids'][task['indices']].astype(str)
   with np.load(p,allow_pickle=False) as z:
-   if not np.array_equal(z['structure_ids'].astype(str),expected):raise ValueError('Scored identities/coverage differ from registered indices')
-   for i,sid in enumerate(z['structure_ids'].astype(str)):
-    if z['status'][i]!='success':failures.append(dict(task=task['task_id'],structure_id=sid));continue
-    dest=by_model.setdefault(task['model'],{})
-    if sid in dest:raise ValueError('One physical geometry/model scored twice in queue')
-    dest[sid]={k:z[k][i] for k in ['energy_eV','n_atoms','n_Li','force_component_rms_eV_A','force_max_eV_A','stress_eV_A3','seconds']}
+   # Compressed NPZ access decompresses a whole member. Load each member once,
+   # rather than once per geometry; this leaves all scientific values unchanged.
+   scored={k:z[k] for k in ['structure_ids','status','energy_eV','n_atoms','n_Li','force_component_rms_eV_A','force_max_eV_A','stress_eV_A3','seconds']}
+  if not np.array_equal(scored['structure_ids'].astype(str),expected):raise ValueError('Scored identities/coverage differ from registered indices')
+  for i,sid in enumerate(scored['structure_ids'].astype(str)):
+   if scored['status'][i]!='success':failures.append(dict(task=task['task_id'],structure_id=sid));continue
+   dest=by_model.setdefault(task['model'],{})
+   if sid in dest:raise ValueError('One physical geometry/model scored twice in queue')
+   dest[sid]={k:scored[k][i] for k in ['energy_eV','n_atoms','n_Li','force_component_rms_eV_A','force_max_eV_A','stress_eV_A3','seconds']}
+   dest[sid].update(provenance='new',status='success')
  expected_by_model={}
  for item in registry['physical_keys'].values():expected_by_model.setdefault(item['model'],set()).add(item['structure_id'])
  for model,wanted in expected_by_model.items():

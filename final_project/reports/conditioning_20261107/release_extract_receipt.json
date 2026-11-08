@@ -1,0 +1,7 @@
+{
+  "status": "PASS_FRESH_ARCHIVE_EXTRACTION",
+  "archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "files": 2157,
+  "output": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/required_release_verification",
+  "new_MLIP_calls": 0
+}

@@ -1,0 +1,263 @@
+{
+  "status": "PASS",
+  "checkpoints": 3,
+  "input_masks": 9,
+  "input_roles": "TRAIN only; no test or validation labels",
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "masks_per_count": 3,
+  "fixed_latent_seed": 20261107,
+  "fixed_request": "low",
+  "gradient_sites": [
+    0,
+    12,
+    24,
+    36,
+    47
+  ],
+  "gradient_scope": "d logit_i / d x_j at fixed supplied z,c; every j>=i must be exactly zero",
+  "feature_tolerance_provenance": "Dimensionless neighbor fractions; 2*gamma_n with FP32 epsilon and n=48 bounds differing positive reduction paths; causality gradients/future perturbations require exact zero/equality",
+  "source_review": "Decoder uses explicit z,c, previous occupancy, site index, and strict-past graph features. The GRU is unidirectional; reviewed decoder/context methods store no occupation-dependent hidden cache. Both full-mask encoder entry points are forbidden at runtime.",
+  "limitations": "Finite trained-model probes plus source inspection, not a theorem of physical accuracy or equivariance; no optimizer or MLIP calls",
+  "optimizer_steps": 0,
+  "new_training_trajectories": 0,
+  "new_MLIP_calls": 0,
+  "weights_written": false,
+  "dtype": "float32",
+  "device": "cpu",
+  "torch": "2.13.0+cu130",
+  "source_sha256": "0494bbbe70dcfa21fca9e7c7c002dc28747d49919849fc035cfb52f669f869a5",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "data_sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+  "raw_gradients_sha256": "5dbae727879c50643c9cb5f27f58a8ada271cca6f38263022583b4b8ccf4b560",
+  "models": [
+    {
+      "fit_seed": 20261106,
+      "status": "PASS",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "7cb07df1250b3d51e017a60ac3aedbc95b241ce4e2083dc64dd399a4cb1048a6",
+      "checkpoint_unchanged": true,
+      "trajectory_updates": 4000,
+      "encoder_calls": 0,
+      "teacher_step_max_absolute_feature_difference": 1.7881393432617188e-07,
+      "teacher_step_feature_atol": 1.1444157280493528e-05,
+      "teacher_step_features_agree": true,
+      "gradient_steps": [
+        {
+          "site": 0,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 0.0,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 12,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.1015406847000122,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 24,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.40156888961792,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 36,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.8745360374450684,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 47,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 2.0476088523864746,
+          "future_permutation_rows_actually_changed": 0,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        }
+      ],
+      "positive_past_gradient_control_at_site24": true,
+      "sample_reproducible": true,
+      "sample_exact_count": true,
+      "GRU_unidirectional": true,
+      "decoder_source_sha256": "ec5374be60a1d3f62c4eca2447103f52352782182e739f11498a9a778eeccd89",
+      "graph_context_source_sha256": "b8cd856d9444644b3fe6f106d5ea00da93c81c03331aa5912d0098357facbc7d"
+    },
+    {
+      "fit_seed": 20261107,
+      "status": "PASS",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261107/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "17df53d92485a4383f00cfe1fc2e4ba18b65cb1d5ccc6f377eb0bb4ee29a5f9e",
+      "checkpoint_unchanged": true,
+      "trajectory_updates": 4000,
+      "encoder_calls": 0,
+      "teacher_step_max_absolute_feature_difference": 1.7881393432617188e-07,
+      "teacher_step_feature_atol": 1.1444157280493528e-05,
+      "teacher_step_features_agree": true,
+      "gradient_steps": [
+        {
+          "site": 0,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 0.0,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 12,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.4346635341644287,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 24,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.589198112487793,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 36,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 2.003347396850586,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 47,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 2.1557085514068604,
+          "future_permutation_rows_actually_changed": 0,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        }
+      ],
+      "positive_past_gradient_control_at_site24": true,
+      "sample_reproducible": true,
+      "sample_exact_count": true,
+      "GRU_unidirectional": true,
+      "decoder_source_sha256": "ec5374be60a1d3f62c4eca2447103f52352782182e739f11498a9a778eeccd89",
+      "graph_context_source_sha256": "b8cd856d9444644b3fe6f106d5ea00da93c81c03331aa5912d0098357facbc7d"
+    },
+    {
+      "fit_seed": 20261108,
+      "status": "PASS",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261108/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "f1951399de2c7005460ede226c1cea90c9ff5f7b396aea9b02e0762e3d1e878e",
+      "checkpoint_unchanged": true,
+      "trajectory_updates": 4000,
+      "encoder_calls": 0,
+      "teacher_step_max_absolute_feature_difference": 1.7881393432617188e-07,
+      "teacher_step_feature_atol": 1.1444157280493528e-05,
+      "teacher_step_features_agree": true,
+      "gradient_steps": [
+        {
+          "site": 0,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 0.0,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 12,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.106865644454956,
+          "future_permutation_rows_actually_changed": 9,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 24,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.5549277067184448,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 36,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 1.8975740671157837,
+          "future_permutation_rows_actually_changed": 8,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        },
+        {
+          "site": 47,
+          "future_gradient_exact_zero": true,
+          "future_gradient_max_abs": 0.0,
+          "past_gradient_max_abs": 2.0424110889434814,
+          "future_permutation_rows_actually_changed": 0,
+          "future_permutation_preserves_count": true,
+          "future_permutation_teacher_features_exactly_unchanged": true,
+          "future_permutation_step_features_exactly_unchanged": true,
+          "future_permutation_logits_exactly_unchanged": true
+        }
+      ],
+      "positive_past_gradient_control_at_site24": true,
+      "sample_reproducible": true,
+      "sample_exact_count": true,
+      "GRU_unidirectional": true,
+      "decoder_source_sha256": "ec5374be60a1d3f62c4eca2447103f52352782182e739f11498a9a778eeccd89",
+      "graph_context_source_sha256": "b8cd856d9444644b3fe6f106d5ea00da93c81c03331aa5912d0098357facbc7d"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+teacher,method,condition_cells,fit_replicates,sampling_replicates,mean_novel_joint_yield,mean_joint_hit_rate,scope
+uma,descriptor_cvae,6,1,1,0.28125,0.2864583333333333,Equal mean across 3 compositions ×2 descriptor requests; middle energy only; one-fit preliminary
+uma,mutation_joint,6,0,1,0.4479166666666667,0.4479166666666667,Equal mean across 3 compositions ×2 descriptor requests; middle energy only; one-fit preliminary
+uma,plain_cvae,6,1,1,0.28515625,0.2903645833333333,Equal mean across 3 compositions ×2 descriptor requests; middle energy only; one-fit preliminary

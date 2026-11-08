@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "same_scientific_tables": {
+    "summary.csv": true,
+    "metrics.csv": true,
+    "confusion.csv": true,
+    "fixed_q20_low_request.csv": true
+  },
+  "new_SCFS": 0,
+  "repair": "Explicit scalar-label provenance distinguishes newly scored rows from cached rows; old energy labels unchanged",
+  "old_unspecified_fresh_counter": {
+    "uma": 0
+  },
+  "new_primary_fresh_counter": {
+    "uma": 8777
+  },
+  "actual_all_diagnostic_and_primary_new_UMA_pairs": 11924,
+  "corrected_evaluation": "runs/conditioning_20261107/evaluation/policy_cost_repair",
+  "original_evidence_preserved": "runs/conditioning_20261107/evaluation/policy"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "completed_UTC": "2026-11-08T04:47:40.818541+00:00",
+  "scope": "All required sections3-8, frozen final primary+matched audit, compiled reviewed five-page packet, clean portable replay; optional work has not begun",
+  "report_pdf": {
+    "path": "artifacts/conditioning_20261107/required_packet/main.pdf",
+    "sha256": "9f74656ecf5322ba0c03f18f5a51c244f04558217ffb54c9c26d35a5c75a48d3"
+  },
+  "root_visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "core_full_training_trajectories": 28,
+  "static_science_EFS": 84668,
+  "UMA_final_attempts": 34560,
+  "MACE_matched_attempts": 20736,
+  "new_DFT": false,
+  "new_MLIP_finetuning": false,
+  "cost_scope": "Required-program as-of snapshot; resources still live; final post-release accounting will follow",
+  "bindings": {
+    "reports/conditioning_20261107/execution_required.json": "fea81e790b1116f1fea1eeddf2664b96f0d9c599281966e4a520ddf3ceea2cc3",
+    "reports/conditioning_20261107/independent_final_metrics/receipt.json": "99f56bb5e23d48b9cbadd92e8dedc7c8bcc5bfe3f67abfe754bf2d4cab843dbe",
+    "reports/conditioning_20261107/portable_replay_clean.json": "6e7e178f605183baef4ca310b4483c417daed09f994d1cfeeebcf6457219e091",
+    "reports/conditioning_20261107/public_source_map.json": "015de287563fbfcc7c7695352053ba765de45748da8d7c7e2e904c0358d90263",
+    "artifacts/conditioning_20261107/manifest.json": "583c5f16b7ce30a847af90b122b12ad87dbb6fe2b95512e170fd83f856ccf29d",
+    "artifacts/conditioning_20261107/download.json": "87bc009b6d9b2ec17c811ebb12f3853ac17184837c2ec4c628137c168f336d2d",
+    "runs/conditioning_20261107/final_protocol.json": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+    "runs/conditioning_20261107/evaluation/final/receipt.json": "57a94a7ac3456b10c232a88e3898aa0f51cc1c1e26df6326dd420d57c44effbc",
+    "runs/conditioning_20261107/evaluation/final_matched/receipt.json": "53c75ab73f87922ecc1622290aed6b5e0aa79181d36d56196be6273df4914a10"
+  }
+}

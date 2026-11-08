@@ -1,0 +1,287 @@
+{
+  "status": "PASS",
+  "selected_method": "balance1_sel0p1_d8",
+  "policy_checks": [
+    {
+      "method": "balance0_sel0p1_d8",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.30439814814814814,
+      "archived_core_value": 0.30439814814814814,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "balance0_sel1_d8",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.29282407407407407,
+      "archived_core_value": 0.2928240740740741,
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "balance1_sel0p1_d8",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.3211805555555555,
+      "archived_core_value": 0.3211805555555555,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "balance1_sel1_d8",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.30613425925925924,
+      "archived_core_value": 0.30613425925925924,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "mutation",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.5896990740740741,
+      "archived_core_value": 0.5896990740740741,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "uniform",
+      "scope": "balanced_low_middle_high",
+      "independently_reduced": 0.33622685185185186,
+      "archived_core_value": 0.33622685185185186,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "balance0_sel0p1_d8",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.3090277777777778,
+      "archived_core_value": 0.30902777777777773,
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "balance0_sel1_d8",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.2795138888888889,
+      "archived_core_value": 0.2795138888888889,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "balance1_sel0p1_d8",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.30729166666666663,
+      "archived_core_value": 0.3072916666666667,
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "balance1_sel1_d8",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.3142361111111111,
+      "archived_core_value": 0.3142361111111111,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "mutation",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.517361111111111,
+      "archived_core_value": 0.517361111111111,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "uniform",
+      "scope": "requested_low_only_original_q20",
+      "independently_reduced": 0.21354166666666666,
+      "archived_core_value": 0.21354166666666666,
+      "absolute_difference": 0.0
+    }
+  ],
+  "selection_independently_matches_core": true,
+  "protected_test_used_for_selection": false,
+  "verification_tolerance": {
+    "quantity": "absolute difference between deterministic probability reductions",
+    "value": 1e-14,
+    "scope": "Numerical serialization/reduction check, not a scientific effect threshold"
+  },
+  "selected_condition_response_by_composition": [
+    {
+      "n_Li": 12,
+      "comparison": "low_to_middle",
+      "mean_delta_meV_atom": 0.04382578649172556,
+      "mean_positive_pair_fraction": 0.359375,
+      "mean_raw_Hamming": 3.0
+    },
+    {
+      "n_Li": 12,
+      "comparison": "low_to_high",
+      "mean_delta_meV_atom": 0.10987316134620599,
+      "mean_positive_pair_fraction": 0.4427083333333333,
+      "mean_raw_Hamming": 3.5416666666666665
+    },
+    {
+      "n_Li": 24,
+      "comparison": "low_to_middle",
+      "mean_delta_meV_atom": 0.2549593535136063,
+      "mean_positive_pair_fraction": 0.5,
+      "mean_raw_Hamming": 5.364583333333333
+    },
+    {
+      "n_Li": 24,
+      "comparison": "low_to_high",
+      "mean_delta_meV_atom": 0.12989903850800974,
+      "mean_positive_pair_fraction": 0.5,
+      "mean_raw_Hamming": 5.885416666666667
+    },
+    {
+      "n_Li": 36,
+      "comparison": "low_to_middle",
+      "mean_delta_meV_atom": -0.14731510447837012,
+      "mean_positive_pair_fraction": 0.4114583333333333,
+      "mean_raw_Hamming": 3.90625
+    },
+    {
+      "n_Li": 36,
+      "comparison": "low_to_high",
+      "mean_delta_meV_atom": -0.007843450314825215,
+      "mean_positive_pair_fraction": 0.4322916666666667,
+      "mean_raw_Hamming": 3.875
+    }
+  ],
+  "selected_latent_response": {
+    "mean_raw_Hamming": 12.256944444444445,
+    "mean_absolute_energy_shift_meV_atom": 2.096707406904962
+  },
+  "selected_posterior_vs_prior": {
+    "posterior_target_Hamming": 15.958333333333334,
+    "prior_target_Hamming": 18.180555555555557,
+    "posterior_target_energy_MAE_meV_atom": 3.0297445505587044,
+    "prior_target_energy_MAE_meV_atom": 3.1084776131238647
+  },
+  "selected_latent_activity": [
+    {
+      "fit": "balance_1_d8_20261106",
+      "scope": "pooled",
+      "total_KL_nats": 15.424997091293335,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 7
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261106",
+      "scope": "12",
+      "total_KL_nats": 15.427400767803192,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 5
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261106",
+      "scope": "24",
+      "total_KL_nats": 15.728709354996681,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 6
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261106",
+      "scope": "36",
+      "total_KL_nats": 15.129183940589428,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 5
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261107",
+      "scope": "pooled",
+      "total_KL_nats": 15.272903636097908,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 6
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261107",
+      "scope": "12",
+      "total_KL_nats": 14.929312631487846,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 5
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261107",
+      "scope": "24",
+      "total_KL_nats": 15.659795880317688,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 6
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261107",
+      "scope": "36",
+      "total_KL_nats": 15.230856269598007,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 5
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261108",
+      "scope": "pooled",
+      "total_KL_nats": 13.902647413313389,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 4
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261108",
+      "scope": "12",
+      "total_KL_nats": 13.679278530180454,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 7,
+        "0.1": 3
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261108",
+      "scope": "24",
+      "total_KL_nats": 14.249238446354866,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 8,
+        "0.1": 3
+      }
+    },
+    {
+      "fit": "balance_1_d8_20261108",
+      "scope": "36",
+      "total_KL_nats": 13.783439561724663,
+      "active_by_cutoff": {
+        "0.001": 8,
+        "0.01": 6,
+        "0.1": 4
+      }
+    }
+  ],
+  "interpretation": "Weak condition-directed energy shifts coexist with substantial latent sensitivity and better posterior reconstruction; these diagnostics do not establish complete posterior collapse or physical accuracy.",
+  "source_hashes": {
+    "artifacts/conditioning_20261107/training_policy_selection.json": "ec1b2bd1fab23e5d9f960bb8b5d023b1b938dabc50de9891f242725d2b365674",
+    "artifacts/conditioning_20261107/selection_rule.json": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+    "runs/conditioning_20261107/evaluation/policy/summary.csv": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+    "runs/conditioning_20261107/evaluation/policy/fixed_q20_low_request.csv": "081622ababe664be191c4cdb0486c8870da2ee1a102b5145a991d9e1eea2fdcc",
+    "reports/conditioning_20261107/policy_diagnostics_v2/distinct_metric_scopes.csv": "c936a65c15e55a8ea20d5ea2e2beb8f80abd3d79d80b3cbe8a7384704ee45f04",
+    "reports/conditioning_20261107/policy_diagnostics_v2/condition_summary.csv": "a053ae711e7bac280c5ce2c58e5ec4d3bd50146b9f85ad1a757d64ba78b1df07",
+    "reports/conditioning_20261107/policy_diagnostics_v2/latent_summary.csv": "efb8e47a8e5c837e334ff3b08d79ce7407b8f688810b88786bde8b61b389813b",
+    "reports/conditioning_20261107/policy_diagnostics_v2/posterior_prior_summary.csv": "d2a4afa985add1e02f5da89e053b6f808f3ec64dcc55191ea4936b2c7326b726",
+    "reports/conditioning_20261107/policy_diagnostics_v2/selected_latent_diagnostics.csv": "b8099b1d7bb43d1020903e5ca9af7c51084a83acb4fc3c451331ee11bf84a98b",
+    "reports/conditioning_20261107/policy_diagnostics_v2/latent_components.csv": "424eba2b8be751264fe22b23d6abefbcdfbf05ed525204922a348205f0a68248"
+  },
+  "audit_source_sha256": "500998f5394d346f840ecdc1fa36b46e746e1653651129ef4d6d8a176275d397"
+}

@@ -1,0 +1,335 @@
+{
+  "records_checked": 1000,
+  "first_record": {
+    "task_id": "fixed__uma__O3_N48_pilot_7ffffffffeff",
+    "stage": "fixed",
+    "model": "uma",
+    "parent": "O3_N48_pilot",
+    "structure_id": "O3_N48_pilot_7ffffffffeff",
+    "canonical_mask": "011111111111111111111111111111111111111011111111",
+    "n_Li": 2,
+    "parent_index": 21290,
+    "split": "test",
+    "acquisition": "uniform_random",
+    "input_file": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/relax_inputs/O3_N48_pilot_7ffffffffeff.extxyz",
+    "input_sha256": "690ef70b04c7d5f369252f7f0d362e621de9d617d8120783be38e90629b8f9c2",
+    "cell": false,
+    "optimizer": "FIRE",
+    "factor": 0.25,
+    "max_steps": 500,
+    "stride": 5,
+    "worker": "60891540_nid200489_1721151",
+    "job_id": "60891540",
+    "status": "converged",
+    "converged": true,
+    "cell_relaxed": false,
+    "cell_factor_over_N": null,
+    "steps": 31,
+    "calculator_calls": 31,
+    "calculator_seconds": 2.2996703929966316,
+    "wall_seconds": 2.3534871810115874,
+    "initial_seconds": [
+      0.07565889996476471,
+      0.07525328092742711,
+      0.07533186499495059
+    ],
+    "initial_energy_eV": -832.5289366571708,
+    "final_energy_eV": -837.5364680240327,
+    "final_fmax_eV_A": 0.047394949942827225,
+    "final_stress_max_GPa": 2.165458002022951,
+    "final_generalized_fmax": 0.047394949942827225,
+    "volume_ratio": 1.0,
+    "internal_rms_displacement_A": 0.06628472060324472,
+    "internal_max_displacement_A": 0.10269788599988838,
+    "snapshots": 8,
+    "finished": 1793952056.136869
+  },
+  "used_worker_receipts": {
+    "60891540_nid200489_1721151": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "f23644d4fcd73ead21edeba7d4a6e363258713ca7a1d075867e68c73d3cd6106"
+    },
+    "60894121_nid003312_527402": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "671e9f04a903c0d911d5e192880d8c9849c6c1b6d172db9f4669902fbae4c106"
+    },
+    "60894121_nid003309_333100": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "05a06de109ad2b8c5431eb19fdafe7e4a922010499b43cc297d8d664888b1d33"
+    },
+    "60891540_nid200308_2328666": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "9b41c3f39015dbbab8353032bbe084f8de2b8362d670ab7077ecbd2339a2b2b0"
+    },
+    "60891540_nid200424_542225": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "c062e9b39c73fa6e46bee841df98f68b5f4cab513c3a27d8105b5b62490efe79"
+    },
+    "60891540_nid200505_44687": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "c9a64d3b5612e94ecf4070c339d02884d70f3f225c68e8cb66be1daa3c0082e2"
+    },
+    "60894121_nid001781_402061": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "ebfabe2954277df8382a3bad2404c44c87c7ade5086a0f11b64b6fb65dbf8ee2"
+    },
+    "60894121_nid003309_333102": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "7a78bf5564ebc5fb4156714626d4ddeb9ebdc14682541049756023fcf5c4f5b9"
+    },
+    "60894121_nid001781_401514": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "8daa1dc990ac33eda93a0646f615123e5df6db291a3e83ae3caf1160f510872b"
+    },
+    "60894121_nid001781_402060": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "ae4fa99663a56548c628a6a28ea52f15255f094ddde08a0a16085ce1465e54eb"
+    },
+    "60894121_nid003309_333101": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "70281b010d9dc13b602ec4d538689e40f76840708f1410f578af7ba30a3994bc"
+    },
+    "60894121_nid001236_803513": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "7c543010a34f2245775b868735b792e238ef6c3e4b42a17f35d594a2f39fd828"
+    },
+    "60894121_nid003309_333099": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "e9259b826366bde7379a0b14425203f1c0aeb04d611a40aedb72b39760e76f5b"
+    },
+    "60894121_nid001236_803510": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "8b0e321517b85bf1967702a9ad1433680190c1aaa58703d12a9141d443c88b34"
+    },
+    "60894121_nid003312_527444": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "79586b926b74ad8585cb685d125dfd33bd7a8d889f702fb77f4d10170c162f8c"
+    },
+    "60894121_nid001781_402059": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "18f04454b49cbea3d9c23405ea73d5799bfb6db932dd950bcd03495f982aa208"
+    },
+    "60894121_nid001236_803511": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "17248d3f069bd9fdef1f9bd170da66d583ef688e2841bdf91d579d63ac9a6ff8"
+    },
+    "60894121_nid001236_803512": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "bae4c9962306d120e6f1a172218fd9d9906fbf87fac91c0bcc81eea136008864"
+    },
+    "60894121_nid003312_527414": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "b91bb53e484368bef3438bc8c019041d198028ed08c29e1e5fbb5a5cee29b899"
+    },
+    "60894121_nid003312_527434": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "dtype": "float32",
+      "tf32": false,
+      "package_version": "2.25.0",
+      "torch": "2.13.0+cu130",
+      "ase": "3.26.0",
+      "task": "omat",
+      "settings": "InferenceSettings(tf32=False, activation_checkpointing=False, merge_mole=False, compile=False, wigner_cuda=None, external_graph_gen=False, internal_graph_gen_version=2, torch_num_threads=None, edge_chunk_size=None, use_quaternion_wigner=True, base_precision_dtype=torch.float32, nitro=False, execution_mode='general', predict_untrained_forces=set(), predict_untrained_stress=set(), predict_untrained_hessian=set(), hessian_vmap=True, auto_add_default_untrained_tasks=True, max_atoms=None)",
+      "receipt_sha256": "e55f9b2e6a20529555fd3dc393c289e8d86de049c1c6c84a87bdd618918841a3"
+    }
+  },
+  "calculators.py": "dbfbbf1723cef56185ec7a17ca0389bd51dc29030bd478ed0032bc69773f1ce9",
+  "export_geometry.py": "bb56be31f0ce584fcb0adcca491c112744807704f79e9f513fe43667ae6c8933",
+  "prepare_relaxations.py": "930a9120e758b9ade318720b748e86e600845c99b262b4381073b4ed6041dd5b",
+  "config.json": "d4ff6264c8e40c0a8c6c565b5aee7a62a1469d6cef0d1ad82d7f484b86d0dbf1",
+  "validation/geometry_uma_fixed.json": "d494f45845d543eed01b8b396261971938a170b7a574f2633290bb1b412bce6e",
+  "data/logical_completion_uma_fixed.csv": "058abb29d54260346ec27162aa0423cbe89ee5146202dc484b28713c6b6d662f"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "PRELIMINARY",
+  "oracle": {
+    "uma": {
+      "registered_fresh_pairs": 25796,
+      "registered_cache_reuses": 413,
+      "recorded_new_logical_static_attempts": 25796,
+      "successful_new_EFS": 25796,
+      "failed_new_logical_attempts": 0,
+      "fresh_pairs_without_terminal_rows": 0
+    }
+  },
+  "training": {
+    "planned_full_trajectories": 26,
+    "started_full_trajectories": 26,
+    "task_definition_files_at_start": [
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_context_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_smoke_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/latent_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/policy_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/spatial_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_fit_tasks.json"
+    ],
+    "protocol_planned_full_trajectories": 29,
+    "defined_full_trajectories_not_started": 0,
+    "completed_full_trajectories": 26,
+    "full_trajectories_without_terminal_summary": 0,
+    "engineering_trajectories_started": 1,
+    "engineering_trajectories_complete": 1,
+    "eligible_matched_round0_4000_update_trajectories": 26,
+    "maximum_full_trajectories": 30,
+    "fitted_model_usefulness": "Not inferred from successful training or this execution audit"
+  },
+  "allocations": {
+    "accounting_sha256": "dd2b525d68040b8e8becb6c17f9da9b55031b7eca3c613d805c75935a2dd392a",
+    "timezone_assumption": "UTC explicitly required for export",
+    "accounting_snapshot_UTC": "2026-11-08T03:16:38.489251+00:00",
+    "allocation_count": 3,
+    "ignored_child_or_out_of_scope_rows": [],
+    "listed_all_allocations_terminal": false,
+    "GPU_device_hours": 10.928888888888888,
+    "four_GPU_equivalent_node_hours": 2.732222222222222,
+    "physical_node_hours": 3.438888888888889,
+    "maximum_concurrently_allocated_GPUs": 20,
+    "findings": [],
+    "timestamp_check": "Bookkeeping tolerances:2s for integer-second Start/End versus ElapsedRaw;120s for a running row versus export snapshot. Findings require review, not a changed scientific tolerance.",
+    "scope": "Allocated wall time includes startup, idle, failed work and CPU analysis; no child-step double counting; no monetary/credit estimate"
+  },
+  "findings": 0,
+  "output": "reports/conditioning_20261107/execution_preliminary_independent.json"
+}

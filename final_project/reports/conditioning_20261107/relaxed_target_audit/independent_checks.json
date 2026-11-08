@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "force_norm_array_bitwise_equal": true,
+  "force_norm_maximum_absolute_roundtrip_error_eV_A": 0.0,
+  "endpoints_strictly_below_recorded_criterion": 1000,
+  "old_fixed_UMA_rank_fields_exactly_reproduced": 135,
+  "energy_gain_fields_compared": 45,
+  "maximum_energy_gain_roundtrip_difference_meV_atom": 7.105427357601002e-15,
+  "energy_arithmetic_relative_tolerance": 1.7763568394002505e-15,
+  "tolerance_provenance": "Onlyfloat64operation-order roundoff in1000*deltaE/N versus(deltaE/N)*1000; no physicalthreshold relaxed",
+  "source_sha256": "3e33c5fe1d7581720b47ec5b3ea924bc1ed9332cf19bc090318c0bdeb6966a25",
+  "scope": "Independent arithmetic from storedforcearrays and existingrankCSV; no new inference."
+}

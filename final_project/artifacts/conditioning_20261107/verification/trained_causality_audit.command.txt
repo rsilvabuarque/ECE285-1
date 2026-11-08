@@ -1,0 +1,4 @@
+cd /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project
+srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= PYTHONPATH=/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/uma/bin/python reports/conditioning_20261107/trained_causality_audit.py
+
+This completed CPU audit did not modify weights, run optimizer steps, submit a GPU step, or evaluate an MLIP. The JSON receipt and gradients NPZ are the saved results. The audit source refuses to overwrite either result; reruns need a new explicit --output path.

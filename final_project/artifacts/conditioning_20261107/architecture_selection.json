@@ -1,0 +1,306 @@
+{
+  "status": "PASS_DEVELOPMENT_RECOMMENDATION_BEFORE_FINAL",
+  "created_UTC": "2026-11-08T04:02:33.427007+00:00",
+  "recommendation_family": "graph_context",
+  "selected_models": [
+    {
+      "method": "graph_context",
+      "fit_seed": 20261106,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "7cb07df1250b3d51e017a60ac3aedbc95b241ce4e2083dc64dd399a4cb1048a6",
+      "configuration_sha256": "a272685d48ba7832e0f33a9d90f04de3a8c839717dd9f49bc0d3e0bb3d2d2044",
+      "summary_sha256": "01e88aed1a8663ce206810a6c09e823ca87c5e15bd618eee2d5b7169cdd44d6b",
+      "optimizer_updates": 4000,
+      "checkpoint_selection_beta": 0.1
+    },
+    {
+      "method": "graph_context",
+      "fit_seed": 20261107,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261107/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "17df53d92485a4383f00cfe1fc2e4ba18b65cb1d5ccc6f377eb0bb4ee29a5f9e",
+      "configuration_sha256": "8a4c00a03995ff4a5da561240ba8453238b064e0c96375ba61cdb767cc85164e",
+      "summary_sha256": "40c4621547795f831368feae3c60fa6d594b09e2604c997836530051c5820a3b",
+      "optimizer_updates": 4000,
+      "checkpoint_selection_beta": 0.1
+    },
+    {
+      "method": "graph_context",
+      "fit_seed": 20261108,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261108/best_validation_beta_0p1.pt",
+      "checkpoint_sha256": "f1951399de2c7005460ede226c1cea90c9ff5f7b396aea9b02e0762e3d1e878e",
+      "configuration_sha256": "a4f54ea8b7780b191156d3899df10929fc33c0359b42b984824eb4c651d55710",
+      "summary_sha256": "2aa8c43702c5200fa660ffab79f9a28e0ee5f525e88660d7f2efe5b2e02eff5d",
+      "optimizer_updates": 4000,
+      "checkpoint_selection_beta": 0.1
+    }
+  ],
+  "rule": "Maximize macro distinct-novel requested-bin yield on DEVELOPMENT, equal count/bin/fit weights; tie by original-q20 requested-low yield, then no-balancing simplicity",
+  "interpretation": "Apply the frozen macro-development requested-bin yield rule to architecture families; graph_context is the unique maximum. Original-q20 low yield and simplicity tie-breaks were not needed.",
+  "architecture": "D4 graph encoder with strict-past causal graph features in the autoregressive decoder",
+  "scope": "Confirmed DEVELOPMENT samples only, equal count/bin/fit weights; all final comparisons remain retained",
+  "methods_ranked": [
+    {
+      "method": "graph_context",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.6087962962962963,
+      "low_original_q20_yield": 0.6111111111111112,
+      "seed_values": [
+        {
+          "method": "graph_context",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.5902777777777778,
+          "low_original_q20_yield": 0.5833333333333334
+        },
+        {
+          "method": "graph_context",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.609375,
+          "low_original_q20_yield": 0.6354166666666666
+        },
+        {
+          "method": "graph_context",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.6267361111111112,
+          "low_original_q20_yield": 0.6145833333333334
+        }
+      ]
+    },
+    {
+      "method": "mutation",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.5879629629629629,
+      "low_original_q20_yield": 0.5034722222222222,
+      "seed_values": [
+        {
+          "method": "mutation",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.5868055555555556,
+          "low_original_q20_yield": 0.46875
+        },
+        {
+          "method": "mutation",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.59375,
+          "low_original_q20_yield": 0.59375
+        },
+        {
+          "method": "mutation",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.5833333333333334,
+          "low_original_q20_yield": 0.4479166666666667
+        }
+      ]
+    },
+    {
+      "method": "graph_encoder",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.34490740740740744,
+      "low_original_q20_yield": 0.24305555555555555,
+      "seed_values": [
+        {
+          "method": "graph_encoder",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.3350694444444444,
+          "low_original_q20_yield": 0.2708333333333333
+        },
+        {
+          "method": "graph_encoder",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.3385416666666667,
+          "low_original_q20_yield": 0.23958333333333334
+        },
+        {
+          "method": "graph_encoder",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.3611111111111111,
+          "low_original_q20_yield": 0.21875
+        }
+      ]
+    },
+    {
+      "method": "uniform",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.32754629629629634,
+      "low_original_q20_yield": 0.19791666666666666,
+      "seed_values": [
+        {
+          "method": "uniform",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.3246527777777778,
+          "low_original_q20_yield": 0.22395833333333334
+        },
+        {
+          "method": "uniform",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.3333333333333333,
+          "low_original_q20_yield": 0.1875
+        },
+        {
+          "method": "uniform",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.3246527777777778,
+          "low_original_q20_yield": 0.18229166666666666
+        }
+      ]
+    },
+    {
+      "method": "symmetry",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.3211805555555556,
+      "low_original_q20_yield": 0.2934027777777778,
+      "seed_values": [
+        {
+          "method": "symmetry",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.3107638888888889,
+          "low_original_q20_yield": 0.328125
+        },
+        {
+          "method": "symmetry",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.3298611111111111,
+          "low_original_q20_yield": 0.23958333333333334
+        },
+        {
+          "method": "symmetry",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.3229166666666667,
+          "low_original_q20_yield": 0.3125
+        }
+      ]
+    },
+    {
+      "method": "dense",
+      "design_seeds": 3,
+      "balanced_useful_yield": 0.31828703703703703,
+      "low_original_q20_yield": 0.296875,
+      "seed_values": [
+        {
+          "method": "dense",
+          "replicate_id": "20261106",
+          "balanced_useful_yield": 0.3072916666666667,
+          "low_original_q20_yield": 0.3020833333333333
+        },
+        {
+          "method": "dense",
+          "replicate_id": "20261107",
+          "balanced_useful_yield": 0.328125,
+          "low_original_q20_yield": 0.3125
+        },
+        {
+          "method": "dense",
+          "replicate_id": "20261108",
+          "balanced_useful_yield": 0.3194444444444444,
+          "low_original_q20_yield": 0.2760416666666667
+        }
+      ]
+    }
+  ],
+  "independent_metric_checks": [
+    {
+      "method": "dense",
+      "metric": "balanced_useful_yield",
+      "value": 0.31828703703703703,
+      "archived": 0.31828703703703703,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "dense",
+      "metric": "low_original_q20_yield",
+      "value": 0.296875,
+      "archived": 0.296875,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "graph_context",
+      "metric": "balanced_useful_yield",
+      "value": 0.6087962962962963,
+      "archived": 0.6087962962962963,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "graph_context",
+      "metric": "low_original_q20_yield",
+      "value": 0.6111111111111112,
+      "archived": 0.6111111111111112,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "graph_encoder",
+      "metric": "balanced_useful_yield",
+      "value": 0.34490740740740744,
+      "archived": 0.34490740740740744,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "graph_encoder",
+      "metric": "low_original_q20_yield",
+      "value": 0.24305555555555555,
+      "archived": 0.24305555555555555,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "mutation",
+      "metric": "balanced_useful_yield",
+      "value": 0.5879629629629629,
+      "archived": 0.5879629629629629,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "mutation",
+      "metric": "low_original_q20_yield",
+      "value": 0.5034722222222222,
+      "archived": 0.5034722222222222,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "symmetry",
+      "metric": "balanced_useful_yield",
+      "value": 0.3211805555555556,
+      "archived": 0.3211805555555556,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "symmetry",
+      "metric": "low_original_q20_yield",
+      "value": 0.2934027777777778,
+      "archived": 0.2934027777777778,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "uniform",
+      "metric": "balanced_useful_yield",
+      "value": 0.32754629629629634,
+      "archived": 0.32754629629629634,
+      "absolute_difference": 0.0
+    },
+    {
+      "method": "uniform",
+      "metric": "low_original_q20_yield",
+      "value": 0.19791666666666666,
+      "archived": 0.19791666666666666,
+      "absolute_difference": 0.0
+    }
+  ],
+  "uncertainty": "Three fitted seeds are retained; reported spread is descriptive and proposal rows are not independent fits. Improvement on DEV is a hypothesis for untouched FINAL, not confirmation.",
+  "final_labels_opened": false,
+  "protected_test_labels_used": false,
+  "new_training_trajectories": 0,
+  "new_MLIP_calls": 0,
+  "source_hashes": {
+    "runs/conditioning_20261107/spatial_generation_manifest.json": "dbb2d0b1299b57ce6e583d711e5da411b079bdcfc8e4fab3ce514d2511b625e5",
+    "runs/conditioning_20261107/graph_context_confirmation_manifest.json": "5ed12b991862b1422bea37345a6073673924e4067582afd541a2d1ef37466fa2",
+    "reports/conditioning_20261107/spatial_confirmed_diagnostics_manifest.json": "40a5e2885b152d8d11397113307f9f73d97555f0f2d1f56d10ad0df579ba3ba3",
+    "runs/conditioning_20261107/evaluation/spatial_confirmed/receipt.json": "0d61e007b62fe4a8e81520fa1d4fe7353de20ef861a086103973a13a6996a0ed",
+    "runs/conditioning_20261107/evaluation/spatial_confirmed/summary.csv": "5ed911c5296c478bc9e87187ac0dbde38be5d5750451130b1601e93bf7f2388e",
+    "runs/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv": "e4fdee35d8ed29954c4ba4a51583de8f2c2305698ec1f07d819158b9ec92d20f",
+    "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json": "59e063950dd0ec6bfd2e744aa51f830af9bffdb6a24364bd6f9314e6e3f2f833",
+    "reports/conditioning_20261107/spatial_confirmed_diagnostics/attempt_outcomes.csv": "b56acb8b484dd6d26fbffa765838fe60030a78624b2eb11843b145056fad5f7a",
+    "reports/conditioning_20261107/spatial_confirmed_diagnostics/distinct_metric_scopes.csv": "2c230f291f3092feb696a583af05de55a959c5ff333461b5200e344fc9110e92",
+    "runs/conditioning_20261107/data/history_before_development.json": "8ec3d93252af5c9258ba7c1dc92abd82599b64a831f3f6bcaf8ca1cf402dfbfa",
+    "artifacts/conditioning_20261107/selection_rule.json": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+    "artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json": "3cb0b6466d91f0973941b5c4fd36922b659174480cebaa6ba20ef1b437c9c34f"
+  },
+  "analyzer_source_sha256": "4add2707899e492fb5779c0942f2999cb510591bd5cfba4f4c82b5bc4f2a9605",
+  "audit_source_sha256": "05b19a6b1e44c1f202bdcfad0193adef6103a163468640057b156b593e8119bc"
+}

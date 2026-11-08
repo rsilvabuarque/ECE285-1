@@ -1,0 +1,35 @@
+{
+  "status": "SELECTED_ON_DEVELOPMENT_ONLY",
+  "method": "balance1_sel0p1_d8",
+  "class_balance": true,
+  "selection_beta": 0.1,
+  "latent_dim": 8,
+  "training_updates": 4000,
+  "training_beta": 0.1,
+  "ranked_candidates": [
+    {
+      "method": "balance1_sel0p1_d8",
+      "balanced_yield": 0.3211805555555555,
+      "low_q20_yield": 0.3072916666666667
+    },
+    {
+      "method": "balance1_sel1_d8",
+      "balanced_yield": 0.30613425925925924,
+      "low_q20_yield": 0.3142361111111111
+    },
+    {
+      "method": "balance0_sel0p1_d8",
+      "balanced_yield": 0.30439814814814814,
+      "low_q20_yield": 0.30902777777777773
+    },
+    {
+      "method": "balance0_sel1_d8",
+      "balanced_yield": 0.2928240740740741,
+      "low_q20_yield": 0.2795138888888889
+    }
+  ],
+  "source_summary_sha256": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+  "decision_rule_sha256": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+  "data_scope": "Protected round0 train; development proposals, no protected test labels",
+  "checkpoint_selection": "Alternative validation beta checkpoints from the same six trajectories"
+}

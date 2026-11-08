@@ -1,0 +1,145 @@
+{
+  "stage": "descriptor",
+  "selection": {
+    "status": "SELECTED_ON_DEVELOPMENT_ONLY",
+    "method": "selected_dense_d4",
+    "class_balance": true,
+    "selection_beta": 0.1,
+    "latent_dim": 4,
+    "training_updates": 4000,
+    "training_beta": 0.1,
+    "ranked_candidates": [
+      {
+        "method": "balance1_sel0p1_d8",
+        "balanced_yield": 0.3211805555555555,
+        "low_q20_yield": 0.3072916666666667
+      },
+      {
+        "method": "balance1_sel1_d8",
+        "balanced_yield": 0.30613425925925924,
+        "low_q20_yield": 0.3142361111111111
+      },
+      {
+        "method": "balance0_sel0p1_d8",
+        "balanced_yield": 0.30439814814814814,
+        "low_q20_yield": 0.30902777777777773
+      },
+      {
+        "method": "balance0_sel1_d8",
+        "balanced_yield": 0.2928240740740741,
+        "low_q20_yield": 0.2795138888888889
+      }
+    ],
+    "source_summary_sha256": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+    "decision_rule_sha256": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+    "data_scope": "Protected round0 train; development proposals, no protected test labels",
+    "checkpoint_selection": "Alternative validation beta checkpoints from the same six trajectories",
+    "latent_candidates": [
+      {
+        "latent_dim": 16,
+        "method": "latent16",
+        "balanced_yield": 0.2881944444444444,
+        "low_q20_yield": 0.2743055555555556
+      },
+      {
+        "latent_dim": 32,
+        "method": "latent32",
+        "balanced_yield": 0.3246527777777778,
+        "low_q20_yield": 0.3142361111111111
+      },
+      {
+        "latent_dim": 4,
+        "method": "latent4",
+        "balanced_yield": 0.3263888888888889,
+        "low_q20_yield": 0.33159722222222227
+      },
+      {
+        "latent_dim": 8,
+        "method": "latent8",
+        "balanced_yield": 0.29976851851851855,
+        "low_q20_yield": 0.29340277777777773
+      }
+    ],
+    "latent_selection": {
+      "latent_dim": 4,
+      "method": "latent4",
+      "balanced_yield": 0.3263888888888889,
+      "low_q20_yield": 0.33159722222222227
+    },
+    "latent_rule_sha256": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+    "latent_summary_sha256": "de9b0a576d17585d606de9430590a54766dbc5679cad8e0c5b160033afd788c9",
+    "scope": "Training policy and dimension selected using development only; no final assessment generated yet",
+    "training_policy_method": "balance1_sel0p1_d8"
+  },
+  "tasks": [
+    {
+      "id": "descriptor_20261106",
+      "variant": "descriptor",
+      "fit_seed": 20261106,
+      "argv": [
+        "--data",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+        "--parent",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+        "--condition-schema-in",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+        "--condition-mode",
+        "multibin",
+        "--kind",
+        "ar_cvae",
+        "--latent-dim",
+        "4",
+        "--encoder",
+        "dense",
+        "--orientation",
+        "canonical",
+        "--counts",
+        "12",
+        "24",
+        "36",
+        "--teacher",
+        "uma",
+        "--teacher-head",
+        "omat",
+        "--geometry-protocol",
+        "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+        "--seed",
+        "20261106",
+        "--epochs",
+        "100",
+        "--minimum-epochs",
+        "100",
+        "--patience",
+        "100",
+        "--max-updates",
+        "4000",
+        "--batch-size",
+        "512",
+        "--learning-rate",
+        ".001",
+        "--beta-final",
+        ".1",
+        "--beta-warmup",
+        "20",
+        "--validation-beta",
+        "1",
+        "--selection-betas",
+        "1",
+        ".1",
+        "--max-seconds",
+        "1200",
+        "--device",
+        "cuda",
+        "--threads",
+        "4",
+        "--output-dir",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/descriptor_20261106",
+        "--class-balance",
+        "--descriptor-values",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/parent_graph/descriptor_values.npz",
+        "--descriptor-schema-in",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/parent_graph/descriptor_schema.json"
+      ]
+    }
+  ]
+}

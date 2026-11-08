@@ -1,20 +1,76 @@
-# Cathode vacancy CVAEs: midterm package
+# Cathode vacancy CVAEs: conditioning, physical graphs, and local edits
 
-**Beihao and Varad: read [your tasks](docs/COLLABORATOR_TASKS.md), then use the
-commands below.** The class question is whether a conditional generator can
-produce new Li/vacancy arrangements at requested Li counts and low, middle, or
-high teacher-energy ranges. A separate temperature-dependent acquisition policy
-decides how often to request each range. The current parent is O3 LiCoO₂ with
-48 removable Li sites.
+**Beihao and Varad: start with [your tasks](docs/COLLABORATOR_TASKS.md).**
+The current study asks which training choices, latent sizes, and physical-neighbor
+features improve generation at requested composition and energy range. A
+seed-conditioned edit model is compared with the same frozen mutation seeds and
+swap budgets if executed after the required report gate. The O3 LiCoO₂ example
+has 48 possible Li sites; new parent/graph interfaces also retain general host
+chemistry, mobile-site indices, cell and periodic topology.
 
-This extends the existing binary energy-conditioned AR CVAE; energy conditioning
-itself was already present. The benchmark uses MLIP energies of pristine-derived,
+Read the [controlled-study explanation](docs/CONDITIONING_STUDY.md),
+[frozen protocol](artifacts/conditioning_20261107/protocol.json), and
+[actual experiment ledger](reports/conditioning_20261107/experiment_ledger.json).
+The current compiled report is [main.pdf](docs/midterm1/main.pdf), with LaTeX
+sources alongside it. The completion/report receipts distinguish an early interim
+draft from the required completed packet. Implemented code or a planned run is
+not a measured result.
+
+The [paired deletion/relaxation audit](reports/conditioning_20261107/relaxed_target_audit/README.md)
+uses existing 1000 fixed-cell UMA lineages; it needs no new reference calculations.
+The [parent/descriptor audit](reports/conditioning_20261107/parent_graph/receipt.json)
+checks physical periodic edges, full host chemistry, and symmetry invariance.
+Keep the original protected splits and historical artifacts immutable.
+
+The frozen final comparison is complete: graph encoder plus causal decoder
+context gives **62.04% UMA /63.45% MACE** balanced useful yield, versus frozen
+mutation **58.62/57.29%**. UMA original-q20 low-request yields are 63.54% versus
+52.52%. The final history was frozen before 34,560 UMA attempts and a matched
+20,736-attempt MACE audit. Independent raw-mask replay reproduces all 16 result
+tables. This is a teacher-defined conditional-sampling result. Context's tiny KL
+and weak latent response indicate that its variational pathway is nearly unused;
+a matched spatial no-latent control remains important. The main report and
+[results](docs/RESULTS.md) retain that limitation and the negative comparisons.
+
+The sections below retain installation and November 7 reference-reproduction
+commands. Exact new-study commands and selected policies are recorded with the
+new packet and collaborator tasks.
+
+The earlier multibin extension built on a binary energy-conditioned AR CVAE;
+energy conditioning itself was already present. The benchmark uses MLIP energies of pristine-derived,
 unrelaxed deletion structures. A low-energy request is not a certificate of a
 minimum or a geometry relaxation. The temperature policy is **acquisition under
 a static MLIP surrogate**, not measured configurational entropy or calibrated
 reactor equilibrium.
 
-The completed balanced benchmark is a negative result for the extension:
+The completed controlled **development-policy** comparison selected balancing
+and validation selection weight 0.1 after six 4000-update fits. Its balanced UMA
+yield is 32.12%, compared with 33.62% uniform and 58.97% frozen mutation. This is a
+modest training-policy effect, not a final assessment or a CVAE win. Paired
+requests show weak energy response despite measurable latent use. See
+[measured scopes and diagnostics](docs/RESULTS.md) for exact definitions;
+remaining core/final statuses are explicit in the ledger.
+
+The separate latent-size development sweep retained D4: 32.64% balanced useful
+yield and 33.16% original-q20 low-request yield, against 33.04/19.62% uniform and
+59.72/52.08% mutation in that namespace. D8 reused its existing weights; its new
+Monte Carlo outcome is not another training round. The predeclared size rule
+and all individual seeds are saved. Larger latent size did not systematically
+improve discovery, even though reconstruction improved.
+
+The three-fit **spatial development** comparison is complete. Adding strict-past
+neighbor summaries to the graph-encoder decoder gives 60.88% balanced and 61.11%
+original-q20 low-request yield, versus 58.80/50.35% mutation. The graph encoder
+alone gives 34.49/24.31%. These remain development comparisons; the separately
+frozen final assessment is reported above. Paired requests show much stronger energy control, but the
+context model's very small KL and weak response to latent changes indicate a
+nearly unused latent pathway. The supported finding is a useful conditional
+spatial AR mechanism; the benefit of its variational component remains unresolved.
+The one-fit structural-descriptor pilot did not improve joint useful yield.
+See [the full interpretation](docs/CONDITIONING_STUDY.md) and source-bound
+[results](docs/RESULTS.md); final status remains explicit in the ledger.
+
+The completed November 7 balanced benchmark is a negative reference result:
 UMA unique-novel in-bin yield is 31.00% for multibin, 33.00% for uniform raw
 sampling and 58.39% for requested-bin mutation. MACE gives the same ordering.
 The useful course result is a reproducible comparison and a diagnosis of limited
@@ -36,7 +92,7 @@ Read these in order:
 ## Obtain the review branch
 
 ```bash
-git clone --branch overnight/multibin-acquisition-20261107 \
+git clone --branch midterm/conditioning-graph-edit-20261107 \
   https://github.com/rsilvabuarque/ECE285-1.git ECE285-midterm
 cd ECE285-midterm/final_project
 ```
@@ -95,6 +151,20 @@ local `.venvs` default is suitable. See `bash scripts/install.sh --help`.
 ## Retrieve and verify the measured packet
 
 The frozen historical data/checkpoints are already under `artifacts/current/`.
+
+The new cached replay needs no GPU or teacher call:
+
+```bash
+python scripts/conditioning_20261107/replay_cached_results.py \
+  --packet artifacts/conditioning_20261107 \
+  --output-dir runs/conditioning_20261107/portable_replay --plots
+```
+
+Use `--print-training-command graph_context_20261106` with that script to print
+the portable measured fit command without executing training. The payload
+contains all 28 core fit folders and both saved selection rules; its manifest
+binds exact data, history, masks, scalar labels and checkpoint hashes.
+
 The new packet keeps small tables/figures and its download manifest in Git;
 new CVAE weights and larger attempt/scalar arrays are in a checksum-protected
 release asset. The small `cost_receipt.json` is tracked separately in Git. Foundation-model weights and raw trajectories are not in it.
