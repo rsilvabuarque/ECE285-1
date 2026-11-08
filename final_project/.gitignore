@@ -79,3 +79,15 @@ docs/midterm1/*.out
 /reports/overnight_20261108/**/attempt_outcomes.csv
 /reports/overnight_20261108/**/paired_attempts.csv
 /reports/overnight_20261108/**/*.npz
+
+# Build products stay local; the reviewed PDFs and immutable snapshots are kept.
+/docs/midterm_20261108/*.aux
+/docs/midterm_20261108/*.bbl
+/docs/midterm_20261108/*.blg
+/docs/midterm_20261108/*.log
+/docs/midterm_20261108/*.out
+/docs/research_supplement_20261108/*.aux
+/docs/research_supplement_20261108/*.bbl
+/docs/research_supplement_20261108/*.blg
+/docs/research_supplement_20261108/*.log
+/docs/research_supplement_20261108/*.out
