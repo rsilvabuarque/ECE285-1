@@ -1,0 +1,9 @@
+{
+  "status": "ARITHMETIC_CHECKER_CANCELLATION_SCALE_ERROR",
+  "observed_difference_eV": 1.13687e-13,
+  "incorrect_tolerance_eV": 2.84217e-14,
+  "quantity": "Difference of two representative-minus-exact mean energies, formed from roughly240eV operands",
+  "diagnosis": "The checker applied float64 roundoff scaling to the tiny final difference instead of the magnitudes of the subtracted energy operands. The production data/results were unchanged.",
+  "repair": "For subtracted energy errors, bound arithmetic comparison using128*float64eps*max(1,absolute operand energies), preserving the same128 factor. Re-execute into a fresh result directory; retain this failed checker/source.",
+  "no_MLIP_DFT_or_training_rerun": true
+}

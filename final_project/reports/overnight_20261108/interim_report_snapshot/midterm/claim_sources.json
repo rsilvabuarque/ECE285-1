@@ -1,0 +1,104 @@
+{
+  "status": "REVIEWABLE_INTERIM_DEVELOPMENT_COMPLETE_FINAL_PENDING",
+  "created_UTC": "2026-11-08T13:11:47.786557+00:00",
+  "body_pages": 5,
+  "total_pages": 6,
+  "sources": {
+    "central_protocol": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/protocol.json",
+      "sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564"
+    },
+    "initial_DEVELOPMENT_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/initial_controls/summary.csv",
+      "sha256": "65739c746a57eace2220dd60e1f065d405ce4ef408ee779245e34b22535c3322"
+    },
+    "initial_DEVELOPMENT_per_seed": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/initial_controls/seed_metrics.csv",
+      "sha256": "8bf38af23bb0b980f2ba981189d01c642a40f16e806c1c881a916961a334de9b"
+    },
+    "initial_DEVELOPMENT_receipt": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/initial_controls/receipt.json",
+      "sha256": "b5d828445a39bd42a35d36a706e39cdaba62cc76405860ca52238b2bba315e98"
+    },
+    "TRAIN_VAL_learning": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/initial_controls_v1/learning_curves_summary.csv",
+      "sha256": "0fcdf2e694efe7744dae19c906581b5ae01a4df1e8499fb9251cdbff9006f358"
+    },
+    "paired_condition_and_latent_diagnostics": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_models_20261108/final_project/reports/overnight_20261108/initial_controls_v1/diagnostics_by_fit.csv",
+      "sha256": "df9538298ccff85b3a787a1e7f1e9ccbe02ea2e2ae98f8585223665c9dad4fe5"
+    },
+    "paired_pilot": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/pilot_collection/receipt.json",
+      "sha256": "f7ccd4454b416650e820e8e6dcd449a9f8ca7ec340467a88612663961171710b"
+    },
+    "smallcell_raw_reference": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell/receipt.json",
+      "sha256": "d2c896823f9cf12105c9669859708f6347a9be560578c8e3d36c0e5ee12903d3"
+    },
+    "smallcell_exact_tables": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell/thermodynamics.csv",
+      "sha256": "e45f6472d64b6ef4bda4b8cca4fc4d345646a3b6bfca79108fc3db0c8c0992bd"
+    },
+    "smallcell_independent": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell_independent_v2/receipt.json",
+      "sha256": "d6aef9a1a317fb10190583cba2b5d5aed66e9cd0d494dbbf70025a08a0a82cec"
+    },
+    "smallcell_rank_scope": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell_independent_v2/rank_scope.csv",
+      "sha256": "0ef296320785843b7404d639d4de153b908fe0447102e5a50900c6bd49f144b7"
+    },
+    "harmonic_full27": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_null_recovery/receipt.json",
+      "sha256": "cdbd126aa04bb79c16bba6f4372655343a4f8b904fda2adcc8e3d0c228290fdd"
+    },
+    "harmonic_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_summary/receipt.json",
+      "sha256": "66d369101d3ad3d3b1f2859eb9d669b6e54c2499ba6ccd9af605decb3df08f12"
+    },
+    "NEB_interim": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/neb_summary_interim/receipt.json",
+      "sha256": "1cc2a3683bd28aab480686a1b880931e7f2fbca0da8a0a2275e87fea2f88a8de"
+    },
+    "NEB_interruption": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/neb_interruption/receipt.json",
+      "sha256": "35a1a06534d4ffcc2436c8a8b172b33c7afcab00b87590a685acc10c0c02f3b1"
+    },
+    "eight_screen_design": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/screen_fit_tasks.json",
+      "sha256": "a6a9018a2c2e7d1babf739e879c7950cb7ae83efe873cb75b7562383a8349403"
+    }
+  },
+  "completed_claims": [
+    "NineA/B/C4kfits",
+    "two_teacher_DEVELOPMENT8640primary_attempts",
+    "eight_screen4kfits_no_score_claim",
+    "paired96TRAINpilot",
+    "finite12rawreference",
+    "harmonic27case_null",
+    "NEBfirst_two_tranches_with_nonconvergence"
+  ],
+  "pending": [
+    "screen_rescoring_selection",
+    "fullpairedsupportaudit",
+    "labeltargetfits_and_endpointassessment",
+    "freshFINAL_MACE",
+    "event2tight7_MACE_and_saddlechecks",
+    "resourceclosure_publication"
+  ],
+  "protected": "Existingdocs/midterm1 and prior-goal snapshots unchanged. Development tables are not fresh FINAL evidence.",
+  "citation_verification": [
+    {
+      "url": "https://aclanthology.org/N19-1021/",
+      "scope": "CyclicKLmethodidea; not guaranteed sampling improvement"
+    },
+    {
+      "url": "https://proceedings.mlr.press/v80/alemi18a.html",
+      "scope": "Reconstruction/objective and representation quality differ"
+    },
+    {
+      "url": "https://docs.ase-lib.org/ase/neb.html",
+      "scope": "NEBmethod concept; executedASE3.26.0hashes are authoritative"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "status": "COMPLETE_READ_ONLY_PHYSICAL_SUMMARY",
+  "source_sha256": "a7de197a8afeaae24f7fb1cead8a389a3f5bb1464b34aa99bd45d8edc024ab86",
+  "sources": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_1_repeat2_coarse_7/receipt.json",
+      "sha256": "d29c4cff6f4f4bfa5c012361b75bf9c13afb93246021d323c91a870de3090c58"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_1_repeat2_oldrefined_exact_7/receipt.json",
+      "sha256": "58276726e90833493f190ae9b7f3a6df3db60d5075c1a324adccc602c2d47099"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_1_repeat2_refined_7_recovery69/receipt.json",
+      "sha256": "4b424a19f5869f1f0c81a0a83aef56586c42c38e1b3a72627258e2b0373d0d62"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_fixed7_tight01/receipt.json",
+      "sha256": "9857ae9f4fb5409fb6e2b032dba2579e41a038107a1f0b3bb49cccca3ff10353"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_saved_5/receipt.json",
+      "sha256": "1203bf44662921d7ae765fca1afc7e540ae61cdd286465f4453348fba7c1f7ba"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_saved_7/receipt.json",
+      "sha256": "e7d0a592f370b1ca43d34478e3758350e32ffc5aaca7edfdd4f2ee623d97c613"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_saved_9/receipt.json",
+      "sha256": "d50310e90ccf91822cd4d6a6df47791bff07428ed827cd80391a2af4085a9e11"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/refined_interruption_recovery_audit/receipt.json",
+      "sha256": "f4a4bef1610d75c284e681068a9dcdc6f6bf670f6696728c088c327feb092156"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/mace_7/receipt.json",
+      "sha256": "647706844aa531f9d060b64720c2b3e8bf1b391c4854c85fc632a18ab7d36402"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/uma_7/receipt.json",
+      "sha256": "3e8afaf28c2d2cd68b4f736e98a25f7f66e9a5be39c5b6027b43dfb53e394cef"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/mace/receipt.json",
+      "sha256": "76e989ba6b71b9507acd56483dba191e588506a639769f7c8e8c1cac554dd847"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/uma/receipt.json",
+      "sha256": "1c245806cf48a98a29a25adf4f7bc0329fa0e473398b433ef53dee2bfaa072c3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_mace/event2_uma7/receipt.json",
+      "sha256": "61ea84447e9701d0d5215774dcb7b209cde14bcf8ce17ebce536d2b45986a055"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/receipt.json",
+      "sha256": "f8761d9be8d380c7d73b3be2f5b258de46aee7e2a4c5f7345631a1aaa4573211"
+    }
+  ],
+  "event2_fixed_original_common_target_forward_spread_eV": 0.004649678297937498,
+  "event2_fixed7_tolerance_0p01_minus_0p02_forward_eV": -0.00783925946780073,
+  "event2_new_UMA_endpoints_0p02_minus_original_7_0p01_forward_eV": 0.0264444668005126,
+  "combined_protocol_change_exceeds_practical_target": true,
+  "combined_change_scope": "Both endpoint coordinates and band force target differ; demonstrates combined protocol sensitivity, not an isolated endpoint-error estimate. Restricted image/tolerance checks do not establish overall barrier stability.",
+  "numerical_stability_target_eV_hop": 0.02,
+  "numerical_target_scope": "Chosen practical numerical target, not DFT or physical accuracy",
+  "saddle_candidate_geometry_sha256": "bbf17270493dfe8bf91b9f9f05f1ad893b9cd051e39fc8340c8ab370605d37d7",
+  "saddle_displacement_sensitivity": {
+    "candidate_geometry_sha256": "bbf17270493dfe8bf91b9f9f05f1ad893b9cd051e39fc8340c8ab370605d37d7",
+    "displacement_A": [
+      0.01,
+      0.005
+    ],
+    "lowest_internal_eigenvalues": [
+      -0.11100291941572168,
+      -0.11101001338338073
+    ],
+    "next_internal_eigenvalues": [
+      0.003342709576552935,
+      0.0033429685474752964
+    ],
+    "strictly_negative_counts": [
+      1,
+      1
+    ],
+    "absolute_negative_mode_overlap": 0.9999999944370114,
+    "relative_Hessian_difference": 0.00014955067112449702
+  },
+  "mode_route_overlaps": {
+    "improved_tangent": {
+      "mass_metric_signed_overlap": -0.7788256020513634,
+      "mass_metric_absolute_overlap": 0.7788256020513634,
+      "Cartesian_signed_overlap": -0.9203276653042678,
+      "Cartesian_absolute_overlap": 0.9203276653042678
+    },
+    "local_chord": {
+      "mass_metric_signed_overlap": -0.833978148978601,
+      "mass_metric_absolute_overlap": 0.833978148978601,
+      "Cartesian_signed_overlap": -0.9442735568202529,
+      "Cartesian_absolute_overlap": 0.9442735568202529
+    },
+    "convention": "Mass metric uses normalized sqrt(M)*CartesianNEBtangent against unit mass-weighted eigenvector; Cartesian alternative compares normalized M^-1/2 eigenvector. Signed mode orientation is arbitrary.",
+    "no_new_force_calls": true,
+    "ASE_version": "3.26.0"
+  },
+  "MACE_on_original_UMA7": {
+    "forward_span_eV": 0.1651611328125,
+    "reverse_span_eV": 0.2515869140625,
+    "peak_image": 3,
+    "physical_endpoint_Fmax_eV_A": [
+      0.25671398639678955,
+      0.254660964012146
+    ]
+  },
+  "later_DFT_candidate_handoff": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/handoff_manifest.json",
+  "exposure_history_snapshot": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/research_exposure_snapshots/receipt.json",
+  "unresolved": [
+    "Event1doesnotmeetdeclaredforcecriterion",
+    "Stablelocalindexonecurvaturedoesnotverifythecompleteoriginalelementaryhop",
+    "SameRAWassignedmaskdoesnotidentifycontinuousPESbasin",
+    "Offsiteforce-smallstateisnotcertifiedalocalminimum",
+    "TeacherindependentnewendpointbandsarenotDFTvalidatedbarriers"
+  ],
+  "interrupted_call_accounting": "Externallykilledrefinedworkerhas3020completedloggedcalls; atmostoneadditionalserialcalculateinvocationcouldhavebeeninflightwithoutapersistedrow. Do notclaimneuralbackbone-forwardcounts. Allocatedtimeincludingthisfailureisaccountedbyrootresourceaudit.",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "new_DFT_calls": 0
+}

@@ -1,0 +1,31 @@
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+Control & Fits / updates & VAL reconstruction & VAL KL & Active latent dims\\\midrule
+A: graph CVAE + context & $3\times 4000$ &22.633--22.663&0.006--0.019&0/4\\
+B: spatial AR & $3\times 4000$ &22.618--22.643&0&none\\
+C: dense CVAE + context & $3\times 4000$ &16.275--17.148&12.515--13.322&4/4\\\bottomrule
+\end{tabular}
+\end{center}
+Selected-checkpoint ranges are validation nats/row, not prior-generation scores.
+Activity uses $\operatorname{Var}_{\rm VAL}(\mu_j)>0.01$; all A components also
+fall below 0.001 and all C components exceed 0.1. These are descriptive diagnostic
+cutoffs, not physical convergence thresholds.
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+&\multicolumn{2}{c}{Balanced novel in-bin yield(\%)}&\multicolumn{2}{c}{Original-$q_{20}$ LOW yield(\%)}\\
+Method&UMA&MACE&UMA&MACE\\\midrule
+A: graph CVAE&61.92&63.48&63.72&68.40\\
+B: spatial AR&62.50&64.00&64.06&68.75\\
+C: dense CVAE&31.48&31.31&32.64&36.98\\
+Mutation&56.37&56.25&50.00&50.87\\
+Uniform&33.33&33.33&18.23&18.06\\\bottomrule
+\end{tabular}
+\end{center}
+These are \textbf{development} means over three fit/sampler replicates, not fresh
+FINAL results. UMA balanced descriptive seed SD is 1.41/1.08/0.89/1.65 percentage
+points for A/B/C/mutation. Uniform reuses its draws across requested bins, so its
+balanced mean is exactly one third here; this does not imply zero uncertainty in
+its LOW yield. With paired randomness, UMA LOW$\to$HIGH shifts A/B energies by
+5.35/5.45~meV/atom, versus 0.41 for C. Changing $z$ changes A by 0.764 sites on average
+(69.44\% same orbit), versus 13.57 sites for C (0.52\% same orbit). Active C latents
+therefore generate diversity without useful energy-bin control in this study.

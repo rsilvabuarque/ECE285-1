@@ -3,32 +3,58 @@
   "protocol_sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564",
   "requirements": {
     "spatial_controls": {
-      "status": "FITS_COMPLETE_DEV_SCORING_RUNNING",
-      "completed_full_fits": 9
+      "status": "COMPLETE_FRESH_FINAL_INDEPENDENTLY_RECOUNTED",
+      "completed_full_fits": 9,
+      "completed_control_fits": 12,
+      "initial_DEV": "reports/overnight_20261108/initial_controls/receipt.json",
+      "D_screen": "reports/overnight_20261108/screens/evaluation/receipt.json",
+      "total_all_lane_full_fits": 37,
+      "total_optimizer_updates": 148000,
+      "receipt": "reports/overnight_20261108/final_static/receipt.json"
     },
     "improvement_screen": {
-      "status": "PLANNED"
+      "status": "COMPLETE_NEGATIVE_AND_PROMOTED_ARMS_RETAINED",
+      "screen_full_fits": 5,
+      "promoted": "reports/overnight_20261108/screen_promotion.json",
+      "final_selected": "A_radial_shells and B_radial_shells; selection usedDEVonly"
     },
     "paired_pilot": {
       "status": "COMPLETE",
       "converged": 96
     },
     "paired_acquisition": {
-      "status": "RUNNING_REPLACEMENT_UNCLAIMED_ONLY",
+      "status": "COMPLETE_WITH_8_PRESERVED_INTERRUPTED",
       "preserved_converged_at_revocation": 972,
-      "preserved_interrupted": 8
+      "preserved_interrupted": 8,
+      "terminal": 6000,
+      "converged": 5992,
+      "interrupted": 8,
+      "trainval_pairs": 4794,
+      "receipt": "runs/overnight_20261108/paired/full_collection/receipt.json"
     },
     "paired_label_target_fits": {
-      "status": "PLANNED"
+      "status": "COMPLETE_THREE_FITS_PER_TARGET",
+      "completed_full_fits": 6,
+      "updates_each": 4000,
+      "full_fits": 6
     },
     "current_LOW_endpoint_assessment": {
-      "status": "PLANNED"
+      "status": "COMPLETE_ALL_ATTEMPTS_RETAINED",
+      "receipt": "reports/overnight_20261108/paired_final_evaluation/receipt.json"
     },
     "paired_target_endpoint_assessment": {
-      "status": "PLANNED"
+      "status": "COMPLETE_NEGATIVE_TARGET_TRAINING_RESULT",
+      "independent_recount": "reports/overnight_20261108/paired_independent_recount/receipt.json"
     },
     "fresh_FINAL_and_MACE": {
-      "status": "PLANNED"
+      "status": "COMPLETE_NO_UNKNOWN_SCORES",
+      "static_primary_attempts": 44928,
+      "latent_diagnostics": 4992,
+      "paired_attempts": 10944,
+      "paired_union_tasks": 7616,
+      "history_orbits": 344001,
+      "static_diagnostics": 4992,
+      "global_scalar_rows_per_teacher": 46903
     },
     "NEB_common_setting_routes": {
       "status": "PARTIAL_WITH_PRESERVED_NONCONVERGENCE_AND_BOUNDED_RECOVERY",
@@ -37,21 +63,29 @@
       "event2": "NUMERICALLY_CONVERGED_UNVALIDATED"
     },
     "smallcell_raw_reference": {
-      "status": "COMPLETE",
+      "status": "COMPLETE_INDEPENDENTLY_VALIDATED",
       "receipt": "reports/overnight_20261108/smallcell/receipt.json"
     },
     "optional_extension": {
-      "status": "PLANNED"
+      "status": "BOUNDED_DIAGNOSTIC_SCREENS_COMPLETE_NO_ADAPTIVE_ACQUISITION",
+      "note": "Radial-shell and remaining-count tests retained; no new adaptive rounds or continuous-condition campaign. Negative results preserved."
     },
     "harmonic_diagnostic": {
-      "status": "PLANNED"
+      "status": "COMPLETE_27_CASES_WITH_PRESERVED_INTERRUPTION",
+      "summary": "reports/overnight_20261108/harmonic_summary"
     },
     "midterm_build": {
-      "status": "HISTORICAL_REVIEWABLE_BASELINE_PRESERVED_CURRENT_UPDATE_IN_PREPARATION",
-      "historical": "reports/overnight_20261108/historical_midterm/midterm_prior_goal_preserved.pdf"
+      "status": "INTERIM_COMPILED_5_BODY_PLUS_REFERENCES",
+      "historical": "reports/overnight_20261108/historical_midterm/midterm_prior_goal_preserved.pdf",
+      "source": "docs/midterm_20261108/main.tex",
+      "PDF": "docs/midterm_20261108/main.pdf",
+      "snapshot": "reports/overnight_20261108/interim_report_snapshot/manifest.json"
     },
     "research_supplement": {
-      "status": "PLANNED"
+      "status": "FINAL_PHYSICAL_RESULTS_COMPILED_8_PAGES",
+      "source": "docs/research_supplement_20261108/main.tex",
+      "PDF": "docs/research_supplement_20261108/main.pdf",
+      "snapshot": "reports/overnight_20261108/research_final_report_snapshot"
     },
     "publication_and_resource_closure": {
       "status": "PLANNED"

@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "primary_attempts": 9216,
+  "diagnostic_attempts": 768,
+  "missing_or_nonterminal_candidate_labels": {
+    "uma": 0,
+    "mace": 0
+  },
+  "terminal_failed_candidate_labels": {
+    "uma": 0,
+    "mace": 0
+  },
+  "teachers": [
+    "uma",
+    "mace"
+  ],
+  "source_sha256": "5ad4454a900d99fde8745d345a9e363e91db8ea36458fd94d0bf7f99a5480c45",
+  "proposal_protocol_sha256": "c4acf68260e522b736e8a24b4c469aa8ac08a0792ce11216f22eaaf9e67a5141",
+  "score_sources": {
+    "uma": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/screen_collected/uma.npz",
+      "sha256": "c9f348ad59204b247ee363846789f6560868a5dce818621db2496df6fed641ee",
+      "schema_sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+    },
+    "mace": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/screen_collected/mace.npz",
+      "sha256": "209f0929477e71cc80eec7d7efd194278bdebaa28a479e1547a42c244453fb56",
+      "schema_sha256": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769"
+    }
+  },
+  "fixed_thresholds": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/conditioning_20261107/data/generation_thresholds.csv",
+    "sha256": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "source": "main_train"
+  },
+  "outputs": {
+    "confusion.csv": "1f93b37727b78156b0da3e0fd47707448c141031cd4656d06c1f2e24c7d5b485",
+    "paired_summary.csv": "0068e514bad6741ae8d7558c5340de2d0853a9229c2880c3637afda47a5bc0d8",
+    "metrics.csv": "42b3cb379be731c69b20f6b97fddd066199a4f04dbbf9e5e9a2021a154217ff7",
+    "attempt_outcomes.csv": "bd3402da31f5a352b55d4759a53eae08bfda24969b6efc49f1fe4c00832120c8",
+    "summary.csv": "468936b23a1f129f66098e8a9a18b9a36c012e527a023c0cf416a9574a8f1e72",
+    "paired_attempts.csv": "2049c7a224015a592bede874816dc127a6d17f927be88eaf4488515ad65f15ef",
+    "seed_metrics.csv": "3fa4eb6b6826b1b3c61c548399227c5cb416020cd6afcf22d8f0da7a053b7467"
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "uncertainty": "Descriptive fit/sampler replicate spread; proposal rows are not independent trained models",
+  "novelty_scope": "Frozen history and supplied TRAIN mask orbits",
+  "cached_score_policy": "status=cached is accepted only with provenance=cached; the producing collector certifies exact parent/geometry/teacher/precision before export"
+}

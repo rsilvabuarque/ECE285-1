@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_BEFORE_EXTRA_REPLICATE_FITS",
+  "created_UTC": "2026-11-08T13:37:26.166387+00:00",
+  "arms": [
+    "A_graph_cvae",
+    "B_spatial_ar",
+    "A_radial_shells",
+    "B_radial_shells"
+  ],
+  "seeds": [
+    2026110804,
+    2026110805
+  ],
+  "scientific_reason": "Five-seed2x2mechanismcomparison:CVAEvsARandbasephysicalcontextvsradialshells. Additionalfitsimproveindependentreplication;0804/05willNOTgenerateDEVELOPMENTproposalsorchange3fitselection.",
+  "additional_full_fits": 8,
+  "total_full_fits_after_completion": 31,
+  "maximum_full_fits": 60,
+  "model_configurations_unchanged": 9,
+  "conservative_training_cost_GPU_seconds": 14400,
+  "selection_rule_unchanged": true
+}

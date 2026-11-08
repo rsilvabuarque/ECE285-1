@@ -1,0 +1,20 @@
+{
+  "status": "PASS_TRAIN_VAL_ONLY",
+  "completed_UTC": "2026-11-08T13:44:15.197833+00:00",
+  "independent_pairs": 4794,
+  "test_labels_read": false,
+  "inputs": {
+    "deletion": {
+      "data_sha256": "17bab6b6ddf6d9152b5de2f9c3ee288720cee2b013148448615dc3ca787d7582",
+      "schema_sha256": "a61e95652026fdd559a92c9f5b1b76f2927f6b09ec97ca0ef2882dc39842df32",
+      "schema_identity": "52fcd7e1cc64cdc848aec5f226bd0c8c8acb198f3764f17626d9d8752d2e42c2"
+    },
+    "endpoint": {
+      "data_sha256": "78a4e29cf0d8d1c8e5fe6fb39d6c1a07093e61b682d682d0ec4742b581292ad2",
+      "schema_sha256": "0da998416b4dc8c75f09d989e49c4597d93b3f0b67cf66c07560296b53a61d3e",
+      "schema_identity": "b714e96f178172d617d1a6bada137cf045b136ac685496754932b37992d4c837"
+    }
+  },
+  "source_sha256": "0d702b5f0a5b8053a194bee2a3cb9fc5dccadf493dc32f83668b5af5466f717b",
+  "scope": "Same-mask same-UMA fixed-cell endpoints. Separate TRAIN schemas; no pooled cross-composition R\u00b2, no TEST outcome selection, no global-minimum/DFT claim."
+}

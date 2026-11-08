@@ -1,0 +1,7 @@
+variant,n_target,attempts,converged_pairs,primary_statuses,control_statuses,spearman,kendall,mean_tightening_change_meV_atom,maximum_absolute_tightening_change_meV_atom,primary_threshold_bin_crossings,scope
+tight_0p01,12,32,32,"{""converged"": 32}","{""converged"": 32}",0.9956011730205276,0.9677419354838711,-0.11744215467077157,0.28080534273122737,1,TRAIN-only numerical sensitivity
+tight_0p01,24,32,32,"{""converged"": 32}","{""converged"": 32}",0.9989002932551319,0.9879032258064518,-0.07894303550964876,0.21271440135173236,4,TRAIN-only numerical sensitivity
+tight_0p01,36,32,32,"{""converged"": 32}","{""converged"": 32}",0.9996334310850439,0.9959677419354841,-0.05642464116817347,0.13039310896978407,0,TRAIN-only numerical sensitivity
+mace_independent,12,8,8,"{""converged"": 8}","{""converged"": 8}",0.8571428571428572,0.7857142857142856,,,,Small TRAIN-only cross-teacher ranking; different energy zeros not directly subtracted
+mace_independent,24,8,8,"{""converged"": 8}","{""converged"": 8}",0.9523809523809524,0.8571428571428571,,,,Small TRAIN-only cross-teacher ranking; different energy zeros not directly subtracted
+mace_independent,36,8,8,"{""converged"": 8}","{""converged"": 8}",0.8571428571428572,0.7142857142857142,,,,Small TRAIN-only cross-teacher ranking; different energy zeros not directly subtracted

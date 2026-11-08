@@ -1,0 +1,2 @@
+docs/research_supplement_20261108/build.sh: line 4: pdflatex: command not found
+srun: error: nid001001: task 0: Exited with exit code 127

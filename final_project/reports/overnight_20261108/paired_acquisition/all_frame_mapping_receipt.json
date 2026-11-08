@@ -1,0 +1,19 @@
+{
+  "status": "PASS_COMPLETE",
+  "selection": "all",
+  "audited_UTC": "2026-11-08T13:43:21.524569+00:00",
+  "lineages": 6000,
+  "missing": [],
+  "saved_step_frames": 242865,
+  "identity_certified_frames": 242865,
+  "full_mapping_frames": 0,
+  "mobile_reassignment_lineages": 0,
+  "host_reassignment_lineages": 0,
+  "nearest_collision_lineages": 0,
+  "source_sha256": "263bc4b7cfdbd4292f41cb2c795effa921ab396882d50b5a1f09170af3aa2d94",
+  "context_hash": "63316ee878941af1e53ae7aaf595e45fee1964bb2d65150c50a57f59875fb987",
+  "energy_labels_read": false,
+  "workers": 4,
+  "elapsed_seconds": 346.4205077099614,
+  "scope": "All saved accepted optimizer steps and last valid failure geometry. Internal line-search states are not a physical-time trajectory; no PES-basin equivalence claimed."
+}

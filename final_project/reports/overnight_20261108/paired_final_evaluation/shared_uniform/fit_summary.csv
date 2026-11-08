@@ -1,0 +1,7 @@
+method,replicate,target,equal_weight_count_request_yield,cells,attempts
+uniform,0,deletion,0.3333333333333333,9,576
+uniform,1,deletion,0.3333333333333333,9,576
+uniform,2,deletion,0.3333333333333333,9,576
+uniform,0,endpoint,0.3333333333333333,9,576
+uniform,1,endpoint,0.3333333333333333,9,576
+uniform,2,endpoint,0.3333333333333333,9,576

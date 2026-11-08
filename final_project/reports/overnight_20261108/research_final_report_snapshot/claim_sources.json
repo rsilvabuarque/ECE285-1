@@ -1,0 +1,87 @@
+{
+  "status": "REVIEWABLE_RESEARCH_UPDATE",
+  "main_midterm_unchanged": true,
+  "claims": [
+    "Oneunstableinternalmodeverifiedfromrawcentralforcesatbothdeltas",
+    "No verifiedsingleelementaryoriginalhopconnection",
+    "SameRAWassignmentdifferentcontinuousstates",
+    "RankedOdistancesnovalidatedbondcutoff",
+    "MACEfixedpathnotMACEoptimizedbarrier",
+    "Combinedendpoint/bandtargetforwardchange+.026444eVexceedschosen.02eVnumericaltarget",
+    "Overallbarrierstabilitynotestablished",
+    "All20627acceptedresearchframesplus2160actualFDinputgeometriesfrozenwithoutlabelsexported"
+  ],
+  "sources": {
+    "candidate_readonly_review": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/receipt.json",
+      "sha256": "f8761d9be8d380c7d73b3be2f5b258de46aee7e2a4c5f7345631a1aaa4573211"
+    },
+    "candidate_exact_exports": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/geometries/provenance.json",
+      "sha256": "2d01a2a63071759ee227e175062d92e1e43989bb70180d89833bbc37b58b150a"
+    },
+    "candidate_full_handoff": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/handoff_manifest.json",
+      "sha256": "9481275b06b9eeb745d67cc2f4131d01365014815e62e9601a3e6b95f229facd"
+    },
+    "candidate_states": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/states.csv",
+      "sha256": "80c698c5685dfe4442c4722acb2444daec1f6952bdb2170fa9d35d705308fc1c"
+    },
+    "candidate_neighbors": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_candidates_verified/neighbor_distances.csv",
+      "sha256": "7debfcf825652fa11335a057f56ccda63886ed7404cb5b8abcc45f388fa4fc4d"
+    },
+    "UMA_fixed7_tight01": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_fixed7_tight01/receipt.json",
+      "sha256": "9857ae9f4fb5409fb6e2b032dba2579e41a038107a1f0b3bb49cccca3ff10353"
+    },
+    "MACE_on_UNCHANGED_UMA7": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_mace/event2_uma7/receipt.json",
+      "sha256": "61ea84447e9701d0d5215774dcb7b209cde14bcf8ce17ebce536d2b45986a055"
+    },
+    "Hessian_delta_0p01": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/saddle/event2_delta0.01/receipt.json",
+      "sha256": "f9801132c218206885c3f48f43e0161cd2ff8dedb9306b405b68fe2677280932"
+    },
+    "Hessian_delta_0p005": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/saddle/event2_delta0.005/receipt.json",
+      "sha256": "e803128bab18aa1d0b014e92b5ab588a88dfa6c406b13a69fc6e8fa3f7c4a639"
+    },
+    "finite_cell": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell/receipt.json",
+      "sha256": "d2c896823f9cf12105c9669859708f6347a9be560578c8e3d36c0e5ee12903d3"
+    },
+    "harmonic27": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_null_recovery/receipt.json",
+      "sha256": "cdbd126aa04bb79c16bba6f4372655343a4f8b904fda2adcc8e3d0c228290fdd"
+    },
+    "UMA_new_endpoint_band": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/uma_7/receipt.json",
+      "sha256": "3e8afaf28c2d2cd68b4f736e98a25f7f66e9a5be39c5b6027b43dfb53e394cef"
+    },
+    "MACE_new_endpoint_band": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/mace_7/receipt.json",
+      "sha256": "647706844aa531f9d060b64720c2b3e8bf1b391c4854c85fc632a18ab7d36402"
+    },
+    "UMA_endpoint_tightening": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/uma/receipt.json",
+      "sha256": "1c245806cf48a98a29a25adf4f7bc0329fa0e473398b433ef53dee2bfaa072c3"
+    },
+    "MACE_endpoint_tightening": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/mace/receipt.json",
+      "sha256": "76e989ba6b71b9507acd56483dba191e588506a639769f7c8e8c1cac554dd847"
+    },
+    "physical_final_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/physical_final_summary_v2/receipt.json",
+      "sha256": "22d9c3d4252605aa6912fcacf71761fbed166cbc22b5afdc7a0bd9f92eb36761"
+    },
+    "all_saved_research_exposures": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/research_exposure_snapshots/receipt.json",
+      "sha256": "5b22a14702e0d8afe12a8e5e4a067df0b2570c37dbd0626add6edb2605b0c1b1"
+    }
+  },
+  "new_MLIP_calls_in_readonly_review": 0,
+  "new_DFT_calls": 0,
+  "scientific_validation": "DFT,basinminimumcharacterandwholeelementaryconnectionchainremainunverified"
+}

@@ -1,0 +1,1219 @@
+{
+  "status": "PASS_COMPLETE",
+  "completed_UTC": "2026-11-08T13:41:47.164949+00:00",
+  "controls": 120,
+  "missing": [],
+  "primary_schema_sha256": "0da998416b4dc8c75f09d989e49c4597d93b3f0b67cf66c07560296b53a61d3e",
+  "source_results": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_dcc0e5b86807ade1b03b0e8b/result.json",
+      "sha256": "04e6deef87571f802041c71972b1c41b6135d57b7ee90456cb60b60e54cb75ef",
+      "arrays_sha256": "5938f11ca6c3dce208ac701ec1a0c2e2392a9b23ade412ed2ae367f0cef25e7b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_99653ce25db626dce6bed04e/result.json",
+      "sha256": "08585018a491758793013c5ecca85c19b982dfdc423ccaff69c4373c573f7550",
+      "arrays_sha256": "b3a74a00fb47a3b2ff61384bc978c280c0c4d680b3f709dce83f3a0789be84cf"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_642dc0484c0fdb83d2c1d52f/result.json",
+      "sha256": "8f9df76169680ce5931376dfc514246edc457970790a1c204d818719793a1492",
+      "arrays_sha256": "38491a8aadab171a221e93ad108cd29831d1bd0187ed9e4a007e39fe5b804358"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_3f0a9ab191377eeb4a5ea0b1/result.json",
+      "sha256": "8c145efe9f01430a6a3fc0b1396d273035f0cbfbe39218703d2443b5ad5cfce4",
+      "arrays_sha256": "5cbb4419fb513d2b6e950e7d633f99b852c0dba8af4e5bd64256c867ba9660e1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3a95ed2f23a16309404b85f0/result.json",
+      "sha256": "de7cef61e29943ab43d10a47745840e1ce93644b6ed5610eba40fa4b6ab0865f",
+      "arrays_sha256": "f1ccb0fffd6ee52ed4b8bd098680d2614145ea5bb6cbfd4a7831932f67936468"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_8288ec19b23d6a4be3d57f11/result.json",
+      "sha256": "fbec19935ed54fdb35dd50194e313d6d0dc3430ab8bed48b4532d9902d23338f",
+      "arrays_sha256": "5ef5be8ca6e56a5237cb980c96903807e8401145f5c08e38b9ef4a2737cc686c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_6dd629345f476a3e29d11dbc/result.json",
+      "sha256": "8c5f75ef22b3fa48c7748d9cca1b223d7946762ea1553a5767081cc5e391ae09",
+      "arrays_sha256": "da6d611d76ddadabc4f2cb1eea799ea610461c4eb0a9a69b2c64ac904aca62e7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_fba2142ef4aa9a559108aba3/result.json",
+      "sha256": "6376560ac56dc559b996d59ceb192d705e62512577447942a2f1d850cf9552c5",
+      "arrays_sha256": "7f3de1891b010003bffed87f70fa0f5273f3db392f72ff283b2516654e6b9ff3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_02ec16765541fa44281b75f4/result.json",
+      "sha256": "51994ae724273515b0f818f6a2e0bfc2afafdc4b67262705fc345edd5188922f",
+      "arrays_sha256": "fe48cfcb7a77a973e4f6ca52a8b189d8db9668b4f8b281970cc096eb0b39d08a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_7ff22a3fcf31cb9c44b09fc5/result.json",
+      "sha256": "c01b0fb7f368a3e42136404ce0a6793340f0e22f71b957c54de18bced0cdd057",
+      "arrays_sha256": "d8e18f2f4f038af1e1b46ad677be8bd2efdfaf401b68ad36577839580661a7e5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_4048187f716412925f519823/result.json",
+      "sha256": "1ebf72e46a0ed41969995ddb56909b42cafb826f8c4f85f627ba9a9341475c31",
+      "arrays_sha256": "d8f5f49dd6597b58e5b66d8e5caabd6572d52398ca0f09cd648bd8eb97c63eb5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_8968ff109895d12967bf26f5/result.json",
+      "sha256": "5ac5c790e4db132b800d72bbc04d1c3674e7facf5b40ccaeb2cba66aa7779a08",
+      "arrays_sha256": "314499389a917f6f5b8aed9967ad3efce067bcf63dda11c3303079d7a0f0e0b6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_7c5d956de5fb0056ef42d3c7/result.json",
+      "sha256": "b82c80d1fb905123ae2f887dc77b3bd002dcdc6157bb9cd22740f54d163d398b",
+      "arrays_sha256": "f4acf2d5b4cf6718b199c0458ec843a3724ed2a01bdc1dc5ae69227a531b5005"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b1dacc765e282a17212403ac/result.json",
+      "sha256": "18b41ec22d3b90d66302ce126d295b9ac2b3f9bd43764409814efa3af05ff149",
+      "arrays_sha256": "e6c536475837decb93783af880d15f1409ed4b384160d7e3a505bb0065bd4a3b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e3a7da1fc98e07dd6b958288/result.json",
+      "sha256": "f0aed114d582134c5b0f4d3b6051a46045d235fff3ccdf47da118c3cc23e4f77",
+      "arrays_sha256": "897b1a6d52e76e5f8fea87310bd59590e30da1c41490b4240c65763bc0c407c9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_53a150fb22fc20d12ffd655d/result.json",
+      "sha256": "920200ce34f3d34edd43b1822a82d20e1624bc40eee508912ddd69b77a4beafd",
+      "arrays_sha256": "12dea0cb577a840fe4a6ea13fed10932bc7f265fcb3ecd3984f39577be3568fd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c5902fa7bad43977a87416bd/result.json",
+      "sha256": "ee375c58f638afef4dfdbc71b543ed935bdc2ea14bdbbaab4b76c3b4965ab8fb",
+      "arrays_sha256": "8e1d1fc67ef2375691da9408da1acf046efc342179ccfac299dd2aabd852e36b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_210c1647d1882a6938553239/result.json",
+      "sha256": "b791a40d51af89c5b5a5975618ecb18e9c70cba0d5a0ac67152bb557616cd0c1",
+      "arrays_sha256": "923a8bfb8b508618db87963165abc07e1f7b7af7cfcb49ca0c37e410949c2632"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_35296048749e4ad3248cd3ed/result.json",
+      "sha256": "bbc8e9698afea9c33b268e00e96cd6eb5725af5eeddc1df791f7869ef96f4717",
+      "arrays_sha256": "4e3393bab7dc9930561084f2a186eb26cb1d9dcfb2faed08d6ccca8323f74aea"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_2fc134af619c12668f43b4c9/result.json",
+      "sha256": "68ecb02a919fb70da9172b18699250ce10b01b2f11c78fa7e2aff27344057ffd",
+      "arrays_sha256": "843022c1c6c739e813e71eec6350d75873c2004a4c5ddd21805f0a19cbf4eb53"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_5f9388a791439ef091528d9a/result.json",
+      "sha256": "05759cb488ca01de1a0f78adcb092860412335e809edbb1f57bbfec2591f46c6",
+      "arrays_sha256": "c3c1d626f4789fde32b73098668f708e37850236fd186588ce54ed937b7c050e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_26d54ba472c49799954e24ab/result.json",
+      "sha256": "3e339326af98a19a92026847e8bb787caca0ca16b59db79675dd14a4da798a6e",
+      "arrays_sha256": "def506de898f7d51d58e058eaaaff6adffaf2402df8398b54179b151647ac691"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ac59118f488f447504691db1/result.json",
+      "sha256": "fbc3850000617348b5f418c673048734d2ecbf45174aaf826b21083c25751c49",
+      "arrays_sha256": "09b583a8c4ba14eb6448b52e6acdbfdb0e38c0ca95db23afddb427a84537337a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_8fb1c4404af557da1466c433/result.json",
+      "sha256": "512ccfd60134e9c9e8184844dc41371e75010de20207e124fac07091ffb04223",
+      "arrays_sha256": "b50d2b8e537bab2341fd6cb86c66d72c7621e0b29a22d50914b83058730e35d8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_932278442d85a821cf210cce/result.json",
+      "sha256": "e852c5095951f0f0ccb05503edc2accb4c9739ebc459795143d2dc5586775541",
+      "arrays_sha256": "45010edb0e910067e30c7ce87cab7ccd37ea8ae196d06a129959453f765d2a50"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_71f45d09901942b699ffebda/result.json",
+      "sha256": "434ee8cc2f9471eaa9e1dcc7c376d7b882ab8faffb5719c2ba19ace36fd50d99",
+      "arrays_sha256": "40155f89e45ae9f936339d7cdae6622f8fb8cd9d39ec40a926e8ee5cbc01e65a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ac3aa1770a0e6a92ed83e0f2/result.json",
+      "sha256": "c316a2c8f31738d4b872e2375c60697f79d04e8cf2a39d8aeed75421633859cf",
+      "arrays_sha256": "097e5a6d9a4f0746ee86e7b8dd097165523ca80b138682909e7095dae84354c0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_fcf21f93b4c077da6b814c3c/result.json",
+      "sha256": "1cca9683b9e759d95c31b234b76304ae1224854aa73f70275d78a7f1d4336d0d",
+      "arrays_sha256": "64dda3caaa7739ba3e4e46f5663fe9c085dc65600056ff7a31c77833a6847b36"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_6a2590f409ae9f34c39e9fdb/result.json",
+      "sha256": "b00bee50a13cdfaf83d1b600f419a8eef1850a6eb9d8ae6a12859a76526b74e8",
+      "arrays_sha256": "fb6062043bfd1ce8bda0d6bc60d3eee014a338c34be161836b58ab7b749c7c20"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d6ebb2fa1a1dbff072a1cdb0/result.json",
+      "sha256": "dea5db257d1dd015732a2d877a332e6baca60953b57f090d5bfd27f7bdbb6ec4",
+      "arrays_sha256": "070b5d3d94eb3f04648f667786ee5a099cae4e9fd4b5a7940b7ce8c475c9b59a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_d379bd89d1718d8e48c46ec4/result.json",
+      "sha256": "95651a845c2c015b9056fb79fd563e8289bbdc261898fdfe900f9998a267e94c",
+      "arrays_sha256": "13dd24bd8388bb024ac5cdeb4a1bf560635655f24adc317c4124c5c7aceb92ae"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f58701b25cab793197303ec6/result.json",
+      "sha256": "fb37eeabf465f002024ddcf9ff3f91fd0e7e6c232601bef04b96012c6bea0a05",
+      "arrays_sha256": "150337730f54011b26dffce0b63bda9b664a849f8a1fea8c5fc4027bac92b980"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e232a1d534d72b87fca4602c/result.json",
+      "sha256": "95396883046c0950d1748d6fb7d2d49f81c59c9b9f654b0cda3fe97806f90998",
+      "arrays_sha256": "f85cc63fb68103b9cd684d4932b77c8dd8d46f99c4975f3dcb4cf47aba9a234f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_76f147b241b450f8de4b8c28/result.json",
+      "sha256": "440ce7e84cabbdb8487b0bd6117a677b395f8b3a2de5c753dfd40290bfd0a82b",
+      "arrays_sha256": "b8a4e1c7bd2e2dcd6afa7fdb81c19cb5f4193576c68bf3721e46d88f402dffb0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e5ad7d62f267d7aa709ccd7d/result.json",
+      "sha256": "27051343f94b04ddeb976117c47d6ed76741118ebe210d230f018f657ad0e621",
+      "arrays_sha256": "177922ed2c07831e9ebeded27e4b10bf49745fa2ac65fbfa2951d65593afb427"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_75227dbaea767d0e80010246/result.json",
+      "sha256": "dfd8b17acdc03d3335f5b2a3f635eee28846a54df4d07d2ed7c67ba32acb5170",
+      "arrays_sha256": "d9095e6b20d328c9a4c13c59357d9c590fd14ad21dd2bd1761b8d7beeaeda23a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_45d1c3e9a6db3a64f6f52daf/result.json",
+      "sha256": "73d38df7de2a852d053670e2552cb451db8c558d875c97fbceae6d21401757b8",
+      "arrays_sha256": "bc083c40a8d5ff2e6848a5ab07dbacaec7517faf53e70ec37fece3fd4dd71508"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_1ba0d269296d2060dd759792/result.json",
+      "sha256": "75460abd6078f2ad9ce767e7d084678b9f2e238f705ee011e218bfe7c2c96267",
+      "arrays_sha256": "f5d5f40d4f3ad54625cc12aabd3dbed7f4a31ff288193b3a20c4d467d4717350"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f2186389d681eefe4519466b/result.json",
+      "sha256": "f5a47bbdc041b396a1d94ce17450ac7dfeea7b68f70f60a6043b703a1515dc2b",
+      "arrays_sha256": "b034d7945ae96ce1275dd4c4a05a0faab4de2b59aa8ba3af80ff4b960ccabb07"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d18d7e73c3d8eb559edb5f4b/result.json",
+      "sha256": "b1fff32bffab1b883d379316b07374e1dd0d1c6f76963edb9d11229da8a942ec",
+      "arrays_sha256": "51efc473f058e8e040018ac7d1c6185e84a8a82d6c79ef03211391ebb6932eb1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_9ba7e2896dc87a34d7f31826/result.json",
+      "sha256": "5152e6c5b155367c3b6c2db52b0c02ca0a75a37d286a2df2d27f203cd94643e0",
+      "arrays_sha256": "04e794f4a97c79550117c2c00fb4fca485518434db2933f99435a6aa586a7b57"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_20fa3ea4cdfd29db7c65b21d/result.json",
+      "sha256": "17e39d3ef0a0082e6eb41613a0162547d9b6b747ca07bdf1f0a8e0ebdbd21b5f",
+      "arrays_sha256": "df293868ce8d17a72d1a9cec7c0018e428d7826be907cab72e393462fb8bdd42"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1bab578c1442832230560e73/result.json",
+      "sha256": "47317af5400cf4965dcd4901f8d91a6dd58fea09f81e0c7c01b6a93589effb93",
+      "arrays_sha256": "aba9784b7f9a6d849459557a1a5ef8fdd1f863c6e61fc7637b13a103362cc4c9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_beb3796b4f51c5da21b1868a/result.json",
+      "sha256": "59301942d444fce78542939b3d1516317c989657161eb4a0babc977ae34d4216",
+      "arrays_sha256": "c98f86d4d74e60fdd351a97b2ddb9d72f585fc0e47cb85e8247d36beb43e4916"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_bb779bae06fb4766dd83f06b/result.json",
+      "sha256": "4dcb25e48fef6a3b374cebd6c5fcf79f56397caaded8df41e37e0a7e2183027c",
+      "arrays_sha256": "89e4043eaa4eb66b6d864ff74ced436d8e25c0fef984f2306995d12756f71a1e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_9a492e4d2cf2f79fcb863140/result.json",
+      "sha256": "9898cf8b815b8c1a6527a085c5d21c3333f030ff4382ddbeee16e4d416c50551",
+      "arrays_sha256": "cc27bc72cdf6849bb8eb09e4e0b77ea030d7a3f0ec40535a07cda86dabd1afe4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_8da172b9e9ad464494b34b7a/result.json",
+      "sha256": "6120b30ad8d0820c714f290aa3dcf8eeed18eba96f4c493da4b23c8a0a1b23e8",
+      "arrays_sha256": "d6271c79772bc881862556887aeb5fb0b0684e4120f0e0f2d910271016cd74c2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_137bbb19589860b9afe57f30/result.json",
+      "sha256": "0b1dd4c5f33aaa7c1994e34dee2e434be296b20c4b76c7b786ba8f4ceb5e0794",
+      "arrays_sha256": "f5e49c5523c869217e720180f78d6c1fd72491c8736f14fbbccdde407d3d405e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f637212d8be98de23fe38fe3/result.json",
+      "sha256": "e0fb1859d1e65f81959c61bf6cf476d0545bc324418385af5a0222b91dd7259d",
+      "arrays_sha256": "33dbb3ea15a7477ed66dacef2a732156d23400b01664a1e7a9a5cf6c31bc214f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_9039e4dcb0bf7c5160a5f363/result.json",
+      "sha256": "17a1bf143a1d909d94027fdcf684576150a61ebb4af8943a5f9b67040f321aad",
+      "arrays_sha256": "13998a7f5ba975ee82dfdf66e037d5e4da52aff18aa2cac5f3b048a54e2854f1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c94133a7b0d593bace79e2cd/result.json",
+      "sha256": "bd9ea190f63de38a841d1f739e85860bac47e2b2be2df4832e40beddd78e0689",
+      "arrays_sha256": "a99c550f9cedeaf269a6727e791572af4cf955fdf525c8d12bb5c7dea118a3a9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_ed329665fdacd175f1b5bc46/result.json",
+      "sha256": "02291891535f8cfe038b3c23eedb92c8159865f0abf37456a51240d3bedffea6",
+      "arrays_sha256": "17b7e27b2700d8ea2dd76c94e914d99bb7e5c6343daaf75e9390dbac3b23bd6f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3048ba35ec6a4efa7d2b100d/result.json",
+      "sha256": "46b02ef0b8e11755da4b9e700639224ce058bdfeeadeb225f9857611a77166bf",
+      "arrays_sha256": "bcddb3f82ef072f432a4a79a4df6868ab34c8945c2135431d660e54ffc36663b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_5f789ae32c3e0c749fd45a4d/result.json",
+      "sha256": "0a3bd4f4344d67283f1c98cbae217f48935f1d1b125692049cab847552f9ca11",
+      "arrays_sha256": "615e38bc46eb215d8ad5f2fde3a86d0e1b987cadc2120286a5652728e2d01818"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0ec059b0a15ff2e07f973565/result.json",
+      "sha256": "0a67758eb9f816518f6c4ce21d709543e79aa7a2dbd7d68f916ec199b4a76c01",
+      "arrays_sha256": "eef1cc2758c5eb847a7a9b00a8500d934aa1787874302e9cb8d49b7622c5a301"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_2b43e5131047417e9aedd66c/result.json",
+      "sha256": "256f2222516ec4a9e81e9d0b24ac12a4a7c8c50229de840dd5772021719b73d0",
+      "arrays_sha256": "a8f39e2bc29c3e7a90464c5396974fe5befb41b73696597b60509efaf1197acb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_490abf3c04d1930c47511657/result.json",
+      "sha256": "f5ae3ae0b5bede531ae001b908c6ab4dfb132d89d8eec5db61cdf8fcabc13bff",
+      "arrays_sha256": "cc08afcb5c8d29c8c3ac73f38c7c3ff6d3131a921fae230ac0dd7ea01f47b9d7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_7659ec95a576e87664ca4305/result.json",
+      "sha256": "f6c7467f21d58b05603390ec9ba1738ad4d437af02a50e592434fb2c3e0a33c3",
+      "arrays_sha256": "2bf7182a7267139466b27964f722e8b555ddec14d735edc7381edebed3f8beb3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_a334daaa219ec51bea9d3bbb/result.json",
+      "sha256": "640738ba4053dc61007b110c8cf22171d48d7adb0b15a21b70ba731f212d5d75",
+      "arrays_sha256": "074d0a951ec6b3c414eccc08456ddce39e3ec4ff9cf0681f0b862866390ecc5c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_95f6b1b46ac4db2dbdf6a9ef/result.json",
+      "sha256": "454e962fd335f867b63cef823d473cac8bf0300eace1d5bcbdbae9a1977a9e97",
+      "arrays_sha256": "c035da99ef031377fbfc98a8e5d12df200a0599ae55f7c00ce6f88357172ecd4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_fa4129e19b0fd13f5fb38fef/result.json",
+      "sha256": "c2049008abdad665205bc2ccffcc49dd92338b2fb7440bb22746665b9a0fbefd",
+      "arrays_sha256": "13d08eab9cbefceaee60b67df7ced765ccacdc216a4bc9a1ea2c41b545d7265d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_8972417953265c5a5b3bbae4/result.json",
+      "sha256": "25e9dfaa60ac608ac44658b1f5f1435847ad1956d2fd6a1bc91f9baea70f9621",
+      "arrays_sha256": "831c1e9d7c14a970e7f578498961e4572f5ec63440f3a52e17c933496ee3fd78"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_144fbc1e23f30e9b9e2b8469/result.json",
+      "sha256": "8ddb15b8161ba2a3965fbe4cc01384f761738ee1199bd63333e4af8e70d84839",
+      "arrays_sha256": "cb71852f0771b2a87d50c83a714a5a102411b87585b08d5bccbf620ec1051703"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_5519475a4dc12c4144dac300/result.json",
+      "sha256": "79d86113d4a2e1e1cdf46311b16ccea11fe99df7ca15affa443c2a5f7862d747",
+      "arrays_sha256": "48222eaf117efad69208447add884d009abe87c57b408e88b8a63ba4aaad7635"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1669deaf74802a73792d04ca/result.json",
+      "sha256": "571e498112d0124eb45c6a4bd87423ad2cd67c007bca9ec3d3084baf15109444",
+      "arrays_sha256": "6a45e213adf90e8a612dafac3467646ae67adedbfd2eadc84b56508fb77a8da4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_05ca61590fbb69b039f8598c/result.json",
+      "sha256": "ea7f61bfff8a918910b3855ab0f05d04ee359223ecfc8bceed31ce02be0db3af",
+      "arrays_sha256": "68727664c593a5fef35c8ee7f7aae43dfd87dffd6bfe7f1b6b5702b3df9aadeb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c7f68b7da8b0cad47582f6f7/result.json",
+      "sha256": "d9c75eb146deea7a7274fe7edf35081e2f051925ea5516f325bd2950ba6fcbad",
+      "arrays_sha256": "9828656ab3446022ec5f657a90927cae1cddb5c491e3f7b9f27125754b20ab98"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d50b9ecfbee77ed6ee73bf92/result.json",
+      "sha256": "e0f858e101aea80c37a58d6ca3766b41b102900178a7e33c09ddba3d0e8c344f",
+      "arrays_sha256": "5d649cbf8a6fb3c0658cc60df97ce5eadc0fc6d11b16eb26bd45cb28abc07bfc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f3f022908b9fa2b1acb1d1a8/result.json",
+      "sha256": "1a87533e50df4d22cf675355cb6a31fb2d3383d2eabeb75c966792d97322179f",
+      "arrays_sha256": "6cc38fd099a660f28e83eb90d2e7daac668f169e3056711d46d833329dc2c724"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c8689771626b0bd676b32cfa/result.json",
+      "sha256": "790881cc573d6fe6cee5887ed1531c7d68fe2a0dd2dad3dd3d35fc5485d6b80f",
+      "arrays_sha256": "438919be37c714a33d96132e1389271492e6339f09fd3b3b4b68574b75055189"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_23dfe9f4ecdc6dd3be147222/result.json",
+      "sha256": "20e9a671a8414da70453c6ede01f1c502f25ff926b5c968468c0a059c946e0b3",
+      "arrays_sha256": "ded16230f13546d7fa1be6be7f4f759a2216aa579a7f24af68e45aeaec6720fc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_228e2983f8d52857437226c6/result.json",
+      "sha256": "f465ea873a860ecab7b180d9b9041f64faca3c4f8b311aecbcd92b45b17f2f21",
+      "arrays_sha256": "0e62cf9ee154f773fdb63c2dbb610790a84b8318a8f4a3c0e6eff75e5e1e5ac8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3a4b71f4996514f519a7775d/result.json",
+      "sha256": "295ad43881989e2065bacebbbf51044615743f66cefe5061cba346645877ce7e",
+      "arrays_sha256": "2f227ee51765207b7201fc2154998d62dd383932c2ec53f9f40e95af7644f141"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_57a89c70f895a429c17bbf50/result.json",
+      "sha256": "bfec378fbc6b5a5e0a777eba3fa0cfcfd4ffc19a6d7dd4d415d7b2cc55ddf95a",
+      "arrays_sha256": "91542575fc771cbe909b247c093a1a5495ba898569e656531f574e2c25911f4c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1abd5842814807d0ba354950/result.json",
+      "sha256": "eb01272004162c0cd3d904ce36e9d274e0479c402736bc0f475788f2d5669fab",
+      "arrays_sha256": "6cb8b97088905ddaff4d673ac59569e7e7aa22e6256d32e9bfb5da69275eddff"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c570653cd85ee01ae371862b/result.json",
+      "sha256": "9875d406908ea2afd897f39bead0221845745fd7402d63db98876a054167d889",
+      "arrays_sha256": "f1f853c756676df336d479a054315d22e7f2a4cf8ad6b4f0290f55f6e2cf1913"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f1b9723b7c1a8b23f0532714/result.json",
+      "sha256": "1f052ed280337b587beeeb5fad05f5b0831e3f97620f79a63851894def623c73",
+      "arrays_sha256": "3f6064602f21079d6989ed3856cec7dbee300d8dbc67c3bff613958b4aecabf6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_71d285fc0630df1b25b42804/result.json",
+      "sha256": "cc0dcdcae74663a188cd2f790416f7cb1724a58fa725c9cbc40161357a626109",
+      "arrays_sha256": "f9a47a2137eef6c6038635a2a13a30dc78f01fba90574d9182afced181351c88"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ebcfd52b929e227f9e592279/result.json",
+      "sha256": "a8ea8627166eb5ff823fc8339fcc78e581e7547323d164873635619c3f38c891",
+      "arrays_sha256": "1789f056454d61b5269d5b03bc908bd1ef902b5504326bcc3a9c3460529328a8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_73998339cf2a5fe28e9496bf/result.json",
+      "sha256": "db9bbc59861c892c097484e2bd970799d4afa3b312240debefdd300a5f192bcd",
+      "arrays_sha256": "9703f87f592328d3a66520f93daba674523380361a4f20781ab47921cb136c4e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_4530df4d7c8aabb9f69e108a/result.json",
+      "sha256": "6e668891239ec0727f0d736800080ccf37af693e419428992d5bda6fd02ea920",
+      "arrays_sha256": "a641d44bcff1067776e044b7ffd5ddaf7ce18ecf191511556cf618b7a6f6b395"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_7f0f4799b4748468f9738021/result.json",
+      "sha256": "d3d860f371818f0f286e5d2149a9dea44fce576738d96fb50f982c349fabe756",
+      "arrays_sha256": "0fe32ef9a55a0a5d707a1cfa06c434f1e3e67c4d7ea30fc40bd1ff1b3dc41e6e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_d6bfc90ade01d9dd83aef4a5/result.json",
+      "sha256": "9323942075006c9580ba709bc78ab4d6b4f7f442b287f891378d52cf9db2b783",
+      "arrays_sha256": "a508d9ccbd3238d11587685bdb84460402c02f6839c10f21d9dbb7febd06cc3f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_35d0e30e47394a524ab76dff/result.json",
+      "sha256": "e6b6eac5529fe6e0ccdad7c9112a51c8fbab3826a0fc0689bde5c566838d449a",
+      "arrays_sha256": "ecdf4b06ebc24f19e4db2da77578f6be3e1c3fdeaee0d6844cc2949aff5dc556"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_d6a37c0fce06acc4652239fc/result.json",
+      "sha256": "1f2fa520279073850fc328ea536d157ac3401d6f29beb5e27a56600772372e73",
+      "arrays_sha256": "d873517a677f9db13a8ff5c014fd07d6e89d2f5da7a63c204dea1fdff4d967d5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_fec503b679115bb9f13f4214/result.json",
+      "sha256": "d16386cab51e9d5090fc2c1b4d8bc4f131a36a919a77c241f827535338543e2c",
+      "arrays_sha256": "6b7427c589c1b4ba3b62af040ca00e465586397dfa5d2ef568e2f044757587a8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0b2b9f3925ec7bb97887a796/result.json",
+      "sha256": "d1060df19e1429cd4b89bd8ce75ff7c0d66f7e4dcae3a62f8931eebbb5b77a2e",
+      "arrays_sha256": "dec8b7f8bfc8b1b75fc09c3f539d944a94453039b59553f5f53168acfbe1c918"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d05c11f593c9d4ebff5a9bb5/result.json",
+      "sha256": "cc117ccca6e95c7be2ca876f6648bba15e583a161154dfd7100e3ea0f13fad02",
+      "arrays_sha256": "2baf1c44ca7827a399b9a1108408f75b9fb16c1e7ca1512a1c3a595c8e18991d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0ca4571b92a6a9e7c2640868/result.json",
+      "sha256": "3a262383af7c356adf4b35212d959a4babf598e97c529c9581ddfb36fb2ce63a",
+      "arrays_sha256": "20c70d632452645da459902ce71fd09d323e47b76cccc5d8c8ecb5c5eb9878c7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_0877b20ad7685a66524961bd/result.json",
+      "sha256": "0f541475de406a248660a89c77ac026d9cf69a0bb78a25e110d957dfcd984033",
+      "arrays_sha256": "9f722b13503c21c48564c780df8c92460e28621cdf02a3b1a09479adda351b86"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_bcfb4781a4396ee7d85f21f3/result.json",
+      "sha256": "8566b10214062d792b1e1084a8d460df6c58edb2c808d222f7559ad40ee1f118",
+      "arrays_sha256": "9c0b7a610060a8e002f579cc135ba98e2d6eddbb58ecdc8607a969316ecd9404"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_859033294670dbbc4563715e/result.json",
+      "sha256": "96883cc404e348e437493186594d8340bb621cc3dc3a11578f1c83ae3e623515",
+      "arrays_sha256": "a7210f0089fe47f7be71c7f233d2c7daf657ad8c6293109fd533da954b86443c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_26acae1a8d27f75494c80064/result.json",
+      "sha256": "a28580e430df5b1f6d50d4f108e9feb184e0c669a3f89492e39ab7a4992ef314",
+      "arrays_sha256": "b52307893ddebe329f91b588a86b11122d40e1f3a899ba1ef61b266c9bb9d9d8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f9971e46c046a973cac7fc85/result.json",
+      "sha256": "b1ba1f7ab12dbfcf3318caf3aa52fb5d753cf92af1d1f21fc4e454d554118b62",
+      "arrays_sha256": "1548ca714d32c7387b1230e294eece0f53fd6221d4e0943ffaaa04b258d7ddfb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e434e26d3374924abc721486/result.json",
+      "sha256": "fcc6e88f99bde93c7351f9029fd20e26d1f3069e98bb718704166ab27f2be918",
+      "arrays_sha256": "404e9a02181fdea6a42b4093705326293255d5acd972b73d5ed744b1570f2a32"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_66577f0a4243da4d61ba4d54/result.json",
+      "sha256": "c25ffab25070e97aea4cca75e515e3f523f935d83e838bd19249a614c238ee57",
+      "arrays_sha256": "9aa5788e1b62cf515ff8d4547cf29b6cb6cb8bf371f9dbc57732c2c265a7f4b8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_45f46e7a99153a756f5c076c/result.json",
+      "sha256": "e244d4a4a0ab11aca99d4c8cac774773dc4346a2317de6e2fe488fdc25c21009",
+      "arrays_sha256": "b569c804950fc7e41c8bdd4369ea291fb0f94448c28b46da4c76222b755931a9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_67f98222a56938eb74f4709a/result.json",
+      "sha256": "12886c055771ebf23d335a56b429653769a5079b63d281a32edfe86f05544b48",
+      "arrays_sha256": "e3098f3fc0548bd2a41277dffaef23434d0974e7a6fd93c42c61821454e2e6e5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c2dfdca11c18e4d6038ce47e/result.json",
+      "sha256": "124d70fcf0769fdb1157f7990b2b263190c6b2643b77424c315ebf0db33f9086",
+      "arrays_sha256": "fbd309a8ec3752ddb01db291dba9c8454e181c102bed6d5bf14dd279cd2e9ff6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c477af7ed9359e249a05ba04/result.json",
+      "sha256": "780d2e9e318b81cce9f52c51dfb9bbd09c600a42b03908be4e0bb3ab06a682f1",
+      "arrays_sha256": "64366ac0652da8193498898f53a2ed5df955b4d2d7569738c1422093ae748b45"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_34c65a10420fb0c159fbca0b/result.json",
+      "sha256": "7ebb545c3d1a7b977201f81672895b630aa6ae4f1eaefef368144fd0419017eb",
+      "arrays_sha256": "3c3bb68757f940dfc6e38dad2aff79dc6856317469de471a0bd0ff45c7469033"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d8873d7a5cd6a89574460ee5/result.json",
+      "sha256": "bfe940e44562d581aad61cd7358b4362fb1a570b43bdb16087658431700e6ee5",
+      "arrays_sha256": "953197fa66a7a770330378ae2a1d81f226a840fc26f5a5735041828daf41d5d1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_84d2086fd23b3907fd525c1f/result.json",
+      "sha256": "b3ebafa3bb6c27b04a3c820ce43dd2d0db5fe9f1344805433264f76df6e29897",
+      "arrays_sha256": "188ef838393511e487f76768d7654b6ed2b5fb554a7419bca59922667bdffde9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_ca9439c55a1fd68fa6a159d0/result.json",
+      "sha256": "1ab9044b7c5d4426c8551d7fab827a860cbb5044d2b5630bc28b300fbfdd06ed",
+      "arrays_sha256": "58e274b13c82c7b2a7bf3aebc99f139b57eb04ea05458011a6a7b0ee5b29ee03"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_37b37accf1a0aef220c25757/result.json",
+      "sha256": "8118204d919dda09b416b5e60d8e3319173e0b4c70b38ada3ad433169c3f9cad",
+      "arrays_sha256": "74424292b0dd745e36374db670470b0738dd1595fc6e3bad837f70b4297f3439"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_454727336ae7eaef98f20f6b/result.json",
+      "sha256": "ca5f154c1a95529a3062b9b4cf246f580b05c9c96808150e2a3b1b059b80d7a1",
+      "arrays_sha256": "b645a57009885db0bfa22d09e1252d3a891eb5c8686ea98c996f970f1d88cc23"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_6f499b958d420e6986078f55/result.json",
+      "sha256": "d1b1463c3643ff044f11647686bc18337b448789a5ca3399d0c3014a8a0f2aee",
+      "arrays_sha256": "d072415e6303a1b53a5d3eeca073db0bb4581acef57c4f679c28adbf473bfb1c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_e8488150905fd924a5f6eda0/result.json",
+      "sha256": "caa26f057f069114f0db73c2f9021d296dfed56205b758046db82ea94a3c4df7",
+      "arrays_sha256": "2fcc042918d002e8130899def042ca17611e14999607d2ca63c1a3fa03e6515a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ca94baa9a13cb03104eb95c5/result.json",
+      "sha256": "efed61f2fe31bd24416a2e23029a9aa5168e609306a67b63fb9e8e89d02e9e31",
+      "arrays_sha256": "5b8f314003f140b18cdae924c2f63f3f3c60b15f6f22b1cc2b800ef973afc239"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_90f5c11ec1caffd36f6d5604/result.json",
+      "sha256": "65c1e74d507550c96f40d5301b13a758fb9169f6e87316e8ff9c31227f05bb6f",
+      "arrays_sha256": "d1d716f9ac09c67c0afbe04bc15b02ed0766913dec3f4bfe511e546dac0d7f33"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_4533b74d60b6db759bd2c50b/result.json",
+      "sha256": "ca00aa606aa067b914aabcc2e1cc28b09b714345e37f11fada0c3bb655f78c46",
+      "arrays_sha256": "f6bd1d3e664f04ce693f30e1a60c86d3986e9923ac8f34d2e85501fdd070b60b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_e0d5a9e282d7d28a4a6668a5/result.json",
+      "sha256": "8db6b16ba7e8e13e8fa88d368e40e699d2b3c60a70a36591bf19eb86bd84fb06",
+      "arrays_sha256": "1f4014f1cbaa2d831e9573d815b12d5106eb3f69e29b640d42bcccb7f5247480"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e08def4e88ca63e3a80e710e/result.json",
+      "sha256": "f2ef4670009970334781a6e1ca494915b2427115ae5ce5b8870ca495dedf0f6c",
+      "arrays_sha256": "c755638d1db85ead3311572c7f4c2205cf7491d8140411b6e30fe6127418cc01"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_dadcd9be963449de8036eb75/result.json",
+      "sha256": "7466e3e1ffdebf81eec6738a7f3342021f5437b04d48d586712c6ae10841845d",
+      "arrays_sha256": "69d8498f6824b6fe145706f632d26c39ba05aa4f19b462f9439e1383c750b04d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_027178bf2d60b43ce9db1949/result.json",
+      "sha256": "f3cce4581ebd47c09c46b95b5c7acc74a1ea8a473e464f3c4d3d70ba1293f6ec",
+      "arrays_sha256": "de0004c8da8d8b59f5488d6d0569526058094159c0350733d7e7db78384734fd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_6f5f36cf0c93b01c5cc3809b/result.json",
+      "sha256": "181b401cde0c73816398dd166730449975e1e741f6c22f3f88c5a3a95c95cdeb",
+      "arrays_sha256": "9ab21d389f0b7865d71fbd1249fae45c31a58bddde89e30e497bc60118b7040a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c2fdb6306311d717f4251e7f/result.json",
+      "sha256": "2cf1f52faa6f86d07e818e94435d958983f3e8fa485dbcca9b110cf6d3f32c39",
+      "arrays_sha256": "8477d1115d3234a7e8feeadc3d9859f595e80d6ed3d1f178350e08fd1c4a0429"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_ed6f3079534cdaed5c9f0f4d/result.json",
+      "sha256": "e125ccdba2bad557b2549e3f5614446fcc7117eb0f2126dcd4983e45ff998631",
+      "arrays_sha256": "e29929d03811dc22a5c536d423cc5f05e41ed3f7e1d355b4945f153ba8584317"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c3dfcbfdd94279af673a616d/result.json",
+      "sha256": "2f46c54c17273176ba089501fc36ac7b6177527a498050b5d187af9c532529ea",
+      "arrays_sha256": "5bc840b7c3a144513c348c9bfcb890a8a1daae987ce2c820c671b870267cfa13"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d14519a08cdde1bacc406cea/result.json",
+      "sha256": "8641ddf358e17018d03c6d1c72d6bbe4e5d6491bfb15ca523ebf94aa12fc05d0",
+      "arrays_sha256": "7b4428624c84ac925ea2d65dace7de32b37ece58dbb5d571b3fe9d4fd3e46388"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1163dbfd447b1f5d30e693db/result.json",
+      "sha256": "658206dc269e3a4d3a288b91f790a94dea1e361ba25180f2d1be6a0f6ce10d86",
+      "arrays_sha256": "424d72cc1365f8f766298453fd22e62d0a3086460e8d274f6a43b86d55a3831e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_0106b8cd4441185283d8627b/result.json",
+      "sha256": "8f75f214c41be2a03c036c3dc0a7df0f278dd9d4760e6f9bee17c4d433055134",
+      "arrays_sha256": "2c1d94f4cf2900b64197a3d7991f280df452c1570ae0768810b693d6e5aee13d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0ab199961bf2f1ac21c2d31c/result.json",
+      "sha256": "c229a71e9c08e777e3c815b17691f16c3060821c6583990672cb6fadfc2e2b83",
+      "arrays_sha256": "899d42064ed4d025e74dbe8fec58bcd572a598ce1166395fb4ee18ad952d22c5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_afd18bd250fb2c1bf7cc1dcf/result.json",
+      "sha256": "faff8a099fdb1d345cdb0e5d1d01f378d68bb1c4dbf574f0facc5bbf4d259590",
+      "arrays_sha256": "321dabbb20181851476e33390712be902c504cdb3a8ab9402ba7c9965df8d577"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3385bcada66f131ba0709da7/result.json",
+      "sha256": "8c7b76a253693f28ff81091c66fd8ef4cd0779ac7bf454ddb96c18a37037e734",
+      "arrays_sha256": "6ff933885250bd920f411a58c9c9f8573109ea1911907818f47109905110de73"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_79b0a08a2b8bbde122622403/result.json",
+      "sha256": "2e85ae7ec1c6d9f7b6ada2a47ad0ba68d3b25df14a41051bab800becac1988ed",
+      "arrays_sha256": "5f64168adee854edb8d54add6d4065c2cc6f9c5469e045aca084a86cef91d457"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_99429b6cd34eef33efdebcc4/result.json",
+      "sha256": "224dcef23ed5ae2135f4fb86e90a60e487a1e9c497afa80beca1dc4001ec6486",
+      "arrays_sha256": "4492169560ac27341856e1ed0159003ae8c54dfb706084f23e38a5c38e7e7448"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_628bf4e10f1d064c2760fb38/result.json",
+      "sha256": "43c5d2db6d9ac595f04211eb4f5121cc3d0a34d3e60ab4db03feec5120ead579",
+      "arrays_sha256": "7108dadc04a0166c74a2a4cfdb82834b94073dde458c0043cbd25261f79573ab"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_22449e136b3552be9fa3676a/result.json",
+      "sha256": "fa0c85250aaf60e71879d27a9628515022d60788d14809cd378455e2a457e984",
+      "arrays_sha256": "5acf5c7bb2d1e88ea3e75e2b310d262199f0050c74708b48c66c786311b8d55f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_ca96a90459f3d95ff3d73def/result.json",
+      "sha256": "1be37679b8b4d8a6d11507ff80edf24cfbee95153f1c8bcabe66b5c16d4cde09",
+      "arrays_sha256": "f82ee7eed84719f00d81f7211088ab034faa32fb4ff0649a14baa8a48353cc60"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_bf1977d55e1e5b09637a05c1/result.json",
+      "sha256": "b995b3addbd0ff2378ce21f28b6ae243faee568463a98e820ea26e7afe95bf65",
+      "arrays_sha256": "95a2fa1bb742e3c49e415a687f393c729d6161d4d2a2b5697a4e144c12ffd726"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_771056e6129a69612a7a3c6d/result.json",
+      "sha256": "b6a77baba47148fe04814cb20fbe0bee1b83d58e7ffb64118e66597fe7dd30a5",
+      "arrays_sha256": "f21951d060c381c751fe1a745631b3dc7fcf8943577767739d547bd89ced7fa8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0242fd8016f730e0f00651be/result.json",
+      "sha256": "14e62700376b774c9652c6e99220281bafac034fb37db64d3342a18cec1ba2d3",
+      "arrays_sha256": "67c6a5e4a027d0426e6ce97856e13ecc259d22ca4e7bf8156a512e7e260bedf6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b7b48e4d5e5ec19b72a2a97c/result.json",
+      "sha256": "dbe35019ed2a498c941cd5a2b5819906c63c4a453a793230c9f9b51363f05f34",
+      "arrays_sha256": "1cc966ca2544279ad28b0b34fa9cb565188ba83c0f01e46d11e8f1c38eb02f90"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_454ac9a7d9617f2b044deab3/result.json",
+      "sha256": "b97ad796684511e80cb7de0492e33e2d5d516119c8d9e748164df9875076f6a1",
+      "arrays_sha256": "d3abf7445952d385ca67a46df57ab00b240468150e727c897a46b0a2f6c1cf3f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_5ce140a2780cf5c34de33dbe/result.json",
+      "sha256": "7418613839db90a3e70a72022f051180b67f803ddfaf51b81ee781bdd0d9aefc",
+      "arrays_sha256": "4c71d1fe0b8920134ecc10a9b10a9895da72695ecc070a86bbced6d31d8ed2bd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3b883f975323195ccd9a5c27/result.json",
+      "sha256": "613191e88d9c89841ac476bb61ca2be0ea95f5e1900f8f7c04070730ebc04a70",
+      "arrays_sha256": "820cfe7489bac50e0fca3927fe6abde847bbdfef8100840537d31446559ae4c3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_76f54b306e8469031b1a7e52/result.json",
+      "sha256": "04dd7f046d44cc930555ab0255ebb4e3e160cdaa5c432c42c54c4db671cc2524",
+      "arrays_sha256": "93f824000e4120462ec5421c4725cfcb8711931c1b503be6ecb57f30bc720e70"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_63704b9b798963744f9ee17c/result.json",
+      "sha256": "8a2ded0080bbf162f1fe5677b1efbe8ec230612a53447583a33cc50ab7810198",
+      "arrays_sha256": "48bb90d06315e1dc952eaa84044fbb199af2382d3c48d8feda3f435194387ae6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_3b175a54c6fd8faccde06bd7/result.json",
+      "sha256": "88d2de28ed3571e38185089a5c1c3f7d5d132a0d87f07b0e833129cff6c74a05",
+      "arrays_sha256": "1dccc65bb611c3c07c79b849edab44dabe5eb5e82f940aed1012687e016c6d3a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e5ee29dd2b23bcf2ae46e2ac/result.json",
+      "sha256": "8ddbde5b711e90993cd7988aa18ca42cdd5e4ed9c7161945f200be039f60d805",
+      "arrays_sha256": "c81e650bf62326ac954340bb54a08be0887475575ba482155d71262815957e3a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_0850b465c0625fc03a3dfdaf/result.json",
+      "sha256": "6e9a5857706779a9fa69c01dc1fea764b9d5cd1931521aa0741ed04c1b079f7c",
+      "arrays_sha256": "3003336eab646b67193da712802d0b2117da87b2d72b15f944fd6ed49d251328"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f91f900f547269affa93113a/result.json",
+      "sha256": "5046fdeeacea09dbd3630ce373c40c64e8359958ea570dee956f844c80d88dfc",
+      "arrays_sha256": "8b978323ebf23a97320b4847306d894a63ea82305f10e8fc33e90dfccdd2795c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_778ec829b13b504b9b09edf6/result.json",
+      "sha256": "81ee3b8d61b9058208c379faff08ec0eb9a934b55400bd007519764642e8bd50",
+      "arrays_sha256": "7b66e584ce95f52176db7097fb77dc9c08ef9c6302ad755557d1380975b95e4a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ca720c3d58eab3edd571e0a5/result.json",
+      "sha256": "328a0d4ea7e72ed9f4b1d8c4cd1b50d59583a036b50a320054694aa2476a8e86",
+      "arrays_sha256": "a63bd583deb35040e377203cebc2ee32d7c1a2b5bc2a691053754132bf061686"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_1092359cbcfca224d3cec132/result.json",
+      "sha256": "6da7e2acf35c7bacc2c236580a75f5a0317e3abb61385b653a5fa52b1a15998e",
+      "arrays_sha256": "ece24dab24eee43d3f8380f6be45c967412c709c1b1f0c91489cb2d220a96517"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_13d81efeb9453ea67fbdebd8/result.json",
+      "sha256": "4ea065c7cf0b7becd12ba0f3451d26cc309845955f97db6e46df329c3afe83f9",
+      "arrays_sha256": "174784f16d1bfa0de5a20b6f8f84743cbe688ba739ea03af6d1dae7b5a51c136"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f8174d80e6e2f276f4f3d239/result.json",
+      "sha256": "5cab1c13143151b024b64badd9a319a8a9e11511bd718a6124fa2f27929e2334",
+      "arrays_sha256": "cccd128a4f28597cb679eb167d1aa2a9c722ecab2eda42cbe7839db64ffb8b3a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_8780b97ab58a9ca84568efb9/result.json",
+      "sha256": "db4c23ac262b85f10a623f5d82dec63abc7468c96e9e5d01d5a89d119ae80d21",
+      "arrays_sha256": "c3e663337ca262b2ec9a39346d0fc6458c50c2f434adf6629aa4e5592cd0396a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c7ed88dfd0f2ced426ddf592/result.json",
+      "sha256": "a9ceafc3e302d6bfa5c2567c2ed49b8ec8dda6b5ae30ebf17f75c4b768957ce6",
+      "arrays_sha256": "d9f8c006a91485331ef1c41a503874cfb535456d5164020bb5f199a679e9f9eb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_123072770f3c8c6ceb1118d5/result.json",
+      "sha256": "9a8132b388d8aac6fbfac55f92a2c08a98219cffa5dcd387cdf7388fc33008fc",
+      "arrays_sha256": "171697271d894073113be6aaa52c4d4fecc34a9da2eb4c53053debec8d872f1d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_5d291b51e4d3c37fc0490f95/result.json",
+      "sha256": "5fa2441b02d868208b3405a18fe73a5c88be4fd8f8555ea63bc510fe41ab0ef7",
+      "arrays_sha256": "9ef461b32be7150f1fb07f572cd008ef864b24c0399b957b84b9a87ed4a095a1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c3afb58edd8cbb4a28ddc52c/result.json",
+      "sha256": "8dba2e506f4d8e677bbf7ecedf2fb09b944b481f49490707dcf9df51c20ac641",
+      "arrays_sha256": "de1c01c57e5845bf0633306c74e7241dc590980700e79c26a7bde9d5ca2da65e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c138ff807a762517deb188f6/result.json",
+      "sha256": "4781a1aa23d0d1ee1ed30d7d12f303e001f3c8220647f294aa98b0fb5b87ddf0",
+      "arrays_sha256": "fed3d37f139febb107221ba00c68358d08163f18b08c06be511115d94854d0fb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_dec8acf93db9c674ac7c242f/result.json",
+      "sha256": "ac6fdcd3ed4631f361fb6e898dab06f18a2c312372b0e1b4daa704848686c7b3",
+      "arrays_sha256": "fca14c1f9ab7bf953dc5b3a4e7fe4f12a9f375827b466b5f435ec02cc354929e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_1a7e318124eacc2d3294265f/result.json",
+      "sha256": "e6872a376b15a8837c04977b106abb42df179287c55b57b26896bdb10107a761",
+      "arrays_sha256": "b99976030a7acff8488f14daf3affb95942fdfc5930cb7967c725fcea270d1ee"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_22b8e5a43827016d32f5252f/result.json",
+      "sha256": "e5e0d63a88d4d35fdb2de15d5c0b3dd729a3f47e7192f591b2605275e3dd28e3",
+      "arrays_sha256": "d7d0d73b9d826284e6e02ab7b14c28dc0b604a1327edd62674900d9802d5c9da"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_19502fca2723081bfbf09a8a/result.json",
+      "sha256": "b5c9a0a46aab6c7941a41a754f2ecfa7407a2e3ffdf4c3a3c88b9e44300b09e4",
+      "arrays_sha256": "1ce00d94f3ee3e3a24762484a2df4235f896369c0a50b8b2fd33b42ca171163c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_7216ecc7ba95c4a7923cb889/result.json",
+      "sha256": "3877f171569ab826fb9429b5171153695b63ad67fc7cacc40fa7092be79d9ec8",
+      "arrays_sha256": "491c94560e479681719e5cd2795eaf36348b157ce3b16b9f3584f58d4cbd759a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_6c7a81fb1e60d0b8ccf0be4c/result.json",
+      "sha256": "e8b37bc9d233d26c0f59e6e62491b817b970bf7fb766400046355b65c4e3ac91",
+      "arrays_sha256": "8bd96d91fb54f9242f8c4ddbbd34b458116e127426a495eeaffa678d51e06ef0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_077705df43fb20a8b77ac583/result.json",
+      "sha256": "076d26f88ee3340c91ec966e00f61e7664f9aab25d2ef095428b86be209819bf",
+      "arrays_sha256": "c75e6ca18dd8a8af9d61dd8d6b3ee0e62502caf5ec75e57fb2ff96c29eed1f70"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_ab1fb83150b60e2b10a7aaeb/result.json",
+      "sha256": "80c90f0c10c3606403abc4fbd291d70e839a925f6defb46f3fa712df29b9bf77",
+      "arrays_sha256": "c379a9ef9c9c61462fad6f3caa1cd7087b423436eb1641faf4ade858d4404881"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_fe8c5479805f9d5fc83cc0a6/result.json",
+      "sha256": "7fa02cfd12118bdf45986aaf1183aa613221b84cbe95911d74da38e745e373be",
+      "arrays_sha256": "14f6433ce82319c7ada7201b3dbb04914c81468dc7be6cb0a88f6fa894cae7ef"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_8c6ce8b4b8c3b966461cf85c/result.json",
+      "sha256": "fbbaf89b4f685d6f0a4abfbfb5d54ae7522545ea1bbd43ea87b76114e807f970",
+      "arrays_sha256": "9218585bce0be0b3bacb40df09ce2337e64163387b257626f8061025f878488c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_31eb3f03f420559de7d0e0a3/result.json",
+      "sha256": "5d50a86067bb33edb9a7b2567400d8f060120302d796f8874eb83b451b731118",
+      "arrays_sha256": "98212345f1f9913a75022f86688383c2a4a31f99bca6f18d626ceab4f73c2a31"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_e2043844024ff42c0e92b06f/result.json",
+      "sha256": "8201605581abfe2c0a53c6cacd51c25b537790a60927e6c9b1a810d16f0c3092",
+      "arrays_sha256": "942604058c2098840186afb5f06391f3ed7080ceea7066344615e90dc63b0af6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_19bc66b1daee7ddb8d1d6b9b/result.json",
+      "sha256": "b33cce0c40f8b21d180fddbacb808984ede598e05f34f1a7dd039190f51b623f",
+      "arrays_sha256": "18afe209ea362e617725be1cc14051e4cc825d99472b5b8d4043c0012f1dd16b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_4a499c5310e38075ae81ec75/result.json",
+      "sha256": "a9e309e0003e2d89402aa384f2bb0d68df321782bbdbe06e1ac37e830920bb0d",
+      "arrays_sha256": "820344d9dc2556200b8d9355332c9d240878f2e22f0d057f97522bdaf3f82693"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_5f7bb9078c7d43ce9a4f4949/result.json",
+      "sha256": "398765ee749b3ff3884bc4b7c88b9dc193978fca3e0c945717ea10c3991c3d80",
+      "arrays_sha256": "370adca0a6c2be1585cee310b1b65d6da033f88590ae7e23df1fd97448210f5d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_acace7c48115a231d3abb5e6/result.json",
+      "sha256": "bb650dbdd6d1dec8a4aac1357508f1029e53b318182d55297668dfd96af58339",
+      "arrays_sha256": "edf1dd3c95d18b394d3c6477df7f3ae3979649e65a19984a9b30f287fd976b78"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_7c7b3984ee9d9301d7424cc1/result.json",
+      "sha256": "ad7880955b740a8ca50a0c85582031b1437e10a887582597a78fbc4c689163a9",
+      "arrays_sha256": "3982e89e281556c6450870ac3946958fc98edb2ca2c098887bc5657e56074190"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_01765a836b61445f8ed097bc/result.json",
+      "sha256": "112748f2bd55d0d4dcb1586de865516088cf98b4303df7fffeaaac69306c6f42",
+      "arrays_sha256": "b573c70619e8ff692e8ea4f367f475f694529d304b29a0505635333594500b98"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_195f8ff2e6d66639a0cd6793/result.json",
+      "sha256": "971e823b267cd7d3058ff32c9194b0422f030d3ffa5fafb3f22ebfc7275c1a4d",
+      "arrays_sha256": "97ead0fe993d8951f83d02221c79c2e952fd1e28d5fdc9eb32e87084193efa28"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_69a270f7d9b06b78752fa346/result.json",
+      "sha256": "2b7580b287a64321e421085a91c04e3dff98589b0afbeea48ff1be1d56668e3f",
+      "arrays_sha256": "52ba75683638598a1f59d5c47795838a24b59ed57cc9ffa55ba255f92d7c0e2b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_94a9db7d83eadf20d9ac7998/result.json",
+      "sha256": "62820cbbc7d733b651f3ab57c9611f02f5740fb9b5602630f06896ba8782c7c5",
+      "arrays_sha256": "8b45375d6f422eeb6fd88ecf19dc36302e655c0c9babb37d5d296ebb06921ced"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_24ee64c2218e16e8b286d3aa/result.json",
+      "sha256": "b670ee04120fa3841f60ed784b22e0a445c3d3fc47acb30f9661fcf791f72187",
+      "arrays_sha256": "dda9255a4c2e0a2cf174b9aafbfe427a8d692eafb6e2532a77b7459d17d9e927"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_dca80619d05408b2a7364eec/result.json",
+      "sha256": "f4266c935473441e1385adad89342bb0f37ad33ac5ce59e70938812fbddacd9e",
+      "arrays_sha256": "349a9ce29e4b470031ce7721ecc6d7ca5a91783cca73514d4ce9cc42d6cae6c7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b0776dfa2713061af9f49e76/result.json",
+      "sha256": "eb065fc45e69cac6ddee5b4b41cfa2e7ccb93f72761080cf16e46b367975adfa",
+      "arrays_sha256": "9874f2bf8a363cd9c2a094ff3dd338b4ba22dac3c3ab60a941c5ea92c9bbb61e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_cb79244c5452211e943df332/result.json",
+      "sha256": "47322ab880f8d681b52a627500cd5e985ca4099051f96d5316d27caad6b4625a",
+      "arrays_sha256": "7fc4a434e2441b4b0f858a0b37d4d43130770865653fd2097bda0b23a0df7ce1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f4a5af338da279dc708ba758/result.json",
+      "sha256": "88997537afbe8e7cea57ec5598fa8a6733e2a56c80094222c1b054e68818a0ed",
+      "arrays_sha256": "7eb00c63a78691631dc6ab27803d3942b98ba8abc057b763621fc225f3a97802"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_14cd2c2d4765d2796bcb7151/result.json",
+      "sha256": "9e7f19c1ab0007ee81ca5c1241129217211e5ed50730f3f9defca4b63794870f",
+      "arrays_sha256": "1151b29e145b1d0a2e68b0e52fed54fdf291f0741a1210ce72a12fa2680633a1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c5bc44ba5d6e0b0cefd285ec/result.json",
+      "sha256": "71fd23dc2f4f64228768504ed67f8be6d14dcb875ff92d12df3752b8b9a7d10d",
+      "arrays_sha256": "dc82e2f05da33e9d4001732fb5a7b1d6b8c2e76fdb3f6e9608c49b5b038f419d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_067ccbb93baaf91db31236a4/result.json",
+      "sha256": "db67b1f80f1a9a12f919475b358fc3f98a96477eb323bf55a127f1fbc37af467",
+      "arrays_sha256": "90d662a992282b278820d36a5f3a6d044ce15bc3f64c92996cd86f0e50085f3f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d1abbff896ca6faa89cc4aa3/result.json",
+      "sha256": "87643a83987e6b128fa91d438c16524feea6466520cc5b007b4f34b09cab4cc0",
+      "arrays_sha256": "f6947a293d8bc3ea7fdef73d4d0f320c30647feea51a6dfc14a425d3748f9746"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_5a247dbd1fcc336cabdf4b11/result.json",
+      "sha256": "e37b8998010919e869d02a0a4355dd4386d4c480778e1ca800aca46a58ebf44c",
+      "arrays_sha256": "df319128d4496e31e619f2dd3b6244e080472c75f1b99db4000aa0e3c7e527d4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_4cdf21cab9621ce1f46d5fd9/result.json",
+      "sha256": "87010e96922f37c15a7868304e7b5dae7b5820061c04821bbbc4e5b50e125ba8",
+      "arrays_sha256": "bd18440ee97b305b4e4bb7845c9fec9709b23b939588c9b370369bda7d9b407c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_216804622d3383d37a070a7e/result.json",
+      "sha256": "13d3e7268f7bd24ce2568dd9f02a57c0c41a686f62f49e05bf45f1f6180a5c58",
+      "arrays_sha256": "a4ee6721ae4f284c4cff5035884e9b4d877ba5a6a2e0f67991b264807967a357"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_3277dad480dcbebf4e26edb4/result.json",
+      "sha256": "442fa09a869819528bb2c009726dad21e71d7df3dd6d55661cf52afa343b18ba",
+      "arrays_sha256": "932cedd489467025edaf31e5ab51fa4213af977d4118a9e767e106f085d1a3ae"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0b81237ff34f74110379c1a7/result.json",
+      "sha256": "5dea5313593791f518f310c8193851128268b6d3f6de8579bf452b42aeac8750",
+      "arrays_sha256": "5297a1770fa181e4c8a73e8a7064dfb84da64220b66ad71791163b16e088447e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b3128f060ae02caf539f58e2/result.json",
+      "sha256": "8e83434b8093f430868af57a565a93ce8e965b03c350424cf753dbfc2d69889b",
+      "arrays_sha256": "51e7ab26d0aa7350a78453c88fa186291cbd86b1f9133c0ebdbd03c5897f0448"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_5d791ce7b3bd236fcc58e02d/result.json",
+      "sha256": "80a3a54706e60e421434c6350f44d223e101b91084ddf68e41f31a66102a9c5e",
+      "arrays_sha256": "1b2bf2671a02ba3195180ff99daff4ba587aea5d50c0e72f999b0d8c13932541"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_aa717ad6d21cbc47d47bf6c9/result.json",
+      "sha256": "d0cecb45b329594cae52c8b2bd1435588e98febbf7326a337ccef8e15a60e9f3",
+      "arrays_sha256": "3e4e43fd822ecd95b0104866d02c4f0aafbc21f16c54dfcac826f3494c4e0e73"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_dcc0e5b86807ade1b03b0e8b/result.json",
+      "sha256": "04e6deef87571f802041c71972b1c41b6135d57b7ee90456cb60b60e54cb75ef",
+      "arrays_sha256": "5938f11ca6c3dce208ac701ec1a0c2e2392a9b23ade412ed2ae367f0cef25e7b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_7b2d67bec8a4e2c61c92279c/result.json",
+      "sha256": "a07d16390c02b75aaa4d16f62adfaaea30d92f61180c1d3d31a581693704d5da",
+      "arrays_sha256": "d89d9fb5ab470ddd9adfd5f9113d5a4ad0dd403cb09cb90fa9cfb23a985d0a82"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_642dc0484c0fdb83d2c1d52f/result.json",
+      "sha256": "8f9df76169680ce5931376dfc514246edc457970790a1c204d818719793a1492",
+      "arrays_sha256": "38491a8aadab171a221e93ad108cd29831d1bd0187ed9e4a007e39fe5b804358"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_39ce4288ad535c1a9594dca1/result.json",
+      "sha256": "72c0564e0582e92515cea74157d2764d26028a038def6053d8376973868e88b5",
+      "arrays_sha256": "fd0d30d69ebd6eedcda5c6e253f4a2c440697ce9f13163557f984910a37cfa7a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3a95ed2f23a16309404b85f0/result.json",
+      "sha256": "de7cef61e29943ab43d10a47745840e1ce93644b6ed5610eba40fa4b6ab0865f",
+      "arrays_sha256": "f1ccb0fffd6ee52ed4b8bd098680d2614145ea5bb6cbfd4a7831932f67936468"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b5e110170e93d80e593c8251/result.json",
+      "sha256": "4c18eeba1e92e8e5b179617c6934eb06413ce7ac29927b1eba4d2a85f459c11c",
+      "arrays_sha256": "ff85340fb1579adcfcf4460a31de7f975ba4c374236792f92b617e606e8a6d07"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_6dd629345f476a3e29d11dbc/result.json",
+      "sha256": "8c5f75ef22b3fa48c7748d9cca1b223d7946762ea1553a5767081cc5e391ae09",
+      "arrays_sha256": "da6d611d76ddadabc4f2cb1eea799ea610461c4eb0a9a69b2c64ac904aca62e7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_797c8dad0f4ca0cd725be00b/result.json",
+      "sha256": "cee8b20f4c8ca3e3b37db046c249508ceb039731673ee21e8fc97112abd6dee1",
+      "arrays_sha256": "c74a120c88939f600f5dab933e5cd02067843c9b9f4bb2c55e05c6c3dbefd122"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_02ec16765541fa44281b75f4/result.json",
+      "sha256": "51994ae724273515b0f818f6a2e0bfc2afafdc4b67262705fc345edd5188922f",
+      "arrays_sha256": "fe48cfcb7a77a973e4f6ca52a8b189d8db9668b4f8b281970cc096eb0b39d08a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_5ff95c05fb4f7a188912caf5/result.json",
+      "sha256": "236aa72cae8ce333c2ddf1987cdc4bd27aa646910ea5b18c70fb407b4ed698b1",
+      "arrays_sha256": "cd5ea4ea974ea435d7bdc2d5bc2e459caf4ec835d1be50b29abf385eaf757100"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_4048187f716412925f519823/result.json",
+      "sha256": "1ebf72e46a0ed41969995ddb56909b42cafb826f8c4f85f627ba9a9341475c31",
+      "arrays_sha256": "d8f5f49dd6597b58e5b66d8e5caabd6572d52398ca0f09cd648bd8eb97c63eb5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_29925e30a3dbd04850a775e9/result.json",
+      "sha256": "e0d01766b6261f8b4b0cb34f6c599c07c10685fbe1608fd0598dc415b4c8428c",
+      "arrays_sha256": "ff64d18bebd597b485ed678669b154888491d3f23b746e3523f773351bcaaed5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_7c5d956de5fb0056ef42d3c7/result.json",
+      "sha256": "b82c80d1fb905123ae2f887dc77b3bd002dcdc6157bb9cd22740f54d163d398b",
+      "arrays_sha256": "f4acf2d5b4cf6718b199c0458ec843a3724ed2a01bdc1dc5ae69227a531b5005"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_b8bc3de96a0203d508e2569f/result.json",
+      "sha256": "6ce78489d20c1208d12c962fb045290a526b247fa955cb37b1b1b918b4611da3",
+      "arrays_sha256": "d6590dfd2f1f34aed00f36624c66b5a632ba4f5a2ac21d2fd79006b045836324"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e3a7da1fc98e07dd6b958288/result.json",
+      "sha256": "f0aed114d582134c5b0f4d3b6051a46045d235fff3ccdf47da118c3cc23e4f77",
+      "arrays_sha256": "897b1a6d52e76e5f8fea87310bd59590e30da1c41490b4240c65763bc0c407c9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_0f88d6eac00c961795ebb59f/result.json",
+      "sha256": "a84dcf2c5bd8c1931250e19a41164c43844055bf2727d7b0ec466f2c62ba6143",
+      "arrays_sha256": "0b9269d4b1b69ced6c642e32ff8cb07fdd40ed5dbc12f0045c724b3653fabf47"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1669deaf74802a73792d04ca/result.json",
+      "sha256": "571e498112d0124eb45c6a4bd87423ad2cd67c007bca9ec3d3084baf15109444",
+      "arrays_sha256": "6a45e213adf90e8a612dafac3467646ae67adedbfd2eadc84b56508fb77a8da4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f6efd1448553435131875556/result.json",
+      "sha256": "f0bdc178287df2d6436d5966001241a85b07ad460977fe14c99bf720ff219af2",
+      "arrays_sha256": "e6424572dd0a15972da2877e0dbf7b62e1a7052162478d1a05b87a635654a258"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_c7f68b7da8b0cad47582f6f7/result.json",
+      "sha256": "d9c75eb146deea7a7274fe7edf35081e2f051925ea5516f325bd2950ba6fcbad",
+      "arrays_sha256": "9828656ab3446022ec5f657a90927cae1cddb5c491e3f7b9f27125754b20ab98"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_2ee78cfc27ece75e7e8e1d7a/result.json",
+      "sha256": "742dcbf2876b1a362bddbcf16a723500a3e2e2b31170913dd6f4e9c0436d68f4",
+      "arrays_sha256": "3779509368d4e1d03b2e628fd3ae500acc258edbdf63b6a5d0c518fe7b289c33"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f3f022908b9fa2b1acb1d1a8/result.json",
+      "sha256": "1a87533e50df4d22cf675355cb6a31fb2d3383d2eabeb75c966792d97322179f",
+      "arrays_sha256": "6cc38fd099a660f28e83eb90d2e7daac668f169e3056711d46d833329dc2c724"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_3d2b37546402b269c36be2e5/result.json",
+      "sha256": "dbbbe7b4a694966b2d132d78fff675d32a5746f11a742cd7c4e06e8216362cd4",
+      "arrays_sha256": "bce3473a469aaa2f5446c547a82ceec264f7ecc2b518a38724885972f3fa985a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_23dfe9f4ecdc6dd3be147222/result.json",
+      "sha256": "20e9a671a8414da70453c6ede01f1c502f25ff926b5c968468c0a059c946e0b3",
+      "arrays_sha256": "ded16230f13546d7fa1be6be7f4f759a2216aa579a7f24af68e45aeaec6720fc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f0ae863c4408ee3bd43c6a4d/result.json",
+      "sha256": "49d34fdc6cc068eb937730e727e8be85d7a231c0f1b80f9e735cd07262b1c856",
+      "arrays_sha256": "3b2f96ccedc3eb6d523eeb76e548b1111472d6fdb1ce60e6c3ccdd8f67d46292"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3a4b71f4996514f519a7775d/result.json",
+      "sha256": "295ad43881989e2065bacebbbf51044615743f66cefe5061cba346645877ce7e",
+      "arrays_sha256": "2f227ee51765207b7201fc2154998d62dd383932c2ec53f9f40e95af7644f141"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d665ee995029d7a84d68e2d5/result.json",
+      "sha256": "a4cc357b2db7346b0c1459f2728251cade91f44b66bc752c664ae4fcad8f4ae4",
+      "arrays_sha256": "00de57e2a4604159791fe419e3db155cc03ad4bd896396d889641db1d15855fe"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_1abd5842814807d0ba354950/result.json",
+      "sha256": "eb01272004162c0cd3d904ce36e9d274e0479c402736bc0f475788f2d5669fab",
+      "arrays_sha256": "6cb8b97088905ddaff4d673ac59569e7e7aa22e6256d32e9bfb5da69275eddff"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_91acf2077147fed427263a21/result.json",
+      "sha256": "e793983053599cddf63c8cc0398305b9929543edfb687761cfbe0e2990890b5f",
+      "arrays_sha256": "8828a9e13e6dd0386cab204517a67067942f0843c03c103630e384ab7bea9d06"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f1b9723b7c1a8b23f0532714/result.json",
+      "sha256": "1f052ed280337b587beeeb5fad05f5b0831e3f97620f79a63851894def623c73",
+      "arrays_sha256": "3f6064602f21079d6989ed3856cec7dbee300d8dbc67c3bff613958b4aecabf6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_9b21cf7371e72c9dc562e28c/result.json",
+      "sha256": "b950f071057f9d3ac1947aad069a572d15bf8d2b761a088b71ac3fc08eebf976",
+      "arrays_sha256": "81f9289c0d7c2d9a5484cfaea39388b0e2afc5f3afd0b656811f82fa4a9e6aaf"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_ebcfd52b929e227f9e592279/result.json",
+      "sha256": "a8ea8627166eb5ff823fc8339fcc78e581e7547323d164873635619c3f38c891",
+      "arrays_sha256": "1789f056454d61b5269d5b03bc908bd1ef902b5504326bcc3a9c3460529328a8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_42ed5aee1ce5ae7cb62df014/result.json",
+      "sha256": "e143e8ebdcdec628b39b7b3a4a486194d293c76b33902f94520763e3c4b8ecc4",
+      "arrays_sha256": "e42dfbd315ec39bfd239a855fd89712ac2ec525fd42c398d473d4960bf3e28ac"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_22449e136b3552be9fa3676a/result.json",
+      "sha256": "fa0c85250aaf60e71879d27a9628515022d60788d14809cd378455e2a457e984",
+      "arrays_sha256": "5acf5c7bb2d1e88ea3e75e2b310d262199f0050c74708b48c66c786311b8d55f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_cc7b8fdabd452d636c7ca74f/result.json",
+      "sha256": "2759b3d4971d683cb1747eed97967a425a37a86f84b5554a20dfc031d1215474",
+      "arrays_sha256": "bd410f19677ea1205f96d70b8fa20e43e1d3597821effe4408ce15b009fe7c41"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_bf1977d55e1e5b09637a05c1/result.json",
+      "sha256": "b995b3addbd0ff2378ce21f28b6ae243faee568463a98e820ea26e7afe95bf65",
+      "arrays_sha256": "95a2fa1bb742e3c49e415a687f393c729d6161d4d2a2b5697a4e144c12ffd726"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_d86db82a39498040615cb6d9/result.json",
+      "sha256": "64db29b539b1f0b55b04c36e8f4e8b883a496d16e9efbbc854e5d1c3cff502a5",
+      "arrays_sha256": "c236ad10254f8bc55d99359bd4e92a7034ded17c01bdeeb9e7b3a981ef481959"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_0242fd8016f730e0f00651be/result.json",
+      "sha256": "14e62700376b774c9652c6e99220281bafac034fb37db64d3342a18cec1ba2d3",
+      "arrays_sha256": "67c6a5e4a027d0426e6ce97856e13ecc259d22ca4e7bf8156a512e7e260bedf6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_07d2d5eed56e275cb50d9d1b/result.json",
+      "sha256": "67945d8930fc1875b1360cb1ca22442b7503df9a7f96a517ae66eec1dfccab29",
+      "arrays_sha256": "3fdd2cd77ea3bf350db681751142e09e08508e0148a0002ff8b772ffa925caec"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_454ac9a7d9617f2b044deab3/result.json",
+      "sha256": "b97ad796684511e80cb7de0492e33e2d5d516119c8d9e748164df9875076f6a1",
+      "arrays_sha256": "d3abf7445952d385ca67a46df57ab00b240468150e727c897a46b0a2f6c1cf3f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_992889fbd460b39d4727e4e3/result.json",
+      "sha256": "d270a7ef13c1aaae60167784f21577649e6cc56bf78f8dc57a7852362cbda034",
+      "arrays_sha256": "4e9767926ba8769627e65786ed95467a3d4c3bb910513ac3927648f427e26434"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_3b883f975323195ccd9a5c27/result.json",
+      "sha256": "613191e88d9c89841ac476bb61ca2be0ea95f5e1900f8f7c04070730ebc04a70",
+      "arrays_sha256": "820cfe7489bac50e0fca3927fe6abde847bbdfef8100840537d31446559ae4c3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_f6be1ebee5c9a5fcb7568b3f/result.json",
+      "sha256": "b2914761fad2caaee7a9a9a7438892be4ac7a97178b8e5f57f0cc266e8ccb845",
+      "arrays_sha256": "b00562c10b7b0acddaaae345126f313818aeb9927f82b1fc90bbbd988af7a1a5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_63704b9b798963744f9ee17c/result.json",
+      "sha256": "8a2ded0080bbf162f1fe5677b1efbe8ec230612a53447583a33cc50ab7810198",
+      "arrays_sha256": "48bb90d06315e1dc952eaa84044fbb199af2382d3c48d8feda3f435194387ae6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_c441a5c8e7a3381e5c75f758/result.json",
+      "sha256": "82fbb9aee0cc2ddbd537259ebe89cbb9100e77b051536af15526594c323eecea",
+      "arrays_sha256": "314d9db6c6ec0400c60bfc44bdcedd6b1ec1e94ba72df787167d20c68d500b96"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_e5ee29dd2b23bcf2ae46e2ac/result.json",
+      "sha256": "8ddbde5b711e90993cd7988aa18ca42cdd5e4ed9c7161945f200be039f60d805",
+      "arrays_sha256": "c81e650bf62326ac954340bb54a08be0887475575ba482155d71262815957e3a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_19913660942481a00c3f1f5e/result.json",
+      "sha256": "c0bdc13b94040968e3474110106d40494c3c695e67e314ab217a2acfe313ccb8",
+      "arrays_sha256": "c8b59338aaab7273b5492d18066c0c7cd60fa7d4fa6aaa35f07cea997612cd41"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/results/relax_f91f900f547269affa93113a/result.json",
+      "sha256": "5046fdeeacea09dbd3630ce373c40c64e8359958ea570dee956f844c80d88dfc",
+      "arrays_sha256": "8b978323ebf23a97320b4847306d894a63ea82305f10e8fc33e90dfccdd2795c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/control_queue/results/relax_a33103172400d4077dc31b8d/result.json",
+      "sha256": "42a06b3b47ffbd865fc367acbb8bff8ea2cadace2860639d8320ec06c044e8ec",
+      "arrays_sha256": "fd95b8cf9f574ff7ced2e60feaf3d9d480ccb49b2f1d78ca35a9299ab149a9b7"
+    }
+  ],
+  "contexts": {
+    "tight_0p01": "2c884b85e20570a4fe5a7a9b5e041f8800873d3cfaca61d92cc00575b5cfbe1d",
+    "mace_independent": "71d7ec709a2f6600973ef75766eef7e5e6e45a26064984cbb70bccb655920b47"
+  },
+  "test_energies_read": false,
+  "MACE_SP_scope": "MACE predictions on exact UMA coordinates; independent MACE endpoints are separately identified",
+  "MACE_SP_failed_ids": [],
+  "no_new_model_calls": true,
+  "source_sha256": "d735ee92cd4591651980b72f6a76024fbaf12f7657f523b38d466d5c6bed832e",
+  "limitation": "Force convergence and small numerical sensitivity do not establish physical ground states, PES basin uniqueness or DFT accuracy"
+}

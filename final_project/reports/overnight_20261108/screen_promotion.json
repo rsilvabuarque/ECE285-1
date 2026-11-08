@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_PROMOTION_SELECTION_BEFORE_CONFIRMATION_FITS",
+  "created_UTC": "2026-11-08T13:24:17.209726+00:00",
+  "screen_receipt_sha256": "9e4bb9aef7441ab63de6f68c1c572b04496ffea6b68e01d792c3792126e84a7e",
+  "screen_metrics_sha256": "42b3cb379be731c69b20f6b97fddd066199a4f04dbbf9e5e9a2021a154217ff7",
+  "promoted_arms": [
+    "A_radial_shells",
+    "B_radial_shells",
+    "B_remaining"
+  ],
+  "rationale": "A_radial_shells has largestCVAEprimarygain; retainmatchedB_radial_shells toseparatefeaturebenefitfromlatentbenefit;B_remainingtestssmallstrongestARcandidategain. Allarepoint-estimates,notconfirmedwins.",
+  "not_promoted": {
+    "A_remaining": "negativeprimaryandLOW",
+    "A_beta0p03": "smallprimaryincrease,lowerLOWyieldandno restoredlatentresponse"
+  },
+  "confirmation": "Additional0802/03fits for3promotedarms,thenfreshCOMMONhistory/streams12096primary withallthreebaseA/Bfits;nooldpoolreuse",
+  "full_fit_budget": {
+    "before": 17,
+    "new": 6,
+    "after": 23,
+    "cap": 60
+  },
+  "paired_target_model_architecture": "Awaitthree-fitconfirmationdevelopment;genuineCVAEonly",
+  "selection_rule": "UMAequal-weightcomposition/binmacroprimary,originalq20LOWsecondary;noTESTorFINALused"
+}

@@ -1,0 +1,94 @@
+{
+  "status": "COMPLETE_READ_ONLY_SADDLE_REVIEW",
+  "source_sha256": "c1eed6b99652a2fc1493c2d7fd27abda38aaa1b18b9eee634c8a856c979332e0",
+  "sources": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/saddle/event2_delta0.01/receipt.json",
+      "sha256": "f9801132c218206885c3f48f43e0161cd2ff8dedb9306b405b68fe2677280932",
+      "hessian_sha256": "b13bc7e49335c52295665e597bce4a012b2b5b6e0582ba1f9435685cf18f07cd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/saddle/event2_delta0.005/receipt.json",
+      "sha256": "e803128bab18aa1d0b014e92b5ab588a88dfa6c406b13a69fc6e8fa3f7c4a639",
+      "hessian_sha256": "97e85be2f0eb818cef71db595af1b9a9d6f4b619b1152971c0cb7b72b867786a"
+    }
+  ],
+  "independent_central_force_Hessian_checks": [
+    {
+      "delta_A": 0.01,
+      "reconstructed_force_columns": 540,
+      "verified_actual_displacement_calls": 1080,
+      "max_Cartesian_Hessian_difference": 0.0,
+      "max_projected_eigenvalue_difference": 0.0,
+      "negative_mode_overlap_stored_vs_recomputed": 0.9999999999999988,
+      "max_stored_vs_call_force_norm_difference_eV_A": 2.6628033056308453e-08,
+      "force_norm_check": "8*float32eps*max(1,loggedFmax), accounting for float32norm versus storedfloat64 force-vector norm; arithmetic serialization check only"
+    },
+    {
+      "delta_A": 0.005,
+      "reconstructed_force_columns": 540,
+      "verified_actual_displacement_calls": 1080,
+      "max_Cartesian_Hessian_difference": 0.0,
+      "max_projected_eigenvalue_difference": 0.0,
+      "negative_mode_overlap_stored_vs_recomputed": 0.9999999999999996,
+      "max_stored_vs_call_force_norm_difference_eV_A": 1.3667091319780056e-08,
+      "force_norm_check": "8*float32eps*max(1,loggedFmax), accounting for float32norm versus storedfloat64 force-vector norm; arithmetic serialization check only"
+    }
+  ],
+  "displacement_size_comparison": {
+    "candidate_geometry_sha256": "bbf17270493dfe8bf91b9f9f05f1ad893b9cd051e39fc8340c8ab370605d37d7",
+    "displacement_A": [
+      0.01,
+      0.005
+    ],
+    "lowest_internal_eigenvalues": [
+      -0.11100291941572168,
+      -0.11101001338338073
+    ],
+    "next_internal_eigenvalues": [
+      0.003342709576552935,
+      0.0033429685474752964
+    ],
+    "strictly_negative_counts": [
+      1,
+      1
+    ],
+    "absolute_negative_mode_overlap": 0.9999999944370114,
+    "relative_Hessian_difference": 0.00014955067112449702
+  },
+  "mode_route_overlaps": {
+    "improved_tangent": {
+      "mass_metric_signed_overlap": -0.7788256020513634,
+      "mass_metric_absolute_overlap": 0.7788256020513634,
+      "Cartesian_signed_overlap": -0.9203276653042678,
+      "Cartesian_absolute_overlap": 0.9203276653042678
+    },
+    "local_chord": {
+      "mass_metric_signed_overlap": -0.833978148978601,
+      "mass_metric_absolute_overlap": 0.833978148978601,
+      "Cartesian_signed_overlap": -0.9442735568202529,
+      "Cartesian_absolute_overlap": 0.9442735568202529
+    },
+    "convention": "Mass metric uses normalized sqrt(M)*CartesianNEBtangent against unit mass-weighted eigenvector; Cartesian alternative compares normalized M^-1/2 eigenvector. Signed mode orientation is arbitrary.",
+    "no_new_force_calls": true,
+    "ASE_version": "3.26.0"
+  },
+  "source_band": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_2_repeat1_fixed7_tight01/final_band.npz",
+    "sha256": "b2c19a80717a6bfa5bda4f0b6b5db21e5d0efc1648663e99e886edb4c7cc07df"
+  },
+  "candidate_image": 5,
+  "migrating_atom": 59,
+  "coordination_convention": "Full periodic neighbor images within5A used only as a search window; ranked O/Co/Li distances, no inferred bonding cutoff or phase assignment.",
+  "force_calls": 0,
+  "DFT_calls": 0,
+  "limits": "Stable local index-one curvature does not verify that this whole marked path is one elementary hop. Same occupation orbit is not physical PES-basin identity.",
+  "outputs": {
+    "candidate_environments.png": "758742dbdddeb48830437b85763c12dd75c8e3a49d7d7db523123e9f4dc3f812",
+    "candidate_environments.pdf": "11c2386e7c6df5792a5ef19da7c5fcd7d334c68409395524a537ff4de484487e",
+    "neighbor_distances.csv": "7debfcf825652fa11335a057f56ccda63886ed7404cb5b8abcc45f388fa4fc4d",
+    "states.csv": "80c698c5685dfe4442c4722acb2444daec1f6952bdb2170fa9d35d705308fc1c",
+    "negative_mode_participation.csv": "b6c76e6a5cd6a4d69827cda2d96f51b2df804f96df8a24751b269714c0b40beb",
+    "executed_source.py": "c1eed6b99652a2fc1493c2d7fd27abda38aaa1b18b9eee634c8a856c979332e0"
+  }
+}

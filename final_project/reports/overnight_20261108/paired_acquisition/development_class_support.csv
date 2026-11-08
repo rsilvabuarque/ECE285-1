@@ -1,0 +1,13 @@
+target,n_target,split,independent_masks,low,middle,high
+deletion,12,train,1197,240,718,239
+deletion,12,val,400,74,259,67
+deletion,24,train,1197,240,718,239
+deletion,24,val,400,88,216,96
+deletion,36,train,1200,240,720,240
+deletion,36,val,400,79,243,78
+endpoint,12,train,1197,240,718,239
+endpoint,12,val,400,77,250,73
+endpoint,24,train,1197,240,718,239
+endpoint,24,val,400,81,228,91
+endpoint,36,train,1200,240,720,240
+endpoint,36,val,400,85,238,77

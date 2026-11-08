@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_THREE_FIT_DEV_CONFIRMATION",
+  "source_sha256": "527c473f2b347f3353063e63b65ed4cd0baaa5eacfa17e0ef8d60e8e7532932d",
+  "evaluation_receipt_sha256": "1de6ec4653d7fdd0c23f3f95cb2ed6d5030a125119168ad8ebbe8ffa76503ea9",
+  "best_point_estimate_genuine_CVAE": "A_radial_shells",
+  "best_point_estimate_simple_AR": "B_radial_shells",
+  "selection_rule": "UMA equal-composition/bin macro all-attempt useful yield primary; original fixed-q20 LOW secondary; three fit seeds only",
+  "protected_assessment": "FINAL-only0804/05 fits and all FINAL labels were not read. This is DEV selection evidence, not final confirmation.",
+  "uncertainty": "Descriptive differences across three fit pairs, with common actual generation latent/uniform streams; no proposal-row p-values or equivalence claim",
+  "new_MLIP_calls": 0,
+  "new_optimizer_updates": 0,
+  "new_model_forward_calls": 0,
+  "outputs": {
+    "paired_fit_contrasts.csv": "2bc98da9a9c3004b3de31224a2acf7b5eea12a5d1953bc7c247785ef192c1794",
+    "paired_fit_contrast_summary.csv": "36dd52c512a5d590c396342ec0158ddae2f8f43e8a14c837b3ac175c615a4e0f",
+    "per_bin_summary.csv": "050db02f2eaf56dc612cdfb0938f8c0d3fe3d54277d8e0b7e07b37501a3eb533"
+  }
+}

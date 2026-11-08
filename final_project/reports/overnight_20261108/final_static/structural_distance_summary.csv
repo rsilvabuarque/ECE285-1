@@ -1,0 +1,10 @@
+method,fit_or_sampler_replicates,mean_nearest_reference_orbit_Hamming,descriptive_seed_SD,reference_orbits_per_count,scope
+A_graph_cvae,5,6.871180555555556,0.03669319195229729,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+A_radial_shells,5,6.856944444444446,0.016221261981663893,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+B_radial_shells,5,6.842708333333334,0.016128089114574216,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+B_remaining,3,6.851273148148148,0.02311919485583137,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+B_spatial_ar,5,6.867013888888889,0.02505660066494868,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+C_dense_cvae,3,6.797453703703703,0.0530106491407632,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+D_nonphysical_ar,3,6.887731481481481,0.04167872125007102,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+mutation,5,6.425694444444446,0.015204606976257773,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units
+uniform,5,6.852083333333333,0.023466417345976823,1024,UPPER bound on nearest full-TRAIN distance; mobile-site Hamming units

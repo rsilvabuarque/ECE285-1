@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE_SUMMARY",
+  "analysis_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_null_recovery/receipt.json",
+    "sha256": "cdbd126aa04bb79c16bba6f4372655343a4f8b904fda2adcc8e3d0c228290fdd"
+  },
+  "analyses_csv_sha256": "f2d10b31077d8801b8e376a35560099d45277fcb5d13242e382284ef7d7608ce",
+  "source_sha256": "3f9063fec2136b135c5fd204c3e2c1baeba768c746363fcbd286341135412b80",
+  "phase_realizations": 3,
+  "analyses": 27,
+  "max_absolute_energy_anchor_roundtrip_eV": 0.0,
+  "max_absolute_thermodynamic_identity_error_eV": 2.0605739337042905e-13,
+  "max_absolute_mode_integral_error": 1.1229939218537766e-06,
+  "native_temperature_range_K": [
+    433.08943371472833,
+    433.15253013836826
+  ],
+  "limitations": "Fixed-energy/modal-phase null tests spectral estimators, not canonical MD or anharmonic corrections. Phase SD is descriptive; nested lengths are correlated. Nonzero fluidicity has no physical diffusion in this bounded analytic signal.",
+  "outputs": {
+    "harmonic_null_bias.png": "ef97e56f403b8b7e29fcc251750bcf6e46821218d7b7e8d8aca7601671eae9f0",
+    "harmonic_null_bias.pdf": "f19c7492cbbc2945b3c60d54198c7f6c8ac6f5fbfed661d5c59a1dddef6828f7",
+    "summary.csv": "50663111ddebb569d938aa3a222a19b807cf7091c534ce60f2ca0a196e10106d"
+  }
+}

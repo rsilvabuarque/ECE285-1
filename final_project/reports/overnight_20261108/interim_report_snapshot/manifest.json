@@ -1,0 +1,28 @@
+{
+  "status": "REVIEWABLE_INTERIM",
+  "created_UTC": "2026-11-08T13:19:26.899539+00:00",
+  "main_body_pages": 5,
+  "main_total_pages": 6,
+  "research_total_pages": 6,
+  "source_commit": "b2b2413a85255dce1bbd1f67d06ce7fee3668016",
+  "render_review": "All6main and6supplementpages reviewed; subsequently shortenedNEBplotlabels withbyte-identicalscientificCSVs, finalassetvisuallyreviewed",
+  "limitations": "FreshFINAL,endpointassessment,newscreenoutcomesandsaddle/MACEfollowupsnotclaimedyet; rootlaterupdatesreportwithactualreceipts",
+  "files": {
+    "midterm_build.log": "ce18056e6fb40fd8ca440e9479817d15361f12e521665c95ffadaba69a3689fd",
+    "research_build.log": "c6d54b7a436b8812c203d80cb911baabbb5ed992d864ef8389cd3865ae99fd97",
+    "midterm/CLAIM_SOURCE_MAP.md": "b2f14d5fc589a13c21bee5da61e9571cf879202c9ad0583d31da682e3a1adadb",
+    "midterm/build.sh": "7e65f5a733e5d1d0384b85f697bddbc8b43e11d3e130ace0307f0172c559c521",
+    "midterm/main.tex": "15c2b67dbba1843cae318adb8b779ec067ad789e95437317b0163d98bc79f32e",
+    "midterm/main.pdf": "d8ddb003eb80ba1d9dad6302cd572f3ea3a73fd742a8ed31b08d5e3cd0cf0e3c",
+    "midterm/generated_results.tex": "1d8c0a745bd8f86e5f9bb13d0cc08109ccfaab78f65623fed5ad5f9085fb5fb3",
+    "midterm/claim_sources.json": "04267733e77cf14e1f017a83e02d0f0e84fbbe03cb21f1ca343e2d0e18866d97",
+    "midterm/references.bib": "5ba731d73b8b411598cc0eaa663b52fd6934370dc85483e050b95fadfc17fec8",
+    "research/build.sh": "7e65f5a733e5d1d0384b85f697bddbc8b43e11d3e130ace0307f0172c559c521",
+    "research/main.tex": "9ac50ee6e225cbea0cdc4fe4b81ad71c2a9dc7a25353802491aa53f41962334e",
+    "research/main.pdf": "ec35f7e8dda1d98f3b74b8085fc5b888cab795d92b49d436e3fa5a0c29e0aff8",
+    "research/references.bib": "aaef8e79b8a1aa9cc74e0dce855c0871a93b73dc2c30cd6c60fed72c557207b4",
+    "research/assets/route_profiles.pdf": "b4a4b1e4b81db895d02e325e636fdb3777cb45ba53f4d4f5d5ff7ea3a451d4f8",
+    "research/assets/harmonic_null_bias.pdf": "f19c7492cbbc2945b3c60d54198c7f6c8ac6f5fbfed661d5c59a1dddef6828f7",
+    "research/assets/finite_entropy.pdf": "9851c76731e810fbf6e6246197a0c7a0914dbf4c4bd03a4f182d503a075a61c5"
+  }
+}

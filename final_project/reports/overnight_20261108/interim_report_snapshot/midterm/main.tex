@@ -1,0 +1,290 @@
+\documentclass[10pt]{article}
+\usepackage[margin=.76 in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,url,microtype,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\setlength{\parindent}{0 pt}\setlength{\parskip}{4 pt}
+\newcommand{\pending}[1]{\textit{Pending: #1}}
+\begin{document}
+\begin{center}
+{\Large\bfseries Conditional generation of cathode vacancy patterns:\\
+separating latent learning, spatial decoding, and relaxed energy}\par\vspace{4 pt}
+Ricardo Silva Buarque, Beihao Gu, and Varad Kottawar\\
+ECE 285 midterm --- reviewable interim draft, November 8,2026
+\end{center}
+\begin{abstract}
+We test whether a conditional variational autoencoder (CVAE) proposes new
+Li/vacancy configurations at a requested composition and energy range more
+efficiently than uniform sampling and mutation. Earlier spatial decoding improved
+teacher-defined yield, but its latent variables were nearly unused. The present
+matched controls separate a graph-posterior CVAE, a no-latent autoregressive
+sampler, and a dense-posterior CVAE with the same causal spatial decoder. Nine
+4,000-update fits and fresh development scoring are complete. Spatial AR matches
+the graph CVAE, while a dense posterior retains information without useful
+prior-generation gain. Relaxed-endpoint acquisition continues. Exhaustive small-cell
+enumeration quantifies approximate symmetry and teacher disagreement. No new DFT
+or interatomic-potential fine-tuning is performed, and generative, numerical, and
+physical validation remain distinct.
+\end{abstract}
+
+\section{Motivation, revised question, and independent data}
+Direct recycling aims to restore useful cathode composition and structure rather
+than dissolve the material into its constituent elements. Hydrothermal processing
+and annealing have regenerated spent LiCoO$_2$ (LCO) experimentally
+\cite{shi2018}. Our longer-term motivation is to select informative atomistic
+configurations for reference calculations and improved recycling models.
+The class project studies conditional generation of vacancy patterns; it does not
+simulate a hydrothermal liquid or establish optimal reactor conditions.
+
+Density functional theory (DFT) supplies an approximate electronic-structure
+reference at specified atoms, positions, and cell. A machine-learned interatomic
+potential (MLIP) predicts potential energy and its force/cell derivatives. A
+single-point prediction leaves geometry unchanged. Relaxation moves atoms toward
+a local minimum; molecular dynamics (MD) uses forces to propagate them in time.
+A sampled vacancy mask performs none of these operations automatically.
+
+Li/vacancy ordering changes energy even at fixed composition
+\cite{vanderVen1998}. The working parent is Li$_{48}$Co$_{48}$O$_{96}$.
+An occupation vector $o\in\{0,1\}^{48}$ has $o_j=1$ for a present Li at parent
+site $j$ and $o_j=0$ for a vacancy. Its count is $n=\sum_j o_j$; the material
+contains $N_a=144+n$ atoms and Li fraction $x=n/48$. Primary counts are
+$n=12,24,36$. The parent geometry and cell are fixed for deletion labels.
+The primary teacher is UMA-S-1.2.1/\texttt{omat}; the independent teacher check is
+MACE-MH-1/\texttt{omat\_pbe}. Both use FP32, TF 32 off, with checkpoint and
+inference receipts. A missing precision field in an old condition schema is not
+evidence that its predictions used another precision.
+
+The parent's 192 retained site permutations define an \emph{orbit}: all vacancy
+masks related by those operations. The lexicographically smallest transformed
+vacancy string identifies the orbit. Grouping precedes splitting; symmetry
+augmentation supplies equivalent views, not additional independent examples.
+The fixed round-0 dataset contains 40,157 TRAIN, 4,967 VAL and 5,123 TEST orbits.
+Only TRAIN supplies fit examples and class thresholds; VAL selects checkpoints.
+TEST labels are not used for these decisions. The new development proposal
+history was frozen at 324,970 known orbits before its proposals were scored.
+
+The revised scientific question is whether an improvement is due to the CVAE
+latent pathway, to causal spatial autoregression, or to their combination, and
+whether a deletion-energy advantage survives actual geometry relaxation.
+This is more discriminating than comparing a CVAE only against uniform masks.
+\newpage
+
+\section{Model, conditions, and controlled alternatives}
+The condition is $c=(n/48,b)$, with energy class $b\in\{\mathrm{low},\mathrm{middle},
+\mathrm{high}\}$. Within each count, TRAIN energy quantiles $q_{20},q_{80}$ define
+the frozen class boundaries. Energy is in eV per present atom for class
+assignment; the teacher, parent, geometry convention and thresholds belong to
+one condition schema. A low request is a supported energy \emph{range}, not a
+guarantee of a global minimum or an energy-gradient optimization.
+
+An encoder produces a diagonal Gaussian
+$q_\phi(z\mid o,c)=\mathcal N(\mu_\phi,\operatorname{diag}\sigma_\phi^2)$,
+where $z\in\mathbb R^4$ is the latent vector. The reparameterization
+$z=\mu+\sigma\odot\epsilon$, $\epsilon\sim\mathcal N(0,I)$, permits stochastic
+training. At generation, a fresh $z\sim\mathcal N(0,I)$ is used without a target
+mask. The conditional autoregressive decoder factors
+\begin{equation}
+ p_\theta(o\mid z,c)=\prod_{i=1}^{48}
+ p_\theta(o_i\mid o_{<i},z,c,h_i).
+\end{equation}
+Here $o_{<i}$ is the already assigned prefix, and $h_i$ summarizes local
+occupied, vacant and unassigned sites. At training, the true prefix is supplied
+(teacher forcing); at generation, earlier sampled decisions form the prefix.
+The future target occupations are excluded from $h_i$. If the remaining required
+Li count is zero, later sites are vacant; if it equals the remaining site count,
+all are occupied. This enforces $\sum o_i=n$ exactly.
+
+For one training row, the loss is
+\begin{equation}
+ \mathcal L(o,c)=-\mathbb E_{q_\phi}\sum_i\log p_\theta(o_i\mid o_{<i},z,c,h_i)
+ +\beta_t D_{\mathrm{KL}}\!\left(q_\phi(z\mid o,c)\Vert\mathcal N(0,I)\right).
+\end{equation}
+The first term rewards mask reconstruction; the KL term regularizes the
+posterior toward the sampling prior. Both are measured in nats with natural
+logarithms. The same row weights multiply reconstruction and the sum of KL over
+latent components. Class balancing changes TRAIN weights only; VAL retains its
+base weights and fixed Monte Carlo noise. The legacy block-update KL warm-up
+and selection objective with $\beta=0.1$ are matched across controls.
+
+\begin{center}\small
+\begin{tabular}{p{.07\linewidth}p{.23\linewidth}p{.57\linewidth}}
+\toprule Control & Posterior / latent & Shared decoder and discriminating question\\\midrule
+A & Graph encoder, $z\in\mathbb R^4$ & Physical causal neighborhoods. Does the spatial CVAE use a latent representation?\\
+B & No encoder or latent & Same causal neighborhoods. Is a conditional spatial AR sampler sufficient?\\
+C & Dense encoder, $z\in\mathbb R^4$ & Same causal neighborhoods. Does an informative dense posterior improve prior sampling?\\
+D & No latent, matched B & Fixed nonphysical association of decoder graph kernels. Three fitted screen replicates; rescoring pending. Full kernel degree/weights are retained, but prefix exposure is also audited.\\\bottomrule
+\end{tabular}
+\end{center}
+The graph encoder passes messages on the full parent, including host species
+and vacant mobile sites, then pools host/mobile features \cite{gilmer2017}.
+The causal decoder uses only prefix-derived features on that fixed graph.
+This is not a coordinate-generating equivariant model. The software accepts a
+different parent/mobile ion, but a new material or cell size has not been validated.
+
+KL, per-component $\operatorname{Var}(\mu_j)$, resampling $z$ with shared decoder
+uniforms, and changing $b$ with shared $z$/uniforms test different properties.
+A small reconstruction loss alone does not establish useful latent codes
+\cite{alemi2018}. An update-based cyclic KL screen is a bounded candidate
+\cite{fu2019}, not an assumed cure for collapse or evidence of better sampling.
+\newpage
+
+\section{Evaluation and current fitted-model evidence}
+Uniform masks select exactly $n$ sites. Mutation starts from a frozen TRAIN seed
+in the requested bin and swaps equal numbers of present/vacant sites. Seed
+information, proposal counts and swap budgets are declared. Neither baseline
+is credited with a new unique structure when it merely repeats one already
+seen. Every attempted proposal remains in the denominator, including duplicates,
+unsupported/failed requests and invalid outputs.
+
+For $A_{snb}$ attempted proposals from replicate $s$, count $n$ and requested bin
+$b$, the primary score is
+\begin{equation}
+Y_{snb}=\frac{\#\{\text{distinct valid orbits, new to frozen history, teacher bin}=b\}}
+{A_{snb}}.
+\end{equation}
+The balanced yield averages all nine count/bin cells equally and is then
+reported per fitted replicate. The historical low-energy score using its original
+round-0 $q_{20}$ remains a separately named metric. Best energy versus attempts
+and versus actual new teacher queries are secondary search metrics; they need
+not agree with requested-bin yield. Shared queries are deduplicated physically
+without changing attempted-proposal denominators.
+
+Paired condition-response tests hold $z$ and decoder uniforms fixed while changing
+the requested energy class; independent MLIP rescoring determines the realized
+energy shift. Latent-response tests change $z$ while fixing condition/uniforms.
+Current paired probes report raw Hamming differences and orbit equality, failures,
+novelty, energy distributions and composition-resolved results. A separate FINAL
+distance audit will minimize over all 192 operations. A few fit seeds give
+descriptive variation, not a calibrated confidence interval over all future fits.
+
+\input{generated_results.tex}
+
+The old assessment found a spatial graph/context model at 62.04\% balanced novel
+requested-bin yield under UMA versus 58.62\% for mutation, while its latent KL
+was near zero. That historical assessment motivated A--C; it is not the new
+comparison and cannot serve as an untouched test again. The old middle-bin
+result was weaker than mutation. The current controls show that A and B have
+similar validation reconstruction and development yield. C reconstructs better
+while paying substantial KL, but generates no better than uniform under the
+balanced metric. This supports causal spatial decoding as the main measured
+mechanism; it does not establish a useful latent-generation advantage.
+
+The new development pool freezes 8,640 primary attempts and 1,152 separate
+latent-response probes before labels. All candidate labels are now complete under
+both teachers. Development outcomes may select a bounded
+screen; a fresh FINAL manifest, thresholds, proposal/history identities and
+selected checkpoints must be frozen before final labels. A new proposal is novel
+relative to that full history, including previously inspected assessments and
+new acquisitions, rather than only relative to TRAIN. MACE checks use the same
+frozen generated geometries and its own teacher thresholds. Teacher agreement
+is a robustness check, not calibrated uncertainty or DFT validation.
+\newpage
+
+\section{Paired deletion/relaxation target and exact small-cell check}
+For the same initial mask $o$, define $E_{\mathrm{del}}(o)$ at literal parent
+coordinates and $E_{\mathrm{end}}(o)$ after fixed-cell atomic relaxation.
+The latter is a reached local endpoint, not a certified global minimum. Two
+models will have identical input masks, splits, architecture, initialization
+policy and update budget, but distinct TRAIN-fitted condition thresholds for
+these two energy targets. Both generators must be evaluated under \emph{both}
+energy definitions. A mask generator conditioned on endpoint energy still
+outputs a pristine-derived deletion geometry until relaxation is actually run.
+
+The frozen acquisition has 6,000 fresh-to-intake uniform raw masks after orbit
+deduplication: per count, 1,200 TRAIN, 400 VAL and 400 TEST. The pilot contains
+the first 32 TRAIN masks/count. All 96 pilot relaxations converged at the
+historical $0.05$ eV/\AA\ maximum-force target, using 3,864 actual E/F calls.
+This pilot has no VAL support and therefore does not qualify for target-model
+training. The full acquisition is in progress; interrupted attempts are preserved.
+The operational fit gate requires at least 30 independent low-class masks in
+each count's TRAIN and VAL, with all TRAIN bins represented. This is a support
+heuristic, not a formal power calculation. TEST energy labels remain sealed.
+
+The complete queue reserves endpoint assessment before optional acquisition
+growth. The mandatory current-method LOW comparison includes spatial CVAE,
+spatial AR, mutation and uniform: $64\times 3$ counts$\times 3$ replicates$\times 4$
+methods$=2,304$ attempts before physical deduplication. Tightening a fixed
+development subset to $0.01$ eV/\AA\ probes rank/bin sensitivity. Variable-cell
+and fixed-cell endpoints are never pooled. MACE single points at UMA endpoints
+are distinct from independently relaxed MACE endpoints. Site reassignment and
+continuous geometry distinguish occupied-site orbits from physical PES basins.
+
+A separate low-cost check exhaustively scores all 220/924/220 raw masks at
+3/6/9 Li in a stored Hu 12-site parent, once per teacher plus repeat controls.
+Its retained permutations match coordinates only approximately (maximum species
+residual $2.64\times 10^{-4}$ \AA); hence all raw geometries are scored rather
+than assigning one representative energy to every group member. The 2,752 new
+E/F/stress evaluations completed without failures. At 433.15 K:
+\begin{center}\small
+\begin{tabular}{crrrr}\toprule
+Li count & Raw masks & Orbits & $S_{\rm UMA}/k_B$ & $S_{\rm MACE}/k_B$\\\midrule
+3&220&6&4.176&4.167\\6&924&17&4.396&5.378\\9&220&6&3.121&4.133\\\bottomrule
+\end{tabular}
+\end{center}
+Here $p_i\propto\exp[-(E_i-E_{\min})/(k_BT)]$ uses total-cell energies, and
+$S=-k_B\sum_i p_i\log p_i$ is discrete configurational entropy in eV/K per cell.
+Each teacher/count is normalized separately. UMA and MACE choose different
+lowest mean-energy orbits at all three counts. These are exact finite static
+MLIP ensembles, not measured LCO entropy or 48-to-12-site network transfer.
+\newpage
+
+\section{Interpretation, limitations, and completion plan}
+The principal mechanistic distinction is between \emph{condition control} and
+\emph{latent use}. A decoder may respond well to a requested energy bin while
+effectively ignoring $z$. Conversely, an encoder can reconstruct a training
+mask through an informative posterior yet generate poorly from its prior.
+The present A/B/C development controls directly separate these possibilities. Retaining a
+true CVAE is useful only if its measured behavior supports the latent pathway;
+an AR result that matches or wins remains scientifically informative.
+
+Pristine-derived deletions omit relaxation, local strain, magnetic degrees of
+freedom and competing host structures. Endpoint labels address one of these
+limits under a stated MLIP and fixed cell, without proving a ground state or
+validated chemistry. Class conditions are empirical ranges, not thermodynamic
+populations. The exact small-cell probabilities provide a finite-model reference
+for raw reference-pool error, not a justification for treating a generated
+proposal histogram as an equilibrium distribution.
+
+The separate research supplement preserves a first NEB route hitting its
+500-step cap and another interrupted by scheduler fail-fast, alongside a
+numerically converged second event. A common-setting continuation/image study
+is ongoing. A potential-energy path span in eV/hop is not a finite-temperature
+activation free energy, diffusivity or DFT-validated barrier. Synthetic velocities
+from the actual saved 537-mode harmonic spectrum test the thermal estimator
+against a known model; they do not measure an anharmonic correction or validate
+unrestricted hopping MD. These extensions do not substitute for class-model
+comparisons.
+
+\begin{center}\small
+\begin{tabular}{p{.26\linewidth}p{.62\linewidth}}\toprule
+Required item & Status in this interim build\\\midrule
+Matched A/B/C & Nine complete 4,000-update fits and two-teacher development scoring; no useful latent gain observed.\\
+D / bounded improvement & Eight 4,000-update screen fits complete (D$\times3$, remaining-count/shell features for A/B, lower KL ceiling for A); rescoring pending.\\
+Paired label target & 96/96 pilot converged; 6,000-mask acquisition and TRAIN/VAL support audit in progress.\\
+Endpoint assessment & Reserved and planned; no improvement claim before actual compatible relaxations.\\
+Fresh FINAL / MACE & Pending freeze/assessment after development selection.\\
+Small-cell reference & Complete all-raw, two-teacher reference; finite-model scope only.\\\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Beihao:} independently rerun and interpret the matched spatial no-latent
+control, verify decoder causality/count enforcement, and compare condition
+response with latent response. Automated fits do not constitute his independent
+contribution. If exploring a new KL policy, keep update budgets and seeds matched
+and select using development evidence only.
+
+\textbf{Varad:} independently replay every raw-attempt denominator, frozen-history
+novelty, per-seed contrast, teacher-query deduplication and paired endpoint
+lineage/failure account. Preserve negative middle-bin/latent/relaxation findings
+and distinguish proposal attempts, unique queries, actual force calls and
+allocated resources. Do not tune from final outcomes.
+
+\textbf{Ricardo:} review the actual structures, site/host changes, force thresholds,
+teacher disagreement and physical scope; select later DFT checks only after
+the no-new-DFT restriction ends. Integrate the report and verify/manual-submit
+against the actual November 9,11: 59 p.m. Pacific assignment instructions.
+The repository supplies portable commands and evidence; no collaborator message,
+coursework submission, new DFT or MLIP fine-tuning is performed here.
+
+\clearpage\bibliographystyle{unsrt}\bibliography{references}
+\end{document}

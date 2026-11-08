@@ -1,0 +1,65 @@
+{
+  "status": "PASS_FROZEN_FINAL_PAIRED_TABLES",
+  "sources": {
+    "current_low": {
+      "original_directory": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/current_low",
+      "receipt_sha256": "2bde34c254b99d146c728ae456ec40936dd71c324972e9d864c0d059761f4fdd",
+      "status": "PASS_COMPLETE",
+      "tables": {
+        "cells.csv": "7281bad932c209c50f27f3d6ea08c1de377f3a944e1afc866e4539c1e5a39132",
+        "confusion.csv": "ae89cd7c163938e45d6dc447a9aebc25b2e08945e0685e735574b875e1d018b1",
+        "summary.csv": "2abb46d13d45a32385736bd15c9849568cd2787dfc8025d9f24b583aca6262bd",
+        "fit_summary.csv": "bdf9a8719bfc8092c9af27806363c2370694fb55244c54417e1720b98fc9c6ca"
+      }
+    },
+    "paired_deletion": {
+      "original_directory": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_deletion",
+      "receipt_sha256": "a00d208ab93bc5114b103cf91bc28b320e5216d32241ea0c353990c01a8b8ab7",
+      "status": "PASS_COMPLETE",
+      "tables": {
+        "cells.csv": "f7a5d45b4795ad70190809863f0817beb1d573c3afb40a188947e954be5bfed3",
+        "confusion.csv": "6e50454fddfaa1dcca26911da171ab1d8401d2add29b65ba4b6bf0b5b183e6bc",
+        "summary.csv": "bfcfdfdf9c586cba86f70e9dc999ca0621f0e8bf75ce745bd4ef91b0621f0e8a",
+        "fit_summary.csv": "45bff88f01aca5311a6276f0d9c4bc1f9994b82c2c7c513c50bb4384148c40d2"
+      }
+    },
+    "paired_endpoint": {
+      "original_directory": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_endpoint",
+      "receipt_sha256": "5914e5330b6b59c4375fbf35bba9184f2a3fd47eecbccc64760e8dc359ea1d7f",
+      "status": "PASS_COMPLETE",
+      "tables": {
+        "cells.csv": "3961b2183100c5d8c5507f5cc65a9c45c2fdc30869548a78f9674c0b17f77356",
+        "confusion.csv": "7ef60bd18e18b4ae8957d36e93ce9811edd7fa395683a062a19893a97d358560",
+        "summary.csv": "5233e3f7462932bbf581525fdda5d96385c3d7a80c699b619f9ea26af86e8b05",
+        "fit_summary.csv": "944a186833bb0170e29bf7686bd4fc9502be761831b6cf9d4c17fb9415fc5ba6"
+      }
+    },
+    "shared_uniform": {
+      "original_directory": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/shared_uniform",
+      "receipt_sha256": "f3fee6318bea41f122fa976cbcc5f8b5e9b8051acd3da9038222110752dade92",
+      "status": "PASS_COMPLETE",
+      "tables": {
+        "cells.csv": "aa3ccc87ceb1770ef5c7f3fbd943337719d5a859324175c3f3c60e9b6cd65168",
+        "confusion.csv": "4067e496e457323d1f09c2586ac84a12ce9f518687e93f9c2d2113bd0a134719",
+        "summary.csv": "297b57f744d50928bafea83acd66c8a05cee3b393f97b88e3c6a162a5ee487cc",
+        "fit_summary.csv": "ffbe10880360414526d72713e33f5a0b2cab3192de6a544fd316bb74c7a2000e"
+      }
+    },
+    "contrasts": {
+      "original_directory": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/contrasts",
+      "receipt_sha256": "2629c126a386c6a36b9b15bafced56cf04492cd2807a89a361490290209973eb",
+      "status": "PASS_COMPLETE_DESCRIPTIVE_PAIRED_CONTRASTS",
+      "tables": {
+        "per_replicate_contrasts.csv": "eb06aded372e9a0f9d8778ea25de6da813a68e38fc62f992dfcdefd08a603e98",
+        "summary_contrasts.csv": "b040aa1e89d66a4589bda81f57a377f794dc85008719f48e90632aab0a458729"
+      }
+    }
+  },
+  "all_stage_attempts": 10944,
+  "unique_physical_queries": 7616,
+  "unknown_endpoint_attempts": 0,
+  "all_physical_queries_converged": true,
+  "shared_uniform_LOW_reused_attempts": 576,
+  "facts_sha256": "55571ac5ba4c609a780c6d3ae56f7fc638e76a18b84062fd8dd721aa2039359e",
+  "training_or_selection_after_FINAL": false
+}

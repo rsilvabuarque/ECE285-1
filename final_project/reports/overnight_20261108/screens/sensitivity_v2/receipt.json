@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "source_sha256": "77688cf2a0db3ef90bd19c9b4ae23d3fe71960cadef74c667e04ec96936d899c",
+  "input": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_models_20261108/final_project/reports/overnight_20261108/screens_v1/evaluation/paired_attempts.csv",
+    "sha256": "2049c7a224015a592bede874816dc127a6d17f927be88eaf4488515ad65f15ef"
+  },
+  "units": "delta E in meV/atom; MSE in (meV/atom)^2; Hamming in mobile-site occupations",
+  "definitions": {
+    "signed": "mean_j(delta_E_j)",
+    "absolute": "mean_j(abs(delta_E_j))",
+    "RMS": "sqrt(mean_j(delta_E_j^2))",
+    "fit_macro": "Equal-weight composition mean; fit-level RMS is sqrt(equal-weight composition mean of squared differences)",
+    "seed_summary": "Descriptive mean/SD across independent fit/sampler replicates, never proposal rows"
+  },
+  "interpretation": {
+    "latent_resample": "Both latent draws have the same prior and share AR uniforms. Expected signed delta E is zero by identical marginals. Nonzero absolute/RMS response measures sensitivity, not conditional utility or energy accuracy.",
+    "conditions": "LOW to MIDDLE/HIGH shares actual latent and AR uniforms. Positive signed delta E is the direction of the requested energy change.",
+    "mutation": "Condition changes select different TRAIN-bin seed pools; common seed-choice quantiles/edit streams do not make those seed identities equal."
+  },
+  "outputs": {
+    "by_fit.csv": "8ba08037fde07fd5af74821dacef2280519da2df3454b88a1cbf289404985f2e",
+    "summary.csv": "6045f25e23f6c4c82221305334cef43387a4f5f2e7c43d518d3814eaa6011d9e",
+    "by_composition_fit.csv": "c475477bf80c4e3c6d9515dd6b26c775719ee6f665ca90e03038275ae48ac37c"
+  },
+  "new_model_forward_calls": 0,
+  "new_MLIP_calls": 0,
+  "new_optimizer_updates": 0
+}

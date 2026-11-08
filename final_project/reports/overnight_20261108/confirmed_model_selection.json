@@ -1,0 +1,15 @@
+{
+  "status": "FROZEN_MODEL_SELECTION_AFTER_THREE_FIT_CONFIRMATION",
+  "created_UTC": "2026-11-08T13:54:42.536742+00:00",
+  "confirmation_receipt_sha256": "1de6ec4653d7fdd0c23f3f95cb2ed6d5030a125119168ad8ebbe8ffa76503ea9",
+  "primary": "UMAequalweightcomposition/binusefulyieldperallattempts",
+  "secondary": "Originalq20LOW;allperbin/perfitretained",
+  "best_genuine_CVAE": "A_radial_shells",
+  "strongest_matched_AR": "B_radial_shells",
+  "paired_architecture": "SamegraphposteriorD4+width64causalradial-shell9-featuredecoderforbothlabeltargets",
+  "evidence_and_limits": "Aradialhasbestgenuinepointestimatebut3fitpairedimprovementoverbaselineAunresolved. Bradialimprovespairedmacroinall3fits;genuinevariationalbenefitremainsunresolved. No0804/05orTESTorFINALproposalsusedforselection.",
+  "final_replicate_policy": "BaseA/BandshellA/Bfivefits0801\u201305;C/DandBremainingthree0801\u201303. Extra0804/05onlyFINALgeneration.",
+  "model_configurations_after_paired_targets": 11,
+  "full_fits_after_paired_targets": 37,
+  "maximum_full_fits": 60
+}

@@ -1,0 +1,240 @@
+{
+  "status": "METADATA_NAME_CORRECTION_ONLY",
+  "created_UTC": "2026-11-08T13:44:08.094807+00:00",
+  "original_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/full_collection/receipt.json",
+    "sha256": "153a7ac44a8d441881b34dfeb0fa7e2563d63c1ef38f59f8e9d5a55175a73e88"
+  },
+  "historical_misnamed_field": "worker_startup_and_idle_seconds",
+  "corrected_field_name": "worker_elapsed_seconds_including_setup_work_idle",
+  "worker_elapsed_seconds_including_setup_work_idle": {
+    "60998550_nid200353_1702792": 223.9970742079895,
+    "60998550_nid200353_1702790": 224.39331947697792,
+    "60999380_nid001073_615741": 2744.3185154809617,
+    "60998550_nid200353_1702786": 225.02944912598468,
+    "60998550_nid200353_1702787": 222.37584218999837,
+    "60999380_nid001073_615743": 2747.4469119010027,
+    "60998550_nid200353_1706413": 1128.5235806150595,
+    "60999380_nid001073_615746": 2745.515958133037,
+    "60998550_nid200353_1706412": 1128.4004243599484,
+    "60999380_nid001073_615740": 2744.4743994800374,
+    "60998550_nid200400_1052796": 373.2490775869228,
+    "60999380_nid001072_1123204": 2744.4915807479993,
+    "60999380_nid001072_1123205": 2746.616234416957,
+    "60999380_nid001072_1123202": 2742.6943695850205,
+    "60998550_nid200353_1706417": 1127.8221820760518,
+    "60999380_nid001072_1123207": 2746.0349253750173,
+    "60999239_nid001001_1056627": 1200.310665161931,
+    "60999239_nid001001_1056626": 1201.7104753140593,
+    "60998550_nid200353_1706415": 1128.1526272760238,
+    "60998550_nid200400_1052795": 373.4316145130433,
+    "60998550_nid200400_1052792": 372.82694592908956,
+    "60998550_nid200400_1052791": 373.452786030015
+  },
+  "worker_load_and_setup_elapsed_seconds": {
+    "60998550_nid200353_1702792": 125.96959582704585,
+    "60998550_nid200353_1702790": 126.18240889697336,
+    "60999380_nid001073_615741": 317.0151358830044,
+    "60998550_nid200353_1702786": 126.1872780880658,
+    "60998550_nid200353_1702787": 125.62491606606636,
+    "60999380_nid001073_615743": 327.4663196579786,
+    "60998550_nid200353_1706413": 307.3507408000296,
+    "60999380_nid001073_615746": 317.3441404310288,
+    "60998550_nid200353_1706412": 303.41937387699727,
+    "60999380_nid001073_615740": 316.70878009404987,
+    "60998550_nid200400_1052796": 296.58835354994517,
+    "60999380_nid001072_1123204": 317.05073242797516,
+    "60999380_nid001072_1123205": 317.470561377937,
+    "60999380_nid001072_1123202": 316.484241512022,
+    "60998550_nid200353_1706417": 302.8639318040805,
+    "60999380_nid001072_1123207": 316.98754838400055,
+    "60999239_nid001001_1056627": 346.87956558994483,
+    "60999239_nid001001_1056626": 346.87852445198223,
+    "60998550_nid200353_1706415": 303.19284657610115,
+    "60998550_nid200400_1052795": 296.7720355709316,
+    "60998550_nid200400_1052792": 296.172902720049,
+    "60998550_nid200400_1052791": 296.8252401399659
+  },
+  "source_worker_receipts": [
+    {
+      "worker": "60998550_nid200353_1702792",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702792.json",
+      "sha256": "664608333475dd2c1dfcf9048860aa3ccdf265dfab11c7385975410584ac6d69",
+      "recorded_total_elapsed_seconds": 223.9970742079895,
+      "current_worker_total_elapsed_seconds": 223.9970742079895,
+      "measured_load_and_setup_seconds": 125.96959582704585
+    },
+    {
+      "worker": "60998550_nid200353_1702790",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702790.json",
+      "sha256": "d1593d56babcfdc8dd270986688816468cd7421314960b44b818badd9066bbd2",
+      "recorded_total_elapsed_seconds": 224.39331947697792,
+      "current_worker_total_elapsed_seconds": 224.39331947697792,
+      "measured_load_and_setup_seconds": 126.18240889697336
+    },
+    {
+      "worker": "60999380_nid001073_615741",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615741.json",
+      "sha256": "f7f324cb0fd125daebd67ab37ad55be67cd2bcf37780d6fae59c8ef7ea45ca18",
+      "recorded_total_elapsed_seconds": 2744.3185154809617,
+      "current_worker_total_elapsed_seconds": 2744.3185154809617,
+      "measured_load_and_setup_seconds": 317.0151358830044
+    },
+    {
+      "worker": "60998550_nid200353_1702786",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702786.json",
+      "sha256": "06b25c1214d89bb593c8f9e0b6dcb7873ca6b9c5e46f1dba41250d4065b3289b",
+      "recorded_total_elapsed_seconds": 225.02944912598468,
+      "current_worker_total_elapsed_seconds": 225.02944912598468,
+      "measured_load_and_setup_seconds": 126.1872780880658
+    },
+    {
+      "worker": "60998550_nid200353_1702787",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702787.json",
+      "sha256": "9996f4606419f2c906a10806ead6a96888ecdad6c86ab47158947b209011d0aa",
+      "recorded_total_elapsed_seconds": 222.37584218999837,
+      "current_worker_total_elapsed_seconds": 222.37584218999837,
+      "measured_load_and_setup_seconds": 125.62491606606636
+    },
+    {
+      "worker": "60999380_nid001073_615743",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615743.json",
+      "sha256": "964e90c7fac7718cee5bb4b98c9c30407b18a122e2f94ced70a5eca6a4a16bae",
+      "recorded_total_elapsed_seconds": 2747.4469119010027,
+      "current_worker_total_elapsed_seconds": 2747.4469119010027,
+      "measured_load_and_setup_seconds": 327.4663196579786
+    },
+    {
+      "worker": "60998550_nid200353_1706413",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706413.json",
+      "sha256": "648097e492825d35654d35a1761ca3f625bca61b9db753385ad74f71a96928ad",
+      "recorded_total_elapsed_seconds": 1128.5235806150595,
+      "current_worker_total_elapsed_seconds": 1128.5235806150595,
+      "measured_load_and_setup_seconds": 307.3507408000296
+    },
+    {
+      "worker": "60999380_nid001073_615746",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615746.json",
+      "sha256": "d24a4360714fcc6986fe9f97c9d26dca7cdcce78edbdefefccfcccdc9763589c",
+      "recorded_total_elapsed_seconds": 2745.515958133037,
+      "current_worker_total_elapsed_seconds": 2745.515958133037,
+      "measured_load_and_setup_seconds": 317.3441404310288
+    },
+    {
+      "worker": "60998550_nid200353_1706412",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706412.json",
+      "sha256": "be63e9ca86e1eeaa2b0b90ca57f1210d6e188b8f30100c21c7f9773ea1536972",
+      "recorded_total_elapsed_seconds": 1128.4004243599484,
+      "current_worker_total_elapsed_seconds": 1128.4004243599484,
+      "measured_load_and_setup_seconds": 303.41937387699727
+    },
+    {
+      "worker": "60999380_nid001073_615740",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615740.json",
+      "sha256": "465d9f3a9de6a2be2a56a3743ea7a5bb0c76e85f38dea3ff897dbf4919258355",
+      "recorded_total_elapsed_seconds": 2744.4743994800374,
+      "current_worker_total_elapsed_seconds": 2744.4743994800374,
+      "measured_load_and_setup_seconds": 316.70878009404987
+    },
+    {
+      "worker": "60998550_nid200400_1052796",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052796.json",
+      "sha256": "b188d7ba900ca70b34c450a5a3768f0cbf17e905eb6302806840e3a1a351ecc5",
+      "recorded_total_elapsed_seconds": 373.2490775869228,
+      "current_worker_total_elapsed_seconds": 373.2490775869228,
+      "measured_load_and_setup_seconds": 296.58835354994517
+    },
+    {
+      "worker": "60999380_nid001072_1123204",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123204.json",
+      "sha256": "1d48ed77416ac3a4f817ffe1242e95728b16f4d7dc9407243e75ef7b1cb5887c",
+      "recorded_total_elapsed_seconds": 2744.4915807479993,
+      "current_worker_total_elapsed_seconds": 2744.4915807479993,
+      "measured_load_and_setup_seconds": 317.05073242797516
+    },
+    {
+      "worker": "60999380_nid001072_1123205",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123205.json",
+      "sha256": "486ca351481660a076e66c86a272a0ff0db0d33346609337c723c07687568890",
+      "recorded_total_elapsed_seconds": 2746.616234416957,
+      "current_worker_total_elapsed_seconds": 2746.616234416957,
+      "measured_load_and_setup_seconds": 317.470561377937
+    },
+    {
+      "worker": "60999380_nid001072_1123202",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123202.json",
+      "sha256": "7ef70b445a9b9a76eb92978229f73356d06b9aacd3ef018699dacd8a82fc39e4",
+      "recorded_total_elapsed_seconds": 2742.6943695850205,
+      "current_worker_total_elapsed_seconds": 2742.6943695850205,
+      "measured_load_and_setup_seconds": 316.484241512022
+    },
+    {
+      "worker": "60998550_nid200353_1706417",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706417.json",
+      "sha256": "8336d8ea75f75a8073363d98896a3386ecd10005c4114fa7a4fcc4b2dba0cd16",
+      "recorded_total_elapsed_seconds": 1127.8221820760518,
+      "current_worker_total_elapsed_seconds": 1127.8221820760518,
+      "measured_load_and_setup_seconds": 302.8639318040805
+    },
+    {
+      "worker": "60999380_nid001072_1123207",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123207.json",
+      "sha256": "42b1960b5d5cbe7a8699508636ee0eef5e9d5d176ab4b211de1fad8991dcec79",
+      "recorded_total_elapsed_seconds": 2746.0349253750173,
+      "current_worker_total_elapsed_seconds": 2746.0349253750173,
+      "measured_load_and_setup_seconds": 316.98754838400055
+    },
+    {
+      "worker": "60999239_nid001001_1056627",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999239_nid001001_1056627.json",
+      "sha256": "14d0ae47b29542c7cd86bca4a86c9133f518cc1d24da3d49e63eecbf61b0a593",
+      "recorded_total_elapsed_seconds": 1200.310665161931,
+      "current_worker_total_elapsed_seconds": 1200.310665161931,
+      "measured_load_and_setup_seconds": 346.87956558994483
+    },
+    {
+      "worker": "60999239_nid001001_1056626",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999239_nid001001_1056626.json",
+      "sha256": "3769b9f41eb2455a11dbe697e06a20bbfaf9de5e6b838197f667bff8e27afa60",
+      "recorded_total_elapsed_seconds": 1201.7104753140593,
+      "current_worker_total_elapsed_seconds": 1201.7104753140593,
+      "measured_load_and_setup_seconds": 346.87852445198223
+    },
+    {
+      "worker": "60998550_nid200353_1706415",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706415.json",
+      "sha256": "c2c1d29d59cc37e436f853f1c5e111e7478659cb045bca7fdaaff6bbc5918c01",
+      "recorded_total_elapsed_seconds": 1128.1526272760238,
+      "current_worker_total_elapsed_seconds": 1128.1526272760238,
+      "measured_load_and_setup_seconds": 303.19284657610115
+    },
+    {
+      "worker": "60998550_nid200400_1052795",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052795.json",
+      "sha256": "773b43ee59cc6cfec7297d9850521e07cada4d00e5566c3e90cb3812e8a03242",
+      "recorded_total_elapsed_seconds": 373.4316145130433,
+      "current_worker_total_elapsed_seconds": 373.4316145130433,
+      "measured_load_and_setup_seconds": 296.7720355709316
+    },
+    {
+      "worker": "60998550_nid200400_1052792",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052792.json",
+      "sha256": "9e03bd0135c1ea126d6c0b3d55005467b6da86fa3fdf1124053ec54907fcdfc6",
+      "recorded_total_elapsed_seconds": 372.82694592908956,
+      "current_worker_total_elapsed_seconds": 372.82694592908956,
+      "measured_load_and_setup_seconds": 296.172902720049
+    },
+    {
+      "worker": "60998550_nid200400_1052791",
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052791.json",
+      "sha256": "b45e75da1197720a2466416c73db78a1de16327ac0c005cb83cf0238a01c1265",
+      "recorded_total_elapsed_seconds": 373.452786030015,
+      "current_worker_total_elapsed_seconds": 373.452786030015,
+      "measured_load_and_setup_seconds": 296.8252401399659
+    }
+  ],
+  "explanation": "Historical values are WHOLE worker elapsed wall time, including relaxation work. They are not startup+idle-only. Separate setup values come only from measured worker.load_and_setup_seconds; no subtraction-based idle estimate is invented.",
+  "allocation_cost_authority": "Top-level Slurm allocation accounting; never add these process times to allocation times",
+  "original_scientific_artifacts_changed": false,
+  "source_sha256": "f1b0869db327b9da2e2c9347f5681c6f47b6d7d289763245af51d0cdbc254f68"
+}

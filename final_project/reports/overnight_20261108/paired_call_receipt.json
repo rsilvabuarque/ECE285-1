@@ -1,0 +1,99 @@
+{
+  "status": "PASS_DEDUPLICATED_PRIMARY_METADATA_COUNTERS",
+  "completed_UTC": "2026-11-08T15:35:45.376871+00:00",
+  "total": {
+    "unique_optimization_attempts": 13712,
+    "statuses": {
+      "converged": 13704,
+      "interrupted": 8
+    },
+    "EFS_attempts": 558458,
+    "EFS_successes": 558451,
+    "EFS_failures": 7,
+    "saved_trajectory_position_frames": 558451,
+    "saved_labelled_EFS_snapshots": 128349,
+    "initial_energy_labels_known": 13711,
+    "converged_usable_endpoints": 13704
+  },
+  "lanes": {
+    "acquisition": {
+      "unique_optimization_attempts": 6000,
+      "statuses": {
+        "converged": 5992,
+        "interrupted": 8
+      },
+      "EFS_attempts": 242872,
+      "EFS_successes": 242865,
+      "EFS_failures": 7,
+      "saved_trajectory_position_frames": 242865,
+      "saved_labelled_EFS_snapshots": 55888,
+      "initial_energy_labels_known": 5999,
+      "converged_usable_endpoints": 5992
+    },
+    "final": {
+      "unique_optimization_attempts": 7616,
+      "statuses": {
+        "converged": 7616
+      },
+      "EFS_attempts": 309231,
+      "EFS_successes": 309231,
+      "EFS_failures": 0,
+      "saved_trajectory_position_frames": 309231,
+      "saved_labelled_EFS_snapshots": 71069,
+      "initial_energy_labels_known": 7616,
+      "converged_usable_endpoints": 7616
+    },
+    "tight_0p01": {
+      "unique_optimization_attempts": 96,
+      "statuses": {
+        "converged": 96
+      },
+      "EFS_attempts": 6355,
+      "EFS_successes": 6355,
+      "EFS_failures": 0,
+      "saved_trajectory_position_frames": 6355,
+      "saved_labelled_EFS_snapshots": 1392,
+      "initial_energy_labels_known": 96,
+      "converged_usable_endpoints": 96
+    }
+  },
+  "primary_queue_unique_results": {
+    "unique_optimization_attempts": 13616,
+    "statuses": {
+      "converged": 13608,
+      "interrupted": 8
+    },
+    "EFS_attempts": 552103,
+    "EFS_successes": 552096,
+    "EFS_failures": 7,
+    "saved_trajectory_position_frames": 552096,
+    "saved_labelled_EFS_snapshots": 126957,
+    "initial_energy_labels_known": 13615,
+    "converged_usable_endpoints": 13608
+  },
+  "primary_queue_result_directories": 13616,
+  "queue_results_outside_declared_scopes": [],
+  "declared_main_results_missing": [],
+  "final_unique_tasks": 7616,
+  "final_new_claims_after_joint_preflight": 7616,
+  "final_preexisting_compatible_claims": 0,
+  "final_overlaps_initial_tasks": 0,
+  "final_claim_partition_reference_unix": 1794148654.3005173,
+  "source_bindings": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/prepared/tasks_all.json": "334b79464323668cb4d2bc6ca4202c6a231f9e0693482674434074062f92e55d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_generated/endpoint_union_tasks.json": "51523dfb0d69bd87f11d8fd6309e6a4975efcea34f82021ef9a5efd35425963b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/compact_facts/facts.json": "55571ac5ba4c609a780c6d3ae56f7fc638e76a18b84062fd8dd721aa2039359e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_generated/registration_preflight.json": "4b15e907c378d06dcbd18ca1da6c071bd88a376902aa1800ffe38bb6d4a7a349",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/controls_prepared/tight_0p01/tasks.json": "ac610425be748a2d873723686b8cfb5dbe4c75e3daf0ae3a3a0416f30ae59fce"
+  },
+  "physical_task_table_sha256": "9cb1c9696971b982dbbf68347ad30a7edfc3effe290d1240382c7c9af6691e66",
+  "source_sha256": "afa1551da3b5f42deced477a44c42ccbf878f1767a4de9547a452a94aa05a9fb",
+  "new_model_calls": 0,
+  "definitions": {
+    "EFS_attempts": "Saved logical calculator energy/force/stress bundle API attempts, not undocumented internal backbone forwards",
+    "trajectory_position_frames": "Saved accepted-trajectory coordinate frames including the initial pose, counted per header; not all are EFS-labelled or independent masks",
+    "labelled_EFS_snapshots": "Saved stride-based E/F/stress snapshots counted per result header; not an independent-mask or TRAIN-row count",
+    "primary_scope": "6000 acquisition + final unique tasks +96 tighter UMA controls, deduplicated by exact(context_hash,physical_key); MACE24 independent relaxations are a separate secondary lane"
+  },
+  "scope": "Metadata-only accounting; raw arrays were not reopened here. Numerical convergence is not DFT/ground-state validation. Allocation costs come from top-level Slurm receipts, not these API counters."
+}

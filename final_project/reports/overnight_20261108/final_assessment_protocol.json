@@ -1,0 +1,51 @@
+{
+  "status": "FROZEN_BEFORE_ALL_FINAL_GENERATION_AND_LABELS",
+  "frozen_UTC": "2026-11-08T14:31:40.056297+00:00",
+  "source_manifest": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/executed_sources/final_v8/source_manifest.json",
+    "sha256": "699a4cad5cc53f263cbd7834474c1d435ab670fa5871981409c65ed88b7b0e30"
+  },
+  "history": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/final_history/history.json",
+    "sha256": "c164251ca5d01f320a2fd615a2b464f685f48dd7dc10f2d9d6e11dc43ae2d23d"
+  },
+  "history_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/final_history/receipt.json",
+    "sha256": "b86ef508ab87aaaad6c8b8dcb6297357d5c1d8fc97b5968a788191290a5168cf"
+  },
+  "known_orbits": 344001,
+  "static_manifest": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_manifest.json",
+    "sha256": "094633ece21a575b73ab61eec8055aa49f8e137d29d9d7a6884c526b7c27f5b7"
+  },
+  "paired_selection": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_selection.json",
+    "sha256": "2a549546b97bdec21d2436afe3201bc5959d09d15dbdcf647a0641a76d0fb3af"
+  },
+  "static_budget": {
+    "primary_attempts": 44928,
+    "LOW_latent_diagnostics_separate": 4992
+  },
+  "paired_budget": {
+    "all_attempts": 10944,
+    "acquisition": 6000,
+    "tighter_primary": 96,
+    "conservative_primary_endpoint_total": 17040,
+    "hard_cap": 18000
+  },
+  "teacher_policy": "UMAprimaryandMACEremeasurecompleteSTATICcandidateunionunderownfrozenH0thresholds;notMACE-trainedgeneration",
+  "MLIP_execution_sources": {
+    "static": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/executed_sources/development_v2",
+    "endpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/executed_sources/initial_v1"
+  },
+  "no_FINAL_scoring_until_all_proposals_frozen": true,
+  "no_more_model_selection": true,
+  "TEST_energy_status": "SEALED_AT_FREEZE",
+  "protected_original_roles_unchanged": true,
+  "full_fits_completed": 37,
+  "optimizer_updates": 148000,
+  "continued_updates": 0,
+  "no_DFT": true,
+  "no_MLIP_finetuning": true,
+  "no_new_MD": true
+}

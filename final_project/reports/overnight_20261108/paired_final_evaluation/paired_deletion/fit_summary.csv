@@ -1,0 +1,13 @@
+method,replicate,target,equal_weight_count_request_yield,cells,attempts
+paired_deletion_cvae,0,deletion,0.6024305555555556,9,576
+paired_deletion_cvae,1,deletion,0.6006944444444444,9,576
+paired_deletion_cvae,2,deletion,0.6354166666666666,9,576
+paired_deletion_cvae,0,endpoint,0.5850694444444444,9,576
+paired_deletion_cvae,1,endpoint,0.5694444444444444,9,576
+paired_deletion_cvae,2,endpoint,0.6197916666666666,9,576
+paired_deletion_mutation,0,deletion,0.5729166666666666,9,576
+paired_deletion_mutation,1,deletion,0.5555555555555556,9,576
+paired_deletion_mutation,2,deletion,0.5902777777777778,9,576
+paired_deletion_mutation,0,endpoint,0.5347222222222222,9,576
+paired_deletion_mutation,1,endpoint,0.5295138888888888,9,576
+paired_deletion_mutation,2,endpoint,0.5642361111111112,9,576

@@ -1,0 +1,104 @@
+{
+  "created_UTC": "2026-11-08T14:50:51.391338+00:00",
+  "status": "RUNNING_ESTIMATE",
+  "command": [
+    "sacct",
+    "-X",
+    "-j",
+    "60998325,60998550,60999239,60999380,61001747",
+    "--units=M",
+    "-P",
+    "--format=JobID,Account,QOS,State,Start,End,ElapsedRaw,AllocNodes,AllocTRES"
+  ],
+  "scheduler_date_timezone": "UTC",
+  "allocations": [
+    {
+      "JobID": "60998325",
+      "Account": "m5397_g",
+      "QOS": "gpu_shared_interactive",
+      "State": "COMPLETED",
+      "Start": "2026-11-08T11:37:34",
+      "End": "2026-11-08T13:04:01",
+      "ElapsedRaw": "5187",
+      "AllocNodes": "1",
+      "AllocTRES": "billing=64,cpu=64,energy=3044729,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1",
+      "physical_node_allocation_hours": 1.4408333333333334,
+      "allocated_GPU_device_hours": 2.881666666666667,
+      "charged_GPU_node_hours": 0.7204166666666667,
+      "terminal": true
+    },
+    {
+      "JobID": "60998550",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "FAILED",
+      "Start": "2026-11-08T11:49:20",
+      "End": "2026-11-08T12:43:16",
+      "ElapsedRaw": "3236",
+      "AllocNodes": "2",
+      "AllocTRES": "billing=256,cpu=256,energy=3264929,gres/gpu:a100=8,gres/gpu=8,mem=975604M,node=2",
+      "physical_node_allocation_hours": 1.7977777777777777,
+      "allocated_GPU_device_hours": 7.191111111111111,
+      "charged_GPU_node_hours": 1.7977777777777777,
+      "terminal": true
+    },
+    {
+      "JobID": "60999239",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "RUNNING",
+      "Start": "2026-11-08T12:36:14",
+      "End": "Unknown",
+      "ElapsedRaw": "8077",
+      "AllocNodes": "2",
+      "AllocTRES": "billing=256,cpu=256,gres/gpu:a100=8,gres/gpu=8,mem=717604M,node=2",
+      "physical_node_allocation_hours": 4.487222222222222,
+      "allocated_GPU_device_hours": 17.948888888888888,
+      "charged_GPU_node_hours": 4.487222222222222,
+      "terminal": false
+    },
+    {
+      "JobID": "60999380",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "COMPLETED",
+      "Start": "2026-11-08T12:44:45",
+      "End": "2026-11-08T14:15:18",
+      "ElapsedRaw": "5433",
+      "AllocNodes": "2",
+      "AllocTRES": "billing=256,cpu=256,energy=7660584,gres/gpu:a100=8,gres/gpu=8,mem=459604M,node=2",
+      "physical_node_allocation_hours": 3.0183333333333335,
+      "allocated_GPU_device_hours": 12.073333333333334,
+      "charged_GPU_node_hours": 3.0183333333333335,
+      "terminal": true
+    },
+    {
+      "JobID": "61001747",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "RUNNING",
+      "Start": "2026-11-08T14:39:35",
+      "End": "Unknown",
+      "ElapsedRaw": "676",
+      "AllocNodes": "4",
+      "AllocTRES": "billing=512,cpu=512,gres/gpu:a100=16,gres/gpu=16,mem=1177208M,node=4",
+      "physical_node_allocation_hours": 0.7511111111111111,
+      "allocated_GPU_device_hours": 3.0044444444444443,
+      "charged_GPU_node_hours": 0.7511111111111111,
+      "terminal": false
+    }
+  ],
+  "totals": {
+    "charged_GPU_node_hours": 10.774861111111111,
+    "physical_node_allocation_hours": 11.495277777777778,
+    "allocated_GPU_device_hours": 43.099444444444444
+  },
+  "hard_charged_node_hour_cap": 250,
+  "policy_url": "https://docs.nersc.gov/jobs/policy/",
+  "factors": {
+    "Perlmutter": 1,
+    "interactive": 1,
+    "shared_interactive": 1
+  },
+  "interpretation": "Top-level allocated billing includes startup, idle time and failures; child steps excluded. GPU-device hours are allocated capacity, not measured utilization."
+}

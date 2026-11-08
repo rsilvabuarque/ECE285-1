@@ -1,0 +1,3 @@
+method,target,equal_weight_cell_mean_yield,cells,attempts,replicates,mean_replicate_macro_yield,std_replicate_macro_yield,useful_distinct_per_cell_sum,scope
+uniform,deletion,0.3333333333333333,27,1728,3,0.3333333333333333,0.0,576,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+uniform,endpoint,0.3333333333333333,27,1728,3,0.3333333333333333,0.0,576,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count

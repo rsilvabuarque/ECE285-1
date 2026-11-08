@@ -1,0 +1,163 @@
+{
+  "status": "VERIFIED_EXECUTED_PAIRED_INFERENCE",
+  "teacher": {
+    "model": "uma",
+    "checkpoint_name": "UMA-S-1.2.1",
+    "head": "omat",
+    "adapter_source_sha256": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/blobs/b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+    "checkpoint_hashes": {
+      "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+    },
+    "package": "fairchem-core",
+    "package_version": "2.25.0",
+    "torch": "2.13.0+cu130",
+    "ase": "3.26.0",
+    "dtype": "float32",
+    "tf32": false,
+    "nitro": false,
+    "compile": false,
+    "dispersion": false,
+    "device": "cuda",
+    "device_name": "NVIDIA A100-SXM4-80GB",
+    "load_seconds": 120.44859363709111,
+    "job_id": "60998550",
+    "host": "nid200353",
+    "gpu_visibility": "3",
+    "stress_convention": "ASE tensile-positive; xx yy zz yz xz xy; eV/A^3"
+  },
+  "context": {
+    "schema": "paired-fixed-endpoint-v1",
+    "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "teacher": {
+      "model": "uma",
+      "checkpoint_hashes": {
+        "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "head": "omat",
+      "package_version": "2.25.0",
+      "dtype": "float32",
+      "tf32": false
+    },
+    "geometry": {
+      "initial": "canonical pristine-parent deletion",
+      "cell": "fixed",
+      "all_atoms_move": true,
+      "atom_identity": "original full-parent index; never independent endpoint canonicalization"
+    },
+    "optimizer": {
+      "name": "FIRE",
+      "ase_version": "3.26.0",
+      "fmax_eV_A": 0.05,
+      "maxstep_A": 0.15,
+      "max_steps": 500,
+      "wall_cap_seconds": 120.0,
+      "snapshot_stride": 5,
+      "force_definition": "maximum per-atom Euclidean norm; strict less-than stopping",
+      "other_parameters": "ASE 3.26 FIRE defaults"
+    },
+    "units": {
+      "energy": "eV/cell",
+      "forces": "eV/Angstrom",
+      "stress": "eV/Angstrom^3; ASE tensile-positive Voigt xx yy zz yz xz xy"
+    },
+    "scientific_scope": "Operational local fixed-cell endpoint labels; no global minimum or DFT claim",
+    "context_hash": "63316ee878941af1e53ae7aaf595e45fee1964bb2d65150c50a57f59875fb987"
+  },
+  "context_hash": "63316ee878941af1e53ae7aaf595e45fee1964bb2d65150c50a57f59875fb987",
+  "workers": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702792.json",
+      "sha256": "664608333475dd2c1dfcf9048860aa3ccdf265dfab11c7385975410584ac6d69"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702790.json",
+      "sha256": "d1593d56babcfdc8dd270986688816468cd7421314960b44b818badd9066bbd2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615741.json",
+      "sha256": "f7f324cb0fd125daebd67ab37ad55be67cd2bcf37780d6fae59c8ef7ea45ca18"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702786.json",
+      "sha256": "06b25c1214d89bb593c8f9e0b6dcb7873ca6b9c5e46f1dba41250d4065b3289b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1702787.json",
+      "sha256": "9996f4606419f2c906a10806ead6a96888ecdad6c86ab47158947b209011d0aa"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615743.json",
+      "sha256": "964e90c7fac7718cee5bb4b98c9c30407b18a122e2f94ced70a5eca6a4a16bae"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706413.json",
+      "sha256": "648097e492825d35654d35a1761ca3f625bca61b9db753385ad74f71a96928ad"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615746.json",
+      "sha256": "d24a4360714fcc6986fe9f97c9d26dca7cdcce78edbdefefccfcccdc9763589c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706412.json",
+      "sha256": "be63e9ca86e1eeaa2b0b90ca57f1210d6e188b8f30100c21c7f9773ea1536972"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001073_615740.json",
+      "sha256": "465d9f3a9de6a2be2a56a3743ea7a5bb0c76e85f38dea3ff897dbf4919258355"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052796.json",
+      "sha256": "b188d7ba900ca70b34c450a5a3768f0cbf17e905eb6302806840e3a1a351ecc5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123204.json",
+      "sha256": "1d48ed77416ac3a4f817ffe1242e95728b16f4d7dc9407243e75ef7b1cb5887c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123205.json",
+      "sha256": "486ca351481660a076e66c86a272a0ff0db0d33346609337c723c07687568890"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123202.json",
+      "sha256": "7ef70b445a9b9a76eb92978229f73356d06b9aacd3ef018699dacd8a82fc39e4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706417.json",
+      "sha256": "8336d8ea75f75a8073363d98896a3386ecd10005c4114fa7a4fcc4b2dba0cd16"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999380_nid001072_1123207.json",
+      "sha256": "42b1960b5d5cbe7a8699508636ee0eef5e9d5d176ab4b211de1fad8991dcec79"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999239_nid001001_1056627.json",
+      "sha256": "14d0ae47b29542c7cd86bca4a86c9133f518cc1d24da3d49e63eecbf61b0a593"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60999239_nid001001_1056626.json",
+      "sha256": "3769b9f41eb2455a11dbe697e06a20bbfaf9de5e6b838197f667bff8e27afa60"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200353_1706415.json",
+      "sha256": "c2c1d29d59cc37e436f853f1c5e111e7478659cb045bca7fdaaff6bbc5918c01"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052795.json",
+      "sha256": "773b43ee59cc6cfec7297d9850521e07cada4d00e5566c3e90cb3812e8a03242"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052792.json",
+      "sha256": "9e03bd0135c1ea126d6c0b3d55005467b6da86fa3fdf1124053ec54907fcdfc6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue/workers/60998550_nid200400_1052791.json",
+      "sha256": "b45e75da1197720a2466416c73db78a1de16327ac0c005cb83cf0238a01c1265"
+    }
+  ],
+  "precision": {
+    "dtype": "float32",
+    "tf32": false
+  },
+  "scope": "Executed teacher and numerical endpoint context, not an accuracy certificate"
+}

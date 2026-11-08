@@ -1,0 +1,15 @@
+{
+  "status": "APPROVED_BEFORE_EXECUTION",
+  "created_UTC": "2026-11-08T13:56:25.944471+00:00",
+  "previous_manifest_sha256": "fb3dec856c0262d8c3f0201e34c2eadbe78e01b8b0a06826fa8b5219086b000f",
+  "replacement_manifest_sha256": "a4ab16daee684e57010da01f39c6461d696b605fb6831c10bf8c3c37fdd0d0ef",
+  "reason": "3594TRAINrowsyield8updates/epoch;defaultpatience15/minimum20couldterminatebefore4000updates. DisablethatguardforBOTHtargetswhilemaxupdates4000andreference79beta/samecheckpointselectionstayfixed.",
+  "changes": [
+    "--minimum-epochs1000",
+    "--patience1000"
+  ],
+  "NN_updates_executed_under_v1": 0,
+  "epochs_max": 1000,
+  "max_updates": 4000,
+  "max_seconds_per_fit": 1800
+}

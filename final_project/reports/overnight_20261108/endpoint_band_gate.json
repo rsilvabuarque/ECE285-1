@@ -1,0 +1,39 @@
+{
+  "status": "APPROVED_TWO_SEPARATE_NEW_ENDPOINT_BANDS",
+  "frozen_UTC": "2026-11-08T13:45:48.568648+00:00",
+  "evidence": [
+    {
+      "model": "uma",
+      "receipt_sha256": "1c245806cf48a98a29a25adf4f7bc0329fa0e473398b433ef53dee2bfaa072c3",
+      "endpoint_hashes": [
+        "219adf8c5099b039e6305ee408e8c9efbd989157d6a04220f24b605d66393698",
+        "fa19a4f0d3ea53753d42bd113a2b19eb16fdb5529e672eb2acd464ff85cd6345"
+      ],
+      "max_geometric_change_A": 0.05827438202111711
+    },
+    {
+      "model": "mace",
+      "receipt_sha256": "76e989ba6b71b9507acd56483dba191e588506a639769f7c8e8c1cac554dd847",
+      "endpoint_hashes": [
+        "c29caff86abeca2be5f47979f53e53cf52e16191ddf69d5c584e352323dc70b3",
+        "0701a2215b3ddaa39e3a73cf0d92521001d0946681a0f9b0547dd6eb478015f0"
+      ],
+      "max_geometric_change_A": 0.08238217602618139
+    }
+  ],
+  "hypothesis": "Originalendpointresidualforcesandteacherdifferencescanchangepathspansdespitesmallimage/tolerancesensitivity. TightenedoriginalLiassignmentsandnearbycontinuousgeometriespermitaboundednewendpointcomparisonwithoutassertingPESidentity.",
+  "controls": {
+    "interior_images": 7,
+    "projected_Fmax_eV_A": 0.02,
+    "optimizer": "FIRE",
+    "steps_per_band": 500,
+    "seconds_per_band": 2700,
+    "EFS_cap_per_band": 5000
+  },
+  "change": "Newseparatelyteacher-tightenedendpointidentitiesandendpoint-displacement-taperedoldpath; noresampling/IDPP",
+  "decision_rule": "Compareconvergednumericalpathspanswithoriginalsetsandacrossteachers. Preservefailures. DoNOTcallsimilaroccupationaPESprooforpathspanssingle-hopactivationbarriers;downhillreviewalreadyshowsanoff-siteintermediate.",
+  "maximum_additional_bands": 2,
+  "maximum_goal_full_bands_including_this_stage": 9,
+  "no_DFT": true,
+  "no_new_MD": true
+}

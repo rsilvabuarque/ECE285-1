@@ -1,0 +1,82 @@
+{
+  "status": "COMPLETE_DESCRIPTIVE_SCREEN",
+  "source_sha256": "4d86b89c9a5236af869c2865bb9f95128b88d3a4039cc7d19ab95c7a1bd36ad1",
+  "evaluation_receipt_sha256": "9e4bb9aef7441ab63de6f68c1c572b04496ffea6b68e01d792c3792126e84a7e",
+  "first_fit_UMA_ranking": [
+    {
+      "teacher": "uma",
+      "method": "A_radial_shells",
+      "reference": "A_graph_cvae",
+      "fit_seed": 2026110801,
+      "macro_yield": 0.5954861111111112,
+      "reference_macro_yield": 0.5694444444444444,
+      "delta_macro_yield": 0.02604166666666674,
+      "original_q20_LOW_yield": 0.5416666666666666,
+      "reference_original_q20_LOW_yield": 0.5572916666666666,
+      "delta_original_q20_LOW_yield": -0.015625,
+      "inference_scope": "First-fit DEV screen contrast only; no statistical superiority or three-fit feature confirmation"
+    },
+    {
+      "teacher": "uma",
+      "method": "A_beta0p03",
+      "reference": "A_graph_cvae",
+      "fit_seed": 2026110801,
+      "macro_yield": 0.5763888888888888,
+      "reference_macro_yield": 0.5694444444444444,
+      "delta_macro_yield": 0.00694444444444442,
+      "original_q20_LOW_yield": 0.546875,
+      "reference_original_q20_LOW_yield": 0.5572916666666666,
+      "delta_original_q20_LOW_yield": -0.01041666666666663,
+      "inference_scope": "First-fit DEV screen contrast only; no statistical superiority or three-fit feature confirmation"
+    },
+    {
+      "teacher": "uma",
+      "method": "B_remaining",
+      "reference": "B_spatial_ar",
+      "fit_seed": 2026110801,
+      "macro_yield": 0.5902777777777778,
+      "reference_macro_yield": 0.5833333333333334,
+      "delta_macro_yield": 0.00694444444444442,
+      "original_q20_LOW_yield": 0.5416666666666666,
+      "reference_original_q20_LOW_yield": 0.5625,
+      "delta_original_q20_LOW_yield": -0.02083333333333337,
+      "inference_scope": "First-fit DEV screen contrast only; no statistical superiority or three-fit feature confirmation"
+    },
+    {
+      "teacher": "uma",
+      "method": "B_radial_shells",
+      "reference": "B_spatial_ar",
+      "fit_seed": 2026110801,
+      "macro_yield": 0.5885416666666666,
+      "reference_macro_yield": 0.5833333333333334,
+      "delta_macro_yield": 0.005208333333333259,
+      "original_q20_LOW_yield": 0.5520833333333334,
+      "reference_original_q20_LOW_yield": 0.5625,
+      "delta_original_q20_LOW_yield": -0.01041666666666663,
+      "inference_scope": "First-fit DEV screen contrast only; no statistical superiority or three-fit feature confirmation"
+    },
+    {
+      "teacher": "uma",
+      "method": "A_remaining",
+      "reference": "A_graph_cvae",
+      "fit_seed": 2026110801,
+      "macro_yield": 0.5607638888888888,
+      "reference_macro_yield": 0.5694444444444444,
+      "delta_macro_yield": -0.00868055555555558,
+      "original_q20_LOW_yield": 0.5208333333333334,
+      "reference_original_q20_LOW_yield": 0.5572916666666666,
+      "delta_original_q20_LOW_yield": -0.03645833333333326,
+      "inference_scope": "First-fit DEV screen contrast only; no statistical superiority or three-fit feature confirmation"
+    }
+  ],
+  "decision_rule": "Primary UMA macro all-attempt useful-yield contrast; original fixed-q20 LOW secondary; root selects at most3 arms for two additional confirmation fits",
+  "D_limit": "D has3fits while fresh A/B references have1fit in this DEV pool. First-seed D/B contrast is paired; the D three-fit mean is descriptive and cannot substitute for a matched three-fit comparison.",
+  "independent_units": "Fit seed, not proposal row. No feature SD or p-value is estimated from this one-fit screen.",
+  "outputs": {
+    "first_fit_per_bin_contrasts.csv": "28bff8b327418d94f3c0a1f785481feacdea5e291e26e70ce99a9966dcd27b1b",
+    "first_fit_contrasts.csv": "d1488a209e0d08671ff5f4e6b092dc9d0ac75a70c3fd70882be60d08030617eb"
+  },
+  "new_model_forward_calls": 0,
+  "new_MLIP_calls": 0,
+  "new_optimizer_updates": 0
+}

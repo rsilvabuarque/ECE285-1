@@ -1,0 +1,15 @@
+{
+  "status": "APPROVED_FINAL_SCORING_AFTER_ALL_PROPOSALS_AND_INDEPENDENT_RAW_AUDIT",
+  "created_UTC": "2026-11-08T14:45:46.613414+00:00",
+  "joint_protocol_sha256": "b01a32702f4a71471446ee236684040ed0c0b4f7eb6a4e1d1d2fb08ced41c827",
+  "independent_raw_audit_sha256": "b2870899d5c7500f8b38ab5f4d83be557300a485a00f977af7f7f1174615717f",
+  "static_receipt_sha256": "fce4318a734025a7e30b59ed65b5ea97f15fc7beaad5b8f64857f735b60e98ef",
+  "paired_receipt_sha256": "e0f52b16aed803a3f520e447bb5780a892f2ab8d4825a4b2ffbe5171e3a593ca",
+  "TEST_energies": "MaynowbeunsealedONLYforfrozenfinalassessment;nofurthertraining/modelselection",
+  "endpoint_unique_tasks": 7616,
+  "primary_endpoint_conservative_total_cap": 18000,
+  "maximum_additional_optimization_attempts": 7616,
+  "no_new_DFT": true,
+  "no_MLIP_finetuning": true,
+  "no_new_MD": true
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS_COMPACT_FINAL_TABLES",
+  "evaluation_receipt_sha256": "b104c1bb891491d45ecad8a58686dae51b12ea974329ce2a7c64f5b1da419a6f",
+  "independent_receipt_sha256": "8401b6979cd8c5db2e585584840eb2670a8b85b883a3ded3691ad6f68a64089e",
+  "sensitivity_receipt_sha256": "23504ef3f1978226b2f43c5dede1f74c5659cfe11696dc5ebe8c839509e002ff",
+  "distance_receipt_sha256": "0bb79a88601755f39c07344086970aec27a0a5280e74ab9827d8bbf923ab013f",
+  "source_sha256": "6d7983d08e5d4b2f7db722326274e0096ff84075ec8fbd6a37ef07a7715037b6",
+  "scope": "Fresh FINAL outcomes only; no training, model selection, NN forwards or new scoring",
+  "uncertainty": "Descriptive variation across independent fit/sampler replicates. Common first3 for A/B/C/D; full5 for the base/shell CVAE/AR2x2.",
+  "outputs": {
+    "summary_with_LOW_SD.csv": "ecb0264f00d30a235d90a7474603655ca9073b286df5b8c8627481947672b3b4",
+    "mechanism_first3.csv": "abbf0e57ac3ae2f2a1c6910a40d661048791202e39933e56de70a56e4b49b0a2",
+    "per_bin_summary.csv": "bad72410604f2ea82002c92a84e95dcfc58cf972892c1aaa153c0b194af26ab5",
+    "final_mechanism_first3.png": "2cf767e7ddac56987e2ae92823592f64bcafb8920a629ff103baa12a49626a35",
+    "selected_main_table.csv": "dd0b01405ae5047c4570fc9d1c80bdeecbc7325114d176aefe603ecb959de6ce",
+    "final_main_comparison.png": "90ccbbcf9fe128c94d6874ad5dd0587124975efb47f9290818039c799b5842c3",
+    "perfit_contrasts.csv": "eeb34140d6dcae34aed2da7ed340028415cc2232a9e2981259568810236aca52",
+    "five_fit_2x2.csv": "54ab8ec3131c2656599280ba82f37c8edc7f0e558bd76dbde980caef56b533b0",
+    "summary.csv": "ca452331c472c39507282f463df1c40611d1e66f55a53c04b4cb704e02fcec89",
+    "final_main_comparison.pdf": "80215bc480d72cafd84df70907d5c629017e2646ac1b1b0a4c28d3ea40929d76",
+    "conditional_response.csv": "c3fcf9f65358420adf0eb3bd161e61c715487fe4924b10fa0c210b857459c073",
+    "final_mechanism_first3.pdf": "4aabbc2912d6812c9636ea7ead04f303c8be31505d5a49eabf2ccef534531750",
+    "structural_distance_summary.csv": "d5ce8110117fe5b8e9bd67669e9c3c2b89fe8989caa8be84d11170431a19b390",
+    "contrast_summary.csv": "aaa23dc3bc9f984f8e0f05847a7e01a731e528ef26d4d3cc2bca000dd638d94c",
+    "latent_sensitivity.csv": "4654fb11adf9e839ff55104420e63415e0867a4572b225537d5d1437797a9936"
+  },
+  "new_NN_forwards": 0,
+  "new_MLIP_calls": 0,
+  "new_optimizer_updates": 0
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS_INDEPENDENT_BIN_AND_DENOMINATOR_RECOUNT",
+  "stages": [
+    {
+      "stage": "current_low",
+      "raw_attempts": 2304,
+      "cells": 36,
+      "status": "PASS"
+    },
+    {
+      "stage": "paired_deletion",
+      "raw_attempts": 3456,
+      "cells": 54,
+      "status": "PASS"
+    },
+    {
+      "stage": "paired_endpoint",
+      "raw_attempts": 3456,
+      "cells": 54,
+      "status": "PASS"
+    },
+    {
+      "stage": "shared_uniform",
+      "raw_attempts": 1728,
+      "cells": 27,
+      "status": "PASS"
+    }
+  ],
+  "checked_fields": 1233,
+  "facts_sha256": "55571ac5ba4c609a780c6d3ae56f7fc638e76a18b84062fd8dd721aa2039359e",
+  "inputs": {
+    "runs/overnight_20261108/final/compact_facts/facts.json": "55571ac5ba4c609a780c6d3ae56f7fc638e76a18b84062fd8dd721aa2039359e",
+    "runs/overnight_20261108/final/paired_generated/generated/current_low/attempts_all.csv": "42659e2404cc516390fbe20deef622f2d39c047aab060bf76b26fcac59b63876",
+    "runs/overnight_20261108/final/paired_evaluation/current_low/cells.csv": "7281bad932c209c50f27f3d6ea08c1de377f3a944e1afc866e4539c1e5a39132",
+    "runs/overnight_20261108/final/paired_evaluation/current_low/summary.csv": "2abb46d13d45a32385736bd15c9849568cd2787dfc8025d9f24b583aca6262bd",
+    "runs/overnight_20261108/final/paired_generated/generated/paired_deletion/attempts_all.csv": "d39354b4912021e997411b814eaaa5cc16cba1f732b4765c8f5ff82e9f41afb4",
+    "runs/overnight_20261108/final/paired_evaluation/paired_deletion/cells.csv": "f7a5d45b4795ad70190809863f0817beb1d573c3afb40a188947e954be5bfed3",
+    "runs/overnight_20261108/final/paired_evaluation/paired_deletion/summary.csv": "bfcfdfdf9c586cba86f70e9dc999ca0621f0e8bf75ce745bd4ef91b0621f0e8a",
+    "runs/overnight_20261108/final/paired_generated/generated/paired_endpoint/attempts_all.csv": "bcdffa206edf28c7dde25c8e6d091c057ea54755bc8447782fcd35e06548efda",
+    "runs/overnight_20261108/final/paired_evaluation/paired_endpoint/cells.csv": "3961b2183100c5d8c5507f5cc65a9c45c2fdc30869548a78f9674c0b17f77356",
+    "runs/overnight_20261108/final/paired_evaluation/paired_endpoint/summary.csv": "5233e3f7462932bbf581525fdda5d96385c3d7a80c699b619f9ea26af86e8b05",
+    "runs/overnight_20261108/final/paired_generated/generated/shared_uniform/attempts_all.csv": "f67fa6976edcf3ca01fad6b906cb6057c57acd9cc43c988e86bc1ea5344afab3",
+    "runs/overnight_20261108/final/paired_evaluation/shared_uniform/cells.csv": "aa3ccc87ceb1770ef5c7f3fbd943337719d5a859324175c3f3c60e9b6cd65168",
+    "runs/overnight_20261108/final/paired_evaluation/shared_uniform/summary.csv": "297b57f744d50928bafea83acd66c8a05cee3b393f97b88e3c6a162a5ee487cc"
+  },
+  "new_MLIP_calls": 0,
+  "new_proposals": 0,
+  "new_model_fits": 0,
+  "arithmetic_allowance": "1e-15 dimensionless yield only; counts and mask identities exact",
+  "limit": "Independent arithmetic and class reconstruction from authenticated scalar facts; not a second physical inference or replacement for raw geometry audit"
+}

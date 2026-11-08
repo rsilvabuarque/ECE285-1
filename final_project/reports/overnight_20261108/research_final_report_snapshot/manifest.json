@@ -1,0 +1,20 @@
+{
+  "status": "REVIEWABLE_COMPLETED_BOUNDED_RESEARCH",
+  "created_UTC": "2026-11-08T14:40:31.968430+00:00",
+  "pages": 8,
+  "source_commit": "b4240cbb79b3f588d48666ee4b9a194b498e6080",
+  "review": "All earlierpagesreviewed; newphysics/coordinationandendpointpages4/5/6renderedandvisuallyreviewed. NoOverfull/undefinedreferencewarnings.",
+  "conclusions": "Restrictedimage/tolerancecomparisonpasses; combinedendpoint/bandtargetchangeexceeds.02eV. One localunstablecurvaturedoesnotverifywholeoriginalhop. Offsiteplusstateisnotcertifiedminimum. NoDFT/activationfreeenergyclaim.",
+  "files": {
+    "build.sh": "7e65f5a733e5d1d0384b85f697bddbc8b43e11d3e130ace0307f0172c559c521",
+    "main.tex": "8f29af076f9e9ed3d2df7b83c24fe8618e169a83d369f1f11cb7e68634952547",
+    "main.pdf": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea",
+    "claim_sources.json": "b1df5985f71e7b1df0831d97560806999743f8efdf8344b3a0e3153732d65c05",
+    "references.bib": "aaef8e79b8a1aa9cc74e0dce855c0871a93b73dc2c30cd6c60fed72c557207b4",
+    "build.log": "14066d32cdb7642591ff7cd124ba7d5a427b15b8930002ea8bd13120d4f31371",
+    "assets/route_profiles.pdf": "b4a4b1e4b81db895d02e325e636fdb3777cb45ba53f4d4f5d5ff7ea3a451d4f8",
+    "assets/harmonic_null_bias.pdf": "f19c7492cbbc2945b3c60d54198c7f6c8ac6f5fbfed661d5c59a1dddef6828f7",
+    "assets/candidate_environments.pdf": "11c2386e7c6df5792a5ef19da7c5fcd7d334c68409395524a537ff4de484487e",
+    "assets/finite_entropy.pdf": "9851c76731e810fbf6e6246197a0c7a0914dbf4c4bd03a4f182d503a075a61c5"
+  }
+}
