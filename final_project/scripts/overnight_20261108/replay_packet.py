@@ -121,7 +121,6 @@ def main(argv=None):
                     '--endpoint-schema', resolve('endpoint_schema'),
                     '--original-thresholds', resolve('fixed_thresholds'),
                     '--facts', resolve('facts'), '--facts-sha256', stage['facts_sha256'],
-                    '--queue', str(root / 'NO_HPC_QUEUE_REQUIRED'),
                     '--output-dir', str(output), '--unseal-test']
             load_helper('paired_evaluate').main(args)
         else:
