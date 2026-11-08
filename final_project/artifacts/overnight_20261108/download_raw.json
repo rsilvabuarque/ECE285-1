@@ -1,0 +1,48 @@
+{
+  "release_tag": "ece285-overnight-20261108-v1",
+  "extract_to": "artifacts/overnight_20261108/raw",
+  "assets": [
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-paired-01.zip",
+      "sha256": "40197302a6d6a10d582121b3bb48ed88a095557cbfa98c35634f57d970594655",
+      "bytes": 790602391,
+      "files": 16813
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-paired-02.zip",
+      "sha256": "8820df17932972eaadcb0cc5e6b4d5d4f16e551fa39e2a8a9e11a15d20624517",
+      "bytes": 790708344,
+      "files": 16813
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-paired-03.zip",
+      "sha256": "8a0128386c6e2affe20fb033869915db24a0ffe0e89e03218d050b1bceef3038",
+      "bytes": 790452779,
+      "files": 16832
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-paired-04.zip",
+      "sha256": "4fbed075dd14aec5423cfe07af7000409d212723892b22e89610e355ea135e96",
+      "bytes": 790462045,
+      "files": 16850
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-paired-05.zip",
+      "sha256": "6ec183ab0eff975c799e7818d20e5ba0f066932496681578a85c3652b67babaa",
+      "bytes": 90136254,
+      "files": 21152
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-static-01.zip",
+      "sha256": "fea6bb71f6ad90b6e1ace1c143c53ca57ca87a9cc494be16b8288a2eb4386d55",
+      "bytes": 210292180,
+      "files": 4410
+    },
+    {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-raw-research-01.zip",
+      "sha256": "6a38418cf913c229c1622761c298f71e1de363ff262f59444da1017431be8e17",
+      "bytes": 417619706,
+      "files": 810
+    }
+  ]
+}

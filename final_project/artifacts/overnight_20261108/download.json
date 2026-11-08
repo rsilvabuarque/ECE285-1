@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-overnight-20261108-v1/ece285-overnight-20261108-core-v2.zip",
+  "sha256": "a809e6cd8bf6584fdb5eb4e3a34aca95fac2209659dc0de91d166e7b60698429",
+  "extract_to": "artifacts/overnight_20261108",
+  "bytes": 213869333,
+  "files": 2359,
+  "release_tag": "ece285-overnight-20261108-v1"
+}

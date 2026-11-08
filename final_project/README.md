@@ -14,15 +14,14 @@ are complete. Models and proposals are frozen; `H_FINAL` contains 344,001 known
 occupation orbits. Final UMA/MACE scoring and endpoint assessment are complete,
 with independently recounted metrics. B-shell AR achieves 63.04% UMA balanced
 novel in-bin yield, A-shell CVAE 62.20%, and mutation 58.37%. The corresponding
-MACE yields are 64.38%, 64.03%, and 57.97%. Publication/replay validation and the
-post-closure resource receipt remain pending at this update. These
+MACE yields are 64.38%, 64.03%, and 57.97%. A fresh CPU extraction of the final
+archive reproduced all 36 checked tables exactly across eight analysis scopes. These
 37 trajectories span different methods and screens; they are not 37 independent
 replicates of one selected model.
 
-The current packet belongs under `artifacts/overnight_20261108/`. Its verified
-download is pending publication. The cached replay helper is implemented;
-the complete packet's fresh-machine replay is still awaiting validation. Once
-the verified packet is available, its entrypoint is:
+The current packet belongs under `artifacts/overnight_20261108/`. The core ZIP
+is 213.9 MB and includes data, selected checkpoints, raw proposal records and
+compact endpoint coordinates. Its validated cached replay entrypoint is:
 
 ```bash
 python scripts/overnight_20261108/replay_packet.py \
@@ -32,10 +31,10 @@ python scripts/overnight_20261108/replay_packet.py \
 This recomputes metrics from cached labels and checks packet hashes; it makes
 no new MLIP calls. Do not substitute the prior packet into this command.
 
-The planned versioned release is
+The versioned release is
 [`ece285-overnight-20261108-v1`](https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-overnight-20261108-v1).
-Publication and complete-packet replay remain pending at this update. After
-the core installation below and verified publication, fetch the archive using
+The release's completion, publication and resource receipts record final
+verification and allocation closure. After the core installation below, fetch the archive using
 the URL and SHA256 committed in its download manifest:
 
 ```bash
@@ -54,8 +53,8 @@ Read the [new midterm source](docs/midterm_20261108/main.tex),
 [research supplement](docs/research_supplement_20261108/main.tex), and
 [collaborator handoff](docs/COLLABORATOR_TASKS.md). Local PDF builds are
 `docs/midterm_20261108/main.pdf` and
-`docs/research_supplement_20261108/main.pdf`; the verified packet will carry the
-reviewed PDFs and their build inputs. The main report targets five body pages
+`docs/research_supplement_20261108/main.pdf`; the packet carries the
+reviewed PDFs and their build inputs. The main report contains five body pages
 plus references. The separate research supplement retains the finite-cell,
 NEB and harmonic-estimator results and their physical limits.
 

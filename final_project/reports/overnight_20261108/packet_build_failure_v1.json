@@ -1,0 +1,6 @@
+{
+  "status": "PRESERVED_PACKAGING_FAILURE",
+  "reason": "Builder required a nonexistent output path, but the intended output directory existed and was verified empty and not a symlink.",
+  "log": "runs/overnight_20261108/packet_build.log",
+  "repair": "Accept an existing EMPTY nonsymlink directory only; preserve/reject all nonempty destinations. No assessment inputs or scientific outcomes changed."
+}

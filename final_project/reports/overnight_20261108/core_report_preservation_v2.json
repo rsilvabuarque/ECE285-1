@@ -1,0 +1,16 @@
+{
+  "status": "REPORT_PRESERVATION_V2_ALL_SCIENTIFIC_INPUTS_IDENTICAL",
+  "original_archive_sha256": "021de9bb4b0ebb5f50abbdc053b5291463602593bf6efc0cf182b27cd9c92794",
+  "archive_sha256": "a809e6cd8bf6584fdb5eb4e3a34aca95fac2209659dc0de91d166e7b60698429",
+  "archive_name": "ece285-overnight-20261108-core-v2.zip",
+  "added_files": {
+    "reports/final_report_snapshot/main.bbl": "74350d4d71e346d8bbf8604f64132b755b310f476c9994820fe5ba0dc44a9f71",
+    "docs/midterm/main.bbl": "74350d4d71e346d8bbf8604f64132b755b310f476c9994820fe5ba0dc44a9f71",
+    "docs/research_supplement/main.bbl": "987b4aff80894a5df41e947df32a1592c91f986a3546d41623912f89cb500cf9"
+  },
+  "changed_non_scientific_source": "execution/final_analysis_sources/build_packet.py",
+  "all_prior_scientific_files_byte_identical": true,
+  "stages_identical": true,
+  "files": 2359,
+  "bytes": 213869333
+}

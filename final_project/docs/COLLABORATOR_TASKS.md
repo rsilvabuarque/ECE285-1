@@ -4,8 +4,9 @@ The current study is the November 8 packet at `artifacts/overnight_20261108/`.
 Its final models and proposals are frozen: 37 completed training trajectories,
 148,000 optimizer updates, and a final known-orbit history of 344,001. Final
 static scoring and endpoint assessment are complete, with independent arithmetic
-recounts. Publication/fresh replay validation and resource closure remain pending
-at this documentation update. Use the actual published receipts for reproduction.
+recounts. Fresh extraction of the final core archive reproduced all 36 checked
+tables exactly. Use the release's completion/publication/resource receipts for
+the final transport verification and allocation closure.
 
 The integrating campaign already performed the matched latent/no-latent
 controls. Your contribution is an **independent reproduction, audit and scientific
@@ -24,11 +25,8 @@ collaborators or coursework submission is automated.
 ## Start with the current checkout and core installation
 
 The current integrating branch is `overnight/latent-relaxed-neb-20261108`.
-Use it after its publication receipt is available, create your own branch and
-keep every new run in a fresh directory. The current packet's verified download
-manifest is pending publication. `scripts/overnight_20261108/replay_packet.py`
-is implemented; complete-packet fresh replay validation remains pending. After
-fetching the verified packet, use:
+Create your own branch and keep every new run in a fresh directory. The packet's
+download manifest binds its URL and SHA256. After fetching it, use:
 
 ```bash
 python scripts/overnight_20261108/replay_packet.py \
@@ -39,9 +37,8 @@ This uses cached labels and verifies hashes without model inference. The
 historical commands later in this file retain their original packet names.
 The [current README fetch block](../README.md#cathode-vacancy-generation-current-midterm-packet)
 reads the actual URL/SHA256 from `artifacts/overnight_20261108/download.json`.
-Its selected release is `ece285-overnight-20261108-v1`; publication and complete
-fresh replay are still pending, so use their actual receipts before claiming
-the packet has been reproduced.
+Its selected release is `ece285-overnight-20261108-v1`. Record your own replay
+receipt and interpretation; the automated integrating run is not your independent contribution.
 
 From the current project checkout:
 
@@ -173,8 +170,8 @@ The first consumes repeated `--score TEACHER=scalarNPZ` and
 `--schema TEACHER=frozenJSON` arguments. The paired evaluator accepts
 `--facts`/`--facts-sha256` instead of the HPC queue, with the frozen registration,
 attempts/history and two assessment schemas. Use the current packet's manifest
-for exact input paths/hashes. The one-command replay above is implemented;
-complete-packet validation and download remain pending until their actual receipts.
+for exact input paths/hashes. The one-command replay above has been validated
+against the complete extracted packet and requires no original HPC queue.
 
 1. Recompute distinct novel in-request orbits divided by **all attempted
    proposals**, including duplicates, invalid requests, score failures and

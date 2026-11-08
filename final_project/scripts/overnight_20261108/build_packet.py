@@ -41,14 +41,16 @@ def main():
     spec = json.loads(a.spec.read_text())
     if spec['status'] != 'FROZEN_COMPLETE_PACKAGE_INPUTS':
         raise ValueError('Only complete frozen evidence may be packaged')
-    a.output_dir.mkdir(parents=True, exist_ok=False)
+    if a.output_dir.is_symlink() or (a.output_dir.exists() and any(a.output_dir.iterdir())):
+        raise FileExistsError('Preserve the existing nonempty packet or symlink')
+    a.output_dir.mkdir(parents=True, exist_ok=True)
     a.archive_dir.mkdir(parents=True, exist_ok=True)
     records = {}
     for item in spec['mappings']:
         source = Path(item['source'])
         paths = sorted(path for path in source.rglob('*') if path.is_file()) if source.is_dir() else [source]
         for path in paths:
-            if '__pycache__' in path.parts or path.suffix in {'.pyc', '.aux', '.out', '.blg', '.bbl'}:
+            if '__pycache__' in path.parts or path.suffix in {'.pyc', '.aux', '.out', '.blg'}:
                 continue
             relative = str(Path(item['destination']) / path.relative_to(source)) if source.is_dir() else item['destination']
             dest = target(a.output_dir, relative)

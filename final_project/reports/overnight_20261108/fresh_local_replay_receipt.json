@@ -1,0 +1,220 @@
+{
+  "status": "PASS_FRESH_EXTRACTED_CPU_REPLAY",
+  "archive_sha256": "021de9bb4b0ebb5f50abbdc053b5291463602593bf6efc0cf182b27cd9c92794",
+  "files": 2356,
+  "command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/scripts/overnight_20261108/replay_packet.py",
+    "--packet",
+    "/pscratch/sd/r/rsb/ece285_overnight_20261108/replay_fresh_local/packet",
+    "--output-dir",
+    "/pscratch/sd/r/rsb/ece285_overnight_20261108/replay_fresh_local/metrics",
+    "--plots"
+  ],
+  "elapsed_seconds": 381.5302311889827,
+  "replay_receipt": {
+    "status": "PASS",
+    "manifest_sha256": "106edc00ba7f314f9016a226512e7549a38ed21e20f1186f771827643512ddc6",
+    "source_sha256": "3defb4858c485967ea2fdb45ddfdb61e5c5b5c70edd3f17dfb627e1a90d7610c",
+    "stages": [
+      {
+        "name": "final_static",
+        "kind": "static",
+        "comparisons": {
+          "metrics.csv": {
+            "rows": 702,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 4212,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 18,
+            "roundoff_only_cells": 0
+          },
+          "seed_metrics.csv": {
+            "rows": 78,
+            "roundoff_only_cells": 0
+          },
+          "paired_summary.csv": {
+            "rows": 546,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "initial",
+        "kind": "static",
+        "comparisons": {
+          "metrics.csv": {
+            "rows": 270,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 1620,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 10,
+            "roundoff_only_cells": 0
+          },
+          "seed_metrics.csv": {
+            "rows": 30,
+            "roundoff_only_cells": 0
+          },
+          "paired_summary.csv": {
+            "rows": 216,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "screen",
+        "kind": "static",
+        "comparisons": {
+          "metrics.csv": {
+            "rows": 288,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 1728,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 20,
+            "roundoff_only_cells": 0
+          },
+          "seed_metrics.csv": {
+            "rows": 32,
+            "roundoff_only_cells": 0
+          },
+          "paired_summary.csv": {
+            "rows": 216,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "confirmation",
+        "kind": "static",
+        "comparisons": {
+          "metrics.csv": {
+            "rows": 378,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 2268,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 14,
+            "roundoff_only_cells": 0
+          },
+          "seed_metrics.csv": {
+            "rows": 42,
+            "roundoff_only_cells": 0
+          },
+          "paired_summary.csv": {
+            "rows": 288,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "current_low",
+        "kind": "paired",
+        "comparisons": {
+          "cells.csv": {
+            "rows": 36,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 288,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 8,
+            "roundoff_only_cells": 0
+          },
+          "fit_summary.csv": {
+            "rows": 24,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "paired_deletion",
+        "kind": "paired",
+        "comparisons": {
+          "cells.csv": {
+            "rows": 54,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 432,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 4,
+            "roundoff_only_cells": 0
+          },
+          "fit_summary.csv": {
+            "rows": 12,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "paired_endpoint",
+        "kind": "paired",
+        "comparisons": {
+          "cells.csv": {
+            "rows": 54,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 432,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 4,
+            "roundoff_only_cells": 0
+          },
+          "fit_summary.csv": {
+            "rows": 12,
+            "roundoff_only_cells": 0
+          }
+        }
+      },
+      {
+        "name": "shared_uniform",
+        "kind": "paired",
+        "comparisons": {
+          "cells.csv": {
+            "rows": 27,
+            "roundoff_only_cells": 0
+          },
+          "confusion.csv": {
+            "rows": 216,
+            "roundoff_only_cells": 0
+          },
+          "summary.csv": {
+            "rows": 2,
+            "roundoff_only_cells": 0
+          },
+          "fit_summary.csv": {
+            "rows": 6,
+            "roundoff_only_cells": 0
+          }
+        }
+      }
+    ],
+    "elapsed_seconds": 370.5234252800001,
+    "new_training_updates": 0,
+    "new_MLIP_calls": 0,
+    "new_proposals": 0,
+    "scope": "Cached metric replay, not independent scientific replication or physical validation"
+  },
+  "scope": "Fresh extraction on scratch; compact facts path uses no HPC queue; not a new experiment"
+}
