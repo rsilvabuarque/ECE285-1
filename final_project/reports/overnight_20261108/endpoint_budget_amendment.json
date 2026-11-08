@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_ENDPOINT_BASELINE_RESERVE_CORRECTION_BEFORE_ASSESSMENT_GENERATION",
+  "created_UTC": "2026-11-08T12:11:59.052446+00:00",
+  "parent_protocol_sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564",
+  "frozen_acquisition_preparation_sha256": "55eb6e162a8484a4bc90b6c1ce5496b458dac983beb286adf8ab0284555afdfa",
+  "reason": "The initial1728baseline reserve describes one64x3countx3binx3rep family. Deletion- and endpoint-conditioned mutation use different seed information; neither can silently stand in for the other.",
+  "primary_endpoint_attempt_reserve": {
+    "acquisition_including96pilot": 6000,
+    "current_four_method_LOW": 2304,
+    "two_CVAE_targets_all_bins": 3456,
+    "deletion_conditioned_mutation": 1728,
+    "endpoint_conditioned_mutation": 1728,
+    "unconditional_uniform_shared_across_targets": 1728,
+    "tighter_TRAIN_controls": 96,
+    "conservative_total_before_exact_dedup": 17040,
+    "hard_cap": 18000
+  },
+  "uniform_policy": "Same raw fixed-count masks may serve several requested-bin/label-target records, and the current LOW arm, only under a single frozen namespace/history and compatible attempt counts. Every request remains a denominator; exact endpoint work deduplicates physical geometry/protocol only.",
+  "no_changed_physical_criterion": true,
+  "new_acquisition_expansion": "Not authorized by this lane until a new reviewed exact reserve proves room; default6000remains."
+}

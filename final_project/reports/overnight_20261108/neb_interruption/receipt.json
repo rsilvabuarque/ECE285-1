@@ -1,0 +1,54 @@
+{
+  "status": "EXTERNALLY_INTERRUPTED_PARTIAL",
+  "operational_reason": "Slurm fail-fast killed sibling after event1 coarse reached its declared500-step cap; root execution confirmed externally",
+  "original_run": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_1_repeat2_refined_7",
+  "original_protocol_sha256": "cc1a0b4b7e65340c2db518f89ad93c291c737c5029d59c14cf806a889f10b256",
+  "last_complete_progress": {
+    "step": 430,
+    "elapsed_seconds": 557.9312567700399,
+    "projected_Fmax_eV_A": 0.8876519448910521,
+    "energy_eV": [
+      -1032.590105085562,
+      -1032.3602728803978,
+      -1032.5665007635894,
+      -1032.4874190224448,
+      -1032.5079956293646,
+      -1032.5449991388616,
+      -1032.0502429290075,
+      -1032.5930765855398,
+      -1032.634051990367
+    ],
+    "peak_image": 6,
+    "climbing_image": 6,
+    "physical_image_Fmax_eV_A": [
+      0.029641414061188698,
+      0.14438168704509735,
+      0.12468347698450089,
+      0.1628842055797577,
+      0.04376698285341263,
+      0.12509267032146454,
+      0.8691161274909973,
+      0.028558168560266495,
+      0.021400626748800278
+    ],
+    "actual_EFS_attempts": 3019
+  },
+  "last_complete_snapshot_step": 430,
+  "snapshot": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb/basin_1_repeat2_refined_7/latest_band.npz",
+    "sha256": "e20b8b663496a758c5919885b049694ab653e478dff07ea9fbeb09ffbe46f06c"
+  },
+  "progress_sha256": "b8b866bf4b1e8aefa787a3409bf634765358f36240995793d37dec0dcd4b7058",
+  "calls_sha256": "5291f3f265a8f0d41c44480889c2e9a10909fec433060a877b6b5a0cf55069d0",
+  "saved_EFS_attempts": 3020,
+  "successful_EFS": 3020,
+  "failed_EFS": 0,
+  "inflight_unreported_calls": 1,
+  "conservative_charged_optimizer_steps": 431,
+  "remaining_steps": 69,
+  "previous_elapsed_seconds_reserved": 560,
+  "remaining_seconds": 2140.0,
+  "remaining_EFS_calls": 1980,
+  "physical_timer_scope": "Ceiling(last recorded process elapsed + subsequent completed call times)+1s, reserved against original45min cap; any scheduler overhead remains separate allocation cost",
+  "restart_scope": "Restore exact last complete saved geometry; FIRE internal velocity/memory reset. Any rollback/repeated physical work remains charged. No full rerun."
+}

@@ -1,0 +1,58 @@
+{
+  "status": "APPROVED_ONE_EVENT2_CANDIDATE_CURVATURE_CHECK",
+  "created_UTC": "2026-11-08T13:04:05.325071+00:00",
+  "evidence": [
+    {
+      "name": "basin_2_repeat1_saved_5",
+      "receipt_sha256": "1203bf44662921d7ae765fca1afc7e540ae61cdd286465f4453348fba7c1f7ba",
+      "converged": true,
+      "forward_eV_hop": 0.17597988632155648,
+      "reverse_eV_hop": 0.179112837472303,
+      "candidate_physical_Fmax_eV_A": 0.005660608410835266
+    },
+    {
+      "name": "basin_2_repeat1_saved_7",
+      "receipt_sha256": "e7d0a592f370b1ca43d34478e3758350e32ffc5aaca7edfdd4f2ee623d97c613",
+      "converged": true,
+      "forward_eV_hop": 0.17702110628101764,
+      "reverse_eV_hop": 0.18013210283197623,
+      "candidate_physical_Fmax_eV_A": 0.013599217869341373
+    },
+    {
+      "name": "basin_2_repeat1_saved_9",
+      "receipt_sha256": "d50310e90ccf91822cd4d6a6df47791bff07428ed827cd80391a2af4085a9e11",
+      "converged": true,
+      "forward_eV_hop": 0.17237142798308014,
+      "reverse_eV_hop": 0.1754463667971322,
+      "candidate_physical_Fmax_eV_A": 0.01867837645113468
+    },
+    {
+      "name": "basin_2_repeat1_fixed7_tight01",
+      "receipt_sha256": "9857ae9f4fb5409fb6e2b032dba2579e41a038107a1f0b3bb49cccca3ff10353",
+      "converged": true,
+      "forward_eV_hop": 0.1691818468132169,
+      "reverse_eV_hop": 0.17231462548670606,
+      "candidate_physical_Fmax_eV_A": 0.008881518617272377
+    }
+  ],
+  "image_count_forward_range_eV": 0.004649678297937498,
+  "tolerance_forward_shift_eV": -0.00783925946780073,
+  "numerical_stability_target_eV_hop": 0.02,
+  "hypothesis": "The retained event2 climbing image has one robust unstable internal mode and its opposite downhill branches connect the marked endpoint configurations. This is not established by NEB convergence alone.",
+  "source_candidate": "basin_2_repeat1_fixed7_tight01 image5",
+  "controlled_displacements_A": [
+    0.01,
+    0.005
+  ],
+  "repeat_stationarity_calls_per_displacement": 3,
+  "bounded_cost": {
+    "candidates": 1,
+    "Hessian_force_calls_per_displacement": 1080,
+    "maximum_total_EFS_per_worker": 1800,
+    "maximum_seconds_per_worker": 2700,
+    "downhill_branches_only_at_delta_0p01": 2,
+    "maximum_downhill_steps_per_branch": 300
+  },
+  "decision_rule": "Report signed internal curvatures, displacement sensitivity, repeat-force noise, Hessian antisymmetry and exact downhill mappings/RMS. Strictly negative eigenvalue count alone is not an index-one certification. No automatic physical-validation flag.",
+  "remaining_limitations": "Exact-original endpoints remain fixed with ~0.03/0.013eV/A force. MLIP potential-energy numerical evidence only; no DFT or finite-temperature rate validation."
+}

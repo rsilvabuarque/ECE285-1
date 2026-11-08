@@ -73,3 +73,9 @@ docs/midterm1/*.out
 
 # Preserve the unpublished first optional packet and failed portability replay.
 /artifacts/conditioning_20261107/extensions/
+
+# Full per-attempt records and arrays are preserved in the Nov8 release payload.
+# Keep compact scientific tables, figures, protocols and receipts in Git.
+/reports/overnight_20261108/**/attempt_outcomes.csv
+/reports/overnight_20261108/**/paired_attempts.csv
+/reports/overnight_20261108/**/*.npz

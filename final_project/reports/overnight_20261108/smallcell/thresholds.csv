@@ -1,0 +1,7 @@
+teacher,n_Li,raw_states,orbits,q20_eV_cell,q80_eV_cell,low_tie_rule,exact_lowest_subset_size
+uma,3,220,6,-222.9288092199,-222.67690744702975,E<=q20; high E>q80; otherwise middle,44
+uma,6,924,17,-240.33802225955708,-240.01786712865893,E<=q20; high E>q80; otherwise middle,185
+uma,9,220,6,-257.56687765467547,-257.27547044030246,E<=q20; high E>q80; otherwise middle,44
+mace,3,220,6,-222.31094665527343,-222.0216064453125,E<=q20; high E>q80; otherwise middle,44
+mace,6,924,17,-239.25694274902344,-238.97564697265625,E<=q20; high E>q80; otherwise middle,185
+mace,9,220,6,-255.7382568359375,-255.41397094726562,E<=q20; high E>q80; otherwise middle,44

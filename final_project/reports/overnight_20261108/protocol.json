@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_INITIAL_CONTRACT_BEFORE_NEW_LABELS_OR_FITS",
+  "created_UTC": "2026-11-08T11:48:56.199719+00:00",
+  "intake_UTC": "2026-11-08T11:29:35+00:00",
+  "hard_stop_UTC": "2026-11-08T18:29:35+00:00",
+  "target_elapsed_hours": [
+    6,
+    7
+  ],
+  "finalization_reserve_start_UTC": "2026-11-08T17:29:35+00:00",
+  "final_assessment_target_freeze_UTC": "2026-11-08T15:59:35+00:00",
+  "repository": "https://github.com/rsilvabuarque/ECE285-1",
+  "base_commit": "d0d93edeefc56003744599a83dc54c45f78577aa",
+  "branch": "overnight/latent-relaxed-neb-20261108",
+  "inputs": {
+    "instructions_sha256": "73bfb0f3860920f53e9c8be14351a4eeafa4375d59ca28901615536737c110aa",
+    "updated_conversation_pdf_sha256": "87cfd82caa6a785c72f7f00fa8461ea3ef8df544b096d9c33e9af82609a7ccb6",
+    "updated_pdf_pages": 104,
+    "parent": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+      "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+    },
+    "H0_data": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/improvement_v1/training_round0.npz",
+      "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+      "protected_roles": {
+        "train": 40157,
+        "val": 4967,
+        "test": 5123
+      }
+    },
+    "intake_history": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/data/intake_history.json",
+      "sha256": "336b5a77b6b4332b5cad62b54946b417f0f96e929250812422d745eb9bf7bfbe",
+      "orbits": 318970
+    }
+  },
+  "resource_contract": {
+    "account": "m5397_g",
+    "maximum_charged_GPU_node_hours": 250,
+    "maximum_concurrent_GPU_nodes": 32,
+    "full_training_trajectory_cap": 60,
+    "screened_configuration_cap": 12,
+    "primary_endpoint_attempt_cap": 18000,
+    "charging_policy_url": "https://docs.nersc.gov/jobs/policy/",
+    "policy_verified_UTC": "2026-11-08T11:48:56.262593+00:00",
+    "Perlmutter_charge_factor": 1,
+    "regular_QOS_factor": 1,
+    "interactive_QOS_factor": 1,
+    "shared_interactive_QOS_factor": 1,
+    "shared_charging": "Allocated node fraction, with actual billing/resources checked; physical node allocation hours and GPU-device-hours reported separately.",
+    "account_balance_private_receipt": "runs/overnight_20261108/context/iris_project_intake.json",
+    "no_new_DFT": true,
+    "no_scheduled_DFT": true,
+    "no_MLIP_finetuning": true,
+    "no_new_MD": true
+  },
+  "teacher_protocol": {
+    "primary": {
+      "model": "UMA-S-1.2.1",
+      "task_id": "omat",
+      "checkpoint_sha256": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+    },
+    "secondary": {
+      "model": "MACE-MH-1",
+      "head": "omat_pbe",
+      "package_version": "0.3.16",
+      "checkpoint_sha256": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+    },
+    "dtype": "float32",
+    "tf32": false,
+    "scope": "Worker startup must verify authoritative checkpoint/head/package/precision receipts. Conditions link label inference context; omission in old schema is not evidence of incorrect old inference."
+  },
+  "roles_and_assessment": {
+    "original_roles_immutable": true,
+    "old_FINAL_not_training": true,
+    "new_cohort_sampling": "Uniform raw fixed-count masks conditioned on fresh-to-intake, then symmetry deduplicated; all raw draws retained.",
+    "new_roles_assigned_before_labels": true,
+    "new_TEST_energy_sealed_until_final": true,
+    "new_final_history": "Freeze after all development/acquisition/calibration, immediately before final proposals; union every exposed occupation from all lanes with this parent.",
+    "new_final_assessment": "Separate source/threshold/history/seed manifests frozen before generation; all attempts retained.",
+    "MACE": "Prespecified matched subset, own thresholds. UMA proposals remeasured under MACE do not imply MACE-trained generation."
+  },
+  "fit_contract": {
+    "initial_seeds": [
+      2026110801,
+      2026110802,
+      2026110803
+    ],
+    "extra_final_seeds": [
+      2026110804,
+      2026110805
+    ],
+    "max_updates": 4000,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "hidden_width": 64,
+    "latent_dim_CVAE": 4,
+    "class_balance": true,
+    "orientation": "canonical",
+    "condition": "composition plus training-only low/middle/high q20/q80",
+    "training_beta_final": 0.1,
+    "beta_schedule": "reference_updates: beta(u)=.1*min(1,(floor(u/79)+1)/20),u zero-based; exactly reproduce legacy epoch arithmetic on H0. Hold this update schedule fixed for new dataset sizes.",
+    "checkpoint_selection_beta": 0.1,
+    "save_alternative_selection_beta": 1,
+    "reference_policy": "Refit A under current harness; no claim that changed source code is the identical historical training harness.",
+    "final_replicates": "At least3; five for retained genuine spatial CVAE and strongest matched spatial AR if measured cost permits.",
+    "continued_updates": "Only if development curves justify; exact optimizer/RNG continuation required; count additional updates and prior cost separately."
+  },
+  "required_controls": {
+    "A": "Graph-posterior CVAE plus six physical causal decoder features",
+    "B": "No-latent AR plus identical physical decoder features",
+    "C": "Dense-posterior D4 CVAE plus identical physical decoder features",
+    "D": "Fixed nonphysical site association on strongest simple development architecture, preserving capacity/kernel distributions/causal mask; actual prefix imbalance audited"
+  },
+  "improvement_screen": {
+    "initial_single_factors": [
+      "remaining Li/site fractions on best genuine CVAE and matched AR",
+      "separate radial-shell causal features on best genuine CVAE and matched AR",
+      "beta_final.03 on genuine CVAE with same warmup"
+    ],
+    "gated_alternatives": [
+      "learning_rate.0003 if curve diagnostics justify",
+      "one cyclic beta schedule if latent diagnostics justify",
+      "true4k-to8k continuation if useful learning persists",
+      "one width128 only for an unresolved capacity question"
+    ],
+    "maximum_promotions": 3,
+    "no_combined_change_grid": true,
+    "selection": "Development macro useful yield primary; LOW secondary/per-bin retained; KL alone never success. Confirm promoted arms with3 fits before final selection."
+  },
+  "paired_lane": {
+    "pilot": {
+      "independent_masks": 96,
+      "per_count": 32,
+      "role": "TRAIN subset of frozen6000"
+    },
+    "first_wave": {
+      "independent_masks": 6000,
+      "counts": [
+        12,
+        24,
+        36
+      ],
+      "per_count": 2000,
+      "roles_per_count": {
+        "train": 1200,
+        "val": 400,
+        "test": 400
+      }
+    },
+    "endpoint_definition": {
+      "cell": "fixed",
+      "all_atoms_move": true,
+      "optimizer": "FIRE",
+      "ase": "3.26.0",
+      "fmax_eV_A": 0.05,
+      "maxstep_A": 0.15,
+      "max_steps": 500,
+      "wall_cap_seconds_per_attempt": 120,
+      "criterion_provenance": "Historical homogeneous fixed-cell source; wall cap is provisional operational protection, not a relaxed physical criterion."
+    },
+    "reserved_primary_endpoint_attempts": {
+      "acquisition_including_pilot": 6000,
+      "mandatory_current_LOW": 2304,
+      "paired_target_all_bins": 3456,
+      "shared_baselines": 1728,
+      "tighter_TRAIN_controls": 96,
+      "total_before_dedup": 13584
+    },
+    "large_wave": "Only a separately frozen expansion gate after throughput and complete remaining queue accounting; no top-up based on TEST outcomes.",
+    "support_gate": "At least30 independent endpoint-low VAL masks/count plus adequate TRAIN support; operational support criterion, not a power calculation.",
+    "label_target_comparison": "Same TRAIN/VAL inputs/roles, architecture/init/update schedule; separately TRAIN-fitted deletion/endpoint thresholds; both generators scored under both definitions.",
+    "mandatory_current_LOW": "Spatial CVAE, spatial AR, mutation and uniform;64 attempts/count/replicate,3counts,3replicates =2304, freeze before scoring.",
+    "tighter_controls": "Prespecified96 TRAIN lineages to.01 as a distinct endpoint version; primary remains.05.",
+    "secondary_teacher": "Prespecified hash-selected UMA-endpoint MACE single points; independently relax at most24 TRAIN cases from pristine initial geometry if feasible.",
+    "basin_scope": "Occupation-orbit equality alone is not PES-basin identity; track atom identities, host/mobile mappings, collisions and merges."
+  },
+  "NEB_lane": {
+    "first_tranche": [
+      "event1 coarse route at7interior",
+      "event1 refined route at7interior",
+      "event2 saved route at7interior"
+    ],
+    "fixed_exact_original_endpoints": true,
+    "projected_fmax_eV_A": 0.02,
+    "steps_cap_per_band": 500,
+    "wall_seconds_cap_per_band_including_load": 2700,
+    "practical_stability_target_eV_per_hop": 0.02,
+    "stability_scope": "Chosen numerical target, not DFT accuracy.",
+    "later_gates": [
+      "5/9 interior at same.02 for bounded9band maximum",
+      "fixed-image continuation to.01",
+      "separate endpoint tightening",
+      "at most2 selected saddle Hessian/lowest-mode and downhill checks",
+      "MACE energies+forces on converged UMA paths; independent endpoints/one band if budget/basin persistence allow"
+    ],
+    "no_new_event_discovery_MD": true
+  },
+  "smallcell_lane": {
+    "parent": "Hu_O3_12 literal frozen optimized parent",
+    "approx_symmetry_max_residual_A": 0.000263895,
+    "counts": [
+      3,
+      6,
+      9
+    ],
+    "raw_state_counts": [
+      220,
+      924,
+      220
+    ],
+    "unique_geometry_teacher_pairs": 2728,
+    "repeat_controls": "First/last raw mask at each count,2 extra calls/teacher:24 repeats,2752 total calls.",
+    "cache_policy": "Fresh literal geometry scoring; do not symmetry-alias raw states.",
+    "temperatures_K": [
+      393.15,
+      433.15,
+      473.15,
+      493.15
+    ],
+    "normalization": "Separate each count/teacher; total-cell eV in Boltzmann exponent.",
+    "outputs": [
+      "raw/orbit probabilities",
+      "mean E and finite static configurational S",
+      "coarse-bin and low-subset mass",
+      "finite-reference error/ESS",
+      "within-orbit spreads versus repeatability and representative weighting error"
+    ],
+    "entropy": "-kB*sum_i p_i*log(p_i) in eV/K per simulated cell; orbit multiplicity formula only exact for equal within-orbit energies.",
+    "physical_scope": "Finite static MLIP reference; not real LCO entropy, vibrational free energy,48site equilibrium or neural size transfer."
+  },
+  "optional_extension": "Select ONE main modeling extension after required controls and paired workflow secure: adaptive two-round comparison, finer condition, or no-latent exact-k editor. Selection based on completed diagnostics and remaining budget; no automatic all-combination sweep.",
+  "harmonic_optional": "Use actual537 positive-mode spectrum synthetic harmonic velocities with controlled realizations/window lengths; estimator diagnostic only, no new unrestrictedMD or improvised converged TI.",
+  "deliverables": [
+    "compiled~5page midterm with source/claim map",
+    "separate research supplement NEB/finite-static/harmonic",
+    "newpairedlineage dataset and complete attempt records/failures",
+    "checkpoint/config/environment/model hashes and exactcommands",
+    "frozen roles/thresholds/history",
+    "charged-resource receipts and released owned jobs",
+    "new review branch/downloadable artifacts, no forcepush/merge/submission/messages",
+    "independent Ricardo/Beihao/Varad tasks"
+  ]
+}

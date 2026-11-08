@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564",
+  "requirements": {
+    "spatial_controls": {
+      "status": "FITS_COMPLETE_DEV_SCORING_RUNNING",
+      "completed_full_fits": 9
+    },
+    "improvement_screen": {
+      "status": "PLANNED"
+    },
+    "paired_pilot": {
+      "status": "COMPLETE",
+      "converged": 96
+    },
+    "paired_acquisition": {
+      "status": "RUNNING_REPLACEMENT_UNCLAIMED_ONLY",
+      "preserved_converged_at_revocation": 972,
+      "preserved_interrupted": 8
+    },
+    "paired_label_target_fits": {
+      "status": "PLANNED"
+    },
+    "current_LOW_endpoint_assessment": {
+      "status": "PLANNED"
+    },
+    "paired_target_endpoint_assessment": {
+      "status": "PLANNED"
+    },
+    "fresh_FINAL_and_MACE": {
+      "status": "PLANNED"
+    },
+    "NEB_common_setting_routes": {
+      "status": "PARTIAL_WITH_PRESERVED_NONCONVERGENCE_AND_BOUNDED_RECOVERY",
+      "event1_coarse": "STEP_CAP500",
+      "event1_refined": "INTERRUPTED_SIBLING430_COMPLETE_STEPS_RECOVERY69",
+      "event2": "NUMERICALLY_CONVERGED_UNVALIDATED"
+    },
+    "smallcell_raw_reference": {
+      "status": "COMPLETE",
+      "receipt": "reports/overnight_20261108/smallcell/receipt.json"
+    },
+    "optional_extension": {
+      "status": "PLANNED"
+    },
+    "harmonic_diagnostic": {
+      "status": "PLANNED"
+    },
+    "midterm_build": {
+      "status": "HISTORICAL_REVIEWABLE_BASELINE_PRESERVED_CURRENT_UPDATE_IN_PREPARATION",
+      "historical": "reports/overnight_20261108/historical_midterm/midterm_prior_goal_preserved.pdf"
+    },
+    "research_supplement": {
+      "status": "PLANNED"
+    },
+    "publication_and_resource_closure": {
+      "status": "PLANNED"
+    },
+    "intake": {
+      "status": "COMPLETE",
+      "outputs": [
+        "runs/overnight_20261108/data/intake_history_receipt.json"
+      ],
+      "intake_history_orbits": 318970
+    }
+  },
+  "endpoint_budget_amendment": {
+    "path": "reports/overnight_20261108/endpoint_budget_amendment.json",
+    "sha256": "a7cba1b2bc09fe067c9da78df9efcc725bbe0015ed4a96b446178d0d0468dc55"
+  }
+}

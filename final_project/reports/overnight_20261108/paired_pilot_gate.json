@@ -1,0 +1,20 @@
+{
+  "status": "APPROVED_FIRST_WAVE6000_AFTER_COMPLETE_PILOT",
+  "created_UTC": "2026-11-08T12:23:04.544566+00:00",
+  "pilot_attempts": 96,
+  "converged": 96,
+  "failed_calculator_calls": 0,
+  "actual_calculator_calls": 3864,
+  "seconds_per_attempt_mean": 4.054101695447268,
+  "median": 3.9329669819562696,
+  "maximum": 10.27927835402079,
+  "entire_reserved17040_attempt_queue_estimated_GPU_device_hours_excluding_load": 19.189414691783732,
+  "reserved_queue_hours_on8GPUs_excluding_load": 2.3986768364729665,
+  "source_preparation_sha256": "55eb6e162a8484a4bc90b6c1ce5496b458dac983beb286adf8ab0284555afdfa",
+  "endpoint_budget_amendment": "reports/overnight_20261108/endpoint_budget_amendment.json",
+  "physical_definition_unchanged": true,
+  "new_acquisition_wave": 6000,
+  "no_expansion_to12000": true,
+  "TEST_energy_used_for_gate": false,
+  "approval_scope": "Launch existing frozen6000 with persistent workers; retain every failure; reserve full endpoint assessment before any expansion."
+}

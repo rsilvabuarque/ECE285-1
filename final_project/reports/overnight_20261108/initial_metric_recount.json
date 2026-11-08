@@ -1,0 +1,77 @@
+{
+  "status": "INDEPENDENT_METRIC_RECOUNT_PASS",
+  "counts": [
+    {
+      "teacher": "uma",
+      "method": "A_graph_cvae",
+      "attempts": 1728,
+      "useful": 1070,
+      "yield_per_attempt": 0.6192129629629629
+    },
+    {
+      "teacher": "uma",
+      "method": "B_spatial_ar",
+      "attempts": 1728,
+      "useful": 1080,
+      "yield_per_attempt": 0.625
+    },
+    {
+      "teacher": "uma",
+      "method": "C_dense_cvae",
+      "attempts": 1728,
+      "useful": 544,
+      "yield_per_attempt": 0.3148148148148148
+    },
+    {
+      "teacher": "uma",
+      "method": "mutation",
+      "attempts": 1728,
+      "useful": 974,
+      "yield_per_attempt": 0.5636574074074074
+    },
+    {
+      "teacher": "uma",
+      "method": "uniform",
+      "attempts": 1728,
+      "useful": 576,
+      "yield_per_attempt": 0.3333333333333333
+    },
+    {
+      "teacher": "mace",
+      "method": "A_graph_cvae",
+      "attempts": 1728,
+      "useful": 1097,
+      "yield_per_attempt": 0.6348379629629629
+    },
+    {
+      "teacher": "mace",
+      "method": "B_spatial_ar",
+      "attempts": 1728,
+      "useful": 1106,
+      "yield_per_attempt": 0.6400462962962963
+    },
+    {
+      "teacher": "mace",
+      "method": "C_dense_cvae",
+      "attempts": 1728,
+      "useful": 541,
+      "yield_per_attempt": 0.3130787037037037
+    },
+    {
+      "teacher": "mace",
+      "method": "mutation",
+      "attempts": 1728,
+      "useful": 972,
+      "yield_per_attempt": 0.5625
+    },
+    {
+      "teacher": "mace",
+      "method": "uniform",
+      "attempts": 1728,
+      "useful": 576,
+      "yield_per_attempt": 0.3333333333333333
+    }
+  ],
+  "source_metrics_sha256": "38d6919e6e67b844677b1b85875e0dbc30b67a09398f3875d40e7daa10a457fe",
+  "scientific_rule": "Equal64budgets in all9composition/bin cells and3fits make count-ratio equal reported macro average; no proposal-level independence assumed."
+}

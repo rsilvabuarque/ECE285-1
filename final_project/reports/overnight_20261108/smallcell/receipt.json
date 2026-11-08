@@ -1,0 +1,254 @@
+{
+  "status": "COMPLETE_EXACT_RAW_STATIC_REFERENCE",
+  "parent": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz",
+    "sha256": "3f2cb6acd3fa6c07d22109cce01f9e1e44aa815953f9e7b8f7c8de336999b4ce"
+  },
+  "prepared_protocol_sha256": "c67223126ab4108e375b7c83b23d96218b1bdae7a3167da65f4e1b31805f6333",
+  "source_sha256": "8faeb042e506937baa265c2ca2bddb4b17b6b25752a3527ae7c33ec79377e5f2",
+  "teachers": [
+    {
+      "model": "uma",
+      "labels": 1376,
+      "context": [
+        "UMA-S-1.2.1",
+        "omat",
+        "2.25.0",
+        "float32",
+        false,
+        "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "{\"uma-s-1p2p1.pt\": \"b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce\"}"
+      ],
+      "sources": [
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00000.npz",
+          "sha256": "b755ae12cfefb837de5f76be11499d928de4fe04c50d264d32f771c39ffce79e"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00064.npz",
+          "sha256": "556d696612071e0296c045ff62d1379339bffec01d5c66b430bf2a49547fef74"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00128.npz",
+          "sha256": "b14020c813155856aa0f57f0ad2ce259372f1f21d9b82c459b005b84718579f8"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00192.npz",
+          "sha256": "a63ec603ee1197d985e850918a7f81c06602c5ca828057102cd972a8ce01b725"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00256.npz",
+          "sha256": "40c20f90f937453aa0721437c570c2d1a15ff2cadcd26d6eaffc4f81223b45a8"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00320.npz",
+          "sha256": "da7bc9c2bd996d050fd77faf099edfc63736f66da3b8b22fcc3d78a345da73cf"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00384.npz",
+          "sha256": "c8a000f19dadc47667ffa7927cd12296cb5cec9705925f284e4ad1a01caec914"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00448.npz",
+          "sha256": "0588523dc97fbe82fff8b44593a8b8e79c5acc93ea8b392b482e50f83d3a014c"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00512.npz",
+          "sha256": "a159ff46c006ce5241c447d0e75a78c65d337427e2f1a336372cb459a27fc5e7"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00576.npz",
+          "sha256": "6a0b352f62501c1c4ccdebde650e7c55dc44b0acc140fdc5c351ed0d1e68d446"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00640.npz",
+          "sha256": "5c1da5f1f143878fe4b68419d41daba73e1b7d833867d9328a43c2d22ec7a532"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00704.npz",
+          "sha256": "75d2bb88c8f6953270306085bc1ab75f79e581eaf8c1dd2a5efd4165fd543034"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00768.npz",
+          "sha256": "40a0d42af521b659bca90f3bf72cd7c99a0e35d13880eb96eccd73a3d104fd08"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00832.npz",
+          "sha256": "7e31c6e4dbc79315684e5b4ca141bf2cfbfad5d7ff20eff59d693ea6901f81f4"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00896.npz",
+          "sha256": "1e8202946979f116de40bdb1903f8fdcf3bbc6f6b08741ff70759891cb9eb374"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_00960.npz",
+          "sha256": "2c7e80a9bde6c6e0de983ff6ff46cb0e6345c5fb249e949b0aeeebb708b27dc6"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01024.npz",
+          "sha256": "1cd07b1f3d5614b1d310c98eacd153e60d17e92d2f81f3ed4b1ffe78cf401e05"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01088.npz",
+          "sha256": "940795d8577058b9eb9a6c096c6c94a6e3b06b0b6b6072293b357e07e6eccbd3"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01152.npz",
+          "sha256": "e84f140a878720704f473c60ef0c5dd687734f9ca35594ab4fe15966d062c10f"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01216.npz",
+          "sha256": "89b7d5b26b6f80173349031f01ff5c12154c0ff4a18c1c65a3b5b187b85fe3e0"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01280.npz",
+          "sha256": "31d7d11b8ea7a6a4245a9642b64c8ba328bfb7bedd3fd193613fa0ba4d9e2d06"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/uma_0/chunk_01344.npz",
+          "sha256": "c7d1c8be1108b67dcc9ea3e6c3ed0af287bdb67bc12b5b76d21a522217ace789"
+        }
+      ]
+    },
+    {
+      "model": "mace",
+      "labels": 1376,
+      "context": [
+        "MACE-MH-1",
+        "omat_pbe",
+        "0.3.16",
+        "float32",
+        false,
+        "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+        "{\"mace-mh-1.model\": \"a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47\"}"
+      ],
+      "sources": [
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00000.npz",
+          "sha256": "36e66e5bc95482b3c1cbb64c21bafcc978d28f23f26d2cbcc906025a1a7d930a"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00064.npz",
+          "sha256": "da03887404a75c87e7595e90c2c9e3c442597aa11a24c627b853893136a03e05"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00128.npz",
+          "sha256": "ad6c9165d303f5758e924dee426cd492544a56628224d5a4b3c10f2a3e7214fa"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00192.npz",
+          "sha256": "bdab6ede23d48a3c523f2d64a458cad79083c37f53908c56f2d49e42c2974580"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00256.npz",
+          "sha256": "373288aa6b2f65f7d0da7508e9afee86233376adc762e3b1f8d95d81a3319077"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00320.npz",
+          "sha256": "e796ece4bc1dc1f77b802052ea9e4ba682b3c418805a4ce7dd8e2072c2d001f0"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00384.npz",
+          "sha256": "8b885c359a685caf12b821089dd66bef32675501a2df6cc965aef24373d4f5bb"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00448.npz",
+          "sha256": "c332c96e164e2b050491cdbb617776562eddb884b4b7900dcddb828b6905caa8"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00512.npz",
+          "sha256": "da857d4912eb254ea5d67e73373cc45af97dad462a5cfa65c8d287744ef18c7b"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00576.npz",
+          "sha256": "800c066e0d6a30e2d028a082f69e285e1adb121263cd0602d8bc56a45c54cc2d"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00640.npz",
+          "sha256": "055f392db83ade9d3c74684eb46b37d7d8fe9b1b67c391800ce88c42fe299339"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00704.npz",
+          "sha256": "4bcf05cc499ebd6cd2e027e30e5cbdcd5e5255b3299a67367f14b047c685f55c"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00768.npz",
+          "sha256": "edd719720611f3e6beb63464d7424c797c80726ea0d624165f3931f817d9ebc7"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00832.npz",
+          "sha256": "eb21905064d08884f4db2b2e9a1fa4b3d7610d8768296fd504434b0dfdb4db01"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00896.npz",
+          "sha256": "db1aabd6aa22ab98832ec2b024f6c65238eee6b7eda0d6580923c49e97c405ae"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_00960.npz",
+          "sha256": "5131c9f840b182806f9fe09ce60013d2ccc6c0d6a8058631daf9bda05191410e"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01024.npz",
+          "sha256": "ba41728dd0a70af9fd3c3e7acb2d60dbc8f806588de8bc0d377547e6acdda8ba"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01088.npz",
+          "sha256": "e739342c622fcfa337bc4d1f4d2c72240bbf895e837cd04f1ab44e31b1ed0a3c"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01152.npz",
+          "sha256": "8db30b2fd1772d1254addf3eb10200bc24041f38c63e360038dc81becb8661dd"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01216.npz",
+          "sha256": "996eb5d7657968216d3e571403af5466a41d4e42aa61512cdfdb6f4792b6d332"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01280.npz",
+          "sha256": "64386bb59019c02a9d053ba9c7c5d2fa4471ef562ba7eac8e6f5282188680df9"
+        },
+        {
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/smallcell/mace_0/chunk_01344.npz",
+          "sha256": "7274126697d6db91ec8c080769ebd37832a0143ab8d112e4e1a69049b42ef197"
+        }
+      ]
+    }
+  ],
+  "primary_physical_EFS_labels": 2728,
+  "additional_repeat_EFS_labels": 24,
+  "pool_seeds": [
+    20261108,
+    20261109,
+    20261110,
+    20261111,
+    20261112
+  ],
+  "pool_sizes": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "temperatures_K": [
+    393.15,
+    433.15,
+    473.15,
+    493.15
+  ],
+  "outputs": {
+    "thermodynamics.csv": "e45f6472d64b6ef4bda4b8cca4fc4d345646a3b6bfca79108fc3db0c8c0992bd",
+    "raw_probabilities.npz": "dda83e37134f2c9d5f89a26a9a54726f797f0bec45edbd1c4ed5fa3e44471d2b",
+    "sampled_pools.csv": "14188a2fe0d62e77d8fe5e50cb89f11a122c30dd40efbd0555644f16a276f87b",
+    "sampled_pool_entropy.pdf": "9ad63a86fddcc9f6f12635f57f4e0520f011891deae7ffda0c42009da5182844",
+    "thresholds.csv": "ecca3571a402c3b7a90c597233528372da2c865af62e3319bdd88b9f8f3dec2d",
+    "orbit_spreads.csv": "976b81ba008674143053f508e60428ee6d21acb7133f2041340fe45e87a2256d",
+    "orbit_probabilities.csv": "396ceaee07e6b73676d780ddc111c0446fa9d70e50b148d5a56c1cb35aa58b02",
+    "teacher_comparison.csv": "74e942fd8d37a7c1a060048bcd394e328e93afaf99b38e7ebeb0b0abc9fed1cb",
+    "raw_energies.csv": "7f2206737cf5e11fa93457e80b002157a60f732b10a0ed137f9d085f6e9cbfba",
+    "finite_entropy.pdf": "9851c76731e810fbf6e6246197a0c7a0914dbf4c4bd03a4f182d503a075a61c5",
+    "repeatability.csv": "9634874fc8d1df96ea087110c96d4c4ff5589b294288660ad8cc2d1d6d4ee8fb"
+  },
+  "limits": "Exact finite literal-parent, fixed-geometry MLIP ensemble at each count. Not real LCO entropy, a relaxed ensemble, DFT validation or 48-to12-site transfer. IID pool errors are descriptive five-seed estimator checks."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_INITIAL_DEVELOPMENT_SELECTION",
+  "created_UTC": "2026-11-08T12:54:41.971382+00:00",
+  "evidence": {
+    "receipt_sha256": "b5d828445a39bd42a35d36a706e39cdaba62cc76405860ca52238b2bba315e98",
+    "metrics_sha256": "38d6919e6e67b844677b1b85875e0dbc30b67a09398f3875d40e7daa10a457fe"
+  },
+  "best_genuine_cvae": "A_graph_cvae",
+  "strongest_simple_architecture": "B_spatial_ar",
+  "decision": "A retained genuineCVAE; B matchesAwhileCactiveposterior hasnear-uniform priorutility. No usefullatentadvantageestablished. UseBforfixednonphysicalassociationcontrol.",
+  "next_single_factor_screens": [
+    "Aremaining",
+    "Bremaining",
+    "Aradial_shells",
+    "Bradial_shells",
+    "Abeta0p03"
+  ],
+  "D_replicates": 3,
+  "adaptive_optional": "Deferred until requiredscreen/pairedworkflowsecure"
+}

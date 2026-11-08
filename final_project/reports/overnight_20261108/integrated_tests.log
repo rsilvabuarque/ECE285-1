@@ -1,0 +1,8 @@
+...................................................                      [100%]
+=============================== warnings summary ===============================
+tests/test_paired_variants.py::test_control_comparison_keeps_tightening_and_mace_sp_distinct
+  /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/scripts/overnight_20261108/paired_compare_controls.py:98: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+    spearman=finite(spearmanr(a,b).statistic) if len(good)>1 else None,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+51 passed, 1 warning in 30.36s
