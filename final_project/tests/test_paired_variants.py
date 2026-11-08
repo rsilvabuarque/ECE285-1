@@ -14,6 +14,7 @@ import paired_variants as variants
 import paired_variant_worker as variant_worker
 import paired_export_endpoints as export
 import paired_worker as worker
+import paired_compare_controls as compare
 from test_paired_relaxation import parent,Harmonic
 
 
@@ -75,3 +76,53 @@ def test_endpoint_npz_export_retains_every_coordinate_bit_for_portable_mlip_inpu
     assert len(loaded)==2
     for identity,atoms,source in loaded:
         assert np.array_equal(atoms.positions,expected[identity])
+
+
+def test_control_comparison_keeps_tightening_and_mace_sp_distinct(tmp_path):
+    from cathode_cvae.data import deletion_atoms
+    from cathode_cvae.conditions import fit_schema,save_schema
+    prepared=prepared_fixture(tmp_path)
+    context=json.loads((prepared/"context.json").read_text())
+    cohort=common.load_npz(prepared/"cohort.npz")
+    tasks=json.loads((prepared/"tasks_all.json").read_text())["tasks"]
+    variant_dir=tmp_path/"variants"
+    variants.prepare_variants(SimpleNamespace(prepared=prepared,output_dir=variant_dir,tight_per_count=2,mace_per_count=1))
+    primary=tmp_path/"primary";controls=tmp_path/"controls"
+    for queue in [primary,controls]:(queue/"results").mkdir(parents=True)
+    for row in cohort["pilot_indices"]:
+        task=tasks[int(row)];atoms,_=deletion_atoms(parent(),cohort["occupancy"][row])
+        target=atoms.positions.copy();target[-1,0]+=.1
+        worker.run_attempt(Harmonic(target),parent(),task,context,primary/"results"/task["task_id"])
+    for name in ["tight_0p01","mace_independent"]:
+        _,vcontext,vtasks=variant_worker.verify_variant(prepared,variant_dir/name)
+        for task in vtasks:
+            atoms,_=deletion_atoms(parent(),cohort["occupancy"][task["input_row"]])
+            target=atoms.positions.copy();target[-1,0]+=.15 if name=="mace_independent" else .1
+            worker.run_attempt(Harmonic(target),parent(),task,vcontext,controls/"results"/task["task_id"])
+    exported=tmp_path/"export"
+    export.export(SimpleNamespace(prepared=prepared,queue=primary,output_dir=exported,per_count=2))
+    manifest=json.loads((exported/"manifest.json").read_text())
+    data=common.load_npz(exported/"endpoints.npz")
+    mace=tmp_path/"mace_sp";mace.mkdir()
+    model=json.loads((variant_dir/"mace_independent/context.json").read_text())["teacher"]
+    common.atomic_json(mace/"model_receipt.json",dict(model,ase="3.26.0"))
+    energies=[];forces=[]
+    for i,record in enumerate(manifest["records"]):
+        slots=common.load_npz(primary/"results"/record["primary_task_id"]/"arrays.npz")["parent_indices"]
+        target=parent()["positions_A"][slots].copy();target[-1,0]+=.15
+        lo,hi=data["offsets"][i:i+2];delta=data["positions"][lo:hi]-target
+        energies.append(.5*np.sum(delta**2));forces.append(-delta)
+    common.atomic_npz(mace/"predictions.npz",**{k:data[k] for k in ["structure_ids","offsets","numbers","positions","cell"]},
+        energy_eV=np.array(energies),n_atoms=np.diff(data["offsets"]),forces_eV_A=np.concatenate(forces))
+    (mace/"results.jsonl").write_text("".join(json.dumps(dict(structure_id=s,status="success"))+"\n" for s in data["structure_ids"]))
+    schema=fit_schema([2]*5,[0.,.1,.2,.3,.4],["train"]*5,n_sites=4,
+        provenance=dict(endpoint_context_hash=context["context_hash"]))
+    schema_path=tmp_path/"schema.json";save_schema(schema,schema_path)
+    result=compare.main(["--prepared",str(prepared),"--primary-queue",str(primary),"--variants",str(variant_dir),
+        "--variant-queue",str(controls),"--endpoint-schema",str(schema_path),"--mace-sp-directory",str(mace),
+        "--mace-sp-manifest",str(exported/"manifest.json"),"--output-dir",str(tmp_path/"comparison")])
+    assert result["status"]=="PASS_COMPLETE" and result["controls"]==3
+    import csv
+    with (tmp_path/"comparison/mace_endpoint_checks.csv").open() as stream:rows=list(csv.DictReader(stream))
+    independent=[r for r in rows if r["mace_independent_energy_eV_atom"]]
+    assert len(independent)==1 and float(independent[0]["mace_relax_gain_from_uma_meV_atom"])<0

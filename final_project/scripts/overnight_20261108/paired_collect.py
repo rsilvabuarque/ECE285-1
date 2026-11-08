@@ -171,7 +171,7 @@ def collect(args):
                     support.append(dict(target=target, n_target=n, split=split, independent_masks=int(mask.sum()),
                         **{name:int(np.sum(mask & (bins == name))) for name in ["low", "middle", "high"]}))
     write_csv(args.output_dir / "development_class_support.csv", support)
-    gate = bool(support) and all(r["low"] >= args.minimum_low_support for r in support)
+    gate = not missing and bool(support) and all(r["low"] >= args.minimum_low_support for r in support)
     gate = gate and all(r[name] > 0 for r in support if r["split"] == "train" for name in ["low", "middle", "high"])
     if args.unseal_test and test_labels:
         atomic_json(args.output_dir / "final_test_labels.json", test_labels)

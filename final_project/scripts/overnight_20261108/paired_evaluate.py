@@ -43,6 +43,18 @@ def evaluate(args):
     for path in [args.deletion_schema, args.endpoint_schema, args.history]:
         if sha256(path) not in frozen_inputs:
             raise ValueError("Threshold/history input was not frozen before endpoint scoring: " + str(path))
+    original_thresholds = {}
+    original_path = getattr(args, "original_thresholds", None)
+    if original_path is not None:
+        if sha256(original_path) not in frozen_inputs:
+            raise ValueError("Original fixed-q20 thresholds were not frozen before scoring")
+        with original_path.open(newline="") as stream:
+            for row in csv.DictReader(stream):
+                if row["teacher"] == "uma" and row["source"] == "main_train":
+                    n = int(row["n_Li"])
+                    if n in original_thresholds:
+                        raise ValueError("Ambiguous original fixed-q20 composition threshold")
+                    original_thresholds[n] = float(row["q20_eV_atom"])
     for target, schema in schemas.items():
         provenance = schema["provenance"]
         if provenance.get("endpoint_context_hash") != context["context_hash"]:
@@ -120,6 +132,8 @@ def evaluate(args):
         for target in schemas:
             r["paired_" + target + "_bin"] = info.get(target + "_bin", "unknown")
             r["paired_" + target + "_energy_eV_atom"] = info.get(target + "_energy_eV_atom")
+        e0 = info.get("deletion_energy_eV_atom")
+        r["paired_original_q20_deletion_low"] = bool(e0 is not None and n in original_thresholds and e0 <= original_thresholds[n])
         outcomes.append(r)
     rows_csv(args.output_dir / "attempt_outcomes.csv", outcomes)
     grouped = defaultdict(list)
@@ -132,6 +146,15 @@ def evaluate(args):
         row = dict(method=method, replicate=replicate, n_target=n, requested_bin=requested,
             attempts=denominator, distinct_initial_orbits=len({r["paired_initial_key"] for r in rr if r["paired_valid"]}),
             novel_initial_orbits=len({r["paired_initial_key"] for r in rr if r["paired_novel"]}))
+        if original_path is not None and requested == "low":
+            if n not in original_thresholds:
+                raise ValueError("Original fixed-q20 threshold unavailable for requested composition")
+            old_low = {r["paired_initial_key"] for r in rr if r["paired_novel"] and r["paired_original_q20_deletion_low"]}
+            row["original_q20_deletion_useful_orbits"] = len(old_low)
+            row["original_q20_deletion_useful_yield"] = len(old_low) / denominator
+        else:
+            row["original_q20_deletion_useful_orbits"] = None
+            row["original_q20_deletion_useful_yield"] = None
         for target in schemas:
             useful = {r["paired_initial_key"] for r in rr if r["paired_novel"] and r["paired_" + target + "_bin"] == requested}
             energies = [r["paired_" + target + "_energy_eV_atom"] for r in rr if r["paired_" + target + "_energy_eV_atom"] is not None]
@@ -149,15 +172,25 @@ def evaluate(args):
         cells.append(row)
     rows_csv(args.output_dir / "cells.csv", cells)
     rows_csv(args.output_dir / "confusion.csv", confusion)
-    summaries = []
+    summaries, fit_summaries = [], []
     for method in sorted({r["method"] for r in cells}):
         rr = [r for r in cells if r["method"] == method]
         for target in schemas:
+            fit_means = []
+            for replicate in sorted({r["replicate"] for r in rr}):
+                ff = [r for r in rr if r["replicate"] == replicate]
+                value = float(np.mean([r[target + "_useful_yield"] for r in ff]))
+                fit_means.append(value)
+                fit_summaries.append(dict(method=method, replicate=replicate, target=target,
+                    equal_weight_count_request_yield=value, cells=len(ff), attempts=sum(r["attempts"] for r in ff)))
             summaries.append(dict(method=method, target=target, equal_weight_cell_mean_yield=float(np.mean([r[target + "_useful_yield"] for r in rr])),
                 cells=len(rr), attempts=sum(r["attempts"] for r in rr),
+                replicates=len(fit_means), mean_replicate_macro_yield=float(np.mean(fit_means)),
+                std_replicate_macro_yield=float(np.std(fit_means, ddof=1)) if len(fit_means)>1 else None,
                 useful_distinct_per_cell_sum=sum(r[target + "_useful_novel_orbits"] for r in rr),
                 scope="Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count"))
     rows_csv(args.output_dir / "summary.csv", summaries)
+    rows_csv(args.output_dir / "fit_summary.csv", fit_summaries)
     report = dict(status="PASS_COMPLETE" if not missing else "INCOMPLETE_LABELS_OR_SEALED_TEST",
         evaluated_UTC=datetime.now(timezone.utc).isoformat(), attempts=len(attempts),
         registered_unique_physical_candidates=len(by_key), missing_or_sealed_tasks=sorted(missing),
@@ -166,11 +199,14 @@ def evaluate(args):
         all_attempts_retained=True, thresholds="Separate frozen TRAIN-only deletion and converged-endpoint schemas",
         novelty_history_sha256=sha256(args.history), test_energy_unsealed=args.unseal_test,
         source_inputs={str(path):sha256(path) for path in [args.attempts, args.deletion_schema, args.endpoint_schema,
-            args.history, args.registration / "registration.json"]}, source_results=source_records,
+            args.history, args.registration / "registration.json"] + ([original_path] if original_path is not None else [])}, source_results=source_records,
         EF_attempts_unique_physical_tasks=sum(v.get("EF_attempts", 0) for v in results.values()),
         newly_claimed_endpoint_tasks=sum(v.get("new_endpoint_task", False) for v in results.values()),
         cached_preexisting_compatible_tasks=sum(v.get("preexisting_compatible_endpoint", False) for v in results.values()),
         source_sha256=sha256(__file__), no_new_DFT=True,
+        mean_energy_scope="Available deletion labels and converged compatible endpoints only; unknown outcomes remain in every yield denominator",
+        original_fixed_q20_scope="Initial deletion energies only; never applied to shifted endpoint energies" if original_path is not None else "OMITTED; supply --original-thresholds for the required legacy LOW metric",
+        request_vs_assessment_schema="Generator requests retain their own recorded schema. Paired-calibration deletion/endpoint schemas define separate assessment classes; the original fixed-q20 metric is separately named.",
         limitation="Distinct initial or endpoint occupation orbits are not certified distinct PES minima; failures remain in attempt denominators")
     atomic_json(args.output_dir / "receipt.json", report)
     if missing and not args.allow_incomplete:
@@ -187,6 +223,7 @@ def main(argv=None):
     p.add_argument("--attempts", type=Path, required=True)
     p.add_argument("--deletion-schema", type=Path, required=True)
     p.add_argument("--endpoint-schema", type=Path, required=True)
+    p.add_argument("--original-thresholds", type=Path, help="Legacy generation_thresholds.csv; UMA main_train q20 applied only to deletion energies")
     p.add_argument("--history", type=Path, required=True)
     p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--allow-incomplete", action="store_true")

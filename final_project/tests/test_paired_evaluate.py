@@ -48,9 +48,11 @@ def test_duplicates_known_masks_and_failed_attempts_stay_in_endpoint_denominator
             provenance=dict(endpoint_context_hash=context["context_hash"],energy_target=target))
         path=tmp_path/(target+".json");save_schema(schema,path);schema_paths.append(path)
     registered=tmp_path/"registered"
+    original=tmp_path/"original_q20.csv"
+    original.write_text("teacher,n_Li,source,q20_eV_atom\numa,2,main_train,-3.6\n")
     register.register(SimpleNamespace(prepared=prepared,pool=pool,attempts=attempts,label="synthetic",
         output_dir=registered,prior_task_files=[],reserved_other_protocol_attempts=0,maximum_primary_attempts=10,
-        analysis_inputs=[*schema_paths,final_history]))
+        analysis_inputs=[*schema_paths,final_history,original]))
     registration=json.loads((registered/"registration.json").read_text())
     tasks=json.loads((registered/"tasks.json").read_text())["tasks"]
     queue=tmp_path/"queue";(queue/"claims").mkdir(parents=True);(queue/"results").mkdir()
@@ -66,7 +68,7 @@ def test_duplicates_known_masks_and_failed_attempts_stay_in_endpoint_denominator
         common.atomic_json(queue/"claims"/(task["task_id"]+".json"),dict(claimed_unix=registration["frozen_unix"]+(1 if success else -1)))
     args=SimpleNamespace(prepared=prepared,registration=registered,queue=queue,attempts=attempts,
         deletion_schema=schema_paths[0],endpoint_schema=schema_paths[1],history=final_history,
-        output_dir=tmp_path/"evaluation",allow_incomplete=False,unseal_test=False)
+        output_dir=tmp_path/"evaluation",allow_incomplete=False,unseal_test=False,original_thresholds=original)
     receipt=evaluate.evaluate(args)
     assert receipt["status"]=="PASS_COMPLETE" and receipt["attempts"]==4
     assert receipt["unknown_endpoint_attempts"]==2
@@ -75,6 +77,9 @@ def test_duplicates_known_masks_and_failed_attempts_stay_in_endpoint_denominator
     assert int(cell["attempts"])==4 and int(cell["endpoint_useful_novel_orbits"])==1
     assert float(cell["endpoint_useful_yield"])==.25
     assert float(cell["deletion_useful_yield"])==.25
+    assert float(cell["original_q20_deletion_useful_yield"])==0
+    with (args.output_dir/"fit_summary.csv").open() as stream:fit_rows=list(csv.DictReader(stream))
+    assert len(fit_rows)==2 and all(float(r["equal_weight_count_request_yield"])==.25 for r in fit_rows)
     # Threshold changes after scoring never become a successful replay.
     final_history.write_text("[]")
     args.output_dir=tmp_path/"changed_history"
