@@ -111,10 +111,11 @@ def main(argv=None):
         verify_teacher_receipt(model,contexts["mace_independent"])
         with (args.mace_sp_directory/"results.jsonl").open() as stream:
             raw_sp=[json.loads(line) for line in stream if line.strip()]
-        expected_ids={r["structure_id"] for r in exported["records"] if r["exported"]}
-        if len(raw_sp)!=len(expected_ids) or {r["structure_id"] for r in raw_sp}!=expected_ids:
-            raise ValueError("MACE SP is not a complete prespecified attempt batch")
-        sp_failures=[r["structure_id"] for r in raw_sp if r["status"]!="success"]
+        expected_ids={r.get("scoring_structure_id",r["structure_id"]) for r in exported["records"] if r["exported"]}
+        recorded_ids={r["structure_id"] for r in raw_sp}
+        if len(raw_sp)!=len(recorded_ids) or not expected_ids<=recorded_ids:
+            raise ValueError("MACE SP does not cover this complete prespecified scope")
+        sp_failures=[r["structure_id"] for r in raw_sp if r["status"]!="success" and r["structure_id"] in expected_ids]
         with np.load(args.mace_sp_directory/"predictions.npz",allow_pickle=False) as z:
             ids=z["structure_ids"].astype(str);energies=z["energy_eV"];natoms=z["n_atoms"]
             offsets=z["offsets"];forces=z["forces_eV_A"];positions=z["positions"];numbers=z["numbers"];cells=z["cell"]
@@ -123,9 +124,10 @@ def main(argv=None):
         own={r["structure_id"]:r for r in rows if r["variant"]=="mace_independent"}
         for original in exported["records"]:
             sid=original["structure_id"]
-            if not original["exported"] or sid not in labels:
+            score_id=original.get("scoring_structure_id",sid)
+            if not original["exported"] or score_id not in labels:
                 sp_rows.append(dict(structure_id=sid,n_target=original["n_target"],status="unknown",mace_on_uma_energy_eV_atom=None,mace_on_uma_fmax_eV_A=None,mace_independent_energy_eV_atom=None,mace_relax_gain_from_uma_meV_atom=None));continue
-            i=labels[sid];lo,hi=offsets[i:i+2]
+            i=labels[score_id];lo,hi=offsets[i:i+2]
             if geometry_hash(numbers[lo:hi],positions[lo:hi],cells[i])!=original["literal_geometry_hash"]:
                 raise ValueError("MACE SP coordinates differ from exact UMA endpoint export")
             e=float(energies[i]/natoms[i]);independent=own.get(sid,{}).get("control_endpoint_energy_eV_atom")
