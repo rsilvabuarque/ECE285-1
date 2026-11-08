@@ -186,6 +186,9 @@ Observed force-component repeat ranges are about $2.2\times 10^{-6}$~eV/\AA,
 but these three-call ranges are not calibrated Hessian error bars. Independently
 reconstructing both Hessians from the raw force pairs reproduces all eigenvalues;
 all 2,160 displacement hashes and logged force maxima were checked.
+Unweighted force-derivative noise and mass-weighted eigenvalues have different
+units; their magnitudes are not directly compared. Displacement-size agreement
+and mode overlap are the actual numerical evidence.
 
 A negative curvature means displacement along that local mode lowers energy
 to second order when the gradient is small. It does not identify the basins
@@ -243,6 +246,37 @@ physical forces are 0.2567/0.2547 eV/\AA: these are not stationary MACE endpoint
 so the profile is not a MACE-optimized barrier. Independently tightening the same
 original pair under each teacher defines a separate new-endpoint experiment.
 \newpage
+
+\subsection{Endpoint sensitivity prevents an overall stable-barrier claim}
+Both original endpoints were independently tightened to $0.01$~eV/\AA\ under
+each teacher, retaining the marked Li assignments. UMA lowered their energies
+by 0.02151/0.000034~eV; MACE lowered them by 0.13892/0.10486~eV. Each new band kept
+seven interior images and used the $0.02$~eV/\AA\ target. Initial interiors were
+the original path plus a linear endpoint-displacement taper in its original
+Cartesian arclength, with no quiet image resampling or new IDPP.
+
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+New endpoints&Forward span&Reverse span&End minus start&Peak image\\
+&eV&eV&eV&\\\midrule
+UMA&0.195626&0.177294&$+0.01833$&5\\
+MACE&0.199585&0.251953&$-0.05237$&3\\\bottomrule
+\end{tabular}
+\end{center}
+The original fixed-seven-image $0.01$ case gave 0.169182~eV forward, while the
+new UMA-endpoint band gives 0.195626~eV: a $+0.026444$~eV change, exceeding the
+chosen 0.02~eV practical numerical target. Both endpoint coordinates and the band
+force target differ in this comparison; it measures combined protocol
+sensitivity, not an isolated endpoint-error contribution. The restricted
+fixed-original image/tolerance comparison passed, but \emph{overall barrier
+stability is not established}. A small force residual alone supplies no energy
+error bound without information about local curvature.
+
+The similar UMA/MACE forward heights are also insufficient: the reaction-energy
+sign and highest-image identity differ, and the original marked path has not
+been verified as one elementary hop. These are MLIP potential-energy path spans,
+not validated activation free energies. No additional physics is run after this
+bounded study; later DFT and fuller basin/connection verification remain necessary.
 
 \section{Actual 537-mode harmonic null for the thermal estimator}
 The earlier thermal work had a 21-mode synthetic check. The new check uses the

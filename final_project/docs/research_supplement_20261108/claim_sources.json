@@ -6,7 +6,10 @@
     "No verifiedsingleelementaryoriginalhopconnection",
     "SameRAWassignmentdifferentcontinuousstates",
     "RankedOdistancesnovalidatedbondcutoff",
-    "MACEfixedpathnotMACEoptimizedbarrier"
+    "MACEfixedpathnotMACEoptimizedbarrier",
+    "Combinedendpoint/bandtargetforwardchange+.026444eVexceedschosen.02eVnumericaltarget",
+    "Overallbarrierstabilitynotestablished",
+    "All20627acceptedresearchframesplus2160actualFDinputgeometriesfrozenwithoutlabelsexported"
   ],
   "sources": {
     "candidate_readonly_review": {
@@ -52,6 +55,30 @@
     "harmonic27": {
       "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_null_recovery/receipt.json",
       "sha256": "cdbd126aa04bb79c16bba6f4372655343a4f8b904fda2adcc8e3d0c228290fdd"
+    },
+    "UMA_new_endpoint_band": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/uma_7/receipt.json",
+      "sha256": "3e8afaf28c2d2cd68b4f736e98a25f7f66e9a5be39c5b6027b43dfb53e394cef"
+    },
+    "MACE_new_endpoint_band": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/neb_new_endpoints/mace_7/receipt.json",
+      "sha256": "647706844aa531f9d060b64720c2b3e8bf1b391c4854c85fc632a18ab7d36402"
+    },
+    "UMA_endpoint_tightening": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/uma/receipt.json",
+      "sha256": "1c245806cf48a98a29a25adf4f7bc0329fa0e473398b433ef53dee2bfaa072c3"
+    },
+    "MACE_endpoint_tightening": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/endpoint_tightening/mace/receipt.json",
+      "sha256": "76e989ba6b71b9507acd56483dba191e588506a639769f7c8e8c1cac554dd847"
+    },
+    "physical_final_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/physical_final_summary_v2/receipt.json",
+      "sha256": "22d9c3d4252605aa6912fcacf71761fbed166cbc22b5afdc7a0bd9f92eb36761"
+    },
+    "all_saved_research_exposures": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/research_exposure_snapshots/receipt.json",
+      "sha256": "5b22a14702e0d8afe12a8e5e4a067df0b2570c37dbd0626add6edb2605b0c1b1"
     }
   },
   "new_MLIP_calls_in_readonly_review": 0,
