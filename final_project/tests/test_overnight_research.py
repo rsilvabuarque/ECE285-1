@@ -167,3 +167,22 @@ def test_saddle_repeat_noise_units_and_identical_call_count():
     assert noise['actual_identical_geometry_EFS_calls']==3
     assert noise['diagnostic_component_curvature_noise_scale_eV_A2']==pytest.approx(2e-4)
     assert noise['max_abs_component_pair_difference_eV_A']==pytest.approx(4e-6)
+
+
+def test_endpoint_taper_keeps_route_nodes_and_exact_new_endpoints():
+    m=script('research_endpoint_tightening');xyz=np.zeros((3,2,3));xyz[:,0,0]=[0.,.5,2.]
+    data=dict(positions_A=xyz,numbers=np.array([3,27]),cell_A=np.eye(3)*8,pbc=np.ones(3,bool))
+    first=m.atoms_from(data,xyz[0]);last=m.atoms_from(data,xyz[-1]);first.positions[:,1]+=.1;last.positions[:,1]+=.3
+    images,s=m.tapered_band(data,first,last)
+    np.testing.assert_array_equal(images[0].positions,first.positions);np.testing.assert_array_equal(images[-1].positions,last.positions)
+    assert s[1]==pytest.approx(.25)
+    np.testing.assert_allclose(images[1].positions,xyz[1]+np.array([0.,.15,0.]))
+    assert len(images)==len(xyz)
+    assert all(np.array_equal(im.numbers,data['numbers']) for im in images)
+
+
+def test_zero_endpoint_displacements_leave_every_old_route_image_exact():
+    m=script('research_endpoint_tightening');xyz=np.zeros((3,2,3));xyz[:,0,0]=[0.,.5,2.]
+    data=dict(positions_A=xyz,numbers=np.array([3,27]),cell_A=np.eye(3)*8,pbc=np.ones(3,bool))
+    images,_=m.tapered_band(data,m.atoms_from(data,xyz[0]),m.atoms_from(data,xyz[-1]))
+    np.testing.assert_array_equal(np.asarray([im.positions for im in images]),xyz)

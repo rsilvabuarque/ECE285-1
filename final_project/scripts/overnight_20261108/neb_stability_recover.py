@@ -75,7 +75,7 @@ def main():
             initialization='Exact saved coordinates from externally interrupted route; NO arclength resampling; FIRE memory reset')
         return result
     driver.prepare_band=exact_restore;driver.request_binding=bind;driver.PROCESS_START=PROCESS_START
-    argv=['--root-protocol',old['root_protocol']['path'],'--band',facts['snapshot']['path'],
+    argv=['--root-protocol',old['root_protocol']['path'],'--band',facts['snapshot']['path'],'--model',old.get('model','uma'),
         '--parent',old['parent']['path'],'--checkpoint',old['checkpoint']['path'],'--event',old['event'],'--route',old['route']+'_interrupted_continuation',
         '--output',str(args.output),'--interior',str(old['interior_images']),'--fmax',str(old['target_projected_Fmax_eV_A']),
         '--initialization','retain_coordinates',

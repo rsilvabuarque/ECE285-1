@@ -56,7 +56,7 @@ def request_binding(args, images, endpoint_hashes):
         checkpoint=dict(path=str(args.checkpoint.resolve()), sha256=digest(args.checkpoint)),
         source_sha256=digest(__file__), helpers={name:digest(Path(__file__).resolve().parents[1]/'conditioning_20261107'/name)
             for name in ['neb_common.py', 'neb_run.py']},
-        event=args.event, route=args.route, model='uma', interior_images=args.interior,
+        event=args.event, route=args.route, model=args.model, interior_images=args.interior,
         endpoint_geometry_sha256=endpoint_hashes,
         target_projected_Fmax_eV_A=args.fmax, maximum_total_optimizer_steps=args.steps,
         maximum_seconds_including_imports_loading=args.max_seconds, maximum_EFS_calls=args.max_calls,
@@ -79,6 +79,7 @@ def main(argv=None):
     p.add_argument('--root-protocol',required=True,type=Path);p.add_argument('--band',required=True,type=Path)
     p.add_argument('--parent',required=True,type=Path);p.add_argument('--checkpoint',required=True,type=Path)
     p.add_argument('--event',required=True);p.add_argument('--route',required=True);p.add_argument('--output',required=True,type=Path)
+    p.add_argument('--model',choices=['uma','mace'],default='uma')
     p.add_argument('--interior',type=int,default=7);p.add_argument('--fmax',type=float,default=0.02)
     p.add_argument('--initialization',choices=['retain_coordinates','equal_arclength'],default='equal_arclength')
     p.add_argument('--steps',type=int,default=500);p.add_argument('--max-seconds',type=float,default=2700)
@@ -105,7 +106,7 @@ def main(argv=None):
         ledger.check()
         from cathode_cvae.mlip.calculators import make_calculator
         print('MODEL_LOADING',flush=True)
-        inner,teacher=make_calculator('uma',args.checkpoint,args.device,args.threads)
+        inner,teacher=make_calculator(args.model,args.checkpoint,args.device,args.threads)
         result['teacher']=teacher;write_json(args.output/'teacher.json',teacher)
         print('MODEL_READY',flush=True);ledger.check()
         attach_calculators(images,inner,ledger,'fixed_route')
