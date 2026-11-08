@@ -22,6 +22,7 @@ def main():
         receipt=read_json(run/'receipt.json');binding=receipt['binding'];event=binding['event'];route=binding['route']
         final=run/'final_band.npz';path=final if final.exists() else run/'last_state.npz';data=load_npz(path)
         finite=bool(np.isfinite(data['energy_eV']).all());label=f"{event}/{route}, {binding['interior_images']} interior"
+        if not receipt['converged']:label+=' [not converged]'
         row=dict(event=event,route=route,interior_images=binding['interior_images'],target_eV_A=binding['target_projected_Fmax_eV_A'],
             status=receipt['status'],numerically_converged=receipt['converged'],steps=receipt.get('optimizer_steps',''),
             projected_Fmax_eV_A=receipt.get('projected_Fmax_eV_A',''),
@@ -33,7 +34,7 @@ def main():
         if finite:
             xyz=data['positions_A'];arc=np.r_[0,np.cumsum(np.linalg.norm(np.diff(xyz,axis=0).reshape(len(xyz)-1,-1),axis=1))]
             x=arc/arc[-1];ax=axes[0 if 'basin_1' in event else 1]
-            ax.plot(x,data['energy_eV']-data['energy_eV'][0],'-o',label=label)
+            ax.plot(x,data['energy_eV']-data['energy_eV'][0],'-o' if receipt['converged'] else '--o',label=label)
             bands[(event,route,binding['interior_images'])]=(data,binding,receipt)
     comparisons=[]
     keys=list(bands)
