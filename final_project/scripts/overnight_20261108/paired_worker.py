@@ -20,7 +20,7 @@ import numpy as np
 
 from paired_common import (AttemptWallLimit, atomic_json, atomic_npz, canonical,
     check_prepared, counted_calculator, geometry_hash, identity, load_npz,
-    mapping_diagnostics, occupancy_from_key, physical_key, publish_result, sha256)
+    mapping_diagnostics, occupancy_from_key, physical_key, publish_result, sha256, verify_teacher_receipt)
 
 
 def run_attempt(base, parent, task, context, output, *, synchronize=lambda: None):
@@ -182,12 +182,7 @@ def main(argv=None):
     import torch
     try:
         calculator, model_receipt = make_calculator("uma", checkpoint=args.checkpoint, device=args.device, threads=args.threads)
-        expected = context["teacher"]
-        for key in ["head", "package_version", "dtype", "tf32", "checkpoint_hashes"]:
-            if model_receipt[key] != expected[key]:
-                raise ValueError("Pinned teacher context mismatch: " + key)
-        if model_receipt["ase"] != context["optimizer"]["ase_version"]:
-            raise ValueError("ASE version differs from frozen optimizer")
+        verify_teacher_receipt(model_receipt, context)
     except BaseException as exc:
         base_receipt.update(status="load_or_context_error", error=f"{type(exc).__name__}: {exc}",
             elapsed_seconds_including_loading_idle=time.perf_counter() - began, finished_unix=time.time())

@@ -16,8 +16,8 @@ from pathlib import Path
 
 import numpy as np
 
-from paired_common import (atomic_json, atomic_npz, check_prepared, identity,
-    load_npz, mobile_indices, sha256)
+from paired_common import (atomic_json, atomic_npz, check_prepared, geometry_hash, identity,
+    load_npz, mobile_indices, sha256, verify_teacher_receipt)
 
 DELETION_PROTOCOL = "pristine-derived deletion; unrelaxed; exact canonical parent coordinates"
 ENDPOINT_PROTOCOL = "paired fixed-cell UMA FIRE endpoint; fmax<0.05 eV/A; maxstep0.15A; max500steps; wall120s; v1"
@@ -75,11 +75,7 @@ def collect(args):
             path = args.queue / "workers" / (worker_id + ".json")
             worker = json.loads(path.read_text())
             model = worker["model_receipt"]
-            for name in ["head", "package_version", "dtype", "tf32", "checkpoint_hashes"]:
-                if model[name] != context["teacher"][name]:
-                    raise ValueError("Executed teacher differs from frozen context: " + name)
-            if model["ase"] != context["optimizer"]["ase_version"]:
-                raise ValueError("Executed optimizer ASE version differs")
+            verify_teacher_receipt(model, context)
             worker_receipts[worker_id] = dict(path=str(path.absolute()), sha256=sha256(path), receipt=worker)
         model = worker_receipts[worker_id]["receipt"]["model_receipt"]
         if record.get("model_receipt_sha256", identity(model)) != identity(model):
@@ -109,6 +105,17 @@ def collect(args):
                 raise ValueError("Fixed-cell endpoint has different cell")
             if not np.array_equal(z["occupancy"], data["occupancy"][row]):
                 raise ValueError("Saved initial occupancy differs from frozen cohort")
+            slots = z["parent_indices"].astype(int)
+            if (not np.array_equal(z["numbers"], parent["numbers"][slots]) or
+                    not np.array_equal(z["initial_positions_A"], parent["positions_A"][slots])):
+                raise ValueError("Initial atomic species/coordinates differ from the parent deletion")
+            if geometry_hash(z["numbers"], z["initial_positions_A"], z["cell_A"]) != record["initial_geometry_hash"]:
+                raise ValueError("Initial literal geometry binding differs")
+            if geometry_hash(z["numbers"], z["endpoint_positions_A"], z["cell_A"]) != record["endpoint_literal_geometry_hash"]:
+                raise ValueError("Endpoint literal geometry binding differs")
+            measured_fmax = float(np.linalg.norm(z["endpoint_forces_eV_A"], axis=1).max())
+            if measured_fmax != record["endpoint_force_max_eV_A"]:
+                raise ValueError("Physical endpoint force does not match its scalar receipt")
             e0, e1 = float(z["initial_energy_eV"]), float(z["endpoint_energy_eV"])
             if not np.isfinite([e0, e1]).all() or e0 != record["initial_energy_eV"] or e1 != record["endpoint_energy_eV"]:
                 raise ValueError("Paired scalar receipt disagrees with coordinate arrays")

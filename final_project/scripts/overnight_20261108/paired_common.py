@@ -28,6 +28,36 @@ def identity(value):
                                      allow_nan=False).encode()).hexdigest()
 
 
+def normalized_checkpoint_hashes(hashes):
+    """Compare registry-relative and executed basename keys without weakening SHA.
+
+    Two path entries with the same basename are ambiguous even if their values
+    happen to agree, and are rejected. Only path spelling is normalized.
+    """
+    if not isinstance(hashes, dict) or not hashes:
+        raise ValueError("Checkpoint hash mapping must be nonempty")
+    result = {}
+    for name, value in hashes.items():
+        basename = Path(name).name
+        if not basename or basename in result:
+            raise ValueError("Ambiguous duplicate checkpoint basename")
+        if not isinstance(value, str) or len(value) != 64 or set(value.lower()) - set("0123456789abcdef"):
+            raise ValueError("Checkpoint identity requires a complete SHA256")
+        result[basename] = value
+    return result
+
+
+def verify_teacher_receipt(receipt, context):
+    expected = context["teacher"]
+    for name in ["head", "package_version", "dtype", "tf32"]:
+        if receipt[name] != expected[name]:
+            raise ValueError("Executed teacher differs from frozen context: " + name)
+    if normalized_checkpoint_hashes(receipt["checkpoint_hashes"]) != normalized_checkpoint_hashes(expected["checkpoint_hashes"]):
+        raise ValueError("Executed teacher differs from frozen checkpoint SHA256")
+    if receipt["ase"] != context["optimizer"]["ase_version"]:
+        raise ValueError("Executed optimizer ASE version differs")
+
+
 def atomic_json(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
