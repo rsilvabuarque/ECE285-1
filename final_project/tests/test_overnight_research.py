@@ -66,3 +66,33 @@ def test_route_resampling_keeps_exact_endpoints_atom_ids_and_unwrapped_branch():
 def test_collapsed_route_rejected():
     m=script('neb_stability_run');xyz=np.zeros((3,2,3))
     with pytest.raises(ValueError):m.prepare_band(dict(positions_A=xyz,numbers=np.array([3,27]),cell_A=np.eye(3)*8,pbc=np.ones(3,bool)),7)
+
+
+def test_literal_hu_raw_enumeration_orbit_multiplicities_and_stored_representatives():
+    m=script('smallcell_reference')
+    parent=m.load_npz(ROOT/'artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz')
+    x=m.enumerate_occupancies(12,[3,6,9]);keys=m.canonical_keys(x,parent['permutations'])
+    for n,orbits,raw in [(3,6,220),(6,17,924),(9,6,220)]:
+        selected=x.sum(1)==n
+        assert len(set(keys[selected]))==orbits
+        assert len(keys[selected])==raw
+        stored=parent['masks'][(1-parent['masks']).sum(1)==n]
+        assert len(stored)==orbits
+        assert set(m.canonical_keys(1-stored,parent['permutations']))==set(keys[selected])
+        for mask in stored:assert np.any(np.all(x==1-mask,axis=1))
+
+
+def test_sampled_partition_reduces_to_exact_when_all_raw_states_once():
+    m=script('smallcell_analyze');e=np.array([-500.,-499.98,-499.96,-499.9]);T=433.15
+    exact=m.reference.raw_thermodynamics(e,T);sample=m.sampled_pool(e,np.arange(4),T)
+    for key in ['mean_energy_eV','free_energy_eV','entropy_eV_K']:
+        assert sample[key]==pytest.approx(exact[key],rel=1e-9,abs=1e-12)
+
+
+def test_representative_entropy_exact_for_equal_orbit_energies_and_finite_when_underflow():
+    m=script('smallcell_analyze');keys=np.array(['a','a','b','b','b']);rep={'a':0,'b':2}
+    for energy in [np.array([0.,0.,.1,.1,.1]),np.array([0.,0.,100.,100.,100.])]:
+        r=m.orbit_statistics(energy,keys,rep,433.15)
+        assert r['representative_entropy_eV_K']==pytest.approx(r['exact']['entropy_eV_K'])
+        assert np.isfinite(r['representative_entropy_eV_K'])
+        assert r['orbit_mass_total_variation']==pytest.approx(0,abs=1e-15)
