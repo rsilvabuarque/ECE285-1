@@ -33,6 +33,16 @@ def read_keys(path):
     return set(map(str,value))
 
 
+def successful_score(status,provenance=None):
+    """Recognize collector-certified cached energies without changing values.
+
+    Exact geometry/teacher/precision certification belongs to the producing
+    collector. Its scalar rows carry both status='cached' and provenance='cached'.
+    A bare unknown status must not become a valid measured energy here.
+    """
+    return status in {"success","complete","converged","ok"} or (status=="cached" and provenance=="cached")
+
+
 def paired_tables(outcomes,raw):
     grouped=defaultdict(dict)
     for row in outcomes:
@@ -112,7 +122,8 @@ def main(argv=None):
         unscored=candidate_ids-set(lookup);failed=set()
         for sid in candidate_ids&set(lookup):
             i=lookup[sid];status=str(d["status"][i]) if "status" in d else "success"
-            if status in {"success","complete","converged","ok"}:
+            provenance=str(d["provenance"][i]) if "provenance" in d else None
+            if successful_score(status,provenance):
                 if not np.isfinite(d["energy_eV"][i]):unscored.add(sid)
             elif status in {"failed","nonconverged","collision","mapping_failed","time_cap"} or status.startswith("failed"):
                 failed.add(sid)
@@ -128,11 +139,12 @@ def main(argv=None):
                 if sid in lookup:
                     i=lookup[sid];atoms=int(d["n_atoms"][i]);total=float(d["energy_eV"][i])
                     status=str(d["status"][i]) if "status" in d else "success"
+                    provenance=str(d["provenance"][i]) if "provenance" in d else None
                     row["score_status"]=status
                     if atoms!=host_atoms+n:raise ValueError("Score and actual parent atom count disagree")
                     if "n_Li" in d and int(d["n_Li"][i])!=n:raise ValueError("Score target-ion count disagrees")
                     if sid in failed:row["measured_bin"]="score_failed"
-                    if status in {"success","complete","converged","ok"} and np.isfinite(total):
+                    if successful_score(status,provenance) and np.isfinite(total):
                         e=total/atoms;row.update(energy_known=True,energy_eV=total,energy_eV_atom=e,
                             measured_bin=str(classify(schema,np.asarray(n),np.asarray(e)).item()),
                             passes_fixed_q20=(teacher,n) in thresholds and e<=thresholds[teacher,n])
@@ -176,6 +188,7 @@ def main(argv=None):
         fixed_thresholds=None if a.fixed_thresholds is None else dict(path=str(a.fixed_thresholds.resolve()),sha256=sha256(a.fixed_thresholds),source=a.fixed_threshold_source),
         outputs={p.name:sha256(p) for p in a.output_dir.iterdir() if p.is_file()},new_MLIP_calls=0,new_training_updates=0,
         uncertainty="Descriptive fit/sampler replicate spread; proposal rows are not independent trained models",novelty_scope="Frozen history and supplied TRAIN mask orbits")
+    result['cached_score_policy']="status=cached is accepted only with provenance=cached; the producing collector certifies exact parent/geometry/teacher/precision before export"
     (a.output_dir/"receipt.json").write_text(json.dumps(result,indent=2)+"\n")
     if a.plots:plot(a.output_dir,metrics)
     print(json.dumps(dict(status=result["status"],primary_attempts=len(primary),summary=summary),indent=2))

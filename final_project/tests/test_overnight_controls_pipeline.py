@@ -116,3 +116,24 @@ def test_missing_prespecified_score_is_unknown_and_never_a_complete_replay(tmp_p
             "--score",f"synthetic={scores}","--schema",f"synthetic={schema}","--output-dir",str(result)])
     assert json.loads((result/"receipt.json").read_text())["status"]=="INCOMPLETE_COVERAGE"
     assert len(rows(result/"attempt_outcomes.csv"))==52
+
+
+@pytest.mark.parametrize('provenance,complete',[('cached',True),('unverified',False)])
+def test_collector_certified_cached_energies_are_measured_without_new_physics(tmp_path,provenance,complete):
+    parent,data,schema,history,_,out=invoke(tmp_path)
+    with np.load(out/'candidates.npz') as z:ids=z['structure_ids'].copy();atoms=z['n_atoms'].copy()
+    scores=tmp_path/'cached.npz'
+    np.savez(scores,structure_ids=ids,n_atoms=atoms,energy_eV=np.arange(len(ids))*4.,
+        status=np.full(len(ids),'cached'),provenance=np.full(len(ids),provenance))
+    result=tmp_path/'evaluated_cache'
+    args=['--generated',str(out),'--parent',str(parent),'--history',str(history),'--training-data',str(data),
+        '--score',f'synthetic={scores}','--schema',f'synthetic={schema}','--output-dir',str(result)]
+    if complete:
+        receipt=evaluate.main(args)
+        assert receipt['status']=='PASS' and receipt['missing_or_nonterminal_candidate_labels']=={'synthetic':0}
+        assert all(r['energy_known']=='True' and r['score_status']=='cached' for r in rows(result/'attempt_outcomes.csv'))
+    else:
+        with pytest.raises(SystemExit):evaluate.main(args)
+        assert json.loads((result/'receipt.json').read_text())['status']=='INCOMPLETE_COVERAGE'
+        assert all(r['energy_known']=='False' for r in rows(result/'attempt_outcomes.csv'))
+    assert json.loads((result/'receipt.json').read_text())['new_MLIP_calls']==0
