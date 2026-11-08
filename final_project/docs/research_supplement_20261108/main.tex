@@ -24,7 +24,7 @@ Those counts are exact for the retained permutation action, but the literal
 coordinate Hamiltonian need not be exactly invariant under it.
 
 Accordingly, every one of the 1,364 raw geometries was physically evaluated with
-both UMA-S-1.2.1/\texttt{omat} and MACE-MH-1/\texttt{omat\_pbe}, FP32/TF 32 off,
+both UMA-S-1.2.1/\texttt{omat} and MACE-MH-1/\texttt{omat\_pbe}, FP32/TF32 off,
 without relaxation. Two fixed masks per composition each received two additional
 evaluations: 1,376 calls per teacher, 2,752 total, 0 failures. An evaluation retains
 literal parent coordinates/species/cell and deletes the selected Li. A raw ID
@@ -164,39 +164,92 @@ Dashed profiles above are preserved terminal states of nonconverged event 1
 calculations. The horizontal coordinate is normalized full-$3N$ Cartesian
 arclength on the saved unwrapped branch, not a measured reaction time.
 
-\subsection{What a saddle check must establish}
-A retained event 2 seven-image band is being continued at fixed images to
-$0.01$~eV/\AA\ to isolate tolerance sensitivity. MACE energies \emph{and forces}
-on UMA coordinates remain fixed-path profiles; they are not MACE-optimized
-barriers. Endpoint tightening/independent MACE relaxation is a distinct study.
+\subsection{A stable local unstable mode does not verify the complete hop}
+The fixed-seven-image continuation reached the $0.01$~eV/\AA\ projected-force
+target in 82 steps, with forward/reverse spans 0.16918/0.17231 eV. The forward
+change from the 0.02 target is $-0.00784$~eV, within the declared numerical criterion.
+The candidate climbing image 5 has physical maximum force 0.00888 eV/\AA.
 
-The prepared, bounded saddle diagnostic uses one retained climbing image,
-three fresh identical-coordinate force calls for numerical repeatability and
-central finite differences at $\delta=0.01$ and 0.005\AA. For 180 atoms, a complete
-Cartesian Hessian costs 1,080 force evaluations per displacement size, plus the
-three repeats. With $F_a=-\partial E/\partial R_a$,
+Two central finite-difference Hessians use the \emph{same exact candidate}
+at $\delta=0.01$ and 0.005\AA, with three fresh identical-coordinate force calls
+before each. For 180 atoms, each full Cartesian Hessian costs 1,080 displaced force
+calls. With $F_a=-\partial E/\partial R_a$,
 \begin{equation}
 H_{ab}\simeq-\frac{F_a(R+\delta e_b)-F_a(R-\delta e_b)}{2\delta}.
 \end{equation}
-$H$ is in eV/\AA$^2$ and is symmetrized before mass weighting. Removing exactly
-three mass-weighted translational directions yields 537 internal eigenvalues.
-A simple index-one saddle has one unstable internal direction, but counting
-strictly negative finite-difference eigenvalues alone is insufficient. Stationary
-physical forces, displacement-size/noise sensitivity, and both downhill
-connections must agree. The optional plus/minus unstable-mode quench is run only
-for the 0.01\AA\ diagnostic, under its own step/call caps.
+$H$ is in eV/\AA$^2$. The mass-weighted matrix is $D=M^{-1/2}HM^{-1/2}$,
+with atomic masses in amu. After symmetrization and removal of exactly three
+translations, both 537-dimensional internal spectra have exactly one negative
+eigenvalue: $-0.111003$/$-0.111010$~eV\,\AA$^{-2}$\,amu$^{-1}$. The next is
+$+0.003343$; the two negative-mode vectors have absolute overlap 0.999999994.
+Observed force-component repeat ranges are about $2.2\times 10^{-6}$~eV/\AA,
+but these three-call ranges are not calibrated Hessian error bars. Independently
+reconstructing both Hessians from the raw force pairs reproduces all eigenvalues;
+all 2,160 displacement hashes and logged force maxima were checked.
+
+A negative curvature means displacement along that local mode lowers energy
+to second order when the gradient is small. It does not identify the basins
+reached farther away. The negative mode's absolute overlap with the actual ASE
+improved tangent is 0.779 in the mass metric, or 0.920 when both are represented as
+normalized Cartesian displacements. Those are different coordinate metrics,
+not probabilities or independent physical replications.
 
 These calculations produce MLIP potential-energy path spans in eV per marked
 hop. They establish neither an activation free energy nor diffusivity. Later
 physical validation needs endpoint/saddle/path DFT under compatible electronic
 and spin settings. No VASP job or input deck is submitted during this goal.
+\newpage
+
+\subsection{Same raw vacancy mask, different continuous configurations}
+The plus/minus negative-mode displacements were independently relaxed at a
+$0.02$~eV/\AA\ maximum-force target. The minus branch is end-like: its
+identity-preserving, host-aligned RMS difference from the original end is
+0.04686\AA, with maximum atomic difference 0.06628\AA. The plus branch instead
+reaches an off-site, force-small state: RMS 0.11671\AA\ and maximum difference
+1.34843\AA\ from that same end. Its migrating Li is 1.5992\AA\ from its nearest
+parent site, with only 0.05791\AA\ separating the first/second site distances.
+
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+State&$E$ (eV/cell)&Li/site distance&4th O distance&5th O distance\\
+& &\AA&\AA&\AA\\\midrule
+Original end&$-1032.516551$&0.2562&2.1763&2.1806\\
+Climbing image&$-1032.344237$&1.1984&2.3447&2.8548\\
+Downhill minus&$-1032.521675$&0.2735&2.1684&2.1729\\
+Downhill plus&$-1032.378428$&1.5992&1.9820&3.1853\\\bottomrule
+\end{tabular}
+\end{center}
+The original end, climbing image, minus state and plus state all receive the
+\emph{same raw nearest/Hungarian vacancy assignment}, hence the same orbit key,
+despite these geometric and energy differences. The plus state has four nearer
+O atoms, all within 1.982\AA, followed by a 1.203\AA\ gap to its fifth O; the minus
+state has six O within 2.336\AA. These ranked distances require no unvalidated
+bonding cutoff. Full periodic neighbors were searched within 5\AA\ only to obtain
+the distance lists.
+
+\begin{center}\includegraphics[width=.99\linewidth]{assets/candidate_environments.pdf}\end{center}
+The right panel shows the actual continuous marked-Li geometry after removing
+common host translation. The grey chain is the saved NEB route; perpendicular
+displacement is a magnitude, not a signed plane coordinate. The off-site endpoint
+is near an intermediate part of that route. This supports a possible compound
+path with an intermediate state; neither its minimum character nor the complete
+sequence of elementary connections has been certified. It does not invalidate a
+protocol-defined pristine-mask-to-endpoint dataset, but it prevents using a
+vacancy orbit as a unique continuous PES-basin identity.
+
+On the unchanged original seven-image UMA path, MACE gives forward/reverse spans
+0.16516/0.25159 eV and selects peak image 3 rather than UMA's 5. MACE endpoint
+physical forces are 0.2567/0.2547 eV/\AA: these are not stationary MACE endpoints,
+so the profile is not a MACE-optimized barrier. Independently tightening the same
+original pair under each teacher defines a separate new-endpoint experiment.
+\newpage
 
 \section{Actual 537-mode harmonic null for the thermal estimator}
 The earlier thermal work had a 21-mode synthetic check. The new check uses the
 actual saved positive 537-mode spectrum and mass-weighted eigenvectors from one
 180-atom basin. Three independent phase seeds generate nested 10/20/50 ps
 synthetic velocity observations at 0.5 fs; each is analyzed by pinned ATLAS
-py-xPT 2.1.0, commit\texttt{197 bdcf5...}, under 1PT/2PT/3PT.
+py-xPT 2.1.0, commit\texttt{197bdcf5f57c9d04b5527f9e7d6f4fdb8bf3b82d}, under 1PT/2PT/3PT.
 All 27 analyses completed without failures. An allocation auto-logout interrupted
 the first attempt; its four complete results were reused immutably and its
 incomplete raw output was preserved. No MLIP or MD calls were required.
@@ -260,9 +313,17 @@ NEB inputs, full physical/projected forces, continuous parent atom IDs,
 unconverged routes, actual call logs and scheduler interruption evidence are
 retained. Harmonic raw spectra/configuration/native results, deterministic phases,
 input Hessian/minimum hashes and the reused-result lineage remain available.
-The new condition schemas explicitly state or link authoritative FP32/TF 32-off
+The new condition schemas explicitly state or link authoritative FP32/TF32-off
 inference receipts; old-schema omissions are not treated as evidence of wrong
 inference.
+
+The later-DFT geometry handoff contains the candidate, both original endpoints,
+both downhill states and every intermediate band image as exact-coordinate NPZ
+with original same-geometry UMA energy/force/stress labels, plus POSCAR/CIF viewing
+exports. Local-to-parent atom IDs, source/checkpoint hashes and coordinate hashes
+are preserved. The off-site plus state is explicitly retained as an example of
+the limitations of a vacancy-only representation; it is not silently merged with
+the end-like state sharing its assigned mask.
 
 Exact commands and final allocation/cost/publication receipts belong to the
 integrated goal packet. New code is under
