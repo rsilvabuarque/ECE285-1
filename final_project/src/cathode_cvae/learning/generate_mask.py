@@ -48,14 +48,18 @@ def load_model(checkpoint, device):
         cfg = json.loads(Path(checkpoint).with_name('configuration.json').read_text())
     format_version = cfg.get('model_format_version')
     if format_version is not None:
-        if format_version not in {2, 3}:
+        if format_version not in {2, 3, 4}:
             raise ValueError('Unsupported model_format_version; use its matching model loader')
         required = {'kind', 'n_sites', 'condition_dim', 'latent_dim', 'hidden_dim',
                     'encoder_kind', 'graph_context', 'graph'}
         if not required.issubset(cfg):
             raise ValueError('Versioned checkpoint is missing explicit architecture dimensions or graph metadata')
-        if format_version == 3 and not {'decoder_context_spec', 'energy_target', 'label_energy_protocol', 'proposal_geometry_protocol', 'beta_schedule'} <= set(cfg):
+        if format_version in {3,4} and not {'decoder_context_spec', 'energy_target', 'label_energy_protocol', 'proposal_geometry_protocol', 'beta_schedule'} <= set(cfg):
             raise ValueError('Version3 checkpoint lacks context, schedule, or label/proposal metadata')
+        if format_version==4 and not isinstance(cfg.get('remaining_count_features'),bool):
+            raise ValueError('Version4 checkpoint lacks explicit remaining-count architecture metadata')
+        if format_version<4 and (cfg.get('remaining_count_features') or (cfg.get('decoder_context_spec') or {}).get('kernel_mode','legacy')!='legacy'):
+            raise ValueError('New count/shell architecture requires version4 checkpoint metadata')
     else:
         # Recognized historical writers all stored these dimensions. We retain
         # only their documented default hidden width/architecture, never infer a
@@ -88,9 +92,9 @@ def load_model(checkpoint, device):
                        hidden_dim=cfg.get('hidden_dim', 64),
                        encoder_kind=cfg.get('encoder_kind', 'dense'),
                        graph_data=cfg.get('graph'), graph_context=cfg.get('graph_context', False),
-                       context_spec=cfg.get('decoder_context_spec')).to(device)
+                       context_spec=cfg.get('decoder_context_spec'),remaining_count_features=cfg.get('remaining_count_features',False)).to(device)
     model.load_state_dict(ck['state_dict'], strict=True)
-    if format_version == 3 and cfg.get('graph_context'):
+    if format_version in {3,4} and cfg.get('graph_context'):
         if model.graph_context.to_spec()['kernels_sha256'] != cfg['decoder_context_spec']['kernels_sha256']:
             raise ValueError('Saved decoder context buffers disagree with their declared association')
     model.eval()

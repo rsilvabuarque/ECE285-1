@@ -128,6 +128,11 @@ def arguments(argv=None):
     parser.add_argument("--context-association", choices=["physical", "fixed_nonphysical"], default="physical")
     parser.add_argument("--context-scramble-seed", type=int, default=20261108,
                         help="Freeze one label-independent non-symmetry site association; used only for fixed_nonphysical")
+    parser.add_argument("--context-kernel-mode",choices=["legacy","radial_shells"],default="legacy")
+    parser.add_argument("--context-shell-tolerance-A",type=float,default=1e-5,
+                        help="Provisional numerical distance-shell grouping in angstrom, not a physical interaction criterion")
+    parser.add_argument("--remaining-count-features",action="store_true",
+                        help="Add r_i/N and L_i/N from supplied target count and assigned prefix only")
     parser.add_argument("--hidden-dim", type=int, default=64, help="AR decoder hidden width; posterior widths remain unchanged")
     parser.add_argument("--graph-cutoff-A", type=float, default=5.0,
                         help="Periodic parent-neighbor construction cutoff in angstrom")
@@ -153,9 +158,11 @@ def arguments(argv=None):
     parser.add_argument("--learning-rate", type=float, default=0.001)
     parser.add_argument("--beta-final", type=float, default=0.1)
     parser.add_argument("--beta-warmup", type=int, default=20)
-    parser.add_argument("--beta-schedule", choices=["legacy_epoch", "reference_updates"], default="legacy_epoch")
+    parser.add_argument("--beta-schedule", choices=["legacy_epoch", "reference_updates", "cyclic_updates"], default="legacy_epoch")
     parser.add_argument("--beta-reference-updates-per-epoch", type=int, default=79,
                         help="Reference exposure block, fixed across dataset sizes for reference_updates")
+    parser.add_argument("--beta-cycle-updates",type=int,default=2000,
+                        help="Cyclic schedule period; repeats the same reference-block warmup, including its nonzero first beta")
     parser.add_argument("--validation-beta", type=float, default=1.,
                         help="Checkpoint selection uses reconstruction plus this times KL; historical fits used 1")
     parser.add_argument("--selection-betas", type=float, nargs="+", default=[1., .1],
@@ -185,7 +192,9 @@ def main(argv=None):
         raise ValueError("A positive hidden width is supported for the AR decoder; dense decoder widths are fixed")
     if a.context_association != "physical" and not a.graph_context:
         raise ValueError("Nonphysical associations require --graph-context")
-    schedule = schedule_metadata(a.beta_schedule, a.beta_final, a.beta_warmup, a.beta_reference_updates_per_epoch)
+    if a.context_kernel_mode!="legacy" and not a.graph_context:raise ValueError("Radial-shell features require --graph-context")
+    if not math.isfinite(a.context_shell_tolerance_A) or a.context_shell_tolerance_A<=0:raise ValueError("Shell tolerance must be positive finite angstrom")
+    schedule = schedule_metadata(a.beta_schedule, a.beta_final, a.beta_warmup, a.beta_reference_updates_per_epoch,a.beta_cycle_updates)
     label_protocol = a.label_energy_protocol or a.geometry_protocol
     proposal_protocol = (a.proposal_geometry_protocol or
         (a.geometry_protocol if a.energy_target == "deletion" else "pristine-derived deletion; unrelaxed; exact canonical parent coordinates"))
@@ -351,11 +360,14 @@ def main(argv=None):
         graph_data = build_periodic_graph(parent_spec, cutoff_A=a.graph_cutoff_A).to_dict()
         if a.graph_context and a.context_association == "fixed_nonphysical":
             from ..graph import PeriodicGraph, fixed_nonphysical_context_spec
-            context_spec = fixed_nonphysical_context_spec(PeriodicGraph.from_dict(graph_data), a.context_scramble_seed)
+            context_spec = fixed_nonphysical_context_spec(PeriodicGraph.from_dict(graph_data), a.context_scramble_seed,a.context_kernel_mode,a.context_shell_tolerance_A)
+        elif a.graph_context and a.context_kernel_mode!="legacy":
+            from ..graph import PeriodicGraph,CausalGraphContext
+            context_spec=CausalGraphContext(PeriodicGraph.from_dict(graph_data),kernel_mode=a.context_kernel_mode,shell_tolerance_A=a.context_shell_tolerance_A).to_spec()
     model = make_model(a.kind, n_sites=n_sites, cond_dim=conditions.shape[1],
                        latent_dim=a.latent_dim, encoder_kind=a.encoder,
                        graph_data=graph_data, graph_context=a.graph_context,
-                       hidden_dim=a.hidden_dim, context_spec=context_spec).to(a.device)
+                       hidden_dim=a.hidden_dim, context_spec=context_spec,remaining_count_features=a.remaining_count_features).to(a.device)
     if getattr(model, "graph_context", None) is not None:
         observed_spec = model.graph_context.to_spec()
         context_spec = {**observed_spec, **({"scramble_seed": a.context_scramble_seed} if a.context_association != "physical" else {})}
@@ -372,9 +384,12 @@ def main(argv=None):
             raise ValueError("Warm-start graph architecture differs")
         if prior_cfg.get("hidden_dim", 64) != a.hidden_dim:
             raise ValueError("Warm-start decoder hidden width differs")
+        if prior_cfg.get("remaining_count_features",False)!=a.remaining_count_features:
+            raise ValueError("Warm-start remaining-count features differ")
         old_context = prior_cfg.get("decoder_context_spec") or {"association": "physical"}
         if old_context.get("association", "physical") != a.context_association or old_context.get("site_permutation") != (context_spec or {}).get("site_permutation"):
             raise ValueError("Warm-start decoder-neighborhood association differs")
+        if old_context.get("kernel_mode","legacy")!=a.context_kernel_mode:raise ValueError("Warm-start radial-shell features differ")
         if prior_cfg.get("energy_target", "deletion") != a.energy_target:
             raise ValueError("Warm-start label targets differ")
         if prior_cfg.get("condition_schema_id") not in {None, schema_identity(schema)}:
@@ -388,11 +403,13 @@ def main(argv=None):
                                    generator=noise_generator, device=a.device)
     exact_count = a.kind != "dense_bce"
     metadata = dict(
-        model_format_version=3, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
+        model_format_version=4 if a.remaining_count_features or a.context_kernel_mode!="legacy" else 3, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
         n_sites=n_sites, latent_dim=model.latent_dim, seed=a.seed, counts=a.counts,
         hidden_dim=a.hidden_dim, parameter_count=sum(p.numel() for p in model.parameters()),
         encoder_kind=a.encoder, graph_context=a.graph_context, graph=graph_data,
         decoder_context_spec=context_spec,
+        remaining_count_features=a.remaining_count_features,
+        remaining_count_definition="r_i/N,L_i/N; r_i=condition_target_count-sum(previous occupations); L_i=N-i; dimensionless; no future labels" if a.remaining_count_features else None,
         graph_cutoff_A=a.graph_cutoff_A if graph_data is not None else None,
         train_rows=len(train), val_rows=len(val), test_rows=len(test),
         excluded_split_rows=int(len(x) - len(train) - len(val) - len(test)),
@@ -433,7 +450,7 @@ def main(argv=None):
         latent_activity_scope="Descriptive VAL posterior-mean variance sensitivity; no test rows, not physical convergence",
         warm_start=None if a.warm_start is None else dict(path=str(a.warm_start.resolve()), sha256=sha256(a.warm_start)),
         warm_start_semantics="Weights only; Adam, training RNG, update clock and validation noise restart. This is not exact optimizer continuation.",
-        torch=torch.__version__, numpy=np.__version__, dtype="float32", tf32=False,
+        torch=str(torch.__version__), numpy=str(np.__version__), dtype="float32", tf32=False,
         device=a.device, gpu=torch.cuda.get_device_name() if a.device == "cuda" else None,
         scientific_scope="Deletion vacancy masks, not relaxed geometry; no force/stress inputs or energy gradients; no global minimum guarantee",
     )
@@ -451,7 +468,7 @@ def main(argv=None):
         beta_values = []
         for ids in order.split(a.batch_size):
             beta = beta_at_update(mode=a.beta_schedule, final=a.beta_final, update=updates, epoch=epoch,
-                warmup_epochs=a.beta_warmup, reference_updates_per_epoch=a.beta_reference_updates_per_epoch)
+                warmup_epochs=a.beta_warmup, reference_updates_per_epoch=a.beta_reference_updates_per_epoch,cycle_updates=a.beta_cycle_updates)
             beta_values.append(beta)
             xx = x[ids]
             if a.orientation == "augment":

@@ -95,3 +95,47 @@ def test_endpoint_label_protocol_does_not_claim_generated_geometry_is_relaxed(tm
         assert str(z["geometry_protocol"].item()).startswith("pristine-derived deletion")
         assert str(z["label_energy_protocol"].item())=="synthetic fixed-cell endpoint"
         assert str(z["energy_target"].item())=="endpoint"
+
+
+def test_cyclic_schedule_changes_only_after_first_matching_reference_cycle():
+    common=dict(final=.1,epoch=1,warmup_epochs=20,reference_updates_per_epoch=79)
+    for u in range(2000):
+        assert beta_at_update(mode="reference_updates",update=u,**common)==beta_at_update(mode="cyclic_updates",update=u,cycle_updates=2000,**common)
+    assert beta_at_update(mode="cyclic_updates",update=2000,cycle_updates=2000,**common)==.1*(1/20)
+    assert beta_at_update(mode="reference_updates",update=2000,**common)==.1
+    assert schedule_metadata("cyclic_updates",.1,20,79,2000)["cycle_updates"]==2000
+    with pytest.raises(ValueError,match="entire reference warmup"):
+        beta_at_update(mode="cyclic_updates",update=0,cycle_updates=1000,**common)
+
+
+@pytest.mark.parametrize("remaining,kernel_mode",[(True,"legacy"),(False,"radial_shells"),(True,"radial_shells")])
+def test_optional_prefix_features_count_causality_teacher_sampling_and_reload(tmp_path,remaining,kernel_mode):
+    torch.set_num_threads(1);graph=graph_fixture()
+    context=CausalGraphContext(graph,kernel_mode=kernel_mode);spec=context.to_spec()
+    if kernel_mode=="radial_shells":
+        assert spec["feature_dim"]==3*len(spec["shell_centers_A"])
+        assert spec["shell_centers_A"]==sorted(spec["shell_centers_A"])
+        assert spec["shell_centers_A"][-1]>spec["shell_centers_A"][0]
+    model=make_model("ar_cvae",n_sites=6,condition_dim=4,latent_dim=4,graph_context=True,
+        graph_data=graph.to_dict(),context_spec=spec,remaining_count_features=remaining)
+    c=torch.tensor([[.5,1.,0.,0.],[.5,0.,0.,1.]])
+    z=torch.randn(2,4);uniforms=torch.rand(2,6);step_logits=[]
+    hook=model.output.register_forward_hook(lambda _m,_a,out:step_logits.append(out.detach().reshape(2)))
+    sample=model.sample(c,3,z=z,uniforms=uniforms);hook.remove()
+    assert torch.equal(sample.sum(1),torch.tensor([3.,3.]))
+    teacher=model.decode_logits(z,c,sample)
+    assert torch.allclose(torch.stack(step_logits,dim=1),teacher,atol=1e-6,rtol=2e-6)
+    xx=sample.clone().requires_grad_()
+    for i in (0,2,5):
+        gradient=torch.autograd.grad(model.decode_logits(z,c,xx)[0,i],xx,retain_graph=True)[0]
+        assert torch.count_nonzero(gradient[:,i:])==0
+    cfg=dict(model_format_version=4,kind="ar_cvae",n_sites=6,condition_dim=4,latent_dim=4,hidden_dim=64,
+        encoder_kind="dense",graph_context=True,graph=graph.to_dict(),decoder_context_spec=spec,
+        remaining_count_features=remaining,energy_target="deletion",label_energy_protocol="synthetic",
+        proposal_geometry_protocol="synthetic",beta_schedule=schedule_metadata("reference_updates",.1,20,79))
+    path=tmp_path/"features.pt";torch.save(dict(configuration=cfg,state_dict=model.state_dict()),path)
+    loaded,_=load_model(path,"cpu")
+    assert torch.equal(sample,loaded.sample(c,3,z=z,uniforms=uniforms))
+    if remaining:
+        with pytest.raises(ValueError,match="Condition count disagrees"):
+            loaded.sample(c,2,z=z,uniforms=uniforms)

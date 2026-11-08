@@ -148,7 +148,7 @@ reach the requested count have conditional probability one and zero loss.
 Site order is the original fixed parent order, not an equivariance claim.
 """
     def __init__(self, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64,
-                 graph_encoder=None, graph_context=None):
+                 graph_encoder=None, graph_context=None, remaining_count_features=False):
         super().__init__()
         self.n_sites = n_sites
         self.condition_dim = condition_dim
@@ -157,6 +157,7 @@ Site order is the original fixed parent order, not an equivariance claim.
         self.has_latent = latent_dim > 0
         self.graph_context = graph_context
         self.encoder_kind = "graph" if graph_encoder is not None else "dense"
+        self.remaining_count_features=bool(remaining_count_features)
         if self.has_latent:
             if graph_encoder is None:
                 self.encoder = nn.Sequential(nn.Linear(n_sites + condition_dim, 128), nn.SiLU(),
@@ -167,7 +168,7 @@ Site order is the original fixed parent order, not an equivariance claim.
                 self.encoder = graph_encoder
         self.initial_hidden = nn.Linear(condition_dim + latent_dim, hidden_dim)
         context_dim = 0 if graph_context is None else graph_context.feature_dim
-        self.gru = nn.GRU(2 + condition_dim + latent_dim + context_dim, hidden_dim, batch_first=True)
+        self.gru = nn.GRU(2 + condition_dim + latent_dim + context_dim + 2*int(self.remaining_count_features), hidden_dim, batch_first=True)
         self.output = nn.Linear(hidden_dim, 1)
 
     def encode(self, x, c):
@@ -192,6 +193,13 @@ Site order is the original fixed parent order, not an equivariance claim.
         inputs = torch.cat((previous, ctx[:, None, :].expand(-1, self.n_sites, -1), site), dim=-1)
         if self.graph_context is not None:
             inputs = torch.cat((inputs, self.graph_context.teacher_features(x)), dim=-1)
+        if self.remaining_count_features:
+            # n is a supplied condition, never x.sum(): future target labels
+            # must not enter a site's decoder through the count feature.
+            target=torch.round(c[:,0]*self.n_sites)[:,None]
+            used=F.pad(x[:,:-1],(1,0)).cumsum(1)
+            left=torch.arange(self.n_sites,0,-1,device=x.device,dtype=x.dtype)[None].expand_as(x)
+            inputs=torch.cat((inputs,torch.stack(((target-used)/self.n_sites,left/self.n_sites),dim=-1)),dim=-1)
         h0 = torch.tanh(self.initial_hidden(ctx))[None]
         values, _ = self.gru(inputs, h0)
         return self.output(values).squeeze(-1)
@@ -220,6 +228,8 @@ Site order is the original fixed parent order, not an equivariance claim.
             z = torch.randn((batch, self.latent_dim), device=c.device,
                             dtype=c.dtype, generator=generator)
         remaining = _counts(n, batch, self.n_sites, c.device).clone()
+        if self.remaining_count_features and not torch.equal(torch.round(c[:,0]*self.n_sites).long(),remaining):
+            raise ValueError("Condition count disagrees with the hard sampler count")
         if bool(((remaining < 0) | (remaining > self.n_sites)).any()):
             raise ValueError("Requested count must be between zero and n_sites")
         if uniforms is not None:
@@ -234,6 +244,9 @@ Site order is the original fixed parent order, not an equivariance claim.
             inputs = torch.cat((previous, ctx, site), dim=-1)
             if self.graph_context is not None:
                 inputs = torch.cat((inputs, self.graph_context.step_features(result, i)), dim=-1)
+            if self.remaining_count_features:
+                left=c.new_full((batch,),self.n_sites-i)
+                inputs=torch.cat((inputs,torch.stack((remaining.to(c.dtype)/self.n_sites,left/self.n_sites),dim=-1)),dim=-1)
             inputs = inputs[:, None, :]
             values, hidden = self.gru(inputs, hidden)
             probability = self.output(values[:, 0]).squeeze(-1).sigmoid()
@@ -249,13 +262,13 @@ Site order is the original fixed parent order, not an equivariance claim.
 
 class ARBaseline(ARCVAE):
     """Same autoregressive decoder without latent variables or an encoder."""
-    def __init__(self, n_sites=48, condition_dim=2, hidden_dim=64, graph_context=None):
+    def __init__(self, n_sites=48, condition_dim=2, hidden_dim=64, graph_context=None,remaining_count_features=False):
         super().__init__(n_sites, condition_dim, latent_dim=0, hidden_dim=hidden_dim,
-                         graph_context=graph_context)
+                         graph_context=graph_context,remaining_count_features=remaining_count_features)
 
 
 def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, cond_dim=None,
-               encoder_kind="dense", graph_data=None, graph_context=False, context_spec=None):
+               encoder_kind="dense", graph_data=None, graph_context=False, context_spec=None,remaining_count_features=False):
     if cond_dim is not None:
         condition_dim = cond_dim
     if encoder_kind not in {"dense", "graph"}:
@@ -266,6 +279,8 @@ def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, c
         raise ValueError("hidden_dim must be a positive integer")
     if context_spec is not None and not graph_context:
         raise ValueError("A decoder context specification requires graph_context")
+    if remaining_count_features and kind not in {"ar","ar_cvae","ar_baseline"}:
+        raise ValueError("Remaining-count features are implemented for AR decoders only")
     encoder = context = None
     if encoder_kind == "graph" or graph_context:
         if graph_data is None:
@@ -283,9 +298,11 @@ def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, c
             encoder = GraphOccupationEncoder(graph, condition_dim, latent_dim)
         if graph_context:
             spec = {} if context_spec is None else context_spec
-            if spec.get("version", "causal-context-v1") != "causal-context-v1":
+            if spec.get("version", "causal-context-v1") not in {"causal-context-v1","causal-context-v2"}:
                 raise ValueError("Unsupported decoder context specification")
-            context = CausalGraphContext(graph, spec.get("association", "physical"), spec.get("site_permutation"))
+            mode=spec.get("kernel_mode","legacy")
+            if mode!="legacy" and spec.get("version")!="causal-context-v2":raise ValueError("Radial-shell context needs its explicit version2 specification")
+            context = CausalGraphContext(graph, spec.get("association", "physical"), spec.get("site_permutation"),mode,spec.get("shell_tolerance_A",1e-5))
             observed = context.to_spec()
             for key in ("feature_dim", "kernels_sha256"):
                 if key in spec and spec[key] != observed[key]:
@@ -293,7 +310,7 @@ def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, c
     if kind in {"dense", "dense_bce", "dense_count"}:
         return DenseCVAE(n_sites, condition_dim, latent_dim)
     if kind in {"ar", "ar_cvae"}:
-        return ARCVAE(n_sites, condition_dim, latent_dim, hidden_dim, encoder, context)
+        return ARCVAE(n_sites, condition_dim, latent_dim, hidden_dim, encoder, context,remaining_count_features)
     if kind == "ar_baseline":
-        return ARBaseline(n_sites, condition_dim, hidden_dim, context)
+        return ARBaseline(n_sites, condition_dim, hidden_dim, context,remaining_count_features)
     raise ValueError(f"Unknown model kind {kind!r}")

@@ -161,6 +161,26 @@ def mobile_kernel_matrices(graph, shell_tolerance_A=1e-5):
     return kernels, nearest
 
 
+def mobile_shell_matrices(graph, shell_tolerance_A=1e-5):
+    """One image-count kernel per numerical radial shell, all within cutoff.
+
+    Shell grouping is a geometric feature definition, not a diffusion/barrier
+    claim. Retaining every shell also retains any interlayer-connected shell.
+    """
+    if not np.isfinite(shell_tolerance_A) or shell_tolerance_A <= 0:
+        raise ValueError("Shell grouping tolerance must be finite positive angstrom")
+    a,b,_,distance=graph.mobile_edges()
+    if not len(distance):raise ValueError("Graph cutoff contains no mobile-mobile edges")
+    shells=[];group=np.empty(len(distance),int)
+    for index in np.argsort(distance):
+        value=float(distance[index])
+        if not shells or value-shells[-1]>shell_tolerance_A:shells.append(value)
+        group[index]=len(shells)-1
+    kernels=np.zeros((len(shells),graph.n_sites,graph.n_sites),float)
+    np.add.at(kernels,(group,a,b),1.)
+    return kernels,shells
+
+
 class CausalGraphContext(nn.Module):
     """Six fixed graph features, never future occupation labels.
 
@@ -172,7 +192,8 @@ class CausalGraphContext(nn.Module):
     """
     feature_dim = 6
 
-    def __init__(self, graph, association="physical", site_permutation=None):
+    def __init__(self, graph, association="physical", site_permutation=None,
+                 kernel_mode="legacy", shell_tolerance_A=1e-5):
         super().__init__()
         self.n_sites = graph.n_sites
         if association not in {"physical", "fixed_nonphysical"}:
@@ -186,7 +207,15 @@ class CausalGraphContext(nn.Module):
             raise ValueError("The nonphysical association must lie outside the retained parent symmetry operations")
         self.association = association
         self.site_permutation = None if association == "physical" else permutation.astype(int).tolist()
-        matrices, _ = mobile_kernel_matrices(graph)
+        if kernel_mode not in {"legacy","radial_shells"}:raise ValueError("Unknown context kernel mode")
+        if not np.isfinite(shell_tolerance_A) or shell_tolerance_A<=0:raise ValueError("Shell tolerance must be finite positive angstrom")
+        self.kernel_mode=kernel_mode;self.shell_tolerance_A=float(shell_tolerance_A)
+        if kernel_mode=="legacy":
+            matrices,_=mobile_kernel_matrices(graph,shell_tolerance_A)
+            self.shell_centers_A=None
+        else:
+            matrices,self.shell_centers_A=mobile_shell_matrices(graph,shell_tolerance_A)
+        self.feature_dim=3*len(matrices)
         physical_norm = matrices.sum(axis=-1, keepdims=True)
         physical = np.divide(matrices, physical_norm, out=np.zeros_like(matrices), where=physical_norm > 0)
         if association == "fixed_nonphysical":
@@ -212,10 +241,11 @@ class CausalGraphContext(nn.Module):
 
     def to_spec(self):
         import hashlib
-        return dict(version="causal-context-v1", association=self.association,
+        return dict(version="causal-context-v1" if self.kernel_mode=="legacy" else "causal-context-v2", association=self.association,
             site_permutation=self.site_permutation, feature_dim=self.feature_dim,
+            kernel_mode=self.kernel_mode,shell_tolerance_A=self.shell_tolerance_A,shell_centers_A=self.shell_centers_A,
             kernels_sha256=hashlib.sha256(self.kernels.detach().cpu().numpy().astype("<f4").tobytes()).hexdigest(),
-            definition="Two row-normalized kernels, nearest shell and exp(-r/r_nearest); occupied/vacant/unassigned prefix fractions",
+            definition=("Two row-normalized kernels, nearest shell and exp(-r/r_nearest)" if self.kernel_mode=="legacy" else "Every radial shell separately, with row-normalized periodic image counts")+"; occupied/vacant/unassigned prefix fractions",
             association_audit=self.association_audit,
             nonphysical_control_limit="Global degrees/weights preserved; prefix exposure by decoder step can change" if self.association != "physical" else None)
 
@@ -251,14 +281,14 @@ class CausalGraphContext(nn.Module):
         return self.features(occupancy, assigned.expand_as(occupancy))[:, step]
 
 
-def fixed_nonphysical_context_spec(graph, seed):
+def fixed_nonphysical_context_spec(graph, seed, kernel_mode="legacy", shell_tolerance_A=1e-5):
     """Freeze one label-independent permutation outside the parent group."""
     rng = np.random.default_rng(int(seed))
-    physical = CausalGraphContext(graph).to_spec()["kernels_sha256"]
+    physical = CausalGraphContext(graph,kernel_mode=kernel_mode,shell_tolerance_A=shell_tolerance_A).to_spec()["kernels_sha256"]
     for _ in range(128):
         permutation = rng.permutation(graph.n_sites)
         if not any(np.array_equal(permutation, p) for p in graph.parent.permutations):
-            spec = CausalGraphContext(graph, "fixed_nonphysical", permutation).to_spec()
+            spec = CausalGraphContext(graph, "fixed_nonphysical", permutation,kernel_mode,shell_tolerance_A).to_spec()
             if spec["kernels_sha256"] != physical:
                 spec["scramble_seed"] = int(seed)
                 return spec
