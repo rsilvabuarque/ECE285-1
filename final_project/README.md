@@ -1,4 +1,171 @@
-# Cathode vacancy CVAEs: conditioning, physical graphs, and local edits
+# Cathode vacancy generation: current midterm packet
+
+**Beihao and Varad: start with [your independent tasks](docs/COLLABORATOR_TASKS.md).**
+
+The November 8 study tests whether energy-conditioned vacancy generation benefits
+from a variational latent, or mainly from a spatial autoregressive decoder. It
+also compares training labels from pristine-derived deletions with labels from
+fixed-cell relaxed endpoints. The working example has 48 Li sites in O3 LCO;
+requested counts are 12, 24 and 36. The parent/mobile-ion interface is general,
+while the present physical evidence and neural checkpoints are LCO-specific.
+
+**Current status:** 37 training trajectories, each with 4,000 optimizer updates,
+are complete. Models and proposals are frozen; `H_FINAL` contains 344,001 known
+occupation orbits. Final UMA/MACE scoring and the frozen endpoint-assessment
+queue are running. Final yields and completion/cost receipts are pending. These
+37 trajectories span different methods and screens; they are not 37 independent
+replicates of one selected model.
+
+The current packet belongs under `artifacts/overnight_20261108/`. Its verified
+download and portable fetch/replay entrypoint are pending assembly and validation.
+The planned `scripts/overnight_20261108/replay_packet.py` is not present at this
+revision. The sections below identify the analysis interfaces already available.
+Use the published manifest and actual helper once they are supplied.
+
+Read the [new midterm source](docs/midterm_20261108/main.tex),
+[research supplement](docs/research_supplement_20261108/main.tex), and
+[collaborator handoff](docs/COLLABORATOR_TASKS.md). Local PDF builds are
+`docs/midterm_20261108/main.pdf` and
+`docs/research_supplement_20261108/main.pdf`; the verified packet will carry the
+reviewed PDFs and their build inputs. The main report targets five body pages
+plus references. The separate research supplement retains the finite-cell,
+NEB and harmonic-estimator results and their physical limits.
+
+Development evidence supports the spatial decoder: a matched no-latent AR model
+has similar observed yield to the graph-posterior CVAE, while a dense posterior can reconstruct well
+without useful prior-generation improvement. The final comparison remains
+separate. A generated mask has exact composition; its energy class must be
+measured, and an endpoint-energy condition still requires an actual relaxation
+to obtain relaxed coordinates. No new DFT, MD campaign or MLIP fine-tuning is
+needed for the midterm.
+
+The [prior published packet](https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-conditioning-20261108)
+uses `artifacts/conditioning_20261107/`; the older balanced benchmark uses
+`artifacts/overnight_20261107/`. Their results, protected splits, installation
+procedures and download links are preserved in the historical reference section
+below. They have distinct assessment histories and thresholds.
+
+## Current packet analysis and collaboration
+
+Use a personal branch and fresh output directories. On the current review
+branch, the following interfaces inspect frozen data and make no MLIP calls:
+
+```bash
+python scripts/overnight_20261108/evaluate_controls.py --help
+python scripts/overnight_20261108/paired_evaluate.py --help
+```
+
+`evaluate_controls.py` consumes the frozen proposal directory, parent, history,
+training data, repeated `--score TEACHER=scalarNPZ` inputs and a separate
+`--schema TEACHER=frozenJSON` for each teacher. `paired_evaluate.py` accepts
+portable `--facts` and `--facts-sha256` instead of an HPC queue, along with the
+original attempts, registration, history and separate deletion/endpoint schemas.
+Exact input paths and the one-command replay will be added with the verified
+packet manifest.
+
+Cached analysis and independent model checks need only the core learning
+environment below. Optional complete new energy/force/stress checks use the
+[common MLIP interface](#get-energy-force-and-stress-through-the-common-interface).
+It installs provider dependencies in isolated environments and respects the
+visible CPU/GPU resources; students do not need to operate the providers' native
+materials workflows or use Ricardo's personal allocation.
+
+Beihao independently verifies the matched latent/no-latent comparison. Varad
+recomputes raw-attempt, novelty, paired-label and cost results. Ricardo reviews
+geometry, teacher interpretation and physical limits, integrates returned work,
+and submits manually. Automated runs and prepared commands are evidence for
+these checks, not their completed independent contributions.
+
+The saved course deadline is **November 9, 2026, 11:59 p.m. Pacific**. The final
+report is due **December 12**; presentations are **November 24 and December 1**,
+remote during lecture time. Ricardo should check any newer course announcement
+before manual submission.
+
+## Install without materials-specific setup
+
+Python 3.11–3.13 is supported (3.12 was used in the historical GPU campaign).
+Training works on CPU or a visible CUDA GPU. Use a PyTorch wheel compatible with
+your platform's GPU driver; Python installation cannot upgrade that driver.
+On a cluster, obtain the class's permitted compute allocation first. Commands
+respect `CUDA_VISIBLE_DEVICES` and do not select an account or submit jobs.
+
+For the required fits and cached analyses:
+
+```bash
+bash scripts/install.sh --python python3 --prefix .venvs --core-only
+source .venvs/learning/bin/activate
+python -m pip check
+```
+
+Existing users can activate their existing learning environment and update only
+the project code:
+
+```bash
+python -m pip install -e '.[dev]'
+python -m pip check
+```
+
+The new schema/allocation code needs no new MLIP backend installation. For
+optional UMA/MACE inference on a fresh machine, install those providers:
+
+```bash
+bash scripts/install.sh --python python3 --prefix .venvs --backends uma,mace
+source .venvs/learning/bin/activate
+```
+
+The default installer without `--core-only` or `--backends` installs all five
+models in backend-specific environments (M3GNet and CHGNet share MatGL).
+It installs all declared/transitive dependencies, runs `pip check`, records
+resolved packages, and downloads hash-checked weights unless `--no-weights` is
+supplied. Separate environments avoid incompatible backend dependencies.
+UMA requires each model user's own approved Hugging Face access; authenticate
+as instructed, and never put tokens or foundation weights in Git.
+
+Use `--torch-index-url` for an appropriate official wheel channel. CPU-only
+checks can use `https://download.pytorch.org/whl/cpu`. On NERSC, put environments
+and the pip cache on native scratch via `--prefix` and `PIP_CACHE_DIR`; installing
+thousands of files on the project filesystem can be slow. On a workstation the
+local `.venvs` default is suitable. See `bash scripts/install.sh --help`.
+
+
+## Get energy, force, and stress through the common interface
+
+The wrapper selects the pinned model/head and backend environment. Default
+precision matches the campaign: FP32, TF32 off, and no implicit dispersion or
+accelerator substitution. On an allocated/class GPU:
+
+```bash
+cathode-cvae mlip doctor --model uma --device cuda --load
+cathode-cvae mlip score --model uma --device cuda \
+  --input runs/new_multibin_fit/middle_attempts.unique.npz \
+  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+  --output runs/uma_interface_check
+```
+
+This makes new inference calls. Required cached midterm analyses do not need it.
+The same `score` accepts POSCAR/CIF/extxyz paths without `--parent`. Energies are
+eV per cell, forces eV/Å, and stress eV/Å³ in ASE tensile-positive
+`xx yy zz yz xz xy` order. Force vectors belong to the evaluated orientation.
+`relax` is a separate operation with explicit fixed/variable-cell mode, force/
+stress criteria and step cap; successful process exit alone is not physical
+convergence. Frame archives need frame-specific IDs before individual scoring.
+
+The default teachers available through the infrastructure are UMA, MACE, SevenNet,
+CHGNet and M3GNet. The current class extension uses UMA-S-1.2.1/`omat` and
+MACE-MH-1/`omat_pbe`; changing a checkpoint/head/protocol changes the experiment.
+No new MLIP fine-tuning or DFT is performed by these commands.
+
+## Historical reference: November 7 study and earlier packets
+
+These are the preserved instructions and results from the prior study, published
+early November 8. Its claims about work remaining apply to that historical
+checkpoint. Current assignments and final status are described above and in
+[the collaborator tasks](docs/COLLABORATOR_TASKS.md).
+
+<details>
+<summary>Open the historical results, branches, downloads and reproduction commands</summary>
+
+### Prior conditioning, graph and edit study
 
 **Beihao and Varad: start with [your tasks](docs/COLLABORATOR_TASKS.md).**
 The current study asks which training choices, latent sizes, and physical-neighbor
@@ -121,52 +288,6 @@ Use a personal branch and new run directories. The historical
 `artifacts/current/` snapshot, original splits and completed results remain
 immutable. The new extension permits bounded CVAE training and MLIP checks;
 **no new DFT or new MLIP fine-tuning campaign is authorized by this package.**
-
-## Install without materials-specific setup
-
-Python 3.11–3.13 is supported (3.12 was used in the historical GPU campaign).
-Training works on CPU or a visible CUDA GPU. Use a PyTorch wheel compatible with
-your platform's GPU driver; Python installation cannot upgrade that driver.
-On a cluster, obtain the class's permitted compute allocation first. Commands
-respect `CUDA_VISIBLE_DEVICES` and do not select an account or submit jobs.
-
-For the required fits and cached analyses:
-
-```bash
-bash scripts/install.sh --python python3 --prefix .venvs --core-only
-source .venvs/learning/bin/activate
-python -m pip check
-```
-
-Existing users can activate their existing learning environment and update only
-the project code:
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pip check
-```
-
-The new schema/allocation code needs no new MLIP backend installation. For
-optional UMA/MACE inference on a fresh machine, install those providers:
-
-```bash
-bash scripts/install.sh --python python3 --prefix .venvs --backends uma,mace
-source .venvs/learning/bin/activate
-```
-
-The default installer without `--core-only` or `--backends` installs all five
-models in backend-specific environments (M3GNet and CHGNet share MatGL).
-It installs all declared/transitive dependencies, runs `pip check`, records
-resolved packages, and downloads hash-checked weights unless `--no-weights` is
-supplied. Separate environments avoid incompatible backend dependencies.
-UMA requires each model user's own approved Hugging Face access; authenticate
-as instructed, and never put tokens or foundation weights in Git.
-
-Use `--torch-index-url` for an appropriate official wheel channel. CPU-only
-checks can use `https://download.pytorch.org/whl/cpu`. On NERSC, put environments
-and the pip cache on native scratch via `--prefix` and `PIP_CACHE_DIR`; installing
-thousands of files on the project filesystem can be slow. On a workstation the
-local `.venvs` default is suitable. See `bash scripts/install.sh --help`.
 
 ## Retrieve and verify the measured packet
 
@@ -384,33 +505,6 @@ a model; the command and acceptance criteria are in Varad's tasks. Its 87 known
 orbits are a numerical reference, not a large-data generation test or 87 new DFT
 calculations.
 
-## Get energy, force, and stress through the common interface
-
-The wrapper selects the pinned model/head and backend environment. Default
-precision matches the campaign: FP32, TF32 off, and no implicit dispersion or
-accelerator substitution. On an allocated/class GPU:
-
-```bash
-cathode-cvae mlip doctor --model uma --device cuda --load
-cathode-cvae mlip score --model uma --device cuda \
-  --input runs/new_multibin_fit/middle_attempts.unique.npz \
-  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
-  --output runs/uma_interface_check
-```
-
-This makes new inference calls. Required cached midterm analyses do not need it.
-The same `score` accepts POSCAR/CIF/extxyz paths without `--parent`. Energies are
-eV per cell, forces eV/Å, and stress eV/Å³ in ASE tensile-positive
-`xx yy zz yz xz xy` order. Force vectors belong to the evaluated orientation.
-`relax` is a separate operation with explicit fixed/variable-cell mode, force/
-stress criteria and step cap; successful process exit alone is not physical
-convergence. Frame archives need frame-specific IDs before individual scoring.
-
-The default teachers available through the infrastructure are UMA, MACE, SevenNet,
-CHGNet and M3GNet. The current class extension uses UMA-S-1.2.1/`omat` and
-MACE-MH-1/`omat_pbe`; changing a checkpoint/head/protocol changes the experiment.
-No new MLIP fine-tuning or DFT is performed by these commands.
-
 ## Wider counts, other parents, and the secondary geometry model
 
 The original main-parent labels cover counts0–48. `data prepare-learning` joins
@@ -454,3 +548,5 @@ Ricardo's later research extension. They are not prerequisites for Beihao's or
 Varad's required cached-data tasks. The extension keeps same-MLIP numerical
 comparisons distinct from physical DFT validation and stores large raw results
 outside Git with retrieval manifests.
+
+</details>

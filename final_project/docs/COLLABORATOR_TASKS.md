@@ -1,4 +1,216 @@
-# Independent midterm work for Beihao, Varad, and Ricardo
+# Independent midterm tasks: Beihao, Varad and Ricardo
+
+The current study is the November 8 packet at `artifacts/overnight_20261108/`.
+Its final models and proposals are frozen: 37 completed training trajectories,
+148,000 optimizer updates, and a final known-orbit history of 344,001. Final
+static scoring and endpoint assessment are running at this documentation update.
+Use their completed receipts when published; no final result is inferred from
+prepared code or a running queue.
+
+The integrating campaign already performed the matched latent/no-latent
+controls. Your contribution is an **independent reproduction, audit and scientific
+interpretation**, rather than claiming those automated fits as work you completed.
+No new DFT, MD campaign or MLIP fine-tuning is required for the midterm. Current
+cached data and the class GPU allocation are sufficient for the tasks below.
+
+The midterm deadline saved in the supplied guidelines is **November 9, 2026,
+11:59 p.m. Pacific**. It requests approximately five body pages excluding
+references, with the revised proposal, mathematical/model/algorithm details and
+novelty/advantages/limitations. The final report is due **December 12**;
+presentations are **November 24 and December 1**, remote during lecture time.
+Ricardo checks any newer announcement and submits manually. No message to
+collaborators or coursework submission is automated.
+
+## Start with the current checkout and core installation
+
+The current integrating branch is `overnight/latent-relaxed-neb-20261108`.
+Use it after its publication receipt is available, create your own branch and
+keep every new run in a fresh directory. The current packet's verified download
+manifest and planned `scripts/overnight_20261108/replay_packet.py` are pending
+assembly/validation. Exact fetch/replay commands will be added when that helper
+exists; the historical commands later in this file remain reproducible under
+their original packet names.
+
+From the current project checkout:
+
+```bash
+cd final_project
+bash scripts/install.sh --python python3 --prefix .venvs --core-only
+source .venvs/learning/bin/activate
+python -m pip check
+```
+
+If already inside `final_project`, omit the first line. Existing users can update
+the package in their learning environment with `python -m pip install -e '.[dev]'`.
+The installer includes required/transitive dependencies and verifies them. Python
+3.11–3.13 is supported; Python 3.12 was used for these runs. On a cluster, obtain
+the class's permitted allocation and use a compatible PyTorch wheel. Commands
+respect `CUDA_VISIBLE_DEVICES`; they do not select a personal account or queue.
+
+Cached metrics and model checks need no foundation MLIP weights. If a complete
+new scoring batch is needed for an independent fit, the existing installation
+procedure supports UMA/MACE providers:
+
+```bash
+bash scripts/install.sh --python python3 --prefix .venvs --backends uma,mace
+```
+
+The default full installer and all five backend procedures remain in
+[the README](../README.md#install-without-materials-specific-setup). Each UMA
+user supplies their own approved model access. Use the project's common scorer
+for energies in eV/cell, forces in eV/Angstrom and ASE stress in eV/Angstrom³;
+its receipts bind model/head, geometry and inference precision. Full new scoring
+is optional for this midterm handoff because measured outcomes are supplied.
+
+## Beihao: independently verify the generative-model mechanism
+
+Plan roughly 4–6 focused hours for a reproduction and interpretation. Begin with
+the published current checkpoints/configurations and exact recorded training
+commands. Keep the same parent, TRAIN/VAL orbit roles, conditions, feature schema,
+seed, weighted loss, checkpoint-selection rule and 4,000-update budget. A
+hardware time cap is a partial reproduction, even when a command exits cleanly.
+Do not copy a historical dense-reference command and label it the new retained
+spatial model.
+
+1. Independently reproduce a matched spatial CVAE/no-latent AR pair on the class
+   GPU, or prioritize one full fit and thoroughly reload/audit the supplied
+   matched checkpoint if time is short. The retained radial-shell features must
+   match across the pair. Record actual parameter counts; removing an encoder
+   changes parameter count, so this is not an equal-parameter experiment.
+2. Verify exact requested Li counts, checkpoint reload, parent/species/cell
+   hashes and strict-past decoder features. In training the encoder may see the
+   full target mask; generation cannot. Remaining-count features use the known
+   condition and the prefix, not future target bits. Review the saved trained
+   causality evidence as well as your own software check.
+3. Plot reconstruction and KL against actual optimizer updates. Inspect
+   component KL, encoded-mean variance and the saved activity-cutoff sensitivity.
+   Compare changing the condition with fixed latent/uniform draws against
+   changing the latent with fixed condition/uniform draws. Raw Hamming change,
+   orbit equality and absolute/RMS energy response answer different questions.
+4. Explain why a strong prior sampler can use its latent weakly, and why the
+   dense posterior's better reconstruction/active latents did not give useful
+   prior-generation improvement. The expected signed energy change between
+   exchangeable prior draws is zero even for a strong latent effect; it is not
+   evidence of collapse. Retain negative findings.
+5. Keep deletion-target and endpoint-target training separate. Their initial
+   input masks/splits are paired, but their TRAIN-fitted class thresholds differ.
+   The endpoint-conditioned mask generator still produces a pristine-derived
+   deletion geometry; it does not output optimized atomic coordinates.
+
+Use existing complete scoring pools for the main comparisons. A new independent
+fit produces new masks whose energies can be unknown; report that honestly or
+score its entire prespecified batch through the MLIP wrapper. A cache-only yield
+would omit unknown outcomes. Personal ablations belong to a new DEVELOPMENT
+namespace; previously inspected FINAL outcomes cannot select another model.
+
+**Return:** your own run/config/checkpoint receipt, one update-resolved learning
+figure, one paired condition/latent figure, and a short model interpretation for
+Sections 2–3. Include exact commands, hashes, update counts and limitations.
+Your independent rerun does not add a fit seed to the integrating campaign's
+already frozen FINAL assessment.
+
+## Varad: recompute raw outcomes, physical labels and costs
+
+Plan roughly 4–6 focused hours. Start with cached scalar facts and all raw
+attempts; no fresh MLIP or DFT calls are needed. The existing portable interfaces
+are:
+
+```bash
+python scripts/overnight_20261108/evaluate_controls.py --help
+python scripts/overnight_20261108/paired_evaluate.py --help
+```
+
+The first consumes repeated `--score TEACHER=scalarNPZ` and
+`--schema TEACHER=frozenJSON` arguments. The paired evaluator accepts
+`--facts`/`--facts-sha256` instead of the HPC queue, with the frozen registration,
+attempts/history and two assessment schemas. Use the current packet's manifest
+for exact input paths/hashes. The planned one-command packet replay remains
+pending until it has actually been implemented and verified.
+
+1. Recompute distinct novel in-request orbits divided by **all attempted
+   proposals**, including duplicates, invalid requests, score failures and
+   nonconverged endpoints. Average composition/request cells equally, then show
+   individual fit/sampler replicates and descriptive spread. Repeat proposals
+   are not independent fitted models. The 37 trajectories span several methods.
+2. Verify each canonical mask against all retained parent symmetries and the
+   frozen `H_FINAL` history. Confirm the history was fixed before final proposals
+   and includes saved acquisition/research exposures. Novelty to TRAIN and to
+   all known history are different quantities. Inspect identity-only history
+   receipts without changing protected roles or using TEST labels for selection.
+3. Keep three metrics distinct: requested-bin yield, the original fixed-q20
+   **LOW-request deletion** metric, and relaxed-endpoint yield under its separate
+   TRAIN-fitted thresholds. Score both paired label-target generators under both
+   deletion and endpoint definitions. UMA and MACE have separate energy
+   namespaces; an absolute UMA threshold cannot classify MACE labels.
+4. Recount raw versus unique physical candidates, compatible cached results,
+   nonconvergence, time caps and unknown outcomes. Keep fixed-cell 0.05 and
+   0.01 eV/Angstrom endpoint definitions separate. Exact initial masks and all
+   trajectory frames belong to one lineage. A repeated endpoint occupation key
+   does not prove the same continuous geometry or a unique PES minimum.
+5. Explain uniform's exact one-third balanced mean in the common-bin-coupled
+   pool: each shared draw belongs to one of three classes. Its zero macro spread
+   is an algebraic property, not zero uncertainty in individual requested-bin
+   yields. Preserve per-bin results and paired method contrasts.
+6. Recompute resource costs from global task/query records. Distinguish decoder
+   attempts, unique geometry/teacher/precision queries, fresh/cache status,
+   actual logged E/F calls, optimizer updates and allocated resources. Do not
+   sum per-method encountered labels as fresh calls or sum overlapping process
+   times as node-hours. Separate GPU-device-hours from charged GPU node-hours;
+   include startup, idle time, failures and interruptions. Scope any unlogged
+   in-flight call uncertainty explicitly.
+
+**Return:** an independently written metric/cost receipt, one per-seed/per-bin
+figure, the paired deletion/endpoint table and a concise paragraph for Sections
+3–4. Record exact commands and any mismatch; preserve original outputs when
+investigating it. Replaying saved FINAL scores verifies the result, not a new
+untouched assessment.
+
+## Ricardo: physical review, report integration and manual submission
+
+Review the scientific interpretation while the independent ML/statistics checks
+are returned. The current default is O3 LCO with a 48-site Li sublattice; the
+software's general parent/mobile-ion interface does not establish transfer to
+another material or system size.
+
+- Check the actual initial/relaxed geometry, force/stress units, fixed-cell
+  convention, convergence status and teacher/head/precision receipt. Explain
+  useful but imperfect deletion-versus-endpoint rankings. Low teacher energy
+  is neither a true DFT ground-state certificate nor a globally optimized
+  structure. Same-geometry teacher checks differ from independently relaxed
+  teacher endpoints.
+- Review the exact 12-site static reference, approximate coordinate symmetry and
+  teacher disagreement. Its exhaustive probabilities/entropy are finite-model
+  quantities at fixed composition, not measured LCO entropy, a 48-to-12-site
+  model transfer or calibrated hydrothermal equilibrium.
+- Inspect the NEB candidate, original endpoints and both downhill structures in
+  VESTA. The off-site low-force state has the same raw assigned vacancy mask as
+  an end-like state. One stable negative-curvature direction does not verify the
+  whole original elementary hop; the off-site state is not a certified minimum.
+  Restricted image/tolerance convergence does not establish overall barrier
+  stability after endpoint changes. Later DFT/basin/connection validation remains.
+- Integrate only actual returned contributions and completed receipts into the
+  approximately five-body-page [new report](midterm_20261108/main.tex), retaining
+  the separate [research supplement](research_supplement_20261108/main.tex).
+  Check any newer rubric, resolve comments and submit manually by November 9,
+  11:59 p.m. Pacific. Reserve time for a final PDF/source/figure check.
+
+There is no prerequisite new DFT, MD or MLIP fine-tuning campaign for this
+midterm. Later physical validation and the possible downstream fine-tuning
+extension should be planned after reviewing these results; the final report and
+presentations have their own December/November deadlines above.
+
+## Historical instructions and references
+
+The section below preserves the prior `conditioning_20261107` handoff and its
+commands/links. Its statements about unperformed controls or insufficient old
+paired-cohort support describe that historical checkpoint. The November 8
+campaign has since performed those controls and acquired a new paired cohort;
+use the current packet's actual support/evaluation receipts.
+
+<details>
+<summary>Open the preserved prior-study handoff</summary>
+
+### Prior-study independent handoff
 
 The current study diagnoses conditional energy control and tests training policy,
 latent dimension, physical-neighbor information, symmetry and structural targets.
@@ -355,3 +567,5 @@ Convergence under an MLIP does not remove the need for later physical validation
 Complete independent checks on November 8, freeze the integrated tables/figures
 that day, and reserve November 9 for final verification. Prepared commands do not
 substitute for the named owners' independent contributions.
+
+</details>
