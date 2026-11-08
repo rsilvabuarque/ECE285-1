@@ -1,0 +1,15 @@
+{
+  "status": "COMPILED_AND_REVIEWED",
+  "main": {
+    "pages": 6,
+    "body_pages": 5,
+    "sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8"
+  },
+  "research": {
+    "pages": 8,
+    "distributed_reviewed_pdf_sha256": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea",
+    "root_rebuild_pdf_sha256": "c6446d36c7018e984a87755cd3d8085c5e9008adf0830c50cce0ddd29b2df1ee",
+    "source_tex_sha256": "8f29af076f9e9ed3d2df7b83c24fe8618e169a83d369f1f11cb7e68634952547",
+    "scope": "Root rebuild succeeded; PDF creation metadata can differ. Distributed PDF is the immutable visually reviewed snapshot with identical TeX and assets."
+  }
+}

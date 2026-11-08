@@ -57,10 +57,14 @@
       "global_scalar_rows_per_teacher": 46903
     },
     "NEB_common_setting_routes": {
-      "status": "PARTIAL_WITH_PRESERVED_NONCONVERGENCE_AND_BOUNDED_RECOVERY",
+      "status": "BOUNDED_TESTS_COMPLETE_PHYSICAL_VALIDATION_UNRESOLVED",
       "event1_coarse": "STEP_CAP500",
       "event1_refined": "INTERRUPTED_SIBLING430_COMPLETE_STEPS_RECOVERY69",
-      "event2": "NUMERICALLY_CONVERGED_UNVALIDATED"
+      "event2": "NUMERICALLY_CONVERGED_UNVALIDATED",
+      "event1_converged": false,
+      "event2_overall_stability_target_met": false,
+      "physical_validation": false,
+      "receipt": "reports/overnight_20261108/physical_final_summary_v2/receipt.json"
     },
     "smallcell_raw_reference": {
       "status": "COMPLETE_INDEPENDENTLY_VALIDATED",
@@ -75,20 +79,22 @@
       "summary": "reports/overnight_20261108/harmonic_summary"
     },
     "midterm_build": {
-      "status": "INTERIM_COMPILED_5_BODY_PLUS_REFERENCES",
+      "status": "FINAL_COMPILED_5_BODY_PLUS_REFERENCES",
       "historical": "reports/overnight_20261108/historical_midterm/midterm_prior_goal_preserved.pdf",
       "source": "docs/midterm_20261108/main.tex",
       "PDF": "docs/midterm_20261108/main.pdf",
-      "snapshot": "reports/overnight_20261108/interim_report_snapshot/manifest.json"
+      "snapshot": "reports/overnight_20261108/final_report_snapshot",
+      "pdf_sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8"
     },
     "research_supplement": {
-      "status": "FINAL_PHYSICAL_RESULTS_COMPILED_8_PAGES",
+      "status": "FINAL_COMPILED_8_PAGES_PHYSICAL_LIMITS_RETAINED",
       "source": "docs/research_supplement_20261108/main.tex",
       "PDF": "docs/research_supplement_20261108/main.pdf",
-      "snapshot": "reports/overnight_20261108/research_final_report_snapshot"
+      "snapshot": "reports/overnight_20261108/research_final_report_snapshot",
+      "pdf_sha256": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea"
     },
     "publication_and_resource_closure": {
-      "status": "PLANNED"
+      "status": "REVIEW_BRANCH_PUSHED_FIRST_CI_PASS_PACKET_PREPARED"
     },
     "intake": {
       "status": "COMPLETE",

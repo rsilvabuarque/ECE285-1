@@ -1,0 +1,6 @@
+Build on allocated CPU step, CUDA_VISIBLE_DEVICES empty.
+module load texlive
+bash docs/midterm_20261108/build.sh
+TeX binary root: /global/common/software/nersc9/texlive/2024/bin/x86_64-linux
+Distribution resolved by build log: 2024-17c650b50c05ee823c6093081103ed0ab76a21df
+No MLIP/model/DFT calls were made for the report build.

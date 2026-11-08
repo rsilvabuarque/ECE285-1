@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{shi2018}
+Yang Shi, Gen Chen, and Zheng Chen.
+\newblock Effective regeneration of {LiCoO2} from spent lithium-ion batteries:
+  a direct approach towards high-performance active particles.
+\newblock {\em Green Chemistry}, 20:851, 2018.
+
+\bibitem{vanderVen1998}
+Anton Van~der Ven, Mehmet~K. Aydinol, Gerbrand Ceder, Georg Kresse, and
+  J{\"u}rgen Hafner.
+\newblock First-principles investigation of phase stability in {LixCoO2}.
+\newblock {\em Physical Review B}, 58:2975--2987, 1998.
+
+\bibitem{gilmer2017}
+Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
+  George~E. Dahl.
+\newblock Neural message passing for quantum chemistry.
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning}, volume~70, pages 1263--1272, 2017.
+
+\bibitem{alemi2018}
+Alexander Alemi, Ben Poole, Ian Fischer, Joshua Dillon, Rif~A. Saurous, and
+  Kevin Murphy.
+\newblock Fixing a broken {ELBO}.
+\newblock In {\em Proceedings of the 35th International Conference on Machine
+  Learning}, volume~80, pages 159--168, 2018.
+
+\bibitem{fu2019}
+Hao Fu, Chunyuan Li, Xiaodong Liu, Jianfeng Gao, Asli Celikyilmaz, and Lawrence
+  Carin.
+\newblock Cyclical annealing schedule: A simple approach to mitigating {KL}
+  vanishing.
+\newblock In {\em Proceedings of NAACL-HLT}, pages 240--250, 2019.
+
+\end{thebibliography}

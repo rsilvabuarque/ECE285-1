@@ -1,0 +1,308 @@
+\documentclass[10pt]{article}
+\usepackage[margin=.76 in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,url,microtype,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\setlength{\parindent}{0 pt}\setlength{\parskip}{4 pt}
+\begin{document}
+\begin{center}
+{\Large\bfseries Conditional generation of cathode vacancy patterns:\\
+separating latent learning, spatial decoding, and relaxed energy}\par\vspace{4 pt}
+Ricardo Silva Buarque, Beihao Gu, and Varad Kottawar\\
+ECE 285 midterm --- November 8, 2026
+\end{center}
+\begin{abstract}
+We test whether a conditional variational autoencoder (CVAE) proposes new
+Li/vacancy configurations at a requested composition and energy range more
+efficiently than uniform sampling and mutation. Earlier spatial decoding improved
+teacher-defined yield, but its latent variables were nearly unused. The present
+matched controls separate a graph-posterior CVAE, a no-latent autoregressive
+sampler, and a dense-posterior CVAE with the same causal spatial decoder.
+Thirty-seven 4,000-update fits are complete. Development evidence shows spatial AR matches
+the graph CVAE, while a dense posterior retains information without useful
+prior-generation gain. On frozen FINAL proposals, radial-shell AR achieves
+63.04\% UMA balanced novel in-bin yield, versus 62.20\% for its CVAE and
+58.37\% for mutation. A separate 6,000-mask cohort compares deletion and
+relaxed-endpoint targets; endpoint-label training does not improve endpoint
+LOW yield in the matched test. Exhaustive small-cell
+enumeration quantifies approximate symmetry and teacher disagreement. No new DFT
+or interatomic-potential fine-tuning is performed, and generative, numerical, and
+physical validation remain distinct.
+\end{abstract}
+
+\section{Motivation, revised question, and independent data}
+Direct recycling aims to restore useful cathode composition and structure rather
+than dissolve the material into its constituent elements. Hydrothermal processing
+and annealing have regenerated spent LiCoO$_2$ (LCO) experimentally
+\cite{shi2018}. Our longer-term motivation is to select informative atomistic
+configurations for reference calculations and improved recycling models.
+The class project studies conditional generation of vacancy patterns; it does not
+simulate a hydrothermal liquid or establish optimal reactor conditions.
+
+Density functional theory (DFT) supplies an approximate electronic-structure
+reference at specified atoms, positions, and cell. A machine-learned interatomic
+potential (MLIP) predicts potential energy and its force/cell derivatives. A
+single-point prediction leaves geometry unchanged. Relaxation moves atoms toward
+a local minimum; molecular dynamics (MD) uses forces to propagate them in time.
+A sampled vacancy mask performs none of these operations automatically.
+
+Li/vacancy ordering changes energy even at fixed composition
+\cite{vanderVen1998}. The working parent is Li$_{48}$Co$_{48}$O$_{96}$.
+An occupation vector $o\in\{0,1\}^{48}$ has $o_j=1$ for a present Li at parent
+site $j$ and $o_j=0$ for a vacancy. Its count is $n=\sum_j o_j$; the material
+contains $N_a=144+n$ atoms and Li fraction $x=n/48$. Primary counts are
+$n=12,24,36$. The parent geometry and cell are fixed for deletion labels.
+The primary teacher is UMA-S-1.2.1/\texttt{omat}; the independent teacher check is
+MACE-MH-1/\texttt{omat\_pbe}. Both use FP32, TF32 off, with checkpoint and
+inference receipts. A missing precision field in an old condition schema is not
+evidence that its predictions used another precision.
+
+The parent's 192 retained site permutations define an \emph{orbit}: all vacancy
+masks related by those operations. The lexicographically smallest transformed
+vacancy string identifies the orbit. Grouping precedes splitting; symmetry
+augmentation supplies equivalent views, not additional independent examples.
+The fixed round-0 dataset contains 40,157 TRAIN, 4,967 VAL and 5,123 TEST orbits.
+Only TRAIN supplies fit examples and class thresholds; VAL selects checkpoints.
+TEST labels are not used for these decisions. Before FINAL generation, a history
+of 344,001 known orbits was frozen, including development proposals, acquired
+structures and observed research trajectories. Novelty uses this complete history.
+
+The revised scientific question is whether an improvement is due to the CVAE
+latent pathway, to causal spatial autoregression, or to their combination, and
+whether a deletion-energy advantage survives actual geometry relaxation.
+This is more discriminating than comparing a CVAE only against uniform masks.
+\newpage
+
+\section{Model, conditions, and controlled alternatives}
+The condition is $c=(n/48,b)$, with energy class $b\in\{\mathrm{low},\mathrm{middle},
+\mathrm{high}\}$. Within each count, TRAIN energy quantiles $q_{20},q_{80}$ define
+the frozen class boundaries. Energy is in eV per present atom for class
+assignment; the teacher, parent, geometry convention and thresholds belong to
+one condition schema. A low request is a supported energy \emph{range}, not a
+guarantee of a global minimum or an energy-gradient optimization.
+
+An encoder produces a diagonal Gaussian
+$q_\phi(z\mid o,c)=\mathcal N(\mu_\phi,\operatorname{diag}\sigma_\phi^2)$,
+where $z\in\mathbb R^4$ is the latent vector. The reparameterization
+$z=\mu+\sigma\odot\epsilon$, $\epsilon\sim\mathcal N(0,I)$, permits stochastic
+training. At generation, a fresh $z\sim\mathcal N(0,I)$ is used without a target
+mask. The conditional autoregressive decoder factors
+\begin{equation}
+ p_\theta(o\mid z,c)=\prod_{i=1}^{48}
+ p_\theta(o_i\mid o_{<i},z,c,h_i).
+\end{equation}
+Here $o_{<i}$ is the already assigned prefix, and $h_i$ summarizes local
+occupied, vacant and unassigned sites. At training, the true prefix is supplied
+(teacher forcing); at generation, earlier sampled decisions form the prefix.
+The future target occupations are excluded from $h_i$. If the remaining required
+Li count is zero, later sites are vacant; if it equals the remaining site count,
+all are occupied. This enforces $\sum o_i=n$ exactly.
+
+For one training row, the loss is
+\begin{equation}
+ \mathcal L(o,c)=-\mathbb E_{q_\phi}\sum_i\log p_\theta(o_i\mid o_{<i},z,c,h_i)
+ +\beta_t D_{\mathrm{KL}}\!\left(q_\phi(z\mid o,c)\Vert\mathcal N(0,I)\right).
+\end{equation}
+The first term rewards mask reconstruction; the KL term regularizes the
+posterior toward the sampling prior. Both are measured in nats with natural
+logarithms. The same row weights multiply reconstruction and the sum of KL over
+latent components. Class balancing changes TRAIN weights only; VAL retains its
+base weights and fixed Monte Carlo noise. The block-update KL warm-up
+and selection objective with $\beta=0.1$ are matched across controls. All full
+fits use 4,000 updates: 37 trajectories total, including bounded screens and six
+paired-target fits, for 148,000 updates.
+
+\begin{center}\small
+\begin{tabular}{p{.07\linewidth}p{.23\linewidth}p{.57\linewidth}}
+\toprule Control & Posterior / latent & Shared decoder and discriminating question\\\midrule
+A & Graph encoder, $z\in\mathbb R^4$ & Physical causal neighborhoods. Does the spatial CVAE use a latent representation?\\
+B & No encoder or latent & Same causal neighborhoods. Is a conditional spatial AR sampler sufficient?\\
+C & Dense encoder, $z\in\mathbb R^4$ & Same causal neighborhoods. Does an informative dense posterior improve prior sampling?\\
+D & No latent, matched B & Fixed nonphysical association of decoder graph kernels. Full kernel degree/weights are retained, but causal prefix exposure also changes.\\\bottomrule
+\end{tabular}
+\end{center}
+The graph encoder passes messages on the full parent, including host species
+and vacant mobile sites, then pools host/mobile features \cite{gilmer2017}.
+The causal decoder uses only prefix-derived features on that fixed graph.
+Its six-feature baseline is compared with nine occupied/vacant/unassigned
+fractions in three radial shells, including interlayer neighbors. Three-fit
+development confirmation retained A-shell as the best genuine CVAE point
+estimate and B-shell as the strongest AR; A-shell's improvement over A was
+unresolved across fits. A/B and their shell variants have five FINAL replicates;
+C/D/remaining-count B have three. Replicates 0804/05 were FINAL-only.
+This is not a coordinate-generating equivariant model. The software accepts a
+different parent/mobile ion, but a new material or cell size has not been validated.
+
+KL, per-component $\operatorname{Var}(\mu_j)$, resampling $z$ with shared decoder
+uniforms, and changing $b$ with shared $z$/uniforms test different properties.
+A small reconstruction loss alone does not establish useful latent codes
+\cite{alemi2018}. A cyclic KL policy is a future controlled candidate
+\cite{fu2019}, not an assumed cure for collapse or evidence of better sampling.
+\newpage
+
+\section{Evaluation and mechanistic evidence}
+Uniform masks select exactly $n$ sites. Mutation starts from a frozen TRAIN seed
+in the requested bin and swaps equal numbers of present/vacant sites. Seed
+information, proposal counts and swap budgets are declared. Neither baseline
+is credited with a new unique structure when it merely repeats one already
+seen. Every attempted proposal remains in the denominator, including duplicates,
+unsupported/failed requests and invalid outputs.
+
+For $A_{snb}$ attempted proposals from replicate $s$, count $n$ and requested bin
+$b$, the primary score is
+\begin{equation}
+Y_{snb}=\frac{\#\{\text{distinct valid orbits, new to frozen history, teacher bin}=b\}}
+{A_{snb}}.
+\end{equation}
+The balanced yield averages all nine count/bin cells equally and is then
+reported per fitted replicate. The historical low-energy score using its original
+round-0 $q_{20}$ remains a separately named metric. Best energy versus attempts
+and versus actual new teacher queries are secondary search metrics; they need
+not agree with requested-bin yield. Shared queries are deduplicated physically
+without changing attempted-proposal denominators.
+
+Paired condition-response tests hold $z$ and decoder uniforms fixed while changing
+the requested energy class; independent MLIP rescoring determines the realized
+energy shift. Latent-response tests change $z$ while fixing condition/uniforms.
+Paired probes report raw Hamming differences and orbit equality, failures,
+novelty, energy distributions and composition-resolved results. FINAL structural
+distance minimizes over all 192 operations against 1,024 fixed TRAIN orbits/count;
+it is an upper bound on full-TRAIN nearest distance. A few fit seeds give
+descriptive variation, not a calibrated confidence interval over all future fits.
+
+\input{generated_results.tex}
+
+The initial mechanism check found A's VAL KL at 0.006--0.019 nats/row with
+no active components at $\operatorname{Var}(\mu_j)>0.01$, versus C's 12.5--13.3
+nats and four active components. On FINAL, paired LOW$\to$HIGH shifts UMA energy
+by 5.37/5.36 meV/atom for A/B, but only 0.33 for C; shell A/B shifts are
+5.97/5.94. Resampling $z$ changes shell A by 0.851 sites on average (65.42\%
+same orbit), versus C's 13.04 sites (0.26\%). Mean absolute energy changes are
+0.335 versus 2.186 meV/atom. Signed mean change near zero is expected for
+exchangeable prior draws and is not collapse evidence. Low KL and weak mask
+response support weak latent use; an active posterior does not establish useful
+prior generation. Across five fits, A-shell minus B-shell balanced yield is
+$-0.83\pm1.13$ UMA and $-0.35\pm0.66$ MACE percentage points (descriptive SD),
+without a demonstrated variational advantage.
+
+The FINAL static manifest freezes 44,928 primary attempts and 4,992 separate
+LOW latent probes across 39 model/baseline entries. MACE scores the exact same
+geometries under its own frozen schema. Uniform uses shared draws across
+requested classes: without repeat/novelty losses, exactly one-third balanced
+yield follows algebraically from this coupling, not zero uncertainty in individual
+class yields. The FINAL loss and nonzero fit spread are retained. Novelty
+uses the complete frozen history. FINAL outcomes do not select or modify models.
+Teacher agreement is robustness evidence, not calibrated uncertainty or DFT
+validation.
+\newpage
+
+\section{Does deletion-energy control survive relaxation?}
+For the same initial mask $o$, define $E_{\mathrm{del}}(o)$ at literal parent
+coordinates and $E_{\mathrm{end}}(o)$ after fixed-cell atomic relaxation.
+The latter is a reached local endpoint, not a certified global minimum. Two
+models have identical input masks, splits, architecture, initialization
+policy and update budget, but distinct TRAIN-fitted condition thresholds for
+these two energy targets. Both generators must be evaluated under \emph{both}
+energy definitions. A mask generator conditioned on endpoint energy still
+outputs a pristine-derived deletion geometry until relaxation is actually run.
+
+The frozen 6,000-mask cohort has 1,200 TRAIN, 400 VAL and 400 TEST masks/count.
+UMA fixed-cell FIRE uses maximum force $0.05$ eV/\AA, at most 500 steps and a
+120-s attempt cap; coordinates and atom identities are retained. Of 6,000
+attempts, 5,992 converged and eight were interrupted. The shared fit set has
+3,594 TRAIN and 1,200 VAL pairs. Per-count TRAIN LOW support is 240; endpoint
+VAL LOW support is 77/81/85. This passes the predeclared minimum support of
+30/count/role, an operational heuristic rather than a power calculation.
+TEST was sealed until the final scoring gate; 1,198/1,200 TEST pairs are known,
+with both failures retained and no threshold refitting.
+
+At $n=12/24/36$, independent TEST deletion--endpoint Spearman rank correlation
+is 0.926/0.966/0.907. Of deletion-LOW masks, 74.7/82.6/77.6\% also reach
+endpoint LOW; they recover 73.8/85.1/78.6\% of endpoint-LOW masks. Thus deletion
+energy is a useful but imperfect proxy. Mean relaxation lowers energy by
+30.52/20.84/11.91 meV/atom. A high correlation alone cannot establish a
+generator's endpoint low-tail enrichment.
+
+\input{generated_paired_results.tex}
+
+The paired FINAL manifest retains 10,944 attempts: 2,304 current LOW-only attempts
+(A, B, mutation, uniform), 3,456 per matched deletion/endpoint CVAE arm, and
+1,728 shared uniform attempts. Each target arm is assessed under both schemas;
+the same 576 uniform LOW draws are shared, not independent repeats. Unknown
+labels and nonconvergence reduce all-attempt yield rather than disappearing.
+Occupation-key coincidence is not evidence of a common physical PES basin.
+
+Tightening 96 TRAIN endpoints to $0.01$ eV/\AA\ gives 1/4/0 class crossings
+among 32/count. On the same 96 UMA geometries, UMA--MACE rank correlations are
+0.977/0.941/0.769. MACE median maximum forces are 0.212/0.261/0.302 eV/\AA,
+despite UMA values near 0.05: a UMA endpoint is not generally stationary for
+MACE. Independent MACE quenches start from deletion geometries.
+\newpage
+
+\section{Interpretation, limits, and independent completion tasks}
+The principal mechanistic distinction is between \emph{condition control} and
+\emph{latent use}. A decoder may respond well to a requested energy bin while
+effectively ignoring $z$. Conversely, an encoder can reconstruct a training
+mask through an informative posterior yet generate poorly from its prior.
+The present A/B/C controls directly separate these possibilities. Retaining a
+true CVAE is useful only if its measured behavior supports the latent pathway;
+an AR result that matches or wins remains scientifically informative.
+At this data/update budget, B-shell has the best balanced point estimate under
+both teachers, while a latent-specific advantage is unestablished. The current
+learned samplers enrich the endpoint LOW tail, but matched endpoint-label
+training does not improve it over deletion-label training. These observations
+support spatial conditional sampling without claiming that CVAEs or endpoint
+labels cannot help under another controlled design.
+
+Pristine-derived deletions omit relaxation, local strain, magnetic degrees of
+freedom and competing host structures. Endpoint labels address one of these
+limits under a stated MLIP and fixed cell, without proving a ground state or
+validated chemistry. Class conditions are empirical ranges, not thermodynamic
+populations. The exact small-cell probabilities provide a finite-model reference
+for raw reference-pool error, not a justification for treating a generated
+proposal histogram as an equilibrium distribution.
+
+The separate research supplement reports completed bounded checks. Exhaustive
+12-site enumeration scores all 1,364 raw masks plus repeat controls under both
+teachers. Approximate symmetry has measurable energy spread, so every raw mask
+is retained. Finite-model configurational entropies differ between teachers;
+they are not experimental LCO thermodynamics or evidence of network size
+transfer. A null test using the actual 537-mode harmonic spectrum exposes
+finite-window bias and spurious fluidicity in thermal estimators, not an MD
+measurement of anharmonicity.
+
+For one saved migration event, fixed-endpoint image/tolerance checks pass a
+restricted 0.02-eV path-span target, but changing endpoint relaxation changes
+the span by 0.0264 eV. Two finite-difference steps find one stable negative
+internal mode at a candidate saddle. Its downhill branches do not establish the
+full marked endpoint-to-endpoint hop; one reaches an off-site low-force state
+with the same assigned vacancy mask. Another route fails its step cap.
+Consequently, no stable DFT-validated hop barrier, finite-temperature activation
+free energy or diffusivity is claimed. Exact-coordinate viewing files and atom
+mappings support later review. These extensions do not substitute for the
+class-model comparisons.
+
+\textbf{Beihao:} independently rerun and interpret the matched spatial no-latent
+control, verify decoder causality/count enforcement, and compare condition
+response with latent response. Automated fits do not constitute his independent
+contribution. Explain why informative C latents can coexist with poor prior
+sampling; keep any later ablation independent of this final assessment.
+
+\textbf{Varad:} independently replay every raw-attempt denominator, frozen-history
+novelty, per-seed contrast, teacher-query deduplication and paired endpoint
+lineage/failure account. Preserve negative and null latent/target-transfer findings
+and distinguish proposal attempts, unique queries, actual force calls and
+allocated resources. Do not tune from final outcomes.
+
+\textbf{Ricardo:} review the actual structures, site/host changes, force thresholds,
+teacher disagreement and physical scope; select later DFT checks only after
+the no-new-DFT restriction ends. Integrate the report and verify/manual-submit
+against the actual November 9, 11:59 p.m. Pacific assignment instructions.
+The repository supplies portable commands, cached-data replay and evidence.
+No additional DFT, MD or MLIP fine-tuning is needed before this midterm.
+The final report is due December 12, with presentations November 24 and
+December 1. Automated evidence is not the collaborators' independent
+contribution. Publication and resource closure are reported separately.
+
+\clearpage\bibliographystyle{unsrt}\bibliography{references}
+\end{document}

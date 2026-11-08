@@ -1,0 +1,19 @@
+\begin{center}\small
+\begin{tabular}{lrrrrr}\toprule
+& Fits &\multicolumn{2}{c}{Balanced yield (\%, mean$\pm$SD)}&\multicolumn{2}{c}{Original-$q_{20}$ LOW (\%)}\\
+Method & &UMA&MACE&UMA&MACE\\\midrule
+A: graph CVAE&5&$60.24\pm0.53$&$61.72\pm0.72$&62.81&66.25\\
+B: spatial AR&5&$60.21\pm1.23$&$62.03\pm0.76$&62.24&66.61\\
+C: dense CVAE&3&$31.37\pm0.22$&$31.02\pm0.96$&32.47&36.89\\
+D: nonphysical AR&3&$34.38\pm0.80$&$35.04\pm0.78$&25.43&28.82\\
+A-shell: graph CVAE&5&$62.20\pm0.56$&$64.03\pm0.79$&63.33&67.66\\
+B-shell: spatial AR&5&$63.04\pm1.47$&$64.38\pm0.96$&65.62&69.43\\
+B: remaining count&3&$61.40\pm0.94$&$63.28\pm0.31$&63.02&67.45\\
+Mutation&5&$58.37\pm1.08$&$57.97\pm1.39$&50.89&51.93\\
+Uniform&5&$33.32\pm0.04$&$33.32\pm0.04$&20.99&21.04\\
+\bottomrule\end{tabular}\end{center}
+These are frozen \textbf{FINAL} attempts, with descriptive fit/sampler SD in
+percentage points. C/D paired controls use the first three matching A/B fits;
+individual fits and paired contrasts are retained in the packet.
+Uniform is 33.316\%, not exactly one third: small repeat/novelty losses remain.
+D changes physical association and prefix exposure, so it is not a pure locality ablation.

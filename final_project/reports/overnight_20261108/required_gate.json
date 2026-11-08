@@ -1,0 +1,18 @@
+{
+  "status": "REQUIRED_SCIENTIFIC_RESULTS_COMPLETE_FOR_PACKET",
+  "protocol_sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564",
+  "spatial_final": "reports/overnight_20261108/final_static/receipt.json",
+  "paired_final": "reports/overnight_20261108/paired_final_evaluation/receipt.json",
+  "paired_independent": "reports/overnight_20261108/paired_independent_recount/receipt.json",
+  "main_pdf_sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8",
+  "research_pdf_sha256": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea",
+  "full_fits": 37,
+  "updates": 148000,
+  "original_roles_unchanged": true,
+  "no_new_DFT": true,
+  "no_new_MD": true,
+  "no_MLIP_finetuning": true,
+  "physical_validation": false,
+  "publication_and_resource_closure": "NEXT_REQUIRED_DELIVERY_STEPS",
+  "note": "Bounded negative and unresolved numerical research outcomes are reported, not converted to physical successes"
+}

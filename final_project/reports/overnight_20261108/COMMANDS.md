@@ -92,8 +92,8 @@ python -m pip check
 The report builds require an installed TeX distribution. On Perlmutter the
 executed TeX binaries were under
 `/global/common/software/nersc9/texlive/2024/bin/x86_64-linux`.
-The integration suite passed 258 tests before final assessment tables were
-assembled; those software tests establish implementation behavior, not
+The final integration suite passed 261 tests; six targeted portable-analysis
+checks also passed. These software tests establish implementation behavior, not
 scientific correctness of a potential.
 
 For a new, optional inference check after the class review, use the existing

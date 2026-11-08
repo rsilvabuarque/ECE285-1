@@ -1,0 +1,51 @@
+{
+  "status": "PASS_COMPLETE_ACQUISITION_GEOMETRY_VIEW",
+  "completed_UTC": "2026-11-08T15:55:44.191269+00:00",
+  "views": [
+    {
+      "path": "TRAINVAL.npz",
+      "sha256": "4ee1b4037dbb97f38e5dddb8b84e53c794a08fca38f8fa49b9cf53aae60b5c10",
+      "rows": 4800,
+      "roles": {
+        "train": 3600,
+        "val": 1200
+      },
+      "statuses": {
+        "converged": 4794,
+        "interrupted": 6
+      },
+      "endpoint_geometry_known": 4800,
+      "usable_endpoints": 4794,
+      "bytes": 31246609
+    },
+    {
+      "path": "TEST.npz",
+      "sha256": "5c53c65749f340bc42ae4ec2d952d47ed1a6a67d7a122f430c8494f5cdcf2890",
+      "rows": 1200,
+      "roles": {
+        "test": 1200
+      },
+      "statuses": {
+        "converged": 1198,
+        "interrupted": 2
+      },
+      "endpoint_geometry_known": 1199,
+      "usable_endpoints": 1198,
+      "bytes": 7816111
+    }
+  ],
+  "original_rows": 6000,
+  "source_cohort_sha256": "4e7e82f100f9fa26cfee385ff3e629a7731b93d58a9d8db74995c10a3ac72230",
+  "source_tasks_sha256": "334b79464323668cb4d2bc6ca4202c6a231f9e0693482674434074062f92e55d",
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "context_hash": "63316ee878941af1e53ae7aaf595e45fee1964bb2d65150c50a57f59875fb987",
+  "source_sha256": "f3fccd1ae21271f236ad688e5633e7d03ac7f3bd9b9b4841e2b564a068ca3b5d",
+  "all_raw_arrays_rehashed": true,
+  "original_splits_preserved": true,
+  "assessment7616_included": false,
+  "missing_values_imputed": false,
+  "no_NEW_masks": true,
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "elapsed_seconds": 18.054432564997114
+}

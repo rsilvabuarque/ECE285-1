@@ -1,0 +1,60 @@
+{
+  "status": "FROZEN_REVIEWABLE_FINAL_MIDTERM",
+  "created_UTC": "2026-11-08T15:53:01.302284+00:00",
+  "source_commit": "1d9e628c994dbdea6a609477282e4e2efbca8d0c",
+  "body_pages": 5,
+  "total_pages": 6,
+  "pdf_sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8",
+  "files": {
+    "CLAIM_SOURCE_MAP.md": {
+      "sha256": "58853b39f6984cb24f9c2e01001dc5b6e0b9a6f45fe58789a31758a05fa0a9a6",
+      "bytes": 5446
+    },
+    "generated_paired_results.tex": {
+      "sha256": "0fda13a1ce0179215e338e82086ff53b468adaf91307532f99b826ef8f8179d1",
+      "bytes": 1603
+    },
+    "build.sh": {
+      "sha256": "7e65f5a733e5d1d0384b85f697bddbc8b43e11d3e130ace0307f0172c559c521",
+      "bytes": 245
+    },
+    "BUILD_ENVIRONMENT.txt": {
+      "sha256": "e0034878e6d88b3803ebbb181bab13b22412d7143b9be5eaba6ddaef0d84d3e5",
+      "bytes": 329
+    },
+    "main.bbl": {
+      "sha256": "74350d4d71e346d8bbf8604f64132b755b310f476c9994820fe5ba0dc44a9f71",
+      "bytes": 1372
+    },
+    "render_review.json": {
+      "sha256": "91fdd0e38492f8e128031f2d4221695fea19edbb7916e9b5a2e3d464b1d2d128",
+      "bytes": 637
+    },
+    "main.tex": {
+      "sha256": "4a83681cfaf8ee6c5d4bd90a6b6c1a020fd0c0461623623128b4d3941049c1ea",
+      "bytes": 19225
+    },
+    "main.pdf": {
+      "sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8",
+      "bytes": 311390
+    },
+    "generated_results.tex": {
+      "sha256": "551aabb652be34e8673e5d7d1ad59b1f3f5988144b0684e5a4d24e43e6798b91",
+      "bytes": 1179
+    },
+    "claim_sources.json": {
+      "sha256": "4c1f543dfd1ce5edf6ad376a546238756635778f5a1bb642e82a4363782468ff",
+      "bytes": 16767
+    },
+    "references.bib": {
+      "sha256": "5ba731d73b8b411598cc0eaa663b52fd6934370dc85483e050b95fadfc17fec8",
+      "bytes": 1671
+    },
+    "build.log": {
+      "sha256": "acf3617a6bfaac4da62e26826c9f290f02fccf931b289aa780c49293fd2a217d",
+      "bytes": 35610
+    }
+  },
+  "scope": "Complete scientific results; independent human checks, manual coursework submission, physical validation and separate publication/resource receipts remain distinct.",
+  "protected": "Prior interim and research final snapshots were not modified."
+}
