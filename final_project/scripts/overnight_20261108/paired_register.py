@@ -68,6 +68,7 @@ def register(args):
         frozen_UTC=datetime.now(timezone.utc).isoformat(), label=args.label,
         source_pool=dict(path=str(args.pool.absolute()), sha256=sha256(args.pool)),
         source_attempts=dict(path=str(args.attempts.absolute()), sha256=sha256(args.attempts)) if args.attempts else None,
+        frozen_analysis_inputs=[dict(path=str(path.absolute()), sha256=sha256(path)) for path in args.analysis_inputs],
         context_hash=context["context_hash"], input_candidate_rows=len(ids), unique_physical_tasks=len(tasks),
         initial_acquisition_tasks=preparation["independent_masks"],
         complete_known_queue_unique_tasks=len(union), reserved_other_protocol_attempts=args.reserved_other_protocol_attempts,
@@ -88,6 +89,8 @@ def main(argv=None):
     p.add_argument("--label", required=True)
     p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--prior-task-files", nargs="*", type=Path, default=[])
+    p.add_argument("--analysis-inputs", nargs="*", type=Path, default=[],
+                   help="Freeze threshold/history/selection files used for this endpoint assessment")
     p.add_argument("--maximum-primary-attempts", type=int, default=18000)
     p.add_argument("--reserved-other-protocol-attempts", type=int, default=96)
     return register(p.parse_args(argv))

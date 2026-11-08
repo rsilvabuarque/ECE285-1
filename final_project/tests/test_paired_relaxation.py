@@ -16,6 +16,7 @@ import paired_prepare as prepare
 import paired_worker as worker
 import paired_collect as collect
 import paired_register as register
+import paired_mapping_audit as mapping_audit
 
 
 def parent():
@@ -202,7 +203,7 @@ def test_registration_deduplicates_physics_without_changing_candidate_bindings(t
     np.savez(pool, occupancy=[[1, 1, 0, 0], [1, 1, 0, 0]], structure_ids=["candidate_A", "candidate_B"])
     args = SimpleNamespace(prepared=prepared, pool=pool, attempts=None, label="synthetic",
         output_dir=tmp_path / "registration", prior_task_files=[], reserved_other_protocol_attempts=0,
-        maximum_primary_attempts=10)
+        maximum_primary_attempts=10, analysis_inputs=[])
     receipt = register.register(args)
     bindings = json.loads((args.output_dir / "candidate_bindings.json").read_text())
     assert receipt["input_candidate_rows"] == 2 and receipt["unique_physical_tasks"] == 1
@@ -212,3 +213,16 @@ def test_registration_deduplicates_physics_without_changing_candidate_bindings(t
     args.output_dir = tmp_path / "overbudget"; args.maximum_primary_attempts = 4
     with pytest.raises(ValueError, match="cap"):
         register.register(args)
+
+
+def test_saved_frame_certificate_detects_real_site_change_and_removes_common_translation():
+    p = parent(); slots = np.array([0, 1, 2, 3])
+    initial = p["positions_A"][slots].copy()
+    translated = initial + [.1, -.2, .3]
+    changed = initial.copy(); changed[3] = p["positions_A"][4]
+    audit = mapping_audit.audit_frames(p, slots, np.array([initial, translated, changed]),
+                                      mapping_audit.nearest_parent_separations(p))
+    assert audit["identity_certified_frames"] == 2
+    assert audit["full_mapping_frames"] == audit["frames_with_mobile_reassignment"] == 1
+    assert audit["frames_with_host_reassignment"] == 0
+    assert audit["full_mapping_events"][0]["assigned_parent_indices"][3] == 4
