@@ -137,3 +137,18 @@ def test_collector_certified_cached_energies_are_measured_without_new_physics(tm
         assert json.loads((result/'receipt.json').read_text())['status']=='INCOMPLETE_COVERAGE'
         assert all(r['energy_known']=='False' for r in rows(result/'attempt_outcomes.csv'))
     assert json.loads((result/'receipt.json').read_text())['new_MLIP_calls']==0
+
+
+def test_sampler_metadata_honors_explicit_endpoint_label_target(tmp_path):
+    parent,data,schema,history,manifest=fixture(tmp_path)
+    value=json.loads(manifest.read_text())
+    for entry in value['models']:
+        if entry.get('sampler')=='mutation':entry['energy_target']='endpoint'
+    manifest.write_text(json.dumps(value));out=tmp_path/'generated_endpoint_metadata'
+    gen.main(['--manifest',str(manifest),'--parent',str(parent),'--data',str(data),
+        '--condition-schema',str(schema),'--history',str(history),'--output-dir',str(out),
+        '--count','4','--diagnostics','--device','cpu','--threads','1'])
+    rr=rows(out/'attempts.csv')
+    assert all(r['energy_target']=='endpoint' for r in rr if r['method']=='mutation')
+    assert all(r['energy_target']=='deletion' for r in rr if r['method']!='mutation')
+    assert all('unrelaxed' in r['geometry_protocol'] for r in rr)

@@ -138,7 +138,7 @@ def main(argv=None):
                 status=("generated" if valid[i] and error is None else "failed_request" if error else "invalid_mask"),error=error or "",
                 allocation_policy=namespace,allocation_run_id=f"{entry['method']}-{n}",allocation_weight=1/len(bins),
                 latent_dim=actual_dim,latents_sha256=fingerprint(actual_z[:,:actual_dim]),uniforms_sha256=fingerprint(u),
-                energy_target="deletion" if cfg is None else cfg.get("energy_target","deletion"))
+                energy_target=entry.get("energy_target","deletion" if cfg is None else cfg.get("energy_target","deletion")))
             if extra:row.update(extra[i])
             rows.append(row)
 
