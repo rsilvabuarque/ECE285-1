@@ -48,12 +48,14 @@ def load_model(checkpoint, device):
         cfg = json.loads(Path(checkpoint).with_name('configuration.json').read_text())
     format_version = cfg.get('model_format_version')
     if format_version is not None:
-        if format_version != 2:
+        if format_version not in {2, 3}:
             raise ValueError('Unsupported model_format_version; use its matching model loader')
         required = {'kind', 'n_sites', 'condition_dim', 'latent_dim', 'hidden_dim',
                     'encoder_kind', 'graph_context', 'graph'}
         if not required.issubset(cfg):
             raise ValueError('Versioned checkpoint is missing explicit architecture dimensions or graph metadata')
+        if format_version == 3 and not {'decoder_context_spec', 'energy_target', 'label_energy_protocol', 'proposal_geometry_protocol', 'beta_schedule'} <= set(cfg):
+            raise ValueError('Version3 checkpoint lacks context, schedule, or label/proposal metadata')
     else:
         # Recognized historical writers all stored these dimensions. We retain
         # only their documented default hidden width/architecture, never infer a
@@ -85,8 +87,12 @@ def load_model(checkpoint, device):
                        condition_dim=cfg['condition_dim'], latent_dim=cfg['latent_dim'],
                        hidden_dim=cfg.get('hidden_dim', 64),
                        encoder_kind=cfg.get('encoder_kind', 'dense'),
-                       graph_data=cfg.get('graph'), graph_context=cfg.get('graph_context', False)).to(device)
+                       graph_data=cfg.get('graph'), graph_context=cfg.get('graph_context', False),
+                       context_spec=cfg.get('decoder_context_spec')).to(device)
     model.load_state_dict(ck['state_dict'], strict=True)
+    if format_version == 3 and cfg.get('graph_context'):
+        if model.graph_context.to_spec()['kernels_sha256'] != cfg['decoder_context_spec']['kernels_sha256']:
+            raise ValueError('Saved decoder context buffers disagree with their declared association')
     model.eval()
     return model, cfg
 
@@ -277,7 +283,9 @@ def main(argv=None):
         condition_schema_id=np.asarray(schema_id), temperature_K=np.asarray(np.nan if a.temperature_K is None else a.temperature_K),
         allocation_policy=np.asarray(a.allocation_policy), allocation_weight=np.asarray(np.nan if a.allocation_weight is None else a.allocation_weight),
         checkpoint_sha256=np.asarray(checkpoint_sha), fit_seed=np.asarray(str(fit_seed)), sampling_seed=np.asarray(a.seed),
-        parent_sha256=np.asarray(parent_sha), geometry_protocol=np.asarray(cfg.get('geometry_protocol', 'pristine-derived deletion; unrelaxed')))
+        parent_sha256=np.asarray(parent_sha), geometry_protocol=np.asarray(cfg.get('proposal_geometry_protocol', cfg.get('geometry_protocol', 'pristine-derived deletion; unrelaxed'))),
+        label_energy_protocol=np.asarray(cfg.get('label_energy_protocol', cfg.get('geometry_protocol', 'pristine-derived deletion; unrelaxed'))),
+        energy_target=np.asarray(cfg.get('energy_target', 'deletion')))
     np.savez_compressed(a.output, occupancy=occupancy, canonical_occupancy=canonical_occupancy,
         canonical_vacancy_mask=keys, masks=1-occupancy, canonicalizing_inverse_permutation_index=witness,
         structure_ids=ids, n_Li=np.full(len(occupancy), a.n_li), n_target=np.full(len(occupancy), a.n_li), seed=a.seed, **common)

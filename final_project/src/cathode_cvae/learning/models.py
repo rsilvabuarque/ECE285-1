@@ -255,13 +255,17 @@ class ARBaseline(ARCVAE):
 
 
 def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, cond_dim=None,
-               encoder_kind="dense", graph_data=None, graph_context=False):
+               encoder_kind="dense", graph_data=None, graph_context=False, context_spec=None):
     if cond_dim is not None:
         condition_dim = cond_dim
     if encoder_kind not in {"dense", "graph"}:
         raise ValueError("encoder_kind must be dense or graph")
     if latent_dim < 0:
         raise ValueError("latent_dim must be nonnegative")
+    if not isinstance(hidden_dim, int) or hidden_dim < 1:
+        raise ValueError("hidden_dim must be a positive integer")
+    if context_spec is not None and not graph_context:
+        raise ValueError("A decoder context specification requires graph_context")
     encoder = context = None
     if encoder_kind == "graph" or graph_context:
         if graph_data is None:
@@ -278,7 +282,14 @@ def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, c
                 raise ValueError("The no-latent AR baseline has no encoder")
             encoder = GraphOccupationEncoder(graph, condition_dim, latent_dim)
         if graph_context:
-            context = CausalGraphContext(graph)
+            spec = {} if context_spec is None else context_spec
+            if spec.get("version", "causal-context-v1") != "causal-context-v1":
+                raise ValueError("Unsupported decoder context specification")
+            context = CausalGraphContext(graph, spec.get("association", "physical"), spec.get("site_permutation"))
+            observed = context.to_spec()
+            for key in ("feature_dim", "kernels_sha256"):
+                if key in spec and spec[key] != observed[key]:
+                    raise ValueError("Decoder context specification disagrees with reconstructed " + key)
     if kind in {"dense", "dense_bce", "dense_count"}:
         return DenseCVAE(n_sites, condition_dim, latent_dim)
     if kind in {"ar", "ar_cvae"}:

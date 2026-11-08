@@ -20,6 +20,7 @@ import torch
 
 from .models import gaussian_kl, make_model
 from .runtime import device_name, trusted_checkpoint
+from .schedules import beta_at_update, schedule_metadata
 from ..runtime import require_compute_allocation
 from ..conditions import (fit_schema, load_schema, save_schema, schema_identity,
                           classify, encode_observations, condition_dimension)
@@ -124,6 +125,10 @@ def arguments(argv=None):
     parser.add_argument("--encoder", choices=["dense", "graph"], default="dense")
     parser.add_argument("--graph-context", action="store_true",
                         help="Append causal physical-neighbor features to each AR decoder step")
+    parser.add_argument("--context-association", choices=["physical", "fixed_nonphysical"], default="physical")
+    parser.add_argument("--context-scramble-seed", type=int, default=20261108,
+                        help="Freeze one label-independent non-symmetry site association; used only for fixed_nonphysical")
+    parser.add_argument("--hidden-dim", type=int, default=64, help="AR decoder hidden width; posterior widths remain unchanged")
     parser.add_argument("--graph-cutoff-A", type=float, default=5.0,
                         help="Periodic parent-neighbor construction cutoff in angstrom")
     parser.add_argument("--condition-schema-in", type=Path,
@@ -136,6 +141,10 @@ def arguments(argv=None):
     parser.add_argument("--teacher", default="uma", help="Declared label teacher; recorded with pinned head/checkpoint identity")
     parser.add_argument("--teacher-head", help="Explicit label head; default omat for UMA, omat_pbe for MACE")
     parser.add_argument("--geometry-protocol", default="pristine-derived deletion; unrelaxed")
+    parser.add_argument("--energy-target", choices=["deletion", "endpoint"], default="deletion")
+    parser.add_argument("--label-energy-protocol", help="Geometry/inference definition of the training energy labels")
+    parser.add_argument("--proposal-geometry-protocol", help="Geometry actually generated from the mask; never inferred to be relaxed from the label target")
+    parser.add_argument("--label-inference-receipt", type=Path, help="Authoritative teacher/precision receipt, linked without changing a historical frozen schema")
     parser.add_argument("--orientation", choices=["canonical", "augment"], default="canonical")
     parser.add_argument("--seed", type=int, default=20261106)
     parser.add_argument("--counts", type=int, nargs="+", default=None)
@@ -144,6 +153,9 @@ def arguments(argv=None):
     parser.add_argument("--learning-rate", type=float, default=0.001)
     parser.add_argument("--beta-final", type=float, default=0.1)
     parser.add_argument("--beta-warmup", type=int, default=20)
+    parser.add_argument("--beta-schedule", choices=["legacy_epoch", "reference_updates"], default="legacy_epoch")
+    parser.add_argument("--beta-reference-updates-per-epoch", type=int, default=79,
+                        help="Reference exposure block, fixed across dataset sizes for reference_updates")
     parser.add_argument("--validation-beta", type=float, default=1.,
                         help="Checkpoint selection uses reconstruction plus this times KL; historical fits used 1")
     parser.add_argument("--selection-betas", type=float, nargs="+", default=[1., .1],
@@ -169,6 +181,15 @@ def main(argv=None):
     assert a.beta_final >= 0 and a.beta_warmup > 0 and a.max_seconds > 0
     assert a.patience > 0 and a.minimum_epochs > 0
     assert a.validation_beta >= 0
+    if a.hidden_dim < 1 or (a.hidden_dim != 64 and a.kind.startswith("dense")):
+        raise ValueError("A positive hidden width is supported for the AR decoder; dense decoder widths are fixed")
+    if a.context_association != "physical" and not a.graph_context:
+        raise ValueError("Nonphysical associations require --graph-context")
+    schedule = schedule_metadata(a.beta_schedule, a.beta_final, a.beta_warmup, a.beta_reference_updates_per_epoch)
+    label_protocol = a.label_energy_protocol or a.geometry_protocol
+    proposal_protocol = (a.proposal_geometry_protocol or
+        (a.geometry_protocol if a.energy_target == "deletion" else "pristine-derived deletion; unrelaxed; exact canonical parent coordinates"))
+    label_inference = None if a.label_inference_receipt is None else dict(path=str(a.label_inference_receipt.resolve()), sha256=sha256(a.label_inference_receipt))
     if a.kind != "ar_baseline" and a.latent_dim < 1:
         raise ValueError("A CVAE needs latent_dim>=1; use --kind ar_baseline for the no-latent AR control")
     if a.kind == "ar_baseline" and a.encoder != "dense":
@@ -239,7 +260,8 @@ def main(argv=None):
     provenance = dict(teacher=a.teacher, teacher_head=teacher_head,
         teacher_checkpoint_name=teacher_spec.get("name", "user-declared"),
         teacher_checkpoint_hashes=teacher_spec.get("files", {}),
-        geometry_protocol=a.geometry_protocol, parent_sha256=sha256(a.parent),
+        geometry_protocol=label_protocol, energy_target=a.energy_target,
+        authoritative_inference_receipt=label_inference, parent_sha256=sha256(a.parent),
         data_sha256=sha256(a.data), split_sha256=split_hash,
         training_ids_sha256=hashlib.sha256("\n".join(d["structure_ids"][train].tolist()).encode()).hexdigest())
     if a.condition_schema_in:
@@ -321,14 +343,22 @@ def main(argv=None):
     train_t = torch.as_tensor(train, device=a.device)
     val_t = torch.as_tensor(val, device=a.device)
     graph_data = None
+    context_spec = None
     if a.encoder == "graph" or a.graph_context:
         from ..parent_spec import ParentSpec
         from ..graph import build_periodic_graph
         parent_spec = ParentSpec.from_legacy(parent_arrays, source_sha256=sha256(a.parent))
         graph_data = build_periodic_graph(parent_spec, cutoff_A=a.graph_cutoff_A).to_dict()
+        if a.graph_context and a.context_association == "fixed_nonphysical":
+            from ..graph import PeriodicGraph, fixed_nonphysical_context_spec
+            context_spec = fixed_nonphysical_context_spec(PeriodicGraph.from_dict(graph_data), a.context_scramble_seed)
     model = make_model(a.kind, n_sites=n_sites, cond_dim=conditions.shape[1],
                        latent_dim=a.latent_dim, encoder_kind=a.encoder,
-                       graph_data=graph_data, graph_context=a.graph_context).to(a.device)
+                       graph_data=graph_data, graph_context=a.graph_context,
+                       hidden_dim=a.hidden_dim, context_spec=context_spec).to(a.device)
+    if getattr(model, "graph_context", None) is not None:
+        observed_spec = model.graph_context.to_spec()
+        context_spec = {**observed_spec, **({"scramble_seed": a.context_scramble_seed} if a.context_association != "physical" else {})}
     if a.warm_start:
         checkpoint = trusted_checkpoint(a.warm_start, a.device)
         prior_cfg = checkpoint.get("configuration", {})
@@ -340,6 +370,15 @@ def main(argv=None):
             raise ValueError("Warm-start parent site dimensions differ")
         if prior_cfg.get("encoder_kind", "dense") != a.encoder or prior_cfg.get("graph_context", False) != a.graph_context:
             raise ValueError("Warm-start graph architecture differs")
+        if prior_cfg.get("hidden_dim", 64) != a.hidden_dim:
+            raise ValueError("Warm-start decoder hidden width differs")
+        old_context = prior_cfg.get("decoder_context_spec") or {"association": "physical"}
+        if old_context.get("association", "physical") != a.context_association or old_context.get("site_permutation") != (context_spec or {}).get("site_permutation"):
+            raise ValueError("Warm-start decoder-neighborhood association differs")
+        if prior_cfg.get("energy_target", "deletion") != a.energy_target:
+            raise ValueError("Warm-start label targets differ")
+        if prior_cfg.get("condition_schema_id") not in {None, schema_identity(schema)}:
+            raise ValueError("Warm-start condition partition differs")
         if prior_cfg.get("parent_sha256") not in {None, sha256(a.parent)}:
             raise ValueError("Warm-start parent identity differs")
         model.load_state_dict(checkpoint["state_dict"], strict=True)
@@ -349,16 +388,19 @@ def main(argv=None):
                                    generator=noise_generator, device=a.device)
     exact_count = a.kind != "dense_bce"
     metadata = dict(
-        model_format_version=2, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
+        model_format_version=3, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
         n_sites=n_sites, latent_dim=model.latent_dim, seed=a.seed, counts=a.counts,
-        hidden_dim=64, parameter_count=sum(p.numel() for p in model.parameters()),
+        hidden_dim=a.hidden_dim, parameter_count=sum(p.numel() for p in model.parameters()),
         encoder_kind=a.encoder, graph_context=a.graph_context, graph=graph_data,
+        decoder_context_spec=context_spec,
         graph_cutoff_A=a.graph_cutoff_A if graph_data is not None else None,
         train_rows=len(train), val_rows=len(val), test_rows=len(test),
         excluded_split_rows=int(len(x) - len(train) - len(val) - len(test)),
         data=str(a.data.resolve()), data_sha256=sha256(a.data),
         parent=str(a.parent.resolve()), parent_sha256=sha256(a.parent),
         trainer_sha256=sha256(__file__), model_source_sha256=sha256(HERE / "models.py"),
+        beta_schedule_source_sha256=sha256(HERE / "schedules.py"),
+        graph_context_source_sha256=sha256(HERE.parent / "graph.py") if a.graph_context else None,
         source_id_sha256=hashlib.sha256("\n".join(d["structure_ids"].tolist()).encode()).hexdigest(),
         condition_stats=statistics, condition_schema=schema,
         descriptor_schema=descriptor_schema,
@@ -370,13 +412,16 @@ def main(argv=None):
         condition_schema_source=None if a.condition_schema_in is None else dict(path=str(a.condition_schema_in.resolve()), sha256=sha256(a.condition_schema_in)),
         teacher=a.teacher, teacher_head=teacher_head,
         teacher_checkpoint_name=teacher_spec.get("name", "user-declared"),
-        teacher_checkpoint_hashes=teacher_spec.get("files", {}), geometry_protocol=a.geometry_protocol,
+        teacher_checkpoint_hashes=teacher_spec.get("files", {}), geometry_protocol=label_protocol,
+        label_energy_protocol=label_protocol, proposal_geometry_protocol=proposal_protocol, energy_target=a.energy_target,
+        authoritative_label_inference_receipt=label_inference,
         energy_condition="Versioned train-only composition-specific energy partition; exact ties retained; encoder mode recorded separately",
         orientation=a.orientation, canonicalization="Exact minimum vacancy bit code under supplied parent permutations",
         symmetry_augmentation="Random retained parent permutation on train batches only" if a.orientation == "augment" else "None; one canonical orientation per orbit",
         class_balance=a.class_balance, class_balance_scope="Train only within each composition and actual nonempty energy classes; descriptor classes are not separately reweighted; keeps total base weight",
         input_weight_scope="Inherited row weights; normalized to mean 1 over train rows",
         count_likelihood=exact_count, beta_final=a.beta_final, beta_warmup_epochs=a.beta_warmup,
+        beta_schedule=schedule,
         maximum_epochs=a.epochs, minimum_epochs=a.minimum_epochs, early_stop_patience=a.patience,
         maximum_seconds=a.max_seconds, batch_size=a.batch_size, learning_rate=a.learning_rate,
         validation_samples=a.validation_samples, validation_noise="Fixed seeded standard-normal samples; no train RNG consumption",
@@ -387,6 +432,7 @@ def main(argv=None):
         latent_activity_cutoffs=[0.001, 0.01, 0.1],
         latent_activity_scope="Descriptive VAL posterior-mean variance sensitivity; no test rows, not physical convergence",
         warm_start=None if a.warm_start is None else dict(path=str(a.warm_start.resolve()), sha256=sha256(a.warm_start)),
+        warm_start_semantics="Weights only; Adam, training RNG, update clock and validation noise restart. This is not exact optimizer continuation.",
         torch=torch.__version__, numpy=np.__version__, dtype="float32", tf32=False,
         device=a.device, gpu=torch.cuda.get_device_name() if a.device == "cuda" else None,
         scientific_scope="Deletion vacancy masks, not relaxed geometry; no force/stress inputs or energy gradients; no global minimum guarantee",
@@ -402,8 +448,11 @@ def main(argv=None):
         model.train()
         order = train_t[torch.randperm(len(train_t), device=a.device)]
         totals = np.zeros(4, dtype=np.float64)
-        beta = a.beta_final * min(1, epoch / a.beta_warmup)
+        beta_values = []
         for ids in order.split(a.batch_size):
+            beta = beta_at_update(mode=a.beta_schedule, final=a.beta_final, update=updates, epoch=epoch,
+                warmup_epochs=a.beta_warmup, reference_updates_per_epoch=a.beta_reference_updates_per_epoch)
+            beta_values.append(beta)
             xx = x[ids]
             if a.orientation == "augment":
                 ops = inv[torch.randint(len(inv), (len(ids),), device=a.device)]
@@ -452,6 +501,7 @@ def main(argv=None):
         if not math.isfinite(objective):
             raise FloatingPointError("Nonfinite validation objective")
         row = dict(epoch=epoch, optimizer_updates=updates, beta=beta, train_objective=totals[0] / totals[3],
+                   train_beta_min=min(beta_values), train_beta_max=max(beta_values), train_beta_mean=float(np.mean(beta_values)),
                    train_reconstruction=totals[1] / totals[3], train_KL=totals[2] / totals[3],
                    val_objective=objective, val_reconstruction=val_reconstruction,
                    val_KL=val_kl, elapsed_seconds=time.perf_counter() - started)
@@ -499,7 +549,7 @@ def main(argv=None):
         if epoch >= a.minimum_epochs and epoch - best_epoch >= a.patience:
             stop_reason = "validation_early_stop"
             break
-    summary = dict(status="FIT_COMPLETE", stop_reason=stop_reason,
+    summary = dict(status="FIT_COMPLETE" if a.max_updates is None or updates == a.max_updates else "FIT_PARTIAL", stop_reason=stop_reason,
                    completed_epochs=len(history), optimizer_updates=updates, best_epoch=best_epoch,
                    best_val_objective=best, training_seconds=time.perf_counter() - started,
                    checkpoint_sha256=sha256(a.output_dir / "best.pt"),

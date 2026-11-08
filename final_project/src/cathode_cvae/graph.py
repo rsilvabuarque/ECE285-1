@@ -172,14 +172,52 @@ class CausalGraphContext(nn.Module):
     """
     feature_dim = 6
 
-    def __init__(self, graph):
+    def __init__(self, graph, association="physical", site_permutation=None):
         super().__init__()
         self.n_sites = graph.n_sites
+        if association not in {"physical", "fixed_nonphysical"}:
+            raise ValueError("Unknown decoder-neighborhood association")
+        if association == "physical" and site_permutation is not None:
+            raise ValueError("A physical context cannot silently permute site associations")
+        permutation = np.arange(self.n_sites) if site_permutation is None else np.asarray(site_permutation)
+        if permutation.shape != (self.n_sites,) or not np.issubdtype(permutation.dtype, np.integer) or not np.array_equal(np.sort(permutation), np.arange(self.n_sites)):
+            raise ValueError("Context association needs a complete integer mobile-site permutation")
+        if association == "fixed_nonphysical" and any(np.array_equal(permutation, p) for p in graph.parent.permutations):
+            raise ValueError("The nonphysical association must lie outside the retained parent symmetry operations")
+        self.association = association
+        self.site_permutation = None if association == "physical" else permutation.astype(int).tolist()
         matrices, _ = mobile_kernel_matrices(graph)
+        physical_norm = matrices.sum(axis=-1, keepdims=True)
+        physical = np.divide(matrices, physical_norm, out=np.zeros_like(matrices), where=physical_norm > 0)
+        if association == "fixed_nonphysical":
+            # Conjugating both site axes preserves the graph's global degree
+            # and kernel-weight multisets. The AR order stays fixed: exposure
+            # to assigned prefixes can still differ and must be audited.
+            matrices = matrices[:, permutation][:, :, permutation]
         norm = matrices.sum(axis=-1, keepdims=True)
         matrices = np.divide(matrices, norm, out=np.zeros_like(matrices), where=norm > 0)
+        self.association_audit = None
+        if association == "fixed_nonphysical":
+            past = np.arange(self.n_sites)[None, :] < np.arange(self.n_sites)[:, None]
+            real_prefix = (physical * past[None]).sum(-1)
+            fake_prefix = (matrices * past[None]).sum(-1)
+            self.association_audit = dict(
+                normalized_weight_multiset_max_abs_difference=[float(np.max(np.abs(np.sort(a.ravel())-np.sort(b.ravel())))) for a,b in zip(physical,matrices)],
+                physical_assigned_prefix_weight=real_prefix.tolist(),
+                control_assigned_prefix_weight=fake_prefix.tolist(),
+                prefix_weight_mean_absolute_difference=np.abs(real_prefix-fake_prefix).mean(-1).tolist(),
+                units="Dimensionless row-normalized kernel weight; decoder site order is held fixed")
         self.register_buffer("kernels", torch.as_tensor(matrices, dtype=torch.float32))
         self.register_buffer("known_rows", torch.as_tensor(norm[..., 0] > 0))
+
+    def to_spec(self):
+        import hashlib
+        return dict(version="causal-context-v1", association=self.association,
+            site_permutation=self.site_permutation, feature_dim=self.feature_dim,
+            kernels_sha256=hashlib.sha256(self.kernels.detach().cpu().numpy().astype("<f4").tobytes()).hexdigest(),
+            definition="Two row-normalized kernels, nearest shell and exp(-r/r_nearest); occupied/vacant/unassigned prefix fractions",
+            association_audit=self.association_audit,
+            nonphysical_control_limit="Global degrees/weights preserved; prefix exposure by decoder step can change" if self.association != "physical" else None)
 
     def features(self, occupancy, assigned):
         if occupancy.ndim != 2 or occupancy.shape[1] != self.n_sites or assigned.shape != occupancy.shape:
@@ -211,6 +249,20 @@ class CausalGraphContext(nn.Module):
             raise ValueError("context step outside mobile-site range")
         assigned = torch.arange(self.n_sites, device=occupancy.device)[None] < step
         return self.features(occupancy, assigned.expand_as(occupancy))[:, step]
+
+
+def fixed_nonphysical_context_spec(graph, seed):
+    """Freeze one label-independent permutation outside the parent group."""
+    rng = np.random.default_rng(int(seed))
+    physical = CausalGraphContext(graph).to_spec()["kernels_sha256"]
+    for _ in range(128):
+        permutation = rng.permutation(graph.n_sites)
+        if not any(np.array_equal(permutation, p) for p in graph.parent.permutations):
+            spec = CausalGraphContext(graph, "fixed_nonphysical", permutation).to_spec()
+            if spec["kernels_sha256"] != physical:
+                spec["scramble_seed"] = int(seed)
+                return spec
+    raise ValueError("No nonphysical site association found for this parent")
 
 
 def vacancy_pair_fraction(occupancy, graph, shell_tolerance_A=1e-5):
