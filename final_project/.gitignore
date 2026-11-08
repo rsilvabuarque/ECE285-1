@@ -80,6 +80,12 @@ docs/midterm1/*.out
 /reports/overnight_20261108/**/paired_attempts.csv
 /reports/overnight_20261108/**/*.npz
 
+# Full current inputs/checkpoints/raw records are authenticated release assets.
+/artifacts/overnight_20261108/*
+!/artifacts/overnight_20261108/download.json
+!/artifacts/overnight_20261108/download_raw.json
+!/artifacts/overnight_20261108/README.md
+
 # Build products stay local; the reviewed PDFs and immutable snapshots are kept.
 /docs/midterm_20261108/*.aux
 /docs/midterm_20261108/*.bbl
