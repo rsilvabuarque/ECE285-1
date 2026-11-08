@@ -186,3 +186,14 @@ def test_zero_endpoint_displacements_leave_every_old_route_image_exact():
     data=dict(positions_A=xyz,numbers=np.array([3,27]),cell_A=np.eye(3)*8,pbc=np.ones(3,bool))
     images,_=m.tapered_band(data,m.atoms_from(data,xyz[0]),m.atoms_from(data,xyz[-1]))
     np.testing.assert_array_equal(np.asarray([im.positions for im in images]),xyz)
+
+
+def test_negative_mode_tangent_overlap_uses_consistent_mass_metric():
+    m=script('research_saddle_analyze');masses=np.array([1.,4.]);phi=np.array([1.,2.,3.,4.,5.,6.]);phi/=np.linalg.norm(phi)
+    cartesian=phi/np.repeat(np.sqrt(masses),3)
+    before=cartesian.copy()
+    same=m.direction_overlap(phi,cartesian,masses);opposite=m.direction_overlap(-phi,cartesian,masses)
+    assert same['mass_metric_absolute_overlap']==pytest.approx(1.)
+    assert same['Cartesian_absolute_overlap']==pytest.approx(1.)
+    assert opposite['mass_metric_signed_overlap']==pytest.approx(-same['mass_metric_signed_overlap'])
+    np.testing.assert_array_equal(cartesian,before)
