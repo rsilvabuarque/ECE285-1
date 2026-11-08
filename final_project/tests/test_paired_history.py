@@ -33,11 +33,15 @@ def test_per_lineage_process_worker_matches_serial_with_unreadable_energy(tmp_pa
     end=xyz.copy();end[-1]=p["positions_A"][4]
     queue=tmp_path/"queue";directory=queue/"results/synthetic_task";directory.mkdir(parents=True)
     np.savez(directory/"arrays.npz",trajectory_positions_A=[xyz,end],parent_indices=slots,
+        numbers=p["numbers"][slots],cell_A=p["cell_A"],
         energy_eV=np.array([object()],dtype=object))
     common.atomic_json(directory/"status.json",dict(arrays_sha256=common.sha256(directory/"arrays.npz"),context_hash="synthetic"))
     payload=(dict(task_id="synthetic_task"),0,"test",str(queue),p,mapping.nearest_parent_separations(p),"synthetic")
     expected=mapping.audit_task(payload)
     with ProcessPoolExecutor(max_workers=2,mp_context=multiprocessing.get_context("spawn")) as executor:
         actual=list(executor.map(mapping.audit_task,[payload,payload]))
+        coordinate_payload=(dict(path=str(directory/"arrays.npz")),str(tmp_path),p,mapping.nearest_parent_separations(p))
+        coordinates=list(executor.map(history.process_coordinate,[coordinate_payload,coordinate_payload]))
     assert actual==[expected,expected]
+    assert coordinates==[history.process_coordinate(coordinate_payload)]*2
     assert expected[0]["frames_with_mobile_reassignment"]==1

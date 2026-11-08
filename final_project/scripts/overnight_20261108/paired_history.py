@@ -12,6 +12,10 @@ from collections import Counter
 from datetime import datetime,timezone
 import json
 from pathlib import Path
+from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
+import os
+import time
 
 import numpy as np
 
@@ -83,16 +87,56 @@ def coordinate_keys(path,parent,minimum,*,positions_key=None,indices_path=None):
         raise ValueError("This FINAL history requires the declared fixed parent cell")
     occupancy=np.isin(mobile_indices(parent),slots).astype(np.uint8)
     initial,_=canonical(occupancy,parent["permutations"])
-    audit=audit_frames(parent,slots,xyz,minimum)
-    keys={initial}|{row["endpoint_occupation_orbit"] for row in audit["full_mapping_events"]}
-    return keys,{k:v for k,v in audit.items() if k not in ["full_mapping_events","certificate"]}
+    # FINAL novelty needs mobile occupations, not a full host-to-host
+    # assignment for every 180-atom Hessian image. This is the same exact
+    # rectangular mobile-site Hungarian problem after the same host alignment;
+    # the expensive host assignment is deliberately not claimed here.
+    from ase.geometry import find_mic
+    from scipy.optimize import linear_sum_assignment
+    mobile=mobile_indices(parent);is_mobile=np.isin(slots,mobile)
+    if len(set(parent["numbers"][mobile].tolist()))!=1:raise ValueError("Mobile occupation mapping requires one declared removable species")
+    keys={initial};certified=remapped=changed=collisions=0
+    for frame in xyz:
+        displacement,_=find_mic(frame-parent["positions_A"][slots],parent["cell_A"],pbc=True)
+        shift=displacement[~is_mobile].mean(0) if (~is_mobile).any() else np.zeros(3)
+        _,radius=find_mic(displacement-shift,parent["cell_A"],pbc=True)
+        if np.all(2*radius[is_mobile]<minimum[slots[is_mobile]]):certified+=1;continue
+        delta=frame[is_mobile,None]-shift-parent["positions_A"][mobile][None]
+        _,distance=find_mic(delta.reshape(-1,3),parent["cell_A"],pbc=True)
+        distance=distance.reshape(int(is_mobile.sum()),len(mobile))
+        rr,cc=linear_sum_assignment(distance**2)
+        occupancy=np.zeros(len(mobile),np.uint8);occupancy[cc]=1
+        key,_=canonical(occupancy,parent["permutations"]);keys.add(key)
+        remapped+=1;changed+=int(np.any(mobile[cc]!=slots[is_mobile][rr]))
+        nearest=distance.argmin(1);collisions+=int(len(set(nearest.tolist()))<len(nearest))
+    return keys,dict(saved_accepted_step_frames=len(xyz),identity_certified_frames=certified,
+        full_mobile_mapping_frames=remapped,frames_with_mobile_reassignment=changed,
+        frames_with_nearest_mobile_collisions=collisions,host_assignment_audited=False,
+        mapping_scope="Exact mobile Hungarian occupation mapping after original-host alignment. Full host trajectory assignment remains in the primary accepted-frame audit.")
+
+
+def process_coordinate(payload):
+    spec,base,parent,minimum=payload
+    path,digest=checked_path(spec,Path(base));options=spec if isinstance(spec,dict) else {}
+    index_path=None
+    if options.get("indices_path"):
+        index_path=Path(options["indices_path"]);index_path=index_path if index_path.is_absolute() else Path(base)/index_path
+    index_digest=sha256(index_path) if index_path is not None else None
+    keys,info=coordinate_keys(path,parent,minimum,positions_key=options.get("positions_key"),indices_path=index_path)
+    if sha256(path)!=digest:raise ValueError("Exposed coordinate file changed while read; freeze a stable saved version")
+    if index_path is not None and sha256(index_path)!=index_digest:raise ValueError("Original atom-index companion changed while read")
+    return keys,dict(path=str(path.absolute()),sha256=digest,unique_keys=len(keys),
+        index_companion=dict(path=str(index_path.absolute()),sha256=index_digest) if index_path is not None else None,**info)
 
 
 def freeze(args):
     from cathode_cvae.runtime import require_compute_allocation
     require_compute_allocation()
+    started=time.monotonic();workers=getattr(args,"workers",1)
+    if workers<1 or workers>int(os.environ.get("SLURM_CPUS_PER_TASK",workers)):raise ValueError("History workers must fit allocated CPU count")
     prep,context=check_prepared(args.prepared)
     parent=load_npz(args.prepared/"parent.npz");cohort=load_npz(args.prepared/"cohort.npz")
+    parent={k:v for k,v in parent.items() if k in ["numbers","positions_A","cell_A","target_indices","mobile_indices","li_indices","permutations"]}
     sites=len(mobile_indices(parent));history=read_keys(args.intake_history)
     history.update(cohort["canonical_masks"].astype(str))
     minimum=nearest_parent_separations(parent)
@@ -128,18 +172,13 @@ def freeze(args):
             header=json.loads(header_path.read_text());path=header_path.parent/"arrays.npz"
             coordinate_specs.append(dict(path=str(path),sha256=header["arrays_sha256"],positions_key="trajectory_positions_A"))
             if header.get("mapping"):history.add(header["mapping"]["endpoint_occupation_orbit"])
-    for spec in coordinate_specs:
-        path,digest=checked_path(spec,base);options=spec if isinstance(spec,dict) else {}
-        index_path=None
-        if options.get("indices_path"):
-            index_path=Path(options["indices_path"]);index_path=index_path if index_path.is_absolute() else base/index_path
-        index_digest=sha256(index_path) if index_path is not None else None
-        keys,info=coordinate_keys(path,parent,minimum,positions_key=options.get("positions_key"),indices_path=index_path)
-        history.update(keys)
-        if sha256(path)!=digest:raise ValueError("Exposed coordinate file changed while read; freeze a stable saved version")
-        if index_path is not None and sha256(index_path)!=index_digest:raise ValueError("Original atom-index companion changed while read")
-        coordinates.append(dict(path=str(path.absolute()),sha256=digest,unique_keys=len(keys),
-            index_companion=dict(path=str(index_path.absolute()),sha256=index_digest) if index_path is not None else None,**info))
+    payloads=[(spec,str(base),parent,minimum) for spec in coordinate_specs]
+    executor=ProcessPoolExecutor(max_workers=workers,mp_context=multiprocessing.get_context("spawn")) if workers>1 else None
+    try:
+        results=executor.map(process_coordinate,payloads,chunksize=1) if executor else map(process_coordinate,payloads)
+        for keys,info in results:history.update(keys);coordinates.append(info)
+    finally:
+        if executor:executor.shutdown(wait=True,cancel_futures=True)
     if any(len(k)!=sites or set(k)-{"0","1"} for k in history):raise ValueError("Final history mixes parent domains")
     atomic_json(args.output_dir/"history.json",sorted(history))
     record=dict(status="FROZEN_IDENTITIES_ONLY",frozen_UTC=datetime.now(timezone.utc).isoformat(),
@@ -150,6 +189,7 @@ def freeze(args):
         mapping_audit_receipt=dict(path=str((args.mapping_audit/"receipt.json").absolute()),sha256=sha256(args.mapping_audit/"receipt.json")),
         exposure_manifest=dict(path=str(args.exposure_manifest.absolute()),sha256=sha256(args.exposure_manifest)),
         declared_exposure_manifest_verified=True,pool_sources=pools,coordinate_sources=coordinates,
+        workers=workers,elapsed_seconds=time.monotonic()-started,
         energy_fields_read=0,new_MLIP_calls=0,new_training_updates=0,source_sha256=sha256(__file__),
         dependencies={name:sha256(Path(__file__).with_name(name)) for name in ["paired_common.py","paired_mapping_audit.py"]},
         primary_raw_arrays_rehashed_here=False,
@@ -163,6 +203,7 @@ def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     for name in ["prepared","intake-history","exposure-manifest","paired-queue","mapping-audit","output-dir"]:
         p.add_argument("--"+name,type=Path,required=True)
+    p.add_argument("--workers",type=int,default=1,help="Parallel coordinate files; use OMP/OPENBLAS1 and at most allocated CPUs")
     return freeze(p.parse_args(argv))
 
 
