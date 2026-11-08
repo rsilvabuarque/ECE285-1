@@ -47,6 +47,19 @@ def test_hash_selection_is_full_train_frozen_and_exportable_beyond_pilot(tmp_pat
         per_count=2,selection_manifest=tmp_path/"selection/selection.json"))
     assert result["exported"]==2 and result["selection"]=="Frozen full-TRAIN hash selection"
     assert {r["cohort_row"] for r in result["records"]}==set(selected)
+    failed=tasks[selected[0]];directory=queue/"results"/failed["task_id"]
+    record=json.loads((directory/"result.json").read_text())
+    record.update(status="interrupted",converged=False,endpoint_labels_usable=False)
+    common.publish_result(directory,record)
+    partial=export.export(SimpleNamespace(prepared=prepared,queue=queue,output_dir=tmp_path/"partial_export",
+        per_count=2,selection_manifest=tmp_path/"selection/selection.json"))
+    assert partial["status"]=="RETAINED_ENDPOINT_FAILURES" and partial["prespecified"]==2 and partial["exported"]==1
+    assert {r["cohort_row"] for r in partial["records"]}==set(selected)
+    assert next(r for r in partial["records"] if r["cohort_row"]==selected[0])["status"]=="interrupted"
+    (directory/"status.json").unlink()
+    missing=export.export(SimpleNamespace(prepared=prepared,queue=queue,output_dir=tmp_path/"missing_export",
+        per_count=2,selection_manifest=tmp_path/"selection/selection.json"))
+    assert missing["prespecified"]==2 and missing["exported"]==1
     manifest=tmp_path/"selection/selection.json"
     bad=json.loads(manifest.read_text());bad["selection_seed"]+=1;manifest.write_text(json.dumps(bad))
     with pytest.raises(ValueError,match="changed"):

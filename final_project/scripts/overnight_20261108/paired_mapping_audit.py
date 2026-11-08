@@ -13,6 +13,10 @@ import csv
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
+import os
+import time
 
 import numpy as np
 
@@ -74,6 +78,22 @@ def audit_frames(parent, slots, positions, minimum):
         certificate="For each atom r<d_min/2 after common host translation, its original same-species site is uniquely nearest by the periodic-distance triangle inequality. Original sites are distinct, so this also minimizes injective assignment.")
 
 
+def audit_task(payload):
+    """Independent lineage worker: read coordinate/index keys, never energies."""
+    task,row,split,queue,parent,minimum,context_hash=payload
+    directory=Path(queue)/"results"/task["task_id"]
+    header=directory/"status.json"
+    if not header.exists():return None,task["task_id"]
+    metadata=json.loads(header.read_text());path=directory/"arrays.npz"
+    if sha256(path)!=metadata["arrays_sha256"] or metadata["context_hash"]!=context_hash:
+        raise ValueError("Mapping source bytes/context changed")
+    with np.load(path,allow_pickle=False) as z:
+        slots=z["parent_indices"];trajectory=z["trajectory_positions_A"]
+    result=audit_frames(parent,slots,trajectory,minimum)
+    result.update(task_id=task["task_id"],cohort_row=row,split=split,arrays_sha256=metadata["arrays_sha256"])
+    return result,None
+
+
 def main(argv=None):
     from cathode_cvae.runtime import require_compute_allocation
     p = argparse.ArgumentParser(description=__doc__)
@@ -82,35 +102,31 @@ def main(argv=None):
     p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--selection", choices=["pilot", "all"], default="all")
     p.add_argument("--allow-incomplete", action="store_true")
+    p.add_argument("--workers",type=int,default=1,help="Independent CPU lineage processes; set OMP/OPENBLAS threads=1 when parallel")
     args = p.parse_args(argv)
     require_compute_allocation()
+    started=time.monotonic()
+    if args.workers<1 or args.workers>int(os.environ.get("SLURM_CPUS_PER_TASK",args.workers)):
+        raise ValueError("Mapping process count must fit the caller's allocated CPUs")
     prep, context = check_prepared(args.prepared)
     parent = load_npz(args.prepared / "parent.npz")
+    parent={k:v for k,v in parent.items() if k in ["numbers","positions_A","cell_A","target_indices","mobile_indices","li_indices","permutations"]}
     cohort = load_npz(args.prepared / "cohort.npz")
     tasks = json.loads((args.prepared / "tasks_all.json").read_text())["tasks"]
     indices = cohort["pilot_indices"] if args.selection == "pilot" else np.arange(len(tasks))
     minimum = nearest_parent_separations(parent)
     args.output_dir.mkdir(parents=True, exist_ok=False)
     results, missing = [], []
-    for i in indices:
-        task = tasks[int(i)]
-        directory = args.queue / "results" / task["task_id"]
-        header = directory / "status.json"
-        if not header.exists():
-            missing.append(task["task_id"])
-            continue
-        metadata = json.loads(header.read_text())
-        path = directory / "arrays.npz"
-        if sha256(path) != metadata["arrays_sha256"] or metadata["context_hash"] != context["context_hash"]:
-            raise ValueError("Mapping source bytes/context changed")
-        with np.load(path, allow_pickle=False) as z:
-            slots = z["parent_indices"]
-            trajectory = z["trajectory_positions_A"]
-        result = audit_frames(parent, slots, trajectory, minimum)
-        result.update(task_id=task["task_id"], cohort_row=int(i), split=str(cohort["split"][i]),
-                      arrays_sha256=metadata["arrays_sha256"])
-        atomic_json(args.output_dir / (task["task_id"] + ".json"), result)
-        results.append({k:v for k,v in result.items() if k not in ["full_mapping_events", "certificate"]})
+    payloads=[(tasks[int(i)],int(i),str(cohort["split"][i]),str(args.queue),parent,minimum,context["context_hash"]) for i in indices]
+    executor=ProcessPoolExecutor(max_workers=args.workers,mp_context=multiprocessing.get_context("spawn")) if args.workers>1 else None
+    try:
+        evaluated=executor.map(audit_task,payloads,chunksize=8) if executor else map(audit_task,payloads)
+        for result,absent in evaluated:
+            if absent:missing.append(absent);continue
+            atomic_json(args.output_dir/(result["task_id"]+".json"),result)
+            results.append({k:v for k,v in result.items() if k not in ["full_mapping_events","certificate"]})
+    finally:
+        if executor:executor.shutdown(wait=True,cancel_futures=True)
     if results:
         with (args.output_dir / "lineages.csv").open("w", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=list(results[0])); writer.writeheader(); writer.writerows(results)
@@ -123,6 +139,7 @@ def main(argv=None):
         host_reassignment_lineages=sum(r["frames_with_host_reassignment"] > 0 for r in results),
         nearest_collision_lineages=sum(r["frames_with_nearest_collisions"] > 0 for r in results),
         source_sha256=sha256(__file__), context_hash=context["context_hash"], energy_labels_read=False,
+        workers=args.workers,elapsed_seconds=time.monotonic()-started,
         scope="All saved accepted optimizer steps and last valid failure geometry. Internal line-search states are not a physical-time trajectory; no PES-basin equivalence claimed.")
     atomic_json(args.output_dir / "receipt.json", receipt)
     if missing and not args.allow_incomplete:

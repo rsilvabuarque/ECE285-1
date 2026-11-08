@@ -50,14 +50,21 @@ def export(args):
         if cohort["split"][row]!="train":raise ValueError("Secondary-teacher subset must retain TRAIN role")
         task=tasks[row];directory=args.queue/"results"/task["task_id"]
         header=directory/"status.json"
-        record=json.loads(header.read_text())
-        if record["context_hash"]!=context["context_hash"]:raise ValueError("Primary endpoint context differs")
         path=directory/"arrays.npz"
-        if sha256(path)!=record["arrays_sha256"]:raise ValueError("Endpoint source bytes changed")
         binding=dict(cohort_row=row,structure_id=str(cohort["structure_ids"][row]),
             primary_task_id=task["task_id"],split="train",n_target=int(cohort["n_target"][row]),
-            source_arrays_path=str(path.absolute()),source_arrays_sha256=record["arrays_sha256"],
-            status=record["status"],exported=bool(record["endpoint_labels_usable"]))
+            source_arrays_path=str(path.absolute()),source_arrays_sha256=None,status="missing_terminal_header",exported=False)
+        if not header.exists():
+            records.append(binding)
+            continue
+        record=json.loads(header.read_text())
+        if record["context_hash"]!=context["context_hash"]:raise ValueError("Primary endpoint context differs")
+        binding.update(status=record["status"],source_arrays_sha256=record["arrays_sha256"],exported=bool(record["endpoint_labels_usable"]))
+        if not path.exists():
+            binding.update(status="missing_endpoint_arrays",exported=False)
+            records.append(binding)
+            continue
+        if sha256(path)!=record["arrays_sha256"]:raise ValueError("Endpoint source bytes changed")
         if record["endpoint_labels_usable"]:
             with np.load(path,allow_pickle=False) as z:
                 xyz=z["endpoint_positions_A"];cell=z["cell_A"];numbers=z["numbers"];slots=z["parent_indices"]
