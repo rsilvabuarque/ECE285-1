@@ -15,7 +15,7 @@ from pathlib import Path
 
 import numpy as np
 
-from paired_common import atomic_json, check_prepared, load_npz, sha256
+from paired_common import atomic_json, check_prepared, identity, load_npz, sha256
 
 
 def rows_csv(path, rows):
@@ -62,7 +62,17 @@ def evaluate(args):
         if provenance.get("energy_target") != target:
             raise ValueError("Deletion and endpoint condition schemas were interchanged")
     history_payload = json.loads(args.history.read_text())
-    history = set(history_payload if isinstance(history_payload, list) else history_payload["canonical_masks"])
+    history = set(history_payload if isinstance(history_payload, list) else next(history_payload[k] for k in
+        ["keys","canonical_masks","known_keys","canonical_keys"] if k in history_payload))
+    facts_path=getattr(args,"facts",None);facts=None
+    if facts_path is not None:
+        facts=json.loads(facts_path.read_text())
+        if (facts.get("status")!="FROZEN_COMPLETE_ENDPOINT_FACTS" or facts.get("schema")!="paired-endpoint-facts-v1" or
+                facts.get("context_hash")!=context["context_hash"] or facts.get("context")!=context or
+                identity({k:v for k,v in facts.items() if k!="identity"})!=facts["identity"]):
+            raise ValueError("Compact endpoint facts are incomplete, corrupted or context incompatible")
+        expected=getattr(args,"facts_sha256",None)
+        if expected is not None and sha256(facts_path)!=expected:raise ValueError("Compact facts outer SHA256 differs from the release manifest")
     bindings = json.loads((args.registration / "candidate_bindings.json").read_text())
     by_id = {r["source_structure_id"]:r for r in bindings}
     by_key = {r["canonical_vacancy_key"]:r for r in bindings}
@@ -75,22 +85,30 @@ def evaluate(args):
     source_records = []
     missing = set()
     for key, b in by_key.items():
-        directory = args.queue / "results" / b["task_id"]
         if key in protected_test and not args.unseal_test:
             results[key] = dict(terminal=False, status="protected_test_energy_sealed")
             missing.add(b["task_id"])
             continue
-        path = directory / "result.json"
-        if not path.exists():
-            results[key] = dict(terminal=False, status="missing")
-            missing.add(b["task_id"])
-            continue
-        record = json.loads(path.read_text())
+        if facts is not None:
+            item=facts["records"].get(b["physical_key"])
+            if item is None:raise ValueError("Compact facts omit a prespecified physical query")
+            if item["canonical_vacancy_key"]!=key:raise ValueError("Compact facts initial mask binding differs")
+            record=item["record"];claim=dict(claimed_unix=item["claimed_unix"]);source_record=dict(item["source"])
+        else:
+            directory = args.queue / "results" / b["task_id"]
+            path = directory / "result.json"
+            if not path.exists():
+                results[key] = dict(terminal=False, status="missing")
+                missing.add(b["task_id"])
+                continue
+            record = json.loads(path.read_text())
+            if sha256(directory / "arrays.npz") != record["arrays_sha256"]:
+                raise ValueError("Endpoint raw data bytes changed")
+            claim_path=args.queue / "claims" / (b["task_id"] + ".json")
+            claim = json.loads(claim_path.read_text())
+            source_record=dict(task_id=b["task_id"],result_sha256=sha256(path),arrays_sha256=record["arrays_sha256"],claim_sha256=sha256(claim_path))
         if record["physical_key"] != b["physical_key"] or record["context_hash"] != context["context_hash"]:
             raise ValueError("Candidate endpoint uses a different initial geometry or numerical protocol")
-        if sha256(directory / "arrays.npz") != record["arrays_sha256"]:
-            raise ValueError("Endpoint raw data bytes changed")
-        claim = json.loads((args.queue / "claims" / (b["task_id"] + ".json")).read_text())
         info = dict(terminal=True, status=record["status"], endpoint_known=bool(record["endpoint_labels_usable"]),
             deletion_known=record["initial_energy_eV"] is not None,
             deletion_energy_eV_atom=record["initial_energy_eV"] / record["n_atoms"] if record["initial_energy_eV"] is not None else None,
@@ -103,8 +121,7 @@ def evaluate(args):
             energy = info[target + "_energy_eV_atom"]
             info[target + "_bin"] = str(classify(schema, np.array([record["n_target"]]), np.array([energy]))[0]) if energy is not None else "unknown"
         results[key] = info
-        source_records.append(dict(task_id=b["task_id"], result_sha256=sha256(path),
-            arrays_sha256=record["arrays_sha256"], claim_sha256=sha256(args.queue / "claims" / (b["task_id"] + ".json"))))
+        source_records.append(source_record)
     outcomes = []
     for i, raw in enumerate(attempts):
         r = dict(raw)
@@ -206,6 +223,8 @@ def evaluate(args):
         source_sha256=sha256(__file__), no_new_DFT=True,
         mean_energy_scope="Available deletion labels and converged compatible endpoints only; unknown outcomes remain in every yield denominator",
         original_fixed_q20_scope="Initial deletion energies only; never applied to shifted endpoint energies" if original_path is not None else "OMITTED; supply --original-thresholds for the required legacy LOW metric",
+        compact_facts_sha256=sha256(facts_path) if facts_path is not None else None,
+        raw_arrays_rehashed_in_this_replay=facts is None,
         request_vs_assessment_schema="Generator requests retain their own recorded schema. Paired-calibration deletion/endpoint schemas define separate assessment classes; the original fixed-q20 metric is separately named.",
         limitation="Distinct initial or endpoint occupation orbits are not certified distinct PES minima; failures remain in attempt denominators")
     atomic_json(args.output_dir / "receipt.json", report)
@@ -219,7 +238,10 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--prepared", type=Path, required=True)
     p.add_argument("--registration", type=Path, required=True)
-    p.add_argument("--queue", type=Path, required=True)
+    source=p.add_mutually_exclusive_group(required=True)
+    source.add_argument("--queue", type=Path)
+    source.add_argument("--facts",type=Path,help="Portable scalar facts; makes no access to the original HPC queue")
+    p.add_argument("--facts-sha256",help="Expected compact facts SHA256 from the authenticated download manifest")
     p.add_argument("--attempts", type=Path, required=True)
     p.add_argument("--deletion-schema", type=Path, required=True)
     p.add_argument("--endpoint-schema", type=Path, required=True)

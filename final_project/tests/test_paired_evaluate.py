@@ -2,6 +2,7 @@
 import csv
 import itertools
 import json
+import shutil
 from pathlib import Path
 import sys
 from types import SimpleNamespace
@@ -80,6 +81,23 @@ def test_duplicates_known_masks_and_failed_attempts_stay_in_endpoint_denominator
     assert float(cell["original_q20_deletion_useful_yield"])==0
     with (args.output_dir/"fit_summary.csv").open() as stream:fit_rows=list(csv.DictReader(stream))
     assert len(fit_rows)==2 and all(float(r["equal_weight_count_request_yield"])==.25 for r in fit_rows)
+    fact_rows={}
+    for task in tasks:
+        directory=queue/"results"/task["task_id"];path=directory/"result.json"
+        claim=queue/"claims"/(task["task_id"]+".json")
+        fact_rows[task["physical_key"]]=dict(record=json.loads(path.read_text()),canonical_vacancy_key=task["canonical_vacancy_key"],
+            claimed_unix=json.loads(claim.read_text())["claimed_unix"],source=dict(task_id=task["task_id"],result_sha256=common.sha256(path),
+                arrays_sha256=common.sha256(directory/"arrays.npz"),claim_sha256=common.sha256(claim)))
+    facts=dict(status="FROZEN_COMPLETE_ENDPOINT_FACTS",schema="paired-endpoint-facts-v1",context=context,
+        context_hash=context["context_hash"],records=fact_rows)
+    facts["identity"]=common.identity(facts);fp=tmp_path/"facts.json";common.atomic_json(fp,facts)
+    original_out=args.output_dir
+    shutil.rmtree(queue) # no raw queue exists in the offsite replay environment
+    args.queue=None;args.facts=fp;args.facts_sha256=common.sha256(fp);args.output_dir=tmp_path/"portable_replay"
+    replay=evaluate.evaluate(args)
+    assert not replay["raw_arrays_rehashed_in_this_replay"]
+    for name in ["cells.csv","summary.csv","fit_summary.csv","confusion.csv"]:
+        assert (original_out/name).read_bytes()==(args.output_dir/name).read_bytes()
     # Threshold changes after scoring never become a successful replay.
     final_history.write_text("[]")
     args.output_dir=tmp_path/"changed_history"
