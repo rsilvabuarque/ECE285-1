@@ -1,0 +1,34 @@
+{
+  "status": "PASS_FRESH_GITHUB_DOWNLOAD_AND_ALL_HASHES",
+  "command": [
+    "/global/cfs/cdirs/m4537/rsb/envs/fairchem/bin/gh",
+    "release",
+    "download",
+    "ece285-overnight-20261108-v1",
+    "--repo",
+    "rsilvabuarque/ECE285-1",
+    "--pattern",
+    "ece285-overnight-20261108-core-v2.zip",
+    "--dir",
+    "/pscratch/sd/r/rsb/ece285_overnight_20261108/remote_archive_verification"
+  ],
+  "archive_sha256": "a809e6cd8bf6584fdb5eb4e3a34aca95fac2209659dc0de91d166e7b60698429",
+  "bytes": 213869333,
+  "files": 2359,
+  "snapshots": [
+    {
+      "path": "reports/final_report_snapshot",
+      "files": 12,
+      "status": "PASS"
+    },
+    {
+      "path": "reports/research_final_report_snapshot",
+      "files": 10,
+      "status": "PASS"
+    }
+  ],
+  "elapsed_seconds": 14.72506200906355,
+  "exact_same_archive_as_8_scope_36_table_CPU_replay": true,
+  "new_model_or_MLIP_calls": 0,
+  "scope": "Authenticated draft download; publication changes visibility, not asset bytes. No repeated scientific inference."
+}

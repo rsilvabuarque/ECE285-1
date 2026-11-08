@@ -1,0 +1,34 @@
+{
+  "status": "PASS_PUBLIC_RELEASE_ALL18_DIGESTS_AND_ANONYMOUS_CORE_URL",
+  "verified_UTC": "2026-11-08T16:56:40.315059+00:00",
+  "url": "https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-overnight-20261108-v1",
+  "release_tag": "ece285-overnight-20261108-v1",
+  "source_commit": "e0f2af771e816f611df1fe1baa517db1153ff840",
+  "asset_count": 18,
+  "asset_digests": {
+    "ece285-overnight-20261108-core-v2.zip": "sha256:a809e6cd8bf6584fdb5eb4e3a34aca95fac2209659dc0de91d166e7b60698429",
+    "ece285-overnight-20261108-raw-paired-01.zip": "sha256:40197302a6d6a10d582121b3bb48ed88a095557cbfa98c35634f57d970594655",
+    "ece285-overnight-20261108-raw-paired-02.zip": "sha256:8820df17932972eaadcb0cc5e6b4d5d4f16e551fa39e2a8a9e11a15d20624517",
+    "ece285-overnight-20261108-raw-paired-03.zip": "sha256:8a0128386c6e2affe20fb033869915db24a0ffe0e89e03218d050b1bceef3038",
+    "ece285-overnight-20261108-raw-paired-04.zip": "sha256:4fbed075dd14aec5423cfe07af7000409d212723892b22e89610e355ea135e96",
+    "ece285-overnight-20261108-raw-paired-05.zip": "sha256:6ec183ab0eff975c799e7818d20e5ba0f066932496681578a85c3652b67babaa",
+    "ece285-overnight-20261108-raw-static-01.zip": "sha256:fea6bb71f6ad90b6e1ace1c143c53ca57ca87a9cc494be16b8288a2eb4386d55",
+    "ece285-overnight-20261108-raw-research-01.zip": "sha256:6a38418cf913c229c1622761c298f71e1de363ff262f59444da1017431be8e17",
+    "ECE285_midterm_overnight_20261108.pdf": "sha256:d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8",
+    "ECE285_research_overnight_20261108.pdf": "sha256:01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea",
+    "download.json": "sha256:a6d2e16ac52dc828688e5faf4e2af3cee0f413e9699fcd459a414d62b463162b",
+    "download_raw.json": "sha256:5586394c3a1d83698decf09c1183f47c30e046d142658518752d7fcdc5d45992",
+    "artifact_receipt.json": "sha256:983de04e146afa5d9c2ebe44d0d29261032c173557b173b2ff4f55e6313c267e",
+    "fresh_v2_replay_receipt.json": "sha256:f1426f641865b08cc86aa3fdc51f56e4110d8cf47fdee763f37843f3e9dc1ad5",
+    "SHA256SUMS": "sha256:25fa3ae58b31d31287a34316fc72e6a63ae1d2da2e8972b9c9dadc1bb9c3d42b",
+    "resources_final.json": "sha256:6b1e18d43be757028667d72ba23a4a7198b6ab7af9ee2a124bf270d6bbf5df5a",
+    "publication_receipt.json": "sha256:3c5ef8418902cde0a1591e39cf105bdb4509f64506ab410d1b3f896f5b1c6877",
+    "completion_receipt.json": "sha256:64443452be67e55eea231609f19d19b52fa935213ae52a50610ba21228c5dd71"
+  },
+  "anonymous_core_HEAD": {
+    "status": 200,
+    "bytes": 213869333
+  },
+  "all_owned_allocations_released": true,
+  "scope": "All18uploadedassetsverified, includingclosingreceipts; this verification is committed to review branch and excluded from its own asset list."
+}

@@ -94,7 +94,10 @@
       "pdf_sha256": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea"
     },
     "publication_and_resource_closure": {
-      "status": "REVIEW_BRANCH_PUSHED_FIRST_CI_PASS_PACKET_PREPARED"
+      "status": "COMPLETE",
+      "publication": "reports/overnight_20261108/publication_receipt.json",
+      "resource_receipt": "reports/overnight_20261108/resources_final.json",
+      "active_owned_jobs": 0
     },
     "intake": {
       "status": "COMPLETE",
@@ -107,5 +110,6 @@
   "endpoint_budget_amendment": {
     "path": "reports/overnight_20261108/endpoint_budget_amendment.json",
     "sha256": "a7cba1b2bc09fe067c9da78df9efcc725bbe0015ed4a96b446178d0d0468dc55"
-  }
+  },
+  "status": "COMPLETE_BOUNDED_GOAL_WITH_NEGATIVE_AND_PHYSICALLY_UNVALIDATED_RESULTS"
 }

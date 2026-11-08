@@ -107,7 +107,7 @@ steps to avoid double counting:
 
 ```bash
 python scripts/overnight_20261108/resource_receipt.py \
-  --jobs 60998325 60998550 60999239 60999380 61001747 \
+  --jobs 60998325 60998550 60999239 60999380 61001747 61003452 \
   --output reports/overnight_20261108/resources_final.json
 ```
 

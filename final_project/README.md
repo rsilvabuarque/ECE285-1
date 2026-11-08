@@ -19,6 +19,10 @@ archive reproduced all 36 checked tables exactly across eight analysis scopes. T
 37 trajectories span different methods and screens; they are not 37 independent
 replicates of one selected model.
 
+Final usage was **16.1209 charged GPU node-hours** against the 250-hour cap.
+All six owned allocations are released. The release carries the exact resource
+receipt; allocated GPU-device hours and physical node hours are reported separately.
+
 The current packet belongs under `artifacts/overnight_20261108/`. The core ZIP
 is 213.9 MB and includes data, selected checkpoints, raw proposal records and
 compact endpoint coordinates. Its validated cached replay entrypoint is:

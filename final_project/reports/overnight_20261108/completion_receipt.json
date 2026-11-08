@@ -1,0 +1,103 @@
+{
+  "status": "COMPLETE_BOUNDED_SCIENTIFIC_GOAL",
+  "created_UTC": "2026-11-08T16:52:35.607211+00:00",
+  "goal_intake_UTC": "2026-11-08T11:29:35+00:00",
+  "hard_stop_UTC": "2026-11-08T18:29:35+00:00",
+  "review_branch": "overnight/latent-relaxed-neb-20261108",
+  "release": "https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-overnight-20261108-v1",
+  "source_commit": "e0f2af771e816f611df1fe1baa517db1153ff840",
+  "full_fits": 37,
+  "optimizer_updates": 148000,
+  "continued_optimizer_updates": 0,
+  "screened_configurations": 11,
+  "original_protected_roles_unchanged": true,
+  "frozen_final_history_orbits": 344001,
+  "primary_static_FINAL_attempts": 44928,
+  "separate_latent_probes": 4992,
+  "fresh_static_oracle_calls": 93379,
+  "stage_cache_served_requests": 489,
+  "paired_acquisition_attempts": 6000,
+  "paired_acquisition_converged": 5992,
+  "paired_acquisition_interrupted": 8,
+  "final_endpoint_attempt_rows": 10944,
+  "final_unique_endpoint_tasks": 7616,
+  "final_endpoint_converged": 7616,
+  "all_primary_unique_optimization_attempts": 13712,
+  "all_primary_logical_EFS_attempts": 558458,
+  "smallcell_raw_geometries": 1364,
+  "smallcell_EFS_calls_both_teachers_including_repeats": 2752,
+  "original_acquisition_TRAIN_VAL_TEST_rows": [
+    3600,
+    1200,
+    1200
+  ],
+  "compact_geometry_roles_preserved": true,
+  "usable_paired_trainval_rows": 4794,
+  "geometry_CVAE_newly_trained": false,
+  "software_tests": 261,
+  "cached_replay_scopes": 8,
+  "cached_replay_tables_exact": 36,
+  "core_archive_sha256": "a809e6cd8bf6584fdb5eb4e3a34aca95fac2209659dc0de91d166e7b60698429",
+  "reports": {
+    "status": "COMPILED_AND_REVIEWED",
+    "main": {
+      "pages": 6,
+      "body_pages": 5,
+      "sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8"
+    },
+    "research": {
+      "pages": 8,
+      "distributed_reviewed_pdf_sha256": "01ced6d4a6107887e74fce28df49bdff74a3c4a0a0ab3d7d61abdf04628718ea",
+      "root_rebuild_pdf_sha256": "c6446d36c7018e984a87755cd3d8085c5e9008adf0830c50cce0ddd29b2df1ee",
+      "source_tex_sha256": "8f29af076f9e9ed3d2df7b83c24fe8618e169a83d369f1f11cb7e68634952547",
+      "scope": "Root rebuild succeeded; PDF creation metadata can differ. Distributed PDF is the immutable visually reviewed snapshot with identical TeX and assets."
+    }
+  },
+  "resources": {
+    "charged_GPU_node_hours": 16.12090277777778,
+    "physical_node_allocation_hours": 17.104444444444447,
+    "allocated_GPU_device_hours": 64.48361111111112
+  },
+  "owned_jobs": [
+    60998325,
+    60998550,
+    60999239,
+    60999380,
+    61001747,
+    61003452
+  ],
+  "active_owned_jobs": [],
+  "no_new_DFT": true,
+  "no_DFT_scheduled": true,
+  "no_new_MD": true,
+  "no_MLIP_finetuning": true,
+  "coursework_submitted": false,
+  "collaborator_messages_sent": 0,
+  "physical_validation": false,
+  "completed": [
+    "Matched spatial CVAE/AR/dense/nonphysical controls and limited screens",
+    "Independent fresh static FINAL and matched MACE scoring",
+    "Paired6000 cohort, target-model fits and four complete dual-label endpoint assessments",
+    "Bounded saved-event NEB/saddle and secondary-teacher checks with negative outcomes retained",
+    "Exact literal small-cell thermodynamic reference and27 harmonic null analyses",
+    "Compiled5-body-page midterm plus8-page research supplement; source/claim maps",
+    "Protected compact geometry/data/model/raw-trajectory artifacts, exact commands and fresh remote checks"
+  ],
+  "deferred": [
+    "Further adaptive acquisition, continuous conditioning and editor variants",
+    "Neural size transfer and new joint-coordinate CVAE fitting",
+    "Any new DFT, MD or MLIP fine-tuning"
+  ],
+  "later_physical_validation": [
+    "Compatible DFT checks of selected structures and magnetic/electronic states",
+    "Stable identified PES basins and connected elementary paths before kinetic interpretation",
+    "Validated same-potential thermodynamic reference before anharmonic free-energy claims"
+  ],
+  "teammate_tasks": {
+    "Beihao": "Independently reproduce matched CVAE/AR and latent/condition diagnostics",
+    "Varad": "Recompute all-attempt novelty/yields, pairing, uncertainty and cost receipts",
+    "Ricardo": "Review geometries, teacher/DFT limits and research conclusions; integrate and submit manually"
+  },
+  "task_instructions": "docs/COLLABORATOR_TASKS.md",
+  "notes": "Numerically converged MLIP calculations and software tests do not establish DFT or experimental validity. Negative comparisons complete the bounded study."
+}

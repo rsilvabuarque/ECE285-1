@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/global/cfs/cdirs/m4537/rsb/envs/fairchem/bin/gh",
+    "release",
+    "upload",
+    "ece285-overnight-20261108-v1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-core-v2.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-paired-01.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-paired-02.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-paired-03.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-paired-04.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-paired-05.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-static-01.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ece285-overnight-20261108-raw-research-01.zip",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ECE285_midterm_overnight_20261108.pdf",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/ECE285_research_overnight_20261108.pdf",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/download.json",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/download_raw.json",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/artifact_receipt.json",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/fresh_v2_replay_receipt.json",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/dist/overnight_20261108/SHA256SUMS",
+    "--repo",
+    "rsilvabuarque/ECE285-1"
+  ],
+  "overwrite": false,
+  "release_is_draft": true
+}
