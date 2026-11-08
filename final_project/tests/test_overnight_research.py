@@ -96,3 +96,27 @@ def test_representative_entropy_exact_for_equal_orbit_energies_and_finite_when_u
         assert r['representative_entropy_eV_K']==pytest.approx(r['exact']['entropy_eV_K'])
         assert np.isfinite(r['representative_entropy_eV_K'])
         assert r['orbit_mass_total_variation']==pytest.approx(0,abs=1e-15)
+
+
+def test_actual_mode_null_velocity_units_energy_and_COM():
+    m=script('research_harmonic_null');masses=np.array([6.94,58.933]);translation=np.zeros((6,3))
+    for axis in range(3):translation[axis::3,axis]=np.sqrt(masses)
+    q=np.linalg.qr(translation,mode='complete')[0][:,3:]
+    nu=np.array([1.,2.,3.]);times=np.arange(10000)*.001;T=433.15
+    velocity=m.generate_velocities(nu,q,masses,times,np.array([.3,.7,1.1]),T)
+    com=(velocity*masses[None,:,None]).sum(1)/masses.sum()
+    assert np.max(np.linalg.norm(com,axis=1))<1e-12
+    kinetic=.5*m.xpt.KINETIC_EV_PER_AMU_A2_PS2*np.sum(velocity**2*masses[None,:,None],axis=(1,2))
+    assert kinetic.mean()==pytest.approx(1.5*m.xpt.KB*T,rel=1e-12)
+
+
+def test_harmonic_native_anchor_reference_reduces_to_exact_partition():
+    m=script('research_harmonic_null');nu=np.array([1.,2.,3.]);T=433.15;emin=-100.
+    anchor=emin+len(nu)*m.xpt.KB*T;r=m.matched_references(nu,T,emin,anchor)
+    assert r['classical_anchor_matched_F_eV']==pytest.approx(r['exact']['F_classical_eV'])
+    assert r['quantum_anchor_matched_F_eV']==pytest.approx(r['exact']['F_quantum_eV'])
+
+
+def test_profile_and_summary_modules_load_without_model_imports():
+    assert callable(script('neb_stability_profile').main)
+    assert callable(script('neb_stability_summarize').main)
