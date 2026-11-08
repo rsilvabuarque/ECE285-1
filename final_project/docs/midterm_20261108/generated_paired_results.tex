@@ -1,0 +1,29 @@
+\begin{center}\small
+\begin{tabular}{lrr}\toprule
+Generated arm & Deletion assessment (\%) & Endpoint assessment (\%)\\\midrule
+\multicolumn{3}{l}{\textit{Current LOW requests only; paired-calibration LOW thresholds}}\\
+A: current graph CVAE &64.76&65.63\\
+B: current spatial AR &63.54&64.06\\
+Current mutation &57.12&53.82\\
+Uniform &21.53&22.92\\\midrule
+\multicolumn{3}{l}{\textit{Balanced three-class requests; matched new-cohort training}}\\
+Deletion-target CVAE &61.28&59.14\\
+Endpoint-target CVAE &59.03&58.74\\
+Deletion-seed mutation &57.29&54.28\\
+Endpoint-seed mutation &55.96&58.56\\
+Shared uniform &33.33&33.33\\\bottomrule
+\end{tabular}
+\end{center}
+Means use three replicates and all attempted proposals. The two panels have
+different request distributions and training cohorts; their numbers are not
+direct architecture contrasts. All 7,616 physical endpoint queries converged.
+Endpoint-target training does not improve balanced endpoint yield over matched
+deletion-target training in this assessment; its endpoint-seeded mutation control
+is nearly tied. On endpoint LOW requests, deletion-trained versus endpoint-trained
+CVAE yields are 62.50 versus 60.42\%; the paired difference is $-2.08\pm2.76$
+percentage points (descriptive SD), positive in 0/3 fits. Current A minus B's
+endpoint LOW difference is $+1.56\pm2.76$ points, positive in 2/3 fits; a
+latent-specific gain remains unresolved.
+Using the separately named original H0 $q_{20}$ on deletion energies, current
+A/B/mutation/uniform LOW yields are 61.81/60.94/53.65/19.27\%; that threshold
+is never applied to endpoint energies.

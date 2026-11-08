@@ -1,12 +1,188 @@
 {
-  "status": "REVIEWABLE_INTERIM_DEVELOPMENT_COMPLETE_FINAL_PENDING",
-  "created_UTC": "2026-11-08T13:11:47.786557+00:00",
+  "status": "FINAL_SCIENTIFIC_EVIDENCE_COMPLETE_REVIEW_PACKET",
+  "created_UTC": "2026-11-08T15:47:10.664314+00:00",
   "body_pages": 5,
   "total_pages": 6,
   "sources": {
     "central_protocol": {
       "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/protocol.json",
       "sha256": "b7d8b857dd05a53265277bdb0c46d24ae34c09500d87e9fe94c8c896fce45564"
+    },
+    "frozen_model_selection": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/confirmed_model_selection.json",
+      "sha256": "c71a42aed5815dee35d0be7760b799febdad69e0387e014aeaf877702f57b62d"
+    },
+    "authoritative_H0_inference": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/H0_label_inference_receipt.json",
+      "sha256": "b867a1832e215b8cded8fd6673cb1743e38597287aa4c2b5fcb4b431babbb539"
+    },
+    "final_assessment_protocol": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_assessment_protocol.json",
+      "sha256": "b01a32702f4a71471446ee236684040ed0c0b4f7eb6a4e1d1d2fb08ced41c827"
+    },
+    "final_scoring_gate": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_scoring_gate.json",
+      "sha256": "171d14cbb5074d97a704178082be36fe20c6b8a4eee4ea9758f944f0a88dca57"
+    },
+    "static_frozen_manifest": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_manifest.json",
+      "sha256": "094633ece21a575b73ab61eec8055aa49f8e137d29d9d7a6884c526b7c27f5b7"
+    },
+    "paired_frozen_selection": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_selection.json",
+      "sha256": "2a549546b97bdec21d2436afe3201bc5959d09d15dbdcf647a0641a76d0fb3af"
+    },
+    "final_history": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/final_history/receipt.json",
+      "sha256": "b86ef508ab87aaaad6c8b8dcb6297357d5c1d8fc97b5968a788191290a5168cf"
+    },
+    "final_raw_proposal_audit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/independent_raw_audit/receipt.json",
+      "sha256": "b2870899d5c7500f8b38ab5f4d83be557300a485a00f977af7f7f1174615717f"
+    },
+    "static_collection": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_collected/receipt.json",
+      "sha256": "9b6df699ae09d4fe00f2c145538216b8cb7659dabf3ec9ef624e6909bba5b395"
+    },
+    "static_production": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/receipt.json",
+      "sha256": "b104c1bb891491d45ecad8a58686dae51b12ea974329ce2a7c64f5b1da419a6f"
+    },
+    "static_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/summary.csv",
+      "sha256": "ca452331c472c39507282f463df1c40611d1e66f55a53c04b4cb704e02fcec89"
+    },
+    "static_per_fit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/seed_metrics.csv",
+      "sha256": "b5d858a451776b5021af6b07f96c339590d56d715a0ace83cd478c0a1b058b02"
+    },
+    "static_independent_recount": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_independent_metrics/receipt.json",
+      "sha256": "8401b6979cd8c5db2e585584840eb2670a8b85b883a3ded3691ad6f68a64089e"
+    },
+    "static_paired_contrasts": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_independent_metrics/contrast_summary.csv",
+      "sha256": "aaa23dc3bc9f984f8e0f05847a7e01a731e528ef26d4d3cc2bca000dd638d94c"
+    },
+    "static_paired_per_fit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_independent_metrics/perfit_contrasts.csv",
+      "sha256": "eeb34140d6dcae34aed2da7ed340028415cc2232a9e2981259568810236aca52"
+    },
+    "static_latent_condition_sensitivity": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_sensitivity_v2/receipt.json",
+      "sha256": "23504ef3f1978226b2f43c5dede1f74c5659cfe11696dc5ebe8c839509e002ff"
+    },
+    "static_sensitivity_table": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_sensitivity_v2/summary.csv",
+      "sha256": "8efe930e883a935c1d6c1c04eb21b14debc3e7c8cf0b1f0e0c39b287c8ee6fdb"
+    },
+    "static_reference_distances": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_distances_v2/receipt.json",
+      "sha256": "0bb79a88601755f39c07344086970aec27a0a5280e74ab9827d8bbf923ab013f"
+    },
+    "static_distance_failure_preserved": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_distances/termination_receipt.json",
+      "sha256": "f4503240e7acc1d09f11c27438a680fb4e7c81188da96f3a98a35852eb92409c"
+    },
+    "main_plot": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/final_main_comparison.pdf",
+      "sha256": "80215bc480d72cafd84df70907d5c629017e2646ac1b1b0a4c28d3ea40929d76"
+    },
+    "mechanism_plot": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/final_mechanism_first3.pdf",
+      "sha256": "4aabbc2912d6812c9636ea7ead04f303c8be31505d5a49eabf2ccef534531750"
+    },
+    "LOW_SD_table": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/summary_with_LOW_SD.csv",
+      "sha256": "ecb0264f00d30a235d90a7474603655ca9073b286df5b8c8627481947672b3b4"
+    },
+    "paired_acquisition": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/full_collection/receipt.json",
+      "sha256": "153a7ac44a8d441881b34dfeb0fa7e2563d63c1ef38f59f8e9d5a55175a73e88"
+    },
+    "paired_fit_support": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/full_collection/development_class_support.csv",
+      "sha256": "2cb9be34c4a8d554c1375c2cdd70727097a8dce85921ae312d475b99148f0f84"
+    },
+    "paired_TRAIN_VAL_label_audit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/trainval_label_audit/receipt.json",
+      "sha256": "aff926eef2bba32d305083b5fe12ea3429a4a1c90e0181374182b8279c15810f"
+    },
+    "paired_TEST_assessment_only": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/TEST_final_audit/receipt.json",
+      "sha256": "cb4f84a5c3e56c3db10e6b0282506a3700783c4a5421b4a90e7aab420c78870d"
+    },
+    "paired_TEST_rank_table": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/TEST_final_audit/composition_summary.csv",
+      "sha256": "22d0631774e9f31fa76a61cf060ec87e83506c436b81ab4d40a67112afd18abd"
+    },
+    "paired_independent_recount": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_independent_recount/receipt.json",
+      "sha256": "e5b946c8c654559d5ea0b91786fd0aff43084813b08942b5e4db96c6eb3089f9"
+    },
+    "paired_contrasts": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/contrasts/summary_contrasts.csv",
+      "sha256": "b040aa1e89d66a4589bda81f57a377f794dc85008719f48e90632aab0a458729"
+    },
+    "paired_contrasts_per_fit": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/contrasts/per_replicate_contrasts.csv",
+      "sha256": "eb06aded372e9a0f9d8778ea25de6da813a68e38fc62f992dfcdefd08a603e98"
+    },
+    "paired_primary_call_receipt": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_call_receipt.json",
+      "sha256": "c9f9f7b1251a0e113c16566b29cccc681f3a0fb130823b583e170c6e999097c8"
+    },
+    "paired_tight_MACE_controls": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/controls_comparison_with_mace/receipt.json",
+      "sha256": "1f0ae00ef5a53ab4605f8f2157a187005e246eaa24fc00a895de1cd56b7165aa"
+    },
+    "same_geometry_MACE96": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/mace_sp_hash96_audit/receipt.json",
+      "sha256": "d4c993acd3af226715cea84bdcc130f9f900b77fbaeef02b2cc39a77e56f883c"
+    },
+    "same_geometry_MACE96_table": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/mace_sp_hash96_audit/composition_summary.csv",
+      "sha256": "08ae893fb4ff86306e5a5f698cf62cb7227d2be9f85d0aab649948456b02a940"
+    },
+    "research_final_snapshot": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/research_final_report_snapshot/manifest.json",
+      "sha256": "f7c44a61079c172734e2d6ff699be51a4cb8dd4b90ed30120fc4ec517ed1ee63"
+    },
+    "research_claim_map": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/docs/research_supplement_20261108/claim_sources.json",
+      "sha256": "b1df5985f71e7b1df0831d97560806999743f8efdf8344b3a0e3153732d65c05"
+    },
+    "paired_current_low_production": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/current_low/receipt.json",
+      "sha256": "2bde34c254b99d146c728ae456ec40936dd71c324972e9d864c0d059761f4fdd"
+    },
+    "paired_current_low_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/current_low/summary.csv",
+      "sha256": "2abb46d13d45a32385736bd15c9849568cd2787dfc8025d9f24b583aca6262bd"
+    },
+    "paired_paired_deletion_production": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_deletion/receipt.json",
+      "sha256": "a00d208ab93bc5114b103cf91bc28b320e5216d32241ea0c353990c01a8b8ab7"
+    },
+    "paired_paired_deletion_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_deletion/summary.csv",
+      "sha256": "bfcfdfdf9c586cba86f70e9dc999ca0621f0e8bf75ce745bd4ef91b0621f0e8a"
+    },
+    "paired_paired_endpoint_production": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_endpoint/receipt.json",
+      "sha256": "5914e5330b6b59c4375fbf35bba9184f2a3fd47eecbccc64760e8dc359ea1d7f"
+    },
+    "paired_paired_endpoint_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/paired_endpoint/summary.csv",
+      "sha256": "5233e3f7462932bbf581525fdda5d96385c3d7a80c699b619f9ea26af86e8b05"
+    },
+    "paired_shared_uniform_production": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/shared_uniform/receipt.json",
+      "sha256": "f3fee6318bea41f122fa976cbcc5f8b5e9b8051acd3da9038222110752dade92"
+    },
+    "paired_shared_uniform_summary": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/paired_evaluation/shared_uniform/summary.csv",
+      "sha256": "297b57f744d50928bafea83acd66c8a05cee3b393f97b88e3c6a162a5ee487cc"
     },
     "initial_DEVELOPMENT_summary": {
       "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/initial_controls/summary.csv",
@@ -27,66 +203,47 @@
     "paired_condition_and_latent_diagnostics": {
       "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_models_20261108/final_project/reports/overnight_20261108/initial_controls_v1/diagnostics_by_fit.csv",
       "sha256": "df9538298ccff85b3a787a1e7f1e9ccbe02ea2e2ae98f8585223665c9dad4fe5"
-    },
-    "paired_pilot": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/pilot_collection/receipt.json",
-      "sha256": "f7ccd4454b416650e820e8e6dcd449a9f8ca7ec340467a88612663961171710b"
-    },
-    "smallcell_raw_reference": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell/receipt.json",
-      "sha256": "d2c896823f9cf12105c9669859708f6347a9be560578c8e3d36c0e5ee12903d3"
-    },
-    "smallcell_exact_tables": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell/thermodynamics.csv",
-      "sha256": "e45f6472d64b6ef4bda4b8cca4fc4d345646a3b6bfca79108fc3db0c8c0992bd"
-    },
-    "smallcell_independent": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell_independent_v2/receipt.json",
-      "sha256": "d6aef9a1a317fb10190583cba2b5d5aed66e9cd0d494dbbf70025a08a0a82cec"
-    },
-    "smallcell_rank_scope": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/smallcell_independent_v2/rank_scope.csv",
-      "sha256": "0ef296320785843b7404d639d4de153b908fe0447102e5a50900c6bd49f144b7"
-    },
-    "harmonic_full27": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_null_recovery/receipt.json",
-      "sha256": "cdbd126aa04bb79c16bba6f4372655343a4f8b904fda2adcc8e3d0c228290fdd"
-    },
-    "harmonic_summary": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/harmonic_summary/receipt.json",
-      "sha256": "66d369101d3ad3d3b1f2859eb9d669b6e54c2499ba6ccd9af605decb3df08f12"
-    },
-    "NEB_interim": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/neb_summary_interim/receipt.json",
-      "sha256": "1cc2a3683bd28aab480686a1b880931e7f2fbca0da8a0a2275e87fea2f88a8de"
-    },
-    "NEB_interruption": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108/final_project/reports/overnight_20261108/neb_interruption/receipt.json",
-      "sha256": "35a1a06534d4ffcc2436c8a8b172b33c7afcab00b87590a685acc10c0c02f3b1"
-    },
-    "eight_screen_design": {
-      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/screen_fit_tasks.json",
-      "sha256": "a6a9018a2c2e7d1babf739e879c7950cb7ae83efe873cb75b7562383a8349403"
     }
   },
+  "measured_scope": {
+    "full_fits": 37,
+    "optimizer_updates": 148000,
+    "known_history_orbits": 344001,
+    "static_primary_attempts": 44928,
+    "static_separate_diagnostic_attempts": 4992,
+    "paired_attempts": 10944,
+    "paired_FINAL_unique_physical_queries": 7616,
+    "primary_optimization_attempts": 13712,
+    "primary_logical_EFS_bundle_attempts": 558458
+  },
+  "independent_checks": {
+    "static_outcome_rows": 99840,
+    "static_integer_boolean_checks": 407082,
+    "static_paired_energy_mask_checks": 69888,
+    "paired_class_denominator_fields": 1233
+  },
   "completed_claims": [
-    "NineA/B/C4kfits",
-    "two_teacher_DEVELOPMENT8640primary_attempts",
-    "eight_screen4kfits_no_score_claim",
-    "paired96TRAINpilot",
-    "finite12rawreference",
-    "harmonic27case_null",
-    "NEBfirst_two_tranches_with_nonconvergence"
+    "Matched_A_B_C_and_nonphysical_D",
+    "bounded_screens_and_frozen_development_selection",
+    "fresh_five_fit_static_FINAL_and_three_fit_controls",
+    "paired_TRAIN_VAL_target_fits_and_TEST_assessment_only",
+    "all_four_endpoint_cross_evaluation_stages",
+    "independent_arithmetic_recounts",
+    "finite12_raw_reference",
+    "537_mode_harmonic_null",
+    "bounded_NEB_and_candidate_mode_diagnostics_with_negative_physical_results"
   ],
-  "pending": [
-    "screen_rescoring_selection",
-    "fullpairedsupportaudit",
-    "labeltargetfits_and_endpointassessment",
-    "freshFINAL_MACE",
-    "event2tight7_MACE_and_saddlechecks",
-    "resourceclosure_publication"
+  "deferred_physical_validation": [
+    "DFT_check_of_teacher_energies_forces_and_research_candidates",
+    "full_elementary_hop_connection_and_physical_barrier_validation",
+    "other_parent_material_and_cell_size_transfer",
+    "joint_coordinate_generating_CVAE"
   ],
-  "protected": "Existingdocs/midterm1 and prior-goal snapshots unchanged. Development tables are not fresh FINAL evidence.",
+  "operational_receipts_separate": [
+    "reports/overnight_20261108/resources_final.json after allocation closure",
+    "versioned archive/fresh replay/publication receipts"
+  ],
+  "protected": "No model selection, refitting or new-proposal feedback after FINAL outcomes; only frozen proposals were scored. Prior docs/midterm1 and immutable interim snapshots are unchanged.",
   "citation_verification": [
     {
       "url": "https://aclanthology.org/N19-1021/",

@@ -11,16 +11,44 @@ while the present physical evidence and neural checkpoints are LCO-specific.
 
 **Current status:** 37 training trajectories, each with 4,000 optimizer updates,
 are complete. Models and proposals are frozen; `H_FINAL` contains 344,001 known
-occupation orbits. Final UMA/MACE scoring and the frozen endpoint-assessment
-queue are running. Final yields and completion/cost receipts are pending. These
+occupation orbits. Final UMA/MACE scoring and endpoint assessment are complete,
+with independently recounted metrics. B-shell AR achieves 63.04% UMA balanced
+novel in-bin yield, A-shell CVAE 62.20%, and mutation 58.37%. The corresponding
+MACE yields are 64.38%, 64.03%, and 57.97%. Publication/replay validation and the
+post-closure resource receipt remain pending at this update. These
 37 trajectories span different methods and screens; they are not 37 independent
 replicates of one selected model.
 
 The current packet belongs under `artifacts/overnight_20261108/`. Its verified
-download and portable fetch/replay entrypoint are pending assembly and validation.
-The planned `scripts/overnight_20261108/replay_packet.py` is not present at this
-revision. The sections below identify the analysis interfaces already available.
-Use the published manifest and actual helper once they are supplied.
+download is pending publication. The cached replay helper is implemented;
+the complete packet's fresh-machine replay is still awaiting validation. Once
+the verified packet is available, its entrypoint is:
+
+```bash
+python scripts/overnight_20261108/replay_packet.py \
+  --packet artifacts/overnight_20261108 --output-dir runs/varad_replay --plots
+```
+
+This recomputes metrics from cached labels and checks packet hashes; it makes
+no new MLIP calls. Do not substitute the prior packet into this command.
+
+The planned versioned release is
+[`ece285-overnight-20261108-v1`](https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-overnight-20261108-v1).
+Publication and complete-packet replay remain pending at this update. After
+the core installation below and verified publication, fetch the archive using
+the URL and SHA256 committed in its download manifest:
+
+```bash
+python - <<'PY'
+import json
+import subprocess
+from pathlib import Path
+record = json.loads(Path('artifacts/overnight_20261108/download.json').read_text())
+subprocess.run(['cathode-cvae', 'fetch-artifact', '--url', record['url'],
+                '--sha256', record['sha256'], '--output-dir', record['extract_to']],
+               check=True)
+PY
+```
 
 Read the [new midterm source](docs/midterm_20261108/main.tex),
 [research supplement](docs/research_supplement_20261108/main.tex), and
@@ -31,10 +59,15 @@ reviewed PDFs and their build inputs. The main report targets five body pages
 plus references. The separate research supplement retains the finite-cell,
 NEB and harmonic-estimator results and their physical limits.
 
-Development evidence supports the spatial decoder: a matched no-latent AR model
-has similar observed yield to the graph-posterior CVAE, while a dense posterior can reconstruct well
-without useful prior-generation improvement. The final comparison remains
-separate. A generated mask has exact composition; its energy class must be
+The final comparison supports the spatial decoder: the matched no-latent AR
+model has similar or better observed yield than the graph-posterior CVAE, while
+a dense posterior can reconstruct well without useful prior-generation gain.
+The current CVAE/AR endpoint LOW yields are 65.63%/64.06%; their paired
+difference does not establish a latent-specific benefit. In the separate matched
+new-cohort comparison, endpoint-label CVAE training gives 60.42% endpoint LOW
+yield versus 62.50% for deletion-label training. Current and new-cohort arms
+use different training data and are not a causal architecture contrast.
+A generated mask has exact composition; its energy class must be
 measured, and an endpoint-energy condition still requires an actual relaxation
 to obtain relaxed coordinates. No new DFT, MD campaign or MLIP fine-tuning is
 needed for the midterm.
@@ -60,8 +93,10 @@ training data, repeated `--score TEACHER=scalarNPZ` inputs and a separate
 `--schema TEACHER=frozenJSON` for each teacher. `paired_evaluate.py` accepts
 portable `--facts` and `--facts-sha256` instead of an HPC queue, along with the
 original attempts, registration, history and separate deletion/endpoint schemas.
-Exact input paths and the one-command replay will be added with the verified
-packet manifest.
+The packet contains `data/{parent.npz,H0.npz,condition_schema_uma.json,
+condition_schema_mace.json,generation_thresholds.csv}`, `paired/{prepared,training}`,
+all 37 fit records, frozen proposals/scalar labels, and separate static/paired
+evaluations. Exact paths and SHA checks are supplied by its manifest.
 
 Cached analysis and independent model checks need only the core learning
 environment below. Optional complete new energy/force/stress checks use the
@@ -138,7 +173,7 @@ accelerator substitution. On an allocated/class GPU:
 cathode-cvae mlip doctor --model uma --device cuda --load
 cathode-cvae mlip score --model uma --device cuda \
   --input runs/new_multibin_fit/middle_attempts.unique.npz \
-  --parent artifacts/current/core/data/parents/O3_N48_pilot.npz \
+  --parent artifacts/overnight_20261108/data/parent.npz \
   --output runs/uma_interface_check
 ```
 

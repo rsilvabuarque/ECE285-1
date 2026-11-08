@@ -3,9 +3,9 @@
 The current study is the November 8 packet at `artifacts/overnight_20261108/`.
 Its final models and proposals are frozen: 37 completed training trajectories,
 148,000 optimizer updates, and a final known-orbit history of 344,001. Final
-static scoring and endpoint assessment are running at this documentation update.
-Use their completed receipts when published; no final result is inferred from
-prepared code or a running queue.
+static scoring and endpoint assessment are complete, with independent arithmetic
+recounts. Publication/fresh replay validation and resource closure remain pending
+at this documentation update. Use the actual published receipts for reproduction.
 
 The integrating campaign already performed the matched latent/no-latent
 controls. Your contribution is an **independent reproduction, audit and scientific
@@ -26,10 +26,22 @@ collaborators or coursework submission is automated.
 The current integrating branch is `overnight/latent-relaxed-neb-20261108`.
 Use it after its publication receipt is available, create your own branch and
 keep every new run in a fresh directory. The current packet's verified download
-manifest and planned `scripts/overnight_20261108/replay_packet.py` are pending
-assembly/validation. Exact fetch/replay commands will be added when that helper
-exists; the historical commands later in this file remain reproducible under
-their original packet names.
+manifest is pending publication. `scripts/overnight_20261108/replay_packet.py`
+is implemented; complete-packet fresh replay validation remains pending. After
+fetching the verified packet, use:
+
+```bash
+python scripts/overnight_20261108/replay_packet.py \
+  --packet artifacts/overnight_20261108 --output-dir runs/varad_replay --plots
+```
+
+This uses cached labels and verifies hashes without model inference. The
+historical commands later in this file retain their original packet names.
+The [current README fetch block](../README.md#cathode-vacancy-generation-current-midterm-packet)
+reads the actual URL/SHA256 from `artifacts/overnight_20261108/download.json`.
+Its selected release is `ece285-overnight-20261108-v1`; publication and complete
+fresh replay are still pending, so use their actual receipts before claiming
+the packet has been reproduced.
 
 From the current project checkout:
 
@@ -61,6 +73,9 @@ user supplies their own approved model access. Use the project's common scorer
 for energies in eV/cell, forces in eV/Angstrom and ASE stress in eV/Angstrom³;
 its receipts bind model/head, geometry and inference precision. Full new scoring
 is optional for this midterm handoff because measured outcomes are supplied.
+For new mask batches, pass the current packet's parent with
+`--parent artifacts/overnight_20261108/data/parent.npz`; the scorer also accepts
+POSCAR/CIF/extxyz geometries directly without a parent-mask argument.
 
 ## Beihao: independently verify the generative-model mechanism
 
@@ -71,6 +86,40 @@ seed, weighted loss, checkpoint-selection rule and 4,000-update budget. A
 hardware time cap is a partial reproduction, even when a command exits cleanly.
 Do not copy a historical dense-reference command and label it the new retained
 spatial model.
+
+The following is the measured A-shell fit command with only portable paths and
+a fresh output directory substituted. Run it inside `final_project` on your
+allocated GPU after downloading the current packet:
+
+```bash
+python -m cathode_cvae.learning.train_mask \
+  --data artifacts/overnight_20261108/data/H0.npz \
+  --parent artifacts/overnight_20261108/data/parent.npz \
+  --condition-mode multibin \
+  --condition-schema-in artifacts/overnight_20261108/data/condition_schema_uma.json \
+  --label-inference-receipt artifacts/overnight_20261108/reports/H0_label_inference_receipt.json \
+  --orientation canonical --hidden-dim 64 --graph-context \
+  --context-kernel-mode radial_shells --context-shell-tolerance-A 0.00001 \
+  --kind ar_cvae --encoder graph --latent-dim 4 \
+  --beta-schedule reference_updates --beta-reference-updates-per-epoch 79 \
+  --beta-warmup 20 --beta-final 0.1 --validation-beta 1 \
+  --selection-betas 1 0.1 --class-balance --max-updates 4000 \
+  --epochs 1000 --batch-size 512 --learning-rate 0.001 \
+  --geometry-protocol 'pristine-derived deletion; unrelaxed; exact canonical parent coordinates' \
+  --proposal-geometry-protocol 'pristine-derived deletion; unrelaxed; exact canonical parent coordinates' \
+  --energy-target deletion --seed 2026110802 --device cuda --threads 4 \
+  --max-seconds 1800 --output-dir runs/beihao_A_shell_0802
+```
+
+For its matched B-shell control, keep every other flag and seed, replace
+`--kind ar_cvae --encoder graph --latent-dim 4` with
+`--kind ar_baseline --encoder dense --latent-dim 0`, and choose
+`--output-dir runs/beihao_B_shell_0802`. Here `dense` selects the no-graph-encoder
+configuration; the AR baseline constructs no encoder or latent pathway, while
+retaining the same physical causal decoder features. Assess the explicitly
+selected `best_validation_beta_0p1.pt`, not an ambiguously named alias. A fit
+stopped by the wall-clock cap before 4,000 updates is partial; preserve it and
+report the actual updates rather than claiming a completed reproduction.
 
 1. Independently reproduce a matched spatial CVAE/no-latent AR pair on the class
    GPU, or prioritize one full fit and thoroughly reload/audit the supplied
@@ -124,8 +173,8 @@ The first consumes repeated `--score TEACHER=scalarNPZ` and
 `--schema TEACHER=frozenJSON` arguments. The paired evaluator accepts
 `--facts`/`--facts-sha256` instead of the HPC queue, with the frozen registration,
 attempts/history and two assessment schemas. Use the current packet's manifest
-for exact input paths/hashes. The planned one-command packet replay remains
-pending until it has actually been implemented and verified.
+for exact input paths/hashes. The one-command replay above is implemented;
+complete-packet validation and download remain pending until their actual receipts.
 
 1. Recompute distinct novel in-request orbits divided by **all attempted
    proposals**, including duplicates, invalid requests, score failures and
@@ -137,6 +186,12 @@ pending until it has actually been implemented and verified.
    and includes saved acquisition/research exposures. Novelty to TRAIN and to
    all known history are different quantities. Inspect identity-only history
    receipts without changing protected roles or using TEST labels for selection.
+   The structural-distance audit minimizes over all parent operations but only
+   1,024 reference TRAIN orbits/count. Its distance is an upper bound on the
+   true all-TRAIN nearest distance; it does not certify far exploration.
+   Mutation separately has a known TRAIN seed at raw distance exactly `2*k`,
+   so its all-TRAIN nearest distance is at most `2*k`. Keep those facts separate
+   from exact full-history orbit identity/novelty.
 3. Keep three metrics distinct: requested-bin yield, the original fixed-q20
    **LOW-request deletion** metric, and relaxed-endpoint yield under its separate
    TRAIN-fitted thresholds. Score both paired label-target generators under both
@@ -147,9 +202,11 @@ pending until it has actually been implemented and verified.
    0.01 eV/Angstrom endpoint definitions separate. Exact initial masks and all
    trajectory frames belong to one lineage. A repeated endpoint occupation key
    does not prove the same continuous geometry or a unique PES minimum.
-5. Explain uniform's exact one-third balanced mean in the common-bin-coupled
-   pool: each shared draw belongs to one of three classes. Its zero macro spread
-   is an algebraic property, not zero uncertainty in individual requested-bin
+5. Explain the development pool's exact one-third uniform balanced mean:
+   each unique, novel shared draw belongs to one of three classes. In FINAL,
+   repeat/novelty losses reduce this to 33.316%, with descriptive fit SD 0.039
+   percentage points. The coupling identity does not guarantee exact one-third
+   after those losses or imply zero uncertainty in individual requested-bin
    yields. Preserve per-bin results and paired method contrasts.
 6. Recompute resource costs from global task/query records. Distinguish decoder
    attempts, unique geometry/teacher/precision queries, fresh/cache status,
@@ -158,6 +215,11 @@ pending until it has actually been implemented and verified.
    times as node-hours. Separate GPU-device-hours from charged GPU node-hours;
    include startup, idle time, failures and interruptions. Scope any unlogged
    in-flight call uncertainty explicitly.
+   Start with `artifacts/overnight_20261108/reports/paired_call_receipt.json`:
+   its primary optimization queue has 13,712 unique attempts and 558,458 logical
+   E/F/stress API bundle attempts. These are not 13,712 independent TRAIN masks
+   or 558,458 independent training structures; verify the stage identities and
+   retain secondary MACE/research costs separately.
 
 **Return:** an independently written metric/cost receipt, one per-seed/per-bin
 figure, the paired deletion/endpoint table and a concise paragraph for Sections
