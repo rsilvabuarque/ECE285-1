@@ -12,7 +12,7 @@ from pathlib import Path
 
 import numpy as np
 
-from paired_common import atomic_json, atomic_npz, check_prepared, geometry_hash, load_npz, sha256
+from paired_common import atomic_json, atomic_npz, check_prepared, geometry_hash, identity, load_npz, sha256
 
 
 def export(args):
@@ -24,10 +24,26 @@ def export(args):
     cohort=load_npz(args.prepared/"cohort.npz")
     tasks=json.loads((args.prepared/"tasks_all.json").read_text())["tasks"]
     indices=[]
-    for n in prep["counts"]:
-        rows=[int(i) for i in cohort["pilot_indices"] if cohort["n_target"][i]==n]
-        if args.per_count>len(rows):raise ValueError("Export exceeds prespecified TRAIN pilot")
-        indices.extend(rows[:args.per_count])
+    selection_path=getattr(args,"selection_manifest",None)
+    if selection_path is not None:
+        selection=json.loads(selection_path.read_text())
+        if selection["status"]!="FROZEN_BEFORE_SELECTED_ENDPOINT_LABELS_INSPECTED" or args.per_count!=selection["per_count"]:
+            raise ValueError("MACE export must retain the frozen selection status/count")
+        if identity({k:v for k,v in selection.items() if k!="identity"})!=selection["identity"]:
+            raise ValueError("Hash-selected MACE manifest changed")
+        if (selection["primary_context_hash"]!=context["context_hash"] or
+                selection["source_cohort"]["sha256"]!=sha256(args.prepared/"cohort.npz")):
+            raise ValueError("MACE selection belongs to a different frozen cohort")
+        for item in selection["selected"]:
+            row=item["cohort_row"]
+            if str(cohort["canonical_masks"][row])!=item["canonical_mask"] or cohort["split"][row]!="train":
+                raise ValueError("Hash-selected MACE row/role differs from authoritative cohort")
+            indices.append(row)
+    else:
+        for n in prep["counts"]:
+            rows=[int(i) for i in cohort["pilot_indices"] if cohort["n_target"][i]==n]
+            if args.per_count>len(rows):raise ValueError("Export exceeds prespecified TRAIN pilot")
+            indices.extend(rows[:args.per_count])
     args.output_dir.mkdir(parents=True,exist_ok=False)
     structures=[];records=[]
     for row in indices:
@@ -62,7 +78,9 @@ def export(args):
             parent_sha256=np.array(context["parent_sha256"]))
     result=dict(status="COMPLETE_EXPORT" if all(r["exported"] for r in records) else "RETAINED_ENDPOINT_FAILURES",
         exported_UTC=datetime.now(timezone.utc).isoformat(),prespecified=len(indices),exported=len(structures),
-        energy_labels_read=False,per_count=args.per_count,selection="First frozen TRAIN pilot rows/count; no energy-based selection",
+        energy_labels_read=False,per_count=args.per_count,
+        selection="Frozen full-TRAIN hash selection" if selection_path is not None else "First frozen TRAIN pilot rows/count; no energy-based selection",
+        selection_manifest=dict(path=str(selection_path.absolute()),sha256=sha256(selection_path)) if selection_path is not None else None,
         primary_context_hash=context["context_hash"],parent_sha256=context["parent_sha256"],
         extxyz_sha256=sha256(args.output_dir/"endpoints.extxyz") if structures else None,
         inference_npz_sha256=sha256(args.output_dir/"endpoints.npz") if structures else None,
@@ -81,6 +99,7 @@ def main(argv=None):
     p.add_argument("--queue",type=Path,required=True)
     p.add_argument("--output-dir",type=Path,required=True)
     p.add_argument("--per-count",type=int,default=32)
+    p.add_argument("--selection-manifest",type=Path,help="Use immutable full-TRAIN hash selection instead of the original pilot subset")
     return export(p.parse_args(argv))
 
 
