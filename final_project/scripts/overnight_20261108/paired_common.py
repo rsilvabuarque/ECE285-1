@@ -92,7 +92,11 @@ def load_npz(path):
 
 
 def mobile_indices(parent):
-    return np.asarray(parent.get("mobile_indices", parent.get("li_indices")), dtype=int)
+    aliases = [np.asarray(parent[key], dtype=int) for key in
+               ["target_indices", "mobile_indices", "li_indices"] if key in parent]
+    if not aliases or any(not np.array_equal(indices, aliases[0]) for indices in aliases[1:]):
+        raise ValueError("Missing or inconsistent target/mobile-site index aliases")
+    return aliases[0]
 
 
 def canonical(occupancy, permutations):

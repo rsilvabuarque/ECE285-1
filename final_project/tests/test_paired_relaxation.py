@@ -226,3 +226,18 @@ def test_saved_frame_certificate_detects_real_site_change_and_removes_common_tra
     assert audit["full_mapping_frames"] == audit["frames_with_mobile_reassignment"] == 1
     assert audit["frames_with_host_reassignment"] == 0
     assert audit["full_mapping_events"][0]["assigned_parent_indices"][3] == 4
+
+
+@pytest.mark.parametrize("alias",["target_indices","mobile_indices"])
+def test_generic_sodium_parent_schema_relaxes_with_preserved_site_identity(tmp_path,alias):
+    p,c,t,target=setup_attempt(tmp_path)
+    p[alias]=p.pop("li_indices")
+    p["numbers"][p[alias]]=11
+    p["target_symbol"]=np.array("Na")
+    result,_=worker.run_attempt(Harmonic(target),p,t,c,tmp_path/alias)
+    assert result["converged"] and result["mapping"]["mobile_assignment_changes"]==0
+    saved=common.load_npz(tmp_path/alias/"arrays.npz")
+    assert (saved["numbers"]==11).sum()==2
+    p["li_indices"]=np.array([0,1,2,3])
+    with pytest.raises(ValueError,match="inconsistent"):
+        common.mobile_indices(p)

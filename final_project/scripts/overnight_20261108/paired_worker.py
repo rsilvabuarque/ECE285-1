@@ -20,7 +20,7 @@ import numpy as np
 
 from paired_common import (AttemptWallLimit, atomic_json, atomic_npz, canonical,
     check_prepared, counted_calculator, geometry_hash, identity, load_npz,
-    mapping_diagnostics, occupancy_from_key, physical_key, publish_result, sha256, verify_teacher_receipt)
+    mapping_diagnostics, mobile_indices, occupancy_from_key, physical_key, publish_result, sha256, verify_teacher_receipt)
 
 
 def run_attempt(base, parent, task, context, output, *, synchronize=lambda: None):
@@ -34,7 +34,10 @@ def run_attempt(base, parent, task, context, output, *, synchronize=lambda: None
     key, _ = canonical(occupancy, parent["permutations"])
     if key != task["canonical_vacancy_key"]:
         raise ValueError("Queue input must use the canonical parent orientation")
-    atoms, slots = deletion_atoms(parent, occupancy)
+    # Public parents use target_indices; ParentSpec uses mobile_indices, and
+    # historical LCO NPZs use li_indices. This alias changes no coordinates.
+    input_parent = dict(parent, target_indices=mobile_indices(parent))
+    atoms, slots = deletion_atoms(input_parent, occupancy)
     initial_positions = atoms.positions.copy()
     initial_geometry = geometry_hash(atoms.numbers, atoms.positions, atoms.cell.array)
     numerical = context["optimizer"]
