@@ -45,6 +45,17 @@ def atomic_npz(path, **arrays):
     os.replace(tmp, path)
 
 
+def publish_result(output, record):
+    """Write labels and a separate energy-free header for sealed TEST collection."""
+    output = Path(output)
+    atomic_json(output / "result.json", record)
+    safe = {key: value for key, value in record.items()
+            if key not in {"initial_energy_eV", "endpoint_energy_eV"}}
+    safe["result_sha256"] = sha256(output / "result.json")
+    safe["energy_fields_omitted"] = True
+    atomic_json(output / "status.json", safe)
+
+
 def load_npz(path):
     with np.load(path, allow_pickle=False) as archive:
         return {key: archive[key] for key in archive.files}
@@ -56,9 +67,10 @@ def mobile_indices(parent):
 
 def canonical(occupancy, permutations):
     """Return exact vacancy key and inverse-gather witness, without 64-bit limits."""
-    occupancy = np.asarray(occupancy, dtype=np.uint8)
+    occupancy = np.asarray(occupancy)
     if occupancy.ndim != 1 or not np.isin(occupancy, [0, 1]).all():
         raise ValueError("Expected one binary occupancy vector")
+    occupancy = occupancy.astype(np.uint8)
     permutations = np.asarray(permutations, dtype=int)
     if permutations.ndim != 2 or permutations.shape[1] != len(occupancy):
         raise ValueError("Parent group and occupancy dimensions differ")

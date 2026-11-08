@@ -20,7 +20,7 @@ import numpy as np
 
 from paired_common import (AttemptWallLimit, atomic_json, atomic_npz, canonical,
     check_prepared, counted_calculator, geometry_hash, identity, load_npz,
-    mapping_diagnostics, occupancy_from_key, physical_key, sha256)
+    mapping_diagnostics, occupancy_from_key, physical_key, publish_result, sha256)
 
 
 def run_attempt(base, parent, task, context, output, *, synchronize=lambda: None):
@@ -138,7 +138,7 @@ def run_attempt(base, parent, task, context, output, *, synchronize=lambda: None
             finished_unix=time.time(), finished_UTC=datetime.now(timezone.utc).isoformat(),
             scientific_scope="Local numerical endpoint. Literal identity/site assignments do not establish a unique physical basin.",
             calls_scope="Actual logical E/F/stress calculator attempts, including initial; cached property requests and backend forwards counted separately/unknown")
-        atomic_json(output / "result.json", record)
+        publish_result(output, record)
     return record, interrupted
 
 
@@ -180,13 +180,19 @@ def main(argv=None):
     atomic_json(receipt_path, base_receipt)
     from cathode_cvae.mlip.calculators import make_calculator
     import torch
-    calculator, model_receipt = make_calculator("uma", checkpoint=args.checkpoint, device=args.device, threads=args.threads)
-    expected = context["teacher"]
-    for key in ["head", "package_version", "dtype", "tf32", "checkpoint_hashes"]:
-        if model_receipt[key] != expected[key]:
-            raise ValueError("Pinned teacher context mismatch: " + key)
-    if model_receipt["ase"] != context["optimizer"]["ase_version"]:
-        raise ValueError("ASE version differs from frozen optimizer")
+    try:
+        calculator, model_receipt = make_calculator("uma", checkpoint=args.checkpoint, device=args.device, threads=args.threads)
+        expected = context["teacher"]
+        for key in ["head", "package_version", "dtype", "tf32", "checkpoint_hashes"]:
+            if model_receipt[key] != expected[key]:
+                raise ValueError("Pinned teacher context mismatch: " + key)
+        if model_receipt["ase"] != context["optimizer"]["ase_version"]:
+            raise ValueError("ASE version differs from frozen optimizer")
+    except BaseException as exc:
+        base_receipt.update(status="load_or_context_error", error=f"{type(exc).__name__}: {exc}",
+            elapsed_seconds_including_loading_idle=time.perf_counter() - began, finished_unix=time.time())
+        atomic_json(receipt_path, base_receipt)
+        raise
     base_receipt.update(model_receipt=model_receipt, status="running", load_and_setup_seconds=time.perf_counter() - began)
     atomic_json(receipt_path, base_receipt)
     synchronize = (lambda: torch.cuda.synchronize()) if args.device.startswith("cuda") else (lambda: None)
@@ -233,7 +239,7 @@ def main(argv=None):
                 queue / "results" / task["task_id"], synchronize=synchronize)
             record["worker"] = worker
             record["model_receipt_sha256"] = identity(model_receipt)
-            atomic_json(queue / "results" / task["task_id"] / "result.json", record)
+            publish_result(queue / "results" / task["task_id"], record)
             base_receipt["completed"].append(dict(task_id=task["task_id"], status=record["status"]))
             atomic_json(receipt_path, base_receipt)
             if stop:
