@@ -21,8 +21,9 @@ def main():
     for run in args.runs:
         receipt=read_json(run/'receipt.json');binding=receipt['binding'];event=binding['event'];route=binding['route']
         final=run/'final_band.npz';path=final if final.exists() else run/'last_state.npz';data=load_npz(path)
-        finite=bool(np.isfinite(data['energy_eV']).all());label=f"{event}/{route}, {binding['interior_images']} interior"
-        if not receipt['converged']:label+=' [not converged]'
+        display_route=route.replace('_interrupted_continuation',' recovery').replace('_',' ')
+        finite=bool(np.isfinite(data['energy_eV']).all());label=f"{display_route}, {binding['interior_images']} interior"
+        if not receipt['converged']:label+=' [step cap]'
         row=dict(event=event,route=route,interior_images=binding['interior_images'],target_eV_A=binding['target_projected_Fmax_eV_A'],
             status=receipt['status'],numerically_converged=receipt['converged'],steps=receipt.get('optimizer_steps',''),
             projected_Fmax_eV_A=receipt.get('projected_Fmax_eV_A',''),
