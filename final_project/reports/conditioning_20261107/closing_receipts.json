@@ -1,0 +1,21 @@
+{
+  "status": "FINAL_CLOSING_RECEIPTS",
+  "scientific_archive_modified": false,
+  "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "optional_archive_sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+  "receipts": {
+    "reports/conditioning_20261107/execution_final.json": {
+      "sha256": "6015009c905d26c621b0177c73173d3a4c008ab93845c8a3450b740a1a8bd232",
+      "bytes": 9052
+    },
+    "reports/conditioning_20261107/publication_receipt.json": {
+      "sha256": "6c104dd37c6f00cf3bcab58b961a911fbff030a4ef34d9eef6138bfacd0210c1",
+      "bytes": 1876
+    },
+    "reports/conditioning_20261107/completion_receipt.json": {
+      "sha256": "f154d38c074df5714155a3db23826767c8defedc3fe7656a175324e57242bc9f",
+      "bytes": 9763
+    }
+  },
+  "closure_scope": "Lightweight metadata/hash index after post-release execution finalization. No arrays or models loaded."
+}

@@ -101,6 +101,13 @@ after their audits without replacing the frozen required snapshot. Final NEB
 terminal/convergence evidence, report rebuilding, packaging verification and
 resource release are checked by the integrating owner before the final handoff.
 
+The final [completion receipt](../reports/conditioning_20261107/completion_receipt.json)
+records that closure. Both release ZIPs were authenticated, 39 optional tables
+replayed byte-for-byte, all 182 integration tests passed, and the published code
+commit passed CI. Freshly downloaded report/companion bytes match their hashes;
+the original core tag/assets remain unchanged. All seven owned allocations are
+released; final usage includes startup, idle time, analysis and failures.
+
 For publication, track small source tables, selected plots, receipts, commands
 and the report in Git. Put larger CVAE checkpoints, attempt arrays, scalar
 labels and hashed histories in a checksum-verified release payload. Retain raw

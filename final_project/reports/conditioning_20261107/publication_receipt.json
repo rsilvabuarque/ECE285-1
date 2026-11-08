@@ -1,0 +1,39 @@
+{
+  "status": "PUBLISHED_REMOTE_DOWNLOAD_AND_CI_VERIFIED",
+  "verified_UTC": "2026-11-08T07:21:35.083233+00:00",
+  "branch": "midterm/conditioning-graph-edit-20261107",
+  "code_commit": "0c97b5ad631080445a90a1fb455a0d1a5a988d2d",
+  "CI": {
+    "url": "https://github.com/rsilvabuarque/ECE285-1/actions/runs/42458164346",
+    "conclusion": "success",
+    "receipt": "reports/conditioning_20261107/CI_code_commit.json"
+  },
+  "release": "https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-conditioning-20261108",
+  "core_tag_commit_unchanged": "f4f4db90479f700841fa0b3dde3935ef66ac9036",
+  "existing_core_assets_unchanged": [
+    "ECE285_conditioning_20261108_required.zip",
+    "ECE285_conditioning_20261108_required.zip.sha256"
+  ],
+  "new_asset_names": [
+    "ECE285_conditioning_20261108_extensions_v2.zip",
+    "ECE285_conditioning_20261108_extensions_v2.zip.sha256",
+    "ECE285_midterm_20261108.pdf",
+    "download_ext.json",
+    "execution_final.json"
+  ],
+  "remote_archive": {
+    "name": "ECE285_conditioning_20261108_extensions_v2.zip",
+    "bytes": 84271079,
+    "sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+    "downloaded_file": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/remote_publication_v2/ECE285_conditioning_20261108_extensions_v2.zip"
+  },
+  "remote_report": {
+    "name": "ECE285_midterm_20261108.pdf",
+    "bytes": 315965,
+    "sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb"
+  },
+  "remote_download_manifest_identical": true,
+  "local_replay": "reports/conditioning_20261107/extension_packet/v2_attempt2/fresh_replay_v2_execution.json",
+  "no_forced_push_merge_or_course_submission": true,
+  "followup_scope": "A later metadata-only commit records this receipt and final ledger state; scientific code/results are bound to this verified code commit and immutable archives."
+}

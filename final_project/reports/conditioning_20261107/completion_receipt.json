@@ -1,6 +1,6 @@
 {
-  "status": "COMPLETE_SCIENCE_REPORT_AND_RESOURCE_CLOSURE",
-  "publication_status": "PENDING_FINAL_BRANCH_PUSH_ASSET_UPLOAD_AND_CI",
+  "status": "COMPLETE_AND_PUBLISHED",
+  "publication_status": "VERIFIED_REMOTE_ASSETS_AND_CODE_CI",
   "prepared_UTC": "2026-11-08T07:15:59.365153+00:00",
   "branch": "midterm/conditioning-graph-edit-20261107",
   "base_commit": "73e6cee5fa43a26a1ac9e8700f81baaa3e40619f",
@@ -162,6 +162,10 @@
     "path": "reports/conditioning_20261107/public_source_map_final.json",
     "sha256": "e8a550ed6bf6be28a3d205171ce65f505aeace96c843299dc9723f247104974e"
   },
-  "publication_receipt": "reports/conditioning_20261107/publication_receipt.json",
-  "no_coursework_submission_or_collaborator_messages": true
+  "publication_receipt": {
+    "path": "reports/conditioning_20261107/publication_receipt.json",
+    "sha256": "6c104dd37c6f00cf3bcab58b961a911fbff030a4ef34d9eef6138bfacd0210c1"
+  },
+  "no_coursework_submission_or_collaborator_messages": true,
+  "code_commit": "0c97b5ad631080445a90a1fb455a0d1a5a988d2d"
 }

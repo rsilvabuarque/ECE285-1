@@ -17,6 +17,8 @@ Two marked UMA Li hops meet their recorded numerical force criteria. One forward
 
 Assets:
 
+- `ECE285_midterm_20261108.pdf`: the final reviewed report, also committed with its LaTeX sources.
+
 - `ECE285_conditioning_20261108_required.zip`: immutable required results, inputs, checkpoints, cached scalar labels, commands and report.
 - `ECE285_conditioning_20261108_extensions_v2.zip`: optional companion with editor checkpoints/data, all optional scalar assessments, NEB bands/geometry candidates, final report and failure evidence. Requires the core ZIP for fresh cached replay.
 - Closing execution/completion/publication receipts give final allocation usage, source hashes and remote verification. Foundation MLIP weights and private PDFs are excluded; raw global force/stress shards remain on HPC with hash inventories.

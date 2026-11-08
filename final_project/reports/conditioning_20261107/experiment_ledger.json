@@ -146,11 +146,12 @@
       "note": "Two marked events survive endpoint quenching and meet projected NEB force criteria. Event1 forward span changes from 0.638 to 0.189 eV/hop under coupled image-count/tighter-target refinement; event2 coarse span is 0.192 eV/hop without that check. MACE evaluates only the event1 five-interior UMA path, not an independently optimized MACE barrier. No DFT or physical transport validation."
     },
     "publication": {
-      "status": "RUNNING",
+      "status": "COMPLETE",
       "outputs": [
-        "reports/conditioning_20261107/required_publication.json"
+        "reports/conditioning_20261107/publication_receipt.json",
+        "reports/conditioning_20261107/completion_receipt.json"
       ],
-      "note": "Requiredbranch/releasepublishedverified+CIpassed;optionalextensiondeliverypending"
+      "note": "Required and optionalV2 release assets verified by fresh download; codecommit0c97b5ad CI successful. All7 owned allocations released; post-release accounting PASS."
     },
     "temperature_followup": {
       "status": "COMPLETE",

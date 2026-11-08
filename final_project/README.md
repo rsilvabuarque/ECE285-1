@@ -16,6 +16,12 @@ sources alongside it. The completion/report receipts distinguish an early interi
 draft from the required completed packet. Implemented code or a planned run is
 not a measured result.
 
+The [reviewed PDF](https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_midterm_20261108.pdf)
+and [both verified result archives](https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-conditioning-20261108)
+are published. The [completion receipt](reports/conditioning_20261107/completion_receipt.json)
+links exact commands, final resource accounting, preserved failures and remote
+verification. All seven owned allocations are released.
+
 The [paired deletion/relaxation audit](reports/conditioning_20261107/relaxed_target_audit/README.md)
 uses existing 1000 fixed-cell UMA lineages; it needs no new reference calculations.
 The [parent/descriptor audit](reports/conditioning_20261107/parent_graph/receipt.json)
