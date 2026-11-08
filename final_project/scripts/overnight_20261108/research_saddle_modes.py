@@ -46,6 +46,16 @@ def endpoint_comparison(atom,endpoint):
         maximum_atom_difference_A=float(np.linalg.norm(aligned,axis=1).max()),host_translation_A=shift.tolist())
 
 
+def repeat_statistics(forces,energies,delta):
+    f=np.asarray(forces);e=np.asarray(energies);difference=f-f[0];component_range=np.ptp(f,axis=0)
+    return dict(actual_identical_geometry_EFS_calls=len(f),energy_range_eV=float(np.ptp(e)),
+        max_abs_component_pair_difference_eV_A=float(component_range.max()),
+        RMS_component_difference_from_first_eV_A=float(np.sqrt(np.mean(difference**2))),
+        maximum_atomic_force_pair_difference_eV_A=float(np.linalg.norm(f[:,None]-f[None,:],axis=3).max()),
+        diagnostic_component_curvature_noise_scale_eV_A2=float(component_range.max()/(2*delta)),
+        scope='Observed3-call repeat differences, not a calibrated stochastic uncertainty or rigorous full-Hessian operator-norm error bound')
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--band',type=Path,required=True)
     p.add_argument('--band-receipt',type=Path,required=True);p.add_argument('--image',type=int,required=True)
@@ -69,6 +79,7 @@ def main():
         candidate_geometry_sha256=geometry_hash(candidate),parent_sha256=digest(args.parent),root_protocol_sha256=digest(args.root_protocol),
         checkpoint_sha256=digest(args.checkpoint),source_sha256=digest(__file__),delta_A=args.delta_A,
         maximum_candidate_physical_Fmax_eV_A=args.maximum_candidate_Fmax,
+        actual_stationarity_repeat_EFS_calls=3,
         provisional_setting_provenance='0.01A central difference matches prior saved harmonic lane; sensitivity must be checked separately.0.02eV/A is the declared numerical candidate gate, not physical saddle accuracy.',
         Hessian='-dF/dR central finite differences, fixed cell; symmetrized then mass weighted; remove exactly3 translations',
         frequency_factor_THz=FREQUENCY_FACTOR_THz,downhill_requested=args.downhill,
@@ -83,10 +94,17 @@ def main():
     try:
         from cathode_cvae.mlip.calculators import make_calculator
         calc,teacher=make_calculator('uma',args.checkpoint,args.device,args.threads);receipt['teacher']=teacher
-        attach_calculators([candidate],calc,ledger,'candidate');ledger.phase='candidate_stationarity'
-        initial_force=candidate.get_forces();initial_energy=candidate.get_potential_energy()
-        actual_fmax=float(np.linalg.norm(initial_force,axis=1).max())
+        ledger.phase='candidate_stationarity_repeats';repeat_forces=[];repeat_energies=[]
+        for repeat in range(3):
+            attach_calculators([candidate],calc,ledger,f'candidate_repeat{repeat}')
+            repeat_forces.append(candidate.get_forces().copy());repeat_energies.append(candidate.get_potential_energy())
+        initial_force=repeat_forces[0];initial_energy=repeat_energies[0]
+        actual_fmax=float(np.linalg.norm(np.asarray(repeat_forces),axis=2).max())
         receipt['candidate_physical_Fmax_eV_A']=actual_fmax
+        receipt['stationarity_repeat_noise']=repeat_statistics(repeat_forces,repeat_energies,args.delta_A)
+        np.savez_compressed(args.output/'stationarity_repeats.npz',forces_eV_A=np.asarray(repeat_forces),
+            energy_eV=np.asarray(repeat_energies),candidate_positions_A=candidate.positions,
+            candidate_geometry_sha256=np.asarray(geometry_hash(candidate)))
         snapshot([candidate],args.output/'candidate.npz',parent_indices=ids)
         if actual_fmax>args.maximum_candidate_Fmax:raise ValueError('Fresh candidate force misses the frozen numerical precondition')
         ledger.phase='central_displacement_Hessian';base=candidate.positions.copy()

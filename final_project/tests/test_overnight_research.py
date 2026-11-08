@@ -159,3 +159,11 @@ def test_projected_saddle_hessian_removes_only_translations_and_retains_negative
     assert np.sum(result['frequencies_signed_THz']<0)==1
     assert result['eigenpair_projected_residuals'].max()<1e-12
     np.testing.assert_allclose(result['translation_basis'].T@result['eigenvectors_mass_weighted'],0,atol=1e-12)
+
+
+def test_saddle_repeat_noise_units_and_identical_call_count():
+    m=script('research_saddle_modes');force=np.zeros((3,2,3));force[1,0,0]=2e-6;force[2,0,0]=-2e-6
+    noise=m.repeat_statistics(force,[-100.,-100.+1e-6,-100.-1e-6],.01)
+    assert noise['actual_identical_geometry_EFS_calls']==3
+    assert noise['diagnostic_component_curvature_noise_scale_eV_A2']==pytest.approx(2e-4)
+    assert noise['max_abs_component_pair_difference_eV_A']==pytest.approx(4e-6)
