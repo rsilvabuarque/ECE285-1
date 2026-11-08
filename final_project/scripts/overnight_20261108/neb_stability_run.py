@@ -31,7 +31,7 @@ def fmax(force):
     return float(np.linalg.norm(np.asarray(force).reshape(-1, 3), axis=1).max())
 
 
-def prepare_band(data, interior):
+def prepare_band(data, interior, initialization='equal_arclength'):
     """Resample saved unwrapped Cartesian 3N arclength without changing endpoints."""
     if interior < 1: raise ValueError('At least one interior image is required')
     xyz = np.asarray(data['positions_A'])
@@ -39,7 +39,11 @@ def prepare_band(data, interior):
         raise ValueError('Malformed saved band')
     images = [atoms_from(data, row) for row in xyz]
     old_hashes = [geometry_hash(images[0]), geometry_hash(images[-1])]
-    result = resample_band(images, interior)
+    if initialization=='retain_coordinates':
+        if len(images)!=interior+2:raise ValueError('Exact-coordinate continuation must retain the saved image count')
+        result=images
+    elif initialization=='equal_arclength':result = resample_band(images, interior)
+    else:raise ValueError('Unknown route initialization')
     if [geometry_hash(result[0]), geometry_hash(result[-1])] != old_hashes:
         raise ValueError('Route resampling changed an endpoint')
     return result, old_hashes
@@ -63,7 +67,9 @@ def request_binding(args, images, endpoint_hashes):
         settings=dict(method='improvedtangent', climb=True, spring_eV_A2=0.1,
             optimizer='FIRE',dt_ASE=0.1,dtmax_ASE=1.,maxstep_A=0.05,
             parallel=False,remove_rotation_translation=False, shared_calculator=False),
-        initialization='Piecewise linear full-3N Cartesian arclength resampling of saved continuous route; no new IDPP',
+        initialization=args.initialization,
+        initialization_description=('Exact saved image coordinates retained; no interpolation, redistribution or IDPP' if args.initialization=='retain_coordinates'
+            else 'Piecewise linear full-3N Cartesian arclength resampling of saved continuous route; no new IDPP'),
         periodicity='Saved continuously unwrapped positions retained; no independent endpoint MIC or atom reorder',
         no_new_DFT=True, fixed_endpoints=True, fixed_cell=True)
 
@@ -74,6 +80,7 @@ def main(argv=None):
     p.add_argument('--parent',required=True,type=Path);p.add_argument('--checkpoint',required=True,type=Path)
     p.add_argument('--event',required=True);p.add_argument('--route',required=True);p.add_argument('--output',required=True,type=Path)
     p.add_argument('--interior',type=int,default=7);p.add_argument('--fmax',type=float,default=0.02)
+    p.add_argument('--initialization',choices=['retain_coordinates','equal_arclength'],default='equal_arclength')
     p.add_argument('--steps',type=int,default=500);p.add_argument('--max-seconds',type=float,default=2700)
     p.add_argument('--max-calls',type=int,default=5000);p.add_argument('--device',default='cuda')
     p.add_argument('--threads',type=int,default=4)
@@ -83,7 +90,7 @@ def main(argv=None):
     # Reading the central protocol is deliberate: a missing not-yet-frozen protocol aborts.
     read_json(args.root_protocol)
     data=load_npz(args.band);parent=load_npz(args.parent)
-    images, endpoint_hashes=prepare_band(data,args.interior)
+    images, endpoint_hashes=prepare_band(data,args.interior,args.initialization)
     parent_indices=np.asarray(data['parent_indices'],int)
     if not np.array_equal(images[0].numbers,parent['numbers'][parent_indices]):
         raise ValueError('Saved continuous atom identities disagree with parent chemistry')

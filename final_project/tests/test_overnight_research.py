@@ -120,3 +120,28 @@ def test_harmonic_native_anchor_reference_reduces_to_exact_partition():
 def test_profile_and_summary_modules_load_without_model_imports():
     assert callable(script('neb_stability_profile').main)
     assert callable(script('neb_stability_summarize').main)
+
+
+def test_retain_coordinate_initialization_is_exact_and_rejects_image_count_change():
+    m=script('neb_stability_run');xyz=np.zeros((9,2,3));xyz[:,0,1]=np.linspace(0,1,9)**2
+    data=dict(positions_A=xyz,numbers=np.array([3,27]),cell_A=np.eye(3)*8,pbc=np.ones(3,bool))
+    images,_=m.prepare_band(data,7,'retain_coordinates')
+    np.testing.assert_array_equal(np.asarray([im.positions for im in images]),xyz)
+    with pytest.raises(ValueError):m.prepare_band(data,5,'retain_coordinates')
+
+
+def test_interruption_reserves_inflight_position_update_and_original_budget(tmp_path):
+    m=script('neb_stability_recover');run=tmp_path/'interrupted';run.mkdir()
+    protocol=dict(maximum_total_optimizer_steps=500,maximum_EFS_calls=5000,maximum_seconds_including_imports_loading=2700)
+    (run/'protocol.json').write_text(__import__('json').dumps(protocol))
+    progress=dict(step=430,energy_eV=[0.,1.,0.],actual_EFS_attempts=3019,elapsed_seconds=557.93)
+    (run/'progress.jsonl').write_text(__import__('json').dumps(progress)+'\n')
+    calls=[dict(call_index=i,status='success',elapsed_seconds=.1) for i in range(1,3021)]
+    (run/'calculator_calls.jsonl').write_text(''.join(__import__('json').dumps(r)+'\n' for r in calls))
+    np.savez(run/'latest_band.npz',energy_eV=np.array([0.,1.,0.]),labels_match_geometry=np.ones(3,bool))
+    facts=m.interruption_facts(run,'Synthetic external failure')
+    assert facts['remaining_steps']==69
+    assert facts['remaining_EFS_calls']==1980
+    assert facts['conservative_charged_optimizer_steps']==431
+    assert facts['previous_elapsed_seconds_reserved']==560
+    assert facts['remaining_seconds']==2140
