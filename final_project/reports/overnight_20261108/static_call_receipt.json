@@ -1,0 +1,103 @@
+{
+  "status": "PASS_EXACT_MAIN_STATIC_ORACLE_ACCOUNTING",
+  "scope": "All four main48-site static-oracle stages in this goal. Relaxation/NEB/12-site research and other E/F evaluations are accounted separately; these are logical single-point geometry/model calls, not internal CUDA kernels.",
+  "stages": [
+    {
+      "stage": "initial",
+      "primary_attempts": 8640,
+      "diagnostic_attempts": 1152,
+      "raw_generated_attempts": 9792,
+      "distinct_stage_geometries_per_teacher": 6918,
+      "receipt_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/initial_controls_v1/generated/receipt.json",
+      "receipt_sha256": "c22e97ffa46ba06b1bbead470292bb234876fe4d57da27ada4c0f80e7fefe70e"
+    },
+    {
+      "stage": "screens",
+      "primary_attempts": 9216,
+      "diagnostic_attempts": 768,
+      "raw_generated_attempts": 9984,
+      "distinct_stage_geometries_per_teacher": 5152,
+      "receipt_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/screens_v1/generated/receipt.json",
+      "receipt_sha256": "5ee14fcdf0c29dfc9ba1f258f36099352f0fe65c516eb83e5a3b42d9956e6afc"
+    },
+    {
+      "stage": "confirmation",
+      "primary_attempts": 12096,
+      "diagnostic_attempts": 1152,
+      "raw_generated_attempts": 13248,
+      "distinct_stage_geometries_per_teacher": 6984,
+      "receipt_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/development/confirmation_v1/generated/receipt.json",
+      "receipt_sha256": "93b12fc8484c816d8732b40e9660d49c6f1ca9994d90d8898030f6a1e2754c98"
+    },
+    {
+      "stage": "FINAL",
+      "primary_attempts": 44928,
+      "diagnostic_attempts": 4992,
+      "raw_generated_attempts": 49920,
+      "distinct_stage_geometries_per_teacher": 27880,
+      "receipt_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_generated/receipt.json",
+      "receipt_sha256": "fce4318a734025a7e30b59ed65b5ea97f15fc7beaad5b8f64857f735b60e98ef"
+    }
+  ],
+  "per_teacher": {
+    "uma": {
+      "raw_generated_attempts": 82944,
+      "distinct_within_stage_requests": 46934,
+      "globally_unique_geometry_model_pairs": 46903,
+      "actual_fresh_static_calls": 46689,
+      "imported_exact_geometry_cache_hits": 214,
+      "within_goal_cross_stage_reuses": 31,
+      "total_cache_served_stage_requests": 245,
+      "failures": 0,
+      "collected_scalar_npz": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_collected/uma.npz",
+      "collected_scalar_sha256": "494df0e46f6899f3314b39523312e2fa88dc24246a28b524aa059991ffe82618"
+    },
+    "mace": {
+      "raw_generated_attempts": 82944,
+      "distinct_within_stage_requests": 46934,
+      "globally_unique_geometry_model_pairs": 46903,
+      "actual_fresh_static_calls": 46690,
+      "imported_exact_geometry_cache_hits": 213,
+      "within_goal_cross_stage_reuses": 31,
+      "total_cache_served_stage_requests": 244,
+      "failures": 0,
+      "collected_scalar_npz": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_collected/mace.npz",
+      "collected_scalar_sha256": "fe30bf83cd084487d0e95cc98376e84f2252e21d68d779d509e9df27deaeb266"
+    }
+  },
+  "combined": {
+    "raw_generated_attempts": 82944,
+    "primary_attempts": 74880,
+    "separate_diagnostic_attempts": 8064,
+    "stage_geometry_model_requests": 93868,
+    "globally_unique_geometry_model_pairs": 93806,
+    "actual_fresh_static_calls": 93379,
+    "imported_exact_geometry_cache_hits": 427,
+    "within_goal_cross_stage_reuses": 62,
+    "total_cache_served_stage_requests": 489,
+    "failures": 0,
+    "completed_score_tasks": 1464
+  },
+  "derivation": "Fresh counts independently agree between raw registry task-index totals and successful collected provenance=new rows. Imported cache counts are collected provenance=cached rows. Stage unique request totals exceed global physical pairs by31 per teacher, which are within-goal reuse; within-stage proposal duplicates are already removed for physical scoring.",
+  "registry_snapshot": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_collected/registry_snapshot.json",
+    "sha256": "ec0c655ece11d25ab13d72f4853fad93976fe40b6a0933818a6598a60bf455f0"
+  },
+  "collection_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_collected/receipt.json",
+    "sha256": "9b6df699ae09d4fe00f2c145538216b8cb7659dabf3ec9ef624e6909bba5b395"
+  },
+  "failed_distance_analysis": {
+    "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_distances/termination_receipt.json",
+    "sha256": "f4503240e7acc1d09f11c27438a680fb4e7c81188da96f3a98a35852eb92409c",
+    "elapsed_seconds": 687,
+    "owner_cancelled": true
+  },
+  "repaired_distance_analysis": {
+    "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_distances_v2/receipt.json",
+    "sha256": "0bb79a88601755f39c07344086970aec27a0a5280e74ab9827d8bbf923ab013f",
+    "elapsed_seconds": 18.323702182038687,
+    "reference_settings_unchanged": true
+  },
+  "new_experiments_performed_for_this_receipt": 0
+}
