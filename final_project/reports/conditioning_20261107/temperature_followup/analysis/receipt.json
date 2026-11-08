@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "attempts": 768,
+  "schedules": 24,
+  "unique_scored_candidates": 102,
+  "missing_scores": 0,
+  "fit_replicates": 1,
+  "paired_temperature_checks": [
+    {
+      "n_Li": 12,
+      "policy": "static",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    },
+    {
+      "n_Li": 12,
+      "policy": "static_exploration",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    },
+    {
+      "n_Li": 24,
+      "policy": "static",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    },
+    {
+      "n_Li": 24,
+      "policy": "static_exploration",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    },
+    {
+      "n_Li": 36,
+      "policy": "static",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    },
+    {
+      "n_Li": 36,
+      "policy": "static_exploration",
+      "identical_bin_allocations": true,
+      "bit_identical_paired_proposals": true
+    }
+  ],
+  "protocol_sha256": "6806df9e5ebbdaddaf8361ec8fb32f9f04beb69068ac2c0231b684f0cc78f8d9",
+  "generation_receipt_sha256": "d01ae5f24325ceb385cd8c3849006d18751917ffd41b25014cfaeba8bff72312",
+  "score_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/collected/editor/uma.npz",
+  "score_sha256": "bf338b713ba5735cf27ae5770ec9641401f1bbc42e4da604625ed6269cbd1a10",
+  "source_sha256": "faca96e527a92a3d40aca4da5a4bb318b86fb8c53a13034704d6d6577ece307c",
+  "physical_cost_scope": "Actual fresh labels/caches are in the integrating registry/cost receipt, not inferred from global collected provenance",
+  "interpretation": "Static coarse-bin acquisition only; repeated temperatures sharing proposals are paired controls, not independent repetitions; no entropy, equilibrium or reactor validation"
+}

@@ -1,0 +1,237 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.76in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,url,microtype,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newcommand{\study}{../../reports/conditioning_20261107}
+\begin{document}
+\begin{center}
+{\Large\bfseries Conditional generation of cathode vacancy patterns\\
+at requested compositions and energy ranges}\par
+\vspace{4pt}
+Ricardo Silva Buarque, Beihao Gu, and Varad Kottawar\\
+ECE 285 midterm draft --- November 9, 2026
+\end{center}
+\begin{abstract}
+We study whether conditional variational autoencoders (CVAEs) efficiently propose
+new Li/vacancy arrangements at specified compositions and energy ranges in a
+fixed layered LiCoO$_2$ parent. Exact-count decoding enforces composition, while
+energy control must be learned and independently measured. Earlier binary and
+multibin models enriched low energies relative to uniform sampling but lost to
+frozen low-energy-seed mutation. The extension separates training-policy,
+latent-size, symmetry, and physical-neighbor effects, and audits whether deletion
+energies represent relaxed ordering. Causal decoder neighborhoods improve final
+requested-bin yield over frozen mutation under UMA and MACE, while latent-use
+diagnostics limit attribution to the variational pathway. Teacher-defined success
+is distinguished from DFT accuracy and relaxed geometry generation.
+\end{abstract}
+
+\section{Physical motivation, revised question, and data}
+Direct cathode recycling seeks to restore useful composition and structure;
+hydrothermal treatment followed by annealing can regenerate degraded LiCoO$_2$
+(LCO) \cite{shi2018}. Our longer-term application is to select informative
+structures for reference calculations and better lithium-replenishment models.
+The class experiment studies conditional generation, rather than simulating the
+recycling liquid or reactor. Li/vacancy ordering changes energies at a fixed Li
+content \cite{vanderVen1998}, creating a large discrete search space.
+
+Density functional theory (DFT) supplies an approximate electronic-structure
+reference at specified species, coordinates, and cell. A machine-learned
+interatomic potential (MLIP) approximates the energy and its force/cell
+derivatives. A single-point call keeps coordinates fixed; relaxation moves them
+toward a local minimum. Molecular dynamics (MD) uses forces to propagate atoms.
+Drawing a vacancy pattern performs none of these physical operations.
+
+The parent is Li$_{48}$Co$_{48}$O$_{96}$; retaining $n$ Li gives $N_a=144+n$
+present atoms and fraction $x=n/48$. The generated object is an occupation vector
+$o\in\{0,1\}^{48}$, with $o_j=1$ for Li present and vacancy $v_j=1-o_j$.
+Li indices are full-parent rows 48--95, zero based. Primary counts are
+$n=12,24,36$. The main labels are energies of pristine-derived deletions, not
+relaxed minima. UMA-S-1.2.1/\texttt{omat}, FP32 with TF32 off, defines the primary
+new-label teacher; matched MACE checks use a separate energy namespace.
+
+\subsection{Independent examples and protected roles}
+The parent's 192 retained permutations define an orbit: all related occupation
+patterns under this fixed host's symmetries. Its canonical key is the smallest
+transformed vacancy string. Grouping precedes splitting; augmentation does not
+create independent examples. At half filling, 32,247,603,683,100 raw masks give
+168,025,313,938 orbits for this cell/group, not for every supercell shape.
+The frozen round-0 data have 40,157 training, 4,967 validation, and 5,123 test
+orbits. New development evidence selects policy; a fresh final protocol/history
+is frozen before proposals. Previously inspected assessments cannot be renamed
+untouched tests. No new DFT or MLIP fine-tuning campaign is run.
+
+A Pt--Ni study already combines occupation-based CVAEs, property classes, and
+UMA evaluation \cite{wakamiya2026}. Our contribution is an interpretable,
+symmetry-aware test against strong composition-preserving mutation, including
+negative results. The software interface describes a general parent/mobile-ion
+sublattice, but present physical evidence is LCO-specific.
+\newpage
+
+\section{Conditional model, exact count, and physical graph}
+At each composition, training-only energies $e_i=E_i/N_a$ (eV/atom) define nearest-
+rank $q_{20}$ and $q_{80}$ boundaries. Low is $e\le q_{20}$, middle is
+$q_{20}<e\le q_{80}$, and high is $e>q_{80}$. Ties stay together; unsupported
+joint requests fail explicitly. Each schema records parent, teacher/head,
+precision, units, geometry protocol, boundaries, support, and input hashes.
+
+\begin{center}\small
+\begin{tabular}{p{.28\linewidth}p{.62\linewidth}}
+\toprule
+Model family & Supplied information and distinction\\
+\midrule
+Historical composition CVAE & $c=[x]$; no energy request.\\
+Historical binary energy CVAE & $c=[x,\mathbf1_{\rm low}]$; middle/high both mean non-low.\\
+Three-bin CVAE & $c=[x,\mathrm{onehot}(b)]$; distinct low/middle/high requests.\\
+No-latent AR control & Same sequential/count mechanism without variational latent variables.\\
+Physical-neighbor variants & Distinguish learned graph encoder from causal graph-derived decoder summaries; retain the same count constraint.\\
+Seed-edit CVAE (supplement) & Known seed and exact swap count; paired assessment against the same-seed mutation.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The encoder $q_\phi(z\mid o,c)$ predicts a Gaussian mean $\mu$ and diagonal
+variance $\sigma^2$. A GRU decoder of hidden size 64 defines
+\begin{equation}
+p_\theta(o\mid z,c)=\prod_{j=1}^{48}p_\theta(o_j\mid o_{<j},z,c),
+\qquad z\sim\mathcal N(0,I)\ \text{at generation}.
+\end{equation}
+The decoder receives conditions and latent context at every step. During fitting,
+previous true bits provide teacher forcing; during generation they are sampled.
+If the remaining count forces a bit, its conditional probability is one and its
+reconstruction penalty zero. Energy membership has no such hard guarantee.
+
+The fitted objective is
+\begin{equation}
+\mathcal L_\beta=\mathbb E_{q_\phi}[-\log p_\theta(o\mid z,c)]
++\frac{\beta}{2}\sum_{k=1}^{D}
+\left(\mu_k^2+\sigma_k^2-\log\sigma_k^2-1\right).
+\end{equation}
+The first term reconstructs masks; the second is KL divergence to the sampling
+prior. $D$ is latent dimension and $\beta$ its dimensionless regularization
+weight. Training $\beta$ warms to 0.1; alternative checkpoint criteria use
+validation weights 1 and 0.1 on the \emph{same trajectory}. The KL sum is not
+silently divided by $D$. Neither good reconstruction nor large KL establishes
+useful prior samples \cite{kingma2014,sohn2015,alemi2018}.
+Class balancing changes training-only row weights while preserving their total;
+the same weights average reconstruction and summed KL. Validation retains base
+weights and fixed two-draw latent noise, independent of training randomness.
+
+\subsection{What spatial feature extraction changes}
+A reusable parent schema stores host species, all possible mobile sites,
+positions/cell in \AA, periodic directions, valid symmetries, and graph edges
+with integer image shifts. Vacant sites remain nodes. Distances come from the
+crystal, not adjacent sequence indices. Message passing learns combinations of
+neighbor features and pools them into latent parameters \cite{gilmer2017}.
+Backpropagation differentiates the CVAE loss through these operations; it does
+not minimize a physical energy. An encoder-only graph is absent during prior
+generation. Decoder neighborhood summaries therefore use only already assigned
+occupancies and an explicit unassigned state. Future target bits or full-mask
+encoder embeddings must not bypass the latent channel. An indexed GRU with graph
+features is not automatically permutation/rotation equivariant. The context
+comparison adds decoder summaries to the same graph-encoder control; an initial
+fit was replicated at two more seeds before the fresh final assessment.
+\newpage
+
+\section{Experiments, observables, and scientific controls}
+The full protocol, commands, selected configurations, and per-experiment status
+are supplied in the portable packet. Historical and new assessments retain
+different scope labels. The new design first compares class balancing off/on
+and both checkpoint rules at a fixed update budget with three fit seeds.
+Matched latent dimensions 4, 8, 16, 32 reuse the selected dimension 8 trajectory;
+a no-latent AR control isolates the latent pathway. A canonical-versus-training-
+augmentation comparison precedes graph comparisons, so orientation and graph
+effects are not silently combined. Parameter counts and actual updates are saved.
+
+Latent diagnostics include summed/per-dimension KL, encoded-mean variance across
+configurations, and prior-sample usefulness. ``Active'' components use declared
+mean-variance cutoffs with sensitivity reported. These are descriptive
+diagnostics, not a theorem of collapse or a physical convergence test
+\cite{dieng2019,ichikawa2024}. The latter paper analyzes a simplified linear VAE,
+not this crystal network. Posterior reconstructions and prior generation answer
+different questions. Paired low/middle/high requests share latent vectors and
+AR random streams; separate changes of $z$ test latent sensitivity.
+
+\subsection{Baselines and complete accounting}
+Uniform sampling is uniform over raw fixed-count masks. Frozen mutation selects
+a protected training seed uniformly in the requested bin, selects one/two/three
+swaps uniformly, then selects distinct occupied removals and vacant insertions
+uniformly. It has no distance restriction, energy acceptance, or online population
+update. Every proposal is frozen before scoring. Method names containing
+``adapt'' can identify the source seed dataset and do not imply adaptive search.
+An edit model must receive the same seeds and swap distribution as mutation;
+joint seed/child transformations preserve edit alignment.
+
+For requested bin $b$, the primary useful yield is
+\begin{equation}
+Y_b=\frac{\#\{\text{distinct novel orbits measured in requested bin }b\}}
+{\#\{\text{all attempts requesting }b\}}.
+\end{equation}
+Known masks, repeats, invalid outputs, and failures remain attempts. Report
+novelty to training and to all frozen history separately, confusion by composition
+and fit seed, energy distributions, distances from training/seeds, and useful
+energy versus attempts and actual new scoring calls. Fixed-original-$q_{20}$
+yield is a separate requested-low metric. Fit seeds are independent model
+replicates; latent draws are not. Teacher agreement is not independent DFT truth.
+
+\subsection{Two audits before interpreting new training}
+The energy-target audit pairs existing deletion and fixed-cell endpoint energies
+for the same masks, retaining failures and protected lineages. It tests rank and
+low-tail changes, Li-site reassignment, and endpoint occupation-class merges.
+Occupation classes do not certify unique potential-energy basins. A second audit
+uses a symmetry-invariant structural descriptor: the nearest-shell fraction of
+eligible mobile-site pairs that are both vacant. Pairs are consistently counted
+once; vacancy is $1-o_j$. Train-derived descriptor ranges and joint support are
+checked before any joint-condition pilot. Mutation receives the same request.
+
+Static temperature acquisition remains secondary. Its exponent uses total-cell
+energy gaps, with orbit multiplicity for exhaustive representatives or retained
+raw draw frequencies for a raw-mask reference, never both. Proposal-biased
+training histograms and latent probabilities do not measure physical entropy.
+The prior reference has low effective sample size and identical coarse request
+allocations across temperatures; those limitations are retained.
+\newpage
+
+\section{Measured results and interpretation}
+\input{generated_conditioning_results.tex}
+\newpage
+
+\section{Energy target, limits, and remaining team contributions}
+\input{generated_energy_audit.tex}
+
+\subsection{Physical validation and generalization boundary}
+The archived matched DFT audit remains informative but cohort dependent: UMA's
+median rank correlation is 0.97366 over seven historical O3 rattled pools and
+0.73177 over ten Hu O3 optimized pools. At Li$_{10}$Co$_{12}$O$_{24}$, it selects
+a structure ranked last by DFT in the complete five-member pool. High correlation
+on displaced frames does not guarantee ordering of nearly degenerate minima.
+Historical/Hu DFT parameters differ, and their absolute energies are not pooled.
+Good ranks do not certify forces, saddle points, or thermal weights.
+
+No result establishes global minima, entropy, reactor optima, downstream MLIP
+gains or material/size transfer; generic interfaces and synthetic alternate-parent
+checks validate software only. Two marked Li hops survive endpoint quenching and
+reach projected NEB force criteria under UMA. For one event, seven-interior-image
+and tighter-force refinement changes the forward span from 0.638 to 0.189 eV per
+hop, so force convergence alone does not establish a stable barrier; the other
+coarse event gives 0.192 eV. These are MLIP potential-energy path spans, not
+activation free energies, DFT barriers or diffusivities. Event definitions,
+refinement profiles and remaining physical checks are in the supplement.
+
+\subsection{Independent checks and submission}
+Ricardo supplies physical/data/symmetry provenance, the energy-target and
+reference-accuracy interpretation, and final integration. Beihao independently
+reproduces a selected fit, reloads the checkpoint, verifies latent/graph/count
+behavior, and prioritizes a matched spatial no-latent control. Varad recomputes
+conditional response, novelty/yield, frozen mutation and cost accounting from
+saved attempt records. Prepared commands are not their completed contributions.
+The handoff specifies portable inputs, outputs and acceptance checks. Final
+integration is November 8; manual submission is due November 9, 2026 at 11:59 p.m.
+Pacific. Current course formatting instructions must be verified before submission.
+
+\clearpage
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

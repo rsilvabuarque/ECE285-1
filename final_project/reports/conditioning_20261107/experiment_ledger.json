@@ -81,11 +81,16 @@
       "note": "One-fit supported middle-energy joint descriptor pilot; negative result preserved"
     },
     "edit": {
-      "status": "PLANNED",
+      "status": "COMPLETE",
       "hypothesis": "A seed-conditioned variational editor improves equal-budget swaps",
       "changed_factor": "same seed families, exact one/two/three swaps versus mutation",
-      "outputs": [],
-      "full_training_trajectories": 3
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/editor/receipt.json",
+        "reports/conditioning_20261107/independent_editor_metrics/receipt.json",
+        "reports/conditioning_20261107/editor_low_request_v2/receipt.json"
+      ],
+      "full_training_trajectories": 3,
+      "note": "All three fits completed 4000 updates; all 6912 attempts scored and independently audited. Balanced yield improves by 2.14 percentage points; original-q20 low yield is tied. Secondary best-novel minima favor learned editing in 7/9 cases, while paired average low-request energy favors mutation; all observables retained."
     },
     "cached_reproduction": {
       "status": "COMPLETE",
@@ -129,15 +134,44 @@
       "note": "Protocol and 278382-orbit history frozen before new 34560-attempt generation; matched MACE audit20736 prespecified"
     },
     "NEB": {
-      "status": "PLANNED",
-      "outputs": []
+      "status": "COMPLETE",
+      "outputs": [
+        "reports/conditioning_20261107/neb_pilot/prepared_v3/protocol.json",
+        "runs/conditioning_20261107/neb/controller_config.json",
+        "runs/conditioning_20261107/neb/basin_1_repeat2/receipt.json",
+        "runs/conditioning_20261107/neb/basin_2_repeat1/receipt.json",
+        "runs/conditioning_20261107/neb/mace_profile/receipt.json",
+        "reports/conditioning_20261107/neb_pilot/results/receipt.json"
+      ],
+      "note": "Two marked events survive endpoint quenching and meet projected NEB force criteria. Event1 forward span changes from 0.638 to 0.189 eV/hop under coupled image-count/tighter-target refinement; event2 coarse span is 0.192 eV/hop without that check. MACE evaluates only the event1 five-interior UMA path, not an independently optimized MACE barrier. No DFT or physical transport validation."
     },
     "publication": {
-      "status": "PLANNED",
-      "outputs": []
+      "status": "RUNNING",
+      "outputs": [
+        "reports/conditioning_20261107/required_publication.json"
+      ],
+      "note": "Requiredbranch/releasepublishedverified+CIpassed;optionalextensiondeliverypending"
+    },
+    "temperature_followup": {
+      "status": "COMPLETE",
+      "hypothesis": "Improvedconditionalresponsechangesrealizedquality;coarseBoltzmannallocationsmayremainidentical",
+      "outputs": [
+        "reports/conditioning_20261107/temperature_followup/analysis/receipt.json"
+      ],
+      "new_NN_trajectories": 0
+    },
+    "aggregate_prior": {
+      "status": "COMPLETE",
+      "hypothesis": "TRAINclassconditionalposterior-momentlatentproposalchangesfrozenD4utilityversusN0",
+      "outputs": [
+        "runs/conditioning_20261107/evaluation/aggregate_prior/receipt.json",
+        "reports/conditioning_20261107/independent_aggregate_prior/receipt.json"
+      ],
+      "new_NN_trajectories": 0,
+      "note": "Both teachers and the independent raw audit are complete. TRAIN-only posthoc Gaussian moments require no neural updates; shared base epsilon is not shared actual z. Balanced yield increases, but original-q20 low-request yield decreases under both teachers. Graph context remains recommended."
     }
   },
   "core_full_trajectories_completed": 28,
-  "optional_full_trajectories_completed": 0,
+  "optional_full_trajectories_completed": 3,
   "required_gate_sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3"
 }

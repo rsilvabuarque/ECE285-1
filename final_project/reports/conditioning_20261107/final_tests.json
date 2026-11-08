@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "completed_UTC": "2026-11-08T06:31:04.147102+00:00",
+  "passed": 180,
+  "warnings": 9,
+  "warnings_scope": "spglib deprecation notices; no failed tests",
+  "command": "srun --jobid=60990329 --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q",
+  "log": "reports/conditioning_20261107/final_pytest.log",
+  "log_sha256": "6ffb817c0cdc56a4d089fafa3024bfc03b8847c8b376f65e9c31fcb2482296f8",
+  "scope": "Software integration, not physical accuracy or statistical validation"
+}

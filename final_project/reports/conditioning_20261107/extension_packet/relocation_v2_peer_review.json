@@ -1,0 +1,59 @@
+{
+  "status": "PASS_READ_ONLY_V2_ADAPTER_REVIEW",
+  "reviewed_UTC": "2026-11-08T06:55:30.502456+00:00",
+  "reviewer": "next_graph_parent",
+  "scope": "Independent source and focused-test review of path relocation. No test execution, model call, sampling, source edit, or end-to-end replay performed by this reviewer.",
+  "sources": {
+    "replay_adapter": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/replay_extensions.py",
+      "sha256": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee"
+    },
+    "adapter_tests": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/tests/test_extensions_packet.py",
+      "sha256": "6c56fc8b2361f16bb451c048595e5778fd6044579ccd74ebc312484f42886a18"
+    },
+    "unchanged_temperature_science": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/temperature_followup.py",
+      "sha256": "faca96e527a92a3d40aca4da5a4bb318b86fb8c53a13034704d6d6577ece307c"
+    },
+    "frozen_temperature_protocol": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/protocol.json",
+      "sha256": "6806df9e5ebbdaddaf8361ec8fb32f9f04beb69068ac2c0231b684f0cc78f8d9"
+    }
+  },
+  "historical_registry_metadata": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+    "sha256_at_freeze": "071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c",
+    "registered_parent_orbits": 74831,
+    "editor_pool_orbits": 7345,
+    "witness": "Every editor pool geometry registered at freeze; immutable derived registered_history.json retained; live registry may append later"
+  },
+  "immutable_membership_witness": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/registered_history.json",
+    "sha256": "63f588a0bac7dd41bf35a2809bb810864db0fa6bb7277a67d6865318232adb56",
+    "protocol_hash_matches_actual_bytes": true
+  },
+  "reviewed_functions": {
+    "Relocator.replace": "Exact path+SHA selects authenticated materialized bytes. A missing historical version retains original path and recorded hash, records unresolved metadata, and blocks that original filename.",
+    "Relocator.path": "Checks blocked historical paths before ordinary mapped lookup; refuses other unbound original-root paths.",
+    "Relocator.numpy_proxy.load": "Delegates path inputs to Relocator.path before array access.",
+    "load_script": "Adapts JSON, Path, NumPy load and SHA access while preserved scientific sources remain unchanged.",
+    "temperature_followup.verify_sources": "Hashes each of all 15 actual protocol.sources paths, including immutable registered_history.json. registry_history_snapshot remains separate provenance metadata.",
+    "materialize": "Copies only locator-bound archive members and checks exact member SHA256 and bytes.",
+    "verify_archive": "Authenticates outer archive and exact safe member list and hashes before materialization."
+  },
+  "regression_tests_reviewed": [
+    "test_unresolved_old_version_blocks_path_array_and_hash_despite_newer_mapping",
+    "test_mutable_historical_path_resolves_version_by_hash_not_filename",
+    "test_verified_script_adapter_loads_relocated_arrays_and_refuses_live_fallback",
+    "test_materialization_authenticates_locator_and_preserves_originals"
+  ],
+  "conclusions": {
+    "unresolved_historical_metadata_preserved": true,
+    "no_wrong_new_registry_substitution_found": true,
+    "no_original_CFS_fallback_found_in_reviewed_runtime_paths": true,
+    "actual_temperature_runtime_inputs_remain_hash_bound": true,
+    "end_to_end_fresh_V2_replay_required_before_publication": true
+  },
+  "scientific_limit": "This repair changes portability metadata handling only. It does not reproduce or validate the scientific outcomes by itself."
+}

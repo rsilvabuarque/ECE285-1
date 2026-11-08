@@ -1,0 +1,35 @@
+{
+  "status": "FAILED_PRESERVED",
+  "exit_code": 1,
+  "allocation": "60990329",
+  "started_UTC": "2026-11-08T06:49:52.901408+00:00",
+  "completed_UTC": "2026-11-08T06:50:31.245872+00:00",
+  "wall_seconds": 38.34449032600969,
+  "python": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+  "command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/replay_extensions.py",
+    "--core-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/core.zip",
+    "--extensions-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/extensions.zip",
+    "--download-ext",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/download_ext.json",
+    "--output-dir",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results"
+  ],
+  "cwd": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1",
+  "PYTHONPATH_unset_at_bootstrap": true,
+  "source_archives_copied_outside_CFS": true,
+  "backend_SDK_distributions": {
+    "fairchem-core": null,
+    "mace-torch": null,
+    "matgl": null,
+    "chgnet": null,
+    "sevenn": null
+  },
+  "latest_terminal_NEB_README_byte_identical": true,
+  "source_bootstrap_sha256": "f077ce16598c0619407744c6af48dd8e15714fe519b5cd4a44f03a933026d947",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0
+}

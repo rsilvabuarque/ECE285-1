@@ -1,0 +1,20 @@
+{
+  "status": "FAILED_V1_PORTABILITY_PRESERVED",
+  "preserved_UTC": "2026-11-08T06:55:08.495546+00:00",
+  "archive": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/ECE285_conditioning_20261108_extensions.zip",
+  "archive_sha256": "c1e5384dad5a440514f59a9370c71ee651d9cccb8d64cd1a9feabd511f743dc5",
+  "archive_bytes": 84251732,
+  "source_sha256": "f077ce16598c0619407744c6af48dd8e15714fe519b5cd4a44f03a933026d947",
+  "execution_receipt": "reports/conditioning_20261107/extension_packet/fresh_replay_execution.json",
+  "error_log": "reports/conditioning_20261107/extension_packet/temperature_v1_failed.log",
+  "passed_before_failure": [
+    "editor",
+    "aggregate",
+    "aggregate_independent"
+  ],
+  "cause": "Overbroad adapter required an unused historical mutable registry version that the original TEMP protocol deliberately represents through an immutable registered_history witness",
+  "scientific_records_changed": false,
+  "repair": "Retain unresolved metadata verbatim, record missing version, and deny runtime Path/np.load/hash access even when a newer version exists",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0
+}

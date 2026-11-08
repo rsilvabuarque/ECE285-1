@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "audited_UTC": "2026-11-08T05:40:00.305869+00:00",
+  "attempts": 6912,
+  "paired_trials": 3456,
+  "failed_or_unsupported_requests": 0,
+  "canonical_parent_operations": 192,
+  "raw_2k_verified_generated_attempts": 6912,
+  "actual_seed_k_and_common_uniform_rows_equal": true,
+  "independent_uniform_mutation_reconstruction": true,
+  "seed_and_child_nested_role_bridges": 0,
+  "script_sha256": "70b31cc244d5f05306431ddfc521b043a02f819c864baa9a84d446c12d0ad19a",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "frozen_before_fresh_scoring": {
+    "preflight_sha256": "2479ef53f47e1016b76fbf375d82ae2e1026f338a74c0d62e804b96deeab1dbf",
+    "preflight_unix": 1794115353.4903278,
+    "registry_sha256": "d69af3b07d8e14c2fa13ca681c76c34a2556fee569206a73a2b7f68d97c506a0",
+    "new_editor_tasks": 115,
+    "fresh_editor_pairs": 7330,
+    "other_candidate_identities": 15,
+    "interpretation": "Fresh editor tasks are identified by frozen candidate input SHA. Other identities require existing exact-score provenance; they are not fresh editor calls.",
+    "all_new_claims_after_preflight": true,
+    "exact_UMA_context_matches": true,
+    "cached_context_certificate_sha256": "be66328b2f4b74dc2dd63828cd1ba90721bdfb7cee1d6bbd37cb08fa267e21e0"
+  },
+  "seed_label_parity": {
+    "unique_actual_seeds": 492,
+    "all_available_heldout_seed_count": 492,
+    "maximum_absolute_difference_meV_atom": 0.030039752117794194,
+    "median_absolute_difference_meV_atom": 0.00029088568398449866,
+    "p95_absolute_difference_meV_atom": 0.01684198387859048,
+    "by_composition": [
+      {
+        "n_Li": 12,
+        "unique_actual_seeds": 164,
+        "median_absolute_difference_meV_atom": 0.00031213825524289973,
+        "p95_absolute_difference_meV_atom": 0.00918619039040891,
+        "maximum_absolute_difference_meV_atom": 0.021657010997877535,
+        "median_signed_difference_meV_atom": -4.896789018715708e-05,
+        "q20_q80_width_meV_atom": 3.8057021550752523,
+        "median_absolute_difference_over_binwidth": 8.201857174414839e-05,
+        "maximum_absolute_difference_over_binwidth": 0.005690674181897269,
+        "seed_bin_changed_count": 0
+      },
+      {
+        "n_Li": 24,
+        "unique_actual_seeds": 164,
+        "median_absolute_difference_meV_atom": 0.00030015380669823344,
+        "p95_absolute_difference_meV_atom": 0.018995623945006198,
+        "maximum_absolute_difference_meV_atom": 0.030039752117794194,
+        "median_signed_difference_meV_atom": -1.0467367861366483e-05,
+        "q20_q80_width_meV_atom": 5.263444230813263,
+        "median_absolute_difference_over_binwidth": 5.7026120831882774e-05,
+        "maximum_absolute_difference_over_binwidth": 0.005707242406395308,
+        "seed_bin_changed_count": 0
+      },
+      {
+        "n_Li": 36,
+        "unique_actual_seeds": 164,
+        "median_absolute_difference_meV_atom": 0.0002845665765249805,
+        "p95_absolute_difference_meV_atom": 0.01766348062086642,
+        "maximum_absolute_difference_meV_atom": 0.029102211280829238,
+        "median_signed_difference_meV_atom": 6.544968789157224e-05,
+        "q20_q80_width_meV_atom": 3.694285223192928,
+        "median_absolute_difference_over_binwidth": 7.702885926036673e-05,
+        "maximum_absolute_difference_over_binwidth": 0.007877629777507144,
+        "seed_bin_changed_count": 0
+      }
+    ],
+    "classification_changed_seeds": 0,
+    "original_H0_binding": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+      "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465"
+    },
+    "no_reselection": true,
+    "no_arbitrary_pass_tolerance": true,
+    "interpretation": "Diagnostic parity check only. Report signed errors and their scale relative to within-composition bin width; differences do not authorize relabeling/reselecting the frozen seed pool."
+  },
+  "owner_released_labels": true,
+  "scores_sha256": "bf338b713ba5735cf27ae5770ec9641401f1bbc42e4da604625ed6269cbd1a10",
+  "collector_receipt_sha256": "df689f3dcd6cf044c160d26cfc8f7f8d22e488dcfdef8584bdf60b853129d202",
+  "unknown_generated_attempts": 0,
+  "independently_recomputed_evaluator_tables_identical": true,
+  "summary": [
+    {
+      "method": "learned_edit",
+      "fit_or_paired_sampler_replicates": 3,
+      "balanced_novel_inbin_yield": 0.59375,
+      "balanced_descriptive_seed_SD": 0.014342631633557583,
+      "original_q20_low_request_yield": 0.5034722222222222,
+      "mean_delta_energy_meV_atom": -0.0113034913609169
+    },
+    {
+      "method": "mutation",
+      "fit_or_paired_sampler_replicates": 3,
+      "balanced_novel_inbin_yield": 0.5723379629629629,
+      "balanced_descriptive_seed_SD": 0.010922792875102389,
+      "original_q20_low_request_yield": 0.5052083333333334,
+      "mean_delta_energy_meV_atom": -0.10468185548631224
+    }
+  ],
+  "paired_energy_statistics": [
+    {
+      "fit_seed": 20261106,
+      "all_paired_trials": 1152,
+      "known_paired_trials": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.1465562286078602,
+      "median_learned_minus_mutation_meV_atom": 0.03005602972905308,
+      "learned_lower_energy_pairs": 555,
+      "equal_energy_pairs": 17,
+      "mutation_lower_energy_pairs": 580
+    },
+    {
+      "fit_seed": 20261107,
+      "all_paired_trials": 1152,
+      "known_paired_trials": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.09623558569558675,
+      "median_learned_minus_mutation_meV_atom": 0.10369687901583091,
+      "learned_lower_energy_pairs": 536,
+      "equal_energy_pairs": 10,
+      "mutation_lower_energy_pairs": 606
+    },
+    {
+      "fit_seed": 20261108,
+      "all_paired_trials": 1152,
+      "known_paired_trials": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.03734327807273927,
+      "median_learned_minus_mutation_meV_atom": 0.0,
+      "learned_lower_energy_pairs": 562,
+      "equal_energy_pairs": 15,
+      "mutation_lower_energy_pairs": 575
+    }
+  ],
+  "physical_scope": "Same exact canonical UMA teacher protocol for child/seed; no DFT validation; no selection or training from these labels",
+  "uncertainty": "Three editor fits and matched sampler replicates; descriptive spread, no proposal-level confidence intervals",
+  "numeric_comparison_tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-10,
+    "scope": "floating-point table reproduction only; counts/identities exact"
+  },
+  "source_hashes": {
+    "protocol.json": "1f8218fd12b739076e825874fce042ecbf4d8ebad764ba2174d337bd29fa4a4a",
+    "receipt.json": "d1504d4ce47fba2ddbe41087d9b16e7030620f7e570d6f2068ef2b8ff7e96699",
+    "attempts.csv": "35579f3f3f4867cb8a8868cbb2d7ff01ef92e84543670b92fe239fed7f3fe652",
+    "raw_attempts.npz": "96700c0d036bb5b0af5fba7ec6fc31d8d0ed61bc98d7fd7848d429f81e68bcc4",
+    "candidates.npz": "193782e6646dc97604b6b165b369b9a6ba9380d943e7479b237190dc10fd1757"
+  }
+}

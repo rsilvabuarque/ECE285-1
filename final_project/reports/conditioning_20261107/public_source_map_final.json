@@ -1,0 +1,52 @@
+{
+  "status": "VERIFIED_LOCAL_DELIVERY_MAP",
+  "branch": "midterm/conditioning-graph-edit-20261107",
+  "core_release": {
+    "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_required.zip",
+    "sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+    "extract_to": "artifacts/conditioning_20261107",
+    "bytes": 75814766,
+    "files": 2157
+  },
+  "optional_release": {
+    "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_extensions_v2.zip",
+    "sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+    "bytes": 84271079,
+    "files": 713,
+    "extract_to": "artifacts/conditioning_20261107/extensions_v2",
+    "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+    "manifest_sha256": "775ef0b56d411b32f6fa16a5e83e20781f734335f24eb8934d840a11e5199358",
+    "source_packet": "Separate optional extension; required archive/gate unchanged"
+  },
+  "core_original_source_map": {
+    "path": "reports/conditioning_20261107/public_source_map.json",
+    "sha256": "015de287563fbfcc7c7695352053ba765de45748da8d7c7e2e904c0358d90263"
+  },
+  "optional_path_locator": {
+    "archive": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_extensions_v2.zip",
+    "member": "replay_ext.json",
+    "scope": "Authenticated original source paths, SHA bindings and explicit historical source versions; replay-only paths are separately recorded."
+  },
+  "final_report": {
+    "path": "docs/midterm1/main.pdf",
+    "sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb"
+  },
+  "self_contained_report": {
+    "path": "reports/conditioning_20261107/final_report_snapshot/manifest.json",
+    "sha256": "3cfa11da892b64238b9d54829000c1b99e41751ea58051fde8002c8e5fdeed75"
+  },
+  "claim_map": {
+    "path": "docs/midterm1/claim_sources.json",
+    "sha256": "2033483e13c277bc9c5619360aba4dc9f8566adece167f9a1990295d9a0fd28f"
+  },
+  "closing_cost": {
+    "path": "reports/conditioning_20261107/execution_final.json",
+    "sha256": "6015009c905d26c621b0177c73173d3a4c008ab93845c8a3450b740a1a8bd232"
+  },
+  "fresh_optional_replay": {
+    "path": "reports/conditioning_20261107/extension_packet/v2_attempt2/fresh_replay_v2_execution.json",
+    "sha256": "7a2238bc4e7b7d9454b895f682fc46dd38f4cd430d30876b009dc1eca19c2825"
+  },
+  "publication_receipt": "reports/conditioning_20261107/publication_receipt.json",
+  "raw_EFS_scope": "Global raw E/F/stress arrays remain on HPC; required/optional archives contain source-bound inventories and task metadata. Fresh scalar replay does not claim to rehash absent raw arrays."
+}

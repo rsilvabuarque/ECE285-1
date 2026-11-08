@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 375, in <module>
+    if __name__=="__main__":raise SystemExit(main())
+                                             ^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 327, in main
+    result=run_job(job["name"],config,job["mirror"],job["output"],relocation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 258, in run_job
+    module.analyze(view,root/config["scores"]["uma"])
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/temperature_followup.py", line 244, in analyze
+    protocol=json.loads((output/"protocol.json").read_text());verify_sources(protocol)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 146, in loads
+    def loads(self, text, *args, **kwargs): return owner.replace(json.loads(text,*args,**kwargs))
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 130, in replace
+    return {k:self.replace(v) for k,v in value.items()}
+              ^^^^^^^^^^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py", line 127, in replace
+    raise ValueError(f"Historical source version is absent from both packets: {path} SHA256 {expected}")
+ValueError: Historical source version is absent from both packets: /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json SHA256 071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c

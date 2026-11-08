@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "phase": "final",
+  "body_pages": 5,
+  "reference_pages": 1,
+  "page_text_characters": [
+    3664,
+    3276,
+    3658,
+    4295,
+    3933,
+    1941
+  ],
+  "pdf_sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+  "tex_sha256": "d9ebba007be7a7536da191ef40045d8c619cdd6e3db1f3444173288e96b58db2",
+  "renderer": "1.26.7",
+  "python": "3.12.2",
+  "no_overfull_or_undefined_diagnostics": true,
+  "all_pages_rendered": true,
+  "scientific_claims_validated_by_this_check": false,
+  "visual_review": "Required separately after rendering"
+}

@@ -1,0 +1,167 @@
+{
+  "status": "COMPLETE_SCIENCE_REPORT_AND_RESOURCE_CLOSURE",
+  "publication_status": "PENDING_FINAL_BRANCH_PUSH_ASSET_UPLOAD_AND_CI",
+  "prepared_UTC": "2026-11-08T07:15:59.365153+00:00",
+  "branch": "midterm/conditioning-graph-edit-20261107",
+  "base_commit": "73e6cee5fa43a26a1ac9e8700f81baaa3e40619f",
+  "required_gate": {
+    "path": "artifacts/conditioning_20261107/required_gate.json",
+    "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3"
+  },
+  "required_gate_completed_UTC": "2026-11-08T04:47:40.818541+00:00",
+  "final_report": {
+    "pdf": {
+      "path": "docs/midterm1/main.pdf",
+      "sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb"
+    },
+    "snapshot": {
+      "path": "reports/conditioning_20261107/final_report_snapshot/manifest.json",
+      "sha256": "3cfa11da892b64238b9d54829000c1b99e41751ea58051fde8002c8e5fdeed75"
+    },
+    "body_pages": 5,
+    "reference_pages": 1,
+    "all_pages_visually_reviewed": true,
+    "isolated_rebuild_page_texts_equal": true
+  },
+  "required_core_trajectories": 28,
+  "optional_editor_trajectories": 3,
+  "optimizer_updates_per_full_trajectory": 4000,
+  "training_scope": "The core cap of 30 trajectories is preserved. A frozen pre-fit scope amendment allocates 28 core and 3 subsequent optional editor trajectories. No additional neural fits were run. Analytic Gaussian moments use zero optimizer updates.",
+  "static_EFS": {
+    "mace": {
+      "registered_fresh_pairs": 24120,
+      "registered_cache_reuses": 147,
+      "recorded_new_logical_static_attempts": 24120,
+      "successful_new_EFS": 24120,
+      "failed_new_logical_attempts": 0,
+      "fresh_pairs_without_terminal_rows": 0
+    },
+    "uma": {
+      "registered_fresh_pairs": 80539,
+      "registered_cache_reuses": 679,
+      "recorded_new_logical_static_attempts": 80539,
+      "successful_new_EFS": 80539,
+      "failed_new_logical_attempts": 0,
+      "fresh_pairs_without_terminal_rows": 0
+    }
+  },
+  "engineering_static_attempts": 6,
+  "NEB_calculator_EF_attempts": 3756,
+  "call_count_scope": "Separate logical static EFS attempts, engineering checks and endpoint/band calculator calls; internal neural-backbone forward counts were not instrumented. Cache reuses are not new calls.",
+  "resource_accounting": {
+    "accounting_sha256": "4e6eb59249204e0c3683df5d71d76eb2763c01c988bdbdaa1cf1e14f73285709",
+    "timezone_assumption": "UTC explicitly required for export",
+    "accounting_snapshot_UTC": "2026-11-08T07:13:07.410815+00:00",
+    "allocation_count": 7,
+    "ignored_child_or_out_of_scope_rows": [],
+    "listed_all_allocations_terminal": true,
+    "GPU_device_hours": 41.70388888888889,
+    "four_GPU_equivalent_node_hours": 10.425972222222223,
+    "physical_node_hours": 13.619444444444444,
+    "maximum_concurrently_allocated_GPUs": 20,
+    "findings": [],
+    "timestamp_check": "Bookkeeping tolerances:2s for integer-second Start/End versus ElapsedRaw;120s for a running row versus export snapshot. Findings require review, not a changed scientific tolerance.",
+    "scope": "Allocated wall time includes startup, idle, failed work and CPU analysis; no child-step double counting; no monetary/credit estimate"
+  },
+  "accounting_receipt": {
+    "path": "reports/conditioning_20261107/execution_final.json",
+    "sha256": "6015009c905d26c621b0177c73173d3a4c008ab93845c8a3450b740a1a8bd232"
+  },
+  "NEB_allocation_GPU_device_hours": 0.7588888888888888,
+  "all_owned_allocations_released": true,
+  "owned_jobs": [
+    60985189,
+    60985612,
+    60985847,
+    60986556,
+    60988553,
+    60989957,
+    60990329
+  ],
+  "software_tests": {
+    "path": "reports/conditioning_20261107/final_tests_v2.json",
+    "sha256": "11685afc57d6b56ef44d756902045b9ddfa1234681cd6e698d0852d49a2e91b8"
+  },
+  "fresh_optional_replay": {
+    "receipt": {
+      "path": "reports/conditioning_20261107/extension_packet/v2_attempt2/fresh_replay_v2_execution.json",
+      "sha256": "7a2238bc4e7b7d9454b895f682fc46dd38f4cd430d30876b009dc1eca19c2825"
+    },
+    "tables": 39,
+    "fields": 1385825,
+    "all_byte_identical": true,
+    "new_MLIP_calls": 0,
+    "new_training_updates": 0
+  },
+  "releases": {
+    "required": {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_required.zip",
+      "sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+      "extract_to": "artifacts/conditioning_20261107",
+      "bytes": 75814766,
+      "files": 2157
+    },
+    "optional_v2": {
+      "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_extensions_v2.zip",
+      "sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+      "bytes": 84271079,
+      "files": 713,
+      "extract_to": "artifacts/conditioning_20261107/extensions_v2",
+      "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+      "manifest_sha256": "775ef0b56d411b32f6fa16a5e83e20781f734335f24eb8934d840a11e5199358",
+      "source_packet": "Separate optional extension; required archive/gate unchanged"
+    }
+  },
+  "primary_findings": {
+    "de_novo_final": "Graph encoder plus causal decoder context: balanced useful yield 62.037% UMA / 63.455% MACE versus 58.623% / 57.292% mutation. Latent contribution remains unresolved: KL 0.007\u20130.011 nats and weak z sensitivity.",
+    "editor": "Same-seed, same-k, shared-uniform assessment: balanced yield 59.375% versus 57.234%; fixed-q20 low-request yield 50.347% versus 50.521%. Best novel low child favors learned editing in 7/9 cases posthoc; the paired mean favors mutation by 0.07656 meV/atom. Both observables are retained.",
+    "aggregate_prior": "Posthoc TRAIN posterior-moment Gaussian improves balanced dense-CVAE yield under both teachers but worsens original-q20LOW; not a jointly trained conditional prior.",
+    "temperature": "All four temperatures yield identical integer request schedules and paired structures; low reference ESS and no physical temperature-response claim.",
+    "NEB": "Event1 coarse/refined forward spans: 0.638221/0.188711 eV per hop. Coupled image/tolerance/path sensitivity is unresolved. Event2 coarse span: 0.191544 eV/hop. Seven MACE single points use the coarse first UMA band only."
+  },
+  "completed": [
+    "Cached baseline reproduction and paired condition/latent diagnostics",
+    "Training-policy and D4/8/16/32 sensitivity with dense no-latent AR control",
+    "Three-fit symmetry, graph-encoder and causal graph-context comparisons",
+    "Existing1000-lineage deletion/relaxed-target audit and supported descriptor pilot",
+    "Frozen new UMA final assessment and prespecified matched MACE audit",
+    "Genuine seed-edit CVAE versus identical mutation seeds/budgets",
+    "One analytic posthoc latent-proposal mechanism test",
+    "Small temperature-allocation follow-up",
+    "Bounded defined-hop UMA NEB plus image/tolerance and MACE disagreement checks",
+    "Reviewable five-page report, supplementary evidence, reproducibility and ownership tasks"
+  ],
+  "deferred": {
+    "matched_spatial_no_latent_control": "Assigned to Beihao; not run in this campaign. Dense no-latent control was completed.",
+    "deletion_vs_relaxed_target_NN_fit": "Existing primary paired support: 49 TRAIN / 11 VAL / 9 TEST, with endpoint-low VAL counts 0/1/0. Empirical audit complete; model fit deferred.",
+    "further_feedback_initialization_or_finer_energy_sweeps": "Not run; one bounded posterior-moment sampling test chosen after diagnostics.",
+    "new_geometry_CVAE_campaign": "Not restarted; existing coordinate-CVAE and deterministic-regressor evidence remains separate.",
+    "physical_validation": "No new or scheduled DFT, no new MD, no MLIP fine-tuning. DFT/reference screening, saddle/Hessian/path validation, transport, entropy, reactor optima and material/size transfer require later work."
+  },
+  "collaborator_tasks": {
+    "Ricardo": "Review physical/data/symmetry interpretation, integrate independently returned work and manually submit by November 9 at 23:59 Pacific.",
+    "Beihao": "Independently reproduce selected fit and latent/graph/count checks; matched spatial no-latent control under fixed training policy.",
+    "Varad": "Recompute cached conditional/novelty/paired-edit metrics and costs, preserving all attempts and three-fit descriptive variation."
+  },
+  "tasks_document": {
+    "path": "docs/COLLABORATOR_TASKS.md",
+    "sha256": "fcb92b62485ee60535fc8421a6a4f4d37f907d78aa649c6cffc8d6a43116266a"
+  },
+  "exact_commands": {
+    "path": "reports/conditioning_20261107/COMMANDS.md",
+    "sha256": "45412d1020a29be4b0221ed332f758134c91fe2f6d4238d933d60514dc12d708"
+  },
+  "preserved_failures": [
+    "reports/conditioning_20261107/execution_preclosure.json",
+    "reports/conditioning_20261107/editor_checkpoint_alias_audit",
+    "reports/conditioning_20261107/extension_packet/v1_failure.json",
+    "reports/conditioning_20261107/extension_packet/fresh_replay_v2_execution.json"
+  ],
+  "protected_boundaries": "Original 434-file snapshot and historical artifacts preserved. No protected final, VAL or TEST labels were reused for training or model selection. Core gate, PDF and source map remain unchanged.",
+  "public_source_map": {
+    "path": "reports/conditioning_20261107/public_source_map_final.json",
+    "sha256": "e8a550ed6bf6be28a3d205171ce65f505aeace96c843299dc9723f247104974e"
+  },
+  "publication_receipt": "reports/conditioning_20261107/publication_receipt.json",
+  "no_coursework_submission_or_collaborator_messages": true
+}

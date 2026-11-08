@@ -1,0 +1,518 @@
+{
+  "status": "FROZEN_BEFORE_GENERATION_AND_SCORING",
+  "created_UTC": "2026-11-08T05:25:15.892576+00:00",
+  "namespace": "conditioning-temperature-followup-20261107-v1",
+  "hypothesis": "Improved energy control may realize the existing coarse bin requests more faithfully; no temperature effect is presumed",
+  "exact_change": "Use development-selected graph-context checkpoint seed20261106; retain the prior reference, schema and acquisition measure",
+  "controls": "Pure static and epsilon=.1 uniform-over-supported-bins floor; common latent/uniform streams across T and matching bin prefixes across policies",
+  "decision_rule": "Report exact requested and realized bins/energies; identical allocations/proposals across T are an honest null response, not evidence of physical equilibrium",
+  "sources": {
+    "required_gate": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+      "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3"
+    },
+    "parent": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+      "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+    },
+    "reference": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/reference.npz",
+      "sha256": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4"
+    },
+    "reference_receipt": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/overnight_20261107/reference_diagnostics/receipt.json",
+      "sha256": "dc7a96182b1a16152ed6f0b5bac9cd36ccb9df7679b4543524549eab4432ce03"
+    },
+    "schema": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+    },
+    "selection": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/architecture_selection.json",
+      "sha256": "aa36153757a852092fb0a0cfee82d54a9aa7c2d48e43dbf9b17c47380f4b552d"
+    },
+    "checkpoint": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt",
+      "sha256": "7cb07df1250b3d51e017a60ac3aedbc95b241ce4e2083dc64dd399a4cb1048a6"
+    },
+    "final_protocol": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final_protocol.json",
+      "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e"
+    },
+    "final_pool": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/candidates.npz",
+      "sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26"
+    },
+    "history_source": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/history_before_final.json",
+      "sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df"
+    },
+    "finite12_parent": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz",
+      "sha256": "3f2cb6acd3fa6c07d22109cce01f9e1e44aa815953f9e7b8f7c8de336999b4ce"
+    },
+    "finite12_data": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/extras/learning_all_parents/learning_Hu_O3_12_uma.npz",
+      "sha256": "00e79fca72a9453c934653f8d952d23522c6b09c28842e9d3f934b52df5dc00c"
+    },
+    "history": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/history.json",
+      "sha256": "a5f05ee66266d15d86eb83d9108285b7bf85ddd74c5c4b00868a8bbe39179dc5"
+    },
+    "editor_pool": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/candidates.npz",
+      "sha256": "193782e6646dc97604b6b165b369b9a6ba9380d943e7479b237190dc10fd1757"
+    },
+    "registered_history": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/registered_history.json",
+      "sha256": "63f588a0bac7dd41bf35a2809bb810864db0fa6bb7277a67d6865318232adb56"
+    }
+  },
+  "fit_seed": 20261106,
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "temperatures_K": [
+    393.15,
+    433.15,
+    473.15,
+    493.15
+  ],
+  "schedules": [
+    {
+      "schedule_id": "temperature-12-393.15-static",
+      "n_Li": 12,
+      "temperature_K": 393.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999953691525519,
+        "middle": 4.630847388038346e-06,
+        "high": 6.003165631377419e-14
+      }
+    },
+    {
+      "schedule_id": "temperature-12-393.15-static_exploration",
+      "n_Li": 12,
+      "temperature_K": 393.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333291655706301,
+        "middle": 0.03333750109598257,
+        "high": 0.03333333333338736
+      }
+    },
+    {
+      "schedule_id": "temperature-12-433.15-static",
+      "n_Li": 12,
+      "temperature_K": 433.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999779288193367,
+        "middle": 2.2071179228603126e-05,
+        "high": 1.4347345593151667e-12
+      }
+    },
+    {
+      "schedule_id": "temperature-12-433.15-static_exploration",
+      "n_Li": 12,
+      "temperature_K": 433.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333134692707363,
+        "middle": 0.03335319739463907,
+        "high": 0.03333333333462459
+      }
+    },
+    {
+      "schedule_id": "temperature-12-473.15-static",
+      "n_Li": 12,
+      "temperature_K": 473.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999208489674786,
+        "middle": 7.915101291437863e-05,
+        "high": 1.960724162604958e-11
+      }
+    },
+    {
+      "schedule_id": "temperature-12-473.15-static_exploration",
+      "n_Li": 12,
+      "temperature_K": 473.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9332620974040641,
+        "middle": 0.03340456924495627,
+        "high": 0.03333333335097985
+      }
+    },
+    {
+      "schedule_id": "temperature-12-493.15-static",
+      "n_Li": 12,
+      "temperature_K": 493.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9998623960190507,
+        "middle": 0.00013760391964910636,
+        "high": 6.130012418310548e-11
+      }
+    },
+    {
+      "schedule_id": "temperature-12-493.15-static_exploration",
+      "n_Li": 12,
+      "temperature_K": 493.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.933209489750479,
+        "middle": 0.033457176861017526,
+        "high": 0.033333333388503444
+      }
+    },
+    {
+      "schedule_id": "temperature-24-393.15-static",
+      "n_Li": 24,
+      "temperature_K": 393.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999999982307182,
+        "middle": 1.7692817073693594e-09,
+        "high": 5.5284751137549485e-21
+      }
+    },
+    {
+      "schedule_id": "temperature-24-393.15-static_exploration",
+      "n_Li": 24,
+      "temperature_K": 393.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333333317409797,
+        "middle": 0.03333333492568687,
+        "high": 0.03333333333333333
+      }
+    },
+    {
+      "schedule_id": "temperature-24-433.15-static",
+      "n_Li": 24,
+      "temperature_K": 433.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999999823017767,
+        "middle": 1.7698223310068155e-08,
+        "high": 6.094423937298248e-19
+      }
+    },
+    {
+      "schedule_id": "temperature-24-433.15-static_exploration",
+      "n_Li": 24,
+      "temperature_K": 433.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333333174049323,
+        "middle": 0.03333334926173431,
+        "high": 0.03333333333333333
+      }
+    },
+    {
+      "schedule_id": "temperature-24-473.15-static",
+      "n_Li": 24,
+      "temperature_K": 473.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999998825146624,
+        "middle": 1.1748533758358183e-07,
+        "high": 2.966307571204221e-17
+      }
+    },
+    {
+      "schedule_id": "temperature-24-473.15-static_exploration",
+      "n_Li": 24,
+      "temperature_K": 473.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333332275965295,
+        "middle": 0.03333343907013716,
+        "high": 0.03333333333333336
+      }
+    },
+    {
+      "schedule_id": "temperature-24-493.15-static",
+      "n_Li": 24,
+      "temperature_K": 493.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999997322523102,
+        "middle": 2.677476896551388e-07,
+        "high": 1.6205646473766932e-16
+      }
+    },
+    {
+      "schedule_id": "temperature-24-493.15-static_exploration",
+      "n_Li": 24,
+      "temperature_K": 493.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333330923604125,
+        "middle": 0.03333357430625402,
+        "high": 0.03333333333333348
+      }
+    },
+    {
+      "schedule_id": "temperature-36-393.15-static",
+      "n_Li": 36,
+      "temperature_K": 393.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.999999897469841,
+        "middle": 1.0253015876056581e-07,
+        "high": 2.0088772504099272e-16
+      }
+    },
+    {
+      "schedule_id": "temperature-36-393.15-static_exploration",
+      "n_Li": 36,
+      "temperature_K": 393.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333332410561902,
+        "middle": 0.03333342561047622,
+        "high": 0.03333333333333351
+      }
+    },
+    {
+      "schedule_id": "temperature-36-433.15-static",
+      "n_Li": 36,
+      "temperature_K": 433.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999993075831761,
+        "middle": 6.92416815812239e-07,
+        "high": 8.190479413112354e-15
+      }
+    },
+    {
+      "schedule_id": "temperature-36-433.15-static_exploration",
+      "n_Li": 36,
+      "temperature_K": 433.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333327101581919,
+        "middle": 0.033333956508467565,
+        "high": 0.0333333333333407
+      }
+    },
+    {
+      "schedule_id": "temperature-36-473.15-static",
+      "n_Li": 36,
+      "temperature_K": 473.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999966354569646,
+        "middle": 3.36454285854564e-06,
+        "high": 1.7681819019060382e-13
+      }
+    },
+    {
+      "schedule_id": "temperature-36-473.15-static_exploration",
+      "n_Li": 36,
+      "temperature_K": 473.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333303052446015,
+        "middle": 0.033336361421906026,
+        "high": 0.03333333333349247
+      }
+    },
+    {
+      "schedule_id": "temperature-36-493.15-static",
+      "n_Li": 36,
+      "temperature_K": 493.15,
+      "policy": "static",
+      "budget": 32,
+      "counts": {
+        "low": 32,
+        "middle": 0,
+        "high": 0
+      },
+      "probabilities": {
+        "low": 0.9999932829197298,
+        "middle": 6.717079591381693e-06,
+        "high": 6.788954280137674e-13
+      }
+    },
+    {
+      "schedule_id": "temperature-36-493.15-static_exploration",
+      "n_Li": 36,
+      "temperature_K": 493.15,
+      "policy": "static_exploration",
+      "budget": 32,
+      "counts": {
+        "low": 30,
+        "middle": 1,
+        "high": 1
+      },
+      "probabilities": {
+        "low": 0.9333272879610901,
+        "middle": 0.033339378704965575,
+        "high": 0.03333333333394434
+      }
+    }
+  ],
+  "primary_attempts": 768,
+  "fit_replicates": 1,
+  "budget_per_schedule": 32,
+  "exploration_fraction": 0.1,
+  "exploration_definition": "(1-epsilon)*reference bin mass+epsilon/3; integer allocation may differ from epsilon in realized non-low fraction",
+  "reference_measure": "Uniform raw-mask sample collapsed for scoring with retained frequencies; no additional symmetry multiplicity",
+  "weighting": "m_i*exp[-(E_i-Eref)/(kBT)], E in eV per whole cell, m_i raw draw frequency",
+  "physical_temperature_enters_decoder": false,
+  "no_new_reference": true,
+  "no_MACE": true,
+  "no_DFT": true,
+  "no_training": true,
+  "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+  "known_history_orbits": 312613,
+  "history_scope": "Required-core pre-final history, every core final proposal, and all registered parent-mask identities including editor seeds/children; no editor energies read",
+  "registry_history_snapshot": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+    "sha256_at_freeze": "071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c",
+    "registered_parent_orbits": 74831,
+    "editor_pool_orbits": 7345,
+    "witness": "Every editor pool geometry registered at freeze; immutable derived registered_history.json retained; live registry may append later"
+  },
+  "expected_max_distinct_raw_draws": 102,
+  "source_sha256": "faca96e527a92a3d40aca4da5a4bb318b86fb8c53a13034704d6d6577ece307c",
+  "limits": "One fitted model,32attempts/schedule; no fit-to-fit confidence claim; low reference ESS cannot be repaired by more proposals"
+}

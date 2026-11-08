@@ -1,0 +1,37 @@
+{
+  "status": "READY_FOR_ROOT_LAUNCH_NO_MLIP_EVALUATION",
+  "completed_UTC": "2026-11-08T05:19:22.630739+00:00",
+  "prepared_protocol": {
+    "path": "reports/conditioning_20261107/neb_pilot/prepared_v3/protocol.json",
+    "sha256": "d57a91ec3a817766ef9d93a62a3fc6f446e12817489f016c72eaee2eb5058899"
+  },
+  "tests": {
+    "passed": 9,
+    "log": "reports/conditioning_20261107/neb_pilot_tests_ready.log",
+    "command": "srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env -u PYTHONPATH CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q tests/test_neb_pilot.py",
+    "scope": "Synthetic potentials and read-only archived geometries only; full runner tested without importing/loading an MLIP backend"
+  },
+  "preparation_command": "srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env -u PYTHONPATH CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python scripts/conditioning_20261107/neb_prepare.py --root /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project --md-root /pscratch/sd/r/rsb/ece285_thermal_20261107/results/md --output-dir reports/conditioning_20261107/neb_pilot/prepared_v3",
+  "source_hashes": {
+    "scripts/conditioning_20261107/neb_common.py": "a0384adab93e0ed55f05728fb0e671bc9e7653c5e4c8e2b062f8add05aee0b1e",
+    "scripts/conditioning_20261107/neb_mace_profile.py": "89d0216f0d5f55ed6803efb07134deb507b99004d42671c6ec2c528ec1ab6047",
+    "scripts/conditioning_20261107/neb_prepare.py": "c41026d12926f6f1e21bcb719610b83bcbce36fb79820e414051b16f4d2ff2f4",
+    "scripts/conditioning_20261107/neb_run.py": "5dea993b4a2f6cc3d4d48233df7dc391639277a1ecb7633839db61bf933838c2",
+    "scripts/conditioning_20261107/neb_summarize.py": "c7bb428262297f216537f127a75c493be6d9693612357c6832c703435c8f2868",
+    "tests/test_neb_pilot.py": "7df01ef0c69fc42fc32c17ffeff4a5e11c9239365b6213670a7fc1ad5ae48f56"
+  },
+  "new_MLIP_calls": 0,
+  "new_MD": false,
+  "new_DFT": false,
+  "launch_owner": "root",
+  "source_postcheck": "Preparation rehashed complete archived sources before/after; installed ASE3.26 APIs and calculators/registry pinned",
+  "resource_plan": {
+    "maximum_events": 2,
+    "maximum_allocated_GPU_device_hours": 2.0,
+    "per_event_wall_seconds": 2400,
+    "optional_MACE_profile_wall_seconds": 600,
+    "two_GPU_window_maximum_wall_seconds": 3600,
+    "planned_maximum_allocated_GPU_device_hours": 1.6666666666666667,
+    "reserve_allocated_GPU_device_hours": 0.3333333333333333
+  }
+}

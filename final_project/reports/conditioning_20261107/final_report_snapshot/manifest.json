@@ -1,0 +1,48 @@
+{
+  "status": "FROZEN_REVIEWED_FINAL_REPORT_SNAPSHOT",
+  "pdf_sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+  "body_pages": 5,
+  "reference_pages": 1,
+  "all_project_local_build_inputs_included": true,
+  "isolated_rebuild_page_texts_equal": true,
+  "files": {
+    "main.tex": "d9ebba007be7a7536da191ef40045d8c619cdd6e3db1f3444173288e96b58db2",
+    "generated_energy_audit.tex": "9f98445aeec40a4693493d83d015d76c18eee4f7d51b0d5c8e9b1f865bdac784",
+    "generated_conditioning_results.tex": "a4267427950a165ae20c39988564c54836c9a4207e53109a93dde4133df325d0",
+    "generated_final_table.tex": "e141cdafe6c70dda49c7e16f65a10e4d1a61aa18bc14b4c3de9d893e7897dcc1",
+    "references.bib": "b8910648f8fa705a50905060ecbd81535cd7895e7ddcc76ed1a53e0e13c92574",
+    "build.sh": "495566e13b21a197ef55e02ab11f9dfaa7194afe61093dea3330099c1fcde6ca",
+    "main.pdf": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+    "main.bbl": "a054e873a49d089e53d8919f46852109aefc6eaea20b2343adf457c3d7b91160",
+    "claim_sources.json": "2033483e13c277bc9c5619360aba4dc9f8566adece167f9a1990295d9a0fd28f",
+    "CLAIM_SOURCE_MAP.md": "a44ec2889c0a45a1a9cfe41a825d4c711ed4742a17350a4d0d33effbb46dc45f",
+    "OPTIONAL_EXTENSIONS_20261107.md": "256e07fcaa6c1ce096c5eb2c4c3d39d635db31f8893ed75a71942fa421571a5f",
+    "build_render_receipt.json": "bdeababf4f1f43e5431876d8ac0de32c8860a3d3ac5f1116558168538ecb63ba",
+    "visual_review.json": "2872ac06f379cdd8212f51f8e3105767138ad6822640563b9196423a33bbcc48",
+    "selfcontained_rebuild_receipt.json": "b015592f3a543dc1e8853ae8524e28fb6ca3be93677a3db26226ba2f5b71350d"
+  },
+  "source_paths": {
+    "main.tex": "docs/midterm1/main.tex",
+    "generated_energy_audit.tex": "docs/midterm1/generated_energy_audit.tex",
+    "generated_conditioning_results.tex": "docs/midterm1/generated_conditioning_results.tex",
+    "generated_final_table.tex": "docs/midterm1/generated_final_table.tex",
+    "references.bib": "docs/midterm1/references.bib",
+    "build.sh": "docs/midterm1/build.sh",
+    "main.pdf": "docs/midterm1/main.pdf",
+    "main.bbl": "docs/midterm1/main.bbl",
+    "claim_sources.json": "docs/midterm1/claim_sources.json",
+    "CLAIM_SOURCE_MAP.md": "docs/midterm1/CLAIM_SOURCE_MAP.md",
+    "OPTIONAL_EXTENSIONS_20261107.md": "docs/OPTIONAL_EXTENSIONS_20261107.md",
+    "build_render_receipt.json": "runs/conditioning_20261107/report_final_preview/receipt.json",
+    "visual_review.json": "runs/conditioning_20261107/report_final_preview/visual_review.json",
+    "selfcontained_rebuild_receipt.json": "runs/conditioning_20261107/report_selfcontained_rebuild/receipt.json"
+  },
+  "build": {
+    "command": "bash build.sh",
+    "latex_environment": "texlive/2024 or compatible standard LaTeX distribution"
+  },
+  "required_gate_sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+  "required_public_source_map_sha256": "015de287563fbfcc7c7695352053ba765de45748da8d7c7e2e904c0358d90263",
+  "required_snapshot_unchanged": true,
+  "scope": "Updated report includes completed optional evidence. Required snapshot/gate/map remain unchanged; publication and post-release cost are root-owned separate receipts."
+}

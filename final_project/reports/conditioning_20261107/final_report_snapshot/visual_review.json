@@ -1,0 +1,16 @@
+{
+  "status": "PASS_VISUAL_REVIEW",
+  "pdf_sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "body_pages": 5,
+  "reference_pages": 1,
+  "findings": "All six rendered pages reviewed: readable complete tables/equations, no clipping, overlaps, blank or spillover pages. Editor metric tradeoffs and combined NEB refinement sensitivity visible.",
+  "scope": "Manual layout and visible scope review; numerical/source audits remain separate."
+}

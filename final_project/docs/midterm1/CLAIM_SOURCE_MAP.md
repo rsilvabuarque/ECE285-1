@@ -1,7 +1,7 @@
 # Report claim and source map
 
-Status: **required final evidence ready; integrating report gate pending**.
-This map does not certify the required delivery gate or teammates' independent contributions.
+Status: **FINAL_REPORT_REVIEWED_WITH_SEPARATE_IMMUTABLE_REQUIRED_GATE**.
+The required gate and its snapshot remain immutable. This live map does not certify teammates' independent contributions or final publication/resource release.
 
 | Claim family | Verified scope | Main source |
 | --- | --- | --- |
@@ -25,6 +25,14 @@ This map does not certify the required delivery gate or teammates' independent c
 | frozen_final_assessment | All34560UMAattempts; graphcontext62.04%balanced63.54%low vsmutation58.62/52.52; matched20736MACEattempts63.45/67.62vsmutation57.29/52.95 | [summary.csv](../../runs/conditioning_20261107/evaluation/final/summary.csv) |
 | independent_final_replay | Raw192operation mask/bin/history recomputation matches16tables with2515436fieldchecks zero mismatches; not physicalvalidation | [receipt.json](../../reports/conditioning_20261107/independent_final_metrics/receipt.json) |
 | final_structural_distance | Exact192symmetry minimum tofixed1024TRAINorbits/count; upperboundfullTRAINdistance; context6.858uniform6.891mutation6.498sites | [receipt.json](../../reports/conditioning_20261107/final_structural_distances/receipt.json) |
-| current_scope | Requiredscientificevidencecomplete withrootreportgatepending; nonewDFT/MLIPfinetuning; no entropy/generalizationaccuracy implied | [protocol.json](../../artifacts/conditioning_20261107/protocol.json) |
+| optional_editor | Same-seed editor balanced yield59.375% vs57.234%; low-q20 yield50.347/50.521%; all6912attempts and raw pair checks retained | [summary.csv](../../runs/conditioning_20261107/evaluation/editor/summary.csv) |
+| editor_low_request_metrics | LOW paired mean favors mutation by0.07656meV/atom; learned lower in548of1152pairs; distinct-quintile yield tied | [request_energy_summary.csv](../../reports/conditioning_20261107/editor_low_request_v2/request_energy_summary.csv) |
+| editor_secondary_minima | All9LOWfit/count minima at128attempts: learned lower novel child in7cases; mean advantages-.572/-.229/-.428meVatom; supplied-seed minimum is not globalhistory minimum | [terminal_best_novel_low_children.csv](../../reports/conditioning_20261107/editor_low_request_v2/terminal_best_novel_low_children.csv) |
+| editor_stage_cost | 7330new logicalUMA labels=6845child-only+485sharedseed-only;15alreadyavailable; counts verified against PRE-editor registry/cache and completedtask receipts | [cost_audit.json](../../reports/conditioning_20261107/editor_low_request_v2/cost_audit.json) |
+| editor_checkpoint_alias | Different ZIP-root file hashes for best.pt and named selected checkpoint; normalized members and full loaded payload identical; assessment already used named hashes | [receipt.json](../../reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json) |
+| posthoc_gaussian_prior | TRAIN-only posterior-moment Gaussian, noNNupdates: balanced UMA34.259vs31.047/MACE34.028vs30.787; LOWyield regresses; graphcontext retained | [receipt.json](../../reports/conditioning_20261107/independent_aggregate_prior/receipt.json) |
+| temperature_followup | 24schedules/768attempts/102geometries; identical integerallocations and actualpairedproposals across4T; lowreferenceESS remains | [receipt.json](../../reports/conditioning_20261107/temperature_followup/analysis/receipt.json) |
+| current_scope | Required gate complete and preserved; later extensions separate; no newDFT/MLIPfinetuning or entropy/generalization claim | [protocol.json](../../artifacts/conditioning_20261107/protocol.json) |
+| defined_hop_NEB | Two numerically converged UMA event paths; event1 forward0.638→0.189eV with coupled7image/tightertarget change; event2 coarse0.192eV; MACEcoarseSP is not transport validation | [receipt.json](../../runs/conditioning_20261107/neb/basin_1_repeat2/receipt.json) |
 
 The machine-readable map binds exact input hashes. Optional studies need explicit reviewed additions and retain a separate gate/status. Current final, development, historical and updated discussion evidence remain distinct.

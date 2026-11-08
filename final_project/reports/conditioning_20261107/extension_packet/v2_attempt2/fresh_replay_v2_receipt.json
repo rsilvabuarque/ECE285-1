@@ -1,0 +1,634 @@
+{
+  "status": "PASS",
+  "completed_UTC": "2026-11-08T07:12:15.488649+00:00",
+  "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "extensions_archive_sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+  "scope": "Cached table and paired-energy reproduction, not new sampling, fitting or physical validation",
+  "original_protocols_and_receipts_unchanged": true,
+  "path_relocation_scope": "Exact verified path strings in parsed runtime configurations only; original bytes/hashes are preserved",
+  "unresolved_metadata_policy": "Historical metadata without supplied snapshot bytes remains unchanged and explicitly recorded; its original filename is forbidden for runtime Path, array load, and hash access",
+  "jobs": {
+    "editor": {
+      "status": "PASS",
+      "tables": {
+        "attempt_outcomes.csv": {
+          "fields_checked": 324911,
+          "byte_identical": true,
+          "actual_sha256": "a890326961b175c62142e24e53f2acdf0ffbf07bb59b754485cdf40063772b84",
+          "reference_sha256": "a890326961b175c62142e24e53f2acdf0ffbf07bb59b754485cdf40063772b84"
+        },
+        "paired_energy_outcomes.csv": {
+          "fields_checked": 34570,
+          "byte_identical": true,
+          "actual_sha256": "9118a6e83962e6ec7faebebba361cd779f609bdadbb5238db5f289bf742c2af1",
+          "reference_sha256": "9118a6e83962e6ec7faebebba361cd779f609bdadbb5238db5f289bf742c2af1"
+        },
+        "metrics.csv": {
+          "fields_checked": 1100,
+          "byte_identical": true,
+          "actual_sha256": "c09f9a713cf3cf3e1d8d1299ef08a8dbda18d48575a801582a9ce427ee73961e",
+          "reference_sha256": "c09f9a713cf3cf3e1d8d1299ef08a8dbda18d48575a801582a9ce427ee73961e"
+        },
+        "seed_metrics.csv": {
+          "fields_checked": 35,
+          "byte_identical": true,
+          "actual_sha256": "29354380f438e171600a2e4f1db08321fad8e551563866b0ad404d58ce43c603",
+          "reference_sha256": "29354380f438e171600a2e4f1db08321fad8e551563866b0ad404d58ce43c603"
+        },
+        "summary.csv": {
+          "fields_checked": 18,
+          "byte_identical": true,
+          "actual_sha256": "17bf483056e2d1b8607a345f22db90e6fd2c3dc3c33f734e80a02f52f26a680c",
+          "reference_sha256": "17bf483056e2d1b8607a345f22db90e6fd2c3dc3c33f734e80a02f52f26a680c"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+          "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/conditioning_20261107/required_gate.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/core/data/parents/O3_N48_pilot.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+          "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/history_before_final.json",
+          "sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/data/history_before_final.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/history.json",
+          "sha256": "2097c7dc04a1a3ce870be2484af49dedb49b0425ad907f0997707c24c30a0d27",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/history.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/assessment_seeds.npz",
+          "sha256": "ab7131e000a3065ffa9497972d40e7438ebf6703bfed36e2d1f8776f2d291d1e",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/data_v2/assessment_seeds.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/edit_pairs.npz",
+          "sha256": "bae52a115f26d43b840c15fdeffd60cca53282f0e362cae5dd9b933b3b1df701",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/data_v2/edit_pairs.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/preparation_receipt.json",
+          "sha256": "91fc1d88f6710f29da375d47dadd04b1fcda4ac26534ea83b395292a3dd5a4f0",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/data_v2/preparation_receipt.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/candidates.npz",
+          "sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/final/candidates.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final_protocol.json",
+          "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/final_protocol.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261106/best_validation_beta_0p1.pt",
+          "sha256": "bc6c72c7723d4461423e1d2ff308ee7a8022a9e8a028817b8f637bfff50b80e4",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/editor_20261106/best_validation_beta_0p1.pt"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261107/best_validation_beta_0p1.pt",
+          "sha256": "f926a43d6f9ab67831db7070f63ffa93db17ad87825c0f4246afcabb1e1cab28",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/editor_20261107/best_validation_beta_0p1.pt"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261108/best_validation_beta_0p1.pt",
+          "sha256": "0ed7d5764ba172a8bcfe98c65934c770a370ecd509a47abf6fffa8668685828a",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/editor_20261108/best_validation_beta_0p1.pt"
+        }
+      ],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    },
+    "aggregate": {
+      "status": "PASS",
+      "tables": {
+        "metrics.csv": {
+          "fields_checked": 4905,
+          "byte_identical": true,
+          "actual_sha256": "f89cad2feb50c321cd4facd88a3289451a1ee708c68b795cc546bd98183e9ad4",
+          "reference_sha256": "f89cad2feb50c321cd4facd88a3289451a1ee708c68b795cc546bd98183e9ad4"
+        },
+        "confusion.csv": {
+          "fields_checked": 9735,
+          "byte_identical": true,
+          "actual_sha256": "82be02393dc00f156e81982092a825a64ed50e40186b10325e240bcd516747b1",
+          "reference_sha256": "82be02393dc00f156e81982092a825a64ed50e40186b10325e240bcd516747b1"
+        },
+        "attempt_outcomes.csv": {
+          "fields_checked": 456225,
+          "byte_identical": true,
+          "actual_sha256": "d0d7a966388ef531b53e6ce139aa990ef1a28c90f6fc8bf9d9a89fe1593ad763",
+          "reference_sha256": "d0d7a966388ef531b53e6ce139aa990ef1a28c90f6fc8bf9d9a89fe1593ad763"
+        },
+        "candidate_measurements.csv": {
+          "fields_checked": 165503,
+          "byte_identical": true,
+          "actual_sha256": "b0c98073f005ed06c647229b782dee59bb950daf48880ef55897cd8451ea3d14",
+          "reference_sha256": "b0c98073f005ed06c647229b782dee59bb950daf48880ef55897cd8451ea3d14"
+        },
+        "budget_curves.csv": {
+          "fields_checked": 276500,
+          "byte_identical": true,
+          "actual_sha256": "24120521891a41207fc6086f17199ca9a12b5e2b005137e8a03d7a5a0edc4e43",
+          "reference_sha256": "24120521891a41207fc6086f17199ca9a12b5e2b005137e8a03d7a5a0edc4e43"
+        },
+        "summary.csv": {
+          "fields_checked": 75,
+          "byte_identical": true,
+          "actual_sha256": "cffc7522391eea985eaa1e1c10ea63efcd6d1aff05691703cee1bdf712743e91",
+          "reference_sha256": "cffc7522391eea985eaa1e1c10ea63efcd6d1aff05691703cee1bdf712743e91"
+        },
+        "seed_metrics.csv": {
+          "fields_checked": 182,
+          "byte_identical": true,
+          "actual_sha256": "88a2c6ff9bf372225919fe2acdd1009331d66af77f0600c7eaa21c43dbe3bbbb",
+          "reference_sha256": "88a2c6ff9bf372225919fe2acdd1009331d66af77f0600c7eaa21c43dbe3bbbb"
+        },
+        "summary_by_request.csv": {
+          "fields_checked": 143,
+          "byte_identical": true,
+          "actual_sha256": "a6ba82a9f353c9645a78df9d6fef968fedba33ea8da8254a3c62ac0c36bf70ad",
+          "reference_sha256": "a6ba82a9f353c9645a78df9d6fef968fedba33ea8da8254a3c62ac0c36bf70ad"
+        },
+        "fixed_q20_low_request.csv": {
+          "fields_checked": 60,
+          "byte_identical": true,
+          "actual_sha256": "50d4b34d9c7ad1e5ea304c800a24ee0f6f4135c57ca0e909797f018c473b1440",
+          "reference_sha256": "50d4b34d9c7ad1e5ea304c800a24ee0f6f4135c57ca0e909797f018c473b1440"
+        },
+        "allocation_realization.csv": {
+          "fields_checked": 4123,
+          "byte_identical": true,
+          "actual_sha256": "2e0a2230c3e04b195076ac38e439d6de09f0451a186385c1eb2f8cc3ca53b419",
+          "reference_sha256": "2e0a2230c3e04b195076ac38e439d6de09f0451a186385c1eb2f8cc3ca53b419"
+        },
+        "allocation_joint_realization.csv": {
+          "fields_checked": 3689,
+          "byte_identical": true,
+          "actual_sha256": "51ddd7df3f918ae840fccc7593dfbf24c04550b422abdf3cc760eb3d079d551a",
+          "reference_sha256": "51ddd7df3f918ae840fccc7593dfbf24c04550b422abdf3cc760eb3d079d551a"
+        },
+        "allocation_joint_summary.csv": {
+          "fields_checked": 555,
+          "byte_identical": true,
+          "actual_sha256": "199d8bb882b7960b7a4011fe53d8e5a40af5250950b6f4769a6d9dd6859b5d2c",
+          "reference_sha256": "199d8bb882b7960b7a4011fe53d8e5a40af5250950b6f4769a6d9dd6859b5d2c"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    },
+    "aggregate_independent": {
+      "status": "PASS",
+      "tables": {
+        "metrics.csv": {
+          "fields_checked": 1308,
+          "byte_identical": true,
+          "actual_sha256": "3ce3bec294bfbd45208aefc93597beabe4c885b9d542f4886944da02b32a1203",
+          "reference_sha256": "3ce3bec294bfbd45208aefc93597beabe4c885b9d542f4886944da02b32a1203"
+        },
+        "confusion.csv": {
+          "fields_checked": 2275,
+          "byte_identical": true,
+          "actual_sha256": "93ba99d022490d08134153483743335d58b93b719ce082a5893c12577ab2ed86",
+          "reference_sha256": "93ba99d022490d08134153483743335d58b93b719ce082a5893c12577ab2ed86"
+        },
+        "seed_metrics.csv": {
+          "fields_checked": 65,
+          "byte_identical": true,
+          "actual_sha256": "6feeedbeb428012bde87f25bce0f4d36f4f758ac72f32d7bae336d05166b5392",
+          "reference_sha256": "6feeedbeb428012bde87f25bce0f4d36f4f758ac72f32d7bae336d05166b5392"
+        },
+        "summary.csv": {
+          "fields_checked": 30,
+          "byte_identical": true,
+          "actual_sha256": "0ac42cb0ba7684818cd968a98c38158c5a32a69d1925147a0814a4f627effcf0",
+          "reference_sha256": "0ac42cb0ba7684818cd968a98c38158c5a32a69d1925147a0814a4f627effcf0"
+        },
+        "original_q20_LOW_request.csv": {
+          "fields_checked": 15,
+          "byte_identical": true,
+          "actual_sha256": "ab4291d624402bb7937b4ec9888fdc446d32fbf82a6a37c70cc4305dc16ee85b",
+          "reference_sha256": "ab4291d624402bb7937b4ec9888fdc446d32fbf82a6a37c70cc4305dc16ee85b"
+        },
+        "moment_membership_and_matrix_checks.csv": {
+          "fields_checked": 280,
+          "byte_identical": true,
+          "actual_sha256": "93f27df3aab566a56dadf0e40b58d5b13565be803f715fb2677b64fa0a9a2a74",
+          "reference_sha256": "93f27df3aab566a56dadf0e40b58d5b13565be803f715fb2677b64fa0a9a2a74"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+          "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/conditioning_20261107/required_gate.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/core/data/parents/O3_N48_pilot.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+          "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/improvement_v1/training_round0.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+          "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/history_before_final.json",
+          "sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/data/history_before_final.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final_generation_manifest.json",
+          "sha256": "19612ab7ace94225725e05fa5949bfe86440b34ca978f3dde39df96b4d2507f5",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/final_generation_manifest.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261106/best_validation_beta_0p1.pt",
+          "sha256": "c18971a891285d85a1fa059d1af55d1c854ee830be8fba3493c371dfdc3b31d4",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/latent_d4_20261106/best_validation_beta_0p1.pt"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261107/best_validation_beta_0p1.pt",
+          "sha256": "ce8f3f76d93ee19e7f7b8b6d5ea86e31dd8f332fae249d2a51bb3d9bfc51b03e",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/latent_d4_20261107/best_validation_beta_0p1.pt"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/latent_d4_20261108/best_validation_beta_0p1.pt",
+          "sha256": "ef74ad87332aebf88d99875cc80c724897218044eaa8968a2b82d7133460ba1d",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/latent_d4_20261108/best_validation_beta_0p1.pt"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+          "sha256": "d69af3b07d8e14c2fa13ca681c76c34a2556fee569206a73a2b7f68d97c506a0",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/collected/editor/registry_snapshot.json"
+        }
+      ],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    },
+    "temperature": {
+      "status": "PASS",
+      "tables": {
+        "attempt_outcomes.csv": {
+          "fields_checked": 26915,
+          "byte_identical": true,
+          "actual_sha256": "e3d68db7d9831d3dfc84a449134675f2b05c389ead1506fb9f1b502d83463079",
+          "reference_sha256": "e3d68db7d9831d3dfc84a449134675f2b05c389ead1506fb9f1b502d83463079"
+        },
+        "schedule_summary.csv": {
+          "fields_checked": 350,
+          "byte_identical": true,
+          "actual_sha256": "6401b782609042659f15578288dfb1fb04bbdc54d5b20df563c2ccf917ea20cf",
+          "reference_sha256": "6401b782609042659f15578288dfb1fb04bbdc54d5b20df563c2ccf917ea20cf"
+        },
+        "requested_vs_measured.csv": {
+          "fields_checked": 1519,
+          "byte_identical": true,
+          "actual_sha256": "dea7f8dee57587aa0f41be9904320efc7ebc4aa4f95c59d34affb818137ed988",
+          "reference_sha256": "dea7f8dee57587aa0f41be9904320efc7ebc4aa4f95c59d34affb818137ed988"
+        },
+        "temperature_identity.csv": {
+          "fields_checked": 28,
+          "byte_identical": true,
+          "actual_sha256": "18911b1585b92bda58dda9415eac37e6052b2d65120423c9781dde8d3eef6c8b",
+          "reference_sha256": "18911b1585b92bda58dda9415eac37e6052b2d65120423c9781dde8d3eef6c8b"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/architecture_selection.json",
+          "sha256": "aa36153757a852092fb0a0cfee82d54a9aa7c2d48e43dbf9b17c47380f4b552d",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/conditioning_20261107/architecture_selection.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+          "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/conditioning_20261107/required_gate.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/core/data/parents/O3_N48_pilot.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/extras/learning_all_parents/learning_Hu_O3_12_uma.npz",
+          "sha256": "00e79fca72a9453c934653f8d952d23522c6b09c28842e9d3f934b52df5dc00c",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/extras/learning_all_parents/learning_Hu_O3_12_uma.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz",
+          "sha256": "3f2cb6acd3fa6c07d22109cce01f9e1e44aa815953f9e7b8f7c8de336999b4ce",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/extras/learning_all_parents/parents/Hu_O3_12.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+          "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/reference.npz",
+          "sha256": "bb39970efd9601fcf1be0daffbd64f60fc690aab28e2d81082800d00eb7786f4",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/overnight_20261107/data/reference.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/history.json",
+          "sha256": "a5f05ee66266d15d86eb83d9108285b7bf85ddd74c5c4b00868a8bbe39179dc5",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/reports/conditioning_20261107/temperature_followup/history.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/temperature_followup/registered_history.json",
+          "sha256": "63f588a0bac7dd41bf35a2809bb810864db0fa6bb7277a67d6865318232adb56",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/reports/conditioning_20261107/temperature_followup/registered_history.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/overnight_20261107/reference_diagnostics/receipt.json",
+          "sha256": "dc7a96182b1a16152ed6f0b5bac9cd36ccb9df7679b4543524549eab4432ce03",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/reports/overnight_20261107/reference_diagnostics/receipt.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/history_before_final.json",
+          "sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/data/history_before_final.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/candidates.npz",
+          "sha256": "193782e6646dc97604b6b165b369b9a6ba9380d943e7479b237190dc10fd1757",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/candidates.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/candidates.npz",
+          "sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/final/candidates.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final_protocol.json",
+          "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/final_protocol.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt",
+          "sha256": "7cb07df1250b3d51e017a60ac3aedbc95b241ce4e2083dc64dd399a4cb1048a6",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/fits/graph_context_20261106/best_validation_beta_0p1.pt"
+        }
+      ],
+      "unresolved_historical_metadata": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+          "sha256": "071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c",
+          "scope": "Unresolved historical metadata only; runtime file access forbidden"
+        }
+      ],
+      "backend_SDKs_imported": []
+    },
+    "editor_low": {
+      "status": "PASS",
+      "tables": {
+        "low_request_curves.csv": {
+          "fields_checked": 20745,
+          "byte_identical": true,
+          "actual_sha256": "7bc47cf4be8018d208d8c8cdf14bf595b0a71a0ea6cd930fa32312d967ed5356",
+          "reference_sha256": "7bc47cf4be8018d208d8c8cdf14bf595b0a71a0ea6cd930fa32312d967ed5356"
+        },
+        "low_request_curve_means.csv": {
+          "fields_checked": 13806,
+          "byte_identical": true,
+          "actual_sha256": "0beded828ad4913275fde37363e113de86da685753ca7e0ccb5637dc6b933e79",
+          "reference_sha256": "0beded828ad4913275fde37363e113de86da685753ca7e0ccb5637dc6b933e79"
+        },
+        "paired_request_energy.csv": {
+          "fields_checked": 34570,
+          "byte_identical": true,
+          "actual_sha256": "e3a936d7eebf3353366604c42ba276d63679e31329e90cb0e9fde023e7148348",
+          "reference_sha256": "e3a936d7eebf3353366604c42ba276d63679e31329e90cb0e9fde023e7148348"
+        },
+        "request_energy_summary.csv": {
+          "fields_checked": 539,
+          "byte_identical": true,
+          "actual_sha256": "4d1598c3c664ec0d61ed1363d9927f595e1003e272a4c7b136303aac94a1ada0",
+          "reference_sha256": "4d1598c3c664ec0d61ed1363d9927f595e1003e272a4c7b136303aac94a1ada0"
+        },
+        "terminal_best_novel_low_children.csv": {
+          "fields_checked": 130,
+          "byte_identical": true,
+          "actual_sha256": "783209da04cecfcce6dbc419de81abf01e88014eb06307b167020bfd09ae5d68",
+          "reference_sha256": "783209da04cecfcce6dbc419de81abf01e88014eb06307b167020bfd09ae5d68"
+        },
+        "terminal_minima_composition_means.csv": {
+          "fields_checked": 44,
+          "byte_identical": true,
+          "actual_sha256": "eead05ac0d1c8607e0a62260c9cab67bc2d6ead09d2190e9a23e475265c3de62",
+          "reference_sha256": "eead05ac0d1c8607e0a62260c9cab67bc2d6ead09d2190e9a23e475265c3de62"
+        },
+        "query_accounting.csv": {
+          "fields_checked": 99,
+          "byte_identical": true,
+          "actual_sha256": "9656a29fe7fe305f05c82249de075870e4ecf3f7a5c7fb0568f56841e28365f7",
+          "reference_sha256": "9656a29fe7fe305f05c82249de075870e4ecf3f7a5c7fb0568f56841e28365f7"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/core/data/parents/O3_N48_pilot.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/reports/generation_thresholds.csv",
+          "sha256": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/current/reports/generation_thresholds.csv"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+          "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/parent_graph/periodic_graph.json",
+          "sha256": "cea3a1ef4151432da2b62cc6742c341f26de68a8b564e11479580a97469cc46e",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/reports/conditioning_20261107/parent_graph/periodic_graph.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/collected/editor/uma.npz",
+          "sha256": "bf338b713ba5735cf27ae5770ec9641401f1bbc42e4da604625ed6269cbd1a10",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/collected/editor/uma.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/training_keys.json",
+          "sha256": "33b6f39c02b96bf8fa177718f799ee0e3d7eb0f25c0845e10e2998cdb73be959",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/data/training_keys.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/attempts.csv",
+          "sha256": "35579f3f3f4867cb8a8868cbb2d7ff01ef92e84543670b92fe239fed7f3fe652",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/attempts.csv"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/protocol.json",
+          "sha256": "1f8218fd12b739076e825874fce042ecbf4d8ebad764ba2174d337bd29fa4a4a",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/protocol.json"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/raw_attempts.npz",
+          "sha256": "96700c0d036bb5b0af5fba7ec6fc31d8d0ed61bc98d7fd7848d429f81e68bcc4",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/raw_attempts.npz"
+        },
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/receipt.json",
+          "sha256": "d1504d4ce47fba2ddbe41087d9b16e7030620f7e570d6f2068ef2b8ff7e96699",
+          "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/receipt.json"
+        }
+      ],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    },
+    "editor_posthoc": {
+      "status": "PASS",
+      "tables": {
+        "requested_bin_energy_summary.csv": {
+          "fields_checked": 48,
+          "byte_identical": true,
+          "actual_sha256": "58f0684e4a0ec27d871fea0e9ecfcefd5cce59a55191272b8dee2c5dd19f763b",
+          "reference_sha256": "58f0684e4a0ec27d871fea0e9ecfcefd5cce59a55191272b8dee2c5dd19f763b"
+        },
+        "requested_bin_energy_by_fit.csv": {
+          "fields_checked": 130,
+          "byte_identical": true,
+          "actual_sha256": "365aea0d2774726637ed981eb2b64c01aea4697014428f2bf3249609aaf87dd4",
+          "reference_sha256": "365aea0d2774726637ed981eb2b64c01aea4697014428f2bf3249609aaf87dd4"
+        },
+        "requested_bin_energy_cells.csv": {
+          "fields_checked": 392,
+          "byte_identical": true,
+          "actual_sha256": "385703e75982726230617745b0562bd7bd79acf8d5e8fccc10aa51d74ad61545",
+          "reference_sha256": "385703e75982726230617745b0562bd7bd79acf8d5e8fccc10aa51d74ad61545"
+        },
+        "LOW_request_paired_energy_cells.csv": {
+          "fields_checked": 140,
+          "byte_identical": true,
+          "actual_sha256": "19f56dbb5b24f9581d912b1807e5492c9b26298e98b1ffd71b6525ac1bbc46d1",
+          "reference_sha256": "19f56dbb5b24f9581d912b1807e5492c9b26298e98b1ffd71b6525ac1bbc46d1"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    },
+    "neb": {
+      "status": "PASS",
+      "tables": {
+        "outcomes.csv": {
+          "fields_checked": 68,
+          "byte_identical": true,
+          "actual_sha256": "33c72f4bfad499c79c00d5fe8467c90d622b90c9489416b6ce5e18ef00d83c6b",
+          "reference_sha256": "33c72f4bfad499c79c00d5fe8467c90d622b90c9489416b6ce5e18ef00d83c6b"
+        }
+      },
+      "new_MLIP_calls": 0,
+      "new_training_updates": 0,
+      "parsed_path_overrides": {},
+      "versioned_path_overrides": [],
+      "unresolved_historical_metadata": [],
+      "backend_SDKs_imported": []
+    }
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "raw_EFS_scope": "Archived curation hash/stat inventory and task receipts; raw arrays remain at HPC",
+  "tolerance": "Exact integer/categorical/order; eight binary64 epsilon-scaled units for changed float text only",
+  "verified_runtime_source_hashes": {
+    "reports/conditioning_20261107/audit_execution.py": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c",
+    "reports/conditioning_20261107/execution_preclosure_auditor.py": "b77d296d825a4af3f39d6c033153a666010a2b11d03ef85f3aa80bc968a5577e",
+    "reports/conditioning_20261107/extension_packet/replay_extensions_v1_failed.py": "f077ce16598c0619407744c6af48dd8e15714fe519b5cd4a44f03a933026d947",
+    "reports/conditioning_20261107/neb_pilot/check_saved_results.py": "bfb016f6968eda1bd2e3f56d5b388db210f74f9c27838fc389a852efb92750da",
+    "scripts/conditioning_20261107/aggregate_prior_ablation.py": "7d756929f210c72a700bd3f2feba1c174a62c4f8563b1eb4269b2389635b80f2",
+    "scripts/conditioning_20261107/check_aggregate_prior.py": "fcb7b4a48fd3b76250f455a922016b357f348cbba0641e878d775bbb5b6ff32e",
+    "scripts/conditioning_20261107/check_edit_results.py": "70b31cc244d5f05306431ddfc521b043a02f819c864baa9a84d446c12d0ad19a",
+    "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py": "5e2832d08f079ffed8a78ea855f9e8535506733864b5ffa9b66eb2bef0ff99b7",
+    "scripts/conditioning_20261107/evaluate_edit_comparison.py": "d863c82e50bf9826245cf3b8aea6f0d5169618d1a30292b38a39d73544095b68",
+    "scripts/conditioning_20261107/generate_edit_comparison.py": "39b26136f94d4b86f8c3b2f8466b65e973dedee9c03a4fca3fa94bccdcb26749",
+    "scripts/conditioning_20261107/neb_allocation.py": "943fde8e366ab280bf2e289765130c3f36854679320a938f8ec723a2f4cc0d3e",
+    "scripts/conditioning_20261107/neb_common.py": "a0384adab93e0ed55f05728fb0e671bc9e7653c5e4c8e2b062f8add05aee0b1e",
+    "scripts/conditioning_20261107/neb_mace_profile.py": "89d0216f0d5f55ed6803efb07134deb507b99004d42671c6ec2c528ec1ab6047",
+    "scripts/conditioning_20261107/neb_prepare.py": "c41026d12926f6f1e21bcb719610b83bcbce36fb79820e414051b16f4d2ff2f4",
+    "scripts/conditioning_20261107/neb_run.py": "5dea993b4a2f6cc3d4d48233df7dc391639277a1ecb7633839db61bf933838c2",
+    "scripts/conditioning_20261107/neb_summarize.py": "c7bb428262297f216537f127a75c493be6d9693612357c6832c703435c8f2868",
+    "scripts/conditioning_20261107/package_extensions.py": "7f1f149a2ebdbad3593f1414104bc7ddaba85b1968e49ce4ed12ae68edf28e59",
+    "scripts/conditioning_20261107/prepare_edit_data.py": "0c9e9f4f15edfee92e721d42b7600f0bfffeb5d774c676c4f66d210430773a2a",
+    "scripts/conditioning_20261107/replay_extensions.py": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee",
+    "scripts/conditioning_20261107/run_edit_fits.py": "3b57864a95fc4339b63c9b4e19df7da7dc6ce8ff44f39740f8aa27a9d34bb99f",
+    "scripts/conditioning_20261107/summarize_editor.py": "d0abf3e88ccbb25724b862ac9e84adef5d881ef5a6e94882dfb684d2242803bc",
+    "scripts/conditioning_20261107/temperature_followup.py": "faca96e527a92a3d40aca4da5a4bb318b86fb8c53a13034704d6d6577ece307c",
+    "src/cathode_cvae/__init__.py": "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402",
+    "src/cathode_cvae/acquisition.py": "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad",
+    "src/cathode_cvae/acquisition_generate.py": "07d44571ca2617e99dccd387adbff573787b4c04a7fc8c77e87e42678d84054b",
+    "src/cathode_cvae/artifact_fetch.py": "97af7db046be632929d8b61ee843212f9614053af934071a381a7b603a3ad154",
+    "src/cathode_cvae/cli.py": "d97a0cb862677703982a748b256a977c991232e48dbbf9cdc02edf6391662029",
+    "src/cathode_cvae/condition_evaluation.py": "6ebf82854080ee5406fe83baba51848ff18d56967e592ebb6ee5e82106711634",
+    "src/cathode_cvae/conditions.py": "777a4872c130a8b1d3e30af083c8d83e81bcb019f947e37541717f303328bd14",
+    "src/cathode_cvae/data.py": "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101",
+    "src/cathode_cvae/descriptor.py": "2ef6946e251ff16cd653e9eee534e143df2ee25ba2f891b134837e9c1d71c234",
+    "src/cathode_cvae/evaluation.py": "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face",
+    "src/cathode_cvae/geometry_evaluation.py": "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9",
+    "src/cathode_cvae/graph.py": "b8cd856d9444644b3fe6f106d5ea00da93c81c03331aa5912d0098357facbc7d",
+    "src/cathode_cvae/learning/__init__.py": "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18",
+    "src/cathode_cvae/learning/edit_model.py": "b6f7802ccf6b5ef456adb53df10249cc6276ebc5bdcb03ee74c308cb584130c3",
+    "src/cathode_cvae/learning/generate_edit.py": "62931ba0856468c4cab4417b4ea4aec266daf55cf2dd240a2f30c7c3d0a82bc1",
+    "src/cathode_cvae/learning/generate_geometry.py": "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a",
+    "src/cathode_cvae/learning/generate_mask.py": "05ca03006a67b6c6dbf268a42f63c01899ad97bc6fe4d2167cbee13ea6c60031",
+    "src/cathode_cvae/learning/geometry_model.py": "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e",
+    "src/cathode_cvae/learning/graph_model.py": "c83aba743e3f45b538b567e969b2d6e7941d61fe7ef14447ea96ba516eac8440",
+    "src/cathode_cvae/learning/models.py": "ec5374be60a1d3f62c4eca2447103f52352782182e739f11498a9a778eeccd89",
+    "src/cathode_cvae/learning/runtime.py": "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9",
+    "src/cathode_cvae/learning/train_edit.py": "50556a57271f7ca686c00690698f8b21bf254fac0d2984d000640f138312ff31",
+    "src/cathode_cvae/learning/train_geometry.py": "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae",
+    "src/cathode_cvae/learning/train_mask.py": "90bb5d6ff9e2aa7cc5b8d7925c5d1b79cc0683a562a61a4bbbac9df34a71c06f",
+    "src/cathode_cvae/mlip/__init__.py": "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968",
+    "src/cathode_cvae/mlip/calculators.py": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "src/cathode_cvae/mlip/checkpoints.py": "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f",
+    "src/cathode_cvae/mlip/cli.py": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+    "src/cathode_cvae/mlip/registry.py": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+    "src/cathode_cvae/parent_spec.py": "1f337e9f383862f389834d9521428e2158cadbb20d66d08d481a9341dd633f30",
+    "src/cathode_cvae/pool_scoring.py": "03eaf1c036ad22cdab687fbd25aeec64883fa1993549ed2c8f8a31cacfb84b13",
+    "src/cathode_cvae/runtime.py": "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7",
+    "tests/test_execution_audit.py": "f2481729f92ad1ba49038b821b453db29aedf502443281be29c9787824b1cabc"
+  }
+}

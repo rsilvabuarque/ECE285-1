@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "tables": {
+    "metrics.csv": {
+      "fields_checked": 4905,
+      "byte_identical": true,
+      "actual_sha256": "f89cad2feb50c321cd4facd88a3289451a1ee708c68b795cc546bd98183e9ad4",
+      "reference_sha256": "f89cad2feb50c321cd4facd88a3289451a1ee708c68b795cc546bd98183e9ad4"
+    },
+    "confusion.csv": {
+      "fields_checked": 9735,
+      "byte_identical": true,
+      "actual_sha256": "82be02393dc00f156e81982092a825a64ed50e40186b10325e240bcd516747b1",
+      "reference_sha256": "82be02393dc00f156e81982092a825a64ed50e40186b10325e240bcd516747b1"
+    },
+    "attempt_outcomes.csv": {
+      "fields_checked": 456225,
+      "byte_identical": true,
+      "actual_sha256": "d0d7a966388ef531b53e6ce139aa990ef1a28c90f6fc8bf9d9a89fe1593ad763",
+      "reference_sha256": "d0d7a966388ef531b53e6ce139aa990ef1a28c90f6fc8bf9d9a89fe1593ad763"
+    },
+    "candidate_measurements.csv": {
+      "fields_checked": 165503,
+      "byte_identical": true,
+      "actual_sha256": "b0c98073f005ed06c647229b782dee59bb950daf48880ef55897cd8451ea3d14",
+      "reference_sha256": "b0c98073f005ed06c647229b782dee59bb950daf48880ef55897cd8451ea3d14"
+    },
+    "budget_curves.csv": {
+      "fields_checked": 276500,
+      "byte_identical": true,
+      "actual_sha256": "24120521891a41207fc6086f17199ca9a12b5e2b005137e8a03d7a5a0edc4e43",
+      "reference_sha256": "24120521891a41207fc6086f17199ca9a12b5e2b005137e8a03d7a5a0edc4e43"
+    },
+    "summary.csv": {
+      "fields_checked": 75,
+      "byte_identical": true,
+      "actual_sha256": "cffc7522391eea985eaa1e1c10ea63efcd6d1aff05691703cee1bdf712743e91",
+      "reference_sha256": "cffc7522391eea985eaa1e1c10ea63efcd6d1aff05691703cee1bdf712743e91"
+    },
+    "seed_metrics.csv": {
+      "fields_checked": 182,
+      "byte_identical": true,
+      "actual_sha256": "88a2c6ff9bf372225919fe2acdd1009331d66af77f0600c7eaa21c43dbe3bbbb",
+      "reference_sha256": "88a2c6ff9bf372225919fe2acdd1009331d66af77f0600c7eaa21c43dbe3bbbb"
+    },
+    "summary_by_request.csv": {
+      "fields_checked": 143,
+      "byte_identical": true,
+      "actual_sha256": "a6ba82a9f353c9645a78df9d6fef968fedba33ea8da8254a3c62ac0c36bf70ad",
+      "reference_sha256": "a6ba82a9f353c9645a78df9d6fef968fedba33ea8da8254a3c62ac0c36bf70ad"
+    },
+    "fixed_q20_low_request.csv": {
+      "fields_checked": 60,
+      "byte_identical": true,
+      "actual_sha256": "50d4b34d9c7ad1e5ea304c800a24ee0f6f4135c57ca0e909797f018c473b1440",
+      "reference_sha256": "50d4b34d9c7ad1e5ea304c800a24ee0f6f4135c57ca0e909797f018c473b1440"
+    },
+    "allocation_realization.csv": {
+      "fields_checked": 4123,
+      "byte_identical": true,
+      "actual_sha256": "2e0a2230c3e04b195076ac38e439d6de09f0451a186385c1eb2f8cc3ca53b419",
+      "reference_sha256": "2e0a2230c3e04b195076ac38e439d6de09f0451a186385c1eb2f8cc3ca53b419"
+    },
+    "allocation_joint_realization.csv": {
+      "fields_checked": 3689,
+      "byte_identical": true,
+      "actual_sha256": "51ddd7df3f918ae840fccc7593dfbf24c04550b422abdf3cc760eb3d079d551a",
+      "reference_sha256": "51ddd7df3f918ae840fccc7593dfbf24c04550b422abdf3cc760eb3d079d551a"
+    },
+    "allocation_joint_summary.csv": {
+      "fields_checked": 555,
+      "byte_identical": true,
+      "actual_sha256": "199d8bb882b7960b7a4011fe53d8e5a40af5250950b6f4769a6d9dd6859b5d2c",
+      "reference_sha256": "199d8bb882b7960b7a4011fe53d8e5a40af5250950b6f4769a6d9dd6859b5d2c"
+    }
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "parsed_path_overrides": {},
+  "versioned_path_overrides": [],
+  "backend_SDKs_imported": []
+}

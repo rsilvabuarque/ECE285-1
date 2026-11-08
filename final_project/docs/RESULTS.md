@@ -65,6 +65,50 @@ The strong conditional response and nearly unused latent pathway described
 below concern the same trained checkpoints. They remain essential qualifications
 of the positive final yield: the benefit of the variational channel is unresolved.
 
+## Optional assessments after the required gate
+
+These use new declared histories and do not replace the frozen core comparison.
+The [optional supplement](OPTIONAL_EXTENSIONS_20261107.md) provides methods,
+all nine terminal-minimum comparisons, costs, figures and exact commands.
+
+| Optional comparison | Main observed outcome | Separate limitation |
+| --- | --- | --- |
+| Same-seed learned editor versus mutation | Balanced yield 59.375% versus 57.234%; original-q20 low 50.347% versus 50.521% | Low-request paired mean favors mutation by 0.07656 meV/atom; learned best novel minimum is lower in 7/9 cases at 128 attempts, a secondary posthoc observable |
+| Dense-D4 posthoc Gaussian versus standard prior | UMA balanced 34.259% versus 31.047%; MACE 34.028% versus 30.787% | Low-request q20 yields fall: UMA 23.958/30.122%, MACE 26.042/32.552%; no recommendation change |
+| Temperature allocation follow-up | 24 schedules/768 attempts/102 distinct geometries; allocations and paired realizations identical across four temperatures | Static reference ESS 1.850–6.544; no resolved temperature-dependent generation or thermodynamic calibration |
+| Two defined-hop UMA NEB paths | Numerically converged coarse forward spans 0.638/0.192 eV per hop | Event1 seven-image/tighter-force refinement gives 0.189 eV; coupled sensitivity is −0.450 eV, not a validated transport barrier |
+
+The editor uses matching raw seed identities, exact 1/2/3-swap budgets and actual
+uniform arrays, with all 6,912 attempts retained. Its minima comparison uses the
+best current-SCF seed from each case's supplied paired seed set, not the global
+minimum of all training/history configurations. The three composition-mean
+best-child advantages over mutation are −0.572/−0.229/−0.428 meV/atom. This tail
+behavior coexists with tied low-quintile yield and less favorable paired average;
+neither a blanket positive nor a blanket negative energy conclusion is supported.
+The independent [editor audit](../reports/conditioning_20261107/independent_editor_metrics/receipt.json)
+and [low-request posthoc](../reports/conditioning_20261107/editor_low_request_v2/receipt.json)
+bind those separate observables.
+
+The Gaussian proposal study computes TRAIN-only condition-specific posterior
+moments after fitting; it performs no neural optimization. It is not a trained
+conditional-prior CVAE or exact aggregate-posterior mixture. Its paired streams
+share base epsilon and AR uniforms, while the actual latent vectors differ by
+condition and proposal law. The new known-history boundary is 312,715 orbits.
+The [independent prior audit](../reports/conditioning_20261107/independent_aggregate_prior/receipt.json)
+checks actual transformed latents and TRAIN membership/matrix identities;
+per-row encoder moments were not saved for independent re-encoding. Separate
+matched UMA/MACE schemas and all 6,912 attempts per teacher are retained.
+
+The defined-hop NEB pilot is a separate MLIP potential-energy label-feasibility
+study. Its terminal receipts, convergence/image checks and physical limits are
+reported separately; teacher agreement on occupation energies does not validate
+saddle-point forces or DFT barriers.
+The MACE check evaluates seven single points on event1's **five-interior** UMA
+band and does no MACE optimization. Its 0.640 eV forward profile span does not
+validate the refined seven-image path. See the
+[full profiles](../reports/conditioning_20261107/neb_pilot/results/profiles.pdf)
+and the supplement's residual/units explanation.
+
 ## Controlled-study development evidence (new goal)
 
 The current [frozen protocol](../artifacts/conditioning_20261107/protocol.json)

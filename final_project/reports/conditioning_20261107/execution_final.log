@@ -1,0 +1,22 @@
+{
+  "status": "PASS_EXECUTION_ACCOUNTING_FINAL",
+  "allocations": {
+    "accounting_sha256": "4e6eb59249204e0c3683df5d71d76eb2763c01c988bdbdaa1cf1e14f73285709",
+    "timezone_assumption": "UTC explicitly required for export",
+    "accounting_snapshot_UTC": "2026-11-08T07:13:07.410815+00:00",
+    "allocation_count": 7,
+    "ignored_child_or_out_of_scope_rows": [],
+    "listed_all_allocations_terminal": true,
+    "GPU_device_hours": 41.70388888888889,
+    "four_GPU_equivalent_node_hours": 10.425972222222223,
+    "physical_node_hours": 13.619444444444444,
+    "maximum_concurrently_allocated_GPUs": 20,
+    "findings": [],
+    "timestamp_check": "Bookkeeping tolerances:2s for integer-second Start/End versus ElapsedRaw;120s for a running row versus export snapshot. Findings require review, not a changed scientific tolerance.",
+    "scope": "Allocated wall time includes startup, idle, failed work and CPU analysis; no child-step double counting; no monetary/credit estimate"
+  },
+  "findings": [],
+  "changed_files": [],
+  "elapsed_seconds": 67.63065218704287,
+  "output": "reports/conditioning_20261107/execution_final.json"
+}

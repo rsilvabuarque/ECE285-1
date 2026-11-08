@@ -1,0 +1,8 @@
+{
+  "status": "PREPARED_NO_MLIP_EVALUATION",
+  "events": [
+    "basin_1_repeat2",
+    "basin_2_repeat1"
+  ],
+  "actual_MLIP_calls": 0
+}

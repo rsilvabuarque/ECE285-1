@@ -1,0 +1,99 @@
+{
+  "status": "READY_FOR_ROOT_PUBLICATION",
+  "handoff_UTC": "2026-11-08T07:13:58.909139+00:00",
+  "archive": {
+    "path": "runs/conditioning_20261107/ECE285_conditioning_20261108_extensions_v2.zip",
+    "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_extensions_v2.zip",
+    "sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+    "bytes": 84271079,
+    "files": 713,
+    "extract_to": "artifacts/conditioning_20261107/extensions_v2",
+    "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+    "manifest_sha256": "775ef0b56d411b32f6fa16a5e83e20781f734335f24eb8934d840a11e5199358",
+    "source_packet": "Separate optional extension; required archive/gate unchanged"
+  },
+  "core_archive": {
+    "path": "runs/conditioning_20261107/ECE285_conditioning_20261108_required.zip",
+    "sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+    "modified": false
+  },
+  "required_gate": {
+    "path": "artifacts/conditioning_20261107/required_gate.json",
+    "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+    "modified": false
+  },
+  "final_report": {
+    "path": "reports/conditioning_20261107/final_report_snapshot/main.pdf",
+    "sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb"
+  },
+  "verification": {
+    "full_tests": "reports/conditioning_20261107/final_tests_v2.json",
+    "passed_tests": 182,
+    "fresh_execution": "reports/conditioning_20261107/extension_packet/v2_attempt2/fresh_replay_v2_execution.json",
+    "fresh_receipt": "reports/conditioning_20261107/extension_packet/v2_attempt2/fresh_replay_v2_receipt.json",
+    "tables": 39,
+    "fields": 1385825,
+    "all_CSV_byte_identical": true,
+    "seconds": 71.55841813189909,
+    "backend_SDK_distributions": {
+      "fairchem-core": null,
+      "mace-torch": null,
+      "matgl": null,
+      "chgnet": null,
+      "sevenn": null
+    },
+    "new_MLIP_calls": 0,
+    "new_training_updates": 0,
+    "unresolved_metadata": {
+      "temperature": [
+        {
+          "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+          "sha256": "071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c",
+          "scope": "Unresolved historical metadata only; runtime file access forbidden"
+        }
+      ]
+    }
+  },
+  "commands": {
+    "package": "srun --jobid=60990329 --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONPATH=/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python scripts/conditioning_20261107/package_extensions.py --root /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project --core-archive /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/ECE285_conditioning_20261108_required.zip --output-dir /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/extensions_v2 --archive /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/ECE285_conditioning_20261108_extensions_v2.zip --neb-run /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb --neb-summary /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/neb_pilot/results --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/audit_execution.py --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/tests/test_execution_audit.py --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/auditor_repair.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/final_tests.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/final_pytest.log --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/checkpoint_binding_tests.log --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure_auditor.py --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure_fits.csv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure_oracle_tasks.csv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure_workers.csv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure_allocations.csv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/allocation_preclosure.tsv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/COMMANDS.md --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/neb_pilot/check_saved_results.py --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/neb_pilot/neb_allocation_UTC.tsv --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/verification_after_curation.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/final_tests_after_curation.log --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/report_root_spot_check.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v1_failure.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/fresh_replay_execution.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/temperature_v1_failed.log --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/replay_extensions_v1_failed.py --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v1_partial_replay/aggregate_independent_replay.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v1_partial_replay/aggregate_replay.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v1_partial_replay/editor_replay.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/final_tests_v2.json --include-file /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/final_pytest_v2.log",
+    "fresh_launcher": [
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+      "reports/conditioning_20261107/extension_packet/run_fresh_replay_v2.py",
+      "--root",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project",
+      "--fresh-dir",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2",
+      "--receipt-dir",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v2_attempt2"
+    ],
+    "actual_cached_replay": [
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/replay_extensions.py",
+      "--core-archive",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/core.zip",
+      "--extensions-archive",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/extensions.zip",
+      "--download-ext",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/download_ext.json",
+      "--output-dir",
+      "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results"
+    ]
+  },
+  "source_sha256": {
+    "scripts/conditioning_20261107/package_extensions.py": "7f1f149a2ebdbad3593f1414104bc7ddaba85b1968e49ce4ed12ae68edf28e59",
+    "scripts/conditioning_20261107/replay_extensions.py": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee",
+    "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py": "5e2832d08f079ffed8a78ea855f9e8535506733864b5ffa9b66eb2bef0ff99b7",
+    "tests/test_extensions_packet.py": "6c56fc8b2361f16bb451c048595e5778fd6044579ccd74ebc312484f42886a18",
+    "tests/test_checkpoint_alias_audit.py": "2bb3a3ef22fc560ff8fa5dcae709846a2b6a06fbc719f376795a9600f3014c09"
+  },
+  "preserved_failures": {
+    "v1_archive": "runs/conditioning_20261107/ECE285_conditioning_20261108_extensions.zip",
+    "v1_sha256": "c1e5384dad5a440514f59a9370c71ee651d9cccb8d64cd1a9feabd511f743dc5",
+    "v1_context": "reports/conditioning_20261107/extension_packet/v1_failure.json",
+    "v2_outer_log_collision": "reports/conditioning_20261107/extension_packet/fresh_replay_v2_execution.json",
+    "scientific_records_changed": false
+  },
+  "publication_owner": "root; child made no commits, pushes or uploads",
+  "closing_receipts": "Use root stdlib finalizer and separate receipt index after allocation release. --attach-final-receipts remains allocation-guarded; do not invoke it on login after release.",
+  "remaining": "Root publication and closing accounting/completion receipts only; no additional model calls, fits, heavy checks or source edits."
+}

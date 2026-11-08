@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ROOT_VISUAL_SPOT_CHECK",
+  "UTC": "2026-11-08T06:37:03.549259+00:00",
+  "pdf_sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+  "pages_seen": [
+    1,
+    5
+  ],
+  "render_directory": "runs/conditioning_20261107/report_final_preview",
+  "observations": "Legible text, complete tables, intact physical limitations/NEB refinement caveat, no clipping on the two inspected pages",
+  "scope": "Root spot-check; separate report-agent receipt covers all six pages"
+}

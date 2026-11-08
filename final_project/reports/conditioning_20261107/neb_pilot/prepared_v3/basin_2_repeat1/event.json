@@ -1,0 +1,145 @@
+{
+  "event_id": "basin_2_repeat1",
+  "source_run": "basin_2/repeat1",
+  "migrating_atom_index": 59,
+  "original_parent_atom_index": 59,
+  "Li_ordinal": 11,
+  "source_parent_Li_site": 11,
+  "destination_parent_Li_site": 23,
+  "periodic_hop_image": [
+    1,
+    0,
+    0
+  ],
+  "ideal_hop_vector_A": [
+    1.4056284883992518,
+    2.4346199584737436,
+    0.0
+  ],
+  "ideal_hop_length_A": 2.8112569767985027,
+  "observed_host_aligned_displacement_A": [
+    0.8397870567151404,
+    2.5602229031769452,
+    0.39040337965770444
+  ],
+  "expected_initial_assignment": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16,
+    17,
+    18,
+    19,
+    20,
+    24,
+    25,
+    26,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    36,
+    38,
+    39,
+    42,
+    44,
+    46,
+    47
+  ],
+  "continuous_image_audit": {
+    "displacement_A": [
+      0.8397870567151404,
+      2.5602229031769452,
+      0.39040337965770444
+    ],
+    "frames": 172,
+    "maximum_migrating_frame_step_A": 0.05860041341500545,
+    "maximum_all_atom_raw_vs_MIC_increment_difference_A": 1.3877787807814457e-17,
+    "representation_agreement_tolerance_A": 1e-08,
+    "rule": "Sum of migrating-atom MIC increments after continuous mean host translation; every saved frame retained; no endpoint MIC"
+  },
+  "continuous_segment_positions_sha256": "28dd90bfc8713b49b13e829cc4a370c1575b215b4bb84c6dd46b9dd15492ee0a",
+  "n_Li": 36,
+  "n_atoms": 180,
+  "composition": "Co48Li36O96",
+  "expected_final_assignment": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    23,
+    12,
+    13,
+    16,
+    17,
+    18,
+    19,
+    20,
+    24,
+    25,
+    26,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    36,
+    38,
+    39,
+    42,
+    44,
+    46,
+    47
+  ],
+  "first_assignment_change_ps": 16.882,
+  "persistent_destination_start_ps": 16.924,
+  "transit_assignment": 40,
+  "frame_times_ps": {
+    "before_200fs": 16.682,
+    "first_changed_assignment": 16.882,
+    "settled_after_100fs": 17.024
+  },
+  "frame_source_indices": {
+    "before_200fs": 8341,
+    "first_changed_assignment": 8441,
+    "settled_after_100fs": 8512
+  },
+  "atom_order": "Original saved MD atom order and continuous unwrapped coordinates; no independent canonicalization or wrapping",
+  "endpoint_inputs": {
+    "initial": {
+      "path": "basin_2_repeat1/initial.npz",
+      "sha256": "4c8d32ad439693f918bda4d46e6f0fb259e58af656965d69d11518e4730a4b29"
+    },
+    "transit": {
+      "path": "basin_2_repeat1/transit.npz",
+      "sha256": "7e50092112bd1e8268b857a98ee43311c97495c3866c91bce8fe5a935a8d188e"
+    },
+    "final": {
+      "path": "basin_2_repeat1/final.npz",
+      "sha256": "a29149cd2df1293948b60ebe10e3a4640222181bacbbd3dffb5f0504447b949a"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "status": "PEER_REVIEW_ACCEPTED_NARROW_BINDING_REPAIR",
+  "reviewed_UTC": "2026-11-08T06:35:15.731236+00:00",
+  "reviewer": "next_graph_parent",
+  "scope": "Independent read-only review of actual auditor helper, exact alias-audit implementation, all3 proof rows, and8-test log; no repeated tensor audit or inference",
+  "source_bindings": {
+    "auditor": {
+      "path": "reports/conditioning_20261107/audit_execution.py",
+      "sha256": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c"
+    },
+    "exact_alias_checker": {
+      "path": "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py",
+      "sha256": "5e2832d08f079ffed8a78ea855f9e8535506733864b5ffa9b66eb2bef0ff99b7"
+    },
+    "exact_alias_proof": {
+      "path": "reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json",
+      "sha256": "d790122d768bf8ffa9cab724f44a215be140c14e635dde7f85743b8496573060"
+    },
+    "binding_tests": {
+      "path": "reports/conditioning_20261107/checkpoint_binding_tests.log",
+      "sha256": "95b1973c2c2935dd95b9d9f294c6bdb912473de39f4c33e8b74d6a95237b7a75"
+    },
+    "preserved_failed_preclosure": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/execution_preclosure.json",
+      "sha256": "7ac4fd26b92fc87c99cdd72a40e26c6436b5fe705bf0ee586c75724ef99635aa"
+    }
+  },
+  "accepted_distinction": "The editor summary hashes its explicitly named beta0.1 selection; historical mask summaries hash best.pt. The two editor ZIP containers have different outer hashes and archive prefixes, but all normalized member payloads and the full deserialized content are identical. Both actual file hashes remain bound independently.",
+  "guard_review": {
+    "core_and_legacy_best_pt_SHA_binding_unchanged": true,
+    "exception_requires_verified_optional_editor_phase": true,
+    "selection_filename_fixed_to_best_validation_beta_0p1_pt": true,
+    "named_SHA_must_match_summary_and_selection": true,
+    "alias_requires_exact_payload_and_normalized_member_proof": true,
+    "alias_SHA_bound_to_preserved_failed_audit_bytes": true,
+    "proof_checker_source_and_failed_receipt_hashes_bound": true,
+    "numerical_tolerance_introduced": false,
+    "weights_summaries_configuration_or_selection_modified": false
+  },
+  "fits": [
+    {
+      "fit_seed": 20261106,
+      "named_sha256": "bc6c72c7723d4461423e1d2ff308ee7a8022a9e8a028817b8f637bfff50b80e4",
+      "alias_sha256": "db0125668db47f90a47139f4690e2433407293cd038d3eac925a005d0e24ce1a",
+      "outer_bytes_identical": false,
+      "full_payload_bitwise_identical": true,
+      "normalized_zip_payloads_identical": true,
+      "protected_bytes_unchanged": true,
+      "compared": {
+        "tensors": 20,
+        "tensor_elements": 97000,
+        "scalar_fields": 275,
+        "containers": 66
+      },
+      "selected_optimizer_updates": 3960,
+      "completed_optimizer_updates": 4000
+    },
+    {
+      "fit_seed": 20261107,
+      "named_sha256": "f926a43d6f9ab67831db7070f63ffa93db17ad87825c0f4246afcabb1e1cab28",
+      "alias_sha256": "38a5b094112075f19a1f86af40c4accc8c1ffaec00e0467436a31e7d08934fe0",
+      "outer_bytes_identical": false,
+      "full_payload_bitwise_identical": true,
+      "normalized_zip_payloads_identical": true,
+      "protected_bytes_unchanged": true,
+      "compared": {
+        "tensors": 20,
+        "tensor_elements": 97000,
+        "scalar_fields": 275,
+        "containers": 66
+      },
+      "selected_optimizer_updates": 3987,
+      "completed_optimizer_updates": 4000
+    },
+    {
+      "fit_seed": 20261108,
+      "named_sha256": "0ed7d5764ba172a8bcfe98c65934c770a370ecd509a47abf6fffa8668685828a",
+      "alias_sha256": "4fefa682828946aef425318c1f2958ffda6d3eccfea1c054d3531bc77123b5e4",
+      "outer_bytes_identical": false,
+      "full_payload_bitwise_identical": true,
+      "normalized_zip_payloads_identical": true,
+      "protected_bytes_unchanged": true,
+      "compared": {
+        "tensors": 20,
+        "tensor_elements": 97000,
+        "scalar_fields": 275,
+        "containers": 66
+      },
+      "selected_optimizer_updates": 3996,
+      "completed_optimizer_updates": 4000
+    }
+  ],
+  "evidence_limits": [
+    "This establishes checkpoint alias integrity and the correct hash target, not model usefulness or physical validation.",
+    "The selected checkpoints are at3960/3987/3996 updates; each training trajectory completed4000 updates. Preserve that distinction.",
+    "Neither checkpoint stores Adam optimizer state; identity is asserted only for all fields actually serialized."
+  ],
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "audit_rerun_by_reviewer": false
+}

@@ -1,0 +1,35 @@
+The independent audit checks all 1000 attempted fixed-cell UMA lineages in the
+existing archive, not just selected successes. All converge under the recorded
+0.05 eV/\AA\ maximum-force target; the largest endpoint maximum force is 0.049990.
+Initial/final scalar energies agree with 1000 executed source records, and 20
+used worker receipts agree on checkpoint, head, precision and inference settings.
+Cells match the parent exactly. No Li or host nearest-parent assignment changes,
+site collisions, or occupation-orbit merges occur. There remain 1000 endpoint
+occupation classes; this does not certify 1000 distinct converged PES basins.
+
+\begin{center}\small
+\begin{tabular}{rrrrr}
+\toprule
+$n_{\rm Li}$ & Paired masks & Spearman$\rho$ & Low20 overlap & Median gain(meV/atom)\\
+\midrule
+12&23&0.9022&4/5&$-29.91$\\
+24&23&0.9723&4/5&$-19.86$\\
+36&23&0.9140&4/5&$-11.03$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Across 45 composition pools, median rank correlation is 0.9379, minimum 0.6383,
+and minimum low-quintile recall 0.40. These are acquisition-selected examples,
+not unbiased coverage. Relaxation therefore changes some rankings even while
+parent-site occupation classes remain stable. At each primary count, four of
+five cohort-low-quintile members are shared; these cohort thresholds describe
+this audit and are not new training boundaries.
+
+A matched label-target CVAE fit is deferred: the three primary counts contain
+only 49 training, 11 validation and 9 test lineages. Training-low endpoint classes
+have 4, 4, 3 examples; validation-low classes have 0, 1, 0. Repeated intermediate
+frames do not enlarge that independent support. A later test must retain those
+roles, acquire additional paired development lineages, fit separate training-only
+deletion/endpoint thresholds, and evaluate both models under both targets.
+The existing coordinate CVAE remains separate: its median optimizer saving
+(40 to 24 steps) was also achieved by deterministic regression.

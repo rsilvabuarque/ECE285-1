@@ -1,0 +1,10 @@
+{
+  "status": "FINAL_REPORT_REVIEWED_WITH_SEPARATE_IMMUTABLE_REQUIRED_GATE",
+  "claim_families": 29
+}
+{
+  "status": "FROZEN_REVIEWED_FINAL_REPORT_SNAPSHOT",
+  "snapshot": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/final_report_snapshot",
+  "pdf_sha256": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+  "files": 14
+}

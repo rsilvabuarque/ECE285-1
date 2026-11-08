@@ -87,7 +87,7 @@ Historical binary energy CVAE & $c=[x,\mathbf1_{\rm low}]$; middle/high both mea
 Three-bin CVAE & $c=[x,\mathrm{onehot}(b)]$; distinct low/middle/high requests.\\
 No-latent AR control & Same sequential/count mechanism without variational latent variables.\\
 Physical-neighbor variants & Distinguish learned graph encoder from causal graph-derived decoder summaries; retain the same count constraint.\\
-Seed-edit CVAE, if executed & Additional seed and specified swap count; local editing rather than de novo generation.\\
+Seed-edit CVAE (supplement) & Known seed and exact swap count; paired assessment against the same-seed mutation.\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -210,14 +210,15 @@ on displaced frames does not guarantee ordering of nearly degenerate minima.
 Historical/Hu DFT parameters differ, and their absolute energies are not pooled.
 Good ranks do not certify forces, saddle points, or thermal weights.
 
-No result establishes global minima, physical entropy, reactor optima, downstream
-MLIP improvement, or zero-shot material/size transfer. A generic parent interface
-and synthetic alternate-parent checks establish applicability of code, not accuracy
-on new chemistry. A structure can have many Li hops: a barrier label requires
-an occupied source, empty destination, periodic displacement, and a consistent
-geometry/teacher protocol. Any later MLIP NEB pilot is a feasibility study, not
-barrier-conditioned CVAE training or a DFT-validated diffusivity. Extensive
-ablations and optional extensions remain linked supplements to this report.
+No result establishes global minima, entropy, reactor optima, downstream MLIP
+gains or material/size transfer; generic interfaces and synthetic alternate-parent
+checks validate software only. Two marked Li hops survive endpoint quenching and
+reach projected NEB force criteria under UMA. For one event, seven-interior-image
+and tighter-force refinement changes the forward span from 0.638 to 0.189 eV per
+hop, so force convergence alone does not establish a stable barrier; the other
+coarse event gives 0.192 eV. These are MLIP potential-energy path spans, not
+activation free energies, DFT barriers or diffusivities. Event definitions,
+refinement profiles and remaining physical checks are in the supplement.
 
 \subsection{Independent checks and submission}
 Ricardo supplies physical/data/symmetry provenance, the energy-target and

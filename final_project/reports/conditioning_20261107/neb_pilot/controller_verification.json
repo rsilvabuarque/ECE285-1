@@ -1,0 +1,27 @@
+{
+  "status": "PASS_MOCK_TESTS_NO_STEPS_LAUNCHED",
+  "completed_UTC": "2026-11-08T05:35:56.659791+00:00",
+  "tests": {
+    "passed": 7,
+    "log": "reports/conditioning_20261107/editor_checker_controller_tests.log",
+    "scope": "4 independent-checker synthetic arithmetic tests plus3 stdlib-controller mocked tests; no new editor energies opened, no Slurm steps launched by controller"
+  },
+  "source_hashes": {
+    "scripts/conditioning_20261107/neb_allocation.py": "5a2ac1428694ea1154b15bc70aa111b822b6411f7af741e48cee2a611c1a04e1",
+    "tests/test_neb_allocation.py": "377b858a5c6c9ca2f0aef0774e94168bdccdef17e0b22a7c4fb75a267df5f4ed",
+    "scripts/conditioning_20261107/check_edit_results.py": "70b31cc244d5f05306431ddfc521b043a02f819c864baa9a84d446c12d0ad19a",
+    "tests/test_check_edit_results.py": "207f0d8f4ecdf5132d4591e6b64aa30da92c89a67d23ac151c9403cf2ed89c50"
+  },
+  "prepared_scientific_sources_unchanged": {
+    "neb_common.py": true,
+    "neb_mace_profile.py": true,
+    "neb_prepare.py": true,
+    "neb_run.py": true,
+    "neb_summarize.py": true
+  },
+  "prepared_protocol_sha256": "d57a91ec3a817766ef9d93a62a3fc6f446e12817489f016c72eaee2eb5058899",
+  "new_MLIP_calls": 0,
+  "new_allocations": 0,
+  "actual_NEb_launch_owner": "root",
+  "controller_caveat": "Final sacct accounts full allocation startup/idle/release, not only controller/process intervals."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PREPARED_FOR_ROOT_REVIEW",
+  "url": "https://github.com/rsilvabuarque/ECE285-1/releases/download/ece285-conditioning-20261108/ECE285_conditioning_20261108_extensions.zip",
+  "sha256": "c1e5384dad5a440514f59a9370c71ee651d9cccb8d64cd1a9feabd511f743dc5",
+  "bytes": 84251732,
+  "files": 704,
+  "extract_to": "artifacts/conditioning_20261107/extensions",
+  "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "manifest_sha256": "31d610178d3ec266c04500d4409b14e00ec942c917e290011aaffedfbe275d89",
+  "source_packet": "Separate optional extension; required archive/gate unchanged"
+}

@@ -1,0 +1,83 @@
+{
+  "status": "PASS_PRESERVED_VENV_AND_CHECKPOINT_SYMLINK_PATHS",
+  "completed_UTC": "2026-11-08T06:02:00.788515+00:00",
+  "source_sha256": "943fde8e366ab280bf2e289765130c3f36854679320a938f8ec723a2f4cc0d3e",
+  "tests_sha256": "30b72a2f714603424a230c2251947ec0637ec3fe696955d559e29a4e72a2edf5",
+  "tests_passed": 6,
+  "test_log": "reports/conditioning_20261107/neb_controller_venv_tests.log",
+  "actual_input_config": {
+    "path": "runs/conditioning_20261107/neb_launch_config.json",
+    "sha256": "bde14dd79eeebdd0d88e1cb81db88166683c8d2b008be7f45204e3c51a757bed"
+  },
+  "original_invoked_paths": {
+    "uma_python": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/uma/bin/python",
+    "mace_python": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/mace/bin/python",
+    "summary_python": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "uma_checkpoint": "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/snapshots/ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1/checkpoints/uma-s-1p2p1.pt",
+    "mace_checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/checkpoints/mace-mh-1.model"
+  },
+  "all_invoked_paths_unchanged": {
+    "uma_python": true,
+    "mace_python": true,
+    "summary_python": true,
+    "uma_checkpoint": true,
+    "mace_checkpoint": true
+  },
+  "read_only_print_plan": {
+    "worker_commands": [
+      [
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/uma/bin/python",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/neb_run.py",
+        "--prepared",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/neb_pilot/prepared_v3",
+        "--event",
+        "basin_1_repeat2",
+        "--checkpoint",
+        "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/snapshots/ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1/checkpoints/uma-s-1p2p1.pt",
+        "--output-dir",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_1_repeat2",
+        "--budget-seconds",
+        "2400",
+        "--device",
+        "cuda",
+        "--threads",
+        "4",
+        "--refine"
+      ],
+      [
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/uma/bin/python",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/scripts/conditioning_20261107/neb_run.py",
+        "--prepared",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/neb_pilot/prepared_v3",
+        "--event",
+        "basin_2_repeat1",
+        "--checkpoint",
+        "/global/cfs/cdirs/m4537/rsb/hf/hub/models--facebook--UMA/snapshots/ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1/checkpoints/uma-s-1p2p1.pt",
+        "--output-dir",
+        "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_2_repeat1",
+        "--budget-seconds",
+        "2400",
+        "--device",
+        "cuda",
+        "--threads",
+        "4"
+      ]
+    ],
+    "prepared_protocol_sha256": "d57a91ec3a817766ef9d93a62a3fc6f446e12817489f016c72eaee2eb5058899",
+    "new_model_calls": 0,
+    "new_allocations": 0
+  },
+  "prepared_scientific_sources_unchanged": {
+    "neb_common.py": true,
+    "neb_mace_profile.py": true,
+    "neb_prepare.py": true,
+    "neb_run.py": true,
+    "neb_summarize.py": true
+  },
+  "preserved_previous_controller_source": {
+    "path": "reports/conditioning_20261107/neb_pilot/controller_source_before_venv_fix.py",
+    "sha256": "7599ce190fba74c5aba6a69f82334dc86dde53788d90ebe4923fad069aded551"
+  },
+  "new_MLIP_calls": 0,
+  "new_Slurm_steps_or_allocations_by_controller": 0
+}

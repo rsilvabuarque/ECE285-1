@@ -1,0 +1,798 @@
+{
+  "schema_version": "report-claim-map-v1",
+  "report": "docs/midterm1/main.tex",
+  "status": "FINAL_REPORT_REVIEWED_WITH_SEPARATE_IMMUTABLE_REQUIRED_GATE",
+  "claims": [
+    {
+      "id": "parent48",
+      "claim": "Li48Co48O96, Li rows48..95, 192 retained site permutations, fixed cell",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "artifacts/current/core/data/parents/O3_N48_pilot.npz",
+          "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+          "details": "Read numbers/cell_A/positions_A/li_indices/permutations; physical units Angstrom"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "half_orbit_capacity",
+      "claim": "At nLi24: 32247603683100 raw masks and168025313938 orbits under this parent action",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/make_examples.py",
+          "sha256": "35f3cbfc226d57aeb637eefcce935a0fcd75976390dde99df3860ecb0a2b0915",
+          "details": "Independent Burnside cycle-polynomial calculation matched all saved orbit_capacities"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/examples/manifest.json",
+          "sha256": "0ea8ddf54d9fde1e3be40b9d9eb0c428189a178c09155705520cf822812c5c10",
+          "details": "Executed existing-example and count receipt"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "training_round0",
+      "claim": "50247 rows; train40157/val4967/test5123",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "artifacts/current/improvement_v1/data/preparation.json",
+          "sha256": "4824f7fb85580450ec429f7a97ca7db7563b62247d0b10cb41ab1f17127ef0a5",
+          "details": "Frozen split/source receipt"
+        },
+        {
+          "path": "artifacts/current/improvement_v1/training_round0.npz",
+          "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+          "details": "Protected split array"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "historical_yields",
+      "claim": "Old UMA/MACE AR35.57/40.06%; uniform18.99/19.75%; strongestmutation52.65/54.08%; adaptive33.81/38.91%",
+      "status": "VERIFIED_HISTORICAL",
+      "sources": [
+        {
+          "path": "artifacts/current/improvement_v1/reports/final/summary.csv",
+          "sha256": "043581c0f0fa27d1e8c0d14c2b24ca5f77576b1a3172ab0304d6d9fbdc3289fc",
+          "details": "mean_low_yield by teacher/method"
+        },
+        {
+          "path": "artifacts/current/improvement_v1/reports/final/metrics.csv",
+          "sha256": "470429d7bd4ba88da9dd72fed74695f13e059284ed9c6e0256be0537b4ca957d",
+          "details": "512attempts per method/seed/count; historical novelty/q20 boundary"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "ranking_context",
+      "claim": "34368 matched rows/11456geometries; cohort-specific rho/topk/regret/gap metrics",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/receipt.json",
+          "sha256": "ae9c6ef9a73151ac9b111017ed52a23a42ba3af4a08ebb3989f8d854b9bdb3bb",
+          "details": "Sourcehash and432individualarchivedmetricmatches"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/cohort_summary.csv",
+          "sha256": "d7c0b75ab923955c6e7d379fc2afa527aada661b62610a1541511cbca45108b9",
+          "details": "Unweighted medians across informative composition pools"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/pool_metrics.csv",
+          "sha256": "0746594803bbbdd539c35677a2e53a4fec3edf7888335688cef15d6f7f533767",
+          "details": "Full source/phase/composition/cohort pool definitions and spans"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/topk_metrics.csv",
+          "sha256": "ca71450548bc9a7b0cd6fc58daaa5bc13b5e74b566da2b6ab4d3595e7387b933",
+          "details": "Tie-expanded k sizes and precision/recall/regret"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "hu_five_counterexample",
+      "claim": "CompleteHuoptimizedO3Li10poolN5; UMAstructure4159rank1versusDFTrank5; regret7.9710587meV/atom",
+      "status": "VERIFIED",
+      "sources": [
+        {
+          "path": "reports/ranking_audit_20261107/Hu_O3_Li10_optimized_counterexample.csv",
+          "sha256": "027a2ddeda3b772bada30fd8b67bf583c228fbf2347dfca7718de3f36bb59bf1",
+          "details": "All five members under allthree MLIPs; no larger-pool recall claim"
+        },
+        {
+          "path": "reports/ranking_audit_20261107/five_member_counterexample.pdf",
+          "sha256": "7bea2bb5745e7119f6680dda011df4b10ebdcc9b5a1d1c4e7cbf9209d87faffb",
+          "details": "Generated directly from the complete five-member table"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "geometry_secondary",
+      "claim": "Old32maskUMAmedianoptimizersteps40deletion,24regressor,24CVAE; noCVAE-specificadvantage",
+      "status": "VERIFIED_HISTORICAL",
+      "sources": [
+        {
+          "path": "artifacts/current/reports/decoded_matched_relaxations.csv",
+          "sha256": "c322ee217439ef339c9a4c18410a5d461f021dc29490263f05a01fe73b72439d",
+          "details": "Matched fixed-cell source-mask/method rows"
+        },
+        {
+          "path": "artifacts/current/reports/decoded_geometry_summary.csv",
+          "sha256": "320aa25a97851907499403f755577eb99241ed95a430204a844e843f0a6b4cd5",
+          "details": "Direct geometry force/energy summaries; not new physical evidence"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "new_multibin_benchmark",
+      "claim": "Balanced 41,472-attempt benchmark, 40,662 unique geometries; complete current UMA/MACE scoring; three-bin yield does not beat controls",
+      "status": "VERIFIED_NEW_MEASUREMENT",
+      "sources": [
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/receipt.json",
+          "sha256": "8f4497d305d88e0efa0d322f7e0fe73f0bd5f35c887ae5c0174d43a4dc9790c1",
+          "details": "Complete valid-count/scoring and frozen-history receipt"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/summary.csv",
+          "sha256": "b6ce7575f7335f8a5480507c4d0dc308464f2d509a29b353e01b3b284f2526a2",
+          "details": "Equal composition/request-bin/design-seed macro means and descriptive seed standard deviations"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/summary_by_request.csv",
+          "sha256": "9a9cd69cea9a14f4f122ad98c4dcce4200de01aa199c27de3b34d5cbf10f9df4",
+          "details": "Separate low/middle/high hit rates and useful yield"
+        },
+        {
+          "path": "artifacts/overnight_20261107/evaluation/benchmark/fixed_q20_low_request.csv",
+          "sha256": "e694d968287da0fd06f012e744420d926beece4cae6475721a3af77b5765eb66",
+          "details": "Requested-low original-teacher-q20 only; new history and budget"
+        },
+        {
+          "path": "reports/overnight_20261107/evaluation_audit/benchmark_audit.json",
+          "sha256": "57bfef701ab9299f1a696fe22960c95a4a66b086f6d9ed20790eb0e2147c5651",
+          "details": "Independent recomputation from raw attempt masks and teacher energies, without evaluator implementation"
+        }
+      ],
+      "scope": "Retained historical/background evidence; not a result of new controlled models"
+    },
+    {
+      "id": "policy_development",
+      "claim": "Six4000-updateD8fits; balancing/selection fourrows; selected32.12%balancedvs33.62%uniform58.97%mutation, not final",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/policy/summary.csv",
+          "sha256": "d1194f4cd894b3c35cb7a25b54e05d3c35c71145d527191d31e52cf516a994c5",
+          "details": "Mean/designseedSD balanced useful yield"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/policy/fixed_q20_low_request.csv",
+          "sha256": "081622ababe664be191c4cdb0486c8870da2ee1a102b5145a991d9e1eea2fdcc",
+          "details": "Separate requestedlow originalq20 yield"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/training_policy_selection.json",
+          "sha256": "ec1b2bd1fab23e5d9f960bb8b5d023b1b938dabc50de9891f242725d2b365674",
+          "details": "Policy chosen on development only"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/selection_rule.json",
+          "sha256": "07a1b35be905cda38ed27aff1329203caeb30dccfa89e39ede437b0d47cb3c11",
+          "details": "Decision rule fixed before energy summaries"
+        }
+      ]
+    },
+    {
+      "id": "paired_condition_latent",
+      "claim": "Sharedlatent/uniform diagnostics separate condition effect from nonzero latent use; no completecollapse inference",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/policy_diagnostics_v2/condition_summary.csv",
+          "sha256": "a053ae711e7bac280c5ce2c58e5ec4d3bd50146b9f85ad1a757d64ba78b1df07",
+          "details": "Perseed/composition conditional energy shifts"
+        },
+        {
+          "path": "reports/conditioning_20261107/policy_diagnostics_v2/latent_summary.csv",
+          "sha256": "efb8e47a8e5c837e334ff3b08d79ce7407b8f688810b88786bde8b61b389813b",
+          "details": "Sameuniform latent resampling changes output"
+        },
+        {
+          "path": "reports/conditioning_20261107/policy_diagnostics_v2/selected_latent_diagnostics.csv",
+          "sha256": "b8099b1d7bb43d1020903e5ca9af7c51084a83acb4fc3c451331ee11bf84a98b",
+          "details": "Policy-manifest-scoped KL and component diagnostics"
+        },
+        {
+          "path": "reports/conditioning_20261107/policy_diagnostics_v2/receipt.json",
+          "sha256": "575587185a6e658c3189d5d8ecb3aa910ae7735602e770424b9f219d01982f3b",
+          "details": "Complete oracle coverage and target raw Hamming checks"
+        }
+      ]
+    },
+    {
+      "id": "physical_parent_graph",
+      "claim": "Fullhost/mobile periodic graph with5\u00c5 provisionalradius and interlayeredges; descriptor invariant under192operations",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/parent_graph/receipt.json",
+          "sha256": "4026ccb8eee31270034fba4999b87b5620c18af808152989c983cd795de0dfaa",
+          "details": "Actual parent/symmetry/graph/descriptor audit"
+        },
+        {
+          "path": "reports/conditioning_20261107/parent_graph/descriptor_energy.csv",
+          "sha256": "f7af4b16c3ca09df14edb2c3c134e37edac9c27f5e6ac02f1cceec23818377d1",
+          "details": "Train/val/test descriptive association; use onlyTRAIN for selection"
+        },
+        {
+          "path": "reports/conditioning_20261107/parent_graph/descriptor_schema.json",
+          "sha256": "fb86fdcf58a0e425e93ddcf650217291cc898abd167e80e6205fc9029b83092f",
+          "details": "Train-only joint energy/descriptor support"
+        }
+      ]
+    },
+    {
+      "id": "paired_energy_target",
+      "claim": "All1000matched fixedcellUMA lineages; ranks change without occupationorbit merges; sparseprimaryroles deferlabeltargetfit",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/relaxed_target_audit/receipt.json",
+          "sha256": "de597f788b74e276abebfe481f05cc4cdcf9fdbe93084f084f43c8396b8148fd",
+          "details": "All attempts, mapping/convergence and scope"
+        },
+        {
+          "path": "reports/conditioning_20261107/relaxed_target_audit/composition_ranking.csv",
+          "sha256": "b57540ca75f63416cbe06aa0636658e7ba085adfd22a91dfebad14a78a3dd491",
+          "details": "Percomposition ranks/lowtailoverlap/gains"
+        },
+        {
+          "path": "reports/conditioning_20261107/relaxed_target_audit/label_target_support.csv",
+          "sha256": "fb29b4b2d0ccf58247db5e726b2f9cbf4499d8bbe4960b3caf4de071cd3fb301",
+          "details": "Protected independent class support"
+        },
+        {
+          "path": "reports/conditioning_20261107/relaxed_target_audit/independent_checks.json",
+          "sha256": "bf82d840feb1936c5dcda606fd0f093e40c92603b021a7213b9b667a5e58f5a5",
+          "details": "Force array arithmetic and historical ranking checks"
+        }
+      ]
+    },
+    {
+      "id": "latent_development",
+      "claim": "D4/8/16/32 plus no-latentAR; D4chosen by frozen practicalmean margins; individualseeds andparameters retained, not physicalconvergence",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/latent/summary.csv",
+          "sha256": "de9b0a576d17585d606de9430590a54766dbc5679cad8e0c5b160033afd788c9",
+          "details": "Balanced development yields and descriptive seedvariation"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/latent/fixed_q20_low_request.csv",
+          "sha256": "868b95923a0fa445d109483cd94a3baca97fe1d336d196abdcd787138de50597",
+          "details": "Separate requested-low originalq20 outcome"
+        },
+        {
+          "path": "reports/conditioning_20261107/latent_development/seed_values.csv",
+          "sha256": "e7670c2c033394e93f52be6cfc633187e5c02bb3dc7d1a4a8fadf168f751d086",
+          "details": "All21 individual model/sampler replicate values and fullparameter counts"
+        },
+        {
+          "path": "reports/conditioning_20261107/latent_diagnostics/latent_fit_diagnostic_summary.csv",
+          "sha256": "ef7da16a564ef508de8f36e8f514909c54503c73a0e037ef35fcdfa37b6e7b34",
+          "details": "Perfit reconstruction, summed/perdimension KL and activity-cutoff sensitivity"
+        },
+        {
+          "path": "reports/conditioning_20261107/latent_diagnostics/latent_selection_audit.json",
+          "sha256": "75ef718eca12b9c3f2722e5805e77ebf6dd57a53339046eafac9e0eeb9a0ce69",
+          "details": "Independent latent-rule and scalar-metric reproduction"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/selected_policy.json",
+          "sha256": "f9fdba0d08b9f3379d4d69605d60103b8088682b2e706f21cce17f161fff81b2",
+          "details": "Development-only trainingpolicy andlatent choice"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/selected_models.json",
+          "sha256": "7295fcfd9145f34642dbdb1eeba3f7870f20117acbbf07b673f235a646ef2ae5",
+          "details": "Actualportable retainedcheckpoint identities"
+        }
+      ]
+    },
+    {
+      "id": "spatial_development",
+      "claim": "Three-fit graphcontext DEV60.88%balanced/61.11%originalq20low vsmutation58.80/50.35; not final; encoderonly34.49/24.31",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/spatial_confirmed/summary.csv",
+          "sha256": "5ed911c5296c478bc9e87187ac0dbde38be5d5750451130b1601e93bf7f2388e",
+          "details": "Balanced development yield and descriptive seed variation"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/spatial_confirmed/fixed_q20_low_request.csv",
+          "sha256": "e4fdee35d8ed29954c4ba4a51583de8f2c2305698ec1f07d819158b9ec92d20f",
+          "details": "Separate requested-low fixed originalq20 metric"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/spatial_confirmed/seed_metrics.csv",
+          "sha256": "3c77d49f15518dde1a581dfeb4a66db1c8bbcce0ea84a2866423e9335cc669bb",
+          "details": "All individual fit/sampler replicate values"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/architecture_selection.json",
+          "sha256": "aa36153757a852092fb0a0cfee82d54a9aa7c2d48e43dbf9b17c47380f4b552d",
+          "details": "Development recommendation, not final result"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json",
+          "sha256": "3cb0b6466d91f0973941b5c4fd36922b659174480cebaa6ba20ef1b437c9c34f",
+          "details": "Pre-final two-fit replication and28of30 corefit cap"
+        }
+      ]
+    },
+    {
+      "id": "spatial_condition_latent",
+      "claim": "Graphcontext strongpairedconditionresponse butKL.007-.011nats/weakzresponse; supportscausalspatialAR not demonstratedlatentbenefit",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/family_diagnostic_summary.json",
+          "sha256": "2df7691ee19da839ac8f4746f806e0dbf1e092394abc46c048f13804e94965c5",
+          "details": "Shared-latent/uniform condition shifts and separate latent/posterior diagnostics"
+        },
+        {
+          "path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/paired_diagnostics_by_family_seed.csv",
+          "sha256": "9f5032e90cc7130a46db34ad441b915450b714c61b74dadb965ac892b9e6bb3f",
+          "details": "All seed-level diagnostics"
+        },
+        {
+          "path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/selected_latent_diagnostics.csv",
+          "sha256": "44359360548be8755efb02fff3fc772bf765a2465eabeca4b0382a1cf7c3840f",
+          "details": "Actual selected-checkpoint KL/activity, parameters and reconstruction"
+        },
+        {
+          "path": "reports/conditioning_20261107/spatial_confirmed_diagnostics/receipt.json",
+          "sha256": "59e063950dd0ec6bfd2e744aa51f830af9bffdb6a24364bd6f9314e6e3f2f833",
+          "details": "Raw proposal/score coverage and input hashes"
+        }
+      ]
+    },
+    {
+      "id": "trained_decoder_causality",
+      "claim": "Three actualgraphcontextcheckpoint futuregradient/permutation testsPASS withfullencoderforbidden; notphysics/equivariancevalidation",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/trained_causality_audit.json",
+          "sha256": "c712ea3b4cf178516497989776225b1b350c84ab1294482d3e8cca62702fa618",
+          "details": "Actualtrainedweights, exactlyzero future gradients, unchanged future-permutation logits"
+        },
+        {
+          "path": "reports/conditioning_20261107/trained_causality_audit.py",
+          "sha256": "0494bbbe70dcfa21fca9e7c7c002dc28747d49919849fc035cfb52f669f869a5",
+          "details": "Executable independent audit and numerical convention"
+        }
+      ]
+    },
+    {
+      "id": "descriptor_negative_pilot",
+      "claim": "Onefit middleenergy jointdescriptor yield28.13%vsplain28.52/mutation44.79; all2304attempts; no improvementclaim",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/descriptor/summary.csv",
+          "sha256": "02ef887af8615f0028d0afc446281d3aa3aa272f6760c118c4ebd5a92a8dc8f1",
+          "details": "Equal six-condition-cell joint useful yields"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/descriptor/receipt.json",
+          "sha256": "a893ec8718768d7abfc4443c92189a5579c4c935805f726df09379995d081f4a",
+          "details": "Attempt completeness, descriptor/energy schema and bounded distance-reference scope"
+        }
+      ]
+    },
+    {
+      "id": "frozen_final_assessment",
+      "claim": "All34560UMAattempts; graphcontext62.04%balanced63.54%low vsmutation58.62/52.52; matched20736MACEattempts63.45/67.62vsmutation57.29/52.95",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/final/summary.csv",
+          "sha256": "8d21c1f6d65c80728855810cecf9e115ba2226dbb6e38cbca78aae346092d846",
+          "details": "Allten UMA families, seed SD, no post-final model selection"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/final/fixed_q20_low_request.csv",
+          "sha256": "28e22b1c571185d0529ad15ea59dde11f5e95728e00ebd33d7465f9c8ce653eb",
+          "details": "Separate UMA original-q20 low-request outcome"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/final_matched/summary.csv",
+          "sha256": "7ffa05128e3db3a49a9ce88d08b96e972262484002ab64696c7591d501a9f584",
+          "details": "Prespecified exactsixfamily paired UMA/MACE subset"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/final_matched/fixed_q20_low_request.csv",
+          "sha256": "9d4d5a77a9da41f9a86744575691d7550a4b867e27da3df652ef25d764f85326",
+          "details": "Teacher-specific original-q20 low outcome"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/final/receipt.json",
+          "sha256": "57a94a7ac3456b10c232a88e3898aa0f51cc1c1e26df6326dd420d57c44effbc",
+          "details": "Full attempt completeness and frozen-history novelty boundary"
+        },
+        {
+          "path": "runs/conditioning_20261107/evaluation/final_matched/receipt.json",
+          "sha256": "53c75ab73f87922ecc1622290aed6b5e0aa79181d36d56196be6273df4914a10",
+          "details": "Matchedteacher coverage; not independent DFT validation"
+        },
+        {
+          "path": "runs/conditioning_20261107/final_protocol.json",
+          "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+          "details": "Methods/checkpoints/history278382 frozen before generation"
+        }
+      ]
+    },
+    {
+      "id": "independent_final_replay",
+      "claim": "Raw192operation mask/bin/history recomputation matches16tables with2515436fieldchecks zero mismatches; not physicalvalidation",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/independent_final_metrics/receipt.json",
+          "sha256": "99f56bb5e23d48b9cbadd92e8dedc7c8bcc5bfe3f67abfe754bf2d4cab843dbe",
+          "details": "Independent production-helper-free numerical check"
+        }
+      ]
+    },
+    {
+      "id": "final_structural_distance",
+      "claim": "Exact192symmetry minimum tofixed1024TRAINorbits/count; upperboundfullTRAINdistance; context6.858uniform6.891mutation6.498sites",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/final_structural_distances/receipt.json",
+          "sha256": "3b8e87fad56927c4d8e43b78e9def3902441ba3eea902641cbeda22fae606b57",
+          "details": "All34560attempts, all3456actualmutation2k edits; no labels read or selection change"
+        },
+        {
+          "path": "reports/conditioning_20261107/final_structural_distances/family_summary.csv",
+          "sha256": "19ad283b15585c719be4aa9df9c1a6fb9ad67634235ad85244b4dafbe0315f25",
+          "details": "Equalcount/bin/seed mean siteHamming distances"
+        },
+        {
+          "path": "reports/conditioning_20261107/final_structural_distances/METHOD.md",
+          "sha256": "564bd13bcd981d71b9a404eae649214f90d8049eca2a4fa530d0719e6949a3c9",
+          "details": "Metric definition, fixedreference and upperbound proof"
+        }
+      ]
+    },
+    {
+      "id": "optional_editor",
+      "claim": "Same-seed editor balanced yield59.375% vs57.234%; low-q20 yield50.347/50.521%; all6912attempts and raw pair checks retained",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/evaluation/editor/summary.csv",
+          "sha256": "17bf483056e2d1b8607a345f22db90e6fd2c3dc3c33f734e80a02f52f26a680c",
+          "details": "Three learned fits and paired mutation streams; balanced outcome and separate low metric"
+        },
+        {
+          "path": "reports/conditioning_20261107/independent_editor_metrics/receipt.json",
+          "sha256": "0676c172322cd5fa5203c40d15ca6763a551c377ea186c375add6500c91803f3",
+          "details": "Independent raw pairing,192operation mapping, bins, novelty and seed-label parity"
+        },
+        {
+          "path": "runs/conditioning_20261107/editor/assessment_v1/protocol.json",
+          "sha256": "1f8218fd12b739076e825874fce042ecbf4d8ebad764ba2174d337bd29fa4a4a",
+          "details": "History/seed/budget/uniforms frozen before scoring"
+        },
+        {
+          "path": "runs/conditioning_20261107/editor/data_v2/preparation_receipt.json",
+          "sha256": "91fc1d88f6710f29da375d47dadd04b1fcda4ac26534ea83b395292a3dd5a4f0",
+          "details": "All source outcomes and connected protected seed/child roles"
+        }
+      ]
+    },
+    {
+      "id": "editor_low_request_metrics",
+      "claim": "LOW paired mean favors mutation by0.07656meV/atom; learned lower in548of1152pairs; distinct-quintile yield tied",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/request_energy_summary.csv",
+          "sha256": "4d1598c3c664ec0d61ed1363d9927f595e1003e272a4c7b136303aac94a1ada0",
+          "details": "Per-request, per-fit and per-composition paired energies; avoid interpreting HIGH as minimization"
+        },
+        {
+          "path": "reports/conditioning_20261107/independent_editor_metrics/requested_bin_energy_posthoc.json",
+          "sha256": "159a3578941b71b54d5f63c642f105ab10c62d370a9a117091e60c587132a952",
+          "details": "Independent request-scoped reduction"
+        }
+      ]
+    },
+    {
+      "id": "editor_secondary_minima",
+      "claim": "All9LOWfit/count minima at128attempts: learned lower novel child in7cases; mean advantages-.572/-.229/-.428meVatom; supplied-seed minimum is not globalhistory minimum",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/terminal_best_novel_low_children.csv",
+          "sha256": "783209da04cecfcce6dbc419de81abf01e88014eb06307b167020bfd09ae5d68",
+          "details": "All9 exact terminal energies/IDs plus best identical supplied current-SCF seed"
+        },
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/terminal_minima_composition_means.csv",
+          "sha256": "eead05ac0d1c8607e0a62260c9cab67bc2d6ead09d2190e9a23e475265c3de62",
+          "details": "Three composition means;7of9 learned and5of9mutation beat their supplied-seed minimum"
+        },
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/receipt.json",
+          "sha256": "0e032fb61f891ed97661a68296fc99afd3b5cb7fc7d0d805f62fbcdf2e229a20",
+          "details": "Secondary posthoc scope and budget definitions"
+        },
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/visual_review.json",
+          "sha256": "56b0943f9a1787d2ece117563a90ba503c254451fdfb7f697f85a51db640f6cf",
+          "details": "All-seed running-best and paired-low figure review"
+        }
+      ]
+    },
+    {
+      "id": "editor_stage_cost",
+      "claim": "7330new logicalUMA labels=6845child-only+485sharedseed-only;15alreadyavailable; counts verified against PRE-editor registry/cache and completedtask receipts",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/cost_audit.json",
+          "sha256": "a790d3b7e8dde89a3c3481072ec4e0b5422e4a1cb0544f6feac2815f9ce25538",
+          "details": "Actual stage-specific fresh labels; network forward calls not instrumented"
+        },
+        {
+          "path": "reports/conditioning_20261107/editor_low_request_v2/query_accounting.csv",
+          "sha256": "9656a29fe7fe305f05c82249de075870e4ecf3f7a5c7fb0568f56841e28365f7",
+          "details": "Per-method standalone queries vs deduplicated union; shared seed verification separate"
+        }
+      ]
+    },
+    {
+      "id": "editor_checkpoint_alias",
+      "claim": "Different ZIP-root file hashes for best.pt and named selected checkpoint; normalized members and full loaded payload identical; assessment already used named hashes",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json",
+          "sha256": "d790122d768bf8ffa9cab724f44a215be140c14e635dde7f85743b8496573060",
+          "details": "All3fits:20tensors/97000elements, fullconfiguration/epoch/update/latentmetadata match; no model or label edits"
+        },
+        {
+          "path": "reports/conditioning_20261107/execution_preclosure.json",
+          "sha256": "7ac4fd26b92fc87c99cdd72a40e26c6436b5fe705bf0ee586c75724ef99635aa",
+          "details": "Preserved earlier cost-audit findings from an overly broad byte-hash alias convention; not evidence of changed assessment weights"
+        }
+      ]
+    },
+    {
+      "id": "posthoc_gaussian_prior",
+      "claim": "TRAIN-only posterior-moment Gaussian, noNNupdates: balanced UMA34.259vs31.047/MACE34.028vs30.787; LOWyield regresses; graphcontext retained",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/independent_aggregate_prior/receipt.json",
+          "sha256": "2b5f7101347ce463db907e47ee17ead58074b25fbf78f7e7c74369456d2ec168",
+          "details": "Independent tables/actual transformed-z checks; per-row encoder outputs unavailable for independent moment recomputation"
+        },
+        {
+          "path": "reports/conditioning_20261107/independent_aggregate_prior/summary.csv",
+          "sha256": "0ac42cb0ba7684818cd968a98c38158c5a32a69d1925147a0814a4f627effcf0",
+          "details": "Separate UMA/MACE balanced yields in new assessment namespace"
+        },
+        {
+          "path": "reports/conditioning_20261107/independent_aggregate_prior/original_q20_LOW_request.csv",
+          "sha256": "ab4291d624402bb7937b4ec9888fdc446d32fbf82a6a37c70cc4305dc16ee85b",
+          "details": "LOW UMA23.958vs30.122/MACE26.042vs32.552%"
+        },
+        {
+          "path": "runs/conditioning_20261107/aggregate_prior/preparation/receipt.json",
+          "sha256": "f71373552654b18f57adbfab71182ac12d2f94134122d57d39c288151a9cf8c0",
+          "details": "Unchanged networks,27TRAIN-only groups, no gradients"
+        },
+        {
+          "path": "runs/conditioning_20261107/aggregate_prior/assessment/protocol.json",
+          "sha256": "2f9475a0054a94c0ecfa1b9b10a2ae2c6340cf141f6abef1d0cd93b68f90f428",
+          "details": "New312715-orbit history; sameepsilon/U but condition-specific actualz"
+        }
+      ]
+    },
+    {
+      "id": "temperature_followup",
+      "claim": "24schedules/768attempts/102geometries; identical integerallocations and actualpairedproposals across4T; lowreferenceESS remains",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "reports/conditioning_20261107/temperature_followup/analysis/receipt.json",
+          "sha256": "a463d06780baba08f841ebfac237f062eb6a802e63dcac52d396a9154a476622",
+          "details": "All attempts and exact cross-temperature mask identity checks"
+        },
+        {
+          "path": "reports/conditioning_20261107/temperature_followup/analysis/schedule_summary.csv",
+          "sha256": "6401b782609042659f15578288dfb1fb04bbdc54d5b20df563c2ccf917ea20cf",
+          "details": "Measured distributions; pure-low fractions65.625/65.625/53.125%"
+        },
+        {
+          "path": "reports/conditioning_20261107/temperature_followup/reference_diagnostics.csv",
+          "sha256": "d32f054d2b874bcce67ad1ab29c8f47a681872e0a28e44fd9c8c884acc2bdb8c",
+          "details": "Static cell-energy weights/raw frequencies; ESS1.850-6.544"
+        },
+        {
+          "path": "reports/conditioning_20261107/temperature_followup/finite12_support.json",
+          "sha256": "9e8bcbfcee488f52cc2cf010c7fb5cfb827b4e1b68f2fd394e076986dc85ece4",
+          "details": "Existing87orbit mathematical accounting only"
+        },
+        {
+          "path": "reports/conditioning_20261107/temperature_followup/protocol.json",
+          "sha256": "6806df9e5ebbdaddaf8361ec8fb32f9f04beb69068ac2c0231b684f0cc78f8d9",
+          "details": "Required gate precedes study; registered editor geometries known before generation"
+        }
+      ]
+    },
+    {
+      "id": "current_scope",
+      "claim": "Required gate complete and preserved; later extensions separate; no newDFT/MLIPfinetuning or entropy/generalization claim",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "artifacts/conditioning_20261107/protocol.json",
+          "sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+          "details": "Frozen scientific and revised user resource contract"
+        },
+        {
+          "path": "artifacts/conditioning_20261107/required_gate.json",
+          "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+          "details": "Immutable completed required checkpoint before extensions"
+        },
+        {
+          "path": "reports/conditioning_20261107/SOURCE_REVIEW.md",
+          "sha256": "44504c4669e67b084d09b58408d169ff1ed7f0ffe2e59f0dc62725abbd797e7e",
+          "details": "Actual baseline versus conversation suggestions"
+        }
+      ]
+    },
+    {
+      "id": "defined_hop_NEB",
+      "claim": "Two numerically converged UMA event paths; event1 forward0.638\u21920.189eV with coupled7image/tightertarget change; event2 coarse0.192eV; MACEcoarseSP is not transport validation",
+      "status": "VERIFIED_WITH_STATED_SCOPE",
+      "sources": [
+        {
+          "path": "runs/conditioning_20261107/neb/basin_1_repeat2/receipt.json",
+          "sha256": "2b8269bc9f35c948f5dc00033a44c6c02a499806b3beb60fa47abee988e50962",
+          "details": "Terminal event receipt; not a free-energy barrier or calibrated diffusivity"
+        },
+        {
+          "path": "runs/conditioning_20261107/neb/basin_2_repeat1/receipt.json",
+          "sha256": "f1854cb7be8a33818860699006482e059c7dd8147a26170bbf9d282f50834a89",
+          "details": "Terminal event receipt; not a free-energy barrier or calibrated diffusivity"
+        },
+        {
+          "path": "runs/conditioning_20261107/neb/mace_profile/receipt.json",
+          "sha256": "6aed71856e996b5c6031a3314cae1a6e8f329ef559bf4bf9e6d47a1900e27619",
+          "details": "MACE single points on the FIVE-interior UMA band, not refined7 or optimizedMACEbarrier"
+        },
+        {
+          "path": "reports/conditioning_20261107/neb_pilot/prepared_v3/protocol.json",
+          "sha256": "d57a91ec3a817766ef9d93a62a3fc6f446e12817489f016c72eaee2eb5058899",
+          "details": "ExplicitASE3.26 method, fixedcell/atomidentity/PBC, provisionalforcecriteria and boundedresources"
+        },
+        {
+          "path": "reports/conditioning_20261107/neb_pilot/results/receipt.json",
+          "sha256": "0881f9ea873cfb810ef59e7deddb359f9dd04723d4d8999d7e740380805320d6",
+          "details": "Profiles retain coarse and refined event1; no newmodelcalls in summary"
+        },
+        {
+          "path": "reports/conditioning_20261107/neb_pilot/independent/receipt.json",
+          "sha256": "98b7cdf3dd6580335dd8aacce8871ccd3358d431ea4fea14783e907224051f6e",
+          "details": "Independent saved-band endpoint/barrier/force/MACE coordinate/call-count checks; no physical validation"
+        }
+      ]
+    }
+  ],
+  "primary_references": [
+    {
+      "key": "shi2018",
+      "url": "https://doi.org/10.1039/C7GC02831H",
+      "checked": "Publisher abstract/metadata retrieved; fullHTML403unavailable",
+      "supports": "Hydrothermal regeneration followed by annealing of degradedLCO; no costfraction or detailednewconditions claimed"
+    },
+    {
+      "key": "vanderVen1998",
+      "url": "https://doi.org/10.1103/PhysRevB.58.2975",
+      "checked": "Author-hosted full13pagePDF, introduction andsectionsII/III",
+      "supports": "Li/vacancy ordering and structural-family relevance; does not validate currentMLIP"
+    },
+    {
+      "key": "gilmer2017",
+      "url": "https://proceedings.mlr.press/v70/gilmer17a.html",
+      "checked": "Primary PMLR abstract/metadata",
+      "supports": "Messagepassing framework; not evidence current graph wins"
+    },
+    {
+      "key": "dieng2019",
+      "url": "https://proceedings.mlr.press/v89/dieng19a.html",
+      "checked": "Primary PMLR abstract/metadata",
+      "supports": "Latentcollapse possible with expressive likelihood; not diagnosis of this network"
+    },
+    {
+      "key": "ichikawa2024",
+      "url": "https://proceedings.mlr.press/v238/ichikawa24a.html",
+      "checked": "Primary PMLR abstract/metadata",
+      "supports": "SimplifiedlinearVAE sensitivity only; no LCO convergence theorem"
+    },
+    {
+      "key": "wakamiya2026",
+      "url": "https://doi.org/10.1038/s41524-026-02075-0",
+      "checked": "Primaryindexedmethods and archived accompanyingcode inpriorreview; SI numericalvalidation not independently retrieved",
+      "supports": "Relatedfixedoccupation propertyconditionedCVAE+UMA loop; not noveltyclaim"
+    }
+  ],
+  "assignment": {
+    "source": "User supplied course screenshots and current next-goal section8; updated89page discussionPDF is context",
+    "requirements": [
+      "About5bodypages excludingreferences",
+      "Revisedproposal",
+      "Detailedmethods/math/model/algorithm/theoryifapplicable",
+      "Novelty/advantages/limitations"
+    ],
+    "deadline": "2026-11-09 23:59 America/Los_Angeles",
+    "format": "NeurIPS explicitlynamed forproposal only; noadditionalmidtermtemplate identified inprovided sources",
+    "available_pdf": "for_chat_gpt/Evaluate Generative Model Project.pdf",
+    "discussion_pdf_sha256": "e6b0ccdf2cce470119c80634cd3e57031e85460401e42a1bd56abf7a9bc84217",
+    "export_note": "No separate Codex text export was available in the user-designated for_chat_gpt directory. PDFimages were inspected: citationicons and croppedfigurethumbnails, notassignment screenshots; those requirements are visible in supplied conversationimages."
+  },
+  "limitations": [
+    "No new DFT",
+    "Primaryreference verification scope explicitlystated",
+    "ArchivedDFTspin/SCF convergence notrecertified"
+  ],
+  "report_outputs": {
+    "docs/midterm1/main.tex": "d9ebba007be7a7536da191ef40045d8c619cdd6e3db1f3444173288e96b58db2",
+    "docs/midterm1/main.pdf": "eedde21676847480db82269b72eb9223868c06d2b6999365347c7362e86436eb",
+    "docs/midterm1/generated_conditioning_results.tex": "a4267427950a165ae20c39988564c54836c9a4207e53109a93dde4133df325d0",
+    "docs/midterm1/generated_policy_table.tex": "ec692959fe81a5b7704afc1d4e859738866e47fe062974adea0fe739b79d3023",
+    "docs/midterm1/generated_latent_table.tex": "ccfbf46d06a50673f918f84e2150efe0b7f348e60b78ab9edd81d14306a8fba0",
+    "docs/midterm1/generated_spatial_table.tex": "7c59b919c5b01aa4a016499bc77fc7ae2a3a87352618487fd753e6c64c937808",
+    "docs/midterm1/generated_final_table.tex": "e141cdafe6c70dda49c7e16f65a10e4d1a61aa18bc14b4c3de9d893e7897dcc1",
+    "docs/midterm1/generated_energy_audit.tex": "9f98445aeec40a4693493d83d015d76c18eee4f7d51b0d5c8e9b1f865bdac784",
+    "docs/midterm1/references.bib": "b8910648f8fa705a50905060ecbd81535cd7895e7ddcc76ed1a53e0e13c92574",
+    "docs/OPTIONAL_EXTENSIONS_20261107.md": "256e07fcaa6c1ce096c5eb2c4c3d39d635db31f8893ed75a71942fa421571a5f"
+  },
+  "report_verification": {
+    "body_pages": 5,
+    "references_pages": 1,
+    "mechanical": {
+      "path": "runs/conditioning_20261107/report_final_preview/receipt.json",
+      "sha256": "bdeababf4f1f43e5431876d8ac0de32c8860a3d3ac5f1116558168538ecb63ba",
+      "details": "Current report rendering/build checks"
+    },
+    "visual": {
+      "path": "runs/conditioning_20261107/report_final_preview/visual_review.json",
+      "sha256": "2872ac06f379cdd8212f51f8e3105767138ad6822640563b9196423a33bbcc48",
+      "details": "Current all-page visual review"
+    },
+    "scope": "Live report includes later optional evidence; required snapshot/gate/public_source_map are immutable; publication/allocation release are root-owned",
+    "independent_teammate_checks": "Remain assigned"
+  }
+}

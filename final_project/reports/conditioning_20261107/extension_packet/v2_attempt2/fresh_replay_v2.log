@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "jobs": [
+    "editor",
+    "aggregate",
+    "aggregate_independent",
+    "temperature",
+    "editor_low",
+    "editor_posthoc",
+    "neb"
+  ],
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0
+}

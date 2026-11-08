@@ -1,0 +1,32 @@
+{
+  "status": "REVIEWABLE_NARROW_AUDITOR_REPAIR",
+  "UTC": "2026-11-08T06:31:55.368531+00:00",
+  "quantity": "SHA256 of the trainer-selected checkpoint ZIP; byte identity and full tensor/metadata identity are distinct",
+  "problem": "The auditor bound summary.checkpoint_sha256 to best.pt for all trainers; train_edit binds it to best_validation_beta_0p1.pt. PyTorch archives use different internal root names for these two filenames.",
+  "scientific_records_changed": false,
+  "core_checkpoint_policy": "Unchanged strict summary-to-best.pt byte binding for core or unverified phases",
+  "editor_checkpoint_policy": "Only verified optional_editor fits bind summary SHA to the explicit named0.1 selection; best.pt is separately byte-bound through the independent complete exact-payload and normalized ZIP-member proof",
+  "preserved_failure": {
+    "path": "reports/conditioning_20261107/execution_preclosure.json",
+    "sha256": "7ac4fd26b92fc87c99cdd72a40e26c6436b5fe705bf0ee586c75724ef99635aa"
+  },
+  "old_auditor": {
+    "path": "reports/conditioning_20261107/execution_preclosure_auditor.py",
+    "sha256": "b77d296d825a4af3f39d6c033153a666010a2b11d03ef85f3aa80bc968a5577e"
+  },
+  "repaired_auditor": {
+    "path": "reports/conditioning_20261107/audit_execution.py",
+    "sha256": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c"
+  },
+  "independent_alias_proof": {
+    "path": "reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json",
+    "sha256": "d790122d768bf8ffa9cab724f44a215be140c14e635dde7f85743b8496573060"
+  },
+  "targeted_verification": {
+    "path": "reports/conditioning_20261107/checkpoint_binding_tests.log",
+    "sha256": "95b1973c2c2935dd95b9d9f294c6bdb912473de39f4c33e8b74d6a95237b7a75",
+    "passed": 8
+  },
+  "tolerance_changed": false,
+  "model_inference_or_training_updates": 0
+}

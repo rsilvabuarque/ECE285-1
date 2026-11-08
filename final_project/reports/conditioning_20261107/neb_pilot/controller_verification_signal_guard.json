@@ -1,0 +1,29 @@
+{
+  "status": "PASS_WORKER_SIGNAL_GUARD_NO_STEPS_LAUNCHED",
+  "completed_UTC": "2026-11-08T05:46:04.249880+00:00",
+  "tests": {
+    "passed": 5,
+    "log": "reports/conditioning_20261107/neb_controller_signal_tests.log",
+    "exact_command": "srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env -u PYTHONPATH CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q tests/test_neb_allocation.py",
+    "scope": "Mock subprocess timeout, unique rank/GPU argv, eligibility, worker SIGTERM cleanup and saved failure receipt; no actual Slurm steps/model calls by controller"
+  },
+  "source_hashes": {
+    "scripts/conditioning_20261107/neb_allocation.py": "7599ce190fba74c5aba6a69f82334dc86dde53788d90ebe4923fad069aded551",
+    "tests/test_neb_allocation.py": "f8f6312ef9958b5471a1681de07cdb2461c99e6dfe1a1aa14959762f4001cbdd"
+  },
+  "preserved_previous_source": {
+    "path": "reports/conditioning_20261107/neb_pilot/controller_source_initial.py",
+    "sha256": "5a2ac1428694ea1154b15bc70aa111b822b6411f7af741e48cee2a611c1a04e1"
+  },
+  "prepared_scientific_sources_unchanged": {
+    "neb_common.py": true,
+    "neb_mace_profile.py": true,
+    "neb_prepare.py": true,
+    "neb_run.py": true,
+    "neb_summarize.py": true
+  },
+  "prepared_protocol_sha256": "d57a91ec3a817766ef9d93a62a3fc6f446e12817489f016c72eaee2eb5058899",
+  "new_MLIP_calls": 0,
+  "new_allocations": 0,
+  "launch_owner": "root"
+}

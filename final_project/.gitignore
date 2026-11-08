@@ -4,6 +4,7 @@
 /models/
 /.models/
 /runs/
+/downloads/
 /dist/
 /build/
 *.egg-info/
@@ -63,3 +64,12 @@ docs/midterm1/*.out
 /artifacts/conditioning_20261107/diagnostics/
 /artifacts/conditioning_20261107/data/periodic_graph.json
 /artifacts/conditioning_20261107/data/parent_spec.json
+
+# Optional full-history keys are in the authenticated companion ZIP. Keep the
+# superseded first posthoc summary locally; the paper cites the corrected v2.
+/reports/conditioning_20261107/temperature_followup/history.json
+/reports/conditioning_20261107/temperature_followup/registered_history.json
+/reports/conditioning_20261107/editor_low_request/
+
+# Preserve the unpublished first optional packet and failed portability replay.
+/artifacts/conditioning_20261107/extensions/

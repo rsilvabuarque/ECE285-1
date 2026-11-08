@@ -1,0 +1,59 @@
+\begin{thebibliography}{1}
+
+\bibitem{alemi2018}
+Alexander~A. Alemi, Ben Poole, Ian Fischer, Joshua~V. Dillon, Rif~A. Saurous,
+  and Kevin Murphy.
+\newblock Fixing a broken {ELBO}.
+\newblock In {\em International Conference on Machine Learning}, 2018.
+
+\bibitem{dieng2019}
+Adji~B. Dieng, Yoon Kim, Alexander~M. Rush, and David~M. Blei.
+\newblock Avoiding latent variable collapse with generative skip models.
+\newblock In {\em Proceedings of the 22nd International Conference on
+  Artificial Intelligence and Statistics}, volume~89, pages 2397--2405, 2019.
+
+\bibitem{gilmer2017}
+Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
+  George~E. Dahl.
+\newblock Neural message passing for quantum chemistry.
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning}, volume~70, pages 1263--1272, 2017.
+
+\bibitem{ichikawa2024}
+Yuma Ichikawa and Koji Hukushima.
+\newblock Learning dynamics in linear {VAE}: Posterior collapse threshold,
+  superfluous latent space pitfalls, and speedup with {KL} annealing.
+\newblock In {\em Proceedings of the 27th International Conference on
+  Artificial Intelligence and Statistics}, volume 238, pages 1936--1944, 2024.
+
+\bibitem{kingma2014}
+Diederik~P. Kingma and Max Welling.
+\newblock Auto-encoding variational bayes.
+\newblock {\em International Conference on Learning Representations}, 2014.
+
+\bibitem{shi2018}
+Yang Shi, Gen Chen, and Zheng Chen.
+\newblock Effective regeneration of {LiCoO2} from spent lithium-ion batteries:
+  a direct approach towards high-performance active particles.
+\newblock {\em Green Chemistry}, 20:851, 2018.
+
+\bibitem{sohn2015}
+Kihyuk Sohn, Honglak Lee, and Xinchen Yan.
+\newblock Learning structured output representation using deep conditional
+  generative models.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~28, 2015.
+
+\bibitem{vanderVen1998}
+Anton Van~der Ven, Mehmet~K. Aydinol, Gerbrand Ceder, Georg Kresse, and
+  J{\"u}rgen Hafner.
+\newblock First-principles investigation of phase stability in {LixCoO2}.
+\newblock {\em Physical Review B}, 58:2975--2987, 1998.
+
+\bibitem{wakamiya2026}
+Taishiro Wakamiya and Atsushi Ishikawa.
+\newblock Artificial catalyst generation for the oxygen reduction reaction
+  using conditional variational autoencoder and atomistic calculations.
+\newblock {\em npj Computational Materials}, 12:206, 2026.
+
+\end{thebibliography}

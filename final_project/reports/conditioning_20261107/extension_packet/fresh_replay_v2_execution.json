@@ -1,0 +1,50 @@
+{
+  "status": "FAILED_PRESERVED",
+  "allocation": "60990329",
+  "python": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+  "started_UTC": "2026-11-08T07:10:08.141315+00:00",
+  "command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "reports/conditioning_20261107/extension_packet/run_fresh_replay_v2.py",
+    "--root",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project",
+    "--fresh-dir",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2",
+    "--receipt-dir",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet"
+  ],
+  "PYTHONPATH_unset_at_bootstrap": true,
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "replay_command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2/replay_extensions.py",
+    "--core-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2/core.zip",
+    "--extensions-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2/extensions.zip",
+    "--download-ext",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2/download_ext.json",
+    "--output-dir",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2/results"
+  ],
+  "cwd": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2",
+  "source_archives_copied_outside_CFS": true,
+  "member_manifests_verified_before_bootstrap": true,
+  "source_bootstrap_sha256": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee",
+  "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "extensions_archive_sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+  "latest_terminal_NEB_README_byte_identical": true,
+  "exception": "FileExistsError(17, 'File exists')",
+  "traceback": "Traceback (most recent call last):\n  File \"/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/run_fresh_replay_v2.py\", line 69, in main\n    with (receipts/\"fresh_replay_v2.log\").open(\"x\") as log:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/global/cfs/cdirs/m4537/rsb/envs/fairchem/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/fresh_replay_v2.log'\n",
+  "exit_code": 1,
+  "backend_SDK_distributions": {
+    "fairchem-core": null,
+    "mace-torch": null,
+    "matgl": null,
+    "chgnet": null,
+    "sevenn": null
+  },
+  "completed_UTC": "2026-11-08T07:10:16.614989+00:00",
+  "wall_seconds": 8.47366774501279
+}

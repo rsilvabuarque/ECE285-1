@@ -1,0 +1,18 @@
+{
+  "status": "PUBLISHED_AND_VERIFIED",
+  "core_commit": "f4f4db90479f700841fa0b3dde3935ef66ac9036",
+  "branch": "midterm/conditioning-graph-edit-20261107",
+  "release_url": "https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-conditioning-20261108",
+  "archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "remote_download_log": "VERIFIED_ARTIFACT 2157 files b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "CI": [
+    {
+      "conclusion": "success",
+      "databaseId": 42448718683,
+      "headSha": "f4f4db90479f700841fa0b3dde3935ef66ac9036",
+      "name": "Cathode CVAE package",
+      "status": "completed"
+    }
+  ],
+  "optional_results_included": false
+}

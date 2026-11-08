@@ -1,0 +1,22 @@
+{
+  "status": "FROZEN_BEFORE_SCORING",
+  "attempts": 768,
+  "unique_geometries": 102,
+  "raw_draws_before_reuse": 102,
+  "actual_fit_replicates": 1,
+  "common_RNG_across_temperature": true,
+  "unchanged_allocations_imply_bit_identical_proposals": true,
+  "physical_temperature_enters_decoder": false,
+  "protocol_sha256": "6806df9e5ebbdaddaf8361ec8fb32f9f04beb69068ac2c0231b684f0cc78f8d9",
+  "source_sha256": "faca96e527a92a3d40aca4da5a4bb318b86fb8c53a13034704d6d6577ece307c",
+  "elapsed_seconds": 0.6857337951660156,
+  "device": "cpu",
+  "torch": "2.13.0+cpu",
+  "outputs": {
+    "attempts.csv": "22f1eadd7c3585f225882807cb2ece032a465db3c73cf8bc4b0f0ffba6a8b40a",
+    "raw_attempts.npz": "12dc65f745205121ea2c56bd6c607551cf94dac44a1a16bb171b1a7974eaf685",
+    "candidates.npz": "b0997275ebef55ff24d68d2b3faafe0c7c745c9ffe97fe690b5dda241a095a7d"
+  },
+  "no_proposal_energy_labels_read": true,
+  "no_energy_filtering": true
+}

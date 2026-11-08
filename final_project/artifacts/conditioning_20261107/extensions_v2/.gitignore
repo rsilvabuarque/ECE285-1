@@ -1,0 +1,5 @@
+*
+!.gitignore
+!manifest_ext.json
+!download_ext.json
+!README.txt

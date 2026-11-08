@@ -1,0 +1,19 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    "final_project/src",
+    "final_project/scripts",
+    "final_project/docs",
+    "final_project/tests"
+  ],
+  "exit_code": 2,
+  "findings": [
+    "final_project/scripts/conditioning_20261107/neb_mace_profile.py:78: trailing whitespace.",
+    "+        "
+  ],
+  "decision": "Preserve frozen executed source bytes; whitespace on a blank line in neb_mace_profile.py has no runtime or scientific effect. Generated CSV CRLF records are preserved rather than normalized."
+}

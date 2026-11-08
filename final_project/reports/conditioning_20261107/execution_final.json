@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "status": "PASS_EXECUTION_ACCOUNTING_FINAL",
+  "finalized_UTC": "2026-11-08T07:14:29.983859+00:00",
+  "requested_final": true,
+  "finalization_mode": "stdlib accounting/control-metadata closure of allocated heavy audit",
+  "heavy_audit": {
+    "path": "reports/conditioning_20261107/execution_heavy.json",
+    "sha256": "8202f39fff4ec934671c887c39389169195e86493062cf6dacfc58746834fa04",
+    "audited_UTC": "2026-11-08T06:39:00.701297+00:00",
+    "auditor_sha256": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c"
+  },
+  "oracle": {
+    "registry_sha256_at_start": "c8f542702a0f75eb7df51315736e40b8232ceea526b75dcc1144ae832c87ab6e",
+    "registered_tasks": 1640,
+    "complete_tasks": 1640,
+    "noncomplete_tasks": 0,
+    "by_teacher": {
+      "mace": {
+        "registered_fresh_pairs": 24120,
+        "registered_cache_reuses": 147,
+        "recorded_new_logical_static_attempts": 24120,
+        "successful_new_EFS": 24120,
+        "failed_new_logical_attempts": 0,
+        "fresh_pairs_without_terminal_rows": 0
+      },
+      "uma": {
+        "registered_fresh_pairs": 80539,
+        "registered_cache_reuses": 679,
+        "recorded_new_logical_static_attempts": 80539,
+        "successful_new_EFS": 80539,
+        "failed_new_logical_attempts": 0,
+        "fresh_pairs_without_terminal_rows": 0
+      }
+    },
+    "cache_certificates": [
+      {
+        "model": "mace",
+        "available_entries": 51441,
+        "registered_reused_entries": 147,
+        "cache_sha256": "d11609eed3bc32039d627c6cde07819517dd3e6f86b97ebef5bdfef0778c5ee7",
+        "certificate_sha256": "fe8a979338fbad01bc5cb1c558687ba7395ef00281fe2c80b2d5c067ea004d2d"
+      },
+      {
+        "model": "uma",
+        "available_entries": 76016,
+        "registered_reused_entries": 679,
+        "cache_sha256": "9bc814ac0f3a16fbf7b01473fe1c4d6ccc092a82ea3f63c16616da6ff5082295",
+        "certificate_sha256": "be66328b2f4b74dc2dd63828cd1ba90721bdfb7cee1d6bbd37cb08fa267e21e0"
+      }
+    ],
+    "physical_context": "Exact canonical parent geometry; pinned model/head/package/checkpoint, FP32 and TF32 off",
+    "counting_scope": "Logical single-point attempts, each requesting E/F/stress; not instrumented neural-backbone forward counts; cache reuses are NOT fresh calls"
+  },
+  "training": {
+    "planned_full_trajectories": 31,
+    "started_full_trajectories": 31,
+    "task_definition_files_at_start": [
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_context_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_context_replication_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_smoke_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/latent_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/policy_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/spatial_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_fit_tasks.json"
+    ],
+    "protocol_planned_full_trajectories": 29,
+    "defined_full_trajectories_not_started": 0,
+    "completed_full_trajectories": 31,
+    "full_trajectories_without_terminal_summary": 0,
+    "engineering_trajectories_started": 1,
+    "engineering_trajectories_complete": 1,
+    "eligible_matched_round0_4000_update_trajectories": 28,
+    "maximum_full_trajectories": 31,
+    "training_scope_contract": {
+      "mode": "verified_core_scope_amendment",
+      "maximum_core_full_trajectories": 30,
+      "maximum_optional_editor_full_trajectories": 3,
+      "maximum_all_full_trajectories": 31,
+      "originally_planned_all_full_trajectories": 29,
+      "amended_planned_core_full_trajectories": 28,
+      "amended_planned_all_full_trajectories": 31,
+      "amendment": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json",
+        "sha256": "3cb0b6466d91f0973941b5c4fd36922b659174480cebaa6ba20ef1b437c9c34f",
+        "created_UTC": "2026-11-08T03:42:24.287646+00:00",
+        "original_protocol_sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+        "authority": "User TXT section2 caps CORE experiment program at30 full training trajectories; section9 editor is a subsequent optional extension"
+      }
+    },
+    "started_core_full_trajectories": 28,
+    "started_optional_editor_full_trajectories": 3,
+    "started_all_full_trajectories": 31,
+    "fitted_model_usefulness": "Not inferred from successful training or this execution audit"
+  },
+  "engineering_inference": {
+    "rows": [
+      {
+        "model": "mace",
+        "receipt_sha256": "cf445b7f89fa4e7f8c39584502cd430a4cda8695c934dfd295840b596f7f7f57",
+        "logical_static_attempts": 3,
+        "successful_EFS": 3,
+        "wall_seconds": 229.11309065693058,
+        "scope": "Existing training geometries; engineering and time profile, not a new assessment"
+      },
+      {
+        "model": "uma",
+        "receipt_sha256": "054a0884fbaedcce3558d85e5fe9261edee9d5626f941330f19d86d8b1a7a85b",
+        "logical_static_attempts": 3,
+        "successful_EFS": 3,
+        "wall_seconds": 327.5469078409951,
+        "scope": "Existing training geometries; engineering and time profile, not a new assessment"
+      }
+    ],
+    "logical_static_attempts": 6,
+    "scope": "Separate recorded engineering EFS calls; not new benchmark candidates or neural-backbone forward counts"
+  },
+  "allocations": {
+    "accounting_sha256": "4e6eb59249204e0c3683df5d71d76eb2763c01c988bdbdaa1cf1e14f73285709",
+    "timezone_assumption": "UTC explicitly required for export",
+    "accounting_snapshot_UTC": "2026-11-08T07:13:07.410815+00:00",
+    "allocation_count": 7,
+    "ignored_child_or_out_of_scope_rows": [],
+    "listed_all_allocations_terminal": true,
+    "GPU_device_hours": 41.70388888888889,
+    "four_GPU_equivalent_node_hours": 10.425972222222223,
+    "physical_node_hours": 13.619444444444444,
+    "maximum_concurrently_allocated_GPUs": 20,
+    "findings": [],
+    "timestamp_check": "Bookkeeping tolerances:2s for integer-second Start/End versus ElapsedRaw;120s for a running row versus export snapshot. Findings require review, not a changed scientific tolerance.",
+    "scope": "Allocated wall time includes startup, idle, failed work and CPU analysis; no child-step double counting; no monetary/credit estimate"
+  },
+  "all_listed_evidence_terminal": true,
+  "evidence_stable_after_heavy_audit": true,
+  "changed_files": [],
+  "findings": [],
+  "finalizer_checks": {
+    "control_metadata_content_hashes_checked": 3491,
+    "raw_payload_stat_signatures_checked": 1751,
+    "raw_payload_content_rehashed": false,
+    "raw_payload_scope": "Content hashes were verified inside the allocation. Closing checks unchanged size/mtime; it is not a second raw-content audit.",
+    "new_runtime_model_calls": 0,
+    "arrays_or_models_loaded": false
+  },
+  "sidecars": {
+    "allocations": {
+      "path": "reports/conditioning_20261107/execution_final_allocations.csv",
+      "sha256": "9b849b5aba60ed2296f327b9fcd228b63ca54803fd1e0fb14d69e1eb0f6959cb"
+    },
+    "auditor_source": {
+      "path": "reports/conditioning_20261107/execution_final_auditor.py",
+      "sha256": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c"
+    }
+  },
+  "accounting_source": {
+    "path": "reports/conditioning_20261107/allocation_final.tsv",
+    "sha256": "4e6eb59249204e0c3683df5d71d76eb2763c01c988bdbdaa1cf1e14f73285709"
+  },
+  "finalizer_sha256": "97b25b962c1396b10630b7b8c5f7c532569ee648fa85f789139fba1dbbc9e85c",
+  "elapsed_seconds": 67.63065218704287,
+  "physical_scope": "Execution, exact identity/context, accounting and software receipts only; not DFT accuracy, statistical adequacy, global minima or transport validation",
+  "exclusions": "Relaxation/MD/NEB force-call counters must be supplied by their own recorded pilots. This audit does not invent uninstrumented forward calls or count cache reuses as new EFS."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "completed_UTC": "2026-11-08T06:57:26.044647+00:00",
+  "passed": 182,
+  "warnings": 9,
+  "seconds_reported_by_pytest": 32.99,
+  "command": "srun --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q",
+  "allocation": 60990329,
+  "log": "reports/conditioning_20261107/final_pytest_v2.log",
+  "log_sha256": "db9420feca4a1df647471758bcda175af0f4ff19ac93ee57f1cad48d830afa05",
+  "source_sha256": {
+    "scripts/conditioning_20261107/replay_extensions.py": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee",
+    "scripts/conditioning_20261107/package_extensions.py": "7f1f149a2ebdbad3593f1414104bc7ddaba85b1968e49ce4ed12ae68edf28e59",
+    "tests/test_extensions_packet.py": "6c56fc8b2361f16bb451c048595e5778fd6044579ccd74ebc312484f42886a18"
+  },
+  "scope": "Final integrated software tests after the fail-closed historical-metadata relocation repair. No new physics or training."
+}

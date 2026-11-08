@@ -1,0 +1,409 @@
+{
+  "status": "PREPARED_NO_MLIP_EVALUATION",
+  "frozen_UTC": "2026-11-08T05:08:07.483722+00:00",
+  "required_report_gate": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+    "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+    "completed_UTC": "2026-11-08T04:47:40.818541+00:00"
+  },
+  "parent": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+    "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "events": [
+    {
+      "event_id": "basin_1_repeat2",
+      "source_run": "basin_1/repeat2",
+      "migrating_atom_index": 65,
+      "original_parent_atom_index": 66,
+      "Li_ordinal": 17,
+      "source_parent_Li_site": 18,
+      "destination_parent_Li_site": 31,
+      "periodic_hop_image": [
+        0,
+        0,
+        0
+      ],
+      "ideal_hop_vector_A": [
+        -1.40562848839925,
+        2.4346199584737445,
+        0.0
+      ],
+      "ideal_hop_length_A": 2.8112569767985027,
+      "observed_host_aligned_displacement_A": [
+        -1.7420226984232285,
+        1.856608485807249,
+        0.1160506627848553
+      ],
+      "expected_initial_assignment": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32,
+        34,
+        35,
+        36,
+        42,
+        43,
+        44,
+        46
+      ],
+      "expected_final_assignment": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        31,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32,
+        34,
+        35,
+        36,
+        42,
+        43,
+        44,
+        46
+      ],
+      "first_assignment_change_ps": 16.702,
+      "persistent_destination_start_ps": 16.736,
+      "transit_assignment": 38,
+      "frame_times_ps": {
+        "before_200fs": 16.502,
+        "first_changed_assignment": 16.702,
+        "settled_after_100fs": 16.836
+      },
+      "frame_source_indices": {
+        "before_200fs": 8251,
+        "first_changed_assignment": 8351,
+        "settled_after_100fs": 8418
+      },
+      "atom_order": "Original saved MD atom order and continuous unwrapped coordinates; no independent canonicalization or wrapping",
+      "endpoint_inputs": {
+        "initial": {
+          "path": "basin_1_repeat2/initial.npz",
+          "sha256": "5ba371e0ddc22ebf1f17e60c1206e15606d9525ea4c00901adeb152f7d7969a8"
+        },
+        "transit": {
+          "path": "basin_1_repeat2/transit.npz",
+          "sha256": "6b776635aefc0d8d3687673ab4203d3461fe97025a594f56ba5e75583da31153"
+        },
+        "final": {
+          "path": "basin_1_repeat2/final.npz",
+          "sha256": "6f1f2cbb75ebab60200a5f2f59012be9d976d70fb2198024698212743a59b787"
+        }
+      }
+    },
+    {
+      "event_id": "basin_2_repeat1",
+      "source_run": "basin_2/repeat1",
+      "migrating_atom_index": 59,
+      "original_parent_atom_index": 59,
+      "Li_ordinal": 11,
+      "source_parent_Li_site": 11,
+      "destination_parent_Li_site": 23,
+      "periodic_hop_image": [
+        1,
+        0,
+        0
+      ],
+      "ideal_hop_vector_A": [
+        1.4056284883992518,
+        2.4346199584737436,
+        0.0
+      ],
+      "ideal_hop_length_A": 2.8112569767985027,
+      "observed_host_aligned_displacement_A": [
+        0.8397870567151408,
+        2.5602229031769452,
+        0.3904033796577044
+      ],
+      "expected_initial_assignment": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        38,
+        39,
+        42,
+        44,
+        46,
+        47
+      ],
+      "expected_final_assignment": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        23,
+        12,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20,
+        24,
+        25,
+        26,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        38,
+        39,
+        42,
+        44,
+        46,
+        47
+      ],
+      "first_assignment_change_ps": 16.882,
+      "persistent_destination_start_ps": 16.924,
+      "transit_assignment": 40,
+      "frame_times_ps": {
+        "before_200fs": 16.682,
+        "first_changed_assignment": 16.882,
+        "settled_after_100fs": 17.024
+      },
+      "frame_source_indices": {
+        "before_200fs": 8341,
+        "first_changed_assignment": 8441,
+        "settled_after_100fs": 8512
+      },
+      "atom_order": "Original saved MD atom order and continuous unwrapped coordinates; no independent canonicalization or wrapping",
+      "endpoint_inputs": {
+        "initial": {
+          "path": "basin_2_repeat1/initial.npz",
+          "sha256": "4c8d32ad439693f918bda4d46e6f0fb259e58af656965d69d11518e4730a4b29"
+        },
+        "transit": {
+          "path": "basin_2_repeat1/transit.npz",
+          "sha256": "7e50092112bd1e8268b857a98ee43311c97495c3866c91bce8fe5a935a8d188e"
+        },
+        "final": {
+          "path": "basin_2_repeat1/final.npz",
+          "sha256": "a29149cd2df1293948b60ebe10e3a4640222181bacbbd3dffb5f0504447b949a"
+        }
+      }
+    }
+  ],
+  "maximum_events": 2,
+  "maximum_allocated_GPU_device_hours": 2.0,
+  "per_event_wall_seconds": 2700,
+  "optional_MACE_profile_wall_seconds": 900,
+  "planned_maximum_GPU_device_hours": 1.75,
+  "reserve_GPU_device_hours": 0.25,
+  "root_controls_allocations_and_stops": true,
+  "teachers": {
+    "uma": {
+      "name": "UMA-S-1.2.1",
+      "package": "fairchem-core",
+      "version": "2.25.0",
+      "backend": "uma",
+      "head": "omat",
+      "repo": "facebook/UMA",
+      "revision": "ce3b2744ff57c0f49a010b763efcbfe9ba82e2e1",
+      "files": {
+        "checkpoints/uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+      },
+      "entry": "checkpoints/uma-s-1p2p1.pt",
+      "docs": "https://facebookresearch.github.io/fairchem/ase-calculator/"
+    },
+    "mace": {
+      "name": "MACE-MH-1",
+      "package": "mace-torch",
+      "version": "0.3.16",
+      "backend": "mace",
+      "head": "omat_pbe",
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_mh_1/mace-mh-1.model",
+      "files": {
+        "mace-mh-1.model": "a522eb7f59c7879963d41586528f4980baf33e086c94aa92e3eafdeccad3be47"
+      },
+      "entry": "mace-mh-1.model",
+      "docs": "https://mace-docs.readthedocs.io/en/latest/guide/foundation_models.html"
+    }
+  },
+  "installed_ASE": "3.26.0",
+  "installed_API": {
+    "NEB": {
+      "signature": "(images, k=0.1, climb=False, parallel=False, remove_rotation_and_translation=False, world=None, method='aseneb', allow_shared_calculator=False, precon=None, **kwargs)",
+      "source_sha256": "240742b679bd209565d0f8b43bb74ec461bebe537932c473bb7814bfe50bd33b"
+    },
+    "FIRE": {
+      "signature": "(atoms: ase.atoms.Atoms, restart: Optional[str] = None, logfile: Union[IO, str] = '-', trajectory: Optional[str] = None, dt: float = 0.1, maxstep: Optional[float] = None, maxmove: Optional[float] = None, dtmax: float = 1.0, Nmin: int = 5, finc: float = 1.1, fdec: float = 0.5, astart: float = 0.1, fa: float = 0.99, a: float = 0.1, downhill_check: bool = False, position_reset_callback: Optional[Callable] = None, **kwargs)",
+      "source_sha256": "fe55cc89b46fcadd2b0b741d51231ccc05d9974caee5e20d3773fb43ee0ad107"
+    },
+    "idpp_interpolate": {
+      "signature": "(images, traj='idpp.traj', log='idpp.log', fmax=0.1, optimizer=<class 'ase.optimize.mdmin.MDMin'>, mic=False, steps=100)",
+      "source_sha256": "240742b679bd209565d0f8b43bb74ec461bebe537932c473bb7814bfe50bd33b"
+    }
+  },
+  "endpoint_relaxation": {
+    "cell": "fixed common cell",
+    "movable": "all atoms",
+    "constraints": "none",
+    "optimizer": "FIRE",
+    "max_steps_per_endpoint": 500,
+    "Fmax_eV_A": 0.03,
+    "maxstep_A": 0.05,
+    "dt_ASE": 0.1,
+    "dtmax_ASE": 1.0
+  },
+  "initial_band": {
+    "interior_images": 5,
+    "method": "improvedtangent",
+    "k_eV_A2": 0.1,
+    "parallel": false,
+    "linear_interpolation_MIC": false,
+    "branch": "Saved continuous unwrapped MD branch retained for the marked atom",
+    "IDPP_pair_distances_MIC": true,
+    "IDPP_max_steps": 100,
+    "IDPP_Fmax_eV_A": 0.1,
+    "initial_Fmax_eV_A": 0.1,
+    "initial_max_steps": 300,
+    "climbing_Fmax_eV_A": 0.05,
+    "climbing_max_steps": 700,
+    "optimizer": "FIRE",
+    "maxstep_A": 0.05,
+    "dt_ASE": 0.1,
+    "dtmax_ASE": 1.0
+  },
+  "refinement": {
+    "event_id": "basin_1_repeat2",
+    "interior_images": 7,
+    "climbing_Fmax_eV_A": 0.03,
+    "max_steps": 400,
+    "initialize": "Piecewise arclength resampling of the converged five-interior-image band",
+    "minimum_remaining_wall_seconds": 600,
+    "comparison": "Report barrier difference; do not silently relax tolerances"
+  },
+  "numerical_scope": "Provisional endpoint and projected NEB maximum-force targets from goal section12. Successful exit/force convergence is not DFT accuracy.",
+  "k_units_note": "Installed ImprovedTangentMethod multiplies spring length (A) by k to form force (eV/A), hence k has eV/A^2. The current web page labels k eV/Ang; implementation dimensional analysis is used here.",
+  "official_reference": {
+    "url": "https://docs.ase-lib.org/ase/neb.html",
+    "accessed_UTC": "2026-11-08T05:08:07.483766+00:00",
+    "support": "NEB/IDPP APIs, serial image calculators, initial band before climbing, FIRE suitability; current online default differs from installed3.26, so method is explicit",
+    "publications": [
+      "https://doi.org/10.1063/1.1323224",
+      "https://doi.org/10.1063/1.1329672"
+    ]
+  },
+  "outcomes": "Forward/reverse potential-energy barriers in eV per marked hop; not free energies, diffusivity, or transport-network validation",
+  "invalid_endpoint_policy": "Save failure if intended occupied-to-empty identity event disappears after quench. Equal symmetry-orbit keys alone are not a failure; never force endpoints or substitute barrier zero.",
+  "MACE_scope": "Optional single-point disagreement profile on UMA path, never an optimized MACE NEB barrier",
+  "no_new_MD": true,
+  "no_DFT_or_VASP_inputs": true,
+  "actual_MLIP_calls": 0,
+  "source_hashes": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_events.json": "1d325ae46741ce569218062ee0e1c9b19caa368276b769ef165f20a003bfc28f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry_manifest.json": "2f2ddf637944786ed7c0366494f28bdd7da85aebb9b2ff9f6c466e95d0f4137f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src/cathode_cvae/mlip/calculators.py": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src/cathode_cvae/mlip/registry.py": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/receipt.json": "e3afce82eb1788995f7a5e8d8e8ba291331ebf9816511f0ad4d1edd1e2544e58",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/production.npz": "1a8983682dafc966d99f85d8ff957be5824b384911c7c82f3b8d71a4c48f1b52",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/production.traj": "eedb6f0304d233dbaef59ce334fda63b59750032c0e8dcb5d812aeac97f69bd9",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_1/repeat2/production_mapping.jsonl": "d107df1db316e9a1ce8d4cfeb27c81951227ecba875d501795b3e57c5d0dbdcd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_1/repeat2/before_200fs.npz": "b32cab2ecb46d10acd72a393bf9a7426612a2a7afb3fc74841542577471ee401",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_1/repeat2/first_changed_assignment.npz": "5654af167a62602762047c75ec32b5736d68d719320cb6adfbfd5d833a4c34b3",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_1/repeat2/settled_after_100fs.npz": "31fc10d58ea9c9d3d1a1fd9fb6c08b7ca326b048579adc27a7f89d1144829de8",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/receipt.json": "1039ccb5e0b2597c14b7c9208d4acc320ff803dc2c03496dceba0e2ab3fb10d4",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.npz": "f9a85d1a749b838c082b310545f418df720d88380e8fa2e19d46d4e11816abbb",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production.traj": "a0cb89a483e43f12fbe5c72c0a9b30ae5346d0e8dfa5b509b1cf4a19698e13f7",
+    "/pscratch/sd/r/rsb/ece285_thermal_20261107/results/md/basin_2/repeat1/production_mapping.jsonl": "1aa964dde890d7f124c8784494646dd47db8884adc3a0cf68167dcc21cb4be58",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/before_200fs.npz": "a20b50f48597379156796ef1cadceb253e0c52acf2fa0be8861cf7d8d333c2b3",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/first_changed_assignment.npz": "27d9da237d9d552f88db9e5fbbd2d122ae356451b64b93a2b53ea8f8d7cc9d94",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/thermal_pilot_20261107/numerics/md_audit_event_geometry/basin_2/repeat1/settled_after_100fs.npz": "97cb498a977ca90c4b4fcf68f7a1967bf709200e815d2c18074d8dbfb73be2a2"
+  },
+  "script_hashes": {
+    "neb_common.py": "8d6e9692f77dc99b266d2c5ec9984e5e6cffa8fa6f914dfc4d8779bf2cb7b8cb",
+    "neb_mace_profile.py": "53f248f43686bb8b915fbbef67e0ae0aeefceb4a6c8eff7c6fe668fadc0bcedf",
+    "neb_prepare.py": "8856e66185af2da7d1eb97265a16c8232a3a9ea1ab7820cff3acff1577725a32",
+    "neb_run.py": "64257d7326f03424e7fecc0c4f416dd58740a3b382b81fe2821aa80d4916fa53",
+    "neb_summarize.py": "2411210e2af56fcd4be1d672116fa7529721272c2d7a4d3f7de13fa0d7254781"
+  }
+}

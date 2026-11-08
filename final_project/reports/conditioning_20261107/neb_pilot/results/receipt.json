@@ -1,0 +1,17 @@
+{
+  "status": "SAVED_OUTCOMES_SUMMARIZED",
+  "source_hashes": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_1_repeat2/receipt.json": "2b8269bc9f35c948f5dc00033a44c6c02a499806b3beb60fa47abee988e50962",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_2_repeat1/receipt.json": "f1854cb7be8a33818860699006482e059c7dd8147a26170bbf9d282f50834a89",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/mace_profile/receipt.json": "6aed71856e996b5c6031a3314cae1a6e8f329ef559bf4bf9e6d47a1900e27619",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_1_repeat2/climbing_band_final.npz": "a5564cdc49bacf5c26c392ca6c0dc9dd1534d0beff836d434682fc9fe45c9974",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_1_repeat2/refined_band7_final.npz": "985f827ce889ed8df164b1b325b19396952072251397d57c91a08673ff503f44",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/basin_2_repeat1/climbing_band_final.npz": "3b1b3136556f55d86eed52c119a611882accc3258f9ed49a232116e7f843ad28",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/neb/mace_profile/MACE_on_UMA_band.npz": "d9c96da4463236238412f334643779194b6533f5136b71a5e595492974cc458e"
+  },
+  "rows": 3,
+  "new_model_calls": 0,
+  "script_sha256": "c7bb428262297f216537f127a75c493be6d9693612357c6832c703435c8f2868",
+  "cost_scope": "process_wall_seconds is not allocated GPU-device-hours; use root's Slurm cost receipt for allocations/startup/idle",
+  "physical_scope": "MLIP potential-energy pilot. Failed/collapsed/unconverged paths remain visible. MACE curves are single-point disagreements only."
+}

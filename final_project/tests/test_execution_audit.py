@@ -16,6 +16,57 @@ spec = importlib.util.spec_from_file_location("execution_audit", FILE)
 audit = importlib.util.module_from_spec(spec); spec.loader.exec_module(audit)
 
 
+def test_mask_checkpoint_hash_stays_strict_even_if_named_selection_exists(tmp_path):
+    (tmp_path / "best.pt").write_bytes(b"alias")
+    summary = dict(checkpoint_sha256="named-hash", selection_checkpoints={"0.1":
+        dict(filename="best_validation_beta_0p1.pt", sha256="named-hash")})
+    evidence = audit.Evidence()
+    audit.bind_summary_checkpoint(tmp_path, tmp_path, summary, dict(phase="core", verified=True), evidence)
+    assert len(evidence.findings) == 1
+    assert evidence.findings[0]["actual"] == audit.digest(tmp_path / "best.pt")
+
+
+def test_editor_named_checkpoint_requires_exact_alias_proof_and_binds_both_bytes(tmp_path):
+    directory = tmp_path / "editor"; directory.mkdir()
+    named = directory / "best_validation_beta_0p1.pt"; named.write_bytes(b"named ZIP root")
+    alias = directory / "best.pt"; alias.write_bytes(b"different ZIP root")
+    source = tmp_path / "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py"
+    source.parent.mkdir(parents=True); source.write_text("synthetic independent checker")
+    prior = tmp_path / "failed.json"; prior.write_text("synthetic preserved failure")
+    summary = dict(checkpoint_sha256=audit.digest(named), selection_checkpoints={"0.1":
+        dict(filename=named.name, sha256=audit.digest(named))})
+    phase = dict(phase="optional_editor", verified=True)
+    missing = audit.Evidence()
+    audit.bind_summary_checkpoint(tmp_path, directory, summary, phase, missing)
+    assert "requires the independent" in missing.findings[0]["finding"]
+    proof = tmp_path / "reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json"
+    proof.parent.mkdir(parents=True)
+    row = dict(alias_checkpoint=str(alias), named_checkpoint=str(named), named_sha256=audit.digest(named),
+        alias_sha256=audit.digest(alias), normalized_member_inventory_named={"synthetic": "same"},
+        normalized_member_inventory_alias={"synthetic": "same"}, unchanged_from_failed_preclosure=dict(
+            actual=audit.digest(alias), expected=audit.digest(named)))
+    for key in ("entire_deserialized_payload_bitwise_identical", "normalized_zip_member_payloads_identical",
+                "summary_matches_named_selection", "generation_matches_named_selection", "protected_bytes_unchanged"):
+        row[key] = True
+    value = dict(status="PASS_EXACT_EDITOR_CHECKPOINT_ALIAS_AUDIT", fits=[row],
+        source_sha256=audit.digest(source), preserved_preclosure=dict(path=str(prior), sha256=audit.digest(prior)))
+    proof.write_text(json.dumps(value))
+    evidence = audit.Evidence()
+    audit.bind_summary_checkpoint(tmp_path, directory, summary, phase, evidence)
+    assert evidence.findings == []
+    assert evidence.files[str(alias)] == audit.digest(alias)
+    assert evidence.files[str(named)] == audit.digest(named)
+    alias.write_bytes(b"changed after proof")
+    changed = audit.Evidence()
+    audit.bind_summary_checkpoint(tmp_path, directory, summary, phase, changed)
+    assert changed.findings[0]["expected"] == row["alias_sha256"]
+    row["entire_deserialized_payload_bitwise_identical"] = False
+    proof.write_text(json.dumps(value))
+    invalid = audit.Evidence()
+    audit.bind_summary_checkpoint(tmp_path, directory, summary, phase, invalid)
+    assert "proof is inconsistent" in invalid.findings[0]["finding"]
+
+
 def test_gpu_subtypes_and_child_steps_are_not_double_counted(tmp_path):
     p = tmp_path / "accounting.tsv"
     p.write_text("JobIDRaw\tAccount\tAllocNodes\tAllocTRES\tState\tStart\tEnd\tElapsedRaw\n"

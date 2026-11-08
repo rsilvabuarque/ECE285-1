@@ -556,6 +556,53 @@ def check_phase_caps(rows, contract, evidence):
                 started_optional_editor_full_trajectories=counts["optional_editor"], started_all_full_trajectories=total)
 
 
+def bind_summary_checkpoint(root, directory, summary, phase, evidence):
+    """Bind the trainer's selected file, preserving strict checks on its alias.
+
+    The editor saved one checkpoint twice under different ZIP root names. Its
+    summary hashes the named selection, whereas the historical mask trainer's
+    summary hashes best.pt. No tensor tolerance or checkpoint rewrite is used.
+    """
+    expected = summary.get("checkpoint_sha256")
+    if not expected:
+        return
+    if phase.get("phase") != "optional_editor" or not phase.get("verified"):
+        evidence.bind(directory / "best.pt", expected)
+        return
+    selected = summary.get("selection_checkpoints", {}).get("0.1", {})
+    if selected.get("filename") != "best_validation_beta_0p1.pt" or selected.get("sha256") != expected:
+        evidence.findings.append(dict(path=str(directory), finding="editor summary does not bind its declared named selection"))
+        return
+    named = directory / selected["filename"]
+    alias = directory / "best.pt"
+    evidence.bind(named, expected)
+    proof_path = root / "reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json"
+    if not proof_path.is_file():
+        evidence.findings.append(dict(path=str(alias), finding="editor alias requires the independent exact payload audit"))
+        return
+    proof = evidence.read_json(proof_path)
+    candidates = [r for r in proof.get("fits", []) if r.get("alias_checkpoint") == str(alias)]
+    if proof.get("status") != "PASS_EXACT_EDITOR_CHECKPOINT_ALIAS_AUDIT" or len(candidates) != 1:
+        evidence.findings.append(dict(path=str(alias), finding="editor alias proof is missing or ambiguous"))
+        return
+    row = candidates[0]
+    valid = (row.get("named_checkpoint") == str(named) and row.get("named_sha256") == expected
+        and all(row.get(k) is True for k in ("entire_deserialized_payload_bitwise_identical",
+            "normalized_zip_member_payloads_identical", "summary_matches_named_selection",
+            "generation_matches_named_selection", "protected_bytes_unchanged"))
+        and row.get("normalized_member_inventory_named") == row.get("normalized_member_inventory_alias")
+        and bool(row.get("normalized_member_inventory_named"))
+        and row.get("unchanged_from_failed_preclosure", {}).get("actual") == row.get("alias_sha256")
+        and row.get("unchanged_from_failed_preclosure", {}).get("expected") == expected)
+    if not valid:
+        evidence.findings.append(dict(path=str(alias), finding="editor alias exact payload proof is inconsistent"))
+        return
+    evidence.bind(alias, row["alias_sha256"])
+    evidence.bind(root / "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py", proof["source_sha256"])
+    previous = proof["preserved_preclosure"]
+    evidence.bind(previous["path"], previous["sha256"])
+
+
 def fit_audit(root, run, evidence, protocol):
     contract = training_scope_contract(root, run, evidence, protocol)
     tasks = []
@@ -639,8 +686,7 @@ def fit_audit(root, run, evidence, protocol):
         if summary:
             for key, item in summary.get("selection_checkpoints", {}).items():
                 evidence.bind(directory / item["filename"], item["sha256"])
-            if summary.get("checkpoint_sha256"):
-                evidence.bind(directory / "best.pt", summary["checkpoint_sha256"])
+            bind_summary_checkpoint(root, directory, summary, phase, evidence)
         mask_data = cfg.get("data_sha256") == protocol.get("data", {}).get("round0_sha256")
         eligible = (not engineering and mask_data and summary.get("optimizer_updates") == 4000
             and summary.get("stop_reason") == "optimizer_update_cap"

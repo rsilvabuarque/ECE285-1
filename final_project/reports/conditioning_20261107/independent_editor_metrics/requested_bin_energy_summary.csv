@@ -1,0 +1,4 @@
+requested_bin,all_paired_attempts,known_pairs,mean_learned_minus_mutation_meV_atom,median_learned_minus_mutation_meV_atom,learned_lower_pairs,equal_energy_pairs,mutation_lower_pairs,learned_lower_fraction_all_attempts,mutation_lower_fraction_all_attempts,mean_learned_child_minus_seed_meV_atom,mean_mutation_child_minus_seed_meV_atom
+low,1152,1152,0.07655991236172903,0.06342429179829052,548,10,594,0.4756944444444444,0.515625,1.1733489040021856,1.0967889916404567
+middle,1152,1152,0.017561033309622137,0.0,564,18,570,0.4895833333333333,0.4947916666666667,0.07375752506733087,0.05619649175770874
+high,1152,1152,0.18601414670483507,0.11720847331385077,541,14,597,0.4696180555555556,0.5182291666666666,-1.2810169031522673,-1.4670310498571022

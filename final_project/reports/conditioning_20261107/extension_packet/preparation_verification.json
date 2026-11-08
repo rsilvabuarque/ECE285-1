@@ -1,0 +1,17 @@
+{
+  "status": "SYNTHETIC_CHECKS_PASS",
+  "verified_UTC": "2026-11-08T06:15:51.861702+00:00",
+  "tests": 13,
+  "pytest_summary": "13 passed in 2.92s",
+  "allocation": "60985189",
+  "command": "srun --jobid=60985189 --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONPATH=/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src /global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/energy_ranking_audit/multimodel_20261104/envs/uma/bin/python -m pytest -q tests/test_extensions_packet.py",
+  "source_hashes": {
+    "scripts/conditioning_20261107/package_extensions.py": "48b12ec0cbfe68d5c2b145a1af23c954e3ccab526b69e9173368416ec49b554a",
+    "scripts/conditioning_20261107/replay_extensions.py": "2d9dba953df03ffd511d2b1ce042707234cf95cc5f711f88dd4072f05ed40ceb",
+    "tests/test_extensions_packet.py": "6844498320db91f5b55317e8aeded0f7cfef2b45f3dea3745cf7935f4f0db2b7"
+  },
+  "scope": "Integrity/path relocation/array adapter/CSV/count/curation/portable training-command guards; real optional ZIP and fresh cached replay have not run",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "production_packaging_executed": false
+}

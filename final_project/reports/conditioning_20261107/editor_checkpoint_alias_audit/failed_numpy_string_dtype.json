@@ -1,0 +1,13 @@
+{
+  "status": "FAILED_SAFE_LOADER_NUMPY_STRING_DTYPE",
+  "preserved_UTC": "2026-11-08T06:25:13.217955+00:00",
+  "exit_code": 1,
+  "allocation": "60990329",
+  "step": "4",
+  "weights_only": true,
+  "map_location": "cpu",
+  "unsupported_dynamic_type": "numpy.dtypes.StrDType",
+  "source_sha256": "56676bd68a3b0068867ef89a2de9c86f8d891407c60fdf506a104e2c87c22ddf",
+  "comparison_started": false,
+  "protected_inputs_modified": false
+}

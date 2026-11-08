@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "audited_UTC": "2026-11-08T06:09:43.681683+00:00",
+  "elapsed_seconds": 3.7744297980098054,
+  "attempts_per_teacher": 6912,
+  "teachers": [
+    "uma",
+    "mace"
+  ],
+  "canonical_parent_operations": 192,
+  "history_orbits": 312715,
+  "common_base_epsilon_and_AR_uniforms_verified": true,
+  "actual_z_checked_not_assumed_common": true,
+  "changed_aggregate_z_groups": 27,
+  "maximum_aggregate_z_transform_absolute_error": 2.5987783569547673e-07,
+  "maximum_fraction_of_derived_FP32_rounding_bound": 0.29268348371601244,
+  "moment_groups": 27,
+  "TRAIN_rows_per_fit": 40157,
+  "TRAIN_only_membership_counts_and_row_hashes_verified": true,
+  "moment_law": "Population E[diag(exp(logvar))]+Cov(mu), denominator N, as audited in the hash-bound executed source; covariance/Cholesky/positive-between-mean identities checked independently",
+  "moment_limit": "Per-row mu/logvar not saved; this audit does not re-encode masks or independently recompute each population moment from encoder outputs",
+  "model_reselection": false,
+  "new_NN_optimizer_updates": 0,
+  "new_encoder_calls": 0,
+  "new_MLIP_calls": 0,
+  "independent_production_table_comparisons_passed": true,
+  "summary": [
+    {
+      "teacher": "uma",
+      "method": "standard_prior",
+      "replicate_count": 3,
+      "fitted_seed_count": 3,
+      "mean_novel_inbin_yield": 0.31047453703703703,
+      "design_seed_standard_deviation": 0.005086341386356174
+    },
+    {
+      "teacher": "uma",
+      "method": "aggregate_prior",
+      "replicate_count": 3,
+      "fitted_seed_count": 3,
+      "mean_novel_inbin_yield": 0.34259259259259256,
+      "design_seed_standard_deviation": 0.0092818373451073
+    },
+    {
+      "teacher": "mace",
+      "method": "standard_prior",
+      "replicate_count": 3,
+      "fitted_seed_count": 3,
+      "mean_novel_inbin_yield": 0.30787037037037035,
+      "design_seed_standard_deviation": 0.010500721823856519
+    },
+    {
+      "teacher": "mace",
+      "method": "aggregate_prior",
+      "replicate_count": 3,
+      "fitted_seed_count": 3,
+      "mean_novel_inbin_yield": 0.34027777777777773,
+      "design_seed_standard_deviation": 0.00938945644652081
+    }
+  ],
+  "original_q20_LOW_request": [
+    {
+      "teacher": "uma",
+      "method": "standard_prior",
+      "mean_novel_fixed_q20_yield": 0.30121527777777773
+    },
+    {
+      "teacher": "uma",
+      "method": "aggregate_prior",
+      "mean_novel_fixed_q20_yield": 0.23958333333333334
+    },
+    {
+      "teacher": "mace",
+      "method": "standard_prior",
+      "mean_novel_fixed_q20_yield": 0.3255208333333333
+    },
+    {
+      "teacher": "mace",
+      "method": "aggregate_prior",
+      "mean_novel_fixed_q20_yield": 0.2604166666666667
+    }
+  ],
+  "source_sha256": "fcb7b4a48fd3b76250f455a922016b357f348cbba0641e878d775bbb5b6ff32e",
+  "score_sha256": {
+    "uma": "4ada7fb61ff1c490be415ef5a77814de1305e558a85da3fd58d044d70916b7b5",
+    "mace": "f74fc215e7adf542f41a6d5b8fc7d23b09a84e98feb84daa363a0b7444af12df"
+  },
+  "registry_snapshot_sha256": "c8f542702a0f75eb7df51315736e40b8232ceea526b75dcc1144ae832c87ab6e",
+  "source_bindings": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/assessment/protocol.json": "2f9475a0054a94c0ecfa1b9b10a2ae2c6340cf141f6abef1d0cd93b68f90f428",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/assessment/receipt.json": "3dbaad89813546f8e2de2b8fde35aed94ec584e7183318b73db4de765ef22d30",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/assessment/raw_attempts.npz": "88b33296ecb39f39076470441da3211a916c466fdfe5b454b541e0a00a75f4e5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/assessment/attempts.csv": "8935ff0b99ae01fb25409891cc590d2144199dc9c7da162069280ccba2b7465e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/assessment/history.json": "9781110e2a2d8f8ac0383a25b26014590beef63d49661908d4f083897794eaa3",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/preparation/moments.npz": "b3b675b31f2a4f9b3efa69f2eb5bba25c13e45903c21dad336338bdb683f766b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/preparation/moment_groups.json": "4aa6597dd4ebc5d853074fb8bd37e7221d843b4ece342064eefff326ffc9a62e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/aggregate_prior/preparation/receipt.json": "f71373552654b18f57adbfab71182ac12d2f94134122d57d39c288151a9cf8c0"
+  },
+  "interpretation": "Posthoc class-dependent Gaussian proposals, not a learned conditional prior, exact posterior mixture, same-z condition-only test, or DFT validation"
+}

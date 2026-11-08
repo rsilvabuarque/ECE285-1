@@ -1,0 +1,107 @@
+{
+  "status": "POSTHOC_INTERPRETATION_ONLY",
+  "completed_UTC": "2026-11-08T05:44:17.128400+00:00",
+  "source_hashes": {
+    "receipt.json": "0676c172322cd5fa5203c40d15ca6763a551c377ea186c375add6500c91803f3",
+    "attempt_outcomes.csv": "d8221f24df3fdd1b09a89e90701a42b89cced56c512b139a5cb0a3a547f32dbe",
+    "paired_energy_outcomes.csv": "0cdba20acc499e3825577ff2442561b3504c4cd273c4cbb060ad44e56d186008"
+  },
+  "script_sha256": "b80d022655bea179d2a99aeb5da7e7c712578d0f36e9bc5589573b8511b68b69",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "selection_changed": false,
+  "all_attempts_retained": true,
+  "summary": [
+    {
+      "requested_bin": "low",
+      "all_paired_attempts": 1152,
+      "known_pairs": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.07655991236172903,
+      "median_learned_minus_mutation_meV_atom": 0.06342429179829052,
+      "learned_lower_pairs": 548,
+      "equal_energy_pairs": 10,
+      "mutation_lower_pairs": 594,
+      "learned_lower_fraction_all_attempts": 0.4756944444444444,
+      "mutation_lower_fraction_all_attempts": 0.515625,
+      "mean_learned_child_minus_seed_meV_atom": 1.1733489040021856,
+      "mean_mutation_child_minus_seed_meV_atom": 1.0967889916404567
+    },
+    {
+      "requested_bin": "middle",
+      "all_paired_attempts": 1152,
+      "known_pairs": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.017561033309622137,
+      "median_learned_minus_mutation_meV_atom": 0.0,
+      "learned_lower_pairs": 564,
+      "equal_energy_pairs": 18,
+      "mutation_lower_pairs": 570,
+      "learned_lower_fraction_all_attempts": 0.4895833333333333,
+      "mutation_lower_fraction_all_attempts": 0.4947916666666667,
+      "mean_learned_child_minus_seed_meV_atom": 0.07375752506733087,
+      "mean_mutation_child_minus_seed_meV_atom": 0.05619649175770874
+    },
+    {
+      "requested_bin": "high",
+      "all_paired_attempts": 1152,
+      "known_pairs": 1152,
+      "mean_learned_minus_mutation_meV_atom": 0.18601414670483507,
+      "median_learned_minus_mutation_meV_atom": 0.11720847331385077,
+      "learned_lower_pairs": 541,
+      "equal_energy_pairs": 14,
+      "mutation_lower_pairs": 597,
+      "learned_lower_fraction_all_attempts": 0.4696180555555556,
+      "mutation_lower_fraction_all_attempts": 0.5182291666666666,
+      "mean_learned_child_minus_seed_meV_atom": -1.2810169031522673,
+      "mean_mutation_child_minus_seed_meV_atom": -1.4670310498571022
+    }
+  ],
+  "LOW_by_fit": [
+    {
+      "requested_bin": "low",
+      "fit_seed": 20261106,
+      "all_paired_attempts": 384,
+      "known_pairs": 384,
+      "mean_learned_minus_mutation_meV_atom": 0.07800591219565149,
+      "median_learned_minus_mutation_meV_atom": 0.01674439070270112,
+      "learned_lower_pairs": 186,
+      "equal_energy_pairs": 6,
+      "mutation_lower_pairs": 192,
+      "learned_lower_fraction_all_attempts": 0.484375,
+      "mutation_lower_fraction_all_attempts": 0.5,
+      "mean_learned_child_minus_seed_meV_atom": 1.225207111274673,
+      "mean_mutation_child_minus_seed_meV_atom": 1.1472011990790214
+    },
+    {
+      "requested_bin": "low",
+      "fit_seed": 20261107,
+      "all_paired_attempts": 384,
+      "known_pairs": 384,
+      "mean_learned_minus_mutation_meV_atom": 0.11856583952636363,
+      "median_learned_minus_mutation_meV_atom": 0.15648803396775943,
+      "learned_lower_pairs": 179,
+      "equal_energy_pairs": 2,
+      "mutation_lower_pairs": 203,
+      "learned_lower_fraction_all_attempts": 0.4661458333333333,
+      "mutation_lower_fraction_all_attempts": 0.5286458333333334,
+      "mean_learned_child_minus_seed_meV_atom": 1.2059697964553209,
+      "mean_mutation_child_minus_seed_meV_atom": 1.0874039569289573
+    },
+    {
+      "requested_bin": "low",
+      "fit_seed": 20261108,
+      "all_paired_attempts": 384,
+      "known_pairs": 384,
+      "mean_learned_minus_mutation_meV_atom": 0.03310798536317198,
+      "median_learned_minus_mutation_meV_atom": 0.041527949357987926,
+      "learned_lower_pairs": 183,
+      "equal_energy_pairs": 2,
+      "mutation_lower_pairs": 199,
+      "learned_lower_fraction_all_attempts": 0.4765625,
+      "mutation_lower_fraction_all_attempts": 0.5182291666666666,
+      "mean_learned_child_minus_seed_meV_atom": 1.0888698042765634,
+      "mean_mutation_child_minus_seed_meV_atom": 1.0557618189133915
+    }
+  ],
+  "interpretation": "Requested HIGH and MIDDLE classes must be assessed under their intended targets. Overall energy lowering is not alone evidence about LOW search. LOW original-q20 useful yield and LOW paired energy differences are distinct observables.",
+  "uncertainty": "Descriptive three-fit comparisons; no confidence interval based on treating correlated proposals as independent"
+}

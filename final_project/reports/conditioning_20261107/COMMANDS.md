@@ -70,3 +70,58 @@ The final completion receipt supplies post-release totals, including startup,
 idle allocation, failures and optional work. No new DFT or MLIP fine-tuning is
 part of this run. Collaborator responsibilities are in
 [`COLLABORATOR_TASKS.md`](../../docs/COLLABORATOR_TASKS.md).
+
+## Replay the optional companion without calculators
+
+Download both ZIPs with the exact names and SHA256 values in
+`artifacts/conditioning_20261107/download.json` and
+`artifacts/conditioning_20261107/extensions_v2/download_ext.json`. Keep the ZIPs:
+the optional replay authenticates both full member inventories before analysis.
+From the installed learning environment, on your site's analysis allocation:
+
+```bash
+python scripts/conditioning_20261107/replay_extensions.py \
+  --core-archive ECE285_conditioning_20261108_required.zip \
+  --extensions-archive ECE285_conditioning_20261108_extensions_v2.zip \
+  --download-ext artifacts/conditioning_20261107/extensions_v2/download_ext.json \
+  --output-dir runs/varad_optional_replay
+```
+
+This recomputes the editor, posthoc latent proposal, temperature allocation,
+best-of-budget and NEB summary tables from archived scalar labels/bands. It
+performs zero MLIP calls and zero training updates. Original historical paths
+remain in preserved protocols; a separate, explicit path-only replay view points
+to authenticated files in the fresh mirror. Raw global force/stress shard bytes
+remain on HPC and are bound by the archive inventory rather than downloaded.
+
+The editor's complete generation/training commands are retained in its protocol,
+fit tasks and checkpoint configurations in the optional ZIP. The exact matched
+seeds, swap counts and sampling uniforms remain assessment inputs. A reproduction
+must use a new output directory and preserve the protected orbit roles.
+
+## Execution audit and post-release resource closure
+
+The historical commands below refer to this run's owned Slurm allocation IDs;
+they are receipts, not commands to acquire or reuse these allocations elsewhere.
+The heavy audit requires an active compute allocation. Its original failed
+preclosure audit, narrow filename-binding repair and independent exact checkpoint
+alias proof are preserved. No checkpoint or training summary was rewritten.
+
+```bash
+env TZ=UTC sacct -X -P \
+  -j 60985189,60985612,60985847,60986556,60988553,60989957,60990329 \
+  --format=JobIDRaw,Account,AllocNodes,AllocTRES,State,Start,End,ElapsedRaw \
+  > reports/conditioning_20261107/allocation_final.tsv
+
+python reports/conditioning_20261107/audit_execution.py --root "$PWD" \
+  --accounting reports/conditioning_20261107/allocation_final.tsv \
+  --owned-jobs 60985189 60985612 60985847 60986556 60988553 60989957 60990329 \
+  --finalize-from reports/conditioning_20261107/execution_heavy.json \
+  --output reports/conditioning_20261107/execution_final.json
+```
+
+The finalizer checks metadata hashes, retained raw-payload stat signatures and
+terminal allocation accounting after a separately recorded full raw-byte audit.
+It loads no arrays or models. Final allocation totals include startup, idle time,
+analysis and failures. NEB calculator calls have their own pilot receipt and are
+not silently counted as pristine-deletion static labels.

@@ -1,8 +1,10 @@
-"""Refresh the required report's source hashes without declaring the root gate.
+"""Refresh the live final report map, preserving the separate required checkpoint.
 
 Final-study additions have an explicit reviewed claim list below; the integrating
-owner still records the required gate separately after compilation and audits.
+owner records publication, allocation release and final cost separately. The
+required snapshot, gate and original public_source_map are never edited here.
 """
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -17,6 +19,13 @@ def source(path, details):
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--verification",type=Path,help="Current report mechanical/render receipt")
+    parser.add_argument("--visual-review",type=Path,help="Current all-page visual-review receipt")
+    parser.add_argument("--neb-receipt",type=Path,action="append",default=[])
+    parser.add_argument("--cost-receipt",type=Path)
+    parser.add_argument("--final",action="store_true")
+    args=parser.parse_args()
     p = ROOT / "docs/midterm1/claim_sources.json"
     record = json.loads(p.read_text())
     keep = {"parent48", "half_orbit_capacity", "training_round0", "historical_yields",
@@ -85,21 +94,83 @@ def main():
             ("reports/conditioning_20261107/final_structural_distances/receipt.json", "All34560attempts, all3456actualmutation2k edits; no labels read or selection change"),
             ("reports/conditioning_20261107/final_structural_distances/family_summary.csv", "Equalcount/bin/seed mean siteHamming distances"),
             ("reports/conditioning_20261107/final_structural_distances/METHOD.md", "Metric definition, fixedreference and upperbound proof")]),
-        ("current_scope", "Requiredscientificevidencecomplete withrootreportgatepending; nonewDFT/MLIPfinetuning; no entropy/generalizationaccuracy implied", [
+        ("optional_editor", "Same-seed editor balanced yield59.375% vs57.234%; low-q20 yield50.347/50.521%; all6912attempts and raw pair checks retained", [
+            ("runs/conditioning_20261107/evaluation/editor/summary.csv", "Three learned fits and paired mutation streams; balanced outcome and separate low metric"),
+            ("reports/conditioning_20261107/independent_editor_metrics/receipt.json", "Independent raw pairing,192operation mapping, bins, novelty and seed-label parity"),
+            ("runs/conditioning_20261107/editor/assessment_v1/protocol.json", "History/seed/budget/uniforms frozen before scoring"),
+            ("runs/conditioning_20261107/editor/data_v2/preparation_receipt.json", "All source outcomes and connected protected seed/child roles")]),
+        ("editor_low_request_metrics", "LOW paired mean favors mutation by0.07656meV/atom; learned lower in548of1152pairs; distinct-quintile yield tied", [
+            ("reports/conditioning_20261107/editor_low_request_v2/request_energy_summary.csv", "Per-request, per-fit and per-composition paired energies; avoid interpreting HIGH as minimization"),
+            ("reports/conditioning_20261107/independent_editor_metrics/requested_bin_energy_posthoc.json", "Independent request-scoped reduction")]),
+        ("editor_secondary_minima", "All9LOWfit/count minima at128attempts: learned lower novel child in7cases; mean advantages-.572/-.229/-.428meVatom; supplied-seed minimum is not globalhistory minimum", [
+            ("reports/conditioning_20261107/editor_low_request_v2/terminal_best_novel_low_children.csv", "All9 exact terminal energies/IDs plus best identical supplied current-SCF seed"),
+            ("reports/conditioning_20261107/editor_low_request_v2/terminal_minima_composition_means.csv", "Three composition means;7of9 learned and5of9mutation beat their supplied-seed minimum"),
+            ("reports/conditioning_20261107/editor_low_request_v2/receipt.json", "Secondary posthoc scope and budget definitions"),
+            ("reports/conditioning_20261107/editor_low_request_v2/visual_review.json", "All-seed running-best and paired-low figure review")]),
+        ("editor_stage_cost", "7330new logicalUMA labels=6845child-only+485sharedseed-only;15alreadyavailable; counts verified against PRE-editor registry/cache and completedtask receipts", [
+            ("reports/conditioning_20261107/editor_low_request_v2/cost_audit.json", "Actual stage-specific fresh labels; network forward calls not instrumented"),
+            ("reports/conditioning_20261107/editor_low_request_v2/query_accounting.csv", "Per-method standalone queries vs deduplicated union; shared seed verification separate")]),
+        ("editor_checkpoint_alias", "Different ZIP-root file hashes for best.pt and named selected checkpoint; normalized members and full loaded payload identical; assessment already used named hashes", [
+            ("reports/conditioning_20261107/editor_checkpoint_alias_audit/receipt.json", "All3fits:20tensors/97000elements, fullconfiguration/epoch/update/latentmetadata match; no model or label edits"),
+            ("reports/conditioning_20261107/execution_preclosure.json", "Preserved earlier cost-audit findings from an overly broad byte-hash alias convention; not evidence of changed assessment weights")]),
+        ("posthoc_gaussian_prior", "TRAIN-only posterior-moment Gaussian, noNNupdates: balanced UMA34.259vs31.047/MACE34.028vs30.787; LOWyield regresses; graphcontext retained", [
+            ("reports/conditioning_20261107/independent_aggregate_prior/receipt.json", "Independent tables/actual transformed-z checks; per-row encoder outputs unavailable for independent moment recomputation"),
+            ("reports/conditioning_20261107/independent_aggregate_prior/summary.csv", "Separate UMA/MACE balanced yields in new assessment namespace"),
+            ("reports/conditioning_20261107/independent_aggregate_prior/original_q20_LOW_request.csv", "LOW UMA23.958vs30.122/MACE26.042vs32.552%"),
+            ("runs/conditioning_20261107/aggregate_prior/preparation/receipt.json", "Unchanged networks,27TRAIN-only groups, no gradients"),
+            ("runs/conditioning_20261107/aggregate_prior/assessment/protocol.json", "New312715-orbit history; sameepsilon/U but condition-specific actualz")]),
+        ("temperature_followup", "24schedules/768attempts/102geometries; identical integerallocations and actualpairedproposals across4T; lowreferenceESS remains", [
+            ("reports/conditioning_20261107/temperature_followup/analysis/receipt.json", "All attempts and exact cross-temperature mask identity checks"),
+            ("reports/conditioning_20261107/temperature_followup/analysis/schedule_summary.csv", "Measured distributions; pure-low fractions65.625/65.625/53.125%"),
+            ("reports/conditioning_20261107/temperature_followup/reference_diagnostics.csv", "Static cell-energy weights/raw frequencies; ESS1.850-6.544"),
+            ("reports/conditioning_20261107/temperature_followup/finite12_support.json", "Existing87orbit mathematical accounting only"),
+            ("reports/conditioning_20261107/temperature_followup/protocol.json", "Required gate precedes study; registered editor geometries known before generation")]),
+        ("current_scope", "Required gate complete and preserved; later extensions separate; no newDFT/MLIPfinetuning or entropy/generalization claim", [
             ("artifacts/conditioning_20261107/protocol.json", "Frozen scientific and revised user resource contract"),
+            ("artifacts/conditioning_20261107/required_gate.json", "Immutable completed required checkpoint before extensions"),
             ("reports/conditioning_20261107/SOURCE_REVIEW.md", "Actual baseline versus conversation suggestions")]),
     ]
+    if args.neb_receipt:
+        if len(args.neb_receipt)!=2:raise ValueError("Record both terminal event receipts together")
+        for path in args.neb_receipt:
+            if not json.loads(path.read_text()).get("completed_UTC"):raise ValueError("NEB event is not terminal")
+        neb_sources=[(str(path.relative_to(ROOT)) if path.is_absolute() else str(path),"Terminal event receipt; not a free-energy barrier or calibrated diffusivity") for path in args.neb_receipt]
+        neb_sources += [("runs/conditioning_20261107/neb/mace_profile/receipt.json", "MACE single points on the FIVE-interior UMA band, not refined7 or optimizedMACEbarrier"),
+            ("reports/conditioning_20261107/neb_pilot/prepared_v3/protocol.json", "ExplicitASE3.26 method, fixedcell/atomidentity/PBC, provisionalforcecriteria and boundedresources"),
+            ("reports/conditioning_20261107/neb_pilot/results/receipt.json", "Profiles retain coarse and refined event1; no newmodelcalls in summary"),
+            ("reports/conditioning_20261107/neb_pilot/independent/receipt.json", "Independent saved-band endpoint/barrier/force/MACE coordinate/call-count checks; no physical validation")]
+        additions.append(("defined_hop_NEB", "Two numerically converged UMA event paths; event1 forward0.638→0.189eV with coupled7image/tightertarget change; event2 coarse0.192eV; MACEcoarseSP is not transport validation",neb_sources))
+    if args.cost_receipt:
+        path=args.cost_receipt
+        additions.append(("resource_cost_receipt", "Resource and logical-label accounting use the supplied receipt's own as-of/final scope; not inferred from attempts",
+            [(str(path.relative_to(ROOT)) if path.is_absolute() else str(path),"Integrating cost audit; read terminal/as-of state before treating as complete allocation usage")]))
     for identity, claim, sources in additions:
         claims.append(dict(id=identity,claim=claim,status="VERIFIED_WITH_STATED_SCOPE",
                            sources=[source(*s) for s in sources]))
     record["claims"] = claims
-    record["status"] = "REQUIRED_FINAL_EVIDENCE_READY_REPORT_GATE_PENDING"
+    record["status"] = "FINAL_REPORT_REVIEWED_WITH_SEPARATE_IMMUTABLE_REQUIRED_GATE" if args.final else "LIVE_REPORT_SOURCES_UPDATED_FINAL_REVIEW_PENDING"
     record["assignment"]["discussion_pdf_sha256"] = json.loads((ROOT/"artifacts/conditioning_20261107/protocol.json").read_text())["sources"]["Evaluate Generative Model Project.pdf"]
     record["assignment"]["source"] = "User supplied course screenshots and current next-goal section8; updated89page discussionPDF is context"
     record["report_outputs"] = {str(path.relative_to(ROOT)):hashlib.sha256(path.read_bytes()).hexdigest()
         for path in [ROOT/"docs/midterm1"/name for name in ["main.tex","main.pdf","generated_conditioning_results.tex","generated_policy_table.tex","generated_latent_table.tex","generated_spatial_table.tex","generated_final_table.tex","generated_energy_audit.tex","references.bib"]]}
-    record["report_verification"] = dict(body_pages=5,references_pages=1,
-        scope="Required scientific evidence inserted; root-owned gate and later publication/optional study status remain separate",
+    record["report_outputs"]["docs/OPTIONAL_EXTENSIONS_20261107.md"]=hashlib.sha256((ROOT/"docs/OPTIONAL_EXTENSIONS_20261107.md").read_bytes()).hexdigest()
+    verification=None;visual=None
+    if args.verification:
+        verification=json.loads(args.verification.read_text())
+        if (verification["status"]!="PASS" or verification["pdf_sha256"]!=record["report_outputs"]["docs/midterm1/main.pdf"]
+                or verification["tex_sha256"]!=record["report_outputs"]["docs/midterm1/main.tex"]):
+            raise ValueError("Report verification does not bind the current PDF")
+    if args.visual_review:
+        visual=json.loads(args.visual_review.read_text())
+        if visual["status"]!="PASS_VISUAL_REVIEW" or visual["pdf_sha256"]!=record["report_outputs"]["docs/midterm1/main.pdf"]:
+            raise ValueError("Visual review does not bind the current PDF")
+    if args.final and (verification is None or visual is None or not args.neb_receipt):
+        raise ValueError("Final map needs current build/visual and both terminal NEB receipts")
+    record["report_verification"] = dict(body_pages=verification["body_pages"] if verification else None,
+        references_pages=verification["reference_pages"] if verification else None,
+        mechanical=source(str(args.verification.relative_to(ROOT)) if args.verification.is_absolute() else str(args.verification),"Current report rendering/build checks") if verification else None,
+        visual=source(str(args.visual_review.relative_to(ROOT)) if args.visual_review.is_absolute() else str(args.visual_review),"Current all-page visual review") if visual else None,
+        scope="Live report includes later optional evidence; required snapshot/gate/public_source_map are immutable; publication/allocation release are root-owned",
         independent_teammate_checks="Remain assigned")
     record["primary_references"] = [r for r in record["primary_references"] if r["key"] != "omat2026"] + [
         dict(key="gilmer2017",url="https://proceedings.mlr.press/v70/gilmer17a.html",checked="Primary PMLR abstract/metadata",supports="Messagepassing framework; not evidence current graph wins"),
@@ -109,8 +180,8 @@ def main():
     # Repeated interim regeneration should not duplicate bibliography records.
     record["primary_references"] = list({r["key"]:r for r in record["primary_references"]}.values())
     p.write_text(json.dumps(record,indent=2)+"\n")
-    lines = ["# Report claim and source map", "", "Status: **required final evidence ready; integrating report gate pending**.",
-             "This map does not certify the required delivery gate or teammates' independent contributions.", "",
+    lines = ["# Report claim and source map", "", f"Status: **{record['status']}**.",
+             "The required gate and its snapshot remain immutable. This live map does not certify teammates' independent contributions or final publication/resource release.", "",
              "| Claim family | Verified scope | Main source |", "| --- | --- | --- |"]
     for c in claims:
         s = c["sources"][0]

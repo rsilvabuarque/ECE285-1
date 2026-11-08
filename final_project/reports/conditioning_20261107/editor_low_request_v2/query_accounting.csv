@@ -1,0 +1,11 @@
+scope,role_or_method,unique_geometry_queries,pre_editor_registry_hits,pre_editor_certified_cache_hits,union_preexisting_exact_labels,standalone_fresh_queries_after_required,actual_editor_stage_fresh_ids_encountered,caution
+all_requested_bins,shared_seed_verification,492,7,0,7,485,485,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+all_requested_bins,learned_edit,3451,5,0,5,3446,3446,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+all_requested_bins,mutation,3453,3,0,3,3450,3450,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+all_requested_bins,union_children,6853,8,0,8,6845,6845,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+all_requested_bins,union_seeds_and_children,7345,15,0,15,7330,7330,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+low_requests_only,shared_seed_verification,155,0,0,0,155,155,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+low_requests_only,learned_edit,1150,3,0,3,1147,1147,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+low_requests_only,mutation,1151,1,0,1,1150,1150,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+low_requests_only,union_children,2286,4,0,4,2282,2282,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."
+low_requests_only,union_seeds_and_children,2441,4,0,4,2437,2437,"Method rows share labels; do not sum them. Seed verification is a shared overhead, not charged twice."

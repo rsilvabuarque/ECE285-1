@@ -194,6 +194,13 @@ configuration/results table for Sections 2–4, with actual run commands and lim
 Your independent fit does not retrospectively create another seed in the
 integrating campaign's frozen final assessment.
 
+The optional Gaussian-proposal result is posthoc TRAIN-moment matching, with no
+new neural training; it is not the spatial no-latent ablation above. Keep those
+questions separate. The earlier coordinate CVAE and deterministic-regressor
+control remain a completed secondary result; do not restart that geometry
+campaign for the midterm. Explain its saved comparison and what a predicted
+unminimized coordinate field does and does not establish.
+
 ## Varad: recompute outcomes and validate the comparison
 
 Budget about 6–8 focused hours. Your main outputs are an independent metric
@@ -245,6 +252,22 @@ one-fit structural-condition pilot separately: joint yield 28.125%, plain CVAE
 28.516%, mutation 44.792%. No result from these development comparisons is
 silently renamed final performance.
 
+Review the optional outcomes using
+[`OPTIONAL_EXTENSIONS_20261107.md`](OPTIONAL_EXTENSIONS_20261107.md) and the raw
+tables in the extensions archive once its packaging receipt is verified. For
+editing, reproduce the 59.375/57.234% balanced comparison and the separate
+50.347/50.521% original-q20 low comparison. Then check all nine terminal novel
+minima, their common current-SCF seed minimum and the 47.569% paired-low win
+fraction. The running-best advantage and the less favorable average measure
+different parts of the distribution; neither should be dropped.
+
+For Gaussian proposals, shared base epsilon/uniforms do not mean shared actual z.
+Reproduce the balanced gains and low-yield regressions under both teachers,
+without calling the posthoc moments a trained conditional prior. For temperature
+allocation, verify unchanged requests **and actual paired masks** across all four
+temperatures, and retain the low-reference-ESS limitation. The raw scalar labels
+are sufficient for these checks; no fresh DFT or MLIP training is needed.
+
 ### 2. Check paired response, latent use and novelty
 
 Use the saved output tables/figures under
@@ -253,7 +276,9 @@ diagnostics. The paired analysis command is
 `scripts/conditioning_20261107/analyze_diagnostics.py --help`; its receipt binds
 the exact proposal arrays, manifest, schemas, score file and history.
 
-Verify that low/middle/high pairs share actual latent and AR-uniform fingerprints.
+For the core condition diagnostics, verify that low/middle/high pairs share actual
+latent and AR-uniform fingerprints. The separate Gaussian-proposal comparison
+shares base epsilon rather than actual z, as described above.
 Changing latent vectors must hold the uniforms fixed. Posterior diagnostics use
 only the documented validation targets. Recompute target Hamming distances from
 raw masks; a saved Hamming scalar alone is not an independent check.
@@ -320,6 +345,12 @@ no new DFT is submitted or scheduled. Keep claims of material/size transfer,
 physical entropy, reactor optima and downstream MLIP improvement outside the
 current evidence. Integrate the collaborators' actual returned work, verify the
 current rubric/format, and submit manually before the deadline.
+
+For the physical review, check the actual migrating atom and periodic hop image,
+endpoint species/order/cell, residual forces, image-refinement evidence and the
+MLIP energy reference for every reported barrier. A MACE single-point band check
+would be a disagreement profile, not an independently optimized MACE barrier.
+Convergence under an MLIP does not remove the need for later physical validation.
 
 Complete independent checks on November 8, freeze the integrated tables/figures
 that day, and reserve November 9 for final verification. Prepared commands do not

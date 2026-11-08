@@ -1,0 +1,22 @@
+{
+  "status": "PROPOSALS_PASS_LABELS_NOT_OPENED",
+  "audited_UTC": "2026-11-08T05:29:07.440434+00:00",
+  "attempts": 6912,
+  "paired_trials": 3456,
+  "failed_or_unsupported_requests": 0,
+  "canonical_parent_operations": 192,
+  "raw_2k_verified_generated_attempts": 6912,
+  "actual_seed_k_and_common_uniform_rows_equal": true,
+  "independent_uniform_mutation_reconstruction": true,
+  "seed_and_child_nested_role_bridges": 0,
+  "script_sha256": "dcde06d775c5cce627b244d63694edc84c4bfc844700ea9445e6d5bfec5dbe16",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "source_hashes": {
+    "protocol.json": "1f8218fd12b739076e825874fce042ecbf4d8ebad764ba2174d337bd29fa4a4a",
+    "receipt.json": "d1504d4ce47fba2ddbe41087d9b16e7030620f7e570d6f2068ef2b8ff7e96699",
+    "attempts.csv": "35579f3f3f4867cb8a8868cbb2d7ff01ef92e84543670b92fe239fed7f3fe652",
+    "raw_attempts.npz": "96700c0d036bb5b0af5fba7ec6fc31d8d0ed61bc98d7fd7848d429f81e68bcc4",
+    "candidates.npz": "193782e6646dc97604b6b165b369b9a6ba9380d943e7479b237190dc10fd1757"
+  }
+}

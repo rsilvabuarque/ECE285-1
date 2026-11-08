@@ -1,0 +1,5 @@
+teacher,method,replicate_count,fitted_seed_count,mean_novel_inbin_yield,design_seed_standard_deviation
+uma,standard_prior,3,3,0.31047453703703703,0.005086341386356174
+uma,aggregate_prior,3,3,0.34259259259259256,0.0092818373451073
+mace,standard_prior,3,3,0.30787037037037035,0.010500721823856519
+mace,aggregate_prior,3,3,0.34027777777777773,0.00938945644652081

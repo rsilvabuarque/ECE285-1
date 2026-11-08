@@ -1,0 +1,14 @@
+{
+  "status": "FAILED_SAFE_LOADER_NUMPY_SCALAR",
+  "preserved_UTC": "2026-11-08T06:23:35.576901+00:00",
+  "exit_code": 1,
+  "allocation": "60990329",
+  "step": "0",
+  "weights_only": true,
+  "map_location": "cpu",
+  "exception": "_pickle.UnpicklingError",
+  "unsupported_global": "numpy._core.multiarray.scalar",
+  "source_sha256": "6741f18e10ae4134c8cb177b9592292668e0c7dae5c8fd007f0940325744ff9a",
+  "scientific_comparison_started": false,
+  "protected_inputs_modified": false
+}

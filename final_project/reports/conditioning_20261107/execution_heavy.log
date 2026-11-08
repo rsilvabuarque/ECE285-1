@@ -1,0 +1,83 @@
+{
+  "status": "PRELIMINARY",
+  "oracle": {
+    "mace": {
+      "registered_fresh_pairs": 24120,
+      "registered_cache_reuses": 147,
+      "recorded_new_logical_static_attempts": 24120,
+      "successful_new_EFS": 24120,
+      "failed_new_logical_attempts": 0,
+      "fresh_pairs_without_terminal_rows": 0
+    },
+    "uma": {
+      "registered_fresh_pairs": 80539,
+      "registered_cache_reuses": 679,
+      "recorded_new_logical_static_attempts": 80539,
+      "successful_new_EFS": 80539,
+      "failed_new_logical_attempts": 0,
+      "fresh_pairs_without_terminal_rows": 0
+    }
+  },
+  "training": {
+    "planned_full_trajectories": 31,
+    "started_full_trajectories": 31,
+    "task_definition_files_at_start": [
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_context_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_context_replication_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/graph_smoke_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/latent_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/policy_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/spatial_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_descriptor_fit_tasks.json",
+      "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/symmetry_fit_tasks.json"
+    ],
+    "protocol_planned_full_trajectories": 29,
+    "defined_full_trajectories_not_started": 0,
+    "completed_full_trajectories": 31,
+    "full_trajectories_without_terminal_summary": 0,
+    "engineering_trajectories_started": 1,
+    "engineering_trajectories_complete": 1,
+    "eligible_matched_round0_4000_update_trajectories": 28,
+    "maximum_full_trajectories": 31,
+    "training_scope_contract": {
+      "mode": "verified_core_scope_amendment",
+      "maximum_core_full_trajectories": 30,
+      "maximum_optional_editor_full_trajectories": 3,
+      "maximum_all_full_trajectories": 31,
+      "originally_planned_all_full_trajectories": 29,
+      "amended_planned_core_full_trajectories": 28,
+      "amended_planned_all_full_trajectories": 31,
+      "amendment": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/protocol_amendment_graph_context_replication.json",
+        "sha256": "3cb0b6466d91f0973941b5c4fd36922b659174480cebaa6ba20ef1b437c9c34f",
+        "created_UTC": "2026-11-08T03:42:24.287646+00:00",
+        "original_protocol_sha256": "ae97dfc18ae154890c3173daf16d3f13f633b74fe022a976e06e643a5d4087b3",
+        "authority": "User TXT section2 caps CORE experiment program at30 full training trajectories; section9 editor is a subsequent optional extension"
+      }
+    },
+    "started_core_full_trajectories": 28,
+    "started_optional_editor_full_trajectories": 3,
+    "started_all_full_trajectories": 31,
+    "fitted_model_usefulness": "Not inferred from successful training or this execution audit"
+  },
+  "allocations": {
+    "accounting_sha256": "c3c716dc9a1aaf1cf30ff84a236792ebae2953d5130bd2d4fd238ece99df3c7d",
+    "timezone_assumption": "UTC explicitly required for export",
+    "accounting_snapshot_UTC": "2026-11-08T06:28:41.074085+00:00",
+    "allocation_count": 7,
+    "ignored_child_or_out_of_scope_rows": [],
+    "listed_all_allocations_terminal": false,
+    "GPU_device_hours": 40.964444444444446,
+    "four_GPU_equivalent_node_hours": 10.241111111111111,
+    "physical_node_hours": 12.879999999999999,
+    "maximum_concurrently_allocated_GPUs": 20,
+    "findings": [],
+    "timestamp_check": "Bookkeeping tolerances:2s for integer-second Start/End versus ElapsedRaw;120s for a running row versus export snapshot. Findings require review, not a changed scientific tolerance.",
+    "scope": "Allocated wall time includes startup, idle, failed work and CPU analysis; no child-step double counting; no monetary/credit estimate"
+  },
+  "findings": 0,
+  "output": "reports/conditioning_20261107/execution_heavy.json"
+}

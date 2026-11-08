@@ -1,0 +1,4 @@
+fit_seed,all_paired_trials,known_paired_trials,mean_learned_minus_mutation_meV_atom,median_learned_minus_mutation_meV_atom,learned_lower_energy_pairs,equal_energy_pairs,mutation_lower_energy_pairs
+20261106,1152,1152,0.1465562286078602,0.03005602972905308,555,17,580
+20261107,1152,1152,0.09623558569558675,0.10369687901583091,536,10,606
+20261108,1152,1152,0.03734327807273927,0.0,562,15,575

@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "allocation": "60990329",
+  "python": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+  "started_UTC": "2026-11-08T07:11:04.266785+00:00",
+  "command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "reports/conditioning_20261107/extension_packet/run_fresh_replay_v2.py",
+    "--root",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project",
+    "--fresh-dir",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2",
+    "--receipt-dir",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/reports/conditioning_20261107/extension_packet/v2_attempt2"
+  ],
+  "PYTHONPATH_unset_at_bootstrap": true,
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "replay_command": [
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/replay_extensions.py",
+    "--core-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/core.zip",
+    "--extensions-archive",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/extensions.zip",
+    "--download-ext",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/download_ext.json",
+    "--output-dir",
+    "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results"
+  ],
+  "cwd": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2",
+  "source_archives_copied_outside_CFS": true,
+  "member_manifests_verified_before_bootstrap": true,
+  "source_bootstrap_sha256": "6b2e716f25e2cd1823497577aac8d7263e120b15f8ee9d6c8ca66c68ce602fee",
+  "core_archive_sha256": "b720c932edf7f48cf1d8789f39abe9135ca9f9b17a5322b4558545d3243a72df",
+  "extensions_archive_sha256": "f16c2d146bc64647763242fa51d9467082d24da7847063a3b15bc9ce3cd61f86",
+  "latest_terminal_NEB_README_byte_identical": true,
+  "replay_receipt": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v2_attempt2/results/replay_receipt.json",
+  "tables_compared": 39,
+  "fields_compared": 1385825,
+  "all_tables_byte_identical": true,
+  "unresolved_historical_metadata": {
+    "temperature": [
+      {
+        "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/registry.json",
+        "sha256": "071abf9fda8b2c9abcd57e7dc20027cc0c7bfd510be9cd916ff64895f0614f9c",
+        "scope": "Unresolved historical metadata only; runtime file access forbidden"
+      }
+    ]
+  },
+  "exit_code": 0,
+  "backend_SDK_distributions": {
+    "fairchem-core": null,
+    "mace-torch": null,
+    "matgl": null,
+    "chgnet": null,
+    "sevenn": null
+  },
+  "completed_UTC": "2026-11-08T07:12:15.825217+00:00",
+  "wall_seconds": 71.55841813189909
+}

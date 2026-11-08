@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/replay_extensions.py", line 375, in <module>
+    if __name__=="__main__":raise SystemExit(main())
+                                             ^^^^^^
+  File "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/replay_extensions.py", line 363, in main
+    subprocess.run([sys.executable,str(script),"--_run-job",str(job_path.resolve())],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,cwd=mirror)
+  File "/global/cfs/cdirs/m4537/rsb/envs/fairchem/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python', '/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/scripts/conditioning_20261107/replay_extensions.py', '--_run-job', '/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/temperature_job.json']' returned non-zero exit status 1.

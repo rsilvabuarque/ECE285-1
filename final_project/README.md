@@ -4,7 +4,7 @@
 The current study asks which training choices, latent sizes, and physical-neighbor
 features improve generation at requested composition and energy range. A
 seed-conditioned edit model is compared with the same frozen mutation seeds and
-swap budgets if executed after the required report gate. The O3 LiCoO₂ example
+swap budgets in a separate completed assessment after the required report gate. The O3 LiCoO₂ example
 has 48 possible Li sites; new parent/graph interfaces also retain general host
 chemistry, mobile-site indices, cell and periodic topology.
 
@@ -31,6 +31,20 @@ tables. This is a teacher-defined conditional-sampling result. Context's tiny KL
 and weak latent response indicate that its variational pathway is nearly unused;
 a matched spatial no-latent control remains important. The main report and
 [results](docs/RESULTS.md) retain that limitation and the negative comparisons.
+
+The [optional supplement](docs/OPTIONAL_EXTENSIONS_20261107.md) keeps the later
+experiments separate. Learned editing improves balanced requested-bin yield by
+2.14 percentage points over matched mutation, with tied low-quintile yield and
+metric-dependent low-energy behavior: lower best novel children in 7/9 cases,
+but a less favorable paired average. Posthoc Gaussian latent proposals improve
+balanced dense-CVAE yield while reducing low yield; they do not replace the graph
+context recommendation. The small temperature follow-up repeats identical coarse
+allocations and paired structures across all four temperatures. Defined-hop UMA
+NEB paths reach numerical criteria, but one forward span changes from 0.638 to
+0.189 eV/hop after coupled image/force refinement. That sensitivity and the MACE
+single-point-only check remain explicit; later physical validation is required.
+Extension archive availability is determined by the final download
+manifest and verified packaging receipt, not by the existence of these scripts.
 
 The sections below retain installation and November 7 reference-reproduction
 commands. Exact new-study commands and selected policies are recorded with the
@@ -152,9 +166,18 @@ local `.venvs` default is suitable. See `bash scripts/install.sh --help`.
 
 The frozen historical data/checkpoints are already under `artifacts/current/`.
 
-The new cached replay needs no GPU or teacher call:
+Fetch the required November8 packet before its cached replay. No MLIP weights
+are needed. Use a permitted analysis allocation on a cluster:
 
 ```bash
+python - <<'PY'
+import json, subprocess
+from pathlib import Path
+record = json.loads(Path('artifacts/conditioning_20261107/download.json').read_text())
+subprocess.run(['cathode-cvae', 'fetch-artifact', '--url', record['url'],
+                '--sha256', record['sha256'], '--output-dir', record['extract_to']],
+               check=True)
+PY
 python scripts/conditioning_20261107/replay_cached_results.py \
   --packet artifacts/conditioning_20261107 \
   --output-dir runs/conditioning_20261107/portable_replay --plots
@@ -165,9 +188,47 @@ the portable measured fit command without executing training. The payload
 contains all 28 core fit folders and both saved selection rules; its manifest
 binds exact data, history, masks, scalar labels and checkpoint hashes.
 
-The new packet keeps small tables/figures and its download manifest in Git;
-new CVAE weights and larger attempt/scalar arrays are in a checksum-protected
-release asset. The small `cost_receipt.json` is tracked separately in Git. Foundation-model weights and raw trajectories are not in it.
+The optional companion has a separate manifest and depends on the same core ZIP.
+The following command keeps both downloaded ZIPs, checks their SHA256 values,
+and replays all seven optional analysis jobs in a fresh directory. It needs the
+learning environment, with zero MLIP calls and zero neural training updates:
+
+```bash
+python - <<'PY'
+import hashlib, json, shutil, subprocess, sys, urllib.request
+from pathlib import Path
+from urllib.parse import urlparse
+
+manifests = [Path('artifacts/conditioning_20261107/download.json'),
+             Path('artifacts/conditioning_20261107/extensions_v2/download_ext.json')]
+folder = Path('downloads/conditioning_20261107')
+folder.mkdir(parents=True, exist_ok=True)
+archives = []
+for manifest in manifests:
+    record = json.loads(manifest.read_text())
+    target = folder / Path(urlparse(record['url']).path).name
+    if not target.exists():
+        with urllib.request.urlopen(record['url']) as source, target.open('xb') as dest:
+            shutil.copyfileobj(source, dest)
+    with target.open('rb') as source:
+        actual = hashlib.file_digest(source, 'sha256').hexdigest()
+    if actual != record['sha256']:
+        raise ValueError(f'Checksum mismatch; preserve and inspect {target}')
+    archives.append(target)
+subprocess.run([sys.executable, 'scripts/conditioning_20261107/replay_extensions.py',
+                '--core-archive', str(archives[0]), '--extensions-archive', str(archives[1]),
+                '--download-ext', str(manifests[1]),
+                '--output-dir', 'runs/varad_optional_replay'], check=True)
+PY
+```
+
+Small tables/figures, download manifests and final receipts remain in Git;
+CVAE weights and larger attempt/scalar arrays are in the authenticated release
+assets. Foundation MLIP weights remain separate. Global raw force/stress shards
+stay on HPC with their hash inventories; the optional archive includes the
+bounded NEB pilot's own bands and structural exports.
+
+For the earlier November7 reproduction, fetch its separate historical packet:
 
 ```bash
 cathode-cvae data verify --snapshot artifacts/current

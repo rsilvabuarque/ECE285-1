@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "tables": {
+    "attempt_outcomes.csv": {
+      "fields_checked": 324911,
+      "byte_identical": true,
+      "actual_sha256": "a890326961b175c62142e24e53f2acdf0ffbf07bb59b754485cdf40063772b84",
+      "reference_sha256": "a890326961b175c62142e24e53f2acdf0ffbf07bb59b754485cdf40063772b84"
+    },
+    "paired_energy_outcomes.csv": {
+      "fields_checked": 34570,
+      "byte_identical": true,
+      "actual_sha256": "9118a6e83962e6ec7faebebba361cd779f609bdadbb5238db5f289bf742c2af1",
+      "reference_sha256": "9118a6e83962e6ec7faebebba361cd779f609bdadbb5238db5f289bf742c2af1"
+    },
+    "metrics.csv": {
+      "fields_checked": 1100,
+      "byte_identical": true,
+      "actual_sha256": "c09f9a713cf3cf3e1d8d1299ef08a8dbda18d48575a801582a9ce427ee73961e",
+      "reference_sha256": "c09f9a713cf3cf3e1d8d1299ef08a8dbda18d48575a801582a9ce427ee73961e"
+    },
+    "seed_metrics.csv": {
+      "fields_checked": 35,
+      "byte_identical": true,
+      "actual_sha256": "29354380f438e171600a2e4f1db08321fad8e551563866b0ad404d58ce43c603",
+      "reference_sha256": "29354380f438e171600a2e4f1db08321fad8e551563866b0ad404d58ce43c603"
+    },
+    "summary.csv": {
+      "fields_checked": 18,
+      "byte_identical": true,
+      "actual_sha256": "17bf483056e2d1b8607a345f22db90e6fd2c3dc3c33f734e80a02f52f26a680c",
+      "reference_sha256": "17bf483056e2d1b8607a345f22db90e6fd2c3dc3c33f734e80a02f52f26a680c"
+    }
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "parsed_path_overrides": {},
+  "versioned_path_overrides": [
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+      "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/artifacts/conditioning_20261107/required_gate.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+      "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/artifacts/current/core/data/parents/O3_N48_pilot.npz"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/data/history_before_final.json",
+      "sha256": "c4b3d50f80bc45c96a5df53d85f9ec0ad8d7bb78aa537b454764c8b7f6aed4df",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/data/history_before_final.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/assessment_v1/history.json",
+      "sha256": "2097c7dc04a1a3ce870be2484af49dedb49b0425ad907f0997707c24c30a0d27",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/editor/assessment_v1/history.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/assessment_seeds.npz",
+      "sha256": "ab7131e000a3065ffa9497972d40e7438ebf6703bfed36e2d1f8776f2d291d1e",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/editor/data_v2/assessment_seeds.npz"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/edit_pairs.npz",
+      "sha256": "bae52a115f26d43b840c15fdeffd60cca53282f0e362cae5dd9b933b3b1df701",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/editor/data_v2/edit_pairs.npz"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/editor/data_v2/preparation_receipt.json",
+      "sha256": "91fc1d88f6710f29da375d47dadd04b1fcda4ac26534ea83b395292a3dd5a4f0",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/editor/data_v2/preparation_receipt.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/candidates.npz",
+      "sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/final/candidates.npz"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final_protocol.json",
+      "sha256": "a8030322029452b29471be9223945ff51bfa338de376ed0cd0f2e74cdfd5e08e",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/final_protocol.json"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261106/best_validation_beta_0p1.pt",
+      "sha256": "bc6c72c7723d4461423e1d2ff308ee7a8022a9e8a028817b8f637bfff50b80e4",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/fits/editor_20261106/best_validation_beta_0p1.pt"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261107/best_validation_beta_0p1.pt",
+      "sha256": "f926a43d6f9ab67831db7070f63ffa93db17ad87825c0f4246afcabb1e1cab28",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/fits/editor_20261107/best_validation_beta_0p1.pt"
+    },
+    {
+      "original_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/fits/editor_20261108/best_validation_beta_0p1.pt",
+      "sha256": "0ed7d5764ba172a8bcfe98c65934c770a370ecd509a47abf6fffa8668685828a",
+      "relocated_path": "/pscratch/sd/r/rsb/ece285_conditioning_20261107/extensions_replay_20261108_v1/results/verified_project/runs/conditioning_20261107/fits/editor_20261108/best_validation_beta_0p1.pt"
+    }
+  ],
+  "backend_SDKs_imported": []
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_AFTER_FINAL_CURATION_CHANGE",
+  "verified_UTC": "2026-11-08T06:33:34.644549+00:00",
+  "pytest_log": ".................                                                        [100%]\n17 passed in 17.11s",
+  "allocation": "60990329",
+  "command": "srun --jobid=60990329 --overlap --exact -N1 -n1 -c4 env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 MKL_NUM_THREADS=4 PYTHONPATH=/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/src /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/bin/python -m pytest -q tests/test_extensions_packet.py tests/test_checkpoint_alias_audit.py > reports/conditioning_20261107/extension_packet/final_tests_after_curation.log",
+  "source_hashes": {
+    "scripts/conditioning_20261107/package_extensions.py": "b23a1df31ac9d25939f6e7c7d53ab43bd7e17501ef49d89f8d3d43991ff4e831",
+    "scripts/conditioning_20261107/replay_extensions.py": "f077ce16598c0619407744c6af48dd8e15714fe519b5cd4a44f03a933026d947",
+    "scripts/conditioning_20261107/check_editor_checkpoint_aliases.py": "5e2832d08f079ffed8a78ea855f9e8535506733864b5ffa9b66eb2bef0ff99b7",
+    "tests/test_extensions_packet.py": "4f242556161da9cab9b9bbc0ba107374643b53f3858cce475e8d4b15e0990bc3",
+    "tests/test_checkpoint_alias_audit.py": "2bb3a3ef22fc560ff8fa5dcae709846a2b6a06fbc719f376795a9600f3014c09"
+  },
+  "original_protocols_edited": false,
+  "core_sources_edited": false,
+  "production_packaging_executed": false,
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0
+}

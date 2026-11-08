@@ -1,0 +1,7 @@
+n_Li,policy,identical_bin_allocations,bit_identical_paired_proposals
+12,static,True,True
+12,static_exploration,True,True
+24,static,True,True
+24,static_exploration,True,True
+36,static,True,True
+36,static_exploration,True,True

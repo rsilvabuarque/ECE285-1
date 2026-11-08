@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "audited_UTC": "2026-11-08T05:52:04.171286+00:00",
+  "attempts": 6912,
+  "low_request_attempts": 2304,
+  "low_request_paired_trials": 1152,
+  "fit_replicates": 3,
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "selection_changed": false,
+  "running_best_scope": "Novel to H0TRAIN and frozen editor history; LOW requests only; no energy-bin requirement for running minimum",
+  "curve_cost_scope": "Standalone unique CHILD queries reset per method/fit/composition; actual global new calls are deduplicated once and verified against pre-editor registry and immutable certified cache. Shared seed verification is separate.",
+  "means": "Stepwise common integer budget; mean only where all3replicates have finite minima; faint individual fits retained",
+  "energy_units": "Raw best energy eV/atom; paired changes meV/atom; neither establishes a physical ground state",
+  "terminal_minima_scope": "All9fit-by-count LOW comparisons at128attempts; novel child minima compared with each other and the SAME best current-SCF seed from that paired seed set; secondary posthoc observable",
+  "source_sha256": "d0abf3e88ccbb25724b862ac9e84adef5d881ef5a6e94882dfb684d2242803bc",
+  "sources": {
+    "runs/conditioning_20261107/evaluation/editor/attempt_outcomes.csv": "a890326961b175c62142e24e53f2acdf0ffbf07bb59b754485cdf40063772b84",
+    "runs/conditioning_20261107/evaluation/editor/receipt.json": "743652b9a98fdef46931cb581570d67d2d1ea69d63aa074e7890714f39111dfd",
+    "runs/conditioning_20261107/editor/assessment_v1/protocol.json": "1f8218fd12b739076e825874fce042ecbf4d8ebad764ba2174d337bd29fa4a4a",
+    "runs/conditioning_20261107/editor/assessment_v1/receipt.json": "d1504d4ce47fba2ddbe41087d9b16e7030620f7e570d6f2068ef2b8ff7e96699",
+    "runs/conditioning_20261107/editor/assessment_v1/candidates.npz": "193782e6646dc97604b6b165b369b9a6ba9380d943e7479b237190dc10fd1757"
+  },
+  "outputs": {
+    "low_request_curve_means.csv": "0beded828ad4913275fde37363e113de86da685753ca7e0ccb5637dc6b933e79",
+    "paired_low_energy.pdf": "f5a89b8fef41ea3dd52a79ea300d07479af94bd7e46de45d8a3158f216c2b048",
+    "paired_request_energy.csv": "e3a936d7eebf3353366604c42ba276d63679e31329e90cb0e9fde023e7148348",
+    "paired_low_energy.png": "2a684e80863de99ac7ee64956db23a82931512f17e3d87ccbda0759783944639",
+    "query_accounting.csv": "9656a29fe7fe305f05c82249de075870e4ecf3f7a5c7fb0568f56841e28365f7",
+    "low_request_best_energy.pdf": "15364ffcf37dd5ee4501918d810b1a80e77abb302ad47d5204fc4005e2a2457c",
+    "terminal_minima_composition_means.csv": "eead05ac0d1c8607e0a62260c9cab67bc2d6ead09d2190e9a23e475265c3de62",
+    "request_energy_summary.csv": "4d1598c3c664ec0d61ed1363d9927f595e1003e272a4c7b136303aac94a1ada0",
+    "cost_audit.json": "a790d3b7e8dde89a3c3481072ec4e0b5422e4a1cb0544f6feac2815f9ce25538",
+    "low_request_curves.csv": "7bc47cf4be8018d208d8c8cdf14bf595b0a71a0ea6cd930fa32312d967ed5356",
+    "terminal_best_novel_low_children.csv": "783209da04cecfcce6dbc419de81abf01e88014eb06307b167020bfd09ae5d68",
+    "low_request_best_energy.png": "7430a2fd97494c80f2ac3c510f86745db6939e4889c8d4ec25a0781ee9c31512"
+  },
+  "low_summary": {
+    "requested_bin": "low",
+    "n_Li": "macro_counts",
+    "fit_seed": "macro_fits",
+    "paired_trials": 1152,
+    "mean_learned_minus_mutation_meV_atom": 0.07655991236172903,
+    "median_learned_minus_mutation_meV_atom": 0.06342429179829052,
+    "fraction_learned_lower": 0.4756944444444444,
+    "fraction_exact_ties": 0.008680555555555556,
+    "mean_learned_child_minus_seed_meV_atom": 1.1733489040021856,
+    "mean_mutation_child_minus_seed_meV_atom": 1.0967889916404567,
+    "interpretation": "Energy lowering is relevant for LOW; middle/high requests are targeting tasks, not unconstrained minimization"
+  }
+}

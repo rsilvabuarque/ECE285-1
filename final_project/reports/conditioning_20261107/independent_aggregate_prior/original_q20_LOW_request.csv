@@ -1,0 +1,5 @@
+teacher,method,mean_novel_fixed_q20_yield
+uma,standard_prior,0.30121527777777773
+uma,aggregate_prior,0.23958333333333334
+mace,standard_prior,0.3255208333333333
+mace,aggregate_prior,0.2604166666666667

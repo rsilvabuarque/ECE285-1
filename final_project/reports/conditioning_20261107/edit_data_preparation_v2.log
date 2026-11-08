@@ -1,0 +1,152 @@
+{
+  "status": "READY_FOR_BOUNDED_EDITOR",
+  "created_UTC": "2026-11-08T04:55:30.476033+00:00",
+  "experiment_phase": "optional_editor",
+  "data_rows": 5184,
+  "observed_verified_mutation_attempts": 5184,
+  "duplicate_joint_pairs": 0,
+  "exclusions": {},
+  "split_rows": {
+    "train": 4141,
+    "val": 505,
+    "heldout": 538
+  },
+  "components": 4780,
+  "identity_role_bridges": 0,
+  "source_stages": [
+    "policy",
+    "latent",
+    "spatial"
+  ],
+  "all_child_outcomes_retained": true,
+  "core_FINAL_identity_exclusion_count": 27844,
+  "protected_H0_identity_count": 10090,
+  "condition_schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c",
+  "representation": "Original raw seed and child occupancies in ONE shared parent orientation; no independent canonicalization for learning",
+  "joint_deduplication": "Minimum concatenated (vacancy seed, vacancy child) under one common parent permutation; witness recorded; duplicate source attempts retained in CSV",
+  "nested_split": {
+    "seed": 20261107,
+    "rule": "SHA256(component minimum canonical identity): 80% train, 10% val, 10% heldout; no energy used in splitting"
+  },
+  "heldout_seed_support": {
+    "12:low": 48,
+    "12:middle": 54,
+    "12:high": 62,
+    "24:low": 58,
+    "24:middle": 57,
+    "24:high": 49,
+    "36:low": 49,
+    "36:middle": 61,
+    "36:high": 54
+  },
+  "assessment_support_feasible": true,
+  "assessment_proposal_budget": "128 attempts per composition/requested CHILD bin/fit replicate; k drawn uniformly from {1,2,3}; each compared method receives exactly the same seed and k; heldout seeds sampled with replacement; all attempts retained",
+  "original_missing_seed_hash_fields": {
+    "policy": 1728
+  },
+  "seed_hash_binding_repair": "Original missing fields preserved as absent; exact H0 row, ID, binary raw seed, and H0 file SHA verified and recorded separately",
+  "required_report_gate": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+    "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3",
+    "completed_UTC": "2026-11-08T04:47:40.818541+00:00"
+  },
+  "source_hashes": {
+    "parent": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz",
+      "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+    },
+    "H0": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+      "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465"
+    },
+    "schema": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+    },
+    "oracle": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/collected/final/uma.npz",
+      "sha256": "e33dc708bff292a814a90b20fc9fcffd88a08fd7a526d2937f4948e5e203dd18"
+    },
+    "oracle_receipt": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/collected/final/receipt.json",
+      "sha256": "6bcf0a008b2d58a20eb9c1dc13c8f7b347c5ca0eb7dab2c677c2c761a84ddcb2"
+    },
+    "final_evaluation_receipt": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/evaluation/final/receipt.json",
+      "sha256": "57a94a7ac3456b10c232a88e3898aa0f51cc1c1e26df6326dd420d57c44effbc"
+    },
+    "final_candidates": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/final/candidates.npz",
+      "sha256": "9e68157e4a18992a6400887990bb366112669574fab63014ac3ebc8a91650c26"
+    },
+    "required_gate": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/conditioning_20261107/required_gate.json",
+      "sha256": "c6a7105dd9578c5a1caac1c8bc6acfb2bc134e8fd1ce04e2a0c8def232f91bf3"
+    },
+    "policy/attempts_all.csv": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/policy/attempts_all.csv",
+      "sha256": "103bcade2bfc7a1c15a42bcd4fe40d77f094fad52aa6afcb79c315de1e50e9cb"
+    },
+    "policy/raw_attempts.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/policy/raw_attempts.npz",
+      "sha256": "ded32c11b02f087ea58d1783a434706c5d38695ad52ab16eedaad7febdf589ca"
+    },
+    "policy/candidates.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/policy/candidates.npz",
+      "sha256": "663bb0a0dcccec3f50b7982cbcec5523d43435f8fc532dc500493477b753bfe4"
+    },
+    "policy/receipt.json": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/policy/receipt.json",
+      "sha256": "7b506fe4ac4a21029797a07511cfa501769a30e049685db0c29559f502fa86ee"
+    },
+    "latent/attempts_all.csv": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/latent/attempts_all.csv",
+      "sha256": "53e982668a4c8e9b59cef208c620f3bfaef3769759d3cc259d67b1445ed8b7b9"
+    },
+    "latent/raw_attempts.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/latent/raw_attempts.npz",
+      "sha256": "22b3076b21648f3b1b96165968d614f7bbea23499eff85dbce57241c959ca4cc"
+    },
+    "latent/candidates.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/latent/candidates.npz",
+      "sha256": "11371cd95fd11b6c1bb7b087fa0bd5fef874b50a14f3f18643e76cfb0db0700a"
+    },
+    "latent/receipt.json": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/latent/receipt.json",
+      "sha256": "3037cdf175bd683c0fba3fa7420775d0a340a19064c0db102ca47a9fcc97e91f"
+    },
+    "spatial/attempts_all.csv": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/spatial/attempts_all.csv",
+      "sha256": "2af4e420cfba419053fa26714d401f095b1c28cae5d4384914000797946a9ca6"
+    },
+    "spatial/raw_attempts.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/spatial/raw_attempts.npz",
+      "sha256": "c75e2313b4230b647c66b7150804424aa6dc5cd621d2db2f134d03fa45baec57"
+    },
+    "spatial/candidates.npz": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/spatial/candidates.npz",
+      "sha256": "c44267159763072218e4a24917cbb2cf77da9dca6cdb3c24841605350092aa9b"
+    },
+    "spatial/receipt.json": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/development/spatial/receipt.json",
+      "sha256": "6876c25f6c37081347b510f3ccf193b371142b3da00e34e400e0598f1da6c12e"
+    }
+  },
+  "script_sha256": "0c9e9f4f15edfee92e721d42b7600f0bfffeb5d774c676c4f66d210430773a2a",
+  "outputs": {
+    "assessment_seeds.npz": "ab7131e000a3065ffa9497972d40e7438ebf6703bfed36e2d1f8776f2d291d1e",
+    "assessment_support.csv": "6a31ffd7b2f88c7a14d926bbe211d46cb06f44c63e47d15b259d5a1aee364664",
+    "components.csv": "1109fd52c2ddfa2d4738c875690f0095d12db82325f25cd30f9752030f6cc0d6",
+    "edit_pairs.npz": "bae52a115f26d43b840c15fdeffd60cca53282f0e362cae5dd9b933b3b1df701",
+    "excluded_attempts.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pair_provenance.csv": "23870d0e0b0e54b86bcb14e153e28af4b421544d01e730032ef8fa99864ddcbe",
+    "support.csv": "a6c4aeaba2f4620927e271a047bf78ea130e9e33af507f69e13eb55f27f52cb9"
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "limitations": [
+    "This is a small, proposal-biased DEVELOPMENT edit corpus, not a general chemical optimizer.",
+    "H0 TRAIN seeds were known to core models; nested heldout roles test the new editor, not globally unseen H0 identities.",
+    "Data feasibility is separate from learned-edit effectiveness; improvement must be evaluated against same-seed, same-budget mutation."
+  ]
+}

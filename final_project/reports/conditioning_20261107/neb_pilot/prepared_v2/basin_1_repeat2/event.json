@@ -1,0 +1,129 @@
+{
+  "event_id": "basin_1_repeat2",
+  "source_run": "basin_1/repeat2",
+  "migrating_atom_index": 65,
+  "original_parent_atom_index": 66,
+  "Li_ordinal": 17,
+  "source_parent_Li_site": 18,
+  "destination_parent_Li_site": 31,
+  "periodic_hop_image": [
+    0,
+    0,
+    0
+  ],
+  "ideal_hop_vector_A": [
+    -1.40562848839925,
+    2.4346199584737445,
+    0.0
+  ],
+  "ideal_hop_length_A": 2.8112569767985027,
+  "observed_host_aligned_displacement_A": [
+    -1.7420226984232285,
+    1.856608485807249,
+    0.1160506627848553
+  ],
+  "expected_initial_assignment": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    32,
+    34,
+    35,
+    36,
+    42,
+    43,
+    44,
+    46
+  ],
+  "expected_final_assignment": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    31,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    32,
+    34,
+    35,
+    36,
+    42,
+    43,
+    44,
+    46
+  ],
+  "first_assignment_change_ps": 16.702,
+  "persistent_destination_start_ps": 16.736,
+  "transit_assignment": 38,
+  "frame_times_ps": {
+    "before_200fs": 16.502,
+    "first_changed_assignment": 16.702,
+    "settled_after_100fs": 16.836
+  },
+  "frame_source_indices": {
+    "before_200fs": 8251,
+    "first_changed_assignment": 8351,
+    "settled_after_100fs": 8418
+  },
+  "atom_order": "Original saved MD atom order and continuous unwrapped coordinates; no independent canonicalization or wrapping",
+  "endpoint_inputs": {
+    "initial": {
+      "path": "basin_1_repeat2/initial.npz",
+      "sha256": "5ba371e0ddc22ebf1f17e60c1206e15606d9525ea4c00901adeb152f7d7969a8"
+    },
+    "transit": {
+      "path": "basin_1_repeat2/transit.npz",
+      "sha256": "6b776635aefc0d8d3687673ab4203d3461fe97025a594f56ba5e75583da31153"
+    },
+    "final": {
+      "path": "basin_1_repeat2/final.npz",
+      "sha256": "6f1f2cbb75ebab60200a5f2f59012be9d976d70fb2198024698212743a59b787"
+    }
+  }
+}

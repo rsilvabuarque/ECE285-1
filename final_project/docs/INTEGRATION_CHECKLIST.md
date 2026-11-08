@@ -78,19 +78,28 @@ Do not mark a proposed experiment complete because a script or configuration exi
 - [x] Final metrics are independently replayed from raw masks/scalars, the claim
   map binds current files, and all five body pages plus references are rebuilt
   and visually reviewed. A successful LaTeX exit alone does not check page content.
-- [ ] A scoped current cost receipt records actual fits, unique logical labels,
+- [x] A scoped current cost receipt records actual fits, unique logical labels,
   cache hits and allocation usage. If resources remain live, identify its as-of
   time; only a post-release receipt can be a complete resource total.
-- [ ] The integrating ledger records the required gate explicitly. No optional
+- [x] The integrating ledger records the required gate explicitly. No optional
   editor, follow-up thermal run or bounded NEB pilot starts merely because this
   checklist or an interim PDF exists.
 
-The reviewed required snapshot is
+The required gate completed at 2026-11-08T04:47:40 UTC and remains immutable at
+`artifacts/conditioning_20261107/required_gate.json`. Its allocation usage is an
+as-of required-checkpoint receipt; complete final resource totals require the
+post-release receipt. The reviewed required snapshot is
 `reports/conditioning_20261107/required_report_snapshot/manifest.json`; it freezes
 the five-page body plus references and 21-family source map. The root-owned
 cost/gate receipt remains separate from that report snapshot. Later optional
 results must preserve this checkpoint rather than retroactively changing its
 evidence boundary.
+
+The later optional editor, Gaussian-proposal and allocation findings are in
+`docs/OPTIONAL_EXTENSIONS_20261107.md`. The final live report may summarize them
+after their audits without replacing the frozen required snapshot. Final NEB
+terminal/convergence evidence, report rebuilding, packaging verification and
+resource release are checked by the integrating owner before the final handoff.
 
 For publication, track small source tables, selected plots, receipts, commands
 and the report in Git. Put larger CVAE checkpoints, attempt arrays, scalar

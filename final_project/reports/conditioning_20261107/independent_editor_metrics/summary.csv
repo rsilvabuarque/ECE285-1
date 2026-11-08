@@ -1,0 +1,3 @@
+method,fit_or_paired_sampler_replicates,balanced_novel_inbin_yield,balanced_descriptive_seed_SD,original_q20_low_request_yield,mean_delta_energy_meV_atom
+learned_edit,3,0.59375,0.014342631633557583,0.5034722222222222,-0.0113034913609169
+mutation,3,0.5723379629629629,0.010922792875102389,0.5052083333333334,-0.10468185548631224

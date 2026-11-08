@@ -1,0 +1,18 @@
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+....................................                                     [100%]
+=============================== warnings summary ===============================
+tests/test_data.py::test_prepare_parent_handles_a_non_li_target
+tests/test_descriptor_benchmark.py::test_evaluation_keeps_duplicates_and_missing_labels_in_attempt_denominator
+tests/test_descriptor_benchmark.py::test_evaluation_keeps_duplicates_and_missing_labels_in_attempt_denominator
+tests/test_parent_graph.py::test_parent_roundtrip_hash_chemistry_and_large_site_keys
+tests/test_parent_graph.py::test_target_only_symmetry_rejected_when_host_chemistry_breaks_it
+tests/test_parent_graph.py::test_periodic_images_and_nonzero_shift_self_neighbors_are_preserved
+tests/test_parent_graph.py::test_descriptor_independent_square_count_and_symmetry
+tests/test_parent_graph.py::test_causal_context_teacher_generation_agree_and_no_future_leakage
+tests/test_parent_graph.py::test_graph_encoder_gradients_host_chemistry_and_site_count
+  /pscratch/sd/r/rsb/ece285_conditioning_20261107/venvs/class_core/learning/lib/python3.12/site-packages/spglib/spg.py:353: DeprecationWarning: Set OLD_ERROR_HANDLING to false and catch the errors directly.
+    _set_no_error()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+180 passed, 9 warnings in 40.74s

@@ -1,0 +1,8 @@
+{
+  "status": "PASS_VISUAL_REVIEW",
+  "figures": {
+    "low_request_best_energy.png": "7430a2fd97494c80f2ac3c510f86745db6939e4889c8d4ec25a0781ee9c31512",
+    "paired_low_energy.png": "2a684e80863de99ac7ee64956db23a82931512f17e3d87ccbda0759783944639"
+  },
+  "scope": "Both PNG layouts reviewed; current PNGs byte-identical to reviewed initial figures. Full9case minima tables and supplied-seed comparison added separately. No scientific validation from rendering alone."
+}

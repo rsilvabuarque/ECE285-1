@@ -1,0 +1,4 @@
+n_Li,fit_replicates,mean_best_common_current_seed_energy_eV_atom,mean_learned_edit_best_novel_child_energy_eV_atom,mean_learned_edit_best_child_minus_best_common_seed_meV_atom,mean_mutation_best_novel_child_energy_eV_atom,mean_mutation_best_child_minus_best_common_seed_meV_atom,mean_learned_minus_mutation_best_novel_child_meV_atom,fits_with_learned_lower_novel_minimum,fits_with_learned_novel_child_below_best_known_seed,fits_with_mutation_novel_child_below_best_known_seed
+12,3,-5.715929016868267,-5.7171704814659305,-1.2414645976640177,-5.71659855252808,-0.6695356598124628,-0.571928937851555,2,3,3
+24,3,-5.724686139177712,-5.725008077901005,-0.3219387232927436,-5.7247791120204115,-0.09297284269897214,-0.22896588059377146,2,2,1
+36,3,-5.72613913245257,-5.726663240298905,-0.5241078463346464,-5.7262352696791865,-0.09613722661624043,-0.42797061971840594,3,2,1
