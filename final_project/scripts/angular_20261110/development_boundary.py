@@ -198,7 +198,7 @@ def freeze_boundary(overnight_root, prior_root, output_dir):
     records = [{'name': 'frozen_historical_history', **source['history'], 'orbits': before}]
     protected, scopes = set(), {}
 
-    def add_data(name, path, splits, expected, edit_pairs=False):
+    def add_data(name, path, splits, expected, edit_pairs=False, provenance_receipt=None):
         nonlocal history, protected
         b = binding(path, expected)
         all_ids, roles = _npz_masks(path, parent, parent_hash, splits, edit_pairs)
@@ -206,18 +206,25 @@ def freeze_boundary(overnight_root, prior_root, output_dir):
         for role, held in roles.items():
             protected.update(held)
             scopes[f'{name}_{role.upper()}'] = held
-            records.append({'name': f'{name}_{role.upper()}', **b, 'all_orbits': len(all_ids),
-                            'protected_orbits': len(held), 'role': role, 'energy_members_read': False})
+            record = {'name': f'{name}_{role.upper()}', **b, 'all_orbits': len(all_ids),
+                      'protected_orbits': len(held), 'role': role, 'energy_members_read': False}
+            if provenance_receipt is not None:
+                record['receipt'] = binding(provenance_receipt)
+            records.append(record)
 
     add_data('H0', data_path, ('val', 'test'), source['data']['sha256'])
-    adaptation = json.loads((old/'artifacts/current/improvement_v1/data/adaptation_receipt.json').read_text())
-    add_data('ROUND1', old/'artifacts/current/improvement_v1/training_round1.npz', ('val', 'test'), adaptation['training_sha256'])
+    adaptation_path = old/'artifacts/current/improvement_v1/data/adaptation_receipt.json'
+    adaptation = json.loads(adaptation_path.read_text())
+    add_data('ROUND1', old/'artifacts/current/improvement_v1/training_round1.npz', ('val', 'test'),
+             adaptation['training_sha256'], provenance_receipt=adaptation_path)
     prep = old/'runs/overnight_20261108/paired/prepared'
     prep_receipt = json.loads((prep/'preparation.json').read_text())
-    add_data('PAIRED', prep/'cohort.npz', ('val', 'test'), prep_receipt['outputs']['cohort.npz'])
+    add_data('PAIRED', prep/'cohort.npz', ('val', 'test'), prep_receipt['outputs']['cohort.npz'],
+             provenance_receipt=prep/'preparation.json')
     editor = prior/'runs/conditioning_20261107/editor/data_v2'
     editor_receipt = json.loads((editor/'preparation_receipt.json').read_text())
-    add_data('EDITOR', editor/'edit_pairs.npz', ('val', 'heldout'), editor_receipt['outputs']['edit_pairs.npz'], True)
+    add_data('EDITOR', editor/'edit_pairs.npz', ('val', 'heldout'), editor_receipt['outputs']['edit_pairs.npz'],
+             True, editor/'preparation_receipt.json')
     with np.load(data_path, allow_pickle=False) as z:
         h0_train = set(z['canonical_masks'][z['split'].astype(str) == 'train'].astype(str).tolist())
     if len(h0_train) != 40157:
