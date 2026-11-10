@@ -267,6 +267,25 @@ class ARBaseline(ARCVAE):
                          graph_context=graph_context,remaining_count_features=remaining_count_features)
 
 
+def validate_context_spec(expected, observed):
+    """Bind immutable context geometry, without comparing learned weights.
+
+    A skeletal training spec may omit hashes until the actual model is built;
+    a serialized checkpoint includes them and is checked again after loading.
+    """
+    for key in ("version", "kernel_mode", "association", "feature_dim", "graph_hash",
+                "kernels_sha256", "angular_buffers_sha256", "directional_buffers_sha256",
+                "directional_geometry_sha256", "extra_features", "learned_mix", "channels",
+                "shell_tolerance_A", "angle_bin_boundaries_degrees", "feature_graph_cutoff_A",
+                "dimensionless_radial_alphas", "angular_zetas", "angular_lambdas", "basis_order"):
+        if key in expected and expected[key] != observed.get(key):
+            raise ValueError("Decoder context specification disagrees with reconstructed " + key)
+    if "radial_spec" in expected:
+        for key in ("feature_dim", "kernels_sha256"):
+            if expected["radial_spec"].get(key) != observed.get("radial_spec", {}).get(key):
+                raise ValueError("Decoder context specification disagrees with reconstructed radial " + key)
+
+
 def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, cond_dim=None,
                encoder_kind="dense", graph_data=None, graph_context=False, context_spec=None,remaining_count_features=False):
     if cond_dim is not None:
@@ -298,15 +317,34 @@ def make_model(kind, n_sites=48, condition_dim=2, latent_dim=8, hidden_dim=64, c
             encoder = GraphOccupationEncoder(graph, condition_dim, latent_dim)
         if graph_context:
             spec = {} if context_spec is None else context_spec
-            if spec.get("version", "causal-context-v1") not in {"causal-context-v1","causal-context-v2"}:
+            version = spec.get("version", "causal-context-v1")
+            mode = spec.get("kernel_mode", "legacy")
+            tolerance = spec.get("shell_tolerance_A", 1e-5)
+            if version in {"causal-context-v1", "causal-context-v2"}:
+                if mode != "legacy" and version != "causal-context-v2":
+                    raise ValueError("Radial-shell context needs its explicit version2 specification")
+                context = CausalGraphContext(graph, spec.get("association", "physical"),
+                                             spec.get("site_permutation"), mode, tolerance)
+            elif version == "causal-angular-hist-v1":
+                from ..angular_context import AngularHistogramContext
+                context = AngularHistogramContext(graph, shell_tolerance_A=tolerance)
+            elif version == "causal-redundant-radial-v1":
+                from ..angular_context import RedundantRadialContext
+                context = RedundantRadialContext(graph, extra_features=spec["extra_features"],
+                    shell_tolerance_A=tolerance, learned_mix=spec.get("learned_mix", False))
+            elif version == "causal-directional-v1":
+                from ..directional_context import DirectionalGraphContext
+                context = DirectionalGraphContext(graph, channels=spec.get("channels", 2),
+                                                   shell_tolerance_A=tolerance)
+            elif version == "causal-angular-smooth-v1":
+                from ..smooth_angular_context import SmoothAngularContext
+                context = SmoothAngularContext(graph,
+                    alphas=spec.get("dimensionless_radial_alphas", (0.,2.)),
+                    zetas=spec.get("angular_zetas", (1,2)),
+                    lambdas=spec.get("angular_lambdas", (1,-1)), shell_tolerance_A=tolerance)
+            else:
                 raise ValueError("Unsupported decoder context specification")
-            mode=spec.get("kernel_mode","legacy")
-            if mode!="legacy" and spec.get("version")!="causal-context-v2":raise ValueError("Radial-shell context needs its explicit version2 specification")
-            context = CausalGraphContext(graph, spec.get("association", "physical"), spec.get("site_permutation"),mode,spec.get("shell_tolerance_A",1e-5))
-            observed = context.to_spec()
-            for key in ("feature_dim", "kernels_sha256"):
-                if key in spec and spec[key] != observed[key]:
-                    raise ValueError("Decoder context specification disagrees with reconstructed " + key)
+            validate_context_spec(spec, context.to_spec())
     if kind in {"dense", "dense_bce", "dense_count"}:
         return DenseCVAE(n_sites, condition_dim, latent_dim)
     if kind in {"ar", "ar_cvae"}:

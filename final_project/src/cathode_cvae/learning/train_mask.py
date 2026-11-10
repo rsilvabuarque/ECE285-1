@@ -128,7 +128,9 @@ def arguments(argv=None):
     parser.add_argument("--context-association", choices=["physical", "fixed_nonphysical"], default="physical")
     parser.add_argument("--context-scramble-seed", type=int, default=20261108,
                         help="Freeze one label-independent non-symmetry site association; used only for fixed_nonphysical")
-    parser.add_argument("--context-kernel-mode",choices=["legacy","radial_shells"],default="legacy")
+    parser.add_argument("--context-kernel-mode", choices=["legacy", "radial_shells",
+                        "angle_hist", "angular_smooth", "directional_l1_l2",
+                        "redundant_6", "redundant_6_learned", "redundant_16"], default="legacy")
     parser.add_argument("--context-shell-tolerance-A",type=float,default=1e-5,
                         help="Provisional numerical distance-shell grouping in angstrom, not a physical interaction criterion")
     parser.add_argument("--remaining-count-features",action="store_true",
@@ -193,6 +195,10 @@ def main(argv=None):
     if a.context_association != "physical" and not a.graph_context:
         raise ValueError("Nonphysical associations require --graph-context")
     if a.context_kernel_mode!="legacy" and not a.graph_context:raise ValueError("Radial-shell features require --graph-context")
+    new_context_modes = {"angle_hist", "angular_smooth", "directional_l1_l2",
+                         "redundant_6", "redundant_6_learned", "redundant_16"}
+    if a.context_kernel_mode in new_context_modes and a.context_association != "physical":
+        raise ValueError("Angular and redundant contexts require an explicitly physical parent association")
     if not math.isfinite(a.context_shell_tolerance_A) or a.context_shell_tolerance_A<=0:raise ValueError("Shell tolerance must be positive finite angstrom")
     schedule = schedule_metadata(a.beta_schedule, a.beta_final, a.beta_warmup, a.beta_reference_updates_per_epoch,a.beta_cycle_updates)
     label_protocol = a.label_energy_protocol or a.geometry_protocol
@@ -361,6 +367,23 @@ def main(argv=None):
         if a.graph_context and a.context_association == "fixed_nonphysical":
             from ..graph import PeriodicGraph, fixed_nonphysical_context_spec
             context_spec = fixed_nonphysical_context_spec(PeriodicGraph.from_dict(graph_data), a.context_scramble_seed,a.context_kernel_mode,a.context_shell_tolerance_A)
+        elif a.graph_context and a.context_kernel_mode in new_context_modes:
+            # Avoid constructing the trainable directional context twice: a
+            # throwaway initializer would advance the fit's random stream.
+            context_spec = {
+                "version": {"angle_hist": "causal-angular-hist-v1",
+                            "angular_smooth": "causal-angular-smooth-v1",
+                            "directional_l1_l2": "causal-directional-v1",
+                            "redundant_6": "causal-redundant-radial-v1",
+                            "redundant_6_learned": "causal-redundant-radial-v1",
+                            "redundant_16": "causal-redundant-radial-v1"}[a.context_kernel_mode],
+                "kernel_mode": ("redundant_radial" if a.context_kernel_mode.startswith("redundant_")
+                                else a.context_kernel_mode),
+                "association": "physical", "shell_tolerance_A": a.context_shell_tolerance_A,
+            }
+            if a.context_kernel_mode.startswith("redundant_"):
+                context_spec["extra_features"] = int(a.context_kernel_mode.split("_")[1])
+                context_spec["learned_mix"] = a.context_kernel_mode.endswith("_learned")
         elif a.graph_context and a.context_kernel_mode!="legacy":
             from ..graph import PeriodicGraph,CausalGraphContext
             context_spec=CausalGraphContext(PeriodicGraph.from_dict(graph_data),kernel_mode=a.context_kernel_mode,shell_tolerance_A=a.context_shell_tolerance_A).to_spec()
@@ -389,7 +412,10 @@ def main(argv=None):
         old_context = prior_cfg.get("decoder_context_spec") or {"association": "physical"}
         if old_context.get("association", "physical") != a.context_association or old_context.get("site_permutation") != (context_spec or {}).get("site_permutation"):
             raise ValueError("Warm-start decoder-neighborhood association differs")
-        if old_context.get("kernel_mode","legacy")!=a.context_kernel_mode:raise ValueError("Warm-start radial-shell features differ")
+        if old_context.get("kernel_mode","legacy")!=(context_spec or {}).get("kernel_mode", "legacy"):
+            raise ValueError("Warm-start decoder context features differ")
+        if old_context.get("version", "causal-context-v1") != (context_spec or {}).get("version", "causal-context-v1"):
+            raise ValueError("Warm-start decoder context version differs")
         if prior_cfg.get("energy_target", "deletion") != a.energy_target:
             raise ValueError("Warm-start label targets differ")
         if prior_cfg.get("condition_schema_id") not in {None, schema_identity(schema)}:
@@ -403,7 +429,9 @@ def main(argv=None):
                                    generator=noise_generator, device=a.device)
     exact_count = a.kind != "dense_bce"
     metadata = dict(
-        model_format_version=4 if a.remaining_count_features or a.context_kernel_mode!="legacy" else 3, kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
+        model_format_version=(5 if a.context_kernel_mode in new_context_modes else
+                              (4 if a.remaining_count_features or a.context_kernel_mode!="legacy" else 3)),
+        kind=a.kind, condition_mode=a.condition_mode, condition_dim=conditions.shape[1],
         n_sites=n_sites, latent_dim=model.latent_dim, seed=a.seed, counts=a.counts,
         hidden_dim=a.hidden_dim, parameter_count=sum(p.numel() for p in model.parameters()),
         encoder_kind=a.encoder, graph_context=a.graph_context, graph=graph_data,
@@ -418,6 +446,11 @@ def main(argv=None):
         trainer_sha256=sha256(__file__), model_source_sha256=sha256(HERE / "models.py"),
         beta_schedule_source_sha256=sha256(HERE / "schedules.py"),
         graph_context_source_sha256=sha256(HERE.parent / "graph.py") if a.graph_context else None,
+        context_extension_source_sha256=(sha256(HERE.parent / {
+            "angle_hist": "angular_context.py", "redundant_6": "angular_context.py",
+            "redundant_6_learned": "angular_context.py", "redundant_16": "angular_context.py", "angular_smooth": "smooth_angular_context.py",
+            "directional_l1_l2": "directional_context.py"}[a.context_kernel_mode])
+            if a.context_kernel_mode in new_context_modes else None),
         source_id_sha256=hashlib.sha256("\n".join(d["structure_ids"].tolist()).encode()).hexdigest(),
         condition_stats=statistics, condition_schema=schema,
         descriptor_schema=descriptor_schema,

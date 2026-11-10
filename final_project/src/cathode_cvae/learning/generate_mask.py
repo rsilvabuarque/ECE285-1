@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from .models import make_model
+from .models import make_model, validate_context_spec
 from .runtime import device_name, digest, trusted_checkpoint
 from ..runtime import require_compute_allocation
 from ..conditions import (BIN_NAMES, encode_requests, load_schema, schema_identity,
@@ -48,18 +48,40 @@ def load_model(checkpoint, device):
         cfg = json.loads(Path(checkpoint).with_name('configuration.json').read_text())
     format_version = cfg.get('model_format_version')
     if format_version is not None:
-        if format_version not in {2, 3, 4}:
+        if format_version not in {2, 3, 4, 5}:
             raise ValueError('Unsupported model_format_version; use its matching model loader')
         required = {'kind', 'n_sites', 'condition_dim', 'latent_dim', 'hidden_dim',
                     'encoder_kind', 'graph_context', 'graph'}
         if not required.issubset(cfg):
             raise ValueError('Versioned checkpoint is missing explicit architecture dimensions or graph metadata')
-        if format_version in {3,4} and not {'decoder_context_spec', 'energy_target', 'label_energy_protocol', 'proposal_geometry_protocol', 'beta_schedule'} <= set(cfg):
+        if format_version in {3,4,5} and not {'decoder_context_spec', 'energy_target', 'label_energy_protocol', 'proposal_geometry_protocol', 'beta_schedule'} <= set(cfg):
             raise ValueError('Version3 checkpoint lacks context, schedule, or label/proposal metadata')
-        if format_version==4 and not isinstance(cfg.get('remaining_count_features'),bool):
+        if format_version in {4,5} and not isinstance(cfg.get('remaining_count_features'),bool):
             raise ValueError('Version4 checkpoint lacks explicit remaining-count architecture metadata')
         if format_version<4 and (cfg.get('remaining_count_features') or (cfg.get('decoder_context_spec') or {}).get('kernel_mode','legacy')!='legacy'):
             raise ValueError('New count/shell architecture requires version4 checkpoint metadata')
+        context_version = (cfg.get('decoder_context_spec') or {}).get('version', 'causal-context-v1')
+        if format_version < 5 and context_version not in {'causal-context-v1','causal-context-v2'}:
+            raise ValueError('Angular context requires version5 checkpoint metadata')
+        if format_version == 5 and context_version not in {'causal-angular-hist-v1',
+                'causal-angular-smooth-v1', 'causal-directional-v1', 'causal-redundant-radial-v1'}:
+            raise ValueError('Version5 checkpoint lacks a recognized angular context specification')
+        if format_version in {3,4,5} and cfg.get('graph_context'):
+            spec = cfg.get('decoder_context_spec')
+            if not isinstance(spec, dict) or not {'version', 'association', 'feature_dim'} <= set(spec):
+                raise ValueError('Versioned graph context lacks immutable identity metadata')
+            if format_version in {3,4} and 'kernels_sha256' not in spec:
+                raise ValueError('Versioned graph context lacks its kernel hash')
+            if format_version == 5:
+                radial = spec.get('radial_spec')
+                if not isinstance(radial, dict) or not {'feature_dim','kernels_sha256'} <= set(radial):
+                    raise ValueError('Angular context lacks its radial geometry hash')
+                if context_version in {'causal-angular-hist-v1','causal-angular-smooth-v1'} and 'angular_buffers_sha256' not in spec:
+                    raise ValueError('Angular context lacks its geometry hash')
+                if context_version == 'causal-directional-v1' and 'directional_buffers_sha256' not in spec:
+                    raise ValueError('Directional context lacks its geometry hash')
+                if context_version == 'causal-redundant-radial-v1' and 'extra_features' not in spec:
+                    raise ValueError('Redundant control lacks its declared width')
     else:
         # Recognized historical writers all stored these dimensions. We retain
         # only their documented default hidden width/architecture, never infer a
@@ -94,9 +116,11 @@ def load_model(checkpoint, device):
                        graph_data=cfg.get('graph'), graph_context=cfg.get('graph_context', False),
                        context_spec=cfg.get('decoder_context_spec'),remaining_count_features=cfg.get('remaining_count_features',False)).to(device)
     model.load_state_dict(ck['state_dict'], strict=True)
-    if format_version in {3,4} and cfg.get('graph_context'):
-        if model.graph_context.to_spec()['kernels_sha256'] != cfg['decoder_context_spec']['kernels_sha256']:
-            raise ValueError('Saved decoder context buffers disagree with their declared association')
+    if format_version in {3,4,5} and cfg.get('graph_context'):
+        try:
+            validate_context_spec(cfg['decoder_context_spec'], model.graph_context.to_spec())
+        except ValueError as exc:
+            raise ValueError('Saved decoder context buffers disagree with their declared association') from exc
     model.eval()
     return model, cfg
 
