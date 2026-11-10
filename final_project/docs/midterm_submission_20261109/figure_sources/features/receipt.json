@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SAVED_RESULT_PLOT",
+  "source_registry_sha256": "637e29d3bc97e46fb47dd6ced90bd0a00a66aabe10728a8445ba802095a4af09",
+  "source_sha256": "9e0fcf864b6413e80b8720334cc804e3233b3cfca6c941e802b49ac04dd08c6b",
+  "figure_width_in": 5.5,
+  "figure_height_in": 2.15,
+  "outputs": {
+    "left_common3_points.csv": "c5431fa483ddf29222369931c3e5d2d73cbbedb9306b11b01750d9473760f37f",
+    "left_common3_summary.csv": "052e774f5d11a6f1a85eaf30a6bcfa7747c0ac04cc2b4bdc43eae30b899c42cc",
+    "right_request5_summary.csv": "1bb434e773951edc5c4de65afd19e28260d5343ec7c0323e4176a88c3ded5760",
+    "full_fivefit_table.csv": "8b6f9a6bef7acf8e5ce846af630daf96cda05f178690e0da5a60561b092697f8",
+    "featurization_comparison.pdf": "b6d427ada80c7efc5ecf3ea88812cc9ce28468e29f2239a099d5987d97f14982",
+    "featurization_comparison.png": "3cc116af072fd85ccd45eb802a4c60d5575c7f136cfbd5c924769345ea062228"
+  },
+  "new_model_calls": 0,
+  "new_oracle_calls": 0,
+  "scope": "Descriptive final performance; not a new final assessment or hypothesis selection",
+  "uncertainty": "Sample SD across three common independent fits on left; five fits/sampling replicates on right, not confidence intervals"
+}

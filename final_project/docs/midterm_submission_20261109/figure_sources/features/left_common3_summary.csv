@@ -1,0 +1,5 @@
+method,teacher,replicates,mean_yield_pct,sample_SD_pp
+A_graph_cvae,uma,3,60.50347222222222,0.459331824837603
+B_spatial_ar,uma,3,60.30092592592593,1.5824663094763098
+C_dense_cvae,uma,3,31.365740740740737,0.2184558575020475
+D_nonphysical_ar,uma,3,34.375,0.7955860581520557

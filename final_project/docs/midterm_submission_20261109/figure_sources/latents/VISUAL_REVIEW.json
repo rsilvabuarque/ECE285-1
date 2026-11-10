@@ -1,0 +1,12 @@
+{
+  "status": "VISUALLY_REVIEWED_ALL3_PNGS_NO_CLIPPING",
+  "outputs": {
+    "latent_dimension.pdf": "1affdc259c111f65c4c417adafb446fbbcc170c5325a2043a5a23063a26995f7",
+    "latent_dimension.png": "c9a49c9ca16c731cf6c3314ebc5bedd35ed7a3bd5c124600ca96cce618920068",
+    "latent_mechanism.pdf": "91812678f3c0f7eeeee54a7870869ac4ede2111ba7277abe5337633b15a67880",
+    "latent_mechanism.png": "d9b587a7893c715caa63ba403622b2e368d65659ab45edc1bb6b0cab6bb761f8",
+    "optimization_traces.pdf": "1e64715d61923ea83d41d1997c5fcab906e4dada208222a8b12a1ddac934e810",
+    "optimization_traces.png": "0a4f00226fac76893c5492d79f5290455ef9e8df96e6380c47bb0b4d319f775a"
+  },
+  "notes": "Main mechanism title shortened to fit; font minimum7pt. Labels, error bars, log axes, prior/cutoff references and all source observables inspected. No physical validation implied."
+}

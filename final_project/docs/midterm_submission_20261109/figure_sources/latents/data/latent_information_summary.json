@@ -1,0 +1,32 @@
+{
+  "selected_shell_KL_nats": {
+    "mean": 0.012272209022194147,
+    "minimum": 0.007224084343761206,
+    "maximum": 0.020185276865959167
+  },
+  "selected_shell_information_upper_bound_bits": {
+    "mean": 0.017705055097072292,
+    "minimum": 0.010422150657707893,
+    "maximum": 0.02912119883349001
+  },
+  "selected_shell_mu_variance_range": [
+    1.2624115697690286e-05,
+    0.001163907116279006
+  ],
+  "selected_shell_posterior_variance_range": [
+    0.8540440797805786,
+    0.9426097273826599
+  ],
+  "information_identity": "E_(m,c) KL[q(z|m,c)||p(z)] = I_q(m;z|c) + E_c KL[q(z|c)||p(z)]",
+  "interpretation": "Upper bound for the specified class-weighted empirical VAL distribution; not an estimate of actual mutual information, physical entropy or semantic axes.",
+  "no_new_NN_or_MLIP_calls": true,
+  "no_training": true,
+  "scope_notes": [
+    "Dimension study is older dense/no-spatial DEVELOPMENT, not size convergence of the selected graph model.",
+    "All named selection payloads use validation_beta0.1.",
+    "Activity thresholds are descriptive; components within a fit are not independent fits.",
+    "Latent axes may change sign/permutation across fits.",
+    "Posterior collapse means input-independence, not a point distribution; broad variances near prior persist.",
+    "Optimization traces use one prespecified seed and fixed4000updates; they do not prove convergence."
+  ]
+}

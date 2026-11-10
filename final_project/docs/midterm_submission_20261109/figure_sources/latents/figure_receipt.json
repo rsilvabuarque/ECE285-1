@@ -1,0 +1,31 @@
+{
+  "status": "RENDERED_FROM_SAVED_EVIDENCE_ONLY",
+  "figure_width_inches": 5.5,
+  "nominal_fonts_pt": "7\u20138.4",
+  "outputs": {
+    "latent_dimension.pdf": "1affdc259c111f65c4c417adafb446fbbcc170c5325a2043a5a23063a26995f7",
+    "latent_dimension.png": "c9a49c9ca16c731cf6c3314ebc5bedd35ed7a3bd5c124600ca96cce618920068",
+    "latent_mechanism.pdf": "91812678f3c0f7eeeee54a7870869ac4ede2111ba7277abe5337633b15a67880",
+    "latent_mechanism.png": "d9b587a7893c715caa63ba403622b2e368d65659ab45edc1bb6b0cab6bb761f8",
+    "optimization_traces.pdf": "1e64715d61923ea83d41d1997c5fcab906e4dada208222a8b12a1ddac934e810",
+    "optimization_traces.png": "0a4f00226fac76893c5492d79f5290455ef9e8df96e6380c47bb0b4d319f775a"
+  },
+  "renderer_sha256": "723bf50e2c6a29d0185b74662e883d1789f28ebe2d75cb238ed13a73a3a74868",
+  "data_hashes": {
+    "latent_dimension_summary.csv": "d25f3b74a2b1fff68a26000665863cac1ec9f494b756b4f2a760fa59558d047d",
+    "latent_fit_evidence.csv": "501cd16ffc28ff1bcb1ff7653257f21feaadb8ae469c44b18abf794e7bd34609",
+    "optimization_trace_evidence.csv": "2f53c3d78ec284f61ca323d2649cf8a862c33bdcb2f844d6545c376a76d5eab4",
+    "latent_intervention_fit_evidence.csv": "5e984dc4ffe2663aa69b9e0d34330bdad3a9b1aa5bc4c0764fc08d4999aeee9a",
+    "latent_component_evidence.csv": "0d6000554b9eb5cd5473cca92bcabb1d07df3204a8ef4f4d71d884e677eeb710",
+    "latent_information_summary.json": "d0e5881fd5fd578b6a4510f75ae8dd10a4851bf8a9ed9f89662117215efb2fe4",
+    "latent_dimension_fit_evidence.csv": "0c9a08dffb2d72504f92e18ad8f13bf4f96da20a8c69db543f97d0e0fc135c90"
+  },
+  "outside_text_bounds": {
+    "latent_dimension": [],
+    "latent_mechanism": [],
+    "optimization_traces": []
+  },
+  "matplotlib_version": "3.11.2",
+  "no_model_calls": true,
+  "no_new_training": true
+}

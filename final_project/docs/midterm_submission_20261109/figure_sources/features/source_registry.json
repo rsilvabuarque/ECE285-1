@@ -1,0 +1,33 @@
+{
+  "status": "READ_ONLY_FROZEN_EXISTING_RESULT_INPUTS",
+  "inputs": {
+    "seed_metrics.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/seed_metrics.csv",
+      "sha256": "b5d858a451776b5021af6b07f96c339590d56d715a0ace83cd478c0a1b058b02",
+      "bytes": 5666
+    },
+    "mechanism_first3.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/mechanism_first3.csv",
+      "sha256": "abbf0e57ac3ae2f2a1c6910a40d661048791202e39933e56de70a56e4b49b0a2",
+      "bytes": 931
+    },
+    "per_bin_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/per_bin_summary.csv",
+      "sha256": "bad72410604f2ea82002c92a84e95dcfc58cf972892c1aaa153c0b194af26ab5",
+      "bytes": 3546
+    },
+    "summary_with_LOW_SD.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/summary_with_LOW_SD.csv",
+      "sha256": "ecb0264f00d30a235d90a7474603655ca9073b286df5b8c8627481947672b3b4",
+      "bytes": 1889
+    },
+    "contrast_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/final_static/contrast_summary.csv",
+      "sha256": "aaa23dc3bc9f984f8e0f05847a7e01a731e528ef26d4d3cc2bca000dd638d94c",
+      "bytes": 3590
+    }
+  },
+  "parent_sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+  "history_sha256": "c164251ca5d01f320a2fd615a2b464f685f48dd7dc10f2d9d6e11dc43ae2d23d",
+  "new_model_or_oracle_calls": 0
+}

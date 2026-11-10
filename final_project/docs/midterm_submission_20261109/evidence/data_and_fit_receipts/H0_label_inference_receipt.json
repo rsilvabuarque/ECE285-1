@@ -1,0 +1,315 @@
+{
+  "status": "VERIFIED_HISTORICAL_H0_INFERENCE_LINKS",
+  "created_UTC": "2026-11-08T11:56:41.933862+00:00",
+  "training_data": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/training_round0.npz",
+    "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465"
+  },
+  "parent": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/parents/O3_N48_pilot.npz",
+    "sha256": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95"
+  },
+  "H0_preparation": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/data/preparation.json",
+    "sha256": "4824f7fb85580450ec429f7a97ca7db7563b62247d0b10cb41ab1f17127ef0a5"
+  },
+  "producer_source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/artifacts/current/improvement_v1/prepare_data.py",
+    "sha256": "c61caa68ce6768ed0fc207c7ae7dad6e3a252e597a0f2c58f22e967c8091dcc1"
+  },
+  "teacher": "uma",
+  "head": "omat",
+  "teacher_precision": {
+    "dtype": "float32",
+    "tf32": false
+  },
+  "teacher_checkpoint_name": "UMA-S-1.2.1",
+  "teacher_checkpoint_sha256": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce",
+  "package": "fairchem-core",
+  "package_version": "2.25.0",
+  "geometry_protocol": "pristine-derived deletion; unrelaxed; exact canonical parent coordinates",
+  "cohorts": [
+    {
+      "cohort": "original",
+      "H0_rows": 1536,
+      "source_tasks": 167,
+      "used_workers": [
+        {
+          "worker": "60891540_nid200308_2323708",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60891540_nid200308_2323708.json",
+          "sha256": "c156bc6408ed36122c5f6225d8ad3875b257b26360e8f73cd596641c2fc572a7",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60891540_nid200424_537085",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60891540_nid200424_537085.json",
+          "sha256": "e2ffc1f46ee7bb24856dd96f34c9d4c40f46ed5ea9b36353cae3bbc61681a609",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60891540_nid200489_1716187",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60891540_nid200489_1716187.json",
+          "sha256": "5a1a16f3bd1d8347efc87b41d6d1873dacb07b45a6a6d21af8ffd838bda20b15",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60891540_nid200505_39713",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60891540_nid200505_39713.json",
+          "sha256": "5c2c3d8eb8bb59a61058724c4f2598bce41e5d59787311456e18c66bc1dcf2d0",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        }
+      ],
+      "task_manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/scf_tasks.jsonl",
+        "sha256": "9ceaed96ac2415289a2e291ec7b929723ffa12bf53ec069df840b17495970dd1"
+      }
+    },
+    {
+      "cohort": "prior_assessment_now_adaptation",
+      "H0_rows": 48711,
+      "source_tasks": 428,
+      "used_workers": [
+        {
+          "worker": "60894121_nid001236_810238",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001236_810238.json",
+          "sha256": "e2b8f52ba12c46e251d25e2b74cc5c4db41166ee0d22775bd63b6068bbd81770",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid001236_810278",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001236_810278.json",
+          "sha256": "b7ec8534fe6b1958750d17c0cbd2f734220150bf71ee99ce630547c938c76dd0",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid001236_810279",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001236_810279.json",
+          "sha256": "1b5a126f6d121d29555c0d9388956f861e21ba2efffb9d72f5fa2ed91c0bb7a0",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid001781_409213",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001781_409213.json",
+          "sha256": "1ef2febfa7619a7f6132fe6f718423d7884c69381cc4fec3e7c339f2bf763a79",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid001781_409214",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001781_409214.json",
+          "sha256": "6f60235710714babe8d52668a0336c57776b84481fb042941e0f0ce2bdc45fa3",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid001781_409215",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid001781_409215.json",
+          "sha256": "28ab6e7fdcd40b71143305f9f574278004814f6ac4c7c9b77f264b9ffdc81cc5",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003309_339927",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003309_339927.json",
+          "sha256": "0affd54492d734d4ef6110e1a3899d11b4c1d1e2ec19a79414e366fb69496ea2",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003309_339928",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003309_339928.json",
+          "sha256": "887e5cb68379c742e439762aefaf387ef78a39769d0a27f3d4488c8c7504050a",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003309_339929",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003309_339929.json",
+          "sha256": "15e25603c19f955a0915affcbc96031d36f191cfe21eb7d91401518ebd8f6eff",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003312_535981",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003312_535981.json",
+          "sha256": "f2a1982e1cb566ca4d2d2dd14d3faad8011c748fbf74f2678676ac8c2b9e6fd3",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003312_535983",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003312_535983.json",
+          "sha256": "4adb1f19e38679f15b01f826ac917d8b596456c0e535f29b569751b33009dd65",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894121_nid003312_535984",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894121_nid003312_535984.json",
+          "sha256": "d3d1f264bb1121e34e78d8d87ed322466c159d812ed67e95650de893bbff3a49",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        },
+        {
+          "worker": "60894929_nid200256_701801",
+          "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/workers/60894929_nid200256_701801.json",
+          "sha256": "4f0e55a9b570061372b10949527ffdd3d367f3323d00bc47e8e0a2d669c13115",
+          "precision": {
+            "dtype": "float32",
+            "tf32": false
+          },
+          "head": "omat",
+          "checkpoint_hashes": {
+            "uma-s-1p2p1.pt": "b2673b85037b075674c25f55c34ffe1ff1e15db924be977b10a184765df0d5ce"
+          },
+          "package_version": "2.25.0"
+        }
+      ],
+      "task_manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/generated_tasks.jsonl",
+        "sha256": "218a56d4d2e96b8016e379d1d830e95ed8dd617d0a2d076130c5d1350a21a436"
+      }
+    }
+  ],
+  "source_exports": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/learning_O3_N48_pilot_uma.npz",
+      "sha256": "f6c14ad707b288cd1adab822fe692f9030cb7487943d666c33b9d2e106fe90e5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/data/generated_scalar_uma.npz",
+      "sha256": "df395f4ff97fa150f614638ee35b811cc7cbea89d421b77da7196bd9637899b8"
+    }
+  ],
+  "validation_receipts": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/validation/scf_uma.json",
+      "sha256": "8f675ad9f21beebd374c47c0b64290d26464ca8463dfad77c05b2aac0c97f4b1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/preliminary_dataset_20261106/validation/generated.json",
+      "sha256": "8ba86ad889bafab2a580e783e4d408c359d9a0bb0cb36f344b60edd1769c9357"
+    }
+  ],
+  "scope": "Direct producer/task/used-worker precision and source-export byte binding for both original H0 source cohorts; no inference or new energy values; original schema omission does not imply wrong precision",
+  "new_MLIP_calls": 0
+}

@@ -1,0 +1,9 @@
+method,target,equal_weight_cell_mean_yield,cells,attempts,replicates,mean_replicate_macro_yield,std_replicate_macro_yield,useful_distinct_per_cell_sum,scope
+current_graph_cvae,deletion,0.6475694444444444,9,576,3,0.6475694444444444,0.04550466118778178,373,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+current_graph_cvae,endpoint,0.65625,9,576,3,0.65625,0.0364583333333333,378,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+current_mutation,deletion,0.5711805555555556,9,576,3,0.5711805555555557,0.05520178158189113,329,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+current_mutation,endpoint,0.5381944444444444,9,576,3,0.5381944444444444,0.052429405800491324,310,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+current_spatial_ar,deletion,0.6354166666666666,9,576,3,0.6354166666666666,0.07235647911171773,366,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+current_spatial_ar,endpoint,0.640625,9,576,3,0.640625,0.05487319662944135,369,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+uniform,deletion,0.2152777777777778,9,576,3,0.2152777777777778,0.0210492285642051,124,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+uniform,endpoint,0.22916666666666666,9,576,3,0.22916666666666666,0.0187789128930416,132,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count

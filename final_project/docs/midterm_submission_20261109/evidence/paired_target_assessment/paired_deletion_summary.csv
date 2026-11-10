@@ -1,0 +1,5 @@
+method,target,equal_weight_cell_mean_yield,cells,attempts,replicates,mean_replicate_macro_yield,std_replicate_macro_yield,useful_distinct_per_cell_sum,scope
+paired_deletion_cvae,deletion,0.6128472222222222,27,1728,3,0.6128472222222222,0.019564978593028876,1059,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+paired_deletion_cvae,endpoint,0.5914351851851852,27,1728,3,0.5914351851851851,0.025770189905338324,1022,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+paired_deletion_mutation,deletion,0.5729166666666666,27,1728,3,0.5729166666666666,0.017361111111111105,990,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count
+paired_deletion_mutation,endpoint,0.5428240740740741,27,1728,3,0.5428240740740741,0.018725335286300323,938,Descriptive equal-weight count/request/fit cells; draw-level repeats do not increase independent fit count

@@ -1,0 +1,96 @@
+{
+  "baseline_commit": "7a14ec981155c61092050f3c7ced0e0f28e8b63c",
+  "baseline_project": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project",
+  "claims": {
+    "Fig1_Table2_current_featurization_and_teacher_results": "figure_sources/features/source_registry.json",
+    "Fig2_dense_only_development_latent_dimension_sweep": "figure_sources/latents/source_hashes.json",
+    "Fig3_posterior_statistics_and_decoding_interventions": "figure_sources/latents/source_hashes.json",
+    "conditional_information_bound": "figure_sources/latents/data/latent_information_summary.json",
+    "older_dense_policy_2x2": "evidence/policy_sensitivity",
+    "new_bounded_beta_and_remaining_count_screens": "evidence/bounded_screens",
+    "paired_deletion_endpoint_label_results": "evidence/paired_target_assessment",
+    "training_and_scoring_counts": "evidence/data_and_fit_receipts"
+  },
+  "additional_saved_sources": {
+    "data_and_fit_receipts": [
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/H0_label_inference_receipt.json",
+        "included": "evidence/data_and_fit_receipts/H0_label_inference_receipt.json",
+        "sha256": "b867a1832e215b8cded8fd6673cb1743e38597287aa4c2b5fcb4b431babbb539"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/training_receipt.json",
+        "included": "evidence/data_and_fit_receipts/training_receipt.json",
+        "sha256": "f4bd7882248a11216a2e5f8b82f8c996f7bcc4ffdb4484e5edcb464c4c8ad2b1"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/static_call_receipt.json",
+        "included": "evidence/data_and_fit_receipts/static_call_receipt.json",
+        "sha256": "2e7fe5f3e45333e76f40e50597dc0b08ca65f75531e0539e85100c2234e0fa24"
+      }
+    ],
+    "policy_sensitivity": [
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/docs/midterm1/generated_policy_table.tex",
+        "included": "evidence/policy_sensitivity/generated_policy_table.tex",
+        "sha256": "ec692959fe81a5b7704afc1d4e859738866e47fe062974adea0fe739b79d3023"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/conditioning_20261107/policy_diagnostics_v2/selection_audit.json",
+        "included": "evidence/policy_sensitivity/selection_audit.json",
+        "sha256": "e13540a07610a5ecdcf379e8dd661182bbc4545267ca57d231f75804342ed3c6"
+      }
+    ],
+    "bounded_screens": [
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/screens/first_fit_contrasts.csv",
+        "included": "evidence/bounded_screens/first_fit_contrasts.csv",
+        "sha256": "d1488a209e0d08671ff5f4e6b092dc9d0ac75a70c3fd70882be60d08030617eb"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/screens/screen_interpretation_receipt.json",
+        "included": "evidence/bounded_screens/screen_interpretation_receipt.json",
+        "sha256": "63b034eca8ef0a96125d6f186e284965bed5c371ee224e14df15c80c38fcadaf"
+      }
+    ],
+    "paired_target_assessment": [
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_acquisition/receipt.json",
+        "included": "evidence/paired_target_assessment/acquisition_receipt.json",
+        "sha256": "153a7ac44a8d441881b34dfeb0fa7e2563d63c1ef38f59f8e9d5a55175a73e88"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/receipt.json",
+        "included": "evidence/paired_target_assessment/final_evaluation_receipt.json",
+        "sha256": "c852fdc60ea62a8a5da13a673acc273e7a7ef6a2eb8c65b589d7c09cc6d53782"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/current_low/summary.csv",
+        "included": "evidence/paired_target_assessment/current_low_summary.csv",
+        "sha256": "2abb46d13d45a32385736bd15c9849568cd2787dfc8025d9f24b583aca6262bd"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/paired_deletion/summary.csv",
+        "included": "evidence/paired_target_assessment/paired_deletion_summary.csv",
+        "sha256": "bfcfdfdf9c586cba86f70e9dc999ca0621f0e8bf75ce745bd4ef91b0621f0e8a"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/paired_endpoint/summary.csv",
+        "included": "evidence/paired_target_assessment/paired_endpoint_summary.csv",
+        "sha256": "5233e3f7462932bbf581525fdda5d96385c3d7a80c699b619f9ea26af86e8b05"
+      },
+      {
+        "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/reports/overnight_20261108/paired_final_evaluation/contrasts/summary_contrasts.csv",
+        "included": "evidence/paired_target_assessment/summary_contrasts.csv",
+        "sha256": "b040aa1e89d66a4589bda81f57a377f794dc85008719f48e90632aab0a458729"
+      }
+    ]
+  },
+  "literature": {
+    "npj_reference": "https://doi.org/10.1038/s41524-026-02075-0",
+    "author_code": "https://github.com/ishikawa-group/orr-vae",
+    "scope": "Published indexed Methods/Results and author code were checked; this is not an audit of all supplementary material. Published UMA-s-1p1 methods are distinguished from later upstream README defaults."
+  },
+  "protected_boundary": "Existing TRAIN/VAL/TEST roles and frozen assessment outcomes were read only. Report generation did not fit or select a new model.",
+  "new_model_or_physics_calls": 0
+}

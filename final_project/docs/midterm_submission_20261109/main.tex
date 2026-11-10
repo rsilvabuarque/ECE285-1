@@ -1,0 +1,313 @@
+\documentclass{article}
+\PassOptionsToPackage{numbers,sort&compress}{natbib}
+\usepackage[preprint]{neurips_2025}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,graphicx,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\makeatletter
+\renewcommand{\@noticestring}{ECE285: Deep Generative Models, UC San Diego. Fall 2026 mid-term report.}
+\makeatother
+\title{Conditional Generation of Lithium-Vacancy\\Configurations for Cathode Relithiation}
+\author{Ricardo Silva Buarque \quad Beihao Gu \quad Varad Kottawar\\
+University of California San Diego}
+\newcommand{\KL}{D_{\mathrm{KL}}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\begin{document}
+\maketitle
+\begin{abstract}
+We test whether conditional variational autoencoders (CVAEs) discover novel,
+low-energy lithium-vacancy configurations more efficiently than simple samplers.
+The study compares posterior encoders, causal spatial features, latent dimensions
+and a matched autoregressive model without a latent. On a fresh assessment,
+the selected CVAE, autoregressive control and mutation achieve 62.20\%, 63.04\%
+and 58.37\% balanced useful yield under UMA. Spatial features help, but larger
+latent spaces improve reconstruction without consistent generation gains.
+Saved posterior statistics and controlled decoding probes reveal strong use of
+the explicit energy condition and weak incremental latent influence. A paired
+study of unrelaxed and relaxed energy labels does not improve relaxed-state
+sampling. These findings motivate controlled representation learning, rather
+than a claim of physical ground-state discovery.
+
+\end{abstract}
+
+\section{Research question, motivation and related work}
+Direct cathode recycling restores active material instead of dissolving it into
+constituent elements; hydrothermal relithiation has regenerated spent LiCoO$_2$
+(LCO) \citep{shi2018}. Li/vacancy arrangements differ in energy even at fixed
+composition \citep{vanderVen1998}. Our longer-term motivation is to prioritize
+configurations for density functional theory (DFT) and recycling simulations.
+The \emph{class question} is narrower: \textbf{does a CVAE improve novel low-energy
+sampling under an equal proposal budget, and which features drive the gain?}
+DFT supplies a specified electronic-structure reference; a machine-learned
+interatomic potential (MLIP) approximates energies and forces. A single-point
+evaluation keeps geometry fixed; relaxation moves atoms toward a local minimum.
+
+Wakamiya and Ishikawa \citep{wakamiya2026} combine a convolutional CVAE with
+Pt/Ni catalyst screening, conditioning on binary percentile labels for formation energy and
+oxygen-reduction overpotential. A padded four-layer occupation tensor and 32-dimensional latent
+model generate arrangements for iterative evaluation and retraining. Their
+evaluator already uses UMA, a universal MLIP \citep{uma2025}; replacing an
+``NNP'' with an ``MLIP'' is not our novelty. We extend conditional atomistic
+generation to periodic, composition-constrained Li/vacancy patterns, explicitly
+testing posterior representation, spatial autoregression and latent utility.
+Symmetry-orbit novelty per \emph{attempt}, no-latent controls and distinct relaxation
+targets make that question measurable. Our binary site representation needs no
+nonphysical padding.
+
+\section{Revised data and featurization}
+The proposal's 144-site pilot is replaced by an economical O3 parent,
+Li$_{48}$Co$_{48}$O$_{96}$. Learning masks $o\in\{0,1\}^{48}$ use \emph{one for
+present Li}, reversing the proposal's vacancy-bit convention. Counts
+$n=\sum_i o_i\in\{12,24,36\}$ give $144+n$ atoms and lithium fraction $x=n/48$.
+Deletion labels retain parent coordinates and cell. UMA-S-1.2.1/\texttt{omat}
+supplies training energies; MACE-MH-1/\texttt{omat\_pbe} provides a second model check on
+the same proposals \citep{uma2025,mace2022}. Both use FP32, TF32 off.
+
+The parent's 192 retained permutations define symmetry \emph{orbits}; the smallest
+transformed $1-o$ string identifies each orbit. Grouping precedes splitting,
+and matched runs use canonical orientation. The original 40,157 TRAIN / 4,967
+VAL / 5,123 TEST orbits retain their roles. Novelty uses a separately frozen
+history of 344,001 observed orbits. TEST and final assessment outcomes do not
+select models; equivalent views are not independent examples.
+
+\section{Conditional model and controlled alternatives}
+\paragraph{Energy labels and exact composition.}
+Within each count and teacher, TRAIN energy quantiles $q_{20},q_{80}$ define
+LOW ($e\le q_{20}$), MIDDLE ($q_{20}<e\le q_{80}$) and HIGH, with energies in
+eV per present atom and ties unsplit. The four-dimensional condition is
+$c=(n/48,\operatorname{onehot}(b))$. A low request specifies a supported range,
+not a global minimum. Separate within-count thresholds avoid comparing raw
+energies across compositions.
+
+The encoder defines $q_\phi(z\mid o,c)=\mathcal N(\mu_\phi,
+\operatorname{diag}(\sigma_\phi^2))$ and samples
+$z=\mu_\phi+\sigma_\phi\odot\epsilon$ with $\epsilon\sim\mathcal N(0,I)$.
+The generation prior $p(z)=\mathcal N(0,I)$ is fixed. A width-64 gated recurrent
+unit (GRU) decoder uses a fixed site order:
+\begin{equation}
+p_\theta(o\mid z,c)=\prod_{i=1}^{48}
+p_\theta(o_i\mid o_{<i},z,c,h_i),\qquad
+\mathcal L=-\E_{q_\phi}\log p_\theta(o\mid z,c)+\beta_t\KL(q_\phi\Vert p).
+\label{eq:cvae}
+\end{equation}
+Here $h_i$ summarizes only the assigned prefix $o_{<i}$. Training uses true
+prefixes (teacher forcing); generation uses previous sampled bits. If no Li
+remain, later decisions are zero; if all remaining sites must be filled, they
+are one. Including this constraint in the likelihood and sampler enforces count
+without posthoc projection. Equation~\ref{eq:cvae} follows conditional variational
+learning \citep{kingma2014,sohn2015}; both loss terms are in nats per mask.
+
+\paragraph{What is featurized?}
+The dense encoder uses 128$\to$64 SiLU layers on the mask and condition. The graph encoder includes
+host atoms and vacant virtual Li sites, with element embeddings, mobile/presence
+flags and radial degree features. Two width-32 message-passing layers use six
+radial channels within 5~\AA; separate host/mobile mean pools feed Gaussian heads
+\citep{gilmer2017}. Decoder context instead uses engineered causal fractions;
+it is not learned equivariant message passing.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Matched model families and decoder featurization. All current CVAEs use $D=4$.}
+\label{tab:features}
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule Arm & Posterior & Decoder context beyond count/condition/site index\\
+\midrule
+A & Graph Gaussian & Six occupied/vacant/unassigned fractions under two physical kernels.\\
+B & None (AR) & Same six features; tests whether a latent is necessary.\\
+C & Dense Gaussian & Same six features; tests a different posterior with the same decoder.\\
+D & None (AR) & Same-size kernels under a fixed nonphysical site association.\\
+A-shell/B-shell & Graph/none & Nine fractions: three categories in each of three radial shells.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+Baseline kernels use nearest neighbors and exponential distance weights. Three
+shells at 2.811, 4.869 and 4.912~\AA\ include interlayer neighbors and add 576
+GRU parameters, so shell gains are not perfectly capacity-matched. D preserves
+B's parameter count and kernel degree/weight multisets but changes prefix
+exposure: it is not a pure locality ablation. A/C posterior capacities differ.
+Fixed ordering prevents full permutation equivariance; canonicalization handles
+retained symmetry.
+
+\paragraph{Training and assessment protocol.}
+Adam uses learning rate $10^{-3}$, batch size 512 and 4,000 updates per full fit.
+TRAIN-only class weights reduce the 20/60/20 class imbalance. VAL retains its
+base weights and fixed Monte Carlo noise. The matched update-based warm-up is
+$\beta_t=0.1\min\{1,(\lfloor t/79\rfloor+1)/20\}$ for zero-based update $t$.
+Named checkpoints minimize the VAL reconstruction-plus-$0.1$KL objective.
+Thirty-seven new fits include controls, bounded screens, confirmations and six
+paired-target fits; they are not 37 replicates of one model.
+
+Uniform sampling selects exactly $n$ sites. Mutation makes one, two or three
+Li/vacancy swaps from a TRAIN seed in the requested class. Each method retains
+all attempted proposals, including repeats and failures. For replicate $s$,
+count $n$ and class $b$, the primary yield is
+\begin{equation}
+Y_{snb}=\frac{\#\{\text{distinct valid orbits new to frozen history and measured in class }b\}}
+{\#\{\text{all attempts in cell }(s,n,b)\}}.
+\label{eq:yield}
+\end{equation}
+We average the nine count/class cells equally, then summarize independent
+fit/sampler replicates. Shared physical queries are scored once without changing
+attempt denominators. Each static count/bin/replicate cell gets 128 attempts;
+44,928 primary attempts and 4,992 separate latent probes are frozen before scoring.
+The original fixed-$q_{20}$ LOW score remains separate.
+
+\section{Featurization and hyperparameter sensitivity}
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{assets/featurization.pdf}
+\caption{Fresh assessment of representation and requested-bin response.
+Left: common three-fit controls with identical decoder width. Right: selected
+shell models and mutation over five fit/sampling replicates. Bars show means,
+dots fits, and whiskers replicate SD (not confidence intervals). Mutation
+remains stronger on MIDDLE requests. All panels use UMA labels.}
+\label{fig:features}
+\end{figure}
+Useful sampling does not require a variational posterior when physical decoder
+context is present (Figure~\ref{fig:features}). Common-three-fit graph CVAE minus spatial AR
+yield is $+0.20\pm1.49$ percentage points (pp); dense-posterior C and scrambled
+association D achieve only $31.37\pm0.22\%$ and $34.38\pm0.80\%$.
+On the complete five-fit comparison, adding shell features improves balanced
+UMA yield by $1.96\pm0.32$~pp for the CVAE and $2.83\pm1.46$~pp for AR.
+The selected CVAE does not outperform its matched no-latent control
+(difference $-0.83\pm1.13$~pp). Standard deviations here describe paired fit
+differences; proposal rows are not independent fitted models.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Fresh balanced novel in-request yield (\%, mean $\pm$ replicate SD).
+All rows have five fit or sampling replicates. MACE evaluates the same
+UMA-trained proposals with its own frozen TRAIN thresholds.}
+\label{tab:final}
+\input{performance_table.tex}
+\end{table}
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{assets/latent_dimension.pdf}
+\caption{Earlier DEVELOPMENT sweep: dense posterior, no spatial decoder
+context, three fits per dimension. Larger $D$ improves VAL reconstruction but
+does not monotonically improve prior-sampling yield. These data are not a
+dimension sweep of the newer graph/shell CVAE. Error bars are fit SD.}
+\label{fig:dimension}
+\end{figure}
+
+\paragraph{What has and has not converged.}
+The controlled $D\in\{4,8,16,32\}$ sweep selected four as the economical latent
+size; it does not establish asymptotic convergence or optimality of $D=4$ for
+every encoder. Reconstruction improves from 17.01 to 14.87 nats; yield remains 28.82--32.64\%,
+near uniform and below the older mutation baseline (59.72\%; Figure~\ref{fig:dimension}).
+A separate dense $D=8$ development pool varies \emph{training} class balance
+and \emph{checkpoint-selection} KL weight:
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule TRAIN balance / selection $\beta$ & Off/1 & Off/0.1 & On/1 & On/0.1\\
+\midrule UMA balanced yield (\%) &29.28&30.44&30.61&32.12\\
+\bottomrule
+\end{tabular}
+\end{center}
+The training endpoint $\beta=0.1$ is unchanged in that $2\times2$ comparison;
+selection $\beta$ is not a training-$\beta$ sweep. A newer single-fit $\beta=0.03$
+screen gains 0.69~pp balanced yield but loses 1.04~pp LOW yield and was not
+promoted. Remaining-count features do not beat the selected shell AR.
+Learning rate, batch size, widths, graph cutoff and the 4,000-update budget are
+fixed settings, not demonstrated convergence results. Cyclical KL annealing has
+not been executed. Development outcomes do not add held-out replicates.
+
+\section{What the trained latent space actually represents}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\linewidth]{assets/latent_mechanism.pdf}
+\caption{Latent diagnostics: selected A-shell (five fits) versus C with legacy context
+(three fits), not a pure posterior ablation. Component points are not independent
+fits. The 0.01 activity cutoff is heuristic. Interventions fix decoder uniforms:
+LOW$\to$HIGH signed shifts and alternate-$z$ absolute shifts are different
+observables. Diamonds and energy error bars denote fit means and SD.}
+\label{fig:latent}
+\end{figure}
+
+\paragraph{A broad posterior can encode very little.}
+The selected shell CVAE has VAL KL 0.0072--0.0202 nats/mask across five fits
+(mean 0.0123). Posterior-mean variances over masks span
+$1.26\times10^{-5}$--$1.16\times10^{-3}$; mean posterior variances
+$\E[\sigma_j^2]$ are 0.854--0.943. All fits have zero active coordinates
+at the heuristic $\operatorname{Var}(\mu_j)>0.01$ cutoff; only one coordinate
+in one fit exceeds 0.001. These broad, almost input-independent posteriors
+exhibit \emph{posterior collapse}, not point-like or zero-entropy codes.
+
+A conditional information decomposition makes the interpretation more precise
+\citep{alemi2018}. Under the same weighted empirical VAL distribution used for
+the saved KL summaries, define $q(z\mid c)=\E_{o\mid c}q_\phi(z\mid o,c)$. Then
+\begin{equation}
+\overline K\equiv\E_{o,c}\KL(q_\phi(z\mid o,c)\Vert p(z))
+=I_q(o;z\mid c)+\E_c\KL(q(z\mid c)\Vert p(z)).
+\label{eq:mi}
+\end{equation}
+Adding and subtracting $\log q(z\mid c)$ inside the KL gives this identity;
+nonnegativity gives $I_q(o;z\mid c)\le\overline K$. The largest observed shell
+KL therefore bounds this empirical conditional information by approximately
+0.030 bits/mask ($\overline K/\log2$). This is an upper bound, not an MI estimate,
+a population guarantee or a physical configurational entropy. Large KL supplies
+no corresponding lower bound: it can also reflect aggregate-posterior mismatch.
+
+\paragraph{Encoding, conditioning and sampling are different channels.}
+Generation can be written $o=F_\theta(c,z,U)$, where $U$ contains independent
+uniform numbers for categorical AR draws. Holding the actual $z,U$ fixed while
+changing LOW to HIGH shifts UMA energy by 5.97 meV/atom for shell A.
+Resampling only $z$ at fixed $c,U$ changes mean absolute energy by just
+0.335 meV/atom and 0.851 occupation bits; 65.42\% of paired outputs remain in
+the same orbit. Thus the explicit condition has a clear effect, while the
+latent's incremental influence is weak. A no-latent AR remains stochastic
+through $U$, explaining why weak latent use does not imply identical samples.
+
+C has 12.52--13.32 nats KL and four active coordinates, yet poor prior-generation
+yield. It changes 13.04 bits when resampling $z$, but its LOW$\to$HIGH response is
+only 0.331 meV/atom. An informative-looking encoder or sharp posterior is not
+sufficient for useful \emph{conditional prior sampling}. Signed mean energy
+change from two exchangeable prior draws should be near zero; absolute/RMS
+changes, orbit identity and condition response are more discriminating.
+Latent coordinates have no assigned physical meaning and can change sign or order across fits.
+
+
+\section{Relaxation target, limitations and next steps}
+\paragraph{A matched target test.}
+A separate 6,000-mask cohort has 3,600 TRAIN / 1,200 VAL / 1,200 TEST roles assigned
+before labels. For each mask, $E_{\rm del}$ uses parent coordinates and
+$E_{\rm end}$ follows fixed-cell UMA relaxation ($F_{\max}<0.05$ eV/\AA;
+500-step/120-second caps). Eight interruptions remain recorded; fits use 3,594
+usable TRAIN and 1,200 VAL rows. Three CVAEs per target share graph/shell architecture,
+initialization and 4,000 updates, but use separate TRAIN-fitted thresholds.
+Endpoint conditioning still generates a mask: coordinates require relaxation.
+
+The frozen comparison retains 10,944 attempts and 7,616 unique queries, all
+converged. Original six-feature A/B/mutation endpoint LOW yields are 65.63/64.06/53.82\%
+(three replicates); CVAE minus AR is $1.56\pm2.76$~pp. In the matched new-cohort
+comparison, endpoint-label training gives 60.42\% endpoint LOW yield versus
+62.50\% for deletion-label training ($-2.08\pm2.76$~pp; no positive replicate).
+All-bin endpoint yields are 58.74\% versus 59.14\%. Thus initial-energy control
+survives relaxation, but endpoint-label training does not improve this bounded
+comparison. Original and new-cohort arms use different data and contexts; their difference is
+not an architecture effect. Applying deletion thresholds to shifted endpoint
+energies would falsely inflate success.
+
+\paragraph{Advantages and limits.}
+Exact counts, symmetry-orbit novelty, all-attempt denominators and matched
+no-latent controls make representation gains interpretable. Evidence nevertheless
+covers one parent, three compositions and two teachers, not new-size/material
+transfer or DFT accuracy. Low-lithiation O3 structures are a configuration
+benchmark, not stable-phase predictions. The model is not fully equivariant,
+not every ablation is capacity-matched, and few fits do not establish equivalence
+or global hyperparameter convergence. Low-quantile requests are not ground-state
+guarantees; generated frequencies are not equilibrium probabilities. Full-TRAIN orbit checks establish nonidentity, not distinct physical minima.
+
+\paragraph{Remaining class work.}
+Beihao will reproduce training/latent diagnostics; Varad will audit metrics and
+fit variability; Ricardo will review structures and physical interpretation.
+Further latent interventions use development data and a newly frozen assessment,
+preserving TEST roles. Joint-coordinate generation, DFT/MLIP fine-tuning and size
+transfer remain extensions.
+
+\clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}
