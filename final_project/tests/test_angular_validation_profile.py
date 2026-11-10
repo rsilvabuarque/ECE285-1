@@ -114,19 +114,53 @@ def test_timing_helper_runs_on_cpu_only_for_synthetic_fixture():
 
 
 @pytest.mark.parametrize("name", ["angle_hist", "angular_smooth", "directional_l1_l2"])
-def test_integrated_v5_loader_and_exact_count_if_available(name, tmp_path):
+def test_integrated_v5_loader_and_exact_count_if_available(name, tmp_path, monkeypatch):
     if name == "angle_hist" and importlib.util.find_spec("cathode_cvae.angular_context") is None:
         pytest.skip("Histogram context is tested in the integrating worktree")
     from cathode_cvae.learning import models
     if not hasattr(models, "validate_context_spec"):
         pytest.skip("Integrated v5 model factory/loader is tested in the integrating worktree")
+    # CPU test emulates cuDNN's requirement that a gradient-enabled GRU
+    # forward must have been executed in train mode. This catches the CUDA
+    # failure without claiming to replace the allocation-based GPU test.
+    original_gru_forward = nn.GRU.forward
+    gradient_forward_modes = []
+    def cudnn_mode_guard(module, *args, **kwargs):
+        if torch.is_grad_enabled():
+            gradient_forward_modes.append(module.training)
+            if not module.training:
+                raise RuntimeError("cudnn RNN backward can only be called in training mode")
+        return original_gru_forward(module, *args, **kwargs)
+    monkeypatch.setattr(nn.GRU, "forward", cudnn_mode_guard)
     graph = ring_graph()
     context = audit.make_context(name, graph, 1e-5)
     result = audit.checkpoint_check(context, graph, torch.device("cpu"), tmp_path,
                                     atol=2e-6, rtol=2e-6, seed=451)
     assert result["ar_baseline"]["pass"], result
     assert result["ar_cvae"]["pass"], result
+    assert gradient_forward_modes and all(gradient_forward_modes)
+    assert context.training is False  # probe restores inference mode
     assert len(result["ar_baseline"]["tampered_static_buffers_rejected"]) == 2
     assert all(result["ar_baseline"]["tampered_static_buffers_rejected"].values())
     assert result["ar_cvae"]["reload_encoder_mean"]["pass"]
     assert result["ar_cvae"]["reload_encoder_logvar"]["pass"]
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="requires a CUDA GPU in a Slurm allocation")
+@pytest.mark.parametrize("name", ["angle_hist", "angular_smooth", "directional_l1_l2"])
+def test_checkpoint_gradient_probe_with_real_cudnn(name, tmp_path, monkeypatch):
+    from cathode_cvae.learning import models
+    if name == "angle_hist" and importlib.util.find_spec("cathode_cvae.angular_context") is None:
+        pytest.skip("Histogram context is tested in the integrating worktree")
+    if not hasattr(models, "validate_context_spec"):
+        pytest.skip("Integrated v5 model factory/loader is tested in the integrating worktree")
+    if not torch.backends.cudnn.is_available():
+        pytest.skip("cuDNN is unavailable")
+    audit.require_slurm_gpu()
+    monkeypatch.setattr(torch.backends.cudnn, "enabled", True)
+    graph = ring_graph()
+    context = audit.make_context(name, graph, 1e-5).to("cuda:0")
+    result = audit.checkpoint_check(context, graph, torch.device("cuda:0"), tmp_path,
+                                    atol=2e-6, rtol=2e-6, seed=451)
+    assert result["ar_baseline"]["pass"], result
+    assert result["ar_cvae"]["pass"], result

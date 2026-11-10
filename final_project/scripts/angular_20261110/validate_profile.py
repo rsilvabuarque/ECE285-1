@@ -265,16 +265,23 @@ def checkpoint_check(context, graph, device, directory, atol, rtol, seed):
         logits_agree = comparison(teacher, step_logits, atol, rtol)
         exact = bool(torch.equal(expected.sum(dim=1).long(), counts))
 
-        differentiable = expected[:1].detach().clone().requires_grad_(True)
-        c_one = c[:1]; z_one = z[:1] if is_cvae else None
-        all_logits = model.decode_logits(z_one, c_one, differentiable)
-        selected = sorted(set((0, n // 2, n - 1)))
-        grad_max = []
-        for index, i in enumerate(selected):
-            grad = torch.autograd.grad(all_logits[:, i].sum(), differentiable,
-                                       retain_graph=index < len(selected)-1)[0]
-            future = grad[:, i:]
-            grad_max.append(float(future.abs().max().item()) if bool(torch.isfinite(future).all()) else float("nan"))
+        # cuDNN RNN backward requires the corresponding forward pass to be in
+        # training mode. The model has no GRU dropout; restore eval mode before
+        # saving and comparing the inference checkpoint.
+        model.train()
+        try:
+            differentiable = expected[:1].detach().clone().requires_grad_(True)
+            c_one = c[:1]; z_one = z[:1] if is_cvae else None
+            all_logits = model.decode_logits(z_one, c_one, differentiable)
+            selected = sorted(set((0, n // 2, n - 1)))
+            grad_max = []
+            for index, i in enumerate(selected):
+                grad = torch.autograd.grad(all_logits[:, i].sum(), differentiable,
+                                           retain_graph=index < len(selected)-1)[0]
+                future = grad[:, i:]
+                grad_max.append(float(future.abs().max().item()) if bool(torch.isfinite(future).all()) else float("nan"))
+        finally:
+            model.eval()
         grad_ok = all(math.isfinite(value) and value == 0. for value in grad_max)
         cfg = {
             "model_format_version": 5, "kind": kind, "n_sites": n,
