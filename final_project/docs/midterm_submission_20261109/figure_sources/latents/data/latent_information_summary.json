@@ -18,7 +18,7 @@
     0.9426097273826599
   ],
   "information_identity": "E_(m,c) KL[q(z|m,c)||p(z)] = I_q(m;z|c) + E_c KL[q(z|c)||p(z)]",
-  "interpretation": "Upper bound for the specified class-weighted empirical VAL distribution; not an estimate of actual mutual information, physical entropy or semantic axes.",
+  "interpretation": "Upper bound for the specified base-weighted empirical VAL distribution; not an estimate of actual mutual information, physical entropy or semantic axes.",
   "no_new_NN_or_MLIP_calls": true,
   "no_training": true,
   "scope_notes": [

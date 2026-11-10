@@ -1,6 +1,6 @@
 # ECE285 submission mid-term report — 9 November 2026
 
-`main.pdf` is the submission copy: five main pages and one page of references.
+`main.pdf` is the submission copy: seven main pages and one page of references.
 It uses the unmodified `neurips_2025.sty`, preprint option, title and author order
 from the original proposal. It includes three vector figures and nine cited
 references. There is no appendix in the submission PDF.
@@ -10,6 +10,14 @@ exact-count autoregression, symmetry-aware novelty, dense and graph posterior
 encoders, physical decoder features, baseline comparisons, completed parameter
 studies, and a paired deletion/relaxed-energy target test. It retains negative
 results and distinguishes MLIP teacher labels from DFT validation.
+
+The revised exposition follows the user's preferred November 8 report: it
+introduces DFT/MLIPs and relaxation before use, explains periodic masks and
+symmetry, and describes each method through its effect on useful sampling yield.
+Proposal comparisons, execution-history narration and collaborator task lists
+are omitted from the manuscript. The prior five-page PDF remains available in
+`for_chat_gpt/ECE285_midterm_submission_20261109.pdf`; the revised deliverable
+is `for_chat_gpt/ECE285_midterm_submission_20261109_v2.pdf`.
 
 ## Build
 
@@ -48,7 +56,7 @@ The feature renderer writes `featurization_comparison.pdf`; the report uses its
 identical copy `assets/featurization.pdf`. The latent renderer writes
 `latent_dimension.pdf` and `latent_mechanism.pdf`, copied into `assets/`.
 `optimization_traces.pdf` is an additional saved-evidence plot provided with the
-sources, outside the five-page submission. It illustrates two representative
+sources, outside the seven-page submission. It illustrates two representative
 training traces; it does not establish convergence.
 
 Scientific interpretation matters: the D=4/8/16/32 sweep used the older dense

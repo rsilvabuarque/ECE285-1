@@ -63,5 +63,13 @@
     "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110801/history.csv": "8f0dcd0643449afdd231d16991810cfe20e405df977e70a940d5c4e6ba6ba682",
     "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/C_dense_cvae_2026110801/history.csv": "71c8a17e6118280fde4e1d365b12bc782a409902a5945532e44e97879e73703b"
   },
-  "extractor_sha256": "c829c6587f2da5a1e31ee2243d47935d4d4ed8f2b4c1ff18fa35dabe52d010f0"
+  "extractor_sha256": "4d1615e91cbe8f2feebda0e7ac3687212c533644526f1e7afc9c335a15db1fc2",
+  "interpretation_correction": {
+    "description": "Validation uses its original base weights. Class balancing changes training weights only. Corrected class-weighted to base-weighted in interpretation text; numerical evidence and plots are unchanged.",
+    "original_package_text_hashes": {
+      "README.md": "fc87d2a2dff8f632d66955c93808519dd159648e4475a03f996ef4e7eb45ca12",
+      "data/latent_information_summary.json": "d0e5881fd5fd578b6a4510f75ae8dd10a4851bf8a9ed9f89662117215efb2fe4",
+      "extract_saved_evidence.py": "c829c6587f2da5a1e31ee2243d47935d4d4ed8f2b4c1ff18fa35dabe52d010f0"
+    }
+  }
 }

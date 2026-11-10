@@ -1,24 +1,23 @@
 {
   "status": "BUILT_AND_REVIEWED_LOCAL_SUBMISSION_COPY",
-  "created_utc": "2026-11-10T02:21:14.143355+00:00",
+  "created_utc": "2026-11-10T04:07:29.571312+00:00",
   "baseline_commit": "7a14ec981155c61092050f3c7ced0e0f28e8b63c",
   "branch": "midterm/submission-neurips-20261109",
-  "total_pages": 6,
-  "main_pages": 5,
+  "total_pages": 8,
+  "main_pages": 7,
   "reference_pages": 1,
   "main_figures": 3,
   "cited_references": 9,
   "proposal_style_source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/for_chat_gpt/ECE285_cathode_CVAE_proposal (1).zip::neurips_2025.sty",
   "proposal_style_unchanged": true,
   "style_sha256": "67a960f35da6fecb5a0ce0202fa400459f4c8bb6c294f1a3fdd82fbbd39244c2",
-  "pdf_sha256": "d2d0bc7774ae6a21a5d03453e78eeb6f83027db4193d178efcb45ad3ab61c1f7",
+  "pdf_sha256": "d4de7855f448fc9d88939e9b9e921d87ab237635375a3fcde577891111f0cfdc",
   "build_command": "PATH=/global/common/software/nersc9/texlive/2024/bin/x86_64-linux:/usr/bin:/bin bash final_project/docs/midterm_submission_20261109/build.sh",
   "build_warnings": [],
   "reviews": [
-    "Methods and numerical-source audit passed; bar/dot caption corrected.",
-    "Latent evidence and information-bound audit passed.",
-    "Bibliography and npj comparison audit passed.",
-    "All six rendered pages reviewed for placement, clipping and legibility."
+    "Numerical source and method audit passed; causal claims softened, common endpoint bins and GRU architecture clarified.",
+    "Latent math and intuition audit passed. Supporting validation-weight descriptions corrected to base-weighted; numeric data and plots unchanged.",
+    "All eight rendered pages checked for content flow, equations, figure placement and clipping."
   ],
   "interpretation_limits": [
     "Old dense-only dimension sweep is not a selected graph-CVAE convergence study.",
@@ -46,8 +45,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 3268,
-      "sha256": "7412759d3531e5eaa12f23a7fd7086f8fb6b459a63cb61b5641d6368147e8abc"
+      "bytes": 3798,
+      "sha256": "90f32bb39e47be39a60f5ec3e4a03459758d02736fff1b9531da7df1352816a2"
     },
     {
       "file": "assets/featurization.pdf",
@@ -236,8 +235,8 @@
     },
     {
       "file": "figure_sources/latents/README.md",
-      "bytes": 4540,
-      "sha256": "fc87d2a2dff8f632d66955c93808519dd159648e4475a03f996ef4e7eb45ca12"
+      "bytes": 4539,
+      "sha256": "f34236bc6871f35a099e3da404fc3c2c9692a766c1ad607efc2836a8b141e9f2"
     },
     {
       "file": "figure_sources/latents/VISUAL_REVIEW.json",
@@ -266,8 +265,8 @@
     },
     {
       "file": "figure_sources/latents/data/latent_information_summary.json",
-      "bytes": 1400,
-      "sha256": "d0e5881fd5fd578b6a4510f75ae8dd10a4851bf8a9ed9f89662117215efb2fe4"
+      "bytes": 1399,
+      "sha256": "575d2c79e77b59d9aeff6a4a29038e0f54f5038b3c0b1317ce3634462fa22b96"
     },
     {
       "file": "figure_sources/latents/data/latent_intervention_fit_evidence.csv",
@@ -281,13 +280,13 @@
     },
     {
       "file": "figure_sources/latents/extract_saved_evidence.py",
-      "bytes": 8013,
-      "sha256": "c829c6587f2da5a1e31ee2243d47935d4d4ed8f2b4c1ff18fa35dabe52d010f0"
+      "bytes": 8012,
+      "sha256": "4d1615e91cbe8f2feebda0e7ac3687212c533644526f1e7afc9c335a15db1fc2"
     },
     {
       "file": "figure_sources/latents/figure_receipt.json",
-      "bytes": 1779,
-      "sha256": "7ac6dfa4973460ae58be755d00c15ae2649242b01407740c8ba54388abf0d1b9"
+      "bytes": 1915,
+      "sha256": "7f316d3d9c40a70f61af6d2fcf5ca113687291f76af249ff6009c656175f224e"
     },
     {
       "file": "figure_sources/latents/latent_dimension.pdf",
@@ -326,8 +325,8 @@
     },
     {
       "file": "figure_sources/latents/source_hashes.json",
-      "bytes": 14289,
-      "sha256": "7bb605cf55791078c823a76040bce9a80df9f3586daf6544aaa1138814f6ee5a"
+      "bytes": 14896,
+      "sha256": "7f034a9046783d263c5b20da6992ea8f61433e22bb1c2de8fd78b5bcf4f9f936"
     },
     {
       "file": "main.bbl",
@@ -336,13 +335,13 @@
     },
     {
       "file": "main.pdf",
-      "bytes": 296899,
-      "sha256": "d2d0bc7774ae6a21a5d03453e78eeb6f83027db4193d178efcb45ad3ab61c1f7"
+      "bytes": 306410,
+      "sha256": "d4de7855f448fc9d88939e9b9e921d87ab237635375a3fcde577891111f0cfdc"
     },
     {
       "file": "main.tex",
-      "bytes": 18120,
-      "sha256": "d953f37de6ff10e8ec1168cf8aa2c635dcb451b8e17debf5c51679838e35cbdb"
+      "bytes": 27785,
+      "sha256": "78d26f2671b0ac9321690520f6e2d2fdadd39347f62ca8abb178a2eb4b217151"
     },
     {
       "file": "neurips_2025.sty",
@@ -360,5 +359,16 @@
       "sha256": "0ce102102bfcb151311a5b3ad7276fc0cb133971298614cb432ef91c4b6c4ed1"
     }
   ],
-  "copied_evidence_hashes_verified": true
+  "copied_evidence_hashes_verified": true,
+  "revision": 2,
+  "revision_base_commit": "ee1cbac1d",
+  "style_reference_pdf": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/for_chat_gpt/ECE285_midterm_overnight_20261108.pdf",
+    "sha256": "d98ed1698e3c5c67c5686053148ef98c5b48745a9f71fedb96b273477e8e06b8"
+  },
+  "revision_scope": "Explanatory rewrite for a deep generative models audience. Physical terms introduced before use; data and periodic symmetry explained; methods interpreted through yield; proposal/history and collaborator-task prose removed. User authorized at most seven main pages. No results changed.",
+  "layout_notices": {
+    "underfull_vbox": 1,
+    "interpretation": "One non-fatal paragraph-layout notice; all pages were visually reviewed and show no clipping or overflow."
+  }
 }

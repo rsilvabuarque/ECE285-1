@@ -67,7 +67,7 @@ little across masks. The prior N(0,I) is fixed. The exact decomposition
     E_(m,c) KL[q(z|m,c)||p(z)]
       = I_q(m;z|c) + E_c KL[q(z|c)||p(z)]
 
-bounds encoded conditional information for the specified class-weighted
+bounds encoded conditional information for the specified base-weighted
 empirical VAL distribution. Selected A-shell mean/range of this upper bound
 are 0.017705 / 0.010422–0.029121 bits per mask. These are **upper bounds**, not
 actual MI estimates or physical configurational entropies. High KL alone does
