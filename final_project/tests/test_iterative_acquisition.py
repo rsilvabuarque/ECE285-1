@@ -343,3 +343,28 @@ def test_mutation_seeds_and_swap_budgets_are_bound_to_train_rows(fixture_data):
     write_json(generated / "receipt.json", gen_receipt)
     with pytest.raises(ValueError, match="does not belong to the bound TRAIN"):
         run_stage(d, generated, d["root"] / "protected-seed", method="mutation")
+
+
+def test_noncanonical_protected_representatives_exclude_their_whole_orbit(fixture_data):
+    d = fixture_data
+    np.savez_compressed(d["parent"], numbers=np.ones(192, dtype=int), li_indices=np.arange(48),
+                        permutations=np.stack((np.arange(48), np.arange(47, -1, -1))))
+    with np.load(d["base"], allow_pickle=False) as archive:
+        schema = fit_schema(archive["n_Li"], archive["energy_eV_atom"], archive["split"], n_sites=48,
+            provenance={"parent_sha256": sha256(d["parent"]), "data_sha256": sha256(d["base"]),
+                        "teacher": "uma", "teacher_head": MODELS["uma"]["head"],
+                        "teacher_checkpoint_hashes": MODELS["uma"]["files"],
+                        "geometry_protocol": PROTOCOL})
+    write_json(d["schema"], schema)
+    protected = json.loads(d["protected"].read_text())
+    protected.append(vacancy_key(d["masks"][12])[::-1])
+    # Also protect an H0 TRAIN orbit only through its reversed representation;
+    # this must be reported but must never remove or relabel the original row.
+    protected.append(vacancy_key(d["masks"][2])[::-1])
+    write_json(d["protected"], protected)
+    generated = generation(d, d["base"], sample_indices=(11, 2, 12, 12, 13, 14, None))
+    staged = d["root"] / "staged"
+    receipt = run_stage(d, generated, staged)
+    assert receipt["base_role_external_protected_overlap_counts"]["train"] == 2
+    assert receipt["stage_status_counts"]["protected"] == 4
+    assert vacancy_key(d["masks"][12]) not in json.loads((staged / "assigned_roles.json").read_text())

@@ -48,7 +48,7 @@ import time
 import numpy as np
 
 from .conditions import classify, load_schema
-from .data import sha256, target_indices
+from .data import sha256, target_indices, validate_permutation_group
 from .mlip.registry import MODELS
 from .pool_scoring import PROTOCOL, physical_key
 from .runtime import require_compute_allocation
@@ -98,6 +98,7 @@ def _parent(path):
         np.sort(permutations, axis=1), np.tile(np.arange(sites), (len(permutations), 1))
     ):
         raise ValueError("Parent permutations are invalid")
+    validate_permutation_group(permutations)
     return permutations, len(numbers) - sites
 
 
@@ -244,6 +245,32 @@ def stage(*, parent_path, base_data_path, schema_path, generation_dir, known_his
         declared_external_protected.update(_keys(path, 48))
     protected.update(declared_external_protected)
     known.update(protected)
+    # Histories produced by the project's registry are canonical vacancy keys.
+    # For an explicitly supplied history that also contains a noncanonical
+    # representative, candidate-level orbit checks still prevent leakage.
+    known_codes = {int(key, 2) for key in known}
+    protected_codes = {int(key, 2) for key in protected}
+    external_codes = {int(key, 2) for key in declared_external_protected}
+    inverse_permutations = np.argsort(permutations, axis=1)
+    powers = 1 << np.arange(47, -1, -1, dtype=np.int64)
+    orbit_status = {}
+
+    def variants(key):
+        bits = np.asarray(list(key), dtype=np.uint8)
+        return np.einsum("pn,n->p", bits[inverse_permutations], powers, optimize=True)
+
+    def membership(key):
+        if key in protected:
+            return "protected"
+        if key not in orbit_status:
+            transformed = variants(key)
+            if any(int(code) in protected_codes for code in transformed):
+                orbit_status[key] = "protected"
+            elif key in known or any(int(code) in known_codes for code in transformed):
+                orbit_status[key] = "known"
+            else:
+                orbit_status[key] = "fresh"
+        return orbit_status[key]
     if previous_merge_receipt is not None:
         previous = json.loads(Path(previous_merge_receipt).read_text())
         if previous["role_seed"] != role_seed or previous["new_validation_fraction"] != val_fraction:
@@ -254,7 +281,7 @@ def stage(*, parent_path, base_data_path, schema_path, generation_dir, known_his
         old_roles_path = old_stage.parent / "assigned_roles.json"
         if sha256(old_roles_path) != old_receipt["outputs"]["assigned_roles.json"]:
             raise ValueError("Previous acquisition identities have changed")
-        if not set(json.loads(old_roles_path.read_text())) <= known:
+        if any(membership(key) == "fresh" for key in json.loads(old_roles_path.read_text())):
             raise ValueError("Known history omits prior acquired or failed candidate orbits")
     receipt_path, generated = _generation_inputs(generation_dir)
     generation_receipt = json.loads(receipt_path.read_text())
@@ -373,10 +400,9 @@ def stage(*, parent_path, base_data_path, schema_path, generation_dir, known_his
                 raise ValueError("Generated canonical vacancy string violates the requested count")
             if sid != f"mask48_{int(key, 2):012x}" or sid not in pool or not np.array_equal(pool[sid], np.asarray(list(key), dtype=np.uint8)):
                 raise ValueError("Attempt ID, candidate mask and canonical string disagree")
-            if key in protected:
-                status = "protected"
-            elif key in known:
-                status = "known"
+            member = membership(key)
+            if member != "fresh":
+                status = member
             elif key in chosen:
                 status = "duplicate_in_round"
             elif query_by_cell[cell] >= queries_per_cell:
@@ -419,7 +445,9 @@ def stage(*, parent_path, base_data_path, schema_path, generation_dir, known_his
         "new_validation_fraction": val_fraction, "parent_sha256": parent_sha,
         "attempts": len(annotated), "selected_unique_orbits": len(selected),
         "base_role_external_protected_overlap_counts": {
-            role: sum(key in declared_external_protected for key in base_keys[base_roles == role])
+            role: sum(key in declared_external_protected
+                      or any(int(code) in external_codes for code in variants(key))
+                      for key in base_keys[base_roles == role])
             for role in ("train", "val", "test")},
         "stage_status_counts": dict(statuses),
         "queries_by_cell": {f"{n}:{b}": query_by_cell[(n,b)] for n,b in sorted(expected_cells)},
