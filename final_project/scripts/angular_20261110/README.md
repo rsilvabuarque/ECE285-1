@@ -107,3 +107,38 @@ The included unit tests use only six synthetic masks and two simple symmetry
 permutations: `python -m unittest discover -s final_project/tests -p
 "test_angular_development_boundary.py" -v`. Passing them validates the small
 bookkeeping example; it does not validate trained models or physical energies.
+
+## Aggregate the independent replicate evaluations
+
+After each shard has been filtered and evaluated using the same collector,
+merge only the analysis tables, not raw arrays or receipts. Declare control
+pairs in each frozen manifest before generating; all shards must declare the
+same methods, comparisons, count/bin cells and query budget. Run on an
+allocated compute node with NumPy and Matplotlib:
+
+```bash
+"$PY" "$PROJECT/scripts/angular_20261110/aggregate_development.py" \
+  --shard "$OUT/rep1/manifest.json" "$OUT/rep1/generated_eligible" "$OUT/rep1/evaluation" \
+  --shard "$OUT/rep2/manifest.json" "$OUT/rep2/generated_eligible" "$OUT/rep2/evaluation" \
+  --shard "$OUT/rep3/manifest.json" "$OUT/rep3/generated_eligible" "$OUT/rep3/evaluation" \
+  --collector-dir "$OUT/collected" --registry "$OUT/oracle/registry.json" \
+  --output-dir "$OUT/aggregate"
+```
+
+The script verifies source, data, protected-boundary, manifest, generation,
+evaluation and collector receipts. It requires a PASS collector whose registered
+teacher/orbit keys equal the union of eligible shard candidates, and checks
+that each evaluation retained the filtered attempt statuses. It recomputes
+macro yield and checks it against the existing evaluator, then matches each
+predeclared method/control contrast by replicate and cell. The unit of spread is
+the independent fit or sampler replicate; standard deviations are descriptive.
+
+Sensitivity tables retain attempted and known pair counts. Energy-response
+summaries condition on both energies being available, rather than treating
+missing protected pairs as zero; an empty composition disables its fit-level
+macro response. Mean responses across supported replicates may therefore have
+selection bias, which the coverage columns and plot title make explicit. The
+query-cost table counts unique global teacher/structure keys and cache reuse;
+compute elapsed time and GPU node-hours need separate scheduler accounting.
+The PDFs show all declared methods/contrasts rather than selecting favorable
+results. Do not use this DEVELOPMENT result as an independent final assessment.
