@@ -142,3 +142,36 @@ query-cost table counts unique global teacher/structure keys and cache reuse;
 compute elapsed time and GPU node-hours need separate scheduler accounting.
 The PDFs show all declared methods/contrasts rather than selecting favorable
 results. Do not use this DEVELOPMENT result as an independent final assessment.
+
+## UMA–MACE agreement on the same development orbits
+
+After collecting the union and running at least one fresh shard evaluation,
+run this descriptive analysis on the same allocated compute resources:
+
+```bash
+"$PY" "$PROJECT/scripts/angular_20261110/teacher_agreement.py" \
+  --shard "$OUT/rep1/manifest.json" "$OUT/rep1/generated_eligible" \
+  --shard "$OUT/rep2/manifest.json" "$OUT/rep2/generated_eligible" \
+  --shard "$OUT/rep3/manifest.json" "$OUT/rep3/generated_eligible" \
+  --collector-dir "$OUT/collected" --registry "$OUT/oracle/registry.json" \
+  --evaluation-receipt "$OUT/rep1/evaluation/receipt.json" \
+  --output-dir "$OUT/teacher_agreement"
+```
+
+The fresh evaluation receipt is required because it binds the byte hashes of
+both collected score files; the collector receipt itself binds the registry
+but does not hash the exports. The script verifies all provided eligible pools,
+checks their union against the shared registry and collector, and rejects
+protected orbit IDs. It reads the current frozen identity boundary but does not
+open earlier assessment-result files.
+
+Within each composition, Spearman correlation uses average ranks for exact
+ties and Kendall correlation uses tau-b. The fixed-bin confusion matrix uses
+each teacher's own original TRAIN-fitted schema, so LOW describes two distinct
+teacher-specific thresholds. Separately, the empirical bottom-20% overlap uses
+nearest-rank thresholds from the **selected development orbit union itself**;
+it retains all exact boundary ties, which may make a low set exceed 20%. It is
+not the low-energy fraction of the complete material configuration space. Both
+comparisons are descriptive; teacher agreement does not establish DFT accuracy
+or certify a global minimum. `orbit_agreement.csv` preserves the IDs, energies,
+ranks and both kinds of LOW assignment for reproducibility.
