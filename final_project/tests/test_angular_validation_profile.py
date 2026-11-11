@@ -169,7 +169,8 @@ def test_integrated_v5_loader_and_exact_count_if_available(name, tmp_path, monke
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason="requires a CUDA GPU in a Slurm allocation")
 @pytest.mark.parametrize("name", ["angle_hist", "angular_smooth", "directional_l1_l2"])
-def test_checkpoint_gradient_probe_with_real_cudnn(name, tmp_path, monkeypatch):
+@pytest.mark.parametrize("cudnn_enabled", [True, False], ids=["cudnn", "native_cuda"])
+def test_checkpoint_gradient_probe_with_real_cudnn(name, cudnn_enabled, tmp_path, monkeypatch):
     from cathode_cvae.learning import models
     if name == "angle_hist" and importlib.util.find_spec("cathode_cvae.angular_context") is None:
         pytest.skip("Histogram context is tested in the integrating worktree")
@@ -178,7 +179,12 @@ def test_checkpoint_gradient_probe_with_real_cudnn(name, tmp_path, monkeypatch):
     if not torch.backends.cudnn.is_available():
         pytest.skip("cuDNN is unavailable")
     audit.require_slurm_gpu()
-    monkeypatch.setattr(torch.backends.cudnn, "enabled", True)
+    # Match the profiler CLI's documented full-FP32 policy. The native CUDA
+    # arm is a control for sequence-vs-step cuDNN rounding, not a substitute
+    # for testing the cuDNN path used in real runs.
+    monkeypatch.setattr(torch.backends.cuda.matmul, "allow_tf32", False)
+    monkeypatch.setattr(torch.backends.cudnn, "allow_tf32", False)
+    monkeypatch.setattr(torch.backends.cudnn, "enabled", cudnn_enabled)
     graph = ring_graph()
     context = audit.make_context(name, graph, 1e-5).to("cuda:0")
     result = audit.checkpoint_check(context, graph, torch.device("cuda:0"), tmp_path,
