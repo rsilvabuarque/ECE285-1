@@ -207,3 +207,31 @@ SHA256. It checks seed, dimension and VAL row counts. The adjacent sidecar
 convention does not itself cryptographically certify that the sidecar came
 from the checkpoint; both hashes are separately recorded for audit. The
 script does not open old assessment results or submit jobs.
+
+## Angular-CVAE dimension sweeps
+
+For all three angular CVAE families, the following companion figure compares
+D = 2, 4, 8, 16 and 32 using the same three development replicates:
+
+```bash
+"$PY" "$PROJECT/scripts/angular_20261110/plot_angular_dimensions.py" \
+  --aggregate-receipt "$OUT/development_aggregated/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110801/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110802/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110803/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --fresh-fit-root "$OUT/fits" --output-dir "$OUT/angular_dimension_figure"
+```
+
+The three rows show teacher-specific balanced novel in-bin yield, weighted VAL
+KL in nats per latent dimension, and the all-valid same-orbit fraction. The
+columns are the angle histogram, smooth-angle and directional models. Point
+shapes identify the three matched seeds; diamonds and error bars show their
+mean and descriptive sample SD. The plots describe a finite sweep and do not
+establish latent-dimension convergence. The D=4 method names are unsuffixed.
+
+The seed-level and summary CSVs also include total weighted VAL KL, activity
+counts at each provisional cutoff, and score/mask coverage. The script requires
+all selected checkpoints to lie under the specified fresh fit root and binds
+the checkpoint, configuration and adjacent sidecar hashes. The adjacency and
+metadata checks are not an embedded cryptographic certificate linking a sidecar
+to checkpoint contents. No historical assessment data or MLIP calls are used.
