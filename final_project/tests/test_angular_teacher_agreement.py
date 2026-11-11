@@ -74,7 +74,8 @@ class TeacherReceiptTest(unittest.TestCase):
                 path=root/f'{teacher}_schema.json';save_schema(schema(values),path);schemas[teacher]=binding(path)
             manifest=dict(status='FROZEN_DEVELOPMENT_BEFORE_GENERATION',models=[dict(method='u',replicate_id='1',sampler='uniform')],
                 counts=[12], inputs=dict(parent=binding(parent),data=binding(f),schema=binding(f),history=binding(bd/'history.json')),
-                teacher_schemas=schemas,fixed_thresholds=binding(f),boundary_receipt=binding(bd/'receipt.json'),plan=binding(f),
+                teacher_schemas=schemas,fixed_thresholds={'path':str(root/'DO_NOT_OPEN_OLD_THRESHOLD'),'sha256':'unused'},
+                boundary_receipt=binding(bd/'receipt.json'),plan=binding(f),
                 source_bindings=[binding(cathode_cvae.conditions.__file__),binding(cathode_cvae.pool_scoring.__file__),
                                  binding(PROJECT/'scripts/overnight_20261108/evaluate_controls.py')])
             save_json(root/'manifest.json',manifest);save_json(root/'generation_original.json',{'status':'synthetic'})

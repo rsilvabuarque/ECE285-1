@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import kendalltau, rankdata
 
-from development_boundary import _json_keys, binding, digest, save_csv, save_json, verify_manifest
+from development_boundary import _json_keys, binding, digest, save_csv, save_json
 from aggregate_development import validate_registry
 from cathode_cvae.conditions import classify, load_schema
 
@@ -92,7 +92,13 @@ def validate_inputs(shards, collector_dir, registry_path, evaluation_receipt):
     protocol_hashes=set()
     for manifest_path,gen_path in shards:
         manifest_path,gen_path=Path(manifest_path).absolute(),Path(gen_path).absolute()
-        m=verify_manifest(manifest_path)
+        # Validate only inputs consumed here. In particular, do not open the
+        # old threshold CSV: it contains additional withheld-assessment rows.
+        m=json.loads(manifest_path.read_text())
+        if m.get('status')!='FROZEN_DEVELOPMENT_BEFORE_GENERATION':raise ValueError('Expected a frozen development manifest')
+        for item in (m['inputs']['parent'],m['inputs']['history'],m['boundary_receipt'],
+                     *m['teacher_schemas'].values(),*m['source_bindings']):
+            binding(item['path'],item['sha256'])
         boundary=json.loads(Path(m['boundary_receipt']['path']).read_text())
         if boundary.get('status')!='FROZEN_DEVELOPMENT_KEY_ONLY_BOUNDARY':raise ValueError('Wrong boundary receipt')
         for field in ('history','protected'):binding(boundary[field]['path'],boundary[field]['sha256'])
@@ -226,6 +232,7 @@ def main(argv=None):
             'schema_low_overlap':'Unique candidate orbits classified low by each teacher with its own frozen schema',
             'empirical_low_overlap':'Nearest-rank 20% cutoff in the selected generated orbit union, including all tied energies; not global density of states',
             'uncertainty':'Descriptive selected-union comparison, not an IID test or DFT validation'},
+        'old_threshold_csv_opened':False,'old_assessment_score_files_opened':False,
         'new_MLIP_calls':0,'new_training_updates':0,'outputs':{p.name:digest(p) for p in sorted(out.iterdir()) if p.is_file()}}
     save_json(out/'receipt.json',receipt)
     print(json.dumps({'status':receipt['status'],'shared_orbits':len(orbits),'output_dir':str(out)},indent=2))
