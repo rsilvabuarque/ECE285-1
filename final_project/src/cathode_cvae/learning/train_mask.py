@@ -599,10 +599,20 @@ def main(argv=None):
         if epoch >= a.minimum_epochs and epoch - best_epoch >= a.patience:
             stop_reason = "validation_early_stop"
             break
+    # Preserve the terminal weights as well as validation-selected weights so
+    # equal-update feedback comparisons do not depend on selection epoch.
+    terminal_checkpoint = a.output_dir / "last_update.pt"
+    torch.save(dict(state_dict=model.state_dict(),
+                    configuration={**metadata, "selected_validation_beta": a.validation_beta},
+                    epoch=epoch, optimizer_updates=updates, val_objective=objective,
+                    selection_beta=a.validation_beta, latent_statistics=latent_record), terminal_checkpoint)
+    (a.output_dir / "last_update.pt.latent.json").write_text(json.dumps(latent_record, indent=2) + "\n")
     summary = dict(status="FIT_COMPLETE" if a.max_updates is None or updates == a.max_updates else "FIT_PARTIAL", stop_reason=stop_reason,
                    completed_epochs=len(history), optimizer_updates=updates, best_epoch=best_epoch,
                    best_val_objective=best, training_seconds=time.perf_counter() - started,
                    checkpoint_sha256=sha256(a.output_dir / "best.pt"),
+                   terminal_checkpoint=dict(filename=terminal_checkpoint.name, optimizer_updates=updates,
+                                            sha256=sha256(terminal_checkpoint)),
                    parameter_count=metadata["parameter_count"], latent_dim=model.latent_dim,
                    selection_checkpoints={str(b): dict(epoch=selections[b]["epoch"], val_objective=selections[b]["best"],
                        filename=selection_checkpoint_name(b), sha256=sha256(a.output_dir / selection_checkpoint_name(b))) for b in selection_betas},
