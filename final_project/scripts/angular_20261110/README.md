@@ -175,3 +175,35 @@ not the low-energy fraction of the complete material configuration space. Both
 comparisons are descriptive; teacher agreement does not establish DFT accuracy
 or certify a global minimum. `orbit_agreement.csv` preserves the IDs, energies,
 ranks and both kinds of LOW assignment for reproducibility.
+
+## Compact figure for the completed development comparison
+
+Once the three development evaluations and all-valid mask diagnostics have
+completed, run on an allocated compute node:
+
+```bash
+"$PY" "$PROJECT/scripts/angular_20261110/plot_development_summary.py" \
+  --aggregate-receipt "$OUT/development_aggregated/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110801/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110802/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --mask-receipt "$OUT/development_rep_2026110803/all_valid_mask_diagnostics_retry1/receipt.json" \
+  --output-dir "$OUT/development_summary_figure"
+```
+
+The four-panel PDF and PNG show every matched replicate point and its
+three-replicate mean ± descriptive sample SD. Angular comparisons use their
+predeclared same-architecture/channel controls. The radial-dimension panel
+uses each teacher's balanced novel in-bin yield. Latent KL is the weighted
+validation posterior KL per dimension; the overlaid activity fraction uses the
+illustrative posterior-mean variance cutoff 0.001, not a physical threshold.
+All three sidecar activity cutoffs (0.001, 0.01, 0.1) are retained in the point
+CSV. Latent resampling reports the equal-composition mean of the same-orbit
+fraction among all originally valid masks, including protected identities,
+without accessing their energies. Coverage is recorded for each point.
+
+The script binds the fresh aggregate, mask receipts, manifest-selected
+checkpoints, adjacent VAL sidecars, configurations and plotted point CSV by
+SHA256. It checks seed, dimension and VAL row counts. The adjacent sidecar
+convention does not itself cryptographically certify that the sidecar came
+from the checkpoint; both hashes are separately recorded for audit. The
+script does not open old assessment results or submit jobs.
