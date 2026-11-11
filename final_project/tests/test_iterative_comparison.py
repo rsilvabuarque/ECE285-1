@@ -7,7 +7,7 @@ from cathode_cvae.iterative_comparison import freeze,_check_common,collect_oracl
 from test_iterative_acquisition import fixture_data,generation,run_stage,oracle,write_json
 
 
-def test_common_protocol_is_frozen_and_rejects_tampering(fixture_data):
+def test_common_protocol_is_frozen_and_rejects_tampering(fixture_data,monkeypatch):
     d=fixture_data;root=d['root'];b=root/'boundary';b.mkdir()
     write_json(b/'receipt.json',{'status':'FROZEN_DEVELOPMENT_KEY_ONLY_BOUNDARY','parent':binding(d['parent']),
        'history':binding(d['known']),'protected':binding(d['protected']),'request_schema':binding(d['schema'])})
@@ -25,6 +25,16 @@ def test_common_protocol_is_frozen_and_rejects_tampering(fixture_data):
     out=root/'common.json';r=freeze(plan,b,out)
     assert r['status']=='FROZEN_MULTI_LINEAGE_BEFORE_GENERATION'
     assert len(_check_common(out,b)['lineages'])==2
+    assert r['runtime_verifier_source']['sha256']
+    # Prior protocols remain valid without a prospectively pinned verifier.
+    old=dict(r);old.pop('runtime_verifier_source');out.write_text(json.dumps(old))
+    assert 'runtime_verifier_source' not in _check_common(out,b)
+    out.write_text(json.dumps(r))
+    wrong=root/'wrong_verifier.py';wrong.write_text('# unrelated source')
+    import cathode_cvae.iterative_comparison as comparison
+    with monkeypatch.context() as m:
+        m.setattr(comparison,'getsourcefile',lambda _:str(wrong))
+        with pytest.raises(ValueError,match='Runtime verifier differs'):_check_common(out,b)
     threshold.write_text('tampered')
     with pytest.raises(ValueError,match='hash mismatch'):_check_common(out,b)
 
@@ -106,6 +116,7 @@ def test_end_to_end_two_lineages_same_stream_and_fresh_oracle(fixture_data,monke
         bundle_args.append(f'{policy}:7={safe}={output}')
     result=aggregate(common,boundary,bundle_args,queue,collection,root/'summary')
     assert result['global_oracle_calls']==2 and result['standalone_eligible_queries']==4
+    assert result['runtime_verifier_source_status']=='prospectively_pinned'
     with (root/'summary'/'paired_differences.csv').open(newline='') as f:row=next(csv.DictReader(f))
     assert float(row['balanced_difference'])==0 and float(row['low_difference'])==0
     raw_path=safe_dirs[1]/'raw_attempts.npz'

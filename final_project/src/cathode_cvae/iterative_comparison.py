@@ -9,6 +9,7 @@ import argparse
 import csv
 import json
 import time
+from inspect import getsourcefile
 from collections import Counter, defaultdict
 from pathlib import Path
 import numpy as np
@@ -73,7 +74,8 @@ def freeze(plan_path,boundary_dir,out):
        'parent':boundary['parent'],'history':boundary['history'],'protected':boundary['protected'],
        'teacher':teacher,'inputs':paths,'lineages':lineages,'contrasts':p['contrasts'],
        'counts':p['counts'],'requested_bins':p['requested_bins'],'count_per_group':p['count_per_group'],
-       'namespace':p['namespace'],'source':binding(__file__)}
+       'namespace':p['namespace'],'source':binding(__file__),
+       'runtime_verifier_source':binding(getsourcefile(verify_manifest))}
     write(out,result);return result
 
 
@@ -83,6 +85,11 @@ def _check_common(common,boundary_dir):
     boundary,_,_=verify_boundary(boundary_dir)
     for b in [c['plan'],c['source'],c['boundary_receipt'],c['parent'],c['history'],c['protected'],*c['inputs'].values()]:
         binding(b['path'],b['sha256'])
+    verifier=c.get('runtime_verifier_source')
+    if verifier:
+        binding(verifier['path'],verifier['sha256'])
+        if sha256(getsourcefile(verify_manifest))!=verifier['sha256']:
+            raise ValueError('Runtime verifier differs from the prospectively bound source')
     if sha256(Path(boundary_dir)/'receipt.json')!=c['boundary_receipt']['sha256']:
         raise ValueError('Common boundary differs')
     for l in c['lineages']:
@@ -281,6 +288,9 @@ def aggregate(common_path,boundary_dir,bundles,oracle_root,collection_receipt,ou
     write_rows(out/'seed_metrics.csv',seed,list(seed[0]));write_rows(out/'coverage.csv',coverage,list(coverage[0]));write_rows(out/'paired_differences.csv',pairs,list(pairs[0]));write_rows(out/'paired_summary.csv',pair_summary,list(pair_summary[0]))
     result={'status':'PASS','common_protocol':binding(common_path),'assessment_receipts':safe_receipts,
        'evaluation_receipts':[binding(x[0]/'receipt.json') for x in evaluation_info.values()],
+       'runtime_verifier_source':binding(getsourcefile(verify_manifest)),
+       'runtime_verifier_source_status':('prospectively_pinned' if c.get('runtime_verifier_source') else
+           'post-freeze computational optimization, not prospectively pinned'),
        'oracle_evidence':oracle,'global_oracle_calls':oracle['unique_geometry_teacher_pairs'],
        'standalone_eligible_queries':sum(r['eligible_unique_ids'] for r in coverage),
        'summed_inference_seconds':oracle['summed_inference_seconds'],

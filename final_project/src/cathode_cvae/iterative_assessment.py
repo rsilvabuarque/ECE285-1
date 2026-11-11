@@ -11,6 +11,7 @@ import json
 import shutil
 import time
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
 import numpy as np
 from cathode_cvae.data import sha256
@@ -19,9 +20,19 @@ from cathode_cvae.iterative_boundary import binding, write, verify_boundary
 from cathode_cvae.runtime import require_compute_allocation
 
 
-def orbit_set(keys, permutations):
+@lru_cache(maxsize=4)
+def _orbit_set_cached(keys, shape, dtype, permutation_bytes):
+    """Cache only exact key sets and exact parent-group bytes; no digest collisions."""
+    permutations=np.frombuffer(permutation_bytes,dtype=np.dtype(dtype)).reshape(shape)
     a=np.asarray([[int(c) for c in key] for key in sorted(keys)],dtype=np.uint8).reshape(-1,48)
-    return set(_canonical_vacancy(1-a,permutations).tolist())
+    return frozenset(_canonical_vacancy(1-a,permutations).tolist())
+
+
+def orbit_set(keys, permutations):
+    group=np.ascontiguousarray(permutations)
+    # frozenset/cache key equality verifies all keys even if Python hashes collide.
+    # Never expose the immutable cached value for callers to mutate.
+    return set(_orbit_set_cached(frozenset(keys),group.shape,group.dtype.str,group.tobytes()))
 
 
 def save_csv(path,rows):
