@@ -139,12 +139,15 @@ def collect_oracle(root,collection_path,expected,parent,teacher,after):
     if set(records)!=set(expected):raise ValueError('Raw scoring tasks do not cover exact eligible union')
     output=Path(collection_path).parent/f'{teacher}.npz'
     with np.load(output,allow_pickle=False) as z:
-        ids=z['structure_ids'].astype(str)
-        if len(set(ids))!=len(ids) or set(ids)!=set(expected):raise ValueError('Collector score IDs differ from eligible union')
-        for i,sid in enumerate(ids):
-            if (z['status'][i]!='success' or z['provenance'][i]!='new'
-                or (float(z['energy_eV'][i]),int(z['n_atoms'][i]),int(z['n_Li'][i]))!=records[sid]):
-                raise ValueError('Collector row differs from raw new score')
+        # Compressed NPZ members decompress in full on each access. Load each
+        # member once while preserving the same row-level provenance checks.
+        collected={name:z[name] for name in ('structure_ids','status','provenance','energy_eV','n_atoms','n_Li')}
+    ids=collected['structure_ids'].astype(str)
+    if len(set(ids))!=len(ids) or set(ids)!=set(expected):raise ValueError('Collector score IDs differ from eligible union')
+    for i,sid in enumerate(ids):
+        if (collected['status'][i]!='success' or collected['provenance'][i]!='new'
+            or (float(collected['energy_eV'][i]),int(collected['n_atoms'][i]),int(collected['n_Li'][i]))!=records[sid]):
+            raise ValueError('Collector row differs from raw new score')
     return {'registry':binding(registry_path),'collection_receipt':binding(collection_path),'score':binding(output),
             'tasks':evidence,'unique_geometry_teacher_pairs':len(records),'scoring_tasks':len(evidence),
             'summed_inference_seconds':total_seconds}
