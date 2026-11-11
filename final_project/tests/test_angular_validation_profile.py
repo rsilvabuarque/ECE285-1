@@ -1,6 +1,9 @@
 """Small CPU-only fixtures for the allocation-guarded validation script."""
 
 import importlib.util
+from pathlib import Path
+import sys
+import types
 
 import numpy as np
 import pytest
@@ -9,7 +12,25 @@ from torch import nn
 
 from cathode_cvae.graph import build_periodic_graph
 from cathode_cvae.parent_spec import ParentSpec
-from scripts.angular_20261110 import validate_profile as audit
+
+def load_audit_script():
+    # Load the sibling script by path: a regular installed ``scripts`` package
+    # can shadow this repository's namespace directory on sys.path.
+    path = Path(__file__).resolve().parents[1] / "scripts" / "angular_20261110" / "validate_profile.py"
+    spec = importlib.util.spec_from_file_location("angular_validation_profile", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+audit = load_audit_script()
+
+
+def test_audit_import_is_independent_of_installed_scripts_package(monkeypatch):
+    shadow = types.ModuleType("scripts")
+    shadow.__path__ = []
+    monkeypatch.setitem(sys.modules, "scripts", shadow)
+    assert load_audit_script().CONTEXTS == audit.CONTEXTS
 
 
 def ring_graph():
