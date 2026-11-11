@@ -81,6 +81,37 @@ def selection_checkpoint_name(beta):
     return "best_validation_beta_" + format(beta, ".12g").replace(".", "p") + ".pt"
 
 
+def encode_train_val_conditions(schema, n_target, energy_eV_atom, splits, mode):
+    """Encode only TRAIN/VAL labels; all other condition rows stay inert zeros.
+
+    The current compressed NPZ format still decompresses the complete energy
+    member. This function must not validate, classify, or encode held-out
+    energy values; their positions are never indexed by the training loop.
+    """
+    counts = np.asarray(n_target)
+    energy = np.asarray(energy_eV_atom)
+    roles = np.asarray(splits).astype(str)
+    if counts.ndim != 1 or energy.shape != counts.shape or roles.shape != counts.shape:
+        raise ValueError("Counts, energies and roles must be matching vectors")
+    active = np.flatnonzero(np.isin(roles, ["train", "val"]))
+    if not np.isfinite(energy[active]).all():
+        raise ValueError("TRAIN/VAL energies must be finite")
+    conditions = np.zeros((len(counts), condition_dimension(mode)), dtype=np.float32)
+    observed = np.full(len(counts), "", dtype="<U6")
+    conditions[active] = encode_observations(schema, counts[active], energy[active], mode=mode)
+    observed[active] = classify(schema, counts[active], energy[active])
+    return conditions, observed, active
+
+
+def encode_train_val_descriptors(schema, n_target, observed_bins, values, active):
+    """Append descriptor conditions only for already selected TRAIN/VAL rows."""
+    from .. import descriptor as descriptor_module
+    extra = np.zeros((len(n_target), 2), dtype=np.float32)
+    extra[active] = descriptor_module.encode_observations(
+        schema, np.asarray(n_target)[active], np.asarray(observed_bins)[active], np.asarray(values)[active])
+    return extra
+
+
 def latent_statistics(mu, logvar, weights=None, cutoffs=(0.001, 0.01, 0.1)):
     """Weighted VAL latent summaries, not a diagnosis of useful generation.
 
@@ -245,7 +276,6 @@ def main(argv=None):
     assert d["occupancy"].shape == (len(d["n_Li"]), n_sites)
     assert np.isin(d["occupancy"], [0, 1]).all()
     assert np.array_equal(d["occupancy"].sum(1), d["n_Li"])
-    assert np.isfinite(d["energy_eV_atom"]).all()
     assert np.isfinite(d["weight"]).all() and (d["weight"] > 0).all()
     assert len(set(d["structure_ids"].tolist())) == len(d["structure_ids"])
     splits = d["split"].astype(str)
@@ -288,11 +318,11 @@ def main(argv=None):
             if old is not None and old != provenance[key]:
                 raise ValueError(f"Frozen condition schema has incompatible {key}")
     else:
-        schema = fit_schema(d["n_Li"], d["energy_eV_atom"], splits, n_sites=n_sites,
+        schema = fit_schema(d["n_Li"][train], d["energy_eV_atom"][train], splits[train], n_sites=n_sites,
                             quantiles=tuple(a.schema_quantiles), provenance=provenance)
     save_schema(schema, a.output_dir / "condition_schema.json")
-    conditions = encode_observations(schema, d["n_Li"], d["energy_eV_atom"], mode=a.condition_mode)
-    observed_bins = classify(schema, d["n_Li"], d["energy_eV_atom"])
+    conditions, observed_bins, active = encode_train_val_conditions(
+        schema, d["n_Li"], d["energy_eV_atom"], splits, a.condition_mode)
     descriptor_schema = None
     descriptor_values = None
     if a.descriptor_schema_in is not None and a.descriptor_values is None:
@@ -310,28 +340,29 @@ def main(argv=None):
             raise ValueError("Descriptor labels belong to a different parent source")
         if ids.ndim != 1 or values.shape != ids.shape or len(set(ids.tolist())) != len(ids):
             raise ValueError("Descriptor values need unique structure_ids and one scalar per row")
-        if not np.isfinite(values).all():
-            raise ValueError("Descriptor observations must be finite")
         lookup = dict(zip(ids.tolist(), values.tolist()))
         try:
-            descriptor_values = np.asarray([lookup[str(s)] for s in d["structure_ids"]], dtype=float)
+            descriptor_values = np.full(len(d["structure_ids"]), np.nan, dtype=float)
+            descriptor_values[active] = [lookup[str(s)] for s in d["structure_ids"][active]]
         except KeyError as failure:
-            raise ValueError("Descriptor labels do not cover every retained training/validation/test identity") from failure
+            raise ValueError("Descriptor labels do not cover every retained TRAIN/VAL identity") from failure
+        if not np.isfinite(descriptor_values[active]).all():
+            raise ValueError("TRAIN/VAL descriptor observations must be finite")
         descriptor_schema = (descriptor_module.load_schema(a.descriptor_schema_in)
             if a.descriptor_schema_in is not None else
-            descriptor_module.fit_descriptor_schema(descriptor_values, d["n_Li"], observed_bins, splits,
+            descriptor_module.fit_descriptor_schema(descriptor_values[train], d["n_Li"][train], observed_bins[train], splits[train],
                 parent_hash=descriptor_provenance.get("parent_hash"), graph_hash=descriptor_provenance.get("graph_hash")))
         for key in ["parent_hash", "graph_hash"]:
             expected = descriptor_schema.get("provenance", {}).get(key)
             if expected is not None and descriptor_provenance.get(key) != expected:
                 raise ValueError("Descriptor observations and fitted schema have different " + key)
         descriptor_module.save_schema(descriptor_schema, a.output_dir / "descriptor_schema.json")
-        extra = descriptor_module.encode_observations(descriptor_schema, d["n_Li"], observed_bins, descriptor_values)
+        extra = encode_train_val_descriptors(descriptor_schema, d["n_Li"], observed_bins, descriptor_values, active)
         conditions = np.concatenate((conditions, extra), axis=-1)
     unsupported_observations = {split: sum(
         label not in schema["compositions"][str(int(n))]["supported_bins"]
-        for n, label, actual in zip(d["n_Li"], observed_bins, splits) if actual == split)
-        for split in sorted(set(splits.tolist()))}
+        for n, label, actual in zip(d["n_Li"][active], observed_bins[active], splits[active]) if actual == split)
+        for split in ("train", "val")}
     statistics = {}
     weights = d["weight"].astype(np.float64).copy()
     for n in sorted(set(d["n_Li"].tolist())):
@@ -459,6 +490,7 @@ def main(argv=None):
         descriptor_schema_source=None if a.descriptor_schema_in is None else dict(path=str(a.descriptor_schema_in.resolve()), sha256=sha256(a.descriptor_schema_in)),
         condition_schema_id=schema_identity(schema), split_sha256=split_hash,
         observed_rows_outside_training_bin_support=unsupported_observations,
+        heldout_energy_handling="Compressed NPZ energy member is fully decompressed; only TRAIN/VAL energies are validated, classified or encoded. TEST and other held-out condition rows are inert zeros and not used in fitting or validation.",
         condition_schema_source=None if a.condition_schema_in is None else dict(path=str(a.condition_schema_in.resolve()), sha256=sha256(a.condition_schema_in)),
         teacher=a.teacher, teacher_head=teacher_head,
         teacher_checkpoint_name=teacher_spec.get("name", "user-declared"),
