@@ -9,6 +9,7 @@ import argparse
 import csv
 import json
 import shutil
+import time
 from collections import Counter
 from pathlib import Path
 import numpy as np
@@ -98,7 +99,7 @@ def filter_assessment(generated_dir,boundary_dir,generator_source,out_dir):
     with (src/'attempts_all.csv').open(newline='') as f: rows=list(csv.DictReader(f))
     with (src/'attempts.csv').open(newline='') as f: input_primary=list(csv.DictReader(f))
     primary=[r for r in rows if r['diagnostic']=='primary']
-    if (len(primary)!=manifest['expected_primary_attempts'] or len(rows)!=receipt['total_attempts']
+    if (len(primary)!=manifest['expected_primary_attempts'] or (not manifest.get('diagnostics') and len(rows)!=len(primary)) or len(rows)!=receipt['total_attempts']
         or len(primary)!=receipt['primary_attempts'] or input_primary!=primary
         or len(set(r['attempt_id'] for r in rows))!=len(rows)):
         raise ValueError('Attempt denominator, ordering or identity changed')
@@ -153,7 +154,7 @@ def filter_assessment(generated_dir,boundary_dir,generator_source,out_dir):
     pool('diagnostic_candidates.npz',[r for r in rows if r['diagnostic']!='primary'])
     files=['protocol.json','raw_attempts.npz','raw_primary.npz','raw_diagnostics.npz','attempts.csv','attempts_all.csv',
            'candidates.npz','primary_candidates.npz','diagnostic_candidates.npz']
-    result={'status':'FROZEN_BEFORE_SCORING','protocol_sha256':sha256(out/'protocol.json'),
+    result={'status':'FROZEN_BEFORE_SCORING','created_unix':time.time(),'protocol_sha256':sha256(out/'protocol.json'),
         'primary_attempts':len(primary),'total_attempts':len(rows),'unique_geometries':unique,
         'original_generation_receipt':binding(src/'receipt.json'),'generator_source':binding(generator_source),
         'adapter_source':binding(__file__),
