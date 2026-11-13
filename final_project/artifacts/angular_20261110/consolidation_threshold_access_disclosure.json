@@ -1,0 +1,9 @@
+{
+  "status": "DISCLOSED_PARTIAL_HISTORICAL_THRESHOLD_ACCESS",
+  "reported_utc": "2026-11-13T06:36:21Z",
+  "context": "Repository consolidation and publication checks after all November 10-11 model selection and assessments were frozen and completed.",
+  "action": "A git diff whitespace check printed part of an already-published mixed threshold CSV, including some withheld-catalog threshold rows.",
+  "source": "final_project/artifacts/conditioning_20261107/data/generation_thresholds.csv",
+  "scope": "A partial terminal display; no protected structure masks, model fits, or new scores were read for this check.",
+  "effect": "The displayed values were not used for model or result selection in this consolidation. Do not describe the historical thresholds as unseen by all project participants. Use a newly frozen assessment for future tuning and preserve the existing TRAIN/VAL/TEST roles."
+}

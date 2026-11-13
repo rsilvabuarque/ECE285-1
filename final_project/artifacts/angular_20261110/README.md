@@ -31,7 +31,9 @@ identified in each comparison receipt. The compressed NPZ loader previously
 materialized TEST values and an earlier trainer recorded a coarse TEST-support
 aggregate; see `test_split_support_disclosure.json`. A separate accidental
 historical-result display is documented in
-`protected_result_access_disclosure.json`.
+`protected_result_access_disclosure.json`. A partial display of historical
+withheld-catalog thresholds during repository consolidation is recorded in
+`consolidation_threshold_access_disclosure.json`.
 
 The earlier frozen dataset and checkpoints are available in the [November 8
 release](https://github.com/rsilvabuarque/ECE285-1/releases/tag/ece285-overnight-20261108-v1).
