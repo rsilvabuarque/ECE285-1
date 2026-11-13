@@ -69,7 +69,7 @@ boundaries, exact counts, paired arrays, caps, measured labels, and raw oracle
 provenance; they do not establish physical MLIP accuracy.
 
 The dated campaign driver and its phase-2 boundary handoff are archived as
-`orchestrate_study_v2.py`, `resume_with_phase2.py`, and `analyze_study_v2.py`.
+`orchestrate.py`, `resume_with_phase2.py`, and `analyze.py`.
 These are exact campaign receipts with site-specific paths, not portable cluster
 submission commands. Their executed copies remain under
 `final_project/runs/adaptive_20261112/iteration/study_v2/`. That directory's
