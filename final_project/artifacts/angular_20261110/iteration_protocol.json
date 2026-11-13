@@ -1,0 +1,33 @@
+{
+  "status": "FROZEN_BEFORE_ITERATIVE_ACQUISITION_SCORING",
+  "created_utc": "2026-11-11T00:38:04.589297+00:00",
+  "selected_model_receipt_sha256": "5d0b4a719b5ab28397543ea1070085ff9ce781f28cdf635c25b2f282f8d383c8",
+  "seeds": [
+    2026110801,
+    2026110802,
+    2026110803
+  ],
+  "n_Li": [
+    12,
+    24,
+    36
+  ],
+  "acquisition_request": "low",
+  "attempts_per_composition": 256,
+  "unique_uma_queries_caps_per_composition": [
+    16,
+    128
+  ],
+  "rounds": 2,
+  "acquisition_policies": [
+    "selected_CVAE",
+    "fixed_H0_TRAIN_seed_mutation"
+  ],
+  "selection_order": "All arms and both nested budget stages are frozen before acquiring any new labels. Q16 is the first 16 distinct eligible proposals of Q128 per composition, with no energy filtering.",
+  "new_roles": "TRAIN only; keep original H0 VAL and TEST intact, fixed threshold schema.",
+  "update_control": "Warm start from previous weights only, reset Adam/RNG/update clock in all arms including no-new-data control; 1000 optimizer updates per round; Adam lr .001, batch 512, beta_final .1 and reference_updates schedule, validation-beta .1, TF32 off.",
+  "primary_new_weight": 1.0,
+  "planned_sensitivity": "For Q128 additionally target 0.2 of weighted TRAIN mass for newly acquired examples within each occupied composition/energy-bin cell; reuses same acquired labels and identifies the weight change as a separate intervention.",
+  "evaluation": "After each round, fresh common-namespace proposals with three independent fit seeds and frozen history, fixed per-cell attempt budget across arms; score with pinned UMA and, budget permitting, MACE. Report low and 9-cell balanced yields, unique-orbit counts, actual oracle queries, compute cost, no unsupported significance from 3 fits.",
+  "scope": "Unrelaxed vacancy masks in one 48-site parent; no new DFT/MD or potential fine-tuning."
+}

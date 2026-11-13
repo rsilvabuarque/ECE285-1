@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "inputs": [
+    {
+      "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round1/assessment/comparison_uma_cached/receipt.json",
+      "receipt_sha256": "d50d22e855a7dbd8cb53f7261563ef976d297ad2933da4cadde6f6a35e36cc68",
+      "seed_metrics": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round1/assessment/comparison_uma_cached/seed_metrics.csv",
+      "seed_metrics_sha256": "29934a9eb25916691bfb9ef41002b963e8aff14a31317c288a14ed8919db3683",
+      "runtime_verifier_source_status": "post-freeze computational optimization, not prospectively pinned",
+      "round": 1,
+      "teacher": "uma"
+    },
+    {
+      "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round1/assessment/comparison_mace_cached/receipt.json",
+      "receipt_sha256": "3ece0427c0bf96aa1974dfbf108d5a31ba4b25f04b720bcf29b977e00b925703",
+      "seed_metrics": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round1/assessment/comparison_mace_cached/seed_metrics.csv",
+      "seed_metrics_sha256": "c42898dbe38d884fc7df3e21e5fecf65d944b7dcca1ec6eeb4121d5cc65aa3a1",
+      "runtime_verifier_source_status": "post-freeze computational optimization, not prospectively pinned",
+      "round": 1,
+      "teacher": "mace"
+    },
+    {
+      "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round2/assessment/comparison_uma_cached_r2/receipt.json",
+      "receipt_sha256": "779f68e4e30df3c3544a11ed8d3169a2e8dd4acb20616e9358495500d24871c5",
+      "seed_metrics": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round2/assessment/comparison_uma_cached_r2/seed_metrics.csv",
+      "seed_metrics_sha256": "e0942a4f61adc246f3be79d8d0331971703a3d6880b62016afad7b5f13126aee",
+      "runtime_verifier_source_status": "post-freeze computational optimization, not prospectively pinned",
+      "round": 2,
+      "teacher": "uma"
+    },
+    {
+      "receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round2/assessment/comparison_mace_cached_r2/receipt.json",
+      "receipt_sha256": "499d14c7b5224db989bd001909d32f5a0fc395e03d1f774685f884d0874f8d67",
+      "seed_metrics": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_round2/assessment/comparison_mace_cached_r2/seed_metrics.csv",
+      "seed_metrics_sha256": "75e5da52b9a451ec832bd3a1959d3239a26b4166623669de1e5384fbcf2e0c21",
+      "runtime_verifier_source_status": "post-freeze computational optimization, not prospectively pinned",
+      "round": 2,
+      "teacher": "mace"
+    }
+  ],
+  "rounds": [
+    1,
+    2
+  ],
+  "pairs": 144,
+  "fit_seeds": [
+    "2026110801",
+    "2026110802",
+    "2026110803"
+  ],
+  "output_csv_sha256": "abcf077bb178725744d23abfec3b648a18088fa27953f09742876b95475b7713",
+  "script_sha256": "fa38e86ffb271105e320d1ab842e28d0f66f6065c482838bac7ab986267e35d6",
+  "meaning": "R1 and R2 each compare with their own matched continuation; histories differ. Q20 is a fixed historical TRAIN threshold, not the bottom 20% of the complete space."
+}

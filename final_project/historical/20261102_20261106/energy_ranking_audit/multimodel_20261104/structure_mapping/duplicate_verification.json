@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "n_duplicate_pairs": 4012,
+  "checks": [
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "n_pairs": 190,
+      "quantity": "coord",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "n_pairs": 190,
+      "quantity": "box",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "n_pairs": 190,
+      "quantity": "energy",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "n_pairs": 190,
+      "quantity": "force",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "n_pairs": 190,
+      "quantity": "virial",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.001",
+      "n_pairs": 3822,
+      "quantity": "coord",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.001",
+      "n_pairs": 3822,
+      "quantity": "box",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.001",
+      "n_pairs": 3822,
+      "quantity": "energy",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.001",
+      "n_pairs": 3822,
+      "quantity": "force",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source_a": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.000",
+      "source_b": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/Li0Co12O24/set.001",
+      "n_pairs": 3822,
+      "quantity": "virial",
+      "dtype": "float32",
+      "exactly_equal": true,
+      "max_absolute_difference": 0.0
+    }
+  ]
+}

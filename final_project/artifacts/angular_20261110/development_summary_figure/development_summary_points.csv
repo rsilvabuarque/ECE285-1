@@ -1,0 +1,142 @@
+panel,teacher,method,control,label,seed,dimension,metric,value,coverage
+angular_comparison,uma,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110801,,paired_difference_pp,-1.909722222222221,
+angular_comparison,uma,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110802,,paired_difference_pp,0.08680555555555802,
+angular_comparison,uma,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110803,,paired_difference_pp,0.78125,
+angular_comparison,mace,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110801,,paired_difference_pp,-1.822916666666663,
+angular_comparison,mace,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110802,,paired_difference_pp,1.215277777777779,
+angular_comparison,mace,angle_hist_ar,redundant_6_ar,Angle histogram AR − 6-channel AR,2026110803,,paired_difference_pp,1.736111111111116,
+angular_comparison,uma,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110801,,paired_difference_pp,1.215277777777768,
+angular_comparison,uma,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110802,,paired_difference_pp,-0.347222222222221,
+angular_comparison,uma,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110803,,paired_difference_pp,-0.694444444444442,
+angular_comparison,mace,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110801,,paired_difference_pp,0.434027777777779,
+angular_comparison,mace,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110802,,paired_difference_pp,0.17361111111110494,
+angular_comparison,mace,angle_hist_cvae,redundant_6_cvae,Angle histogram CVAE − 6-channel CVAE,2026110803,,paired_difference_pp,1.128472222222221,
+angular_comparison,uma,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110801,,paired_difference_pp,-2.083333333333326,
+angular_comparison,uma,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110802,,paired_difference_pp,-1.736111111111116,
+angular_comparison,uma,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110803,,paired_difference_pp,-1.822916666666663,
+angular_comparison,mace,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110801,,paired_difference_pp,-2.517361111111105,
+angular_comparison,mace,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110802,,paired_difference_pp,-3.645833333333337,
+angular_comparison,mace,angular_smooth_ar,redundant_16_ar,Smooth angles AR − 16-channel AR,2026110803,,paired_difference_pp,-2.517361111111105,
+angular_comparison,uma,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110801,,paired_difference_pp,-2.083333333333337,
+angular_comparison,uma,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110802,,paired_difference_pp,-1.041666666666674,
+angular_comparison,uma,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110803,,paired_difference_pp,-3.645833333333326,
+angular_comparison,mace,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110801,,paired_difference_pp,-1.5625,
+angular_comparison,mace,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110802,,paired_difference_pp,-0.607638888888884,
+angular_comparison,mace,angular_smooth_cvae,redundant_16_cvae,Smooth angles CVAE − 16-channel CVAE,2026110803,,paired_difference_pp,-3.385416666666663,
+angular_comparison,uma,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110801,,paired_difference_pp,-1.302083333333337,
+angular_comparison,uma,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110802,,paired_difference_pp,-1.822916666666663,
+angular_comparison,uma,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110803,,paired_difference_pp,-0.434027777777779,
+angular_comparison,mace,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110801,,paired_difference_pp,-1.822916666666663,
+angular_comparison,mace,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110802,,paired_difference_pp,-1.041666666666674,
+angular_comparison,mace,directional_l1_l2_ar,redundant_6_learned_ar,Directional AR − learned 6-channel AR,2026110803,,paired_difference_pp,-0.5208333333333259,
+angular_comparison,uma,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110801,,paired_difference_pp,-3.125,
+angular_comparison,uma,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110802,,paired_difference_pp,-0.434027777777779,
+angular_comparison,uma,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110803,,paired_difference_pp,-2.083333333333337,
+angular_comparison,mace,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110801,,paired_difference_pp,-1.996527777777779,
+angular_comparison,mace,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110802,,paired_difference_pp,-0.17361111111110494,
+angular_comparison,mace,directional_l1_l2_cvae,redundant_6_learned_cvae,Directional CVAE − learned 6-channel CVAE,2026110803,,paired_difference_pp,-1.5625,
+radial_yield,uma,radial_cvae_d2,,D=2,2026110801,2,balanced_yield_percent,62.93402777777778,0.9991319444444444
+radial_yield,uma,radial_cvae_d2,,D=2,2026110802,2,balanced_yield_percent,64.75694444444444,0.9991319444444444
+radial_yield,uma,radial_cvae_d2,,D=2,2026110803,2,balanced_yield_percent,62.673611111111114,1.0
+radial_yield,mace,radial_cvae_d2,,D=2,2026110801,2,balanced_yield_percent,63.62847222222222,0.9991319444444444
+radial_yield,mace,radial_cvae_d2,,D=2,2026110802,2,balanced_yield_percent,65.625,0.9991319444444444
+radial_yield,mace,radial_cvae_d2,,D=2,2026110803,2,balanced_yield_percent,64.75694444444444,1.0
+latent_VAL,,radial_cvae_d2,,D=2,2026110801,2,weighted_VAL_KL_nats_per_dimension,0.004551857593469322,
+latent_VAL,,radial_cvae_d2,,D=2,2026110801,2,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110801,2,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110801,2,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d2,,D=2,2026110801,2,same_orbit_percent,77.34375,1.0
+latent_VAL,,radial_cvae_d2,,D=2,2026110802,2,weighted_VAL_KL_nats_per_dimension,0.0026762315537780523,
+latent_VAL,,radial_cvae_d2,,D=2,2026110802,2,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110802,2,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110802,2,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d2,,D=2,2026110802,2,same_orbit_percent,83.07291666666666,1.0
+latent_VAL,,radial_cvae_d2,,D=2,2026110803,2,weighted_VAL_KL_nats_per_dimension,0.004084054264239967,
+latent_VAL,,radial_cvae_d2,,D=2,2026110803,2,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110803,2,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d2,,D=2,2026110803,2,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d2,,D=2,2026110803,2,same_orbit_percent,67.96875,1.0
+radial_yield,uma,radial_cvae_d4,,D=4,2026110801,4,balanced_yield_percent,63.62847222222222,1.0
+radial_yield,uma,radial_cvae_d4,,D=4,2026110802,4,balanced_yield_percent,64.67013888888889,1.0
+radial_yield,uma,radial_cvae_d4,,D=4,2026110803,4,balanced_yield_percent,63.020833333333336,1.0
+radial_yield,mace,radial_cvae_d4,,D=4,2026110801,4,balanced_yield_percent,64.67013888888889,1.0
+radial_yield,mace,radial_cvae_d4,,D=4,2026110802,4,balanced_yield_percent,64.49652777777779,1.0
+radial_yield,mace,radial_cvae_d4,,D=4,2026110803,4,balanced_yield_percent,63.19444444444444,1.0
+latent_VAL,,radial_cvae_d4,,D=4,2026110801,4,weighted_VAL_KL_nats_per_dimension,0.0032158169196918607,
+latent_VAL,,radial_cvae_d4,,D=4,2026110801,4,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110801,4,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110801,4,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d4,,D=4,2026110801,4,same_orbit_percent,66.66666666666666,1.0
+latent_VAL,,radial_cvae_d4,,D=4,2026110802,4,weighted_VAL_KL_nats_per_dimension,0.002202586561907083,
+latent_VAL,,radial_cvae_d4,,D=4,2026110802,4,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110802,4,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110802,4,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d4,,D=4,2026110802,4,same_orbit_percent,70.3125,1.0
+latent_VAL,,radial_cvae_d4,,D=4,2026110803,4,weighted_VAL_KL_nats_per_dimension,0.0030695173772983253,
+latent_VAL,,radial_cvae_d4,,D=4,2026110803,4,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110803,4,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d4,,D=4,2026110803,4,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d4,,D=4,2026110803,4,same_orbit_percent,60.15625,1.0
+radial_yield,uma,radial_cvae_d8,,D=8,2026110801,8,balanced_yield_percent,62.58680555555556,1.0
+radial_yield,uma,radial_cvae_d8,,D=8,2026110802,8,balanced_yield_percent,64.84375,0.9991319444444444
+radial_yield,uma,radial_cvae_d8,,D=8,2026110803,8,balanced_yield_percent,63.19444444444444,1.0
+radial_yield,mace,radial_cvae_d8,,D=8,2026110801,8,balanced_yield_percent,63.97569444444444,1.0
+radial_yield,mace,radial_cvae_d8,,D=8,2026110802,8,balanced_yield_percent,65.45138888888889,0.9991319444444444
+radial_yield,mace,radial_cvae_d8,,D=8,2026110803,8,balanced_yield_percent,64.67013888888889,1.0
+latent_VAL,,radial_cvae_d8,,D=8,2026110801,8,weighted_VAL_KL_nats_per_dimension,0.0015699788928031921,
+latent_VAL,,radial_cvae_d8,,D=8,2026110801,8,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110801,8,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110801,8,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d8,,D=8,2026110801,8,same_orbit_percent,61.71875,1.0
+latent_VAL,,radial_cvae_d8,,D=8,2026110802,8,weighted_VAL_KL_nats_per_dimension,0.0018375404251855798,
+latent_VAL,,radial_cvae_d8,,D=8,2026110802,8,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110802,8,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110802,8,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d8,,D=8,2026110802,8,same_orbit_percent,64.84375,1.0
+latent_VAL,,radial_cvae_d8,,D=8,2026110803,8,weighted_VAL_KL_nats_per_dimension,0.001926803306560032,
+latent_VAL,,radial_cvae_d8,,D=8,2026110803,8,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110803,8,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d8,,D=8,2026110803,8,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d8,,D=8,2026110803,8,same_orbit_percent,60.677083333333336,1.0
+radial_yield,uma,radial_cvae_d16,,D=16,2026110801,16,balanced_yield_percent,64.0625,1.0
+radial_yield,uma,radial_cvae_d16,,D=16,2026110802,16,balanced_yield_percent,64.14930555555556,0.9991319444444444
+radial_yield,uma,radial_cvae_d16,,D=16,2026110803,16,balanced_yield_percent,63.888888888888886,1.0
+radial_yield,mace,radial_cvae_d16,,D=16,2026110801,16,balanced_yield_percent,63.107638888888886,1.0
+radial_yield,mace,radial_cvae_d16,,D=16,2026110802,16,balanced_yield_percent,64.58333333333334,0.9991319444444444
+radial_yield,mace,radial_cvae_d16,,D=16,2026110803,16,balanced_yield_percent,65.19097222222221,1.0
+latent_VAL,,radial_cvae_d16,,D=16,2026110801,16,weighted_VAL_KL_nats_per_dimension,0.0019297061844554264,
+latent_VAL,,radial_cvae_d16,,D=16,2026110801,16,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110801,16,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110801,16,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d16,,D=16,2026110801,16,same_orbit_percent,49.73958333333333,1.0
+latent_VAL,,radial_cvae_d16,,D=16,2026110802,16,weighted_VAL_KL_nats_per_dimension,0.0009841669652814744,
+latent_VAL,,radial_cvae_d16,,D=16,2026110802,16,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110802,16,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110802,16,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d16,,D=16,2026110802,16,same_orbit_percent,58.333333333333336,1.0
+latent_VAL,,radial_cvae_d16,,D=16,2026110803,16,weighted_VAL_KL_nats_per_dimension,0.0011943159261136316,
+latent_VAL,,radial_cvae_d16,,D=16,2026110803,16,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110803,16,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d16,,D=16,2026110803,16,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d16,,D=16,2026110803,16,same_orbit_percent,49.21875,1.0
+radial_yield,uma,radial_cvae_d32,,D=32,2026110801,32,balanced_yield_percent,64.93055555555556,1.0
+radial_yield,uma,radial_cvae_d32,,D=32,2026110802,32,balanced_yield_percent,64.49652777777779,1.0
+radial_yield,uma,radial_cvae_d32,,D=32,2026110803,32,balanced_yield_percent,63.888888888888886,1.0
+radial_yield,mace,radial_cvae_d32,,D=32,2026110801,32,balanced_yield_percent,66.92708333333334,1.0
+radial_yield,mace,radial_cvae_d32,,D=32,2026110802,32,balanced_yield_percent,65.88541666666666,1.0
+radial_yield,mace,radial_cvae_d32,,D=32,2026110803,32,balanced_yield_percent,65.71180555555556,1.0
+latent_VAL,,radial_cvae_d32,,D=32,2026110801,32,weighted_VAL_KL_nats_per_dimension,0.0006007292813592358,
+latent_VAL,,radial_cvae_d32,,D=32,2026110801,32,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d32,,D=32,2026110801,32,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d32,,D=32,2026110801,32,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d32,,D=32,2026110801,32,same_orbit_percent,50.0,1.0
+latent_VAL,,radial_cvae_d32,,D=32,2026110802,32,weighted_VAL_KL_nats_per_dimension,0.0003646692919119232,
+latent_VAL,,radial_cvae_d32,,D=32,2026110802,32,VAL_active_fraction_cutoff_0p001,0.0,
+latent_VAL,,radial_cvae_d32,,D=32,2026110802,32,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d32,,D=32,2026110802,32,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d32,,D=32,2026110802,32,same_orbit_percent,53.125,1.0
+latent_VAL,,radial_cvae_d32,,D=32,2026110803,32,weighted_VAL_KL_nats_per_dimension,0.0006584197990378016,
+latent_VAL,,radial_cvae_d32,,D=32,2026110803,32,VAL_active_fraction_cutoff_0p001,0.03125,
+latent_VAL,,radial_cvae_d32,,D=32,2026110803,32,VAL_active_fraction_cutoff_0p01,0.0,
+latent_VAL,,radial_cvae_d32,,D=32,2026110803,32,VAL_active_fraction_cutoff_0p1,0.0,
+latent_resampling,,radial_cvae_d32,,D=32,2026110803,32,same_orbit_percent,49.21875,1.0

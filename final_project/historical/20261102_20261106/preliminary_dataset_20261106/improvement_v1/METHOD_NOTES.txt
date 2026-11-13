@@ -1,0 +1,94 @@
+What changed in the lunch-hour experiment
+
+The target is the energy of Li-vacancy configurations at pristine-derived,
+unrelaxed atomic coordinates. These experiments do not optimize coordinates,
+train a force field, identify phases, or establish DFT ground states.
+The parent has 48 possible Li sites. We test n=12,24,36 Li, i.e.25%,50%,75%.
+
+Data and labels
+
+Each row is one symmetry orbit. Occupancy o_i=1 means Li present. The canonical
+vacancy bit string (1-o) identifies that orbit under192 retained parent site
+permutations. Canonical orientation is used for the new fits. Original frozen
+models used symmetry augmentation and a larger range of compositions, so their
+comparison is a full-method comparison rather than an isolated architecture test.
+
+The original-data new fits use1227 training,153 validation,156 test masks.
+The first adaptation dataset adds previously scored proposals; its split/counts
+are in data/preparation.json. Original held-out masks stay protected. New rows
+are split by deterministic canonical-key hashes before fitting. Their labels
+are UMA single-point energies. Promoting old assessment data to adaptation means
+it is no longer an untouched final assessment.
+
+Within each training set and Li count, e=E/(144+n) is sorted and the element at
+ceil(0.2*m), counting from1, defines q20. b=1 when e<=q20, otherwise0.
+The energy-CVAE condition is c=(n/48,b); composition-only has c=(n/48).
+Both energy classes train the model. The model does not receive energy gradients.
+Adaptation changes the training distribution and its q20, so it is not solely a
+sample-size experiment. Assessment uses the ORIGINAL teacher-specific q20.
+
+Dense exact-count model
+
+The encoder maps(o,c) to Gaussian latent mean/variance. A sampled latent z and c
+produce48 logits l_i. Legacy reconstruction treats bits independently. The
+new fixed-count likelihood instead is
+
+ p(o|z,c,sum(o)=n) = exp(sum_i l_i*o_i) / Z_n(l)
+ Z_n(l) = sum over all n-occupied masks u of exp(sum_i l_i*u_i).
+
+A dynamic program computes this normalization and draws exactly from that
+conditional distribution. This repairs the training/count-projection mismatch.
+It does not guarantee learning energetic correlations or a ground state.
+
+Autoregressive model
+
+The GRU decoder predicts site i using previous occupancies, c, z and the site
+index. It therefore represents relationships between occupancy decisions.
+Teacher forcing supplies previous observed bits during training. Generation
+feeds back sampled bits. When the remaining count forces a zero or one, that
+choice has probability1 and contributes zero reconstruction loss. The baseline
+uses the same decoder without z or an encoder. A composition-only AR CVAE tests
+whether the energy-class input adds useful information.
+
+At beta1, reconstruction plus KL is the ordinary negative conditional ELBO
+for the specified likelihood. beta0.1 is a deliberately different regularized
+objective, not the same likelihood bound with a harmless rescaling.
+The new models minimize reconstruction plus beta*KL. KL compares the encoded
+Gaussian to a standard normal used for generation. beta warms to0.1 in round0.
+Checkpoint selection uses validation reconstruction+KL with beta1, using fixed
+noise, as recorded in each configuration. Numerical losses from different
+likelihoods are not comparable discovery scores. The adaptive round explicitly
+compares beta0.1 and beta1 with class-balanced training and additional data;
+these are bounded exploratory coupled changes. Use fresh oracle results to
+judge sampling; posterior reconstruction alone cannot establish discovery.
+
+Assessment
+
+Every proposal attempt is retained. The numerator counts DISTINCT configurations
+that are absent from frozen history and whose measured energy is below original
+q20 at the same composition/teacher. The denominator is ALL attempts, including
+repeats and known masks. The final known history includes every development
+proposal as well as original and earlier adaptation pools. Final results must
+not be used to tune a model that is then claimed to have that same untouched test.
+
+Models are frozen before generating proposals. Fresh canonical geometries are
+scored with unchanged UMA-S-1.2.1(omat) and MACE-MH-1(omat_pbe), native FP32,
+TF32 off. Pinned worker receipts are separate from learning checkpoints. These
+are MLIP consistency tests, not independent DFT validation. A low-energy request
+never certifies output energy. Known scalar-cache hits are flagged and do not
+count as novel. No vector force/stress labels are joined across orientations.
+
+Three training seeds give descriptive variation, not hundreds of independent
+fits. Structural diversity and distance to training need to accompany yield;
+mutation can achieve high quality by exploring locally. Count all additional
+adaptive oracle evaluations when discussing computational savings.
+
+Relevant background
+
+Kingma and Welling: Auto-Encoding Variational Bayes, arXiv:1312.6114, Sec2.
+Sohn et al.: Learning Structured Output Representation using Deep Conditional
+Generative Models, NeurIPS2015, Sec4.
+Wu, Wang and Zhang: Solving Statistical Mechanics Using Variational
+Autoregressive Networks, PRL122,080602(2019), Eq4;
+https://doi.org/10.1103/PhysRevLett.122.080602
+These support the model constructions; none establishes improved LCO sampling.

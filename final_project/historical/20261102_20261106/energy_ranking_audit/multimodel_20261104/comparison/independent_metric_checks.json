@@ -1,0 +1,191 @@
+[
+  {
+    "model": "uma",
+    "group": "historical Li18",
+    "n": 10,
+    "quadratic_inversions": "4",
+    "pair_energy_RMSE_meV_atom": 4.084229115563899,
+    "rank_correlation": 0.9030303030303028,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li19",
+    "n": 22,
+    "quadratic_inversions": "25",
+    "pair_energy_RMSE_meV_atom": 3.600147447938152,
+    "rank_correlation": 0.9107848673066066,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li20",
+    "n": 44,
+    "quadratic_inversions": "81",
+    "pair_energy_RMSE_meV_atom": 2.158335633999455,
+    "rank_correlation": 0.9563072586328398,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li21",
+    "n": 55,
+    "quadratic_inversions": "82",
+    "pair_energy_RMSE_meV_atom": 1.7404782535486862,
+    "rank_correlation": 0.9821067821067823,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li22",
+    "n": 118,
+    "quadratic_inversions": "315",
+    "pair_energy_RMSE_meV_atom": 1.5129297185542345,
+    "rank_correlation": 0.9818493238234017,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li23",
+    "n": 132,
+    "quadratic_inversions": "247",
+    "pair_energy_RMSE_meV_atom": 2.046983058868789,
+    "rank_correlation": 0.9736555128278712,
+    "status": "PASS"
+  },
+  {
+    "model": "uma",
+    "group": "historical Li24",
+    "n": 143,
+    "quadratic_inversions": "52",
+    "pair_energy_RMSE_meV_atom": 0.1721924635536662,
+    "rank_correlation": 0.9996716898125347,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li18",
+    "n": 10,
+    "quadratic_inversions": "5",
+    "pair_energy_RMSE_meV_atom": 4.311028666003518,
+    "rank_correlation": 0.8545454545454544,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li19",
+    "n": 22,
+    "quadratic_inversions": "32",
+    "pair_energy_RMSE_meV_atom": 4.158025187720051,
+    "rank_correlation": 0.8836815358554491,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li20",
+    "n": 44,
+    "quadratic_inversions": "96",
+    "pair_energy_RMSE_meV_atom": 2.755237715430534,
+    "rank_correlation": 0.9392529950669486,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li21",
+    "n": 55,
+    "quadratic_inversions": "129",
+    "pair_energy_RMSE_meV_atom": 2.7611779154034854,
+    "rank_correlation": 0.9580808080808083,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li22",
+    "n": 118,
+    "quadratic_inversions": "431",
+    "pair_energy_RMSE_meV_atom": 2.031818462489785,
+    "rank_correlation": 0.9726826845470914,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li23",
+    "n": 132,
+    "quadratic_inversions": "359",
+    "pair_energy_RMSE_meV_atom": 2.110548186798404,
+    "rank_correlation": 0.9722884588292381,
+    "status": "PASS"
+  },
+  {
+    "model": "mace",
+    "group": "historical Li24",
+    "n": 143,
+    "quadratic_inversions": "223",
+    "pair_energy_RMSE_meV_atom": 0.6651948025224198,
+    "rank_correlation": 0.9961382514199415,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li18",
+    "n": 10,
+    "quadratic_inversions": "6",
+    "pair_energy_RMSE_meV_atom": 5.930816190744764,
+    "rank_correlation": 0.8545454545454544,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li19",
+    "n": 22,
+    "quadratic_inversions": "36",
+    "pair_energy_RMSE_meV_atom": 5.608081035295057,
+    "rank_correlation": 0.8520609824957651,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li20",
+    "n": 44,
+    "quadratic_inversions": "143",
+    "pair_energy_RMSE_meV_atom": 3.7673886152571887,
+    "rank_correlation": 0.8751233262861169,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li21",
+    "n": 55,
+    "quadratic_inversions": "190",
+    "pair_energy_RMSE_meV_atom": 3.9576809591441746,
+    "rank_correlation": 0.9153679653679655,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li22",
+    "n": 118,
+    "quadratic_inversions": "575",
+    "pair_energy_RMSE_meV_atom": 2.8214514082067126,
+    "rank_correlation": 0.9456721410858999,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li23",
+    "n": 132,
+    "quadratic_inversions": "376",
+    "pair_energy_RMSE_meV_atom": 2.549049852300235,
+    "rank_correlation": 0.9707857429834125,
+    "status": "PASS"
+  },
+  {
+    "model": "m3gnet",
+    "group": "historical Li24",
+    "n": 143,
+    "quadratic_inversions": "183",
+    "pair_energy_RMSE_meV_atom": 1.8554595704418948,
+    "rank_correlation": 0.9974720115565184,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,487 @@
+\section*{Generating useful atomic structures\newline for cathode recycling}
+{\large\textcolor{teal}{The science, the learning problem, and how we can work together}}
+
+\subsection*{Why recycle the cathode?}
+The cathode is the battery electrode that supplies much of its useful energy-storage capacity. Its material is also a major cost driver. In Argonne's 2024 NMC811 battery benchmark, cathode active material accounts for \textbf{53\% of cell-material cost and 30\% of total pack cost}~\cite{cost}. The fraction depends on the battery and the cost basis, but the motivation is straightforward: recovering useful cathode material can preserve substantial value.
+
+Our example is lithium cobalt oxide, abbreviated \textbf{LCO}. During battery charging, lithium atoms leave the cathode. Some recycling approaches aim to put lithium back into a lithium-deficient material; this is \textbf{relithiation}. Ricardo's larger project studies hydrothermal relithiation, which uses a heated, pressurized aqueous environment. The long-term goal is to help identify temperatures and pressures that favor successful regeneration, using simulations alongside experiments.
+
+\subsection*{First, what does a DFT calculation give us?}
+We can treat \textbf{density functional theory (DFT)} as an expensive reference calculator. Its input is an atomic structure: which elements are present, their positions, and the repeating simulation cell. Its outputs include:
+\begin{itemize}
+\item \textbf{Energy}: a number used to compare the favorability of different configurations of the same composition.
+\item \textbf{Forces}: one three-dimensional vector per atom, describing the direction and strength of its tendency to move.
+\item \textbf{Stress}: the material's response to deforming the cell, including the pressure-related response.
+\end{itemize}
+\textbf{VASP} is the software that produced our DFT data. A static self-consistent-field calculation (\textbf{SCF}) evaluates a supplied structure without requiring that the atoms first move to a minimum. We use its outputs as the reference labels against which predictions are tested. ``Reference'' means a specified computational standard, rather than exact experimental truth.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,font=\small,node distance=.45cm,
+ box/.style={draw=teal,fill=pale,rounded corners=2pt,align=center,text width=3.7cm,minimum height=1cm}]
+\node[box] (a) {Atomic structure\\elements, positions, cell};
+\node[box,right=of a] (b) {DFT / VASP\\expensive reference calculation};
+\node[box,right=of b] (c) {Energy, atomic forces,\\and cell stress};
+\draw[->,thick,teal] (a)--(b);\draw[->,thick,teal] (b)--(c);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Where the generative model fits}
+A \textbf{conditional variational autoencoder (CVAE)} is a neural network that generates several possible structures for a requested condition. Here we want to request a lithium content and favor low-energy configurations. Existing DFT labels can define what ``low energy'' means during training. A much faster learned calculator, introduced next, can also supply these labels. After training, we can run DFT on selected generated structures to obtain new reference energies, forces, and stresses for improving those learned calculators.
+
+\note{The question we want to answer}{Can conditional generation give us useful, diverse atomic configurations more efficiently than simple sampling, and how much does the answer depend on whether the training energy labels come from DFT or a learned approximation?}
+
+\clearpage
+\section{Fast calculators and molecular dynamics}
+
+\subsection*{An MLIP learns to imitate the reference calculator}
+A \textbf{machine-learning interatomic potential (MLIP)} takes an atomic structure and predicts its energy, forces, and stress. It is trained on reference atomic calculations and can evaluate new structures far faster than running another DFT calculation. UMA, MACE, and M3GNet are examples. A \textbf{force field} is the rule that supplies forces during an atomic simulation; an MLIP can serve as that force field.
+
+One useful picture is a landscape: the coordinates of all atoms specify a point on the landscape, energy is its height, and forces describe the downhill directions. An MLIP approximates the landscape. Getting only a few heights right does not guarantee that the downhill directions are right everywhere. This is why energy ranking, force error, stress error, and simulation stability need separate checks.
+
+\subsection*{MD uses those forces to move the atoms}
+\textbf{Molecular dynamics (MD)} repeatedly calculates forces, advances the atoms a small step in time, and calculates the new forces. Controls for temperature and pressure let us study the material under chosen conditions. After allowing it to settle and sampling it long enough, we can estimate equilibrium averages and fluctuations: for example, density, lattice dimensions, and thermal expansion.
+
+Those outputs can be compared with experiments and used to constrain or validate parts of a reactor model. Across a temperature/pressure grid, a reliable model could help narrow the conditions worth testing for hydrothermal relithiation. Bulk-cathode MD supplies one part of that picture; solution chemistry, interfaces, heat/mass transport, and reaction rates need their own descriptions. Equilibrium structure alone does not determine how fast relithiation occurs.
+
+\subsection*{Why improve an already pretrained MLIP?}
+A broadly trained MLIP is a useful starting point, but it can still make errors on the lithium-deficient structures we care about. \textbf{Fine-tuning} means further training it on a smaller, relevant DFT-labeled dataset. Good static errors are helpful, but reliable long trajectories also require appropriate forces in the configurations the simulation actually visits~\cite{fu}.
+
+Ricardo's existing route selects vacancy arrangements, explores them with MLIP-driven MD, and runs DFT on selected snapshots. The proposed route uses the CVAE to supply promising arrangements and atomic geometries more directly:
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{2.2cm}Y@{}}
+\toprule
+Current route & Vacancy sampling $\rightarrow$ MLIP MD $\rightarrow$ selected snapshots $\rightarrow$ DFT labels $\rightarrow$ MLIP fine-tuning.\\
+Proposed route & Conditional generation $\rightarrow$ selected configurations $\rightarrow$ DFT labels $\rightarrow$ MLIP fine-tuning.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The possible saving is in finding useful configurations, not in eliminating every reference calculation. A fast MLIP is also cheap enough to screen generated candidates before choosing which ones deserve DFT. For the course, comparing UMA, MACE, and M3GNet on the existing DFT geometries is part of the plan. UMA has already been evaluated on both archives; the other two comparisons are still to be performed.
+
+\note{What would count as progress?}{First show that the generator proposes useful configurations under a clearly defined evaluator. Then ask whether their DFT labels improve an MLIP under a matched training comparison. Only after that can we test whether MD properties and reactor-relevant predictions improve.}
+
+\clearpage
+\section{Lithium content, vacancies, and equivalent patterns}\label{sec:vacancies}
+
+\subsection*{The structural variable is easy to visualize}
+Lithium atoms occupy sites in LCO. A missing lithium atom leaves a \textbf{vacancy}. Two materials can have the same number of vacancies arranged in different ways; those arrangements can have different energies~\cite{wolverton}. The diagrams below show the idea without requiring crystallographic notation.
+
+\begin{center}
+\begin{tikzpicture}[x=0.54cm,y=0.48cm,font=\small]
+\foreach \panel/\offset/\title in {0/0/{Pattern A},1/8/{Pattern B}} {
+ \node[text=navy,font=\bfseries] at (\offset+2.8,1.0) {\title};
+ \foreach \r in {0,1,2} {\foreach \c in {0,1,2,3,4,5} {
+  \pgfmathtruncatemacro{\idx}{6*\r+\c}
+  \pgfmathtruncatemacro{\vac}{ifthenelse(\panel==0,mod(\idx,3)==0,\idx<6)}
+  \ifnum\vac=1 \draw[coral,thick] (\offset+\c+0.4*\r,-\r) circle(.15);
+  \else \fill[teal] (\offset+\c+0.4*\r,-\r) circle(.15);\fi
+ }}
+}
+\node[anchor=west,text=slate] at (16,-.2) {\textcolor{teal}{$\bullet$} Li};
+\node[anchor=west,text=slate] at (16,-1.2) {\textcolor{coral}{$\circ$} vacancy};
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{slate}{Schematic: each panel has six vacancies among 18 possible sites. Positions and energies are illustrative, not measured data.}}
+
+We represent this with a binary \textbf{mask}: $v_i=1$ means site $i$ is vacant; $v_i=0$ means occupied. If the pristine parent has $M$ removable sites and we remove $k$ atoms, the retained fraction is $y=(M-k)/M$. For our two fully lithiated LCO parents, this is also $x=n_{\mathrm{Li}}/n_{\mathrm{Co}}$, the lithium content in Li$_x$CoO$_2$. For another electrode, we keep the general definition $y$.
+
+\subsection*{Do not count rotated or translated copies as discoveries}
+Some masks differ only by a symmetry that maps the whole pristine crystal onto itself. Such copies form one \textbf{symmetry orbit}: one distinct vacancy pattern. The counts below already remove these equivalent copies, including periodic translations.
+
+\begin{center}\small
+\input{assets/symmetry_table.tex}
+\end{center}
+These are counts of all allowed parent-mask patterns, not counts of patterns observed in our data. They were calculated with exact integer symmetry counting and independent enumeration checks. The Hu count uses its inferred ideal parent symmetry; small stored coordinate distortions are not treated as a new crystal at each frame. Details are on page~\pageref{sec:symmetry}.
+
+For scale, the earlier 144-site parent would still have \textbf{\FutureSeven{}} distinct seven-vacancy patterns, about $1.29\times10^{31}$ at 35 vacancies, and $5.14\times10^{39}$ at 72 vacancies. Those counts also remove symmetry copies. That large catalog is \emph{not} part of the revised training data.
+
+\note{A consequence for our model}{Hu's 12-site parent has only one distinct one-vacancy pattern. It cannot demonstrate new vacancy-pattern discovery at that composition. Its many displaced atomic snapshots are still useful, but learning their geometries is a different task from learning the vacancy mask alone.}
+
+\clearpage
+\section{The two datasets and what UMA already tells us}
+
+\textbf{The revised study uses the historical screenshot dataset and the Hu archive.} Both contain DFT-labeled geometries, allowing a direct comparison with MLIP predictions on exactly the same atoms, positions, and cells. The separate 24,145-mask, UMA-only catalog is excluded from core training and evaluation.
+
+\begin{tabularx}{\linewidth}{@{}p{2.0cm}p{2.1cm}Y@{}}
+\toprule
+Archive & Unique frames & What is available\\
+\midrule
+Historical &524 & LCO with 24 Co atoms; lithium content $x=0.75$--1; DFT energy/forces/stress and matching UMA predictions.\\
+Hu &10,932 & Several structural families and broader lithium contents; DFT energy/forces/virial and matching UMA predictions. 14,944 stored entries include exact duplicates.\\
+\bottomrule
+\end{tabularx}
+
+The DFT settings differ between the archives, so their numerical references are expected to differ. Compare each model with the corresponding archive, and keep source/structure-family/composition labels attached. We will not pool absolute energies into one supposedly uniform reference.
+
+\subsection*{Energy ordering is often close, although not identical}
+Within a group of the same family and composition, rank 1 is the lowest-energy frame. In many groups, UMA and DFT put structures in similar order:
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\toprule
+Archive & Groups & Median rank correlation $\rho$ & Low-20\% overlap precision\\
+\midrule
+Historical &\HistoricalGroups &\HistoricalRho &\HistoricalPrecision\%\\
+Hu &\HuGroups &\HuRho &\HuPrecision\%\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7.1cm,height=4.6cm,xmin=0,xmax=45,ymin=0,ymax=45,
+ xlabel={DFT rank},ylabel={UMA rank},ticklabel style={font=\footnotesize},label style={font=\small},grid=major,grid style={gray!15}]
+\addplot[slate,dashed,domain=0:45]{x};
+\addplot[only marks,mark=*,mark size=1.4pt,teal] table[x=DFT_rank,y=MLIP_rank,col sep=comma]{assets/historical_x0833_ranks.csv};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{slate}{Actual historical example: 44 frames at $x=20/24$; $\rho=0.9462$. Points near the diagonal show similar ordering. This group has a centered energy-error RMSE of 1.86 meV/atom after removing its mean error; absolute energy accuracy is a separate quantity.}}
+
+At the low-energy end there are exceptions. Among five optimized Hu Li$_{10}$Co$_{12}$O$_{24}$ structures, UMA selects the DFT-highest member, \texttt{structure\_4159}, instead of the DFT minimum \texttt{structure\_4158}. The DFT penalty is \CounterRegret{} meV/atom. None of the 7 historical or 27 Hu groups has an exactly identical complete order, but useful low-energy selection does not require every rank to agree.
+
+\note{What we take forward}{UMA is a promising inexpensive selector, especially in the historical archive. We will quantify where that transfers to Hu and compare MACE/M3GNet the same way. Close ranks alone do not establish close energies in eV; both should be measured.}
+
+\clearpage
+\section{Turning atomic snapshots into learning examples}\label{sec:representation}
+
+\subsection*{One vacancy pattern can have many atomic geometries}
+Imagine fixing the vacancies and vibrating every remaining atom slightly. The mask stays the same, while energy, forces, and stress change. Changing the cell also changes those values. Therefore a DFT energy from a warm snapshot is the reference for \emph{that full geometry}, not automatically for the ideal parent with the same atoms deleted.
+
+This matters because the new dataset choice contains many snapshots but relatively few possible masks, especially in Hu's small parent. To use that information, the recommended CVAE representation contains \textbf{both occupancy and atomic displacement}. A mask-only model remains the first prototype and a useful comparison, rather than silently treating every snapshot as a new vacancy pattern.
+
+\subsection*{A small, explicit geometry model}
+The user provides a pristine structure, removable species, and target retained count. The cell defaults to the pristine cell, with an optional supplied override. We place sites in a consistent cell orientation and align each archived frame to them. A learning example then contains:
+\begin{enumerate}
+\item The vacancy bit at each removable site.
+\item The displacement of every present atom from its matched parent site, in \AA.
+\item The supplied cell, lithium content, energy class, source, and any known sampling metadata.
+\end{enumerate}
+The decoder predicts occupancy and small displacements; it does not generate a new phase or a new cell. Missing atoms have no displacement target. Forces and stresses remain valuable evaluation labels; they do not have to be inputs to the CVAE.
+
+Before using a frame, Ricardo verifies a one-to-one, species-aware periodic site assignment after cell/origin alignment. Frames with ambiguous mappings or host rearrangements remain in the MLIP benchmark and are flagged rather than forced into a vacancy template. Alignment distances and checks will be documented; the parent-symmetry tolerance is not a substitute for a frame-mapping criterion.
+
+\subsection*{Which parts of the archives enter which task?}
+\begin{tabularx}{\linewidth}{@{}p{3.2cm}Y@{}}
+\toprule
+Task & Data scope\\
+\midrule
+Frozen MLIP comparison & All 524 historical and 10,932 unique Hu frames, separated by source/family/composition.\\
+Initial CVAE comparison & Historical layered LCO and Hu's corresponding O3 family, using their 24- and 12-site parents after mapping checks.\\
+Other Hu families & Additional MLIP tests; generative training only after a suitable phase-specific parent and mapping are supplied. Li-free migration frames do not teach Li-vacancy ordering.\\
+\bottomrule
+\end{tabularx}
+
+Hu's O3 family contributes 4,261 unique frames. Its full 12-site occupancy space has only 87 symmetry-distinct masks across all compositions, regardless of how many displaced frames are stored. We must count observed orbits and independent parents before setting train/test sizes.
+
+\note{First implementation check}{Reconstruct a small mapped batch from its mask, displacement, and cell; verify that it recovers the original archived geometry and labels. Then train a tiny occupancy-only example, add the displacement output, and inspect decoded structures before scaling. If geometry generation is not reliable, report the mask-only result with its narrower meaning.}
+
+\clearpage
+\section{What the energy condition means}\label{sec:labels}
+
+\subsection*{``Low energy'' is a label within a comparable group}
+The generator needs a practical training target. We start with a binary label: low energy or other. Let $E_i^{(s)}$ be the energy of frame $i$ from label source $s$, where $s$ can be DFT, UMA, MACE, or M3GNet. Compare energies within the same family and composition, keeping the two DFT references separate. Use comparable sampling contexts: separate optimized and warm structures and historical temperature/pressure groups where support permits. Hu lacks complete corresponding metadata, leaving a possible sampling confound.
+
+For each eligible training group $g$, sort its $n_g$ energies and set
+\[
+ j_g=\left\lceil0.20\,n_g\right\rceil,\qquad
+ q_g^{(s)}=\text{the }j_g\text{-th sorted training energy},\qquad
+ \ell_i^{(s)}=\mathbf1\!\left[E_i^{(s)}\le q_g^{(s)}\right].
+\]
+Here $\lceil\cdot\rceil$ means round up; $q$ is the cutoff; $\ell=1$ means low energy; and $\mathbf1$ is 1 when the condition is true, otherwise 0. Include all exact ties at the boundary. Very small or single-orbit groups are diagnostics, not convincing low-energy class-learning tests.
+
+\textbf{Example, using synthetic numbers:} ten training energies at one composition are $0,0.1,\ldots,0.9$ eV relative to an arbitrary common zero. Then $j=2$, $q=0.1$ eV, and the two lowest examples receive label 1. At generation we request label 1. The model learns patterns associated with that class; it does not receive a proof of the lowest possible configuration.
+
+Fit the cutoff on training data and keep it fixed for validation and testing. Otherwise the evaluation quietly uses knowledge of its own energy distribution. Use the same class rule, examples, and splits when comparing DFT-derived and MLIP-derived labels, allowing the different calculators to assign different low-energy members.
+
+\subsection*{Ranking agreement and energy accuracy are different}
+\textbf{Spearman correlation} compares order rather than energy values. For example, DFT ranks $[1,2,3,4,5]$ and MLIP ranks $[1,2,4,3,5]$ give $\rho=0.9$: one adjacent reversal, but the same selected minimum. \textbf{Low-tail precision} asks how often the MLIP's selected low-energy set is also low according to DFT. \textbf{Selection regret} is the DFT energy penalty of choosing the MLIP's minimum instead of the best DFT candidate in the tested pool.
+
+A model could rank everything correctly while multiplying all energy gaps by ten. Conversely, several almost equal energies can swap order despite small errors. We therefore report ranks, energy differences in eV or meV/atom, and the actual DFT penalty of selection, alongside force and stress errors.
+
+\subsection*{Different DFT settings do not guarantee a constant offset}
+Changing the electronic-structure settings can change the energy \emph{difference} between configurations, even at fixed composition. This has been demonstrated for lithium ordering in LCO~\cite{isaacs}. The historical and Hu archives do not contain the same geometries evaluated with both protocols, so their comparison alone cannot isolate this effect. Cross-dataset testing will measure combined transfer across size, sampled structures, and reference settings; common-MLIP labels provide a useful control.
+
+\clearpage
+\section{How the CVAE learns and generates}\label{sec:cvae}
+
+\subsection*{A condition tells the model what to make}
+The requested condition $c$ contains retained fraction, low-energy class, and the supplied parent/cell context. An example $X$ contains the vacancy mask $v$ and, for the geometry model, the aligned displacements $u$. We want the model to learn a distribution $p_\theta(X\mid c)$: many plausible configurations for one request. The symbol $\theta$ denotes the decoder's trainable weights.
+
+The \textbf{encoder} sees a training example and describes it with random latent variables $z$. Think of $z$ as a compact internal description of the pattern and distortions, without assigning a specific physical meaning to each component. The \textbf{decoder} takes $z$ and the condition and tries to reconstruct the example.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,font=\small,node distance=.35cm,
+ box/.style={draw=teal,fill=pale,rounded corners=2pt,align=center,text width=2.8cm,minimum height=1cm}]
+\node[box] (x) {Example $X$\\mask +\\displacements};
+\node[box,right=of x] (e) {Encoder\\latent means\\and spreads};
+\node[box,right=of e] (z) {Sample $z$\\random\\latent code};
+\node[box,right=of z] (d) {Decoder\\vacancies +\\displacements};
+\draw[->,thick,teal] (x)--(e);\draw[->,thick,teal] (e)--(z);\draw[->,thick,teal] (z)--(d);
+\node[text=slate,below=.2cm of z,align=center] {The condition $c$ is supplied\\during training and generation.};
+\end{tikzpicture}
+\end{center}
+
+Training has two jobs. \textbf{Reconstruction} rewards outputs that resemble the example. \textbf{Regularization} makes the encoder's latent variables resemble an easy random distribution we can sample later. Without the second job, the decoder might only work with special latent codes from training examples.
+
+After training we discard the encoder for generation: sample fresh $z$ from that easy distribution, choose the requested condition, and decode a new candidate. Initially use the predicted displacement means; sampling additional coordinate noise is a separate, declared option. Each candidate is screened for geometry validity and evaluated with the same frozen calculators as the baselines.
+
+\subsection*{The vacancy output is a probability at each site}
+Suppose four removable sites have predicted vacancy probabilities
+\[
+ p=[0.8,\ 0.2,\ 0.7,\ 0.1],\qquad
+ v=[1,\ 0,\ 1,\ 0]\quad\text{for the training example}.
+\]
+The decoder assigned probabilities $0.8,0.8,0.7,0.9$ to the four correct decisions. Their product is $0.4032$. The reconstruction penalty is its negative natural logarithm, $-\log(0.4032)=0.9083$. A more confident correct prediction reduces this penalty. This quantity is called \textbf{binary cross entropy (BCE)}; it is a statistical loss, not an atomic energy.
+
+\subsection*{The requested atom count is enforced explicitly}
+For generation with two vacancies, choose the two largest vacancy probabilities: sites 1 and 3. Generally, top-$k$ selection produces exactly $k$ vacancies. It is the most probable fixed-count mask for those decoder probabilities, rather than a random fixed-count draw. Randomness comes from the latent variables; ties must be broken with a declared random rule. The displacement output is used only for atoms that remain present.
+
+\note{A useful control}{Use the same model without the energy-class input. This no-energy VAE control still receives the parent, cell, and composition context. It tests energy targeting beyond learning to reconstruct structures. Reconstruction quality alone is not the final measure; useful generated configurations are.}
+
+\clearpage
+\section{The training equations, with their variables}\label{sec:loss}
+
+\subsection*{Latent variables and reconstruction}
+For each parent site $a$, let $z_a$ have $d$ components. The encoder gives a mean $\mu_{aj}$ and positive standard deviation $s_{aj}$ for component $j$. It defines a Gaussian distribution $q_\phi(z\mid X,c)$, where $\phi$ are encoder weights. The generation distribution, called the \textbf{prior}, is $p(z)$: independent mean-zero, unit-standard-deviation Gaussians. We sample during training as
+\[
+ z_{aj}=\mu_{aj}+s_{aj}\varepsilon_{aj},\qquad \varepsilon_{aj}\sim\mathcal N(0,1).
+\]
+The notation $\mathcal N(0,1)$ means a standard normal distribution. This separates the random draw $\varepsilon$ from the learned mean and spread, allowing training gradients to pass through the calculation.
+
+For vacancy probability $p_i$ and actual vacancy bit $v_i$, reconstruction costs
+\[
+ L_v=-\sum_{i=1}^{M}\left[v_i\log p_i+(1-v_i)\log(1-p_i)\right].
+\]
+Here $M$ is the number of removable sites. For displacement mean $\widehat u_a$, observed displacement $u_a$, and a fixed coordinate likelihood scale $s_R$ in \AA, the variable part of a Gaussian reconstruction cost is
+\[
+ L_R=\sum_{a\ \mathrm{present}}\frac{\|u_a-\widehat u_a\|^2}{2s_R^2}.
+\]
+The norm is the length of the three-dimensional error. Missing atoms contribute nothing. $s_R$ sets the coordinate penalty, not a physical accuracy tolerance. Retain the Gaussian normalization terms, including their dependence on $s_R$ and the present-atom count, when comparing likelihoods or selecting $s_R$ on validation.
+
+\subsection*{Regularization and the combined objective}
+The \textbf{KL divergence} measures how different the encoder Gaussian is from the prior. For these diagonal Gaussians it has the explicit form
+\[
+ L_{\mathrm{KL}}=\frac12\sum_{a=1}^{N_0}\sum_{j=1}^{d}
+ \left(\mu_{aj}^{2}+s_{aj}^{2}-1-\log s_{aj}^{2}\right),\qquad
+ J_\beta=\frac{\mathbb E_q[L_v+L_R]+\beta L_{\mathrm{KL}}}{N_0}.
+\]
+$N_0$ is the full pristine-site count, including nonremovable atoms; $d$ is the latent dimension per site; $\mathbb E_q$ means average over encoder draws, estimated using sampled $z$; and $\beta$ weights the regularization. Divide all terms by the same $N_0$, then average structures, so a larger parent does not automatically dominate.
+
+At $\beta=1$, with Gaussian constants included, this is the negative \textbf{evidence lower bound per parent site}. The underlying identity is~\cite{cvae}
+\[
+ \log p_\theta(X\mid c)\ \ge\
+ \mathbb E_q\log p_\theta(X\mid z,c)-D_{\mathrm{KL}}(q_\phi\|p).
+\]
+The exact likelihood on the left requires a difficult integral over $z$. The right side is a trainable lower bound. Temporarily changing $\beta$ can help optimization, but changes that objective. Track vacancy/coordinate reconstruction, KL, and generated diversity separately; a low total loss can hide a decoder that repeats nearly the same output.
+
+\clearpage
+\section{How we will handle symmetry}\label{sec:symmetry}
+
+\subsection*{First, identify equivalent vacancy masks explicitly}
+We obtain rotations and translations of the \emph{full species-decorated pristine parent}, then convert them into permutations of its removable sites. An operation is allowed only if it preserves the parent cell and each species. A mask's canonical ID is the smallest bit string among all its transformed copies. Equivalent masks share one ID, stay in one split, and count once for mask novelty.
+
+The counts on page~\pageref{sec:vacancies} use \textbf{Burnside's lemma}: average, over symmetry operations, the number of masks unchanged by each operation. If operation $g$ cycles sites in lengths $m_1,m_2,\ldots$, an unchanged mask must occupy or empty each entire cycle. Therefore
+\[
+ N_k=\frac{1}{|G|}\sum_{g\in G}[t^k]\prod_r(1+t^{m_r}).
+\]
+Here $G$ is the finite site-permutation group, $|G|$ its size, $N_k$ the distinct $k$-vacancy count, and $[t^k]$ means take the coefficient of $t^k$. Dividing $\binom{M}{k}$ by $|G|$ is generally wrong because some patterns have more self-symmetries than others.
+
+Our groups contain 144 permutations for Hu's 12-site parent and 288 for the historical 24-site parent. Hu's inferred ideal-parent group is stable for tested symmetry-identification tolerances $10^{-3}$--$10^{-1}$ \AA; the maximum species-mapping residual is $2.64\times10^{-4}$ \AA. We used $10^{-3}$ \AA. The historical group is stable from $10^{-6}$--$10^{-2}$ \AA. These tolerances identify the parent lattice, not acceptable distortions or energy errors~\cite{spglib}. All 4,096 raw Hu masks independently reproduce the count, as do small-pattern checks on the other parents.
+
+\subsection*{Second, let one model work with different site counts}
+A fixed-length dense network for 24 sites cannot directly generate a 12-site mask. Instead, represent the parent as a periodic \textbf{graph}: sites are nodes, nearby connections are edges, and features include distances and canonical-frame relative vectors for the geometry head. Shared functions exchange information along edges. The same functions can act on 12 or 24 removable sites, with fixed-host atoms retained as context.
+
+If we renumber the sites, outputs should be renumbered in exactly the same way; this is \textbf{permutation equivariance}. Use per-site latent variables, sampled independently before message passing. A single global latent supplied identically to every equivalent site could give identical vacancy probabilities everywhere and fail to make structured patterns.
+
+\subsection*{Scalar and vector outputs require different treatment}
+Energy classes and vacancy probabilities should stay unchanged under a rigid rotation. Displacements, like MLIP forces, should rotate with the structure. Start with a consistent crystal orientation and training augmentation that transforms masks \emph{and displacement vectors together}, after splitting the data. A vector-equivariant displacement head is a possible upgrade; a full MACE-style force model is unnecessary for the first CVAE. Do not average independent generated structures, which could erase their patterns.
+
+Symmetry handling does not make distinct displaced geometries identical. Keep their coordinates and DFT labels, and group related parents to prevent train/test leakage. An equivariant architecture also does not replace this explicit split bookkeeping.
+
+\clearpage
+\section{What each sampler is testing}\label{sec:baselines}
+
+All methods receive the same parent, retained count, cell context, and number of proposal attempts. A \textbf{baseline} is a simpler method that the CVAE must be compared with; if it performs just as well, extra model complexity may not be worthwhile.
+
+\begin{tabularx}{\linewidth}{@{}p{2.3cm}YY@{}}
+\toprule
+Method & What it does & What we learn\\
+\midrule
+Uniform & Randomly choose exactly $k$ vacancy sites. & How much better we do than unguided arrangements.\\
+Physical rule & Prefer separated vacancies or distribute them across layers, using the actual parent geometry. & Whether simple spatial rules already provide the useful bias.\\
+Site frequency & Count which sites are vacant in low-energy training examples; sample distinct sites with those weights. & Whether independent site preferences explain the benefit.\\
+Local swaps & Start from a low-energy training pattern; fill one vacancy and empty another site. & Whether small changes near known good structures are enough.\\
+No-energy VAE & Same model and context, without the energy-class input. & Whether reconstruction/generation alone is sufficient.\\
+CVAE & Learn the same examples with a requested energy class. & Whether energy conditioning adds useful targeting.\\
+\bottomrule
+\end{tabularx}
+
+\textbf{Site-frequency example:} if site 3 is vacant in 8 of 10 low-energy training examples and site 7 in only 2, the simple sampler favors site 3. It does not learn their joint pattern. \textbf{Swap example:} replace vacancies $\{2,5\}$ with $\{2,8\}$; the number removed stays two. For equivalent pristine sites, independent frequencies may be identical after symmetry augmentation. That is an informative limitation, not a reason to give the baseline arbitrary site labels.
+
+\subsection*{Separate arrangement choice from displacement choice}
+Use the same displacement policy when comparing vacancy-selection methods: for example, a shared, training-derived perturbation distribution at the supplied cell. Compare the joint CVAE against this policy separately to identify the value of learning geometry. Otherwise a better result could come from smaller displacements rather than better vacancies. Geometry filters, rejected attempts, and any relaxation must also be identical across methods and reported.
+
+\subsection*{Measure useful yield, coverage, and cost}
+For each condition, report energy distributions, low-energy success rate, valid fraction, recovered mask orbits, mask diversity, and displacement/local-environment diversity. When unseen masks exist, also report
+\[
+ H(B)=\frac{\text{distinct new mask orbits below the fixed energy cutoff}}{B},
+\]
+where $B$ is the number of attempted proposals. Count duplicates and invalid proposals in $B$. For Hu groups whose catalog already covers all possible orbits, use held-out recovery/coverage instead of claiming impossible catalog-absent novelty. Merely making numerically different coordinates is not useful novelty.
+
+Use the same attempt counts and show each independent training/sampling seed. Record MLIP evaluations and runtime separately from DFT cost. Existing completed frames are inexpensive to evaluate with another MLIP, and their UMA predictions are already cached; no artificial 5,000-call limit is imposed on reusing or cross-scoring these archives.
+
+\clearpage
+\section{Cross-dataset and multi-MLIP experiments}\label{sec:transfer}
+
+\subsection*{First compare three frozen potentials on all archived frames}
+Evaluate UMA, MACE, and M3GNet on the \emph{same saved DFT geometries}, without relaxation. This uses existing reference labels; it requires no new DFT or MD. UMA is complete. Proposed additional checkpoints are MACE-MP-0b3 and a version-matched M3GNet MatPES-PBE model~\cite{mace,m3gnet}. Pin each model's weights, code, and output conventions before comparing results. These are model comparisons with different pretraining references, not isolated tests of architecture.
+
+For each source/family/composition, report energy errors, within-group pair-energy errors, force-component and stress-component errors, rank correlation, low-tail overlap, and selection regret. Preserve the optimized-versus-displaced breakdown: a strong rank correlation across warm snapshots can hide weak ordering among optimized configurations. We will reuse every completed, usable DFT frame and cache one prediction per exact geometry/model signature.
+
+\subsection*{Then ask whether the generator transfers between archives}
+The initial training matrix is six small CVAEs, each repeated with declared seeds:
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+Training structures & Energy classes & Evaluation structures\\
+\midrule
+Historical only &DFT or UMA & Historical holdout; Hu O3 holdout\\
+Hu O3 only &DFT or UMA & Hu holdout; historical holdout\\
+Both, source-balanced &DFT or UMA & Grouped holdouts from each source\\
+\bottomrule
+\end{tabular}
+\end{center}
+Use identical structures/splits and matched training settings for both label sources. Pooled DFT classes stay within each reference namespace. Source-only tests exclude target examples from fitting and checkpoint selection. Define target low-tail sets by the predeclared rank rule only for final assessment, never tuning; a source cutoff in eV cannot be carried to a different cell size/reference. Target conditional likelihood uses these assessment-only classes. Extending CVAE labels to MACE/M3GNet can follow their frozen-potential comparison.
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule
+Shared lithium content & Historical retained Li & Hu O3 retained Li\\
+\midrule
+$x=3/4$ &18/24 &9/12\\
+$x=5/6$ &20/24 &10/12\\
+$x=11/12$ &22/24 &11/12\\
+\bottomrule
+\end{tabular}
+\end{center}
+Start cross-source tests at these overlapping compositions. Historical $19/24$, $21/24$, and $23/24$ cannot be represented exactly in Hu's 12-site cell. Testing a historical-trained model below $x=0.75$ additionally probes composition extrapolation. A parent graph supplies the target size and geometry; no target-source training labels are supplied to a source-only model.
+
+\note{What these tests can establish}{Compare held-out conditional reconstruction/likelihood, mask coverage, geometry quality, and generated-candidate scores under common frozen evaluators. Existing DFT validates exact archived frames, not newly generated geometries. New generated structures need new DFT labels for an independent DFT claim. Common-UMA training on both sources helps test geometry/size transfer without changing the energy calculator; matched DFT on identical geometries would be needed to isolate the effect of DFT settings.}
+
+\clearpage
+\section{A reusable architecture for other electrodes}\label{sec:architecture}
+
+\subsection*{The parent and removable element are inputs}
+The platform should accept a pristine structure and the species to remove, rather than hardcoding Li sites or LCO. For example, a Na electrode supplies \texttt{removable\_species="Na"}; the code identifies its parent sites and enforces the requested retained count. Keep \texttt{Li}, LCO, and the two audited parents as defaults for the course work. This makes the software reusable without claiming that a model trained only on LCO already predicts another chemistry accurately.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{3.6cm}Y@{}}
+\toprule
+Module & Responsibility\\
+\midrule
+\texttt{framework.py} & Read parent, species, periodic cell, removable sites, and generic $y=n_{\mathrm{target}}/M$.\\
+\texttt{datasets.py}, \texttt{mapping.py} & Import the two archives; align frames, preserve exact geometry/DFT labels, and export mask/displacement examples.\\
+\texttt{symmetry.py}, \texttt{splits.py} & Parent permutations, orbit IDs, lineage groups, immutable partitions, and training-only class thresholds.\\
+\texttt{model.py}, \texttt{train.py} & Shared graph CVAE, occupancy/displacement outputs, losses, checkpoints, and explicit count projection.\\
+\texttt{samplers.py} & Baselines with the same proposal interface and displacement/validity policy.\\
+\texttt{calculators/} & Separate UMA/MACE/M3GNet adapters and exact-geometry prediction cache.\\
+\texttt{evaluate.py}, \texttt{plots.py} & Saved per-frame/per-attempt metrics, source transfer, diversity, ranking, and cost plots.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{A small shared data contract}
+Every \textbf{framework} records its hash, species, cell/coordinates in \AA, ordered removable sites, and symmetry permutations. Every \textbf{frame} records its source, family, composition, geometry hash, parent mapping, mask, displacement, and DFT-label namespace. Every \textbf{prediction} records total eV/cell, forces in eV/\AA, stress convention/units, model/checkpoint/software identity, and success/failure. Every \textbf{proposal} records method, random seed, condition, attempt index, generated geometry, and validity outcome.
+
+The generic retained fraction $y$ must be kept separate from LCO's stoichiometric $x=n_{\mathrm{Li}}/n_{\mathrm{Co}}$: they coincide only for parents with one removable Li site per Co. A different pristine material or a partially occupied reference may not satisfy that condition.
+
+\subsection*{Keep daily development independent of HPC}
+Beihao and Varad should be able to work with a small exported fixture and cached score tables. They do not need a VASP installation or production MLIP environment to implement losses, samplers, or metrics. Full structures, model weights, and outputs live outside Git; the repository contains code, configurations, manifests, small examples, and report sources.
+
+Use one branch per focused change and a nonauthor review. Ricardo integrates the parent/mapping/calculator contracts; Beihao owns model/training code; Varad owns baselines/splits/evaluation. The first shared example should reconstruct an archived frame and reproduce a cached metric before anyone launches a larger run.
+
+\clearpage
+\section{Who does what, and when}
+
+\subsection*{The first handoffs}
+\begin{tabularx}{\linewidth}{@{}p{1.7cm}YY@{}}
+\toprule
+Owner & Main tasks & First concrete handoff\\
+\midrule
+Ricardo & Scientific reference; parent/site mapping; export; UMA/MACE/M3GNet calculators; optional DFT/fine-tuning; integration. & A few correctly reconstructed examples from each O3 parent, source label conventions, mapping/orbit coverage, and cached scorer fixture.\\
+Beihao & CVAE explanation and implementation; mask-only pilot; displacement output; variable-size generation and training diagnostics. & Seeded forward/train/sample example that enforces counts and reports vacancy/coordinate reconstruction and KL separately.\\
+Varad & Symmetry/splits; simple samplers; independent metric checks; rank/error/transfer/diversity figures. & Common proposal/evaluation schema, baseline outputs, and a cached end-to-end comparison.\\
+All & Experimental choices, interpretation, report, slides, and review. & Agree on the mapped data support, labels, comparable geometry policy, and main evaluation before the final run.\\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Milestones in Pacific time}
+\begin{tabularx}{\linewidth}{@{}p{2.3cm}Y@{}}
+\toprule
+Dates & Target\\
+\midrule
+Nov 3--6 & Finish export/mapping/symmetry support checks; implement against one fixture; assemble methods and existing audit results.\\
+Nov 7--9 & Jointly review the mid-term. \textbf{Due Nov 9, 11:59 p.m. PT.} Explain the updated data choice, model, symmetry, comparisons, and limitations.\\
+Nov 10--16 & Finish frozen MACE/M3GNet comparisons; validate the mask and displacement model; freeze splits, conditions, seeds, and baseline policies.\\
+Nov 17--23 & Run and analyze the main sampler/transfer comparisons; prepare presentation results by Nov 23.\\
+Nov 24 / Dec 1 & Remote presentations during lecture; prepare for the first session until our slot is confirmed.\\
+Nov 25--Dec 6 & Resolve targeted follow-up tests and draft final results; optional DFT only if the core comparison is secure.\\
+Dec 7--12 & Freeze figures and conclusions, review reproduction/contributions, and submit the final report by \textbf{Dec 12}.\\
+\bottomrule
+\end{tabularx}
+
+\subsection*{Keep the effort concentrated}
+Plan roughly 4--6 hours per person per week, with a possible 5--7-hour results/presentation week, adjusted to everyone's availability. Start with a small shared graph model and one coordinate-likelihood setting chosen on validation. Avoid a broad architecture search. The two archival sources, three frozen calculators, and DFT-versus-UMA conditioning already give a substantial study.
+
+The main aim remains a controlled generative/sampler comparison. DFT labeling of new structures and MLIP fine-tuning are downstream extensions. If the alignment or geometry decoder remains unreliable, report what works and what failed; do not present a mask-only result as successful full-geometry transfer.
+
+\clearpage
+\section{From generated structures to better simulations}
+
+\subsection*{A strong ranking result is useful even without exact agreement}
+The historical audit suggests that inexpensive learned energies can often identify favorable candidates. The small Hu example below explains why we still need low-tail and energy-gap checks rather than assuming transfer from a high overall correlation.
+
+\begin{center}\input{assets/rank_reversal.tex}\end{center}
+{\small\textcolor{slate}{Same five optimized Hu structures as on page 4. Lines connect identical configurations. DFT selects \texttt{structure\_4158}; UMA selects \texttt{structure\_4159}. This is a finite-pool counterexample, not the typical ordering of all Hu frames.}}
+
+\subsection*{The next DFT labels should test a clear question}
+After generation, select CVAE and strongest-baseline candidates at the same composition, with equal planned DFT counts and a common geometry policy. Include diverse candidates across their predicted energy ranges. Ask whether the CVAE's apparent benefit survives DFT evaluation; retain failed calculations and report their coverage. A generated structure has no DFT label simply because it resembles an archived training frame.
+
+The same new calculations can provide energies, forces, and stresses for fine-tuning. To test whether \emph{parent selection} is better, give CVAE and baseline parents the same displacement/strain augmentation, initial MLIP, DFT-label count, training settings, and independent test set. If one arm uses MD and another uses simple perturbations, that is a comparison of whole pipelines; an additional common-augmentation control is needed to identify the source of improvement.
+
+\subsection*{Then test the quantities the reactor model needs}
+Improved reference errors are one step. Controlled MD should also check stable geometry/cell evolution and sufficiently sampled density, lattice response, thermal expansion, or other observables matched to experiments. Temperature agreement alone does not establish that pressure, structure, or forces are correct.
+
+Equilibrium favorability and reaction speed are different. A low-energy configuration can be difficult to reach because atoms must cross barriers. Predicting relithiation rates or optimal process conditions therefore requires a validated connection between bulk properties, solution/interface chemistry, and the reactor model. The course project supplies a tested configuration-generation component, rather than all of those pieces at once.
+
+\note{The result we should be able to explain}{Which calculator preserves the relevant DFT energy ordering? Does conditioning improve proposals beyond simple baselines? Does that improvement survive a change in source or parent size? If so, which generated structures are worth labeling next to improve the force field?}
+
+\clearpage
+\section{Sources and project files}
+
+\subsection*{Where the evidence lives}
+Within the ECE285 workspace, \path{final_project/energy_ranking_audit/REPORT.md} explains the completed UMA audit. Its \path{results/} directory contains the full figures, per-frame labels/predictions, ranked tables, duplicate mappings, and exact model receipt. This brief's \path{assets/} includes the small tables used here and \path{symmetry_counts.json}; \path{symmetry_counts.py} reproduces the parent-pattern counts.
+
+The raw archives are under the cathode project root:
+\begin{quote}\footnotesize\path{/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/}\end{quote}
+Hu's data are in \path{for_chat_gpt/LiCoO2_All_data/Data_Set/} and \path{for_chat_gpt/Final_Dataset/dpgen_work/Total_Data_Set/}. The audit report gives the exact historical 524-frame CSV and raw-label paths. The old \path{PROJECT_DESIGN.md} describes the earlier 144-site experiment; the data/model/budget choices in this revision replace that plan for the collaborator brief.
+
+\subsection*{References}
+\vspace{-8pt}
+\begingroup\footnotesize
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{10}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
+\bibitem{cost} Argonne National Laboratory. \emph{Estimated Cost of EV Batteries}, 2024 cost breakdown, slide 12. \href{https://www.anl.gov/sites/www/files/2024-11/GPRA2024_06Nov2024.pdf}{Official report}. NMC811 benchmark: 53\% of cell-material cost, 30\% of pack cost. Numbers checked against the indexed official slide; direct PDF retrieval was unavailable.
+\bibitem{fu} X. Fu et al. \emph{Forces are not Enough: Benchmark and Critical Evaluation for Machine Learning Force Fields with Molecular Simulations}. TMLR (2023). \href{https://arxiv.org/abs/2210.07237}{arXiv:2210.07237}. Static errors versus simulation stability and observable accuracy.
+\bibitem{wolverton} C. Wolverton and A. Zunger. \emph{First-Principles Prediction of Vacancy Order-Disorder and Intercalation Battery Voltages in Li$_x$CoO$_2$}. Phys. Rev. Lett. 81, 606--609 (1998). \href{https://doi.org/10.1103/PhysRevLett.81.606}{doi:10.1103/PhysRevLett.81.606}, pp. 606--607. Physical motivation for vacancy ordering, not a source of our numerical labels.
+\bibitem{hu} T. Hu et al. \emph{Unraveling the Dynamic Correlations between Transition Metal Migrations and the Oxygen Dimer Formation in the Highly Delithiated Li$_x$CoO$_2$ Cathode}. J. Phys. Chem. Lett. 14, 3677--3684 (2023). \href{https://doi.org/10.1021/acs.jpclett.3c00506}{doi:10.1021/acs.jpclett.3c00506}; SI pp. S3--S6 describes the reference/dataset protocol. Original frame-level SCF/spin records are absent from our arrays.
+\bibitem{isaacs} E. B. Isaacs and C. A. Marianetti. \emph{Compositional phase stability of strongly correlated electron materials within DFT+$U$}. Phys. Rev. B 95, 045141 (2017). \href{https://doi.org/10.1103/PhysRevB.95.045141}{doi:10.1103/PhysRevB.95.045141}, \S IV.J, Fig. 14. Different settings can change relative ordering energetics, rather than only a constant energy zero.
+\bibitem{cvae} K. Sohn, X. Yan, and H. Lee. \emph{Learning Structured Output Representation using Deep Conditional Generative Models}. NeurIPS 28 (2015). \href{https://proceedings.neurips.cc/paper_files/paper/2015/file/8d55a249e6baa5c06772297520da2051-Paper.pdf}{Primary paper}, \S4, Eq. 4. Conditional lower bound; our graph, occupancy, and displacement choices are project-specific.
+\bibitem{spglib} Spglib. \href{https://spglib.readthedocs.io/en/stable/variable.html}{Official variable definitions} and \href{https://spglib.readthedocs.io/en/v2.6.0/api/python-api.html}{Python API}. Rotations/translations and Cartesian \texttt{symprec}; count execution used version 2.6.0.
+\bibitem{uma} B. M. Wood et al. \emph{UMA: A Family of Universal Models for Atoms}. \href{https://arxiv.org/html/2506.23971v2}{arXiv:2506.23971v2} (2026 revision), \S2.2.1. Existing audit: \texttt{uma-s-1p2}, \texttt{omat}; exact hash/settings in audit \texttt{results/model.json}.
+\bibitem{mace} MACE developers. \href{https://github.com/ACEsuit/mace-foundations}{Official foundation-model registry}. Proposed benchmark: MACE-MP-0b3, with MPTrj/PBE+$U$ training; pin the actual checkpoint and installed code before execution.
+\bibitem{m3gnet} MatGL / materialyze. \href{https://huggingface.co/materialyze/M3GNet-PES-MatPES-PBE-2025.2}{M3GNet-PES-MatPES-PBE-2025.2 model card}. Requires matching corrected three-body graph code (PR \#840). Legacy/current weights and code must not be mixed silently.
+\end{thebibliography}
+\endgroup

@@ -1,0 +1,497 @@
+{
+  "status": "PASS_DEVELOPMENT_AGGREGATION",
+  "source_sha256": "20582deb2c3be5049606303aa809541e9d671e40ba73cd440cced02d5dae967f",
+  "shards": [
+    {
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/manifest.json",
+        "sha256": "bb469e26d4ffd1c6fcfd244daf4e94d5b6850a7c3fffe9b9d9cb0c844f8a3afc"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/generated_eligible/receipt.json",
+        "sha256": "c62da4575d5c15d7597dd9024a986f66bacd63e925604d9848dc3b51b45cf032"
+      },
+      "evaluation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/evaluation/receipt.json",
+        "sha256": "b710b37da186baf35c1e4497370d9c5f692c7539ac85dbb5d99634fc4b19e2ba"
+      },
+      "replicate_id": "2026110801"
+    },
+    {
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/manifest.json",
+        "sha256": "cfff46c34192aec11b81a86e7acb1cec27244ba4122dca18c007294391ca28c0"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/generated_eligible/receipt.json",
+        "sha256": "3bd922509dad31de971d3d12f9455a37c4a4d41eb879de315d2415bf3a9619f7"
+      },
+      "evaluation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/evaluation/receipt.json",
+        "sha256": "47deac2edb8ed0d3eaed4f59a6fc7848c32b51b1340b72b146e2f0c4ccb9f00f"
+      },
+      "replicate_id": "2026110802"
+    },
+    {
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/manifest.json",
+        "sha256": "470473ec6484007731699ef5326f93ec458787d500b8ec5a3e1099b11def5c2f"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/generated_eligible/receipt.json",
+        "sha256": "bcbc4ee1e513500796ee1628f0fee42333907b8430e75405d830e6dbcb0cc322"
+      },
+      "evaluation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/evaluation/receipt.json",
+        "sha256": "ebe8d29e714c1b96ebb0c60b9caa8a83646d848877b9e56b9bb24ec20d0edff8"
+      },
+      "replicate_id": "2026110803"
+    }
+  ],
+  "collector_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_collected/receipt.json",
+    "sha256": "0d6f073b87e0976711259446896511a58f6ad29ca6cdda3241edff0e3fd61931"
+  },
+  "registry": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_oracle/registry.json",
+    "sha256": "5574e07727443e9d747405b4d7f0ae38765f64efb6eb54e757ce479295639c0f"
+  },
+  "replicates": [
+    "2026110801",
+    "2026110802",
+    "2026110803"
+  ],
+  "design": {
+    "namespace": "angular_latent_fresh_development_20261110",
+    "counts": [
+      12,
+      24,
+      36
+    ],
+    "requested_bins": [
+      "low",
+      "middle",
+      "high"
+    ],
+    "budget": 128,
+    "diagnostics": true,
+    "width": 32,
+    "methods": [
+      "angle_hist_ar",
+      "angle_hist_cvae",
+      "angle_hist_cvae_d16",
+      "angle_hist_cvae_d2",
+      "angle_hist_cvae_d32",
+      "angle_hist_cvae_d8",
+      "angular_smooth_ar",
+      "angular_smooth_cvae",
+      "angular_smooth_cvae_d16",
+      "angular_smooth_cvae_d2",
+      "angular_smooth_cvae_d32",
+      "angular_smooth_cvae_d8",
+      "directional_l1_l2_ar",
+      "directional_l1_l2_cvae",
+      "directional_l1_l2_cvae_d16",
+      "directional_l1_l2_cvae_d2",
+      "directional_l1_l2_cvae_d32",
+      "directional_l1_l2_cvae_d8",
+      "mutation",
+      "radial_ar",
+      "radial_cvae_d16",
+      "radial_cvae_d2",
+      "radial_cvae_d32",
+      "radial_cvae_d4",
+      "radial_cvae_d8",
+      "redundant_16_ar",
+      "redundant_16_cvae",
+      "redundant_6_ar",
+      "redundant_6_cvae",
+      "redundant_6_learned_ar",
+      "redundant_6_learned_cvae",
+      "uniform"
+    ],
+    "contrasts": [
+      {
+        "method": "angle_hist_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "angle_hist_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_cvae_d16",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_cvae_d2",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_cvae_d32",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_cvae_d4",
+        "reference": "mutation"
+      },
+      {
+        "method": "radial_cvae_d8",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_16_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_16_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_6_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_6_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_6_learned_ar",
+        "reference": "mutation"
+      },
+      {
+        "method": "redundant_6_learned_cvae",
+        "reference": "mutation"
+      },
+      {
+        "method": "angle_hist_ar",
+        "reference": "redundant_6_ar"
+      },
+      {
+        "method": "angular_smooth_ar",
+        "reference": "redundant_16_ar"
+      },
+      {
+        "method": "directional_l1_l2_ar",
+        "reference": "redundant_6_learned_ar"
+      },
+      {
+        "method": "angle_hist_cvae",
+        "reference": "redundant_6_cvae"
+      },
+      {
+        "method": "angular_smooth_cvae",
+        "reference": "redundant_16_cvae"
+      },
+      {
+        "method": "directional_l1_l2_cvae",
+        "reference": "redundant_6_learned_cvae"
+      },
+      {
+        "method": "angle_hist_cvae_d2",
+        "reference": "mutation"
+      },
+      {
+        "method": "angle_hist_cvae_d8",
+        "reference": "mutation"
+      },
+      {
+        "method": "angle_hist_cvae_d16",
+        "reference": "mutation"
+      },
+      {
+        "method": "angle_hist_cvae_d32",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_cvae_d2",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_cvae_d8",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_cvae_d16",
+        "reference": "mutation"
+      },
+      {
+        "method": "angular_smooth_cvae_d32",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_cvae_d2",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_cvae_d8",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_cvae_d16",
+        "reference": "mutation"
+      },
+      {
+        "method": "directional_l1_l2_cvae_d32",
+        "reference": "mutation"
+      }
+    ],
+    "boundary": "e537e0cb6c7e01c43f991b88754c557ea5565bd9031cd27532efcd62d811656b",
+    "latent_dims": {
+      "uniform": 0,
+      "mutation": 0,
+      "radial_cvae_d2": 2,
+      "radial_cvae_d4": 4,
+      "radial_cvae_d8": 8,
+      "radial_cvae_d16": 16,
+      "radial_cvae_d32": 32,
+      "radial_ar": 0,
+      "angle_hist_ar": 0,
+      "angle_hist_cvae": 4,
+      "angular_smooth_ar": 0,
+      "angular_smooth_cvae": 4,
+      "directional_l1_l2_ar": 0,
+      "directional_l1_l2_cvae": 4,
+      "redundant_6_ar": 0,
+      "redundant_6_cvae": 4,
+      "redundant_6_learned_ar": 0,
+      "redundant_6_learned_cvae": 4,
+      "redundant_16_ar": 0,
+      "redundant_16_cvae": 4,
+      "angle_hist_cvae_d2": 2,
+      "angle_hist_cvae_d8": 8,
+      "angle_hist_cvae_d16": 16,
+      "angle_hist_cvae_d32": 32,
+      "directional_l1_l2_cvae_d2": 2,
+      "directional_l1_l2_cvae_d8": 8,
+      "directional_l1_l2_cvae_d16": 16,
+      "directional_l1_l2_cvae_d32": 32,
+      "angular_smooth_cvae_d2": 2,
+      "angular_smooth_cvae_d8": 8,
+      "angular_smooth_cvae_d16": 16,
+      "angular_smooth_cvae_d32": 32
+    },
+    "inputs": {
+      "parent": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+      "data": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+      "schema": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+      "history": "30dab13b938dc23580f7157a340d3d976428997116a8f802f1f47759aa5b412d"
+    },
+    "teachers": {
+      "uma": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+      "mace": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769"
+    },
+    "threshold": "8eb5101b91ce3b9c3322252a0caece8c1075f364e15fe2c6fa3fc9981fa7d582",
+    "sources": [
+      [
+        "__init__.py",
+        "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968"
+      ],
+      [
+        "__init__.py",
+        "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402"
+      ],
+      [
+        "__init__.py",
+        "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18"
+      ],
+      [
+        "acquisition.py",
+        "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad"
+      ],
+      [
+        "acquisition_generate.py",
+        "07d44571ca2617e99dccd387adbff573787b4c04a7fc8c77e87e42678d84054b"
+      ],
+      [
+        "angular_context.py",
+        "3f00a2f7652ffd5586a7b7ba877ad5b3a062b10701ce7e9a3e32998614f9d7db"
+      ],
+      [
+        "artifact_fetch.py",
+        "97af7db046be632929d8b61ee843212f9614053af934071a381a7b603a3ad154"
+      ],
+      [
+        "calculators.py",
+        "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84"
+      ],
+      [
+        "checkpoints.py",
+        "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f"
+      ],
+      [
+        "cli.py",
+        "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387"
+      ],
+      [
+        "cli.py",
+        "d97a0cb862677703982a748b256a977c991232e48dbbf9cdc02edf6391662029"
+      ],
+      [
+        "condition_evaluation.py",
+        "6ebf82854080ee5406fe83baba51848ff18d56967e592ebb6ee5e82106711634"
+      ],
+      [
+        "conditions.py",
+        "777a4872c130a8b1d3e30af083c8d83e81bcb019f947e37541717f303328bd14"
+      ],
+      [
+        "data.py",
+        "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101"
+      ],
+      [
+        "descriptor.py",
+        "2ef6946e251ff16cd653e9eee534e143df2ee25ba2f891b134837e9c1d71c234"
+      ],
+      [
+        "development_boundary.py",
+        "94346bc263829f836918434699004fe1dcd88da4267f34b54d918343290b0df2"
+      ],
+      [
+        "directional_context.py",
+        "c03c3e233a2c97c380ff089da0466aee5b2a377a8a40dc31da5e9e39a8527912"
+      ],
+      [
+        "edit_model.py",
+        "b6f7802ccf6b5ef456adb53df10249cc6276ebc5bdcb03ee74c308cb584130c3"
+      ],
+      [
+        "evaluate_controls.py",
+        "5ad4454a900d99fde8745d345a9e363e91db8ea36458fd94d0bf7f99a5480c45"
+      ],
+      [
+        "evaluation.py",
+        "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face"
+      ],
+      [
+        "generate_controls.py",
+        "548e0878a4d106b7c732372187bf6d249a7137fe9c2d83c824ac557066f88cb3"
+      ],
+      [
+        "generate_edit.py",
+        "62931ba0856468c4cab4417b4ea4aec266daf55cf2dd240a2f30c7c3d0a82bc1"
+      ],
+      [
+        "generate_geometry.py",
+        "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a"
+      ],
+      [
+        "generate_mask.py",
+        "4e222107ded369c31e2209139fba2192f3ca1bbeca46c8252cfedeb4bba69f17"
+      ],
+      [
+        "geometry_evaluation.py",
+        "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9"
+      ],
+      [
+        "geometry_model.py",
+        "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e"
+      ],
+      [
+        "graph.py",
+        "8f03dbf9ac7e246a9e43284ed384602df4f2181ecc353abe312dea1f29656ebc"
+      ],
+      [
+        "graph_model.py",
+        "c83aba743e3f45b538b567e969b2d6e7941d61fe7ef14447ea96ba516eac8440"
+      ],
+      [
+        "iterative_acquisition.py",
+        "c544686c7f0d0a1cd91343d5878a127ba318568fb70b9717615844009c530f1a"
+      ],
+      [
+        "models.py",
+        "341dd5de3ef73f83aebfe48bf169b5ef0fde98a95a07112aaf17d89ffa2cffdf"
+      ],
+      [
+        "parent_spec.py",
+        "1f337e9f383862f389834d9521428e2158cadbb20d66d08d481a9341dd633f30"
+      ],
+      [
+        "pool_scoring.py",
+        "03eaf1c036ad22cdab687fbd25aeec64883fa1993549ed2c8f8a31cacfb84b13"
+      ],
+      [
+        "registry.py",
+        "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d"
+      ],
+      [
+        "runtime.py",
+        "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9"
+      ],
+      [
+        "runtime.py",
+        "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7"
+      ],
+      [
+        "schedules.py",
+        "68e3c4c726148d26618862aab255722c7ef8e0d34bace61d56ac7abdcc75a783"
+      ],
+      [
+        "smooth_angular_context.py",
+        "630769318f3644f248d9ed9f81d65febbbcae3398f60b8a0080614f18f9bfa20"
+      ],
+      [
+        "summarize_paired_sensitivity.py",
+        "77688cf2a0db3ef90bd19c9b4ae23d3fe71960cadef74c667e04ec96936d899c"
+      ],
+      [
+        "train_edit.py",
+        "50556a57271f7ca686c00690698f8b21bf254fac0d2984d000640f138312ff31"
+      ],
+      [
+        "train_geometry.py",
+        "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae"
+      ],
+      [
+        "train_mask.py",
+        "f44677b825d4f9a3694c6044332c7a33c2909727dea028a99483a65c23ea850d"
+      ]
+    ]
+  },
+  "estimands": {
+    "yield": "Equal weight per requested bin and composition; distinct novel in-bin orbits per all attempts",
+    "paired_difference": "Within replicate, method macro yield minus predeclared control; percentage points",
+    "uncertainty": "Descriptive sample SD across independent fits/sampler replicates, not proposal-level standard error",
+    "sensitivity": "Conditional on both teacher energies available; equal composition weight; report attempted/known pairs and potential selection bias",
+    "cost": "Distinct globally registered physical teacher/orbit keys; not scheduler GPU node-hours"
+  },
+  "missing_values": "No imputation; empty responses indicate no available scores or fewer than two replicates for SD",
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "outputs": {
+    "global_query_cost.csv": "075f832f228b12b9549f6e31fe1e46fbd21529fe5fa64981e1988aed5a569a9e",
+    "macro_yield.pdf": "0f2c04fc9ccc17cb1e6c3586e7065a8b7797fcce6eb452ce3058ba3cb8da9a68",
+    "paired_cell_differences.csv": "f66764915d90859badb2b3924835ac0dbe2120aedfcee33aecaf12a342aa38bb",
+    "paired_control_differences.csv": "60ada59d20882096d4860b1a05b07bb2aa2aaef4bcfae2abb18cb6c52d04e3b2",
+    "paired_control_differences.pdf": "a42bd914bb7aef8880e27198ad851b57bbe0dea57dae5e008ad6de254126b411",
+    "paired_control_summary.csv": "613fbb229462f73893f97bd7c0916d4d4e7b56ff982f406a13be2fc1a2e5f5e3",
+    "per_seed_yield.csv": "a1e1acd1e9b06b0fd565468cf1a17172d743cac57d3ad008abb351f8b2644121",
+    "sensitivity_alternate_latent_minus_low.pdf": "b97319e74a5de09d9dcbbb92e17c79b103a4ae5549c5426eb40956479a3d985a",
+    "sensitivity_by_composition.csv": "a826d1625ecff593f07483dffe6aa590c4f447db20e50cda64da93d4545537bd",
+    "sensitivity_by_seed.csv": "b7e1815925d4f39c99d40513c1e633a709a1023b8699b49a4cd955976ebc482c",
+    "sensitivity_condition_high_minus_low.pdf": "49e47d87f887665d7fbf5a4bc9d59f63389ecd0142f375ef8d65df54ea5127ad",
+    "sensitivity_summary.csv": "607a0ed8469b9916536dbd4d0780f70580d2dc27793d6517c99710e618f32a3f",
+    "yield_summary.csv": "0f78bf7df4e4090c9c1c97add679d84716385e7aba3d5655c77472b6ef40a87f"
+  }
+}

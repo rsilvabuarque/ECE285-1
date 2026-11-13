@@ -1,0 +1,8 @@
+{
+  "status": "FROZEN_LINEAGE_MATCHED_NO_SECOND_BATCH_CONTROLS",
+  "created_utc": "2026-11-11T03:01:48.070558+00:00",
+  "r2_protocol_sha256": "af03cdc9aa527d2c1597aa40031a5bee0f9350ac71168ccca6eccd41a7ecff8f",
+  "timing": "Added after preliminary round-one results, before round-two assessment generation or review; round-two acquisition/training grid unchanged.",
+  "design": "For each of six acquired R1 policy lineages and each seed, restart from the identical R1 terminal weights, on the identical R1 merged data, with the same 1000-update schedule as its R2 acquisition arm but without adding the R2 batch. Compare each R2 terminal model to its corresponding no-second-batch terminal model on one fresh common assessment.",
+  "interpretation": "Matched additional control isolates the incremental data-update policy conditional on the existing R1 lineage; it does not hold minibatch samples identical after dataset sizes change."
+}

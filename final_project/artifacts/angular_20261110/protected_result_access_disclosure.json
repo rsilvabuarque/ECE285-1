@@ -1,0 +1,17 @@
+{
+  "status": "DISCLOSED_PROTECTED_RESULTS_ACCESS",
+  "reported_utc": "2026-11-10T23:48:53.229361+00:00",
+  "access_time_approx_utc": "2026-11-10 23:45\u201323:47",
+  "actor": "read-only evaluation tooling helper",
+  "action": "head -3 displayed two historical evaluation rows; no numeric values relayed to integrating owner",
+  "paths": [
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/metrics.csv",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/final/static_evaluation/paired_attempts.csv"
+  ],
+  "predeclared_master_plan": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_plan.json",
+    "sha256": "3ff542a8681e5193717668f730ba7040edb043ce702e57d0b15ee44d4afe9dd2",
+    "mtime_unix": 1794353823.634782
+  },
+  "consequences": "Helper reports numbers were not used in design or selection. Master and all three replicate plans were written before approximate access time. Avoid categorical claims no historical assessment values were observed by any team member; retain this disclosure. No protected identities will be added to new scoring/acquisition."
+}

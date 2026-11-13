@@ -1,0 +1,102 @@
+{
+  "status": "PASS_DEVELOPMENT_TEACHER_AGREEMENT",
+  "source_sha256": "7497cfb58bdf0cff7f85d4e5da4a7f0494c33f2e0cf2ca31ecf56a30e0c14d08",
+  "shared_orbits": 28820,
+  "manifest_and_filtered_receipts": [
+    {
+      "replicate_id": "2026110801",
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/manifest.json",
+        "sha256": "bb469e26d4ffd1c6fcfd244daf4e94d5b6850a7c3fffe9b9d9cb0c844f8a3afc"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/generated_eligible/receipt.json",
+        "sha256": "c62da4575d5c15d7597dd9024a986f66bacd63e925604d9848dc3b51b45cf032"
+      }
+    },
+    {
+      "replicate_id": "2026110802",
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/manifest.json",
+        "sha256": "cfff46c34192aec11b81a86e7acb1cec27244ba4122dca18c007294391ca28c0"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/generated_eligible/receipt.json",
+        "sha256": "3bd922509dad31de971d3d12f9455a37c4a4d41eb879de315d2415bf3a9619f7"
+      }
+    },
+    {
+      "replicate_id": "2026110803",
+      "manifest": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/manifest.json",
+        "sha256": "470473ec6484007731699ef5326f93ec458787d500b8ec5a3e1099b11def5c2f"
+      },
+      "generation_receipt": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/generated_eligible/receipt.json",
+        "sha256": "bcbc4ee1e513500796ee1628f0fee42333907b8430e75405d830e6dbcb0cc322"
+      }
+    }
+  ],
+  "collector_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_collected/receipt.json",
+    "sha256": "0d6f073b87e0976711259446896511a58f6ad29ca6cdda3241edff0e3fd61931"
+  },
+  "registry": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_oracle/registry.json",
+    "sha256": "5574e07727443e9d747405b4d7f0ae38765f64efb6eb54e757ce479295639c0f"
+  },
+  "fresh_evaluation_receipt": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/evaluation/receipt.json",
+    "sha256": "b710b37da186baf35c1e4497370d9c5f692c7539ac85dbb5d99634fc4b19e2ba"
+  },
+  "teacher_scores": {
+    "uma": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_collected/uma.npz",
+      "sha256": "2cd94dbc24f3d59b3500a9c55b85c104cf9883194a4c566f5fab5ad6b80fcd3b"
+    },
+    "mace": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fresh_development_collected/mace.npz",
+      "sha256": "55ca78b4bff55fe46893c9e0d1f35570395a67fb1e430f1e9309090a28d2cd51"
+    }
+  },
+  "teacher_schemas": {
+    "uma": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+      "schema_id": "6c7d5ec1b1cdbdf25208549f2b2ac4cad181befd0554f9285e06ceff82f4486c"
+    },
+    "mace": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_mace.json",
+      "sha256": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+      "schema_id": "bd5c067d4645871e3f86292dfdc54f054a87dc98133d4a2cf2a95fcc07dd76f1"
+    }
+  },
+  "source_bindings": {
+    "boundary_script": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/scripts/angular_20261110/development_boundary.py",
+      "sha256": "94346bc263829f836918434699004fe1dcd88da4267f34b54d918343290b0df2"
+    },
+    "aggregation_script": {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/scripts/angular_20261110/aggregate_development.py",
+      "sha256": "20582deb2c3be5049606303aa809541e9d671e40ba73cd440cced02d5dae967f"
+    }
+  },
+  "definitions": {
+    "rank": "Spearman Pearson correlation of average tie ranks, and Kendall tau-b; ascending energy, within composition",
+    "schema_bins": "Original teacher-specific TRAIN-only fixed edges, not a shared absolute-energy cutoff",
+    "schema_low_overlap": "Unique candidate orbits classified low by each teacher with its own frozen schema",
+    "empirical_low_overlap": "Nearest-rank 20% cutoff in the selected generated orbit union, including all tied energies; not global density of states",
+    "uncertainty": "Descriptive selected-union comparison, not an IID test or DFT validation"
+  },
+  "old_threshold_csv_opened": false,
+  "old_assessment_score_files_opened": false,
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "outputs": {
+    "agreement_by_count.csv": "d3ef549109b91aa1ec13b6c74b731c78004da50643cca15547271915ce57c314",
+    "orbit_agreement.csv": "fe43c9be503e0f3bdb8d313480d3f5bd12abebceeba4a4861cd55da5635060e4",
+    "schema_bin_confusion.csv": "fb7f9b94e7e1d4b3ffecfa3163c9fcd3d9c27840fca5502b2693ce168976daae",
+    "teacher_ranks.pdf": "3712e14cf013720fe0524c258824ab920a83ae2ab4d4f8f4c7860af85b1ce4b6",
+    "teacher_schema_confusion.pdf": "677785b22584579a5ae2508ae9a316b2fe620bd727dcbd3d1328c08d3b53843d"
+  }
+}

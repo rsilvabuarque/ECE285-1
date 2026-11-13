@@ -1,0 +1,350 @@
+{
+  "audit_utc": "2026-11-02T18:48:04.382889+00:00",
+  "scope": "Small manifest and parent-structure audit; no MLIP inference, training, MD or DFT. Source files unchanged.",
+  "sources": {
+    "candidate_manifest": {
+      "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/deepmd_collaborator_electrode/full_study_4x6x2/structure_selection/candidate_manifest.csv",
+      "sha256": "9dfade36eadf6dac5fdaf93febc7d970d13b729b4e756f3089372bc302e27ca9"
+    },
+    "energy_scores": {
+      "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/deepmd_collaborator_electrode/full_study_4x6x2/structure_selection/uma_omat_top500_candidates/uma_omat_all_candidate_energies.csv",
+      "sha256": "65ea67b050821a47c69950f4128a4fc61e42b1f591394c5062415eb39269aeef"
+    },
+    "pristine_cif": {
+      "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/deepmd_collaborator_electrode/full_study_4x6x2/structure_selection/pristine_4x6x2.cif",
+      "sha256": "eaf9cff666b77dbc06498df5348aabbab751fe7f65a3db4ffe2ba73d436ea7ef"
+    },
+    "pristine_poscar": {
+      "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/deepmd_collaborator_electrode/full_study_4x6x2/structure_selection/pristine_4x6x2_POSCAR",
+      "sha256": "d4a218d7a236763780014de91f19e2fdc0eb697db526e62a7dafe0d484b3af3d"
+    },
+    "generation_script": {
+      "path": "/global/cfs/cdirs/m5056/rsb/2026/cathode_relithiation/cathode_relithiation_project/results/publication/default_systems/deepmd_collaborator_electrode/scripts/generate_4x6x2_structure_selection.py",
+      "sha256": "fc051b207166f31086401fad0bdca8bee536b16ecf9d832a139e765dd101fb26"
+    }
+  },
+  "main_manifest": {
+    "n_rows": 24145,
+    "n_scores": 24145,
+    "n_unique_mask_keys": 24145,
+    "n_unique_score_keys": 24145,
+    "keysets_equal": true,
+    "n_unique_raw_masks": 24145,
+    "n_nonfinite_energies": 0,
+    "n_invalid_masks": 0,
+    "n_by_retained_Li": {
+      "72": 500,
+      "73": 500,
+      "75": 500,
+      "76": 500,
+      "78": 500,
+      "79": 500,
+      "81": 500,
+      "82": 500,
+      "84": 500,
+      "85": 500,
+      "87": 500,
+      "88": 500,
+      "90": 500,
+      "91": 500,
+      "93": 500,
+      "94": 500,
+      "96": 500,
+      "97": 500,
+      "98": 500,
+      "100": 500,
+      "101": 500,
+      "103": 500,
+      "104": 500,
+      "106": 500,
+      "107": 500,
+      "109": 500,
+      "110": 500,
+      "112": 500,
+      "113": 500,
+      "115": 500,
+      "116": 500,
+      "118": 500,
+      "119": 500,
+      "120": 500,
+      "122": 500,
+      "123": 500,
+      "125": 500,
+      "126": 500,
+      "128": 500,
+      "129": 500,
+      "131": 500,
+      "132": 500,
+      "134": 500,
+      "135": 500,
+      "137": 500,
+      "138": 500,
+      "140": 500,
+      "141": 500,
+      "143": 144,
+      "144": 1
+    },
+    "score_status": {
+      "torchsim_uma_uma-s-1p2_omat_cuda": 24145
+    }
+  },
+  "site_order": {
+    "CIF_to_POSCAR_Li_bijection_max_residual_A": 3.7453466685357675e-15,
+    "n_nonidentity_Li_indices": 142,
+    "CIF_to_POSCAR_Li_permutation": [
+      0,
+      50,
+      49,
+      48,
+      47,
+      46,
+      52,
+      45,
+      43,
+      42,
+      41,
+      40,
+      39,
+      38,
+      44,
+      54,
+      62,
+      55,
+      69,
+      68,
+      67,
+      66,
+      65,
+      64,
+      70,
+      63,
+      61,
+      60,
+      59,
+      58,
+      57,
+      56,
+      37,
+      53,
+      36,
+      17,
+      72,
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      16,
+      9,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      8,
+      18,
+      26,
+      19,
+      33,
+      32,
+      31,
+      30,
+      29,
+      28,
+      34,
+      27,
+      25,
+      24,
+      23,
+      22,
+      21,
+      20,
+      35,
+      71,
+      92,
+      73,
+      124,
+      127,
+      122,
+      121,
+      120,
+      119,
+      118,
+      117,
+      116,
+      115,
+      114,
+      113,
+      112,
+      111,
+      110,
+      125,
+      126,
+      129,
+      128,
+      142,
+      141,
+      140,
+      139,
+      138,
+      137,
+      143,
+      135,
+      134,
+      133,
+      132,
+      131,
+      130,
+      136,
+      123,
+      107,
+      89,
+      87,
+      86,
+      85,
+      84,
+      83,
+      82,
+      88,
+      81,
+      79,
+      78,
+      77,
+      76,
+      75,
+      108,
+      74,
+      80,
+      90,
+      98,
+      91,
+      105,
+      104,
+      103,
+      102,
+      101,
+      100,
+      106,
+      99,
+      97,
+      96,
+      95,
+      94,
+      93,
+      109,
+      1,
+      51
+    ],
+    "matching_method": "Periodic fractional-coordinate matching mapped through saved POSCAR cell, linear-sum assignment; measured residual, not a new acceptance tolerance."
+  },
+  "layer_audit": {
+    "saved_POSCAR": {
+      "n_layers": 6,
+      "layer_sizes": {
+        "0": 24,
+        "1": 24,
+        "2": 24,
+        "3": 24,
+        "4": 24,
+        "5": 24
+      },
+      "max_layer_vacancy_count_spread": 14,
+      "spread_frequency": {
+        "0": 15,
+        "1": 1000,
+        "2": 2672,
+        "3": 3967,
+        "4": 4532,
+        "5": 4438,
+        "6": 3274,
+        "7": 2168,
+        "8": 1186,
+        "9": 541,
+        "10": 241,
+        "11": 80,
+        "12": 21,
+        "13": 8,
+        "14": 2
+      },
+      "selected_counts": {
+        "12": {
+          "min": 0,
+          "max": 6
+        },
+        "24": {
+          "min": 2,
+          "max": 8
+        },
+        "35": {
+          "min": 1,
+          "max": 10
+        }
+      }
+    },
+    "original_CIF": {
+      "n_layers": 6,
+      "layer_sizes": {
+        "0": 24,
+        "1": 24,
+        "2": 24,
+        "3": 24,
+        "4": 24,
+        "5": 24
+      },
+      "max_layer_vacancy_count_spread": 1,
+      "spread_frequency": {
+        "0": 4501,
+        "1": 19644
+      },
+      "selected_counts": {
+        "12": {
+          "min": 0,
+          "max": 0
+        },
+        "24": {
+          "min": 0,
+          "max": 0
+        },
+        "35": {
+          "min": 1,
+          "max": 1
+        }
+      }
+    }
+  },
+  "physical_distance_examples": [
+    {
+      "candidate_relpath": "lith_075p69pct/candidate_0000",
+      "metadata_min_vacancy_distance_A": 2.8112569767984983,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.8112569767984965
+    },
+    {
+      "candidate_relpath": "lith_075p69pct/candidate_0001",
+      "metadata_min_vacancy_distance_A": 2.8112569767984965,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.8112569767984965
+    },
+    {
+      "candidate_relpath": "lith_083p33pct/candidate_0000",
+      "metadata_min_vacancy_distance_A": 2.8112569767985023,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.811256976798498
+    },
+    {
+      "candidate_relpath": "lith_083p33pct/candidate_0001",
+      "metadata_min_vacancy_distance_A": 2.8112569767985005,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.8112569767984996
+    },
+    {
+      "candidate_relpath": "lith_091p67pct/candidate_0000",
+      "metadata_min_vacancy_distance_A": 4.912370729068718,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.8112569767985045
+    },
+    {
+      "candidate_relpath": "lith_091p67pct/candidate_0001",
+      "metadata_min_vacancy_distance_A": 4.912370729068714,
+      "saved_POSCAR_mask_min_vacancy_distance_A": 2.8112569767984965
+    }
+  ],
+  "interpretation": "Current prepare_candidates generates indices on original atoms and writes sorted pristine POSCAR; materialize_candidate rereads that POSCAR and applies the indices without remapping. This explains observed layer-balance mismatch. Masks remain defined on the saved parent used for scoring; original heuristic descriptors must not be assumed to describe those geometries."
+}

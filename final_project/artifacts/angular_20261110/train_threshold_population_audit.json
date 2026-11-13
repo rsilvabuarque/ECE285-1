@@ -1,0 +1,14 @@
+{
+  "status": "TRAIN_REFERENCE_PROVENANCE_AUDIT",
+  "created_utc": "2026-11-11T01:16:02.076975+00:00",
+  "historical_reference": "For each composition and teacher, nearest-rank q20 of 409 TRAIN structures from the original 512-mask-per-composition Li48 O3 pilot; rank ceil(.2*409)=82. The original raw fixed-count draws rejected duplicate symmetry orbits but are not orbit-uniform.",
+  "condition_schema": "H0 TRAIN comprises the earlier catalog plus prior oracle-scored generated proposals, with 13332, 13546, and 13279 UMA TRAIN records for n_Li=12,24,36; each teacher uses own energies and shared identities/splits. H0 q20/q80 condition edges are unweighted nearest-rank values from this larger mixture.",
+  "implication": "Fixed historical q20 LOW-tail success and H0 measured LOW-bin membership differ; thresholds must not be interchanged. The difference does not by itself establish why the populations differ.",
+  "sources": [
+    "preliminary_dataset_20261106/executed_sources/delivery_analysis/evaluate_proposals.py:55",
+    "preliminary_dataset_20261106/executed_sources/delivery_analysis/prepare_data.py:52",
+    "preliminary_dataset_20261106/executed_sources/make_splits.py:8",
+    "improvement_v1/prepare_data.py:13"
+  ],
+  "evidence_scope": "Agent read only executed sources and extracted TRAIN rows; no old FINAL results or non-main_train threshold rows were opened by that agent."
+}

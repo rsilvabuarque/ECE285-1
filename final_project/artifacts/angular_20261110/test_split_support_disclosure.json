@@ -1,0 +1,9 @@
+{
+  "status": "DISCLOSED_TEST_SUPPORT_AGGREGATE_IN_TRAINING_CODE",
+  "created_utc": "2026-11-11T02:54:04.893246+00:00",
+  "source_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_iteration_goal_20261111/final_project/src/cathode_cvae/learning/train_mask.py",
+  "source_sha256": "e0b7f0c3c4cab3f4033c1022e24da3ecaea721d2134555cc7f3eeb3c6feba778",
+  "finding": "The trainer loads the NPZ energy member for all roles, checks all values finite, computes observations/bin labels for all splits and writes observed_rows_outside_training_bin_support by split, including TEST. TRAIN minibatches and weighted training losses use TRAIN indices; checkpoint objective/selection uses VAL indices; no TEST model-loss calculation is made. The TEST support aggregate was not used by the integrating owner for model/representation/iteration selection.",
+  "interpretation": "Do not claim TEST energy values were never materialized or that no TEST-derived aggregate was produced. Original H0 TEST weights, labels, identities and assignments remain unchanged. Newly developed follow-up restricts derived conditions and support statistics to TRAIN/VAL while noting NPZ decompression still materializes the energy member.",
+  "scope": "This does not affect existing held-out historical FINAL values or make them suitable for selection; earlier separate historical-row exposure remains disclosed."
+}

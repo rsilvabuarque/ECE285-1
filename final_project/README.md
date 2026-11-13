@@ -1,4 +1,30 @@
-# Cathode vacancy generation: current midterm packet
+# Cathode vacancy generation: project overview
+
+**Start here:** the current consolidated project combines the November 8
+portable package and frozen data release, the November 9 midterm submission,
+and the November 10–11 angular-feature, latent-space and iterative-acquisition
+experiments. The latest [research report](reports/angular_20261110/report.pdf),
+its [source and build instructions](reports/angular_20261110/README.md), and
+the [compact evidence tables](artifacts/angular_20261110/README.md) are in this
+repository. Earlier original-only work is preserved under
+[historical/20261102_20261106](historical/20261102_20261106/README.md).
+
+The current class experiments use vacancy masks in one unrelaxed 48-site O3
+LiCoO₂ parent, at 12, 24 and 36 retained Li atoms. They compare radial and
+angular CVAEs with no-latent autoregressive and mutation baselines; two
+controlled acquisition rounds use fixed energy boundaries. Neither adaptive
+re-binning nor a model of configurational entropy has been implemented in these
+experiments. DFT validation, relaxed-coordinate generation and transfer to
+other materials or cell sizes remain separate follow-up work.
+
+The November 10–11 study found no consistent improvement from the tested
+angular contexts and no clear balanced-yield gain from the added second-round
+labels over a matched continuation without new labels. The reported variability
+uses three paired fit-and-proposal replicates. These are MLIP-based development
+results, not proof of DFT accuracy or a global minimum; the report retains the
+negative findings and assessment-boundary disclosures.
+
+## November 8 release and collaboration instructions
 
 **Beihao and Varad: start with [your independent tasks](docs/COLLABORATOR_TASKS.md).**
 
@@ -9,7 +35,7 @@ fixed-cell relaxed endpoints. The working example has 48 Li sites in O3 LCO;
 requested counts are 12, 24 and 36. The parent/mobile-ion interface is general,
 while the present physical evidence and neural checkpoints are LCO-specific.
 
-**Current status:** 37 training trajectories, each with 4,000 optimizer updates,
+**November 8 status:** 37 training trajectories, each with 4,000 optimizer updates,
 are complete. Models and proposals are frozen; `H_FINAL` contains 344,001 known
 occupation orbits. Final UMA/MACE scoring and endpoint assessment are complete,
 with independently recounted metrics. B-shell AR achieves 63.04% UMA balanced

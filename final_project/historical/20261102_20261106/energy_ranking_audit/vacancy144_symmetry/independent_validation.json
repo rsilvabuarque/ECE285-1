@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "n_all_witness_checks": 24145,
+  "n_all_composition_checks": 24145,
+  "n_representative_groups_checked": 23912,
+  "n_ASE_independent_POSCAR_reads": 18,
+  "maximum_ASE_geometry_error_A": 4.983267851171481e-15,
+  "checks": [
+    "witness maps raw mask to canonical mask",
+    "orbit-stabilizer identity",
+    "one actual deterministic representative per orbit",
+    "orbit membership count",
+    "all saved atom counts/compositions",
+    "ASE parser/geometry cross-check"
+  ]
+}

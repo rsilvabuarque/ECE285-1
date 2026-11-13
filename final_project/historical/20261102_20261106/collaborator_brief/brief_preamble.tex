@@ -1,0 +1,50 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.72in,headheight=15pt,footskip=25pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,bm}
+\usepackage{graphicx,booktabs,tabularx,array,multicol,enumitem}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec,fancyhdr,lastpage}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal,breaklinks=true]{hyperref}
+\usepackage{xurl}
+\definecolor{navy}{HTML}{17324D}
+\definecolor{teal}{HTML}{087E8B}
+\definecolor{gold}{HTML}{E5AE38}
+\definecolor{coral}{HTML}{B7443E}
+\definecolor{slate}{HTML}{596776}
+\definecolor{pale}{HTML}{F0F5F7}
+\hypersetup{pdftitle={Conditional Vacancy Generation for Cathode Relithiation: Collaborator Brief},pdfauthor={ECE 285 project team},pdfsubject={Materials motivation, measured evidence, proposed CVAE benchmark and collaboration plan}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textcolor{navy}{ECE 285\quad /\quad Cathode vacancy generation}}
+\fancyhead[R]{\small\textcolor{slate}{Collaborator brief\quad\textbullet\quad 3 Nov 2026}}
+\fancyfoot[L]{\footnotesize\textcolor{slate}{Ricardo Silva Buarque\quad\textbullet\quad Beihao Gu\quad\textbullet\quad Varad Kottawar}}
+\fancyfoot[R]{\footnotesize\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{5pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=3pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=3pt,topsep=3pt}
+\titleformat{\section}{\Large\bfseries\color{navy}}{\thesection\quad}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{10pt}
+\titleformat{\subsection}{\normalsize\bfseries\color{teal}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{9pt}{3pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\LCO}{\ensuremath{\mathrm{Li}_{x}\mathrm{CoO}_{2}}}
+\newcommand{\DFT}{\mathrm{DFT}}
+\newcommand{\UMA}{\mathrm{UMA}}
+\newcommand{\eV}{\,\mathrm{eV}}
+\newcommand{\meV}{\,\mathrm{meV}}
+\newcommand{\angstrom}{\,\text{\AA}}
+\newcommand{\note}[2]{\begin{tcolorbox}[colback=pale,colframe=teal,boxrule=0pt,leftrule=3pt,arc=1pt,left=9pt,right=9pt,top=6pt,bottom=6pt,title={#1},coltitle=navy,colbacktitle=pale,fonttitle=\bfseries]#2\end{tcolorbox}}
+\newcommand{\status}[1]{\textcolor{slate}{\small\textit{#1}}}
+\input{assets/facts.tex}
+\input{assets/symmetry_facts.tex}
+

@@ -2,15 +2,19 @@
 
 `report.tex` is the source for the scientific summary. Build it on a NERSC compute allocation with `module load texlive/2024` and `latexmk -pdf -interaction=nonstopmode -halt-on-error report.tex`. The figure copies in `assets/` make the report source portable; the originating plotted values and receipts remain in the run directory.
 
-The run directory is `../../runs/angular_20261110/` relative to this file. Its contents are intentionally retained as experiment artifacts rather than committed raw data. Important starting points:
+Compact copies of the results and receipts are available in
+[`../../artifacts/angular_20261110/`](../../artifacts/angular_20261110/README.md).
+The full run directory was `../../runs/angular_20261110/` relative to the
+original execution worktree and is not included in a normal clone. Its raw
+outputs remain on the original shared filesystem. Important starting points:
 
 * `fresh_development_plan.json`, `development_aggregated/{yield_summary,paired_control_summary,sensitivity_summary}.csv`, and `development_aggregated/receipt.json`: matched fresh-pool comparisons and inputs.
 * `angular_dimension_figure/`, `development_summary_figure/`, `development_teacher_agreement/`, and `checkpoint_latent_sidecar_audit.json`: plotted data, teacher agreement, latent audits, and hashes.
 * `iteration_protocol.json`, `iteration_round2_protocol.json`, `iteration_r2_assessment_anchors.json`, and `iteration_r2_lineage_controls_protocol.json`: acquisition, assessment, and control definitions.
 * `iteration_round1/assessment/comparison_{uma,mace}_cached/`: first-round per-fit metrics, paired effects, coverage, and detailed verification receipts.
-* `iteration_round2/assessment/`: 87 frozen task bundles, separate UMA and MACE score registries and collectors, and second-round per-fit comparisons once complete.
-* `iteration_paired_figure/`: both-round paired figure, plotted seed values, input hashes, and PASS receipt.
-* `final_compute_receipt.json`: the final Slurm snapshot, including all 50 identified jobs. It records 20.164 estimated GPU node-hours and 24.023 allocated job-node-hours; shared-node allocations can overlap, and the estimate is not an official posted Iris charge.
+* `iteration_round2/assessment/comparison_{uma,mace}_cached_r2/`: second-round per-fit comparisons and verification receipts. The 87 frozen task bundles and separate score registries remain only in the full local run archive.
+* `iteration_paired_figure/`: plotted seed values, input hashes, and PASS receipt. The paired figure itself is `assets/iteration_paired_effects.pdf`.
+* `final_compute_receipt.json` in the full local run archive: the final Slurm snapshot, including all 50 identified jobs. It records 20.164 estimated GPU node-hours and 24.023 allocated job-node-hours; shared-node allocations can overlap, and the estimate is not an official posted Iris charge. The account-level receipt is not included in the public compact packet.
 * `train_threshold_population_audit.json`, `protected_result_access_disclosure.json`, and `test_split_support_disclosure.json`: threshold provenance and limitations on protected-data handling.
 
 The original research code, the second-round source frozen in the assessment, and the later optimized verifier live in separate worktrees. The verifier caches only exact symmetry-set calculations and score-array loading; its post-freeze status and source binding are explicit in the comparison receipts. Historical unoptimized audits that exceeded wall time are retained and must not be described as completed.

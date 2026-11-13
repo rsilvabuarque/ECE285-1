@@ -1,0 +1,39 @@
+{
+  "status": "FROZEN_DEVELOPMENT_ITERATION_MODEL_SELECTION",
+  "created_utc": "2026-11-11T00:27:22.390483+00:00",
+  "rule": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/iteration_selection_rule.json",
+    "sha256": "c10375e3686836d5d4081429ce538dae191f8b9af09bb90960d2007a4f5a073d"
+  },
+  "selection": "redundant_6_learned_cvae",
+  "mean_LOW_request_yield": 0.6553819444444444,
+  "per_seed_LOW_request_yields": {
+    "2026110801": 0.6744791666666666,
+    "2026110802": 0.6119791666666666,
+    "2026110803": 0.6796875
+  },
+  "mean_balanced_yield": 0.65625,
+  "all_candidate_count": 23,
+  "technical_eligibility": "Matching radial-mixer control has synthetic and GPU integration tests; all three angular descriptors passed actual-parent profiler after disabling TF32.",
+  "inputs": [
+    {
+      "seed": 2026110801,
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/evaluation/seed_metrics.csv",
+      "sha256": "31416e02a9f1b99bbf21a6945ff29e29d161214490afee03c5788b3ab008db19",
+      "receipt_sha256": "b710b37da186baf35c1e4497370d9c5f692c7539ac85dbb5d99634fc4b19e2ba"
+    },
+    {
+      "seed": 2026110802,
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/evaluation/seed_metrics.csv",
+      "sha256": "3a959c249f5ffe82f415233fe8dee20349dcb9e44d3f912b09895d419126942e",
+      "receipt_sha256": "47deac2edb8ed0d3eaed4f59a6fc7848c32b51b1340b72b146e2f0c4ccb9f00f"
+    },
+    {
+      "seed": 2026110803,
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/evaluation/seed_metrics.csv",
+      "sha256": "25a62a34c6f295258f8eb58788f4f55b19a21d6d93a0b63253c562d38700370f",
+      "receipt_sha256": "ebe8d29e714c1b96ebb0c60b9caa8a83646d848877b9e56b9bb24ec20d0edff8"
+    }
+  ],
+  "interpretation": "Selection from multiple DEVELOPMENT arms, small differences and n=3 do not establish superiority. Independent iteration assessment required."
+}

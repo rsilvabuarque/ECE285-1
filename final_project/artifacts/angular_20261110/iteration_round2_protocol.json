@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_ROUND2_DESIGN_BEFORE_ROUND1_ASSESSMENT_REVIEW",
+  "created_utc": "2026-11-11T02:10:48.914615+00:00",
+  "parent_protocol_sha256": "f99ec1e83fc6b8d83ff39120b5e6b37ea879c1c9d167b527563613f1edc9d3c7",
+  "logical_round": 2,
+  "lineage_grid": "For each of three seeds: CVAE-acquisition and fixed-bank-mutation acquisition, with q16 unit, q128 unit and q128 fraction20. Start each from its own round-one terminal checkpoint and training data; no-new-data control continues its own round-one terminal checkpoint on unchanged H0.",
+  "acquisition": "New round-specific namespace; 256 LOW-request attempts per count; up to 16 or 128 novel unique UMA labels per count. All 18 stages are frozen before oracle scoring.",
+  "nesting": "The CVAE q16 and q128 models have already diverged and are not expected to propose nested masks in round two. The fixed-bank mutation q16/q128 arms share literal seed, swap count and edit uniforms in the new namespace; q16 is an eligible prefix where common history applies.",
+  "weight": "Append unit weights for unit arms. Reapply target new-row fraction .2 by measured energy-bin/count for fraction20 arms; report that prior weighted acquisitions remain in the base and audit cumulative weight concentration.",
+  "training": "Same 1000-update warm-start training, optimizer/RNG/update-clock reset, fixed schema and original H0 validation selection as round one; record terminal and validation-selected weights.",
+  "assessment": "Freeze a new common assessment history and namespace after round-two proposals and before new assessment draws; evaluate distinct novel yield, low-tail, actual teacher queries, UMA/MACE transfer and per-seed contrasts. Do not use round-one outcome to change this grid.",
+  "scope": "Same fixed parent, teacher context and no new DFT/MD or potential fine-tuning."
+}

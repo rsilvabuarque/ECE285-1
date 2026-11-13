@@ -1,0 +1,355 @@
+{
+  "status": "PASS_DEVELOPMENT_SUMMARY_FIGURE",
+  "source_sha256": "3b1004f3d332c6b8095684ff764d61d107a0a4f468c8296d1d5af457a7bb229c",
+  "helper_source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/scripts/angular_20261110/development_boundary.py",
+    "sha256": "94346bc263829f836918434699004fe1dcd88da4267f34b54d918343290b0df2"
+  },
+  "software": {
+    "python": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]",
+    "numpy": "2.3.4",
+    "matplotlib": "3.11.2"
+  },
+  "seeds": [
+    "2026110801",
+    "2026110802",
+    "2026110803"
+  ],
+  "inputs": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_aggregated/receipt.json",
+      "sha256": "3639b86f3d2c3acab740381dcbd348a318623cae454e608d2d7172112f1a7acf"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_aggregated/paired_control_differences.csv",
+      "sha256": "60ada59d20882096d4860b1a05b07bb2aa2aaef4bcfae2abb18cb6c52d04e3b2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_aggregated/per_seed_yield.csv",
+      "sha256": "a1e1acd1e9b06b0fd565468cf1a17172d743cac57d3ad008abb351f8b2644121"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/manifest.json",
+      "sha256": "bb469e26d4ffd1c6fcfd244daf4e94d5b6850a7c3fffe9b9d9cb0c844f8a3afc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/manifest.json",
+      "sha256": "cfff46c34192aec11b81a86e7acb1cec27244ba4122dca18c007294391ca28c0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/manifest.json",
+      "sha256": "470473ec6484007731699ef5326f93ec458787d500b8ec5a3e1099b11def5c2f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/all_valid_mask_diagnostics_retry1/receipt.json",
+      "sha256": "34077cd59ccb1bb1f3ddbb9f30548c5434a0980fcbd237e4c38b3b308b06e163"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110801/all_valid_mask_diagnostics_retry1/mask_summary.csv",
+      "sha256": "47250c7ab1f155f315aa879f341469d01b9d6c96d131f826f4e8052e31162203"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/all_valid_mask_diagnostics_retry1/receipt.json",
+      "sha256": "9401c3e19dee1fbe68920b8cd4f2a401ffd775d568680790b5a31e1729aca78a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110802/all_valid_mask_diagnostics_retry1/mask_summary.csv",
+      "sha256": "c7124cf671145bfb0272229d10e9ffb23f6c75551105bf9ef8862a97e104c2e9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/all_valid_mask_diagnostics_retry1/receipt.json",
+      "sha256": "3464756051826eb29932f5cf8789687be336c99788fe9d4170893e606e3d533c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/development_rep_2026110803/all_valid_mask_diagnostics_retry1/mask_summary.csv",
+      "sha256": "3ae9002b9b02e9e9809fda91af43b5de997617781d1ff91372358047385ee039"
+    }
+  ],
+  "selected_checkpoint_sidecars": [
+    {
+      "seed": "2026110801",
+      "dimension": 2,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110801/best_validation_beta_0p1.pt",
+        "sha256": "66f5a7467362e57081154c26db27f1d2584a31626bf6deab8edcf050f732f59e"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110801/configuration.json",
+        "sha256": "a4cf21ed4edf28a886a7df8951edd7d8b7e983f12ea370369cb0aa6dc0d02242"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110801/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "71c3e7ca33697a7bf3f9851292076d8d049dac7193bb92937ac78d8df8b5f7e3"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110801",
+      "dimension": 4,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110801/best_validation_beta_0p1.pt",
+        "sha256": "9d4d3054dde8833eced87ca3414bf3e790d6dba52ad7ac1af26a58ab603c7997"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110801/configuration.json",
+        "sha256": "5fbb1a42177881ecf4d9fc7f46e990d8fdce873d92c10a7956d11c0db87064e4"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110801/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "aafacbfd0eb179c582794200dd0025b7730bf1696f872ef39b9c91880d2dbded"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110801",
+      "dimension": 8,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110801/best_validation_beta_0p1.pt",
+        "sha256": "03547f4dffdf82d64dd55269bf10efa2cf47b2da35fef8a547d2d7606213c3c4"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110801/configuration.json",
+        "sha256": "b7442b3b706af4c90725efd476eeaa55b8f806997659352c28a28aa43e2faef4"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110801/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "146f91932cc46132b1df439c4aa2a42a3ed828852458fbee796fe0ca2c503ff9"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110801",
+      "dimension": 16,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110801/best_validation_beta_0p1.pt",
+        "sha256": "19f920ad6614aa24bc6753617d9739e185f9324cc7bda6f5b58bc7c475f80419"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110801/configuration.json",
+        "sha256": "3fc774340a9aa681e1d787e961798a04ddc6fcd42b3d7207f12bdd623ae68269"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110801/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "a51afb8ba17cb9d31438eea1213513f91c7df780d710baad8b6bc49041397eec"
+      },
+      "sidecar_epoch": 49,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110801",
+      "dimension": 32,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110801/best_validation_beta_0p1.pt",
+        "sha256": "6abd37c1a574cd5256d3fb86c5f007fc02c8c94600d859a2e35d76cdf17e33a2"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110801/configuration.json",
+        "sha256": "4949afba794c96555615179255245ec842f44641ed2ac8091cb18938d5961a73"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110801/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "ea6ce9244a2b5839a20e7dbb4ccd3ae9d84604869956ba7610f4f5d265145b66"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110802",
+      "dimension": 2,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110802/best_validation_beta_0p1.pt",
+        "sha256": "b5842400fd10aa72afa6e234112ab242fa08081558bc7ce0f807a1974b60e83e"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110802/configuration.json",
+        "sha256": "51f6cc2843ba298b1c2f9412814781804433dd5dc5414c6c2cc14c5f2b4e5843"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110802/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "5d9ed225d1fd094f6c800cea802d1211b9058b529fe1456115795625a66b424c"
+      },
+      "sidecar_epoch": 49,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110802",
+      "dimension": 4,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110802/best_validation_beta_0p1.pt",
+        "sha256": "861283928a0cddc9434bb3a9e1fa390f56eebfa3a1900689199b6562b488f50a"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110802/configuration.json",
+        "sha256": "835d7ea109e360812e28daf60b50d4822b26ba573b9f1848618eeacc8dc1afe9"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110802/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "c86ea663637b93525135577ace5ffa98b35f509a4083cb2022f93013f90d5697"
+      },
+      "sidecar_epoch": 43,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110802",
+      "dimension": 8,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110802/best_validation_beta_0p1.pt",
+        "sha256": "ab11391c5589ee787d24d8535c86b57d3dfa94d04d2a373adadd141a78441f74"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110802/configuration.json",
+        "sha256": "fc788ef15c9dbdeccf235db69a1f4de834eb0222638d9a9cb6e943f8b2607c17"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110802/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "d52df6d0fc179c04b6654282a8324e8ddcfb332ff158c2aca88a205f02eabe74"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110802",
+      "dimension": 16,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110802/best_validation_beta_0p1.pt",
+        "sha256": "0a41649af1ed89ad6344ed70e15ae650dc4fee59de26e4cd89df9f3e16dfabb6"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110802/configuration.json",
+        "sha256": "818cfc098b23783266ceeb4960210d44f9eb272c0fb2824063777f9d336d8f9c"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110802/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "ca9db537c09b5e7f82587eb24cb60813ae86e70d5594b812b0c0d560d2705e4a"
+      },
+      "sidecar_epoch": 47,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110802",
+      "dimension": 32,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110802/best_validation_beta_0p1.pt",
+        "sha256": "5109db7833e5ed0b84a8bcafe4e9cb353911d220b067054a6ea549684f5c2cd9"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110802/configuration.json",
+        "sha256": "5fe82c8aff06ea8ed162ec73537389bc4b40d2e3cb22dca57ec841d475ceac66"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110802/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "f29ffd7942d456b1ec229b8f61aa0cc5df7fb13e0a5b9610ac5fa8e5b400a271"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110803",
+      "dimension": 2,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110803/best_validation_beta_0p1.pt",
+        "sha256": "3182c9121e0cc789e1faefce2e1a1917efb957c9cb71792b63a54b6c70d24194"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110803/configuration.json",
+        "sha256": "006504f56fa1075b40a6d50d946452aeb5092beea9f8b2749b918a531dd6685d"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110803/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "6e36bbc9536ed9b22ec1c670f5c36e2e7ee339841c1467ec788613ab8ebfd7d5"
+      },
+      "sidecar_epoch": 51,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110803",
+      "dimension": 4,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110803/best_validation_beta_0p1.pt",
+        "sha256": "5142d1ddb3e32ec4a9f1696a257c0cac0a494fdb74294c2678fb335517a8df72"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110803/configuration.json",
+        "sha256": "a0d0d7ebdce868dc79b3437d4149bca4434e64f1c0e5bc01f5af1e3799c85423"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110803/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "b7154b04440623226703365c20dfb18a4bc9d50921c1bfa47b6d4a1723931791"
+      },
+      "sidecar_epoch": 48,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110803",
+      "dimension": 8,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110803/best_validation_beta_0p1.pt",
+        "sha256": "43cb4002a6e0ee073c775ec352b37752769ffaa67892911c88b200cd755ca934"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110803/configuration.json",
+        "sha256": "20d297a52c2bfda23075309780af4755d0d2e8cf9f11322554792b9a1226acff"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110803/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "e2b7b4fca8e9cda60ddfe591664756b0430786eda3d1096af85ce1ad5aac9ea8"
+      },
+      "sidecar_epoch": 49,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110803",
+      "dimension": 16,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110803/best_validation_beta_0p1.pt",
+        "sha256": "52d08e4d6c6ee3988c81e1be326898dbaa03ca9999804f09f6ebd38f9a32f838"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110803/configuration.json",
+        "sha256": "84b2b2fdf74b3f89cdc869a85f6230e54c9470a3e349d70c8d18b58888953d54"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110803/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "e93c16299f1096755cebe8103587943bd5cab4b3bb9960b7341e7dd8b8545800"
+      },
+      "sidecar_epoch": 50,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    },
+    {
+      "seed": "2026110803",
+      "dimension": 32,
+      "checkpoint": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110803/best_validation_beta_0p1.pt",
+        "sha256": "0edb87742be45e79eed75065d94607bf954365d5fbed6fb11d8c569dbd568534"
+      },
+      "configuration": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110803/configuration.json",
+        "sha256": "1fd3bb0ed0302d81b318049621741a0a3edf846d10159347c3d36e6736e6ecce"
+      },
+      "sidecar": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110803/best_validation_beta_0p1.pt.latent.json",
+        "sha256": "ea5924faf2e5404a340e236c2625f224d63cb6242f70a295945e5beba51836d6"
+      },
+      "sidecar_epoch": 46,
+      "scope": "weighted VAL; checkpoint-adjacent sidecar"
+    }
+  ],
+  "interpretation": {
+    "yield": "Mean of equally weighted count/request cells; novel unique in-bin orbits divided by all attempts",
+    "error_bars": "Sample SD of three matched replicate values; descriptive, not a confidence interval",
+    "VAL_KL": "Weighted validation posterior KL summed over coordinates and divided by latent dimension, in nats per dimension",
+    "active": "Weighted variance of VAL posterior mean > 0.001; provisional descriptive threshold, not an established standard",
+    "latent_resampling": "Equal composition mean of same parent-symmetry orbit among all originally valid paired draws; energy labels not required",
+    "sidecar_link": "Sidecars are adjacent to the manifest-selected checkpoint and match config seed/dimension/VAL rows; their bytes and the checkpoint bytes are separately bound. Adjacency is not an embedded cryptographic certificate."
+  },
+  "new_MLIP_calls": 0,
+  "new_training_updates": 0,
+  "outputs": {
+    "development_summary.pdf": "e344719e64728607ad0f0d9988247a4f56bb7395a17aabfb9f358f372a16a035",
+    "development_summary.png": "7f8fae7d52e6f5a8e8d30dabc7df6183b7a21dbd7d103d4e9432b8192698437f",
+    "development_summary_points.csv": "2743cb32bf69a824be1ce0cc366998fbe1c19f15e66ab32887b4718c3ca3eb4b"
+  }
+}

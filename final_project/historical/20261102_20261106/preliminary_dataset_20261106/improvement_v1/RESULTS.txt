@@ -1,0 +1,29 @@
+Lunch-hour CVAE improvement results — 6 November 2026
+
+Final fresh assessment: 512 attempts per method/seed/count; 3 seeds, Li12/24/36.
+Thresholds remain the original training q20; novelty excludes all adaptation/development.
+
+Method                                      UMA yield    MACE yield
+adaptive_ar_adapt_cvae_beta01                  33.81%      38.91%
+adaptive_ar_adapt_cvae_beta1                   27.84%      30.43%
+ar_adapt_baseline                              25.17%      27.08%
+ar_adapt_composition                           31.88%      35.76%
+ar_adapt_cvae                                  35.57%      40.06%
+dense_adapt_count                              27.86%      29.58%
+dense_original_bce                             22.37%      23.81%
+dense_original_count                           22.61%      24.57%
+legacy_uma_beta01_topk                         20.29%      23.57%
+legacy_uma_cvae_topk                           17.14%      18.66%
+mutation_adapt                                 50.91%      51.84%
+mutation_original                              45.40%      46.96%
+mutation_round1                                52.65%      54.08%
+uniform                                        18.99%      19.75%
+
+All methods are reported; do not select a new model on these results and reuse this final pool as an untouched test.
+The round0 AR CVAE family was selected using development results before adaptive fitting.
+Adaptation changes both data distribution and training low-class thresholds; this is not a pure sample-size effect.
+Architecture, initialization, and training protocol are described by each configuration, not isolated causal claims.
+The new corpus is MLIP-labeled; no DFT accuracy or global minimum claim.
+No end-to-end cost advantage established: count adaptation scoring and training before amortizing generation.
+Distance-to-training results use a declared64-orbit/group subset, not every final proposal.
+The original10-page report is background; use these final tables for current sampling results.

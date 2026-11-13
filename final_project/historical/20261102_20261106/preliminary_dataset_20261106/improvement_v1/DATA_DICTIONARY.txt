@@ -1,0 +1,58 @@
+Learning data
+
+training_original.npz contains the original Li12/24/36 subset (1536 orbits).
+training_round0.npz contains that subset plus prior assessed configurations
+promoted to adaptation data (50247 orbits). training_round1.npz additionally
+contains25000 newly evaluated development configurations (75247 orbits).
+Read the split field. Counts and input checksums are recorded in the preparation
+and adaptation receipts and individual model configurations.
+
+occupancy: N x48 binary uint8;1=Li present,0=vacancy, parent Li-site order.
+n_Li: N integer; sum of occupancy, equal to12,24 or36 in this pilot.
+energy_eV_atom: N real; UMA single-point energy divided by144+n_Li.
+split: N strings train/val/test; grouped by canonical mask before fitting.
+weight: N positive base weights; class balancing in round1 changes training
+        weights inside the trainer, not the saved underlying energies.
+structure_ids: N source identifiers. IDs are not numerical atom indices.
+canonical_masks: N strings of48 vacancy bits;1=vacancy (opposite occupancy).
+source: N strings identifying original or promoted assessment/development rows.
+
+The parent data/parents/O3_N48_pilot.npz supplies numbers, positions_A, cell_A,
+li_indices, and retained permutations. Li rows are48..95 in the192-row full
+parent; never assume they are the first48. Coordinates are Angstrom, cell rows
+are lattice vectors, atom count is144+n_Li. Absent Li must be removed when
+exporting real structures; padding zeros are not atoms or force labels.
+
+Proposal and scoring data
+
+Development uses256 attempts per method/seed/composition; final uses512.
+*_attempts.csv retains every attempt, including duplicates and known masks.
+Canonical scoring IDs mask48_<12hex> identify vacancy-mask orbit keys.
+*.npz contains all unique proposed masks; *_fresh.npz contains only keys outside
+that pool's frozen history. Both retain the exact common pristine parent.
+
+*_scores_uma.npz and *_scores_mace.npz contain all proposal IDs and total energy
+in eV/cell, n_atoms, n_Li, and provenance=fresh/cached. New E/F/stress labels
+are computed on canonical deletion geometries. Known-hit scalar energies are
+reused from prior physically equivalent orientations. Known proposals consume
+attempts and cannot contribute novel successes.
+
+For fresh scores, force_component_rms_eV_A=sqrt(sum(F_a,alpha^2)/(3*n_atoms)),
+force_max_eV_A=max_a norm(F_a), stress_eV_A3 has xx,yy,zz,yz,xz,xy order,
+tensile positive. Cached rows deliberately have NaN in these extra force/stress
+summaries; their finite energy is sufficient for the mask experiment. No missing
+force/stress value enters training. Full freshly evaluated per-atom forces and
+all raw shard evidence remain in the main HPC campaign scores/ directories;
+that larger vector archive is not required for the collaborator mask package.
+
+Interpretation
+
+Training energy classes are calculated from that training set only. Main metric
+thresholds remain the ORIGINAL per-teacher/count q20 in generation_thresholds.csv.
+Different raw energies across teachers or Li counts are not directly pooled.
+The final novelty boundary includes original, prior and all development masks.
+Final is excluded from training and model selection. Future retraining on final
+labels requires a new assessment pool and revised novelty cache.
+
+These are MLIP-labeled deletion geometries. No new DFT, geometry minimization,
+MD or thermodynamic validation was performed in this improvement cycle.

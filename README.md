@@ -1,7 +1,8 @@
 ## ECE 285 final project
 
-The cathode CVAE midterm package, current data, installation instructions and
-collaborator tasks are in [final_project/README.md](final_project/README.md).
+The consolidated cathode CVAE project, latest report and evidence, data release,
+installation instructions and collaborator tasks are in
+[final_project/README.md](final_project/README.md).
 
 # ECE/CS 285 HW1: a REYES renderer
 

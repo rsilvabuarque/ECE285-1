@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_SECOND_ASSESSMENT_ANCHORS_BEFORE_GENERATION",
+  "created_utc": "2026-11-11T02:59:50.186979+00:00",
+  "round2_protocol_sha256": "af03cdc9aa527d2c1597aa40031a5bee0f9350ac71168ccca6eccd41a7ecff8f",
+  "design": "In the new common second-round assessment, include the untouched pretrained model, each of the seven round-one terminal endpoints, each of the seven round-two terminal endpoints, each corresponding round-two validation-selected checkpoint, and the fixed-bank mutation sampler. Evaluate 3 matched seeds with the same frozen history, composition/condition requests and random streams within AR peers.",
+  "reason": "Evaluate zero vs one vs two rounds under one common novel-orbit reference and proposal streams; prior round-one assessment used a different history and cannot by itself establish absolute improvement from the untouched checkpoint.",
+  "primary": "Terminal weights at equal update budget; validation-selected checkpoints are a separate sensitivity.",
+  "selection_note": "The anchor addition was motivated by study design after preliminary round-one outcomes were visible; it does not change training, acquisition, or select anchors based on their scores."
+}

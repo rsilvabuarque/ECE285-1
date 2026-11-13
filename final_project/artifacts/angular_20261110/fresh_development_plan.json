@@ -1,0 +1,736 @@
+{
+  "status": "DECLARED_DEVELOPMENT_COMPARISON",
+  "namespace": "angular_latent_fresh_development_20261110",
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "requested_bins": [
+    "low",
+    "middle",
+    "high"
+  ],
+  "count_per_group": 128,
+  "latent_stream_width": 32,
+  "diagnostics": true,
+  "models": [
+    {
+      "method": "uniform",
+      "replicate_id": 2026110801,
+      "sampler": "uniform"
+    },
+    {
+      "method": "mutation",
+      "replicate_id": 2026110801,
+      "sampler": "mutation"
+    },
+    {
+      "method": "radial_cvae_d2",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d4",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d8",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d16",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d32",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/B_radial_shells_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_ar",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_ar_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_cvae",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_cvae_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "uniform",
+      "replicate_id": 2026110802,
+      "sampler": "uniform"
+    },
+    {
+      "method": "mutation",
+      "replicate_id": 2026110802,
+      "sampler": "mutation"
+    },
+    {
+      "method": "radial_cvae_d2",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d4",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d8",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d16",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d32",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/B_radial_shells_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_ar",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_ar_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_cvae",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_cvae_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "uniform",
+      "replicate_id": 2026110803,
+      "sampler": "uniform"
+    },
+    {
+      "method": "mutation",
+      "replicate_id": 2026110803,
+      "sampler": "mutation"
+    },
+    {
+      "method": "radial_cvae_d2",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d2_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d4",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/A_radial_shells_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d8",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d8_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d16",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d16_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_cvae_d32",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/radial_graph_d32_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "radial_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/runs/overnight_20261108/fits/B_radial_shells_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_6_learned_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_6_learned_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_ar",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_ar_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "redundant_16_cvae",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/redundant_16_cvae_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d2",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d2_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d2",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d2_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d2",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d2_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d8",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d8_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d8",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d8_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d8",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d8_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d16",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d16_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d16",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d16_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d16",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d16_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d32",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d32_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d32",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d32_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angle_hist_cvae_d32",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angle_hist_cvae_d32_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d2",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d2_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d2",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d2_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d2",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d2_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d8",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d8_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d8",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d8_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d8",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d8_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d16",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d16_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d16",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d16_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d16",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d16_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d32",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d32_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d32",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d32_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d32",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/directional_l1_l2_cvae_d32_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d2",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d2_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d2",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d2_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d2",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d2_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d8",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d8_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d8",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d8_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d8",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d8_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d16",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d16_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d16",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d16_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d16",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d16_2026110803/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d32",
+      "replicate_id": 2026110801,
+      "fit_seed": 2026110801,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d32_2026110801/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d32",
+      "replicate_id": 2026110802,
+      "fit_seed": 2026110802,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d32_2026110802/best_validation_beta_0p1.pt"
+    },
+    {
+      "method": "angular_smooth_cvae_d32",
+      "replicate_id": 2026110803,
+      "fit_seed": 2026110803,
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110/final_project/runs/angular_20261110/fits/angular_smooth_cvae_d32_2026110803/best_validation_beta_0p1.pt"
+    }
+  ],
+  "contrasts": [
+    {
+      "method": "angle_hist_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "angle_hist_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_cvae_d16",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_cvae_d2",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_cvae_d32",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_cvae_d4",
+      "reference": "mutation"
+    },
+    {
+      "method": "radial_cvae_d8",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_16_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_16_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_6_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_6_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_6_learned_ar",
+      "reference": "mutation"
+    },
+    {
+      "method": "redundant_6_learned_cvae",
+      "reference": "mutation"
+    },
+    {
+      "method": "angle_hist_ar",
+      "reference": "redundant_6_ar"
+    },
+    {
+      "method": "angular_smooth_ar",
+      "reference": "redundant_16_ar"
+    },
+    {
+      "method": "directional_l1_l2_ar",
+      "reference": "redundant_6_learned_ar"
+    },
+    {
+      "method": "angle_hist_cvae",
+      "reference": "redundant_6_cvae"
+    },
+    {
+      "method": "angular_smooth_cvae",
+      "reference": "redundant_16_cvae"
+    },
+    {
+      "method": "directional_l1_l2_cvae",
+      "reference": "redundant_6_learned_cvae"
+    },
+    {
+      "method": "angle_hist_cvae_d2",
+      "reference": "mutation"
+    },
+    {
+      "method": "angle_hist_cvae_d8",
+      "reference": "mutation"
+    },
+    {
+      "method": "angle_hist_cvae_d16",
+      "reference": "mutation"
+    },
+    {
+      "method": "angle_hist_cvae_d32",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_cvae_d2",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_cvae_d8",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_cvae_d16",
+      "reference": "mutation"
+    },
+    {
+      "method": "angular_smooth_cvae_d32",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d2",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d8",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d16",
+      "reference": "mutation"
+    },
+    {
+      "method": "directional_l1_l2_cvae_d32",
+      "reference": "mutation"
+    }
+  ],
+  "interpretation": "All approaches are predeclared; three independent fits and matched proposal streams. Current D4 and D2,8,16,32 compared in identical fresh pool. No protected scores for training or model selection. Angular latent sizes 2,4,8,16,32 for each method were frozen before scoring."
+}

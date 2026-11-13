@@ -1,3 +1,15 @@
+# Update for the consolidated project
+
+The instructions below preserve the independent November 8 reproduction
+tasks and their frozen assessment roles. The subsequent angular, latent and
+two-round iteration results are in the [latest research report](../reports/angular_20261110/report.pdf)
+and [compact evidence packet](../artifacts/angular_20261110/README.md).
+For new work, review those results first, use fresh output directories and
+predeclare a new assessment. The existing iterations use fixed energy bins;
+adaptive re-binning, broad energy-range acquisition and entropy estimation are
+proposed future tests, not completed results. Statements below about the
+"current" packet and deadlines describe the November 8 handoff.
+
 # Independent midterm tasks: Beihao, Varad and Ricardo
 
 The current study is the November 8 packet at `artifacts/overnight_20261108/`.

@@ -1,0 +1,34 @@
+{
+  "macros": {
+    "HistoricalFrames": "524",
+    "HistoricalGroups": "7",
+    "HistoricalRho": "0.9565",
+    "HistoricalPrecision": "91.7",
+    "HistoricalExact": "0",
+    "HuFrames": "10,932",
+    "HuGroups": "27",
+    "HuRho": "0.8534",
+    "HuPrecision": "77.0",
+    "HuExact": "0",
+    "CounterRegret": "7.97"
+  },
+  "raw_combinations_diagnostic_only": {
+    "12": {
+      "1": 12,
+      "2": 66,
+      "3": 220
+    },
+    "24": {
+      "2": 276,
+      "4": 10626,
+      "6": 134596
+    }
+  },
+  "source_results": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/collaborator_brief/assets/source_tables",
+  "source_sha256": {
+    "historical_cached_rank_metrics.csv": "469e430e37c810efe9a6f91a063f91d59bf1b279e22c22960254a5db6dbd5317",
+    "hu_rank_metrics.csv": "e096260172f01c5d96076c1f3df3933cad3d282507b4114278073f6525fcb394",
+    "hu_optimized_Li10_counterexample.csv": "773d2ccc03bc6defdf2a138f9bd973460b346c7eac250a25de238ae0bd6d66e5"
+  },
+  "method": "Read saved CSVs; no inference or new scientific data generation."
+}
