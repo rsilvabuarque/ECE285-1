@@ -101,6 +101,7 @@ def generate(manifest_path,parent,base_data,schema,history,protected,bank_dir,ou
       'namespace':namespace,'inputs':{name:binding(path) for name,path in [('parent',parent),('data',base_data),('schema',schema),('history',history)]},
       'manifest':binding(manifest_path),'bank_receipt':binding(bank_dir/'receipt.json'),'protected':binding(protected),
       'condition_schema_id':m['expected_condition_schema_id'],'counts':counts,'requested_bins':bins,'count_per_group':attempts,
+      'expected_primary_attempts':expected, 'random_array_convention':'uniforms are actual removal uniforms, not AR uniforms; latents are unused zeros',
       'geometry_protocol':'pristine-derived deletion; unrelaxed; exact canonical parent coordinates',
       'stream_policy':'Within a round, same namespace/replicate/count/bin shares literal seed, k and edit uniforms across data lineages; change namespace between rounds.'}
     write(out/'protocol.json',protocol)
@@ -127,7 +128,8 @@ def generate(manifest_path,parent,base_data,schema,history,protected,bank_dir,ou
             rem=np.flatnonzero((seed[i]==1)&(child[i]==0));add=np.flatnonzero((seed[i]==0)&(child[i]==1))
             j=len(raw);raw.append(child[i]);raw_seed.append(seed[i]);raw_remove.append(ru[i]);raw_add.append(au[i])
             rows.append(dict(attempt_id=f'{namespace}-{method}-{rep}-{n}-{b}-{i}',method=method,replicate_id=rep,
-                n_target=n,requested_bin=b,canonical_mask=key,structure_id=sid,raw_row=j,status='generated',
+                n_target=n,requested_bin=b,canonical_mask=key,structure_id=sid,scoring_structure_id=sid,raw_row=j,status='generated',
+                diagnostic='primary',attempt=i,latent_dim=0,fit_seed=rep,error='',paired_id=f'{namespace}-{rep}-{n}-{b}-{i}',
                 seed_source_row=int(indices[chosen[i]]),seed_source_sha256=sha256(base_data),
                 seed_structure_id=str(bank['structure_ids'][chosen[i]]),swap_count=int(swaps[i]),
                 removed_sites='|'.join(map(str,rem)),added_sites='|'.join(map(str,add)),
@@ -136,17 +138,26 @@ def generate(manifest_path,parent,base_data,schema,history,protected,bank_dir,ou
     for filename in ('attempts.csv','attempts_all.csv'):
         with (out/filename).open('x',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
-    np.savez_compressed(out/'raw_attempts.npz',occupancy=np.asarray(raw),seed_occupancy=np.asarray(raw_seed),
-                        remove_uniforms=np.asarray(raw_remove),add_uniforms=np.asarray(raw_add))
+    arrays=dict(occupancy=np.asarray(raw),seed_occupancy=np.asarray(raw_seed),
+                remove_uniforms=np.asarray(raw_remove),add_uniforms=np.asarray(raw_add),
+                uniforms=np.asarray(raw_remove),latents=np.zeros((len(raw),1),dtype=np.float32))
+    np.savez_compressed(out/'raw_attempts.npz',**arrays)
+    np.savez_compressed(out/'raw_primary.npz',**arrays)
+    np.savez_compressed(out/'raw_diagnostics.npz',**{k:v[:0] for k,v in arrays.items()})
     masks=np.asarray([list(k) for k in sorted(all_keys)],dtype=np.uint8).reshape(-1,48)
     n=48-masks.sum(axis=1,dtype=np.int64)
     for name in ('candidates.npz','primary_candidates.npz'):
         np.savez_compressed(out/name,masks=masks,occupancy=1-masks,structure_ids=np.asarray([all_keys[k] for k in sorted(all_keys)]),
                             n_target=n,n_Li=n,n_atoms=host+n,parent_sha256=np.asarray(sha256(parent)))
-    outputs={name:sha256(out/name) for name in ('attempts.csv','attempts_all.csv','raw_attempts.npz','candidates.npz','primary_candidates.npz')}
+    empty=np.empty((0,48),dtype=np.uint8)
+    np.savez_compressed(out/'diagnostic_candidates.npz',masks=empty,occupancy=empty,structure_ids=np.asarray([],dtype='<U19'),
+                        n_target=np.asarray([],dtype=int),n_Li=np.asarray([],dtype=int),n_atoms=np.asarray([],dtype=int),
+                        parent_sha256=np.asarray(sha256(parent)))
+    outputs={name:sha256(out/name) for name in ('attempts.csv','attempts_all.csv','raw_attempts.npz','raw_primary.npz','raw_diagnostics.npz','candidates.npz','primary_candidates.npz','diagnostic_candidates.npz')}
     receipt={'status':'FROZEN_BEFORE_SCORING','no_energy_filtering':True,'primary_attempts':len(rows),
              'protocol_sha256':sha256(out/'protocol.json'),'outputs':outputs,'checkpoints':[],
-             'bank_receipt':binding(bank_dir/'receipt.json'),'source':binding(__file__),'new_MLIP_calls':0}
+             'bank_receipt':binding(bank_dir/'receipt.json'),'source':binding(__file__),'source_sha256':sha256(__file__),
+             'runtime_loader_source':binding(__file__),'total_attempts':len(rows),'new_MLIP_calls':0}
     write(out/'receipt.json',receipt);return receipt
 
 

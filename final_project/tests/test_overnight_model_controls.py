@@ -88,6 +88,13 @@ def test_endpoint_label_protocol_does_not_claim_generated_geometry_is_relaxed(tm
         "--batch-size","2","--validation-samples","1","--device","cpu","--threads","1","--max-seconds","60"])
     cfg=json.loads((fit/"configuration.json").read_text())
     assert cfg["label_energy_protocol"]=="synthetic fixed-cell endpoint"
+    summary=json.loads((fit/"summary.json").read_text())
+    terminal=fit/summary["terminal_checkpoint"]["filename"]
+    terminal_model, _ = load_model(terminal, "cpu")
+    assert terminal_model is not None
+    assert summary["terminal_checkpoint"]["optimizer_updates"]==summary["optimizer_updates"]==2
+    assert summary["terminal_checkpoint"]["sha256"]==sha256(terminal)
+    assert json.loads((fit/"last_update.pt.latent.json").read_text())["optimizer_updates"]==2
     output=tmp_path/"draws.npz"
     generate(["--checkpoint",str(fit/"best.pt"),"--parent",str(parent),"--n-target","2","--requested-bin","low",
         "--count","3","--device","cpu","--output",str(output)])

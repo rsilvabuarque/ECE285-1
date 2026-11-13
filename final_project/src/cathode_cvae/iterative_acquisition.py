@@ -391,7 +391,16 @@ def stage(*, parent_path, base_data_path, schema_path, generation_dir, known_his
         row = dict(source)
         n = int(row["n_target"])
         cell = (n, row["requested_bin"])
-        key, sid = row.get("canonical_mask", ""), row.get("structure_id", "")
+        key = row.get("canonical_mask", "")
+        structure_id = row.get("structure_id", "")
+        scoring_id = row.get("scoring_structure_id", "")
+        if structure_id and scoring_id and structure_id != scoring_id:
+            raise ValueError("Attempt structure_id and scoring_structure_id disagree")
+        # Existing generators use scoring_structure_id; old receipts and merge
+        # use structure_id. Preserve the original field and normalize this alias
+        # before writing annotated attempts so certified labels broadcast correctly.
+        sid = scoring_id or structure_id
+        row["structure_id"] = sid
         role = ""
         if row.get("status") != "generated":
             status = "generation_failed_or_invalid"
