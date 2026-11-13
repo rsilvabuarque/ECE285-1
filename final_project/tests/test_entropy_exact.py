@@ -57,3 +57,16 @@ def test_wang_landau_constant_energy_has_one_bin_and_correct_support():
 @pytest.mark.parametrize('temperature',[0,-1,np.nan])
 def test_invalid_temperature_rejected(temperature):
     with pytest.raises(ValueError):thermodynamics([0.],[1],temperature)
+
+
+def test_no_latent_AR_probability_normalizes_over_fixed_count_microstates():
+    import torch
+    from cathode_cvae.learning.models import ARBaseline
+    torch.manual_seed(28);torch.set_num_threads(1)
+    model=ARBaseline(n_sites=4,condition_dim=1,hidden_dim=8)
+    raw=enumerate_orbits(np.arange(4)[None])['raw_occupancy']
+    for n in (1,2,3):
+        x=torch.as_tensor(raw[raw.sum(1)==n],dtype=torch.float32)
+        c=torch.full((len(x),1),n/4)
+        q=torch.exp(-model.reconstruction(x,c,None,exact_count=True))
+        assert float(q.sum().detach())==pytest.approx(1.,abs=2e-6)
