@@ -13,3 +13,6 @@ reports/ranking_audit_20261107/**/*.csv -text
 # Copied source and result bytes have SHA-256 manifests; do not rewrite CRLF.
 artifacts/angular_20261110/** -text whitespace=cr-at-eol
 historical/20261102_20261106/** -text whitespace=cr-at-eol,-blank-at-eof
+
+# Hash-bound adaptive evidence includes native CSV CRLF line endings.
+artifacts/adaptive_20261112/** -text whitespace=cr-at-eol

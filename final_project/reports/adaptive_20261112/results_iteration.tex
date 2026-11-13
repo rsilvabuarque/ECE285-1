@@ -1,0 +1,97 @@
+\subsection{A first-round gain that does not persist under the same metric}
+All four core acquisition/assessment phases pass the original strict raw
+verifier. Each teacher evaluates 25,215 first-round acquisition geometries,
+23,504 first-round assessment geometries, 40,301 second-round acquisition
+geometries, and 27,725 second-round assessment geometries: 233,490
+geometry--teacher evaluations in total. The first round adds exactly 2,304
+new TRAIN rows per model/seed, shared across its three label policies.
+
+\input{table_iteration_gains.tex}
+\input{table_sampling_baselines.tex}
+
+Observed-range labels give a clear first-round balanced-yield gain relative
+to the declared no-new-data continuation. The same-data contrast is also
+positive: range minus fixed gives $+7.90\pm0.83$ percentage points for AR
+and $+6.97\pm2.74$ for $D=2$ under UMA; MACE gives $+7.64\pm0.76$ and
+$+6.86\pm2.25$. These are three-fit sample SDs. This isolates the effect of
+label definitions and induced class weighting on the same augmented rows,
+rather than proving that acquisition itself was necessary.
+
+The improvement is not uniform across requested classes. For AR, the
+range-minus-fixed change is only $+0.35$ points for fixed-H0 LOW yield but
+$+29.77$ points for HIGH yield. A balanced three-class gain should therefore
+not be described as an equivalent gain in low-energy discovery. The
+declared uniform and mutation baselines remain below the neural models in
+this broad three-bin assessment. Different seed-selection or LOW-only
+mutation studies have a different target and cannot be substituted here.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{iteration_paired_gains.pdf}
+\caption{Paired effects relative to the appropriate equal-update
+continuation. Round 1 compares with H0 continuation; round 2 compares with
+the same first-round lineage continued without a new batch. Individual
+replicates and three-fit SD are shown. Fixed-H0 evaluation bins remain
+constant; the novelty history is separately frozen for each round.}
+\end{figure}
+
+In round two, the range policy loses $5.41\pm1.48$ points for AR and
+$6.28\pm1.76$ for $D=2$ relative to its same-lineage no-new-data control
+under UMA. MACE gives corresponding losses of $6.31\pm1.65$ and
+$6.22\pm1.48$ points. Absolute UMA range yields are 70.28\% and 68.66\%,
+compared with the fresh uniform baseline 33.88\% and mutation 58.16\%.
+Thus the neural sampler remains useful against these declared baselines,
+while adding another range-policy batch does not sustain the first-round
+improvement in the fixed-reference statistic.
+
+\subsection{Novelty, condition fidelity, and the moving target}
+Existing-result diagnostics separate novelty $N$ from conditional accuracy
+$A$ among scored new orbits. Within each cell, $Y=NA$. The exact symmetric
+rate decomposition is
+\begin{equation}
+\Delta Y=\tfrac12(A_1+A_0)\Delta N+
+          \tfrac12(N_1+N_0)\Delta A.
+\end{equation}
+Balanced cell averages therefore retain an exact arithmetic decomposition;
+it does not identify the causal training mechanism. For UMA range AR, the
+round-two change is approximately $-1.06$ percentage points from the novelty
+term and $-4.36$ from conditional accuracy. For $D=2$ the terms are
+$-1.97$ and $-4.31$ points. Novelty remains 98.41\%/97.34\%, versus
+99.51\%/99.33\% in the respective continuations. The dominant measured
+change is condition fidelity, rather than wholesale repetition of known
+patterns. Some LOW cells lose roughly 14 points despite almost complete
+novelty.
+
+There is an important target-alignment explanation to examine. For a
+range-defined lower cutoff $a=0.8E_{\min}+0.2E_{\max}$,
+$\Delta a=0.8\Delta E_{\min}+0.2\Delta E_{\max}$. The range acquisition
+mostly extends the \emph{upper} energy endpoint, while its lower endpoint
+changes much less. Raising $E_{\max}$ also raises the definition of LOW.
+The generator can consequently match a broader, higher-energy LOW class
+while losing hits under the original fixed-H0 LOW threshold. Moving-bin
+fidelity and observed endpoint growth are therefore reported separately;
+the fixed-yield loss alone does not establish failure to extend upper-energy
+coverage. Nor does extending an observed range prove global coverage or
+convergence.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{observed_training_extrema_growth.pdf}
+\caption{Observed TRAIN endpoint extension relative to H0, within each
+composition. Positive lower-endpoint growth means a lower observed minimum;
+positive upper-endpoint growth means a higher maximum. These nested TRAIN
+data can be compared longitudinally, unlike assessment yields with changing
+novelty histories. Error bars are three-seed SD, not bounds on global extrema.}
+\end{figure}
+
+Range labels also concentrate the loss on rare examples. One first-round
+36-Li HIGH class has only three TRAIN structures among roughly 14,000.
+Class balancing changes per-row loss weights, not the uniformly shuffled
+minibatch order. If those three examples carry one third of the within-count
+loss mass, Cauchy's inequality gives $\sum_i p_i^2\geq1/27$ for normalized
+weights $p_i$, hence weight ESS $1/\sum_i p_i^2\leq27$. This is concentration
+of objective weight, not 27 independent physical observations. The first
+round's positive result means sparsity alone cannot be cited as the cause
+of the second-round loss. Actual class support, edge shifts, endpoint motion,
+and weight ESS are all retained for each lineage.
+
+\input{results_causal.tex}
+\input{results_frontier.tex}

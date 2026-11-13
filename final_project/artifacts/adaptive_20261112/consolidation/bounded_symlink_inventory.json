@@ -1,0 +1,152 @@
+{
+  "scope": "14outsideworktrees root/final_project immediate + final_project/runs depth<=3; no symlink following, no file contents,cap15000entries/tree",
+  "rows": [
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_audit_goal_20261111",
+      "links": [],
+      "entries_inspected": 32,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_directional_agent_20261110",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_evaluation_agent_20261110",
+      "links": [],
+      "entries_inspected": 32,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110",
+      "links": [],
+      "entries_inspected": 886,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_iteration_agent_20261110",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_iteration_goal_20261111",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_round2_goal_20261111",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_submission_20261109",
+      "links": [],
+      "entries_inspected": 32,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree",
+      "links": [],
+      "entries_inspected": 383,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree",
+      "links": [],
+      "entries_inspected": 445,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108",
+      "links": [
+        {
+          "path": "final_project/runs/overnight_20261108/paired/queue",
+          "target": "/pscratch/sd/r/rsb/ece285_overnight_20261108/paired_queue"
+        },
+        {
+          "path": "final_project/runs/overnight_20261108/oracle/cache_mace.npz",
+          "target": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_mace.npz"
+        },
+        {
+          "path": "final_project/runs/overnight_20261108/oracle/cache_mace.json",
+          "target": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_mace.json"
+        },
+        {
+          "path": "final_project/runs/overnight_20261108/oracle/cache_uma.npz",
+          "target": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_uma.npz"
+        },
+        {
+          "path": "final_project/runs/overnight_20261108/oracle/cache_uma.json",
+          "target": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree/final_project/runs/conditioning_20261107/oracle/cache_uma.json"
+        }
+      ],
+      "entries_inspected": 457,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_models_20261108",
+      "links": [],
+      "entries_inspected": 155,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_paired_20261108",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    },
+    {
+      "worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108",
+      "links": [],
+      "entries_inspected": 33,
+      "traversal_cap_hit": false,
+      "submodule_config": false,
+      "guide_override": false,
+      "guide": false
+    }
+  ]
+}

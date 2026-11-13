@@ -1,0 +1,134 @@
+{
+  "status": "PASS_RELOCATED_WITH_COMPATIBILITY_LINKS",
+  "created_utc": "2026-11-13T10:47:21.998804+00:00",
+  "count": 14,
+  "method": "git worktree move; directory rename preserves all raw/untracked contents; old paths become compatibility symlinks; no deletion/reset/stash/clean",
+  "worktrees": [
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_audit_goal_20261111",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_audit_goal_20261111",
+      "branch": "refs/heads/goal/angular-assessment-audit-20261111",
+      "HEAD": "164ea4dd1760c9522be13a9d026a0ad1a6005c68",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_directional_agent_20261110",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_directional_agent_20261110",
+      "branch": "refs/heads/agent/angular-directional-20261110",
+      "HEAD": "762531c0d54ad7bafa32f1e31bc1371c915d9d63",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_evaluation_agent_20261110",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_evaluation_agent_20261110",
+      "branch": "refs/heads/agent/angular-evaluation-20261110",
+      "HEAD": "6c047057e5bc9fe82b50298d5d45894015e43304",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_goal_20261110",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_goal_20261110",
+      "branch": "refs/heads/goal/angular-latent-iteration-20261110",
+      "HEAD": "2dd107345b2c250e25ea2effa6a8eb3a7269114f",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_iteration_agent_20261110",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_iteration_agent_20261110",
+      "branch": "refs/heads/agent/angular-iteration-20261110",
+      "HEAD": "ecb5a4418e1791f0a34eb38a7e19c5df1b01630b",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_iteration_goal_20261111",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_iteration_goal_20261111",
+      "branch": "refs/heads/goal/angular-iteration-20261111",
+      "HEAD": "6480b1a26ae36e9315590e02ba125b5e833e3e3e",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_angular_round2_goal_20261111",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_angular_round2_goal_20261111",
+      "branch": "refs/heads/goal/angular-iteration-round2-20261111",
+      "HEAD": "2d024cab9fd1fc1288da8932e42641fec61f2818",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_submission_20261109",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_midterm_submission_20261109",
+      "branch": "refs/heads/midterm/submission-neurips-20261109",
+      "HEAD": "3f2790fe462975dee3c4de61edb36d116eaa620b",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_midterm_worktree",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_midterm_worktree",
+      "branch": "refs/heads/overnight/multibin-acquisition-20261107",
+      "HEAD": "73e6cee5fa43a26a1ac9e8700f81baaa3e40619f",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_next_goal_worktree",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_next_goal_worktree",
+      "branch": "refs/heads/midterm/conditioning-graph-edit-20261107",
+      "HEAD": "d0d93edeefc56003744599a83dc54c45f78577aa",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_overnight_20261108",
+      "branch": "refs/heads/overnight/latent-relaxed-neb-20261108",
+      "HEAD": "7a14ec981155c61092050f3c7ced0e0f28e8b63c",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_models_20261108",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_overnight_models_20261108",
+      "branch": "refs/heads/agent/overnight-20261108-models",
+      "HEAD": "66d550da1efe7076e9b5f62841523c19bae09b8a",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_paired_20261108",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_overnight_paired_20261108",
+      "branch": "refs/heads/agent/overnight-20261108-paired",
+      "HEAD": "30686a7d9bb0aab84153195d7ce55cbd696cad12",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_research_20261108",
+      "new_path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/archived_worktrees/ECE285_overnight_research_20261108",
+      "branch": "refs/heads/agent/overnight-20261108-research",
+      "HEAD": "1d9e628c994dbdea6a609477282e4e2efbca8d0c",
+      "directory_inode_unchanged": true,
+      "tracked_status_preserved": true,
+      "old_path_compatibility_symlink": true
+    }
+  ]
+}

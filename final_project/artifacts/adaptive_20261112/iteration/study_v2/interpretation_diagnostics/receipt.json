@@ -1,0 +1,25 @@
+{
+  "status": "EXISTING_CORE_INTERPRETATION_DIAGNOSTICS_COMPLETE",
+  "created_unix": 1794563399.1059682,
+  "source_sha256": "2870a57610c87478a08b44de8d3f5bd2303748a126baebefe5f431f732389fc2",
+  "inputs": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_evaluation/aggregate_metrics.csv": "9ac1431844827b9a355a29fad9228b1e5d052cdd7f5d1b487eb283d0a6b300fa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_evaluation/all_cell_metrics.csv": "5aba6c3c1cd9134d0bc2c9ed330b7d3436f635a022a14d3e4a022d6aee518325",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_evaluation/aggregate_metrics.csv": "42bee960facdc88fe5bee6b4e50b85bb71b0b9982514b3418fb017f756381e54",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_evaluation/all_cell_metrics.csv": "2f4e930e8f3fdb003b8c832cfff404cfa5f16f21872db3fb1229679fc3751ba2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/training_bin_support.csv": "682e944def441359d4cdc505c24684791e9702e3c60abc6b7f07f3c033a2d554"
+  },
+  "outputs": {
+    "R2_range_yield_decomposition.pdf": "eab8abc576e298ca727946fc597493f710b5df4a76ed667d4a25e20404fb5792",
+    "range_R2_decomposition_summary.csv": "8823ded7867b778489e72bed3368e0c2d56a5734e8a8971909a6e11ac3086ae4",
+    "R2_range_yield_decomposition.png": "9ee25992c09115d8d85c60c6dd9c5c03d370391e9e42e662f80e194b8adb58ac",
+    "fresh_uniform_mutation_baselines.csv": "c59f557bd4b113286c20626ce89bcf02ea61df2a8807aafd4c0124b30adc51a8",
+    "range_R2_per_cell_summary.csv": "91db8e498200bf2a5d66eba794c0bdda3a8b38f2d37db9664020737e1801c2c7",
+    "range_R2_decomposition_by_fit.csv": "8bdd51da6efe9a4ef6f10bbdb4820d079431473307075e73f178b78eb3dc4488",
+    "interpretation.md": "e46d844334b0c233cad71080d5bb760d1b8d242bfbacbfb9e5120312d304fdee",
+    "range_TRAIN_dynamics.csv": "0a64d34a028de46ad58bac277762326ede594bb144e2cd196ca656e548f9046e",
+    "range_R2_decomposition_by_cell.csv": "a82648c699b57b5c136e20d3c906b4a7f2f4bc05fcfb67212c3eff5f7038c035",
+    "R1_range_minus_fixed_same_data.csv": "c2e5affa19b88c0c63dee986a61d3a47cacda9170bf8cda1237b07273f167390"
+  },
+  "no_new_fits_or_oracles": true
+}

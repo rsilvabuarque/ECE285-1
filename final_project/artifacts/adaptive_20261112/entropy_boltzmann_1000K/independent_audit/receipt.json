@@ -1,0 +1,370 @@
+{
+  "status": "PASS_INDEPENDENT_BOLTZMANN_AUDIT",
+  "checks": 79,
+  "all_checks_match": true,
+  "checks_detail": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/analyze.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/prepare.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/prepare_ar.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/run_pipeline.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/boltzmann_followup.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/learned_proposal.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/scripts/entropy_20261112/freeze_pipeline.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/runtime.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/cli.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/entropy.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/iterative_comparison.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/iterative_next_boundary.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/data.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/graph.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/fixed_seed_mutation.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/artifact_fetch.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/acquisition.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/descriptor.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/__init__.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/pool_scoring.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/acquisition_generate.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/iterative_boundary.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/angular_context.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/condition_evaluation.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/iterative_acquisition.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/smooth_angular_context.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/parent_spec.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/evaluation.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/geometry_evaluation.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/directional_context.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/conditions.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/iterative_assessment.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/mlip/cli.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/mlip/calculators.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/mlip/__init__.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/mlip/checkpoints.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/mlip/registry.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/runtime.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/train_edit.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/train_geometry.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/geometry_model.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/models.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/schedules.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/__init__.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/generate_edit.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/generate_mask.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/train_mask.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/graph_model.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/generate_geometry.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/execution/src/cathode_cvae/learning/edit_model.py",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_input/parent.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_input/orbit_representatives.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_ar_roles/orbit_roles.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_ar_roles/receipt.json",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_collected/receipt.json",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_collected/uma.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_collected/mace.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_pipeline_receipt.json",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_learned_proposal/learned_proposal_importance.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/learning/uma/learning.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/learning/mace/learning.npz",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/learned_proposal_importance.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/learned_proposal_quality.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/learned_AR_entropy_diagnostic.pdf",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/AR_sampler_audit.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/exact_AR_probabilities.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/diagnostics/AR_normalization.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/boltzmann_target_followup.pdf",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/physical_target_role_mass.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/matched_budget_comparison.csv",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/RESULTS.md",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/uma/2026111301/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/uma/2026111302/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/uma/2026111303/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "uma:TEST_energy_sealed",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/mace/2026111301/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/mace/2026111302/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/fits/mace/2026111303/last_update.pt",
+      "match": true
+    },
+    {
+      "path": "mace:TEST_energy_sealed",
+      "match": true
+    }
+  ],
+  "fits": [
+    {
+      "teacher": "uma",
+      "seed": 2026111301,
+      "valid": true,
+      "updates": 4000
+    },
+    {
+      "teacher": "uma",
+      "seed": 2026111302,
+      "valid": true,
+      "updates": 4000
+    },
+    {
+      "teacher": "uma",
+      "seed": 2026111303,
+      "valid": true,
+      "updates": 4000
+    },
+    {
+      "teacher": "mace",
+      "seed": 2026111301,
+      "valid": true,
+      "updates": 4000
+    },
+    {
+      "teacher": "mace",
+      "seed": 2026111302,
+      "valid": true,
+      "updates": 4000
+    },
+    {
+      "teacher": "mace",
+      "seed": 2026111303,
+      "valid": true,
+      "updates": 4000
+    }
+  ],
+  "uniform_comparison_rows_identical": 216,
+  "baseline_input_hashes_unchanged": true,
+  "PDF_visual_check": "Rendered at100dpi with Ghostscript; all4panels, axes and legends legible without clipping",
+  "statistical_note": "Uniform has no fitted-seed variability; zero fit-SD CSV placeholders are not zero sampling uncertainty",
+  "source_sha256": "d82d15d21857abc4577d3b54b05243a4c4162677a8453f84c2b7d86472c13d55",
+  "pipeline_receipt_sha256": "9b9bff6b7f5072cf8c877bd8bae6d5871423af21d74342d40bd5e475a73b6da2",
+  "outputs": {
+    "proposal_role_probability.csv": "6cd40ed6df4a125c3c5b1a02838fdfb4d30c40d121d9a146c770c00cb3440b65"
+  }
+}

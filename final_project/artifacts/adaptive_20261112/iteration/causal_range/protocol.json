@@ -1,0 +1,445 @@
+{
+  "status": "FROZEN_POSTHOC_CAUSAL_FOLLOWUP_BEFORE_FITS",
+  "started_unix": 1794562935.5912707,
+  "plan": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+    "sha256": "a6ac5cd03fbba24bf9b3b69b82cbaea1f0b8e1a79b472d5fde7846fb0d5964e4"
+  },
+  "preparation": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+    "sha256": "171662cf374b4adf8292fb89fb8342dc6b30e219e27c784516410aed812be4ab"
+  },
+  "support": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/H0_support_receipt.json",
+    "sha256": "e5cc14be1f8948a83e306f935d99554e1242614433d5427197ab68775de29a15"
+  },
+  "core_completion": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/completion.json",
+    "sha256": "5683990790f5534b50ce2a55712f6c28f7f2979c3623fdd63b388e495b8e4dd7"
+  },
+  "core_analysis": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/receipt.json",
+    "sha256": "d84b5cb8351a7528635dce1c2df5ba7e20295d42f03ed82846fef19ccb2afab7"
+  },
+  "boundary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+    "sha256": "4813f5d20d520eaa5242441d14d1d78de0ddf2e72c4efa623c6efb31ed8a1f84"
+  },
+  "worker_override": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/oracle_worker_override.json",
+    "sha256": "77c6e81e25e355070ab2a938237e6dafcf53b677563e9fd9c5b7b56dcabab0d7"
+  },
+  "source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+    "sha256": "f42cf6d465def000be304c1e8c24694ca4ee6850c8134f39e8c1ae67609283ff"
+  },
+  "inputs": [
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111301/last_update.pt",
+        "sha256": "0d331c60421e08f505273d62d6f59ae0d8a38aeba170cf36aa21425b3fb295f5"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111301/last_update.pt",
+        "sha256": "a7c7eccafd63d67c328d5df4950cfb0cc0017700a2a67fbc505ac79eaa7ceddd"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111301/last_update.pt",
+        "sha256": "cfc3bcef77993326533315d7f209ca6abd598c02b5500b7cbc7b46708862e181"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111301/last_update.pt",
+        "sha256": "a731c1665824af835bc559a484da0a8281e450fd2b31f26770f67cb866819d7c"
+      }
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111302/last_update.pt",
+        "sha256": "591011cef94b21a5ec6e7bceeadc578007b6c39d1a48027cbc362daf6e620f5b"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111302/last_update.pt",
+        "sha256": "0fa2253892e158e4a0dd726a7768253c16b04610a38d6478123ced7c600464fa"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111302/last_update.pt",
+        "sha256": "69bcd3513ca87474adc37378e61290ca4e80b7d741417fc438b5fb73b0fb1e39"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111302/last_update.pt",
+        "sha256": "0c7f2cd68a52b9a364c408929910c7fa3b33f3da38f35032a2a05aa8b781fad9"
+      }
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111303/last_update.pt",
+        "sha256": "d2f5007de2926369e09f5acb49d6feee3744e0fdb2c8ebe220d06e0ec9af1680"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111303/last_update.pt",
+        "sha256": "f29ba11b72cb67654c430529209ec9926d23705a4249379dcc893c7a86e0b0d0"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111303/last_update.pt",
+        "sha256": "93f37a67ad51919feba5d5f61ecbeeb9c815512493ea414b4f6fffc0ec5c4c92"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111303/last_update.pt",
+        "sha256": "03948d95e70c6c2f94e8c22c654c0cd4004d31b34a5adb59360f00c61c6f3005"
+      }
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111301/last_update.pt",
+        "sha256": "171261abcf28f22e6b1318a45ea773f69afe2d816437fa6768479eb7f4e00271"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111301/last_update.pt",
+        "sha256": "5a20d326eaefc453518f65585a0f404d6075ebe863480a85dda4e5e35aa9037f"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111301/last_update.pt",
+        "sha256": "69d285b8ad31264db073146920346b8852dda741f99e992889f5cedf0bc83634"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111301/last_update.pt",
+        "sha256": "dc2a0e6bc79a2f8396a8b18a8b5e0c7139c7d29ac0509ee5fdc9908d536df414"
+      }
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111302/last_update.pt",
+        "sha256": "bb2e2becae5557c3b14a94608652cedb2fbf2b6687dd127d6a49a8e0eae227ed"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111302/last_update.pt",
+        "sha256": "645b2d96d9cb6c0c8ff3921d82f2a0c0a7f050c8225585d639dc6404b946abf2"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111302/last_update.pt",
+        "sha256": "ba2dfd31fdf069034c6eef20d9aabd56a3578b6894b97a490452ee7818d7bfd9"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111302/last_update.pt",
+        "sha256": "e2dedd8dc66d38c4ac9ea6d3fa8f02887e2432581af86b3a13e4feaf484bcd98"
+      }
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "initial": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111303/last_update.pt",
+        "sha256": "7892aa2740950a1c754c2a4655437bf3626219899d0c01bcd06f7ef8812fa061"
+      },
+      "h0_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111303/last_update.pt",
+        "sha256": "486da46d480afef152699e84337b22ba84674fde4c400c555f207b2f12fde0f9"
+      },
+      "aug_fixed": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111303/last_update.pt",
+        "sha256": "90c463d58771f6bb48e8b936ac9911d2575069a979dd7e69f0f24f1ca9aae2a9"
+      },
+      "aug_range": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111303/last_update.pt",
+        "sha256": "9472485bc3d6ea3bf1c0e5c31d88be8070425963d1352a0c3cc04d1864cf16bf"
+      }
+    }
+  ],
+  "new_fits": 12,
+  "extra_H0_using_R1_edges": true,
+  "models": [
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_fixed_ar_2026111301",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "aug_fixed_ar_2026111301",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111301/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "aug_range_ar_2026111301",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_range_h0_ar_2026111301",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_range_r1_ar_2026111301",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_fixed_ar_2026111302",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "aug_fixed_ar_2026111302",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111302/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "aug_range_ar_2026111302",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_range_h0_ar_2026111302",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_range_r1_ar_2026111302",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_fixed_ar_2026111303",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "aug_fixed_ar_2026111303",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111303/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "aug_range_ar_2026111303",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_range_h0_ar_2026111303",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "ar",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_range_r1_ar_2026111303",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_fixed_d2_2026111301",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "aug_fixed_d2_2026111301",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111301/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "aug_range_d2_2026111301",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_range_h0_d2_2026111301",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111301,
+      "draw_seed": 2026111701,
+      "id": "h0_range_r1_d2_2026111301",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111301/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_fixed_d2_2026111302",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "aug_fixed_d2_2026111302",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111302/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "aug_range_d2_2026111302",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_range_h0_d2_2026111302",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111302,
+      "draw_seed": 2026111702,
+      "id": "h0_range_r1_d2_2026111302",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111302/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_fixed_d2_2026111303",
+      "cell": "h0_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "aug_fixed_d2_2026111303",
+      "cell": "aug_fixed",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111303/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "aug_range_d2_2026111303",
+      "cell": "aug_range",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_range_h0_d2_2026111303",
+      "cell": "h0_range_h0",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json"
+    },
+    {
+      "family": "d2",
+      "fit_seed": 2026111303,
+      "draw_seed": 2026111703,
+      "id": "h0_range_r1_d2_2026111303",
+      "cell": "h0_range_r1",
+      "checkpoint": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111303/last_update.pt",
+      "schema": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json"
+    }
+  ],
+  "active_guard_minutes": 38,
+  "hard_wall_minutes": 40,
+  "max_gpu_node_hours": 3,
+  "fit_wall_seconds_cap": 600,
+  "fit_wall_cap_provenance": "Administrative10minute fit cap reserves rest of40minute follow-up budget; prior2000updatefits completedin~2minutes. No convergence tolerance changed; a fit that misses2000updates fails.",
+  "group": "MACE18 only",
+  "moving_MACE_metrics": "Not computed; only independent fixed teacher schemas are used."
+}

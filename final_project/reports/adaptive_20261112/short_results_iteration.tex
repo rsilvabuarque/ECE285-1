@@ -1,0 +1,35 @@
+\input{table_iteration_gains.tex}
+
+Range labels improve the first-round balanced statistic by about six points
+under both teachers, but the second acquired batch reverses that gain
+relative to the appropriate continuation. The first-round same-data
+range-minus-fixed contrast is $+7.90\pm0.83$ points for AR and
+$+6.97\pm2.74$ for $D=2$ under UMA. Most of that gain is HIGH-class
+conditioning: AR's fixed-LOW change is only $+0.35$ points, whereas its
+HIGH change is $+29.77$ points. A broad-class gain is not an equally large
+gain in low-energy discovery.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{iteration_paired_gains.pdf}
+\caption{Acquisition effects within separately frozen assessments. Each
+round uses its appropriate no-new-data continuation; round 2 starts both
+arms from the same first-round lineage. Error bars are SD over three paired
+fit/proposal seeds.}
+\end{figure}
+
+After round two, absolute UMA range yields remain 70.28\% for AR and
+68.66\% for $D=2$, above the declared fresh uniform and fixed-TRAIN-seed
+mutation baselines of $33.88\pm0.59$\% and $58.16\pm1.53$\%. Nevertheless,
+continuing the first-round model without the new range batch performs better.
+The decline mainly appears in fixed-bin condition fidelity; novelty still
+exceeds 97\%.
+
+This requires care in interpretation. Acquiring higher-energy extrema raises
+the range-defined LOW cutoff, so the requested target itself becomes less
+strict relative to the fixed-H0 LOW reference. The negative fixed-metric
+change and the positive extension of upper-energy coverage describe different
+outcomes. The detailed report separates novelty, condition fidelity, moving
+bins, endpoint growth, and loss-weight concentration rather than reducing
+them to one success label.
+
+\input{short_results_causal.tex}

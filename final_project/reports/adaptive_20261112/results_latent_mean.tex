@@ -1,0 +1,106 @@
+\subsection{Posterior-mean supervision and a more informative latent diagnosis}
+The posterior-mean objective completed all 15 new fits and the 40 matched
+diagnostic evaluations, including sampled-head and AR/$D=2$ references.
+There were 24,586 raw unique orbits and 24,568 eligible new orbits, evaluated
+by both teachers. On this fresh pool, mean-supervised yield is
+$63.33\pm1.76$\% under UMA, compared with $63.47\pm0.86$\% for AR and
+$63.40\pm2.05$\% for sampled-head supervision. The paired mean-minus-AR
+difference is $-0.139$ percentage points, with 95\% interval half-width
+1.874 points. MACE gives $64.08\pm1.85$\% for mean supervision and
+$64.20\pm1.19$\% for AR. The actual guided upper-minus-lower pair-fraction
+response is $(-9.65\pm23.1)\times10^{-6}$ over five fits, again having no
+useful directed effect. Its auxiliary gradient reaches the encoder through
+$\mu$ without a direct path through $\log\sigma^2$; shared encoder parameters,
+reconstruction, and KL can still change the variance. The negative result
+is not explained by a missing gradient.
+
+An important distinction emerges from a posthoc diagnostic. The original
+ridge probe standardized $\mu$ across mixed-condition data and used a common
+latent slope. Large differences between conditions can obscure tiny,
+condition-specific structure signals. We therefore fit an additional ridge
+probe separately within each condition, scaling each latent coordinate using
+TRAIN moments from that cell. The ridge strength stays at one, without
+tuning; VAL targets remain held out. Balanced VAL MSE across nine cells is
+$0.1009\pm0.0963$ for ordinary $D=2$, $0.0991\pm0.0644$ for sampled-head
+supervision, and $0.0759\pm0.0823$ for mean supervision, versus 1.0212 for
+the TRAIN-zero reference and approximately 1.025 for shuffled-target probes.
+Thus the deterministic mean retains a recoverable ordering fingerprint.
+
+This fingerprint is not necessarily learned. In the fixed 24-Li, MIDDLE-bin
+cell, five random-initialized graph encoders give probe MSE
+$0.00671\pm0.00591$, compared with $0.0809\pm0.0567$ for trained $D=2$.
+Nonlinear message passing and pooling already encode pair correlations
+through the supplied physical graph. These random-feature controls prevent
+interpreting a colored latent scatter as evidence that training discovered a
+useful physical coordinate.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{conditional_information_comparison.pdf}
+\caption{Posthoc probes with TRAIN-only within-condition scaling. Left:
+balanced held-out MSE over the nine cells, with five-fit SD. Right:
+fixed-condition random-encoder and trained-encoder comparisons. The
+nearest-shell vacancy-pair fraction, called $C_s$ in the plots, is
+$C_{\rm vv}$ in the equations. These probes read deterministic means.}
+\end{figure}
+
+The scale matters. In the predeclared first-fit illustration with 986 VAL
+records at fixed count and energy bin, SD$(\mu_1)$ is approximately
+$1.29\times10^{-6}$ for ordinary $D=2$, $1.63\times10^{-7}$ for sampled-head
+supervision, and $2.45\times10^{-8}$ for mean supervision. Posterior standard
+deviations are about 0.94--0.96 and the prior standard deviation is one.
+A rescaled scatter can reveal ordering in $\mu$, while adding unit-scale
+Gaussian noise almost completely hides that ordering from sampled $z$.
+For illustration, two equal-unit-variance Gaussians whose means differ by
+$10^{-6}$ have KL $\tfrac12(10^{-6})^2=5\times10^{-13}$ nats. This example
+explains the scale; it is not a substitute for the measured posteriors.
+
+\begin{figure}[p]
+\centering\includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{fixed_condition_latent_centered.pdf}
+\caption{One predeclared fit and condition: $n=24$, MIDDLE, seed 2026111301.
+Centered mean coordinates reveal the tiny structure-dependent variation;
+the accompanying posterior-mixture panels show it relative to sampling
+noise. Encoder outputs here are CPU FP32 reevaluations; moment statistics
+use float64. The primary generation retains its GPU protocol. This illustration is not a selected
+best fit, and its colored means do not establish prior-generation control.}
+\end{figure}
+
+We can quantify this distinction without estimating mutual information from
+a scatter. Let $q_i$ be the diagonal Gaussian encoder posterior of VAL mask
+$i$ in this fixed cell, and $\bar q=N^{-1}\sum_jq_j$. Take the uniform
+empirical distribution over the $N=986$ VAL records. Then
+\begin{equation}
+I_{\rm VAL}(X;Z\mid c)=\frac1N\sum_i\KL(q_i\|\bar q)
+\;\leq\;\frac1{N^2}\sum_{i,j}\KL(q_i\|q_j).
+\end{equation}
+The inequality follows from convexity of $-\log$:
+$-\log[N^{-1}\sum_jq_j(z)]\leq N^{-1}\sum_j[-\log q_j(z)]$.
+Integrating under each $q_i$ and averaging gives the right-hand side.
+Pairwise Gaussian KL is analytic. A cancellation-resistant
+float64 calculation, checked with an independent Gaussian implementation,
+80-digit spot calculations, and a Taylor upper envelope, gives:
+
+\begin{table}[htbp]
+\centering\small
+\caption{Information diagnostics for the fixed empirical VAL cell and first
+fit only. The pairwise quantity is a computed upper bound, reported by order
+of magnitude rather than as interval-certified last digits.}
+\begin{tabular}{lrr}\toprule
+Encoder & Mean KL to prior (nats) & Pairwise information bound (nats)\\\midrule
+Ordinary $D=2$ & $4.06\times10^{-3}$ & $\sim7.1\times10^{-12}$\\
+Sampled-head $\lambda=10$ & $3.48\times10^{-3}$ & $\sim4.2\times10^{-13}$\\
+Mean-head $\lambda=10$ & $6.56\times10^{-3}$ & $\sim4.8\times10^{-15}$\\\bottomrule
+\end{tabular}
+\end{table}
+
+Most KL to the prior in this illustration describes a common mismatch of
+the conditional posterior mixture, rather than information distinguishing
+the masks. This is a statement about the empirical encoder joint
+$(X,Z)$ in one cell. It does not prove that the decoder ignores prior $z$;
+the prior interventions and generated-property measurements test that
+separate question. Together, they explain how informative deterministic
+means can coexist with ineffective sampled-latent physical control.
+
+The conditional probes and numerical checks introduce no new training or
+oracle calls. An initial float32 moment annotation at this extremely small
+scale was corrected using float64; original plots are preserved with the
+precision-correction receipt. The figures here use the corrected values.

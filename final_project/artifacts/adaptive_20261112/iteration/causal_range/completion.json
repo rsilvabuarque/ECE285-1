@@ -1,0 +1,25 @@
+{
+  "status": "POSTHOC_CAUSAL_FOLLOWUP_COMPLETE",
+  "created_unix": 1794564017.7724986,
+  "protocol": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+    "sha256": "c7fa78da3aea51281d564e9a369400929d044c9ebef13735425700a7551d11c1"
+  },
+  "source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+    "sha256": "f42cf6d465def000be304c1e8c24694ca4ee6850c8134f39e8c1ae67609283ff"
+  },
+  "summary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_summary.csv",
+    "sha256": "05e76cb11b4ada818bef4bdda9222541fa5854c6d081b03690a6980959e11c51"
+  },
+  "metrics": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/all_cell_metrics.csv",
+    "sha256": "8554ba08936f8bb80a48303fb46fbb6948e31732df5b23a0a88b382f5ca1ea3b"
+  },
+  "boundary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/reserved_boundary/receipt.json",
+    "sha256": "b05259c85240bef25b54cd1d6bf78a3992f78b9be163a3206feca2d4fac93c08"
+  },
+  "elapsed_seconds": 1082.2518799304962
+}

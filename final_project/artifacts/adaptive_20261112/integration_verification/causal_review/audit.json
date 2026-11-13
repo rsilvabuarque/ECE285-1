@@ -1,0 +1,3280 @@
+{
+  "status": "PASS_STRUCTURED_CAUSAL_REVIEW_WITH_LIMITS",
+  "causal_root": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range",
+  "source_sha256": "a48a308f4c2ad324e58d67dac7548c55a4ba5c782cc6438c33e4ed62a8342daf",
+  "checks": 746,
+  "failed_checks": [],
+  "check_details": [
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/prepare.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_mace.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/H0_support_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/completion.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/oracle_worker_override.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/edge_comparison.csv",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/prepare.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/all_cell_metrics.csv",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/reserved_boundary/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/H0_support_under_R1_edges.csv",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/support.py",
+      "passed": true
+    },
+    {
+      "check": "completed",
+      "passed": true
+    },
+    {
+      "check": "twelve_new_fits",
+      "passed": true
+    },
+    {
+      "check": "five_cells_per_family_seed",
+      "passed": true
+    },
+    {
+      "check": "extra_H0_R1_edges_branch",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111301/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111302/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "fit_2000:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "same_initial:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "seed_teacher_balance:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "TEST_not_evaluated:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "trainer_source:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111303/protocol.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "fresh_shared_stage:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:ar:2026111301",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:ar:2026111301",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:ar:2026111301",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:ar:2026111301",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111301:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111301:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111301:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111301:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111301:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111301:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:ar:2026111301",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:ar:2026111302",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:ar:2026111302",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:ar:2026111302",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:ar:2026111302",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111302:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111302:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111302:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111302:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111302:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111302:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:ar:2026111302",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:ar:2026111303",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:ar:2026111303",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:ar:2026111303",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:ar:2026111303",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111303:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111303:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111303:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111303:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:ar:2026111303:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:ar:2026111303:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:ar:2026111303",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:d2:2026111301",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:d2:2026111301",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:d2:2026111301",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:d2:2026111301",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111301:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111301:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111301:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111301:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111301:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111301:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:d2:2026111301",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:d2:2026111302",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:d2:2026111302",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:d2:2026111302",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:d2:2026111302",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111302:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111302:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111302:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111302:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111302:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111302:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:d2:2026111302",
+      "passed": true
+    },
+    {
+      "check": "draw_pairing:d2:2026111303",
+      "passed": true
+    },
+    {
+      "check": "H0_rows_identical:d2:2026111303",
+      "passed": true
+    },
+    {
+      "check": "augmented_rows_identical:d2:2026111303",
+      "passed": true
+    },
+    {
+      "check": "VAL_TEST_counts_preserved:d2:2026111303",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111303:12",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111303:12",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111303:24",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111303:24",
+      "passed": true
+    },
+    {
+      "check": "fixed_edges:d2:2026111303:36",
+      "passed": true
+    },
+    {
+      "check": "matched_range_edges:d2:2026111303:36",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py",
+      "passed": true
+    },
+    {
+      "check": "merge_role_contract:d2:2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:fits:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_ar_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_ar_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_ar_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_d2_2026111301",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_d2_2026111302",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_fixed_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:aug_range_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_h0_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "worker:generation:h0_range_r1_d2_2026111303",
+      "passed": true
+    },
+    {
+      "check": "four_changed_edge_cells",
+      "passed": true
+    },
+    {
+      "check": "H0_support_nonempty",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "oracle_status:uma",
+      "passed": true
+    },
+    {
+      "check": "oracle_same_stages:uma",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111301/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111302/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "hash:/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111303/receipt.json",
+      "passed": true
+    },
+    {
+      "check": "oracle_status:mace",
+      "passed": true
+    },
+    {
+      "check": "oracle_same_stages:mace",
+      "passed": true
+    },
+    {
+      "check": "metric_dimensions",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_ar_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_ar_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_ar_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_ar_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_ar_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111301:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111301:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111302:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111302:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_fixed_d2_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_fixed_d2_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:aug_range_d2_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_h0_d2_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111303:uma",
+      "passed": true
+    },
+    {
+      "check": "nine_cells:h0_range_r1_d2_2026111303:mace",
+      "passed": true
+    },
+    {
+      "check": "CSV_arithmetic_identity",
+      "passed": true
+    }
+  ],
+  "source_and_receipt_sha256": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/prepare.py": "ed7171ff267e7ddf7b351dd2e6de1f983a3154fc3255ce525056d67a584b9e39",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_mace.json": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json": "a6ac5cd03fbba24bf9b3b69b82cbaea1f0b8e1a79b472d5fde7846fb0d5964e4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/preparation_receipt.json": "171662cf374b4adf8292fb89fb8342dc6b30e219e27c784516410aed812be4ab",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/H0_support_receipt.json": "e5cc14be1f8948a83e306f935d99554e1242614433d5427197ab68775de29a15",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/completion.json": "5683990790f5534b50ce2a55712f6c28f7f2979c3623fdd63b388e495b8e4dd7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/receipt.json": "d84b5cb8351a7528635dce1c2df5ba7e20295d42f03ed82846fef19ccb2afab7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json": "4813f5d20d520eaa5242441d14d1d78de0ddf2e72c4efa623c6efb31ed8a1f84",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/oracle_worker_override.json": "77c6e81e25e355070ab2a938237e6dafcf53b677563e9fd9c5b7b56dcabab0d7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/run.py": "f42cf6d465def000be304c1e8c24694ca4ee6850c8134f39e8c1ae67609283ff",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json": "227772dbc8765ac77ff2523fa27fefc16c9886f7957d538b27f41f7410c23d35",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/edge_comparison.csv": "0bfc3529a0b2b850fd97fa921f80cf2309b15cc7f4c7e915c31a2bc648e65fbd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json": "c7fa78da3aea51281d564e9a369400929d044c9ebef13735425700a7551d11c1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_summary.csv": "05e76cb11b4ada818bef4bdda9222541fa5854c6d081b03690a6980959e11c51",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/all_cell_metrics.csv": "8554ba08936f8bb80a48303fb46fbb6948e31732df5b23a0a88b382f5ca1ea3b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/reserved_boundary/receipt.json": "b05259c85240bef25b54cd1d6bf78a3992f78b9be163a3206feca2d4fac93c08",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/design.json": "94afc683fd758e1885c04821468d86071d8f3476b64d6bc8e4a8466ed442c316",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/train_mask.py": "a9dd347f24994483b400e62fb07fe4dace679f3fa73d6894fae1d457f14a1143",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/learning/physical_auxiliary.py": "03da9e36ae190edafb54f0cc07b1a50d78ceb092072ed9ab359e56fdbbf80589",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111301/condition_schema.json": "aa46033556bef47b8ce93921da9f3f7c6154cdedba38274be67bdc156930b563",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111302/condition_schema.json": "4ddf246724219f17e8950763af55ea3e9dea16f91f0a2fa60d922d364a91e546",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_range_2026111303/condition_schema.json": "c63e8b682953d5c4526059c84a77cf6031ffe942c73e5df529bc78eff287f100",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111301/condition_schema.json": "615c25a736dae4b67f809bbb406c39d8e2cf2f282a590ed97fc291ced8e711fc",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111302/condition_schema.json": "5f03a815f11e41199014c1f831f668eceac12387f8bd04ed52b1cce3e21a087c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_range_2026111303/condition_schema.json": "9d80bcba518966c3b19077a3ec54730b7d9ccb937d5b3895c89c1bf684758b0c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111301/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111302/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_ar_fixed_2026111303/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111301/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111302/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/schemas/r1_d2_fixed_2026111303/condition_schema.json": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/H0_support_under_R1_edges.csv": "18b64a525e628037f10b26a3c02abaa527ba39dbabdd62e4782a6b15c72cb48c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/support.py": "d4b19c9484645f19047bd0a5e760ec6fceb98594347534dd8e8c906b61b38c10",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111301/configuration.json": "932295a4eee8bf2475a69dadf383d00bc40024a7548e69a412fef0df405e4eec",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111301/summary.json": "9f0e089d266b02fb88419340f8e3e8002640fd31321c5ad522fabeca044fa92a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111301/protocol.json": "1d4654026385c3a4e5ac058d9b3cfbba7c24a4bdcadf03d724ce29537a234ae1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111301/configuration.json": "041aadd3a67b8019e247cc23d6cc3b46b9fdbec3623cbaf5643959269cc4cd7d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111301/summary.json": "9eb603c848d0eca92424b7b939676c08b868436df1eddd9a7b2b33c78f8ff2e2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111301/protocol.json": "efe6d68afd8956b001c0e2ee7aef5353738a172e820d0a9409ba616321be6828",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111301/configuration.json": "59e2497f7badc8eb158d51f1c7e4245fd464135aebe219101e21149f33a1bb6d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111301/summary.json": "85c4149ef1fbc54ab0591db67af31a68acc98f796fa0e10340d25f6cce0a48ad",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111301/protocol.json": "2de86786afd4fedcd18c4b9483f7fc5248caad5be3a33d37e43eeb5944426ae9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111301/configuration.json": "335c9a61cca4c6e7d55ab5184a78b6200e4982d22b0513a19265717eae5c92ca",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111301/summary.json": "36d761f836fa381cdf574fdfca83e297c471cc9933230541dd6e315a7ae52cb2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111301/protocol.json": "0cc317228e3915a9ee0dcaf6663be3ba90241873c37e1179e75033241d3ef743",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111301/configuration.json": "0397c08455324f1591a270520155a64cff6fc4495d7c42f0a0953a911737fced",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111301/summary.json": "4c475fa326cc6bdad4b2c65a9d51a9c60ebe1ba2ed2a6971604d4cbecec1fa41",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111301/protocol.json": "b9bea93a5c30a3851099bfcf3d61cfbfb42006ac0223f004ed3b31f9adc7ce61",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111302/configuration.json": "6b6c62a226f676ee6d014b1dce3d98421357b4d2744d7b99a97a96b93e6300ee",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111302/summary.json": "4d9df082ee0992017561ebc775749ca63bafd32d772c0a16c0129daf2974e780",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111302/protocol.json": "611bc80850d7c8011680dc883781341a89e31372abd08db9ef9431a02175e72a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111302/configuration.json": "1d4737e3ea7955559fd5ba9e2446374485f1e4588664f6336808247683b1f181",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111302/summary.json": "2ab70074695221b3de2666fb07c01b4107fca3ad3e3c7a9336fa068cc1ad47f2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111302/protocol.json": "cadb4841ee8665189963beadea91c68686ba2933789e04858a1c10976545cbe9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111302/configuration.json": "95bebdf82a323141f0ef9dfd210868ca3fb4ace68d7fec296e9fcb32063be7fb",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111302/summary.json": "ca81a00c79a4d2139d00de758b72c84e63726b98504db7e519f8f42ad5004eed",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111302/protocol.json": "f91b9242efb761bf95fdfe50653a3d89ba6b2c59f32db77b94f5c97db51d451f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111302/configuration.json": "02b1ad763f2067ec0662ae117cea9ea7613b5e8766858402a793f6fc4937890b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111302/summary.json": "eac470bf36fa4606cf99dcf8e3c2a2a21d0e47e628da4e440275b21a88842fda",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111302/protocol.json": "d0b4de69bcee2769ca49610af67c0c830ff50720ae40e3425dbd5fb08b70230b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111302/configuration.json": "e2adcbe041d671b89949d729d00249307e1153d5325fbc3a65d6da537a760eba",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111302/summary.json": "eaae74f70b8a8110a302fafaa8cbafeacb1d59665953dc83602cfd85785bb552",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111302/protocol.json": "db7a32e4d9c3fa7040eb419f4f5b88391511890f69e23d233338462014eb946a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111303/configuration.json": "72d146cdfad9dd661f15d146abcfd8fdd132a3be879ba1ca938ec118021e7bcd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111303/summary.json": "d728583d3f5455a53b49605837f78545ac64adc38b5c70f1ee1ec729c56f8023",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111303/protocol.json": "d44b63daecf39e0868cda773c0c67f2e4f14371a93eac0d29a866702477a7639",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111303/configuration.json": "290933b4af2969dc9c8797aa2c43d64b36072918f8331cabb64e63d6fd13d6ff",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111303/summary.json": "809acccdf2b3a7855734684f3c4fa204f2c04a6215ed305b6a50d04e0fbd1558",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111303/protocol.json": "6d0c6ceb04a4bf767b94591c2059c16c405619cbbbcea254affd80cb82d79bcb",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111303/configuration.json": "2a12f85a50657435d87a9dcd4bb94563230e02e2ca73f7fcdd5b448bf7fda607",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111303/summary.json": "c1b656a91859a9e9839d7329db707f2a6f445126d59d758e5fff96e9664201ae",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111303/protocol.json": "ea8cf4d510486a30ce4f3cc3891db6f552a10a83860ae43a4b7c9a1bee0303a3",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111303/configuration.json": "8e0b3655ce635ff0372ef90a1ce6f72946fec0f955446e0ae9bf6bd6d68202eb",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111303/summary.json": "b57e09a34ad397f3a0514f9246cad9e0bebf86d6a1145f3b68602f0eb9bb9611",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111303/protocol.json": "8808486746e80bd25ad67625859320f74d16724ca7c7d4a3e661f46b963a0945",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111303/configuration.json": "d643391f99420e76d35f2f7766c9240dc207596569629fb04f09699724ec8bdd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111303/summary.json": "dfda20f02fdfb753670e6a227d6705b4a716a856a5240326db581ad094bec264",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111303/protocol.json": "3312c0a78516fcba338386e38a7651a4a53c30919a0293a260a71e40ed33909a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111301/configuration.json": "c96eeb909a92495129faeb657881405fe1f049579836f99d00ff843d6b84a99b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111301/summary.json": "cc15d3326d0f007989a822521a46794b0e1877588730df5981af4df1b5867b58",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111301/protocol.json": "30b255576a1919023510fe6de170518ec1764fefd891bfee12ca40d320b78cdb",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111301/configuration.json": "a862b044c5b6a1e43da1aee5015abfb361b5f1ceba475ecccc556a7188001122",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111301/summary.json": "fdbc20a395c5ca6376103250d202f1bc92645d71cd519c5ba2137e07d39cbf76",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111301/protocol.json": "67f370d7335776da52afe29256c092de83ea42c1f73219ffefd34ea9319a5a19",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111301/configuration.json": "0253b7db6878e9e269eedf328b21977f561dd45bc7b251c5657346f60afe111e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111301/summary.json": "edfca5b73aa379cfa3ba37e92b0df90c64b9702caea7ddd5210060120d3ebea1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111301/protocol.json": "114b9455494d6a2cf0c4adc606c8ae68d109a8be3f737e6eeb2d0324a95a7c6f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111301/configuration.json": "9d62d559f570648d0cdef62ebe1b9814aedfdd5cd4536e32efce88372de0d6b4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111301/summary.json": "7180d0834991fe8c1a492b8077bcd767a17128ca6435e86d3b7ed2a5dd5fd293",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111301/protocol.json": "f3571568eec990e6ac9027411e9cfc3a30a1fb49fc5dcb1dee7702617111ce12",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111301/configuration.json": "139b31410cdb8ba4113a312c48ab05b14f972957b0facfa7a5ab6a174e5642d5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111301/summary.json": "b7c7cf11c6e2e3bb0bad9ceefc19897a54eeb3697abe55c0776cc48b35c49d09",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111301/protocol.json": "409c3163a828c8574daf3ecd1885f0863d8b41a6e61ecc4f0ff93c09b3387748",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111302/configuration.json": "8a2872044f46ebe2119b82c58fb1acc849fdff89ccf29ca9cf174401ac091c57",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111302/summary.json": "318e730b4e64e80d27aed5f483b6f0ec1b19632c690a2a470fda53a70120dde2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111302/protocol.json": "48c98b376d94c80acb89003e295ae12c3bb782bb81f37f195e58c55b498c619f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111302/configuration.json": "c53bf646bc10a55aea4e765781f73aaffa08ec4553f3f9ea5c3525282e228498",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111302/summary.json": "26d68e10f68226a7dd42fcf0e12ca02cd5dad9f240fafbae45db182528d63cb4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111302/protocol.json": "17927bd0031542bc3ab355de0b485283986a09983da3a57500f308ca07e0a10a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111302/configuration.json": "e09e3f1403b356542e9f5a10328b3c9389dfbac94b2a821aaa16196cf62edc55",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111302/summary.json": "c7d5a62febb715b7ccabd5f55531b8724a12d7764b1d6dbb8dbaccd6ad45c112",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111302/protocol.json": "894c0a1baf557daa14bd38a4c01a1fc87595aac6611c0353bc37c6b70b2c0128",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111302/configuration.json": "215bca88bdf705e0c6f60e9828fc7b9790750373364f1ad6967ff402392ce2cf",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111302/summary.json": "9e9ae6d70e201e8c242c8f5d9601272bcda37f906f85ef711295f2fe4961d6d9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111302/protocol.json": "09161f111e033a46745f630328c2ed4bedd7a763b71a09343703e46b732546b6",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111302/configuration.json": "23bf83e9f11aaafb8be5cf98a9cfc8f271dcc732318fa2d6311acd66a34af513",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111302/summary.json": "b063f524b88a9f32a7b58e66420b235614973dd19ce2d6e4835d08470783d869",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111302/protocol.json": "7f6fa5e76e418d93dd744f7113274cefbf63c79f8c33e621bc7fd171dda5e972",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111303/configuration.json": "16c59c849206d854ac92558285e078e401ed8cdd0c7ef71f2522c7407f3d3c21",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111303/summary.json": "c8486e6a40c099d99fab7ef5ddf870fa852cdc6438fbea4b853dcb148a076528",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111303/protocol.json": "6e4cb8d05101be2743da3313d99f56a53be5f5b47628ad36111b9c8ea4327503",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111303/configuration.json": "1f0f6beff840cc6d558424ea399d558a6caa6e427fbae3107e9352334199f052",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111303/summary.json": "1451042f92fcd0ea7a81e99f23d598dde50822c3b68a0ec8fba2ac516227af5e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111303/protocol.json": "b5e26983eab3cc6b85f0cd18f2ed8146436021c183cb421da6dec4c82d7b7de8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111303/configuration.json": "7eca5edd880550011cbac61d3ea918064dfcc091675a3ad170aa04e98a507653",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111303/summary.json": "6ea864d70ebde9fa5cc1d67cbcb5cdf7a36caebd2d20ad260730042fb185bb59",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111303/protocol.json": "bfd10c6f44775d3ee0c473bf019c08e905b9f44a3b383f1ec012083225f810dc",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111303/configuration.json": "df68950785bfd318ced13e608d5131d238593cc3f0e92887273210a3cbae695a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111303/summary.json": "bb3a77194a809505a8fcb6320ba499dc4efad710d179348580c69aff2cdc9b71",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111303/protocol.json": "970db9fcec141576eb08edff3bf8da288cef51a90dcb3a9087086bee78ef23a4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111303/configuration.json": "70ecdf54fec384746db1b6aef72e08591fb9064f2578e0ffdf73962b4e3bfc24",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111303/summary.json": "6196f38e1db4573020011255169d7944c2e7ddd696fdbed3780a7c5bf365ed2d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111303/protocol.json": "04e6708bb10df541c6c4b8ea7943d2f4dd51ea3056f8c869ec3b35611d6f7be5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111301/receipt.json": "4e9d60b87fb0fb6cba53e02c2d9b998d83baafa84400f29b5e2a8f27bfdd2fbf",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json": "57b12babac3743f6541e4fc5acfabb9dac6ae6b558047c4a34fa0a270b948239",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/source/src/cathode_cvae/adaptive_iteration.py": "45180b678311e780470845e858e67f64ac705b46d906d312c3f40fddd05fbdb4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111302/receipt.json": "48a0c847e66b8191582f513b8154387e7fc600d465f39624135f209026d89137",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111303/receipt.json": "a26b05fab3b4384d60f5bff2adee8d642844ae83bd76475ab398f5da6f6feb74",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111301/receipt.json": "a0a090f0ff46500f7884a3cc17b4172bc5441569132e7840f61d8986e5cd862d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111302/receipt.json": "358804e2fc5415c312ee344f7ea9e17d788accd9e5b349f55f551b7969a45a2b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111303/receipt.json": "c5451270eed97dbd8b46595466da0d669c87c205cc28d946d8b84522f90c70a6",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_ar_2026111301/receipt.json": "6d8d46475191b9ed8aa1a27c7e42fc7cc50dfd06b35cd780090333e523d1095c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_ar_2026111301/receipt.json": "7e950355654fb84602443339a99b28108b33196fb5b8e88e4b36260c7695b975",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_ar_2026111302/receipt.json": "43bed9f00706d0fe4cfbf9881d4ecd223d51c075094997b8027af71289724eae",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_ar_2026111302/receipt.json": "e65f7b4b21ebcabf8d2f9372d304168ce12da4cf2326746af8a5efd02d5ecf9f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_ar_2026111303/receipt.json": "a8e7e777d524bbcea1c7bc0c83d7bcb7598fa261690fe822dfe6569f9dae75f8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_ar_2026111303/receipt.json": "1362281592be2afa0ac26c410ac79639c24b1fddc11a1fce0d0a4d1424b9b8d7",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_d2_2026111301/receipt.json": "b823823f088711939d9f0a88d6387f4660dc04d471373889946ace651e9c3d43",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_d2_2026111301/receipt.json": "ee9671b554153b9c3074bfc33ad9d17e29b88a586a132ec6630b1fdd70784422",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_d2_2026111302/receipt.json": "c365acd4e9f25fe70d68911448b305150077178118d41dcd31a9828b9280e7a0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_d2_2026111302/receipt.json": "a49f43dd249a74e0049b23ee62a42471156109c86cf9df2d8530640b1933d196",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_h0_d2_2026111303/receipt.json": "8ff3e66068d84bbbe5a2bc1467cb078aedfa3d09be7098af8864d7220029ec41",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/fits.claims/h0_range_r1_d2_2026111303/receipt.json": "3fcfccda1616b03bd6023c9548b14529a7de23e03060460bc627e4d2d171189a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_ar_2026111301/receipt.json": "ab453d23823934b274f5dfc756a854e70bdfd16e06fb72029b21381bdf5c89f9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_ar_2026111301/receipt.json": "d7f915ad7430f0d46173e6abcef4ab68f20ebd79d6c82dd31ec0b9937c40bade",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_ar_2026111301/receipt.json": "9aa1ba50e211eaac2c5038e6bef205c34756a1b640ba2eb316dfab7011b1da40",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_ar_2026111301/receipt.json": "b4f2c6d0341072d17e95defe84b3cfc9622ab5bd9330c3dafcb693d0f9328e2b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_ar_2026111301/receipt.json": "d0c2e78c5f65476123719c5fa24f733f152a46d9511b81b0f9a4d1c7c1af35ee",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_ar_2026111302/receipt.json": "224e25766d3642f924d2568230c2562bbea201f4b0885fd850191dd28e002428",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_ar_2026111302/receipt.json": "8be32afc9886a7ca21c2ea0d62318f17c664125679a28406442966fb2d83de7b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_ar_2026111302/receipt.json": "50225156fbe89b5f22876e551c548966ba03eabb41eab083d7c44f470d8a42a4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_ar_2026111302/receipt.json": "93fc4e50b74a1ff228000aeef347fef20b3cfd909553c2b79043ca784e43b645",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_ar_2026111302/receipt.json": "3c71e2db3e4e2eff979a9b1a225a649d249e9fb0339b0344fa816707e3bf6827",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_ar_2026111303/receipt.json": "5f9251a88d4aba0b755cca48dc80ff5f3c96ab99c0f6838bdc5fc480f3f61b6d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_ar_2026111303/receipt.json": "ab37bab84799b9aaa769e10c80ef9f2e12991ee1ef5467b5a81ad2850eb215ba",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_ar_2026111303/receipt.json": "d1e354f500ce3b71e1840b290bb429c905e9c2ed686f1d7a3ec2c9fed71aa47f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_ar_2026111303/receipt.json": "e6eb4ede386085c29f46013bac2758d8d7c6034f7b6a5f38cd64f2edbf02da7a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_ar_2026111303/receipt.json": "2b067c7e18e04e65121b8f3e7a46762cfb7953af17a81b77d908982add4809e1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_d2_2026111301/receipt.json": "7d4482577b4aaa3aca2208e3b278b2d34049e1d5427de20691d361bd977b7560",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_d2_2026111301/receipt.json": "664b70e0a19cb406b73fe33d133ceba67783d3512299a80630916e9c97882594",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_d2_2026111301/receipt.json": "adeb725c590e648ac68f1533f6dfaec8167d78bdfa8f88055a684a4830f004ea",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_d2_2026111301/receipt.json": "c1421d3eee6c024e9f53c14f8b439a65d05e1f71be8c72a8c588196c9c5e8f4a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_d2_2026111301/receipt.json": "eca245a7f4521edf6fea7cd466c069fd0c81c104ca7ac2634aaf627fa7ef0b41",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_d2_2026111302/receipt.json": "9f86da5c046901f29319bbc0d3458ddc774660db083b5059b885337f384cd610",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_d2_2026111302/receipt.json": "3505688ae08f3852aa015e98bbd4df6630f5df15ece867ee35821d5906886d1b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_d2_2026111302/receipt.json": "c60410c836b63d4215288563da4c5d9976075ea801472678ad8551e32f2bbb0c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_d2_2026111302/receipt.json": "c1d09ed4d5aa688b35b79d0847a015196ca133c85de39372da1c7df71ea83cdc",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_d2_2026111302/receipt.json": "755f37fd469215dce1327e13007ee3689abed10b51f5114c185b3c27af90af3d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_fixed_d2_2026111303/receipt.json": "02b6ef4111e07a978b60c25a6d34488d3fc8be82df5f966dc9157b4815286884",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_fixed_d2_2026111303/receipt.json": "2dcce6dece5047464a5e5f77a88002fb93f0116bf53ae0bce9239d1c1ee5f945",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/aug_range_d2_2026111303/receipt.json": "5cef51a82dbfefcabe49b05f4ff2d4845acd868f7f35fe5b9e969acb595fd036",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_h0_d2_2026111303/receipt.json": "a0b9e280fdaf919f7d0f07f88f676c4d6c90fa6adcddf108dbce3a8a73118aef",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/taskfiles/generation.claims/h0_range_r1_d2_2026111303/receipt.json": "d8be6bd198a9219cbbe4ec1dbf95a0e5d2a0dff3a9e6f270c9822dbdbb52cbe4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111301/receipt.json": "fd1da07acc0ec9d837358223a8de5dd88a0ac7aadef1c6b431aaddf636cdc1d9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111301/receipt.json": "3f57a9df11d0b5297e1d23b55f9ac39ef331d27ddd108ef8a70966e51d4167d8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111301/receipt.json": "0915202b4a65c08179d129c525e65fad66d0002bc604d7964708ddf24cef36b8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111301/receipt.json": "37de0fa72d05e751457818f94da0c9b5d1803e823aa2297a25a8a2b7cff7bbfa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111301/receipt.json": "6cbfb77c6949cbbf040efdd7a038b626242c77705bb9fc3a2f50c01283ebb937",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111302/receipt.json": "99985e83a0c3e052af0059ac8a7f67ee5c04f27c977ecd2c2288167decc22379",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111302/receipt.json": "1c907718a8e0a8c6d2b0aeb4c3e8c3dd7693d7e04814bf60bd195d8b85218f62",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111302/receipt.json": "0fafcc2c3cfe1bf941130cb888ef57313504d98a79bfcd267f90803f12cc889d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111302/receipt.json": "05724447c9439faa67c9ed8edfc26e755ac328e73a6f120a8d9a568d5028a845",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111302/receipt.json": "ae8b1aff2192c4652aa5f84d72958534d1557e13e3c3d8b21dd5396cd22f4644",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_ar_2026111303/receipt.json": "9f8a0f75e22993034de892927d5acee3f21f574de7e5478b5386c5924ab8d864",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_ar_2026111303/receipt.json": "75b61a292003a3afa99a434b966897d259a02faa3e47d32b68caa3c6df6cd98f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_ar_2026111303/receipt.json": "62e85a54ff2957f5358df39c0a13ba0e71ec6b3d5ed235319c96381cf0ec8b7f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_ar_2026111303/receipt.json": "f57ef6270b39b94cfef3f469447aa46d0f86ff08969545182001dcbc31112ffd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_ar_2026111303/receipt.json": "f8fa81b45a67f5f7c7af2fcd6e05ac87eee099482e46e1a2497a427f7495101b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111301/receipt.json": "4cceb0a9125abe0978806957b26d29b12345ccb67a7fe0c37a0abde5ba053d1d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111301/receipt.json": "f33cbddcc55c8ae06dbcb5f28cbcb8fa7e410e3a8d6d05cde480a38771d36621",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111301/receipt.json": "4cb2d1f57f5a64473007a4c5d7671cb627e3471b62602aea85ef19bc34952325",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111301/receipt.json": "da3e668e2789596e8ec71a0c4dbd5660166f47333c32016ccabb33551a585efa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111301/receipt.json": "48cdf0d9b77cef9d49458191024b912533041f9c2bbcfb72480254592a6ce979",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111302/receipt.json": "29702cf5f40dedab29a38908e7818d3b3102685b791cb02acc0c02fb118e9404",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111302/receipt.json": "e7919893e47d53a04299cb1560687f4b25eef746d5612499164a7926b8c46005",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111302/receipt.json": "4dec7153c9043d219e94d0e6a8aa810dde3fdb75ef9ba0faea70977cc28c2e9e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111302/receipt.json": "5d5824786acf68a6222878c27dafea46e06fad1d158e4b7e1302bd664f6a8923",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111302/receipt.json": "39fd3b6d099130e3db869204c80dfc54977511628379cfac4496e660c8fed1f5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_fixed_d2_2026111303/receipt.json": "5321b6ba3944778a1d77a2c80b75b59b4722e53f76dfe0c371f218d6bec4b7de",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_fixed_d2_2026111303/receipt.json": "755197d19e37847f18fe4d519b249c0d73e7124d2fd7bb75bdccefe82745a5ba",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/aug_range_d2_2026111303/receipt.json": "fc859ffe0565e993d67e3adfc7f1556732783f9187e552f0ec43ead11d40ffad",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_h0_d2_2026111303/receipt.json": "7071ab934d7c01b9c48caf9e3b534648c469c4c2b9a178c565c31ea6f209a3ec",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/stages/h0_range_r1_d2_2026111303/receipt.json": "d3b222b9919991f4090541053b1f7fa4737df4727a1aa48dd0e40f41edb271b9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/verified_uma.json": "b3305e4e38e0f50a2030ffb5f3040e126a9bc4c098c59c4cab1eb7d33c3f83b4",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/collected_uma/receipt.json": "90e8ef7f09e09833783cde232bdbe82c3a48c9cc0250bc1838f0c4705c0f8e76",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/verified_mace.json": "78adcb0cb0caea21a6e8108cbc0ab78dff3292bc78e5d772486fe5818560a904",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/evaluation/collected_mace/receipt.json": "d2318ec20ec628a2a66870145e3d093ff47001ffe2384e3b855d011fa3af5f8d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/completion.json": "2dc546cd551f0ca69b22a4030b1e63ad208b7bc57cf1bfdd540cc12793a6140b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/models.json": "fad98c2b2cac8b59d77e789cb45de924e3fb08f153be404b5df7b0de3060eeb9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_results.csv": "c5f890659f9284440b153fc1962390794c4b9fb0424428340c7f10fd58631db1",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/aggregate_metrics.csv": "fccf48816a6132ebca46a0a3fc8da99cae02e2908baaab003619394d37b81a3a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/analyze.py": "2d11f441729fee8714d20ceccf05dfb76a9ec570edd2becdd8f407d59edc862d"
+  },
+  "binary_bindings_not_opened": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/improvement_v1/training_round0.npz": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/core/data/parents/O3_N48_pilot.npz": "ae8f8bc8d7e767165b0172b396e3c723b15e09f4b79429ac01b7c78fd4741e95",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111301/last_update.pt": "0d331c60421e08f505273d62d6f59ae0d8a38aeba170cf36aa21425b3fb295f5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111301/last_update.pt": "a7c7eccafd63d67c328d5df4950cfb0cc0017700a2a67fbc505ac79eaa7ceddd",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111301/last_update.pt": "cfc3bcef77993326533315d7f209ca6abd598c02b5500b7cbc7b46708862e181",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111301/last_update.pt": "a731c1665824af835bc559a484da0a8281e450fd2b31f26770f67cb866819d7c",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111302/last_update.pt": "591011cef94b21a5ec6e7bceeadc578007b6c39d1a48027cbc362daf6e620f5b",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111302/last_update.pt": "0fa2253892e158e4a0dd726a7768253c16b04610a38d6478123ced7c600464fa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111302/last_update.pt": "69bcd3513ca87474adc37378e61290ca4e80b7d741417fc438b5fb73b0fb1e39",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111302/last_update.pt": "0c7f2cd68a52b9a364c408929910c7fa3b33f3da38f35032a2a05aa8b781fad9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111303/last_update.pt": "d2f5007de2926369e09f5acb49d6feee3744e0fdb2c8ebe220d06e0ec9af1680",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_ar_anchor_2026111303/last_update.pt": "f29ba11b72cb67654c430529209ec9926d23705a4249379dcc893c7a86e0b0d0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_fixed_2026111303/last_update.pt": "93f37a67ad51919feba5d5f61ecbeeb9c815512493ea414b4f6fffc0ec5c4c92",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_ar_range_2026111303/last_update.pt": "03948d95e70c6c2f94e8c22c654c0cd4004d31b34a5adb59360f00c61c6f3005",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111301/last_update.pt": "171261abcf28f22e6b1318a45ea773f69afe2d816437fa6768479eb7f4e00271",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111301/last_update.pt": "5a20d326eaefc453518f65585a0f404d6075ebe863480a85dda4e5e35aa9037f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111301/last_update.pt": "69d285b8ad31264db073146920346b8852dda741f99e992889f5cedf0bc83634",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111301/last_update.pt": "dc2a0e6bc79a2f8396a8b18a8b5e0c7139c7d29ac0509ee5fdc9908d536df414",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111302/last_update.pt": "bb2e2becae5557c3b14a94608652cedb2fbf2b6687dd127d6a49a8e0eae227ed",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111302/last_update.pt": "645b2d96d9cb6c0c8ff3921d82f2a0c0a7f050c8225585d639dc6404b946abf2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111302/last_update.pt": "ba2dfd31fdf069034c6eef20d9aabd56a3578b6894b97a490452ee7818d7bfd9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111302/last_update.pt": "e2dedd8dc66d38c4ac9ea6d3fa8f02887e2432581af86b3a13e4feaf484bcd98",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111303/last_update.pt": "7892aa2740950a1c754c2a4655437bf3626219899d0c01bcd06f7ef8812fa061",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_no_new_d2_anchor_2026111303/last_update.pt": "486da46d480afef152699e84337b22ba84674fde4c400c555f207b2f12fde0f9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_fixed_2026111303/last_update.pt": "90c463d58771f6bb48e8b936ac9911d2575069a979dd7e69f0f24f1ca9aae2a9",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/fits/r1_d2_range_2026111303/last_update.pt": "9472485bc3d6ea3bf1c0e5c31d88be8070425963d1352a0c3cc04d1864cf16bf",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111301/last_update.pt": "0fc6e63498baf77e0b514f3b41b360ccbba5ae68fe625fb867703f80abe8e572",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111301/last_update.pt": "49c234fda2e40bd04623f3d8b0c98b4b54ae72dd433ef94c252f62779350d4e8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111302/last_update.pt": "aa555b03539993dac21125268e5cc3a0932b43bf12e0ed80500479c7a2e9c3b0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111302/last_update.pt": "8b4e14e1e0277a2e5fe3e809592eee9a065b7e7b2e08feb6d993ed237e34e031",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_ar_2026111303/last_update.pt": "74f4f1e5634d73b42a61cea8c0d651e3cb7cdb5c9c47f189f3b6ec905a76934a",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_ar_2026111303/last_update.pt": "6da8c57a5fbd0c05cef36d14c547918d3188f3b27343fa2a6ecb5e999ec4a428",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111301/last_update.pt": "9b7991c176d074f20af0dd814405e41ff13650eeb5391ad6f2af70a4082e5d6f",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111301/last_update.pt": "773678233f5eafb4b25e1f9045fcef4802b6af76698746d9613e9799b7eac087",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111302/last_update.pt": "cc403dd59566882f58dd939f58bbe98f0fb02a25df530c46d09016eec8a1c3da",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111302/last_update.pt": "d35cc8d866b51dc215af115a4018f9871a41359a6676c878bea41a4819e19e0e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_h0_d2_2026111303/last_update.pt": "4c53b81c8795321ba7e533fff983ee257df9de43283ca3dbb8165961351c0494",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/fits/h0_range_r1_d2_2026111303/last_update.pt": "d872385247593d2640f58ad0ddf4082ad7ff5996331e79620698187be8e33111",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111301/training.npz": "45b569221d0ebb83d912e129873cda0046e60a57bb4b7453d9cb0daa98999124",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111302/training.npz": "54745fb5680f7f08654e28a899ff42b1d9c2ec5816a54109aecd180a9601e047",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111303/training.npz": "96dc1b299950b7dff704d96d9b644937728794c15ea56e7c3575c4005a1f0aff",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111301/training.npz": "98864f70406e6c5e610e31e4c48b023ca42194b7058308a09a546ad0ab3e5a99",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111302/training.npz": "e97e7e8f2fdae43b736e8b61fd87fa016782454744c3e654063ff2d1885c21d5",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111303/training.npz": "cb932519daf438a1dbc160e7c3a9e8547fc15f167ec77a5864958042138f58d0"
+  },
+  "new_fits": 12,
+  "reused_fits": 18,
+  "models": 30,
+  "assessment_attempts": 34560,
+  "oracle_unique_per_teacher": 17343,
+  "edge_cells_changed": 4,
+  "max_aggregate_difference": 0.0,
+  "max_paired_difference_pp": 0.0,
+  "max_summary_difference_pp": 3.552713678800501e-15,
+  "identity_tolerance_pp": 1e-12,
+  "tolerance_scope": "Floating-point CSV arithmetic identity only, not physical or statistical tolerance",
+  "warnings": [
+    "Post-hoc mechanistic study prompted by previous range-policy gains; not blind confirmation.",
+    "Relabeling recomputes class-balanced TRAIN weights, so it changes both conditions and effective row weights.",
+    "Matched-edge added-row effects also include changed minibatches/class weights; they do not isolate information content alone.",
+    "H0 with R1 edges uses acquired labels through the edge summary; only H0-own-range needs no acquired labels.",
+    "Three paired fit/draw seeds give descriptive sample SD, not adjusted significance or proof of equivalence.",
+    "Balanced gains are mainly high-bin success, not a demonstrated low-energy-search improvement.",
+    "No NPZ or PT file was opened or rehashed in this audit. Dataset preservation, checkpoint warmstarts, and fresh scoring rely on structured writer/worker/verifier contracts.",
+    "Schema source decompresses the complete NPZ energy member but indexes TRAIN only; training encodes TRAIN/VAL while TEST conditions remain inert."
+  ],
+  "no_training_or_scoring_launched": true,
+  "no_TEST_energy_values_read": true,
+  "output_sha256": {
+    "independent_paired_summary.csv": "44bacb31b6243d51b3bd005150d2d416e6123411f40afb512b79f4fe84d4b3f6"
+  }
+}

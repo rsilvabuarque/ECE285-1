@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "started_unix": 1794566953.4738417,
+  "finished_unix": 1794566957.6836073,
+  "builds": [
+    {
+      "name": "overview",
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "overview.tex"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "technical_report",
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "technical_report.tex"
+      ],
+      "returncode": 0
+    }
+  ],
+  "source_and_figure_sha256": {
+    "results_latent_mean.tex": "765e85cfb8750f37e98a4a5d11afd1603e3a92b971f4ddd5b9f3e04c7cfdfc05",
+    "results_latent_strong.tex": "9290e3ed28f66646daf7978386519aa26146a29fce6283aef1d241a89234dabf",
+    "table_latent_primary.tex": "f132eb7e4fa25e3d4d8b9597b1c5bae74c18e5ae4927253e378e5006bb902dc2",
+    "table_sampling_baselines.tex": "a5e74bc66e2359bde73f2c53419a9e2f6c1a21a87439c2c6684a275f53296954",
+    "results_entropy.tex": "318d421d5c68f457c5ca060dcf8160711887ed4981bb2d4614c1f4f099691aeb",
+    "table_latent_short.tex": "63991e79e3f5589f368f73b4fa96df41a172354039040c7d05dbdad7d8d2ebda",
+    "short_results_causal.tex": "6701cf1bfd3b0d5c1774e773923ec99e121b734e45545966d9664e39f0330bc1",
+    "results_cost.tex": "64e59ff90a7840cb1764d237b11c9519c1785c18eacf5b199a9883afad0951a9",
+    "table_iteration_gains.tex": "2a6d4dd695a61ae3204045a3bfd4763444e36414c3f2991cf489999aab1638fe",
+    "results_frontier.tex": "6b0f74118ed6f9b5fbeb00e8f6e0048aab5a5ccdd75571c4ec749baeec69f611",
+    "short_decisions.tex": "72b40c6a69dec0be5d4c1c68543ff0fbc8f99c03c6921b77a1ebabe1dd025904",
+    "technical_report.tex": "f0643f90224f1694873d8673f6aa66e16f94a0e3d39c06c7f332a72947207cff",
+    "table_causal_controls.tex": "9359345e90185b6a97b14372f6be2b54424f1dec024bb666b59f7811be97949d",
+    "references.tex": "220a8ff3d6f584ecd370a204693faf7bc204044ed4dbd7f7ec432c90d03b6822",
+    "table_entropy_temperature.tex": "d633f4942ac80f436b2455c7fb526b87eb6601a39393eff15f17561191aecb67",
+    "results_iteration.tex": "48073179a004e900898132fc06c6e9f2ce73ba79f891348d57bd31f934120d70",
+    "overview.tex": "bd13d62a7d9dbd5a25c912b10b4f96d70a9b4bc84059be48b4a902f53ff3b6af",
+    "key_findings.tex": "6d0e63d6f2bcada881eef485781eee65e2868b36608ee8d11da767a5ea1a2d07",
+    "results_entropy_followup.tex": "abbf3768471aa5a12d9eae1feac5296da508bd481f264ab0d98401f19eb88b1b",
+    "results_decisions.tex": "367acd6466106a185be39f441b234c16f6839cf776c153f04245c37491d67c2a",
+    "table_latent_strength.tex": "9e5438521579f61d6701f03a63f6a305a5540a68a480ec65d2ea88e5665e20dc",
+    "results_latent.tex": "050c16a2988cbd9afe62a91a48104fd68d5df4ac011e777069f4233fb8118503",
+    "results_causal.tex": "3ac9b762a46a951f971749b78142a3378f5b071b26e934d42bc7031cc7e64b7e",
+    "short_results_iteration.tex": "3be7e58d26472aa4b09ab8aaf4a8c97eef2c193564e9248fb9418f18d24a2928",
+    "assets/optimization_curves.pdf": "4432d06a892389d80f134dd665d8ca3d7d45c263a939b3201321315cf86f2b2a",
+    "assets/conditional_information_comparison.pdf": "366850d8bbee27e9b0731fd09d26b98ac741dd7ea9afccc89c1058eaca447acb",
+    "assets/observed_training_extrema_growth.pdf": "3fe648813fc4f66c21515ebe707a254a76dc3532af798928f30174f15593ad26",
+    "assets/causal_factorial.pdf": "5bd780a2623c9a9a247b70f373cfb584c8965d25cf6b19845a5c1fdb97f93689",
+    "assets/frontier_uma_best_gain.pdf": "6a9825049e6b2b71c3aebf175516a92d44f071aed0ed2112ec034b4dca26653f",
+    "assets/frontier_mace_best_gain.pdf": "2275564f876117093684723b797d6a91d593d28297233557ff1163f49181de39",
+    "assets/boltzmann_target_followup.pdf": "8485cd999178b0d775dd8f0c8a3d54d03cdad0034cd269a60c8edb82b3869955",
+    "assets/entropy_review.pdf": "2ae6fad6d9b408eab6389c93dacd129b4c92b0f4b0d0acb656726e43d600ae37",
+    "assets/fixed_condition_latent_centered.pdf": "5780e7fcb6db46c164b079c3860b79617f3d4ab976be2392dc8585a3177abe9c",
+    "assets/iteration_paired_gains.pdf": "9590b2bfbe96edf699ffb8ac44079c79ad2572425ecd5030886dabb989ebc43c",
+    "assets/primary_oracle_yields.pdf": "53ea44138b9f21d890c05e81866a6ccb7f83cf35792c025a62eb5f617a16132f",
+    "assets/latent_physics_diagnostics.pdf": "93f8e405f39233ce0e9775194eaf97545efd6990eade0b574b2c45e7064dc6fd"
+  },
+  "pdfs": {
+    "overview.pdf": {
+      "sha256": "fbe9c26c8f6b68c425d7cfe15d8c357be7b43b1f444966f28ea58f539065b985",
+      "bytes": 341940
+    },
+    "technical_report.pdf": {
+      "sha256": "264d8b66801bd06fc4fb03cc40e30ad6c08b9de324dfb116cb0891460239a152",
+      "bytes": 807726
+    }
+  }
+}

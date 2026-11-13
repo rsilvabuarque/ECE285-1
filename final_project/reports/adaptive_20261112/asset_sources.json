@@ -1,0 +1,50 @@
+{
+  "assets/primary_oracle_yields.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/primary_oracle_yields.pdf",
+    "sha256": "53ea44138b9f21d890c05e81866a6ccb7f83cf35792c025a62eb5f617a16132f"
+  },
+  "assets/latent_physics_diagnostics.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/latent_physics_diagnostics.pdf",
+    "sha256": "93f8e405f39233ce0e9775194eaf97545efd6990eade0b574b2c45e7064dc6fd"
+  },
+  "assets/optimization_curves.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/optimization_curves.pdf",
+    "sha256": "4432d06a892389d80f134dd665d8ca3d7d45c263a939b3201321315cf86f2b2a"
+  },
+  "assets/entropy_review.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/entropy_review.pdf",
+    "sha256": "2ae6fad6d9b408eab6389c93dacd129b4c92b0f4b0d0acb656726e43d600ae37"
+  },
+  "assets/boltzmann_target_followup.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/boltzmann_target_followup.pdf",
+    "sha256": "8485cd999178b0d775dd8f0c8a3d54d03cdad0034cd269a60c8edb82b3869955"
+  },
+  "assets/conditional_information_comparison.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/structural_precision_correction/conditional_information_comparison.pdf",
+    "sha256": "366850d8bbee27e9b0731fd09d26b98ac741dd7ea9afccc89c1058eaca447acb"
+  },
+  "assets/fixed_condition_latent_centered.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/structural_precision_correction/presentation_v2_largefonts/fixed_condition_latent_v2.pdf",
+    "sha256": "5780e7fcb6db46c164b079c3860b79617f3d4ab976be2392dc8585a3177abe9c"
+  },
+  "assets/iteration_paired_gains.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/presentation_v2/paired_policy_effects.pdf",
+    "sha256": "9590b2bfbe96edf699ffb8ac44079c79ad2572425ecd5030886dabb989ebc43c"
+  },
+  "assets/observed_training_extrema_growth.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/presentation_v2/observed_TRAIN_extrema.pdf",
+    "sha256": "3fe648813fc4f66c21515ebe707a254a76dc3532af798928f30174f15593ad26"
+  },
+  "assets/causal_factorial.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/analysis/data_by_conditioning_factorial.pdf",
+    "sha256": "5bd780a2623c9a9a247b70f373cfb584c8965d25cf6b19845a5c1fdb97f93689"
+  },
+  "assets/frontier_uma_best_gain.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/presentation_v2/uma_best_gain.pdf",
+    "sha256": "6a9825049e6b2b71c3aebf175516a92d44f071aed0ed2112ec034b4dca26653f"
+  },
+  "assets/frontier_mace_best_gain.pdf": {
+    "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/presentation_v2/mace_best_gain.pdf",
+    "sha256": "2275564f876117093684723b797d6a91d593d28297233557ff1163f49181de39"
+  }
+}

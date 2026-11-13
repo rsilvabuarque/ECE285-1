@@ -1,0 +1,34 @@
+{
+  "status": "FINAL_AUDIT_PACKAGING_VERIFIED",
+  "created_unix": 1794565518.0200255,
+  "receipt_sha256": "d481e54698d9440659ef51a5c3b2deb40651cc7b08a14d3a401af28bec9e67bc",
+  "group_counts": {
+    "causal_optional": 12,
+    "entropy_boltzmann": 6,
+    "entropy_original": 3,
+    "latent_initial": 40,
+    "latent_mean": 15,
+    "latent_strength": 30,
+    "round1": 24,
+    "round2": 36
+  },
+  "all166_actual_terminal_metadata": true,
+  "strict_JSON_collision_checks": true,
+  "archive_members_opened": 0,
+  "new_training_scoring_or_inference": false,
+  "physical_validation": false,
+  "CPU_work_complete": true,
+  "command_hashes": {
+    "commands.json": "5e0618e8d502db7a275b33861c89655b955760acfcf79ccf68580235d751609d",
+    "commands_retry1.json": "9a1d6fe5a2c0d793e0e487ec04f3c0040b8bdb444ab1d682e7191c1ec1fb6fc8",
+    "commands_v2.json": "7f7664b437483fdddbbad0941e1649e0bfe58f6297920892d3dea55bc9ff6d4e",
+    "commands_v3.json": "7caf110ae48c7f44332ba0e41fa1bc2c01c0a8270cd835ec6284530e156be2c7",
+    "commands_final.json": "1fcc4c3b4240668d4b0e489decea2a885219288d6352b202ffbe86c7f627c1e4"
+  },
+  "criterion_erratum_sha256": "6f63e0b602638c431f6526292e73c5ecfeaf059a29a3dbfcf141dc8d1788ebc8",
+  "scope_limitations": [
+    "No independent datasetmember/TESTlabel value comparison; role-value preservation relies on hash-bound appendcertificates and actualterminal rolecounts.",
+    "Identity-only boundary transitions checked through study_v2/boundary_final; laterindependent frontier reservation changes are outsidethis snapshot.",
+    "Past Python importresolution was not reconstructed; this artifact/roleaudit is not a fullscientificcodereplay orphysicalvalidation."
+  ]
+}

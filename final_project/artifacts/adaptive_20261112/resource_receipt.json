@@ -1,0 +1,92 @@
+{
+  "status": "PASS_SACCT_SNAPSHOT",
+  "query_started_utc": "2026-11-13T10:49:11.160662+00:00",
+  "query_finished_utc": "2026-11-13T10:49:11.226423+00:00",
+  "command": [
+    "sacct",
+    "-X",
+    "-j",
+    "61215925,61215969,61215970,61215971",
+    "-n",
+    "-P",
+    "-o",
+    "JobIDRaw,JobName,Account,QOS,State,AllocNodes,ElapsedRaw,AllocTRES"
+  ],
+  "execution_sha256": "d2aa8474f647f75733d0bad4aa19ec50a1d9f59f795ef6d2a5357effdecb1f84",
+  "account": "m5397_g",
+  "jobs": [
+    {
+      "JobIDRaw": "61215925",
+      "JobName": "adaptive_uma_s",
+      "Account": "m5397_g",
+      "QOS": "gpu_shared_interactive",
+      "State": "COMPLETED",
+      "AllocNodes": "1",
+      "ElapsedRaw": "13268",
+      "AllocTRES": "billing=64,cpu=64,energy=5891347,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1",
+      "job_id": 61215925,
+      "allocated_gpus": 2,
+      "elapsed_seconds": 13268,
+      "allocated_job_node_hours": 3.6855555555555557,
+      "gpu_hours": 7.371111111111111,
+      "gpu_node_hours": 1.8427777777777778
+    },
+    {
+      "JobIDRaw": "61215969",
+      "JobName": "adaptive_mace_shared",
+      "Account": "m5397_g",
+      "QOS": "gpu_shared_interactive",
+      "State": "CANCELLED by 98231",
+      "AllocNodes": "1",
+      "ElapsedRaw": "11755",
+      "AllocTRES": "billing=64,cpu=64,energy=5367382,gres/gpu:a100=2,gres/gpu=2,mem=114944M,node=1",
+      "job_id": 61215969,
+      "allocated_gpus": 2,
+      "elapsed_seconds": 11755,
+      "allocated_job_node_hours": 3.265277777777778,
+      "gpu_hours": 6.530555555555556,
+      "gpu_node_hours": 1.632638888888889
+    },
+    {
+      "JobIDRaw": "61215970",
+      "JobName": "adaptive_uma_full4",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "CANCELLED by 98231",
+      "AllocNodes": "4",
+      "ElapsedRaw": "12434",
+      "AllocTRES": "billing=512,cpu=512,energy=21461888,gres/gpu:a100=16,gres/gpu=16,mem=1951208M,node=4",
+      "job_id": 61215970,
+      "allocated_gpus": 16,
+      "elapsed_seconds": 12434,
+      "allocated_job_node_hours": 13.815555555555555,
+      "gpu_hours": 55.26222222222222,
+      "gpu_node_hours": 13.815555555555555
+    },
+    {
+      "JobIDRaw": "61215971",
+      "JobName": "adaptive_mace_full4",
+      "Account": "m5397_g",
+      "QOS": "gpu_interactive",
+      "State": "CANCELLED by 98231",
+      "AllocNodes": "4",
+      "ElapsedRaw": "10430",
+      "AllocTRES": "billing=512,cpu=512,energy=19561883,gres/gpu:a100=16,gres/gpu=16,mem=1177208M,node=4",
+      "job_id": 61215971,
+      "allocated_gpus": 16,
+      "elapsed_seconds": 10430,
+      "allocated_job_node_hours": 11.588888888888889,
+      "gpu_hours": 46.355555555555554,
+      "gpu_node_hours": 11.588888888888889
+    }
+  ],
+  "totals": {
+    "allocated_job_node_hours": 32.35527777777778,
+    "gpu_hours": 115.51944444444445,
+    "gpu_node_hours": 28.87986111111111
+  },
+  "limit_gpu_node_hours": 150,
+  "within_limit": true,
+  "all_allocations_terminal": true,
+  "interpretation": "Allocation duration includes startup, failed subprocesses and idle workers. Shared-job node time can overlap physically. GPU-node-hours = GPU-hours/4; not an official posted charge. Running-job snapshots grow. Only top-level jobs are summed."
+}

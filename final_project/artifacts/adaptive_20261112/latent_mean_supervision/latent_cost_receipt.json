@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "scope": "Latent initial40+strength30+mean15scientificfits,120fullguideddiagnostics,anddedicatedUMA/MACEworkers. Initialentropyworkers/retryandalladaptive/entropyactivityexcluded toavoidcrossattribution.",
+  "one_GPU_per_task": "RootlauncherassignsonevisibleGPUperworker; taskwallincludesmodelinitialization,queueI/O,idleandSTOPlatency",
+  "task_GPU_wall_seconds": 72323.11575245857,
+  "task_GPU_hours": 20.089754375682936,
+  "task_node_hour_equivalent_at4GPUs": 5.022438593920734,
+  "not_allocation_accounting": "Task-attributedtimingonly; rootSLURMledgerremainsauthoritativeforallocated/chargednodehours. Model-evaluationsecondsareoverlappingsubsetandmustnotbeaddedagain.",
+  "task_summary": {
+    "initial:fit": {
+      "tasks": 40,
+      "GPU_wall_seconds": 3681.599689722061
+    },
+    "initial:diagnostic": {
+      "tasks": 40,
+      "GPU_wall_seconds": 1168.34725356102
+    },
+    "strength:fit": {
+      "tasks": 30,
+      "GPU_wall_seconds": 2934.0800292491913
+    },
+    "strength:diagnostic": {
+      "tasks": 40,
+      "GPU_wall_seconds": 1923.3242423534393
+    },
+    "mean:fit": {
+      "tasks": 15,
+      "GPU_wall_seconds": 1806.2933151721954
+    },
+    "mean:diagnostic": {
+      "tasks": 40,
+      "GPU_wall_seconds": 2700.6759898662567
+    },
+    "initial:oracle_worker": {
+      "tasks": 27,
+      "GPU_wall_seconds": 12023.700224161148
+    },
+    "strength:oracle_worker": {
+      "tasks": 27,
+      "GPU_wall_seconds": 19669.5083899498
+    },
+    "mean:oracle_worker": {
+      "tasks": 27,
+      "GPU_wall_seconds": 26415.586618423462
+    }
+  },
+  "oracle_counts": [
+    {
+      "stage": "initial",
+      "teacher": "uma",
+      "new_geometry_evaluations": 25310,
+      "summed_model_evaluation_seconds": 2411.406354100138,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/collected_uma/receipt.json",
+      "collection_receipt_sha256": "a74b23531aeeb401981bfcc3dced0cf54d9e037f3be71c56c910184ffe97d177"
+    },
+    {
+      "stage": "initial",
+      "teacher": "mace",
+      "new_geometry_evaluations": 25310,
+      "summed_model_evaluation_seconds": 1656.660387792348,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/collected_mace/receipt.json",
+      "collection_receipt_sha256": "24b89202f7186e358cfa2077ab8d891bc781c36153f01e7d5c1d0e8d468c530e"
+    },
+    {
+      "stage": "strength",
+      "teacher": "uma",
+      "new_geometry_evaluations": 25675,
+      "summed_model_evaluation_seconds": 2433.8641670433426,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_uma/receipt.json",
+      "collection_receipt_sha256": "a9ebae7bec1145e8d5ae5b6886b7fae1ac2e898d7258c6c14f05446aa0fe7141"
+    },
+    {
+      "stage": "strength",
+      "teacher": "mace",
+      "new_geometry_evaluations": 25675,
+      "summed_model_evaluation_seconds": 1712.7827852991904,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_mace/receipt.json",
+      "collection_receipt_sha256": "083120e05a7eaecec1859311d82b133d5bc6e7b99c16dde3059476dd21e56b76"
+    },
+    {
+      "stage": "mean",
+      "teacher": "uma",
+      "new_geometry_evaluations": 24568,
+      "summed_model_evaluation_seconds": 2364.1799013335694,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/collected_uma/receipt.json",
+      "collection_receipt_sha256": "a25de5699208e3807c11b87f0c0ba3e1a5a995afa3414a4508f4d95907aa3e54"
+    },
+    {
+      "stage": "mean",
+      "teacher": "mace",
+      "new_geometry_evaluations": 24568,
+      "summed_model_evaluation_seconds": 1654.1232741133645,
+      "collection_receipt": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/collected_mace/receipt.json",
+      "collection_receipt_sha256": "789e8c41d9b3cc939c05328589518971a3cb37800eed42e7791772532d87f4d4"
+    }
+  ],
+  "total_new_geometry_teacher_evaluations": 151106,
+  "new_DFT_calculations": 0,
+  "new_MD_trajectories": 0,
+  "new_MLIP_finetunes": 0,
+  "source_sha256": "9acc5d1568f3178262c0ae25395ca379fa94c5c1d9741e78753d629a136e724e",
+  "task_rows_sha256": "734031639854844e58e5a2d7ee16e0374c927a8688789eaba0401a4df35e981f"
+}

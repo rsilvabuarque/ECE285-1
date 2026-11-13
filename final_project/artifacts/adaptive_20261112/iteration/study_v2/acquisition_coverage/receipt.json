@@ -1,0 +1,24 @@
+{
+  "status": "POSTHOC_ACQUISITION_COVERAGE_COMPLETE",
+  "created_unix": 1794564271.3638916,
+  "source_sha256": "5776a2c886da12a146a9beff4f35611d6a0633ef5fb78568a3ced2c2e5fdea98",
+  "inputs": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/h0_range_schema/condition_schema.json": "227772dbc8765ac77ff2523fa27fefc16c9886f7957d538b27f41f7410c23d35",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/verified_uma.json": "57b12babac3743f6541e4fc5acfabb9dac6ae6b558047c4a34fa0a270b948239",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/collected_uma/uma.npz": "d3c9b9d44cce3e33bde77c3c948cbb97c52be03d1f86e40823f960123002f6d8",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/verified_uma.json": "be1bd47c8ae83abaf343cfeb7a7c1cf0cc93bf8759c17c95b5f71303cc07f551",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/collected_uma/uma.npz": "cd9edb040505adf7f799755e7186a8a938bd7bbbe072c34e0e2e409cf8a700e0",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_evaluation/aggregate_metrics.csv": "9ac1431844827b9a355a29fad9228b1e5d052cdd7f5d1b487eb283d0a6b300fa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_evaluation/aggregate_metrics.csv": "42bee960facdc88fe5bee6b4e50b85bb71b0b9982514b3418fb017f756381e54"
+  },
+  "outputs": {
+    "by_fit_count.csv": "a95b1e9c5a51ef7fd5ad9ccd1ce9557513334d7ee833107ef1941ee409c80725",
+    "R2_observed_endpoint_expansion.pdf": "c1bdfc2e0dce88d995a4dbde5d492ce4920142b90c811522b3616910850ba795",
+    "R2_observed_endpoint_expansion.png": "9702458b43139a9233d83391f8cbb98aac0c7fdddb6f4320bac3b00fe1f685b3",
+    "interpretation.md": "ed70633208b16d71fd5176bb29bf7aa5a3c49e84b08bfcde9ac129aad6674aaf",
+    "summary.csv": "365cfabbc24ff6cd4e915f74de390d4e0e74ed354941b8378a7674681c2b0a12",
+    "UMA_own_moving_target_fidelity.csv": "f04ddf1541efd4354cf6a9773a186f515fb1d09556abef5e7713d805f037498f"
+  },
+  "primary_H0_metric_unchanged": true,
+  "no_new_fits_or_oracles": true
+}

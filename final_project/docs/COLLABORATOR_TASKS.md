@@ -1,14 +1,89 @@
-# Update for the consolidated project
+# Current independent tasks: November 13
 
-The instructions below preserve the independent November 8 reproduction
-tasks and their frozen assessment roles. The subsequent angular, latent and
-two-round iteration results are in the [latest research report](../reports/angular_20261110/report.pdf)
-and [compact evidence packet](../artifacts/angular_20261110/README.md).
-For new work, review those results first, use fresh output directories and
-predeclare a new assessment. The existing iterations use fixed energy bins;
-adaptive re-binning, broad energy-range acquisition and entropy estimation are
-proposed future tests, not completed results. Statements below about the
-"current" packet and deadlines describe the November 8 handoff.
+Use `main` as the shared starting point. The latest [overview](../reports/adaptive_20261112/overview.pdf)
+and [technical report](../reports/adaptive_20261112/technical_report.pdf) supersede
+claims below that adaptive bins or entropy are unimplemented. Earlier datasets,
+midterm documents, results, and assessment boundaries remain preserved.
+
+```bash
+git clone --branch main https://github.com/rsilvabuarque/ECE285-1.git
+cd ECE285-1
+# Choose your own descriptive branch name.
+git switch -c collaborator/my-analysis
+cd final_project
+bash scripts/install.sh --python python3 --prefix .venvs --core-only
+source .venvs/learning/bin/activate
+python -m pip check
+python reports/adaptive_20261112/build_tables.py --run-root artifacts/adaptive_20261112
+```
+
+The table replay uses only committed aggregates. Original data and checkpoints
+for retraining require the separately verified release/raw archive. No new
+training, energy calls, DFT, or job submission occurs in the block above. Generic
+MLIP installation and scoring are explained in the main README; use the class's
+resources and your own approved access, with one provider process per visible
+GPU. Do not launch dated site-specific orchestration scripts unchanged.
+
+## Beihao: distinguish useful conditioning from a useful latent
+
+Reproduce the report tables first. Independently inspect the 5-fit D=1/2/4
+comparison and its paired AR controls. Explain why a deterministic encoder mean
+can carry a microscopic structural fingerprint while posterior noise erases it
+in sampled z. Compare the within-condition TRAIN-fitted probe with random graph
+initialization; the latter is essential before attributing pair-order information
+to training. Review genuine, condition-only, and shuffled physical-head controls,
+plus mean supervision. Keep primary terminal checkpoints separate from
+validation-selected sensitivity analyses.
+
+Return one independently generated paired-effect figure and a short account of
+what these tests do and do not establish. For a subsequent experiment, propose
+one hypothesis and matched controls before training: for example, explicit
+ordering conditioning versus a comparable latent-control mechanism. Preserve
+protected identities and use a new assessment namespace. Do not select a new
+model on old assessment results and call those results an untouched test.
+
+## Varad: audit denominator, iteration, and entropy statistics
+
+Regenerate all seven report tables from the compact packet and check each against
+its SHA-bound source CSV. Reproduce the causal control's paired gains, then
+separate novelty from condition fidelity in the second-round drop. Contrast
+fixed-reference yield with actual observed endpoint growth; neither is a
+substitute for the other. Check that rebinning changes loss weights as well as
+labels, and that moving UMA condition edges never classify MACE absolute energy.
+
+Independently recompute the N12 entropy sum with orbit multiplicities and verify
+its high-temperature limit. Separate importance-weight ESS, entropy estimator
+bias, and Wang–Landau energy-bin bias. Preserve the positive 1000 K proposal
+result and negative 5000 K transfer. Return a source-bound figure/table and a
+short methods audit. Compact tables alone cannot replay raw proposal exclusions;
+use the complete HPC archive or verified data packet for that deeper check.
+
+## Ricardo: physical scope, structures, and report integration
+
+Review fixed-parent geometry and symmetry definitions, teacher/head/precision
+receipts, and the interpretation of low and high energies at fixed composition.
+Explain why unrelaxed fixed-parent rankings do not establish phase stability,
+DFT accuracy, or equilibrium recycling conditions. Review representative novel
+samples with the existing structure export/scoring interface; retain the exact
+mask/parent identity for every example. Compare the two teachers as a sensitivity
+check, not as independent proof of DFT correctness.
+
+Integrate the independent teammate analyses for the presentations and final
+report. Any later DFT labels, relaxation/MD tests, force/stress training, other
+phases, size transfer, or MLIP fitting require a separate physical validation
+plan. They are not needed to reproduce these completed sampling results.
+
+The campaign has already completed 166 specified-budget fits and 469,672 MLIP
+evaluation events. These automated experiments are supplied evidence; teammates
+should describe their own independent work accurately. All owned allocations
+are closed in the final resource receipt. Raw failures, inherited split caveats,
+and negative results remain available.
+
+# Historical November 8 midterm handoff
+
+The following instructions retain their original packet, branch names, and
+submission dates. Use them to reproduce that frozen study, not as the latest
+branch/status instructions.
 
 # Independent midterm tasks: Beihao, Varad and Ricardo
 

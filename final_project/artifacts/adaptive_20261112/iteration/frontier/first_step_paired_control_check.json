@@ -1,0 +1,41 @@
+{
+  "status": "EXACT_IDENTICAL_FIRST_STEP_PROPOSALS_AND_QUERIES",
+  "checks": [
+    {
+      "seed": 2026111301,
+      "greedy": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/greedy_2026111301/receipt.json",
+        "sha256": "ef2e746f8b515214ed3286c42d3ffe70859f12569cbeccc319936c9167321e37"
+      },
+      "random_walk": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/random_walk_2026111301/receipt.json",
+        "sha256": "17e105ed67cd46011f29441cb45fe42efffc2d091d292940419b0f32030f21b2"
+      },
+      "raw_and_query_equality": true
+    },
+    {
+      "seed": 2026111302,
+      "greedy": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/greedy_2026111302/receipt.json",
+        "sha256": "3b4acad3ab63f45ff640f06ab7ecf7015bc8f50ce56f75aa57f3589679d81e43"
+      },
+      "random_walk": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/random_walk_2026111302/receipt.json",
+        "sha256": "1b1a407587ba39d240896244f82a463666f0f82d06113efe7227b100650e93d4"
+      },
+      "raw_and_query_equality": true
+    },
+    {
+      "seed": 2026111303,
+      "greedy": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/greedy_2026111303/receipt.json",
+        "sha256": "02838a74e0cd3d21fb4fe39244e7664ebac434592421decc7b7ef0fdecb334b4"
+      },
+      "random_walk": {
+        "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/step1/stages/random_walk_2026111303/receipt.json",
+        "sha256": "d4bbbf5e828ecc35fd76971a3557255e09f302c0ad1ccd2ecfe2b6c1bc2096ef"
+      },
+      "raw_and_query_equality": true
+    }
+  ]
+}

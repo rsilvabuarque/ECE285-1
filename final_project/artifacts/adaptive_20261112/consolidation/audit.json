@@ -1,0 +1,239 @@
+{
+  "status": "READ_ONLY_CONSOLIDATION_COMPLETENESS_AUDIT",
+  "created_unix": 1794566889.4287279,
+  "reference_main": "6099740cf5d8b37e54610f2fab4b3662c5587ee6",
+  "reference_goal_requested": "949732bef15792dcbeba43ab922f0928ac77144a",
+  "reference_goal_current_at_audit": "2daba710e4026677b6440334dd08a12e71f03252",
+  "reviewed_existing_consolidation": [
+    "e7041a773 historical selective-copy manifest and README",
+    "505a975f3 angular integration",
+    "final_project/README.md",
+    "final_project/artifacts/current/MANIFEST.json",
+    "final_project/artifacts/current/SNAPSHOT_MANIFEST.json",
+    "final_project/artifacts/angular_20261110/README.md",
+    "final_project/historical/20261102_20261106/README.md"
+  ],
+  "historical_goal_ancestry": [
+    {
+      "branch": "goal/angular-assessment-audit-20261111",
+      "tip": "164ea4dd1760c9522be13a9d026a0ad1a6005c68",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "goal/angular-latent-iteration-20261110",
+      "tip": "2dd107345b2c250e25ea2effa6a8eb3a7269114f",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "goal/angular-iteration-20261111",
+      "tip": "6480b1a26ae36e9315590e02ba125b5e833e3e3e",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "goal/angular-iteration-round2-20261111",
+      "tip": "2d024cab9fd1fc1288da8932e42641fec61f2818",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "midterm/submission-neurips-20261109",
+      "tip": "3f2790fe462975dee3c4de61edb36d116eaa620b",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "overnight/multibin-acquisition-20261107",
+      "tip": "73e6cee5fa43a26a1ac9e8700f81baaa3e40619f",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "midterm/conditioning-graph-edit-20261107",
+      "tip": "d0d93edeefc56003744599a83dc54c45f78577aa",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    },
+    {
+      "branch": "overnight/latent-relaxed-neb-20261108",
+      "tip": "7a14ec981155c61092050f3c7ced0e0f28e8b63c",
+      "ancestor_of_main6099740": true,
+      "ancestor_of_goal949732bef": true
+    }
+  ],
+  "agent_branch_patch_audit": [
+    {
+      "branch": "agent/overnight-20261108-models",
+      "tip": "66d550da1efe7076e9b5f62841523c19bae09b8a",
+      "patch_equivalent_to_goal949": 10,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/overnight-20261108-paired",
+      "tip": "30686a7d9bb0aab84153195d7ce55cbd696cad12",
+      "patch_equivalent_to_goal949": 18,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/overnight-20261108-research",
+      "tip": "1d9e628c994dbdea6a609477282e4e2efbca8d0c",
+      "patch_equivalent_to_goal949": 17,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/angular-directional-20261110",
+      "tip": "762531c0d54ad7bafa32f1e31bc1371c915d9d63",
+      "patch_equivalent_to_goal949": 8,
+      "non_patch_equivalent_to_goal949": [
+        "3b89f4e6a791c28b8aba5bf31440230ebe9f0df9 Add causal smooth angular pair context"
+      ],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/angular-evaluation-20261110",
+      "tip": "6c047057e5bc9fe82b50298d5d45894015e43304",
+      "patch_equivalent_to_goal949": 7,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/angular-iteration-20261110",
+      "tip": "ecb5a4418e1791f0a34eb38a7e19c5df1b01630b",
+      "patch_equivalent_to_goal949": 10,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/adaptive-iteration-20261112",
+      "tip": "2d51c828e502b92e08e572b3ca5b73b9d9bfbb95",
+      "patch_equivalent_to_goal949": 6,
+      "non_patch_equivalent_to_goal949": [
+        "b3ce1edecc87597f569a0cce9b48c0137755927b Record completed causal controls, rate decomposition, and presentation-safe diagnostics",
+        "2d51c828e502b92e08e572b3ca5b73b9d9bfbb95 Record final bounded experiment and protected-role receipts"
+      ],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/entropy-pilot-20261112",
+      "tip": "0c493016a927f25d5b90c5e3375fd17160539c09",
+      "patch_equivalent_to_goal949": 9,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    },
+    {
+      "branch": "agent/latent-physics-20261112",
+      "tip": "fa98c87378c513f6efafe23d813d4f7ca161b498",
+      "patch_equivalent_to_goal949": 7,
+      "non_patch_equivalent_to_goal949": [],
+      "old_only_final_project_paths_vs_goal2daba710": []
+    }
+  ],
+  "non_patch_equivalent_resolution": {
+    "3b89f4e6": "Both smooth_angular_context.py and test_smooth_angular_context.py byte-identical in goal2daba710, despite patch-ID difference.",
+    "b3ce1ede": "Integrated by cherry-pick362440d3 after requested949 snapshot.",
+    "2d51c828": "Integrated by cherry-pick2daba710 after requested949 snapshot."
+  },
+  "outside_worktrees": {
+    "registered_count": 14,
+    "unregistered_ECE285_prefixed_directories_found": 0,
+    "submodule_configs_found": 0,
+    "registered_locked_or_prunable_flags_found": 0,
+    "active_owner_status": "No historical scoped source modifications or other writers observed in this audit; Git metadata alone cannot prove process inactivity. Root owns relocation."
+  },
+  "untracked_compact_initial_controls_not_exactly_in_goal": [
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/contrasts_to_spatial_ar_by_seed.csv",
+      "bytes": 1964,
+      "git_blob": "1edefd929404b61f243abcd3ae8c6226090dde88"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/diagnostics_by_fit.csv",
+      "bytes": 6665,
+      "git_blob": "68a4a67c4f7f9d28422987430d68771f598c60fd"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/interpretation_receipt.json",
+      "bytes": 1716,
+      "git_blob": "3d808c039b8ee65690f48fa9a6832df0f3e6dcd7"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/paired_condition_and_latent_response.pdf",
+      "bytes": 18868,
+      "git_blob": "b03cb92449ce48a31ed33a2a52995397166367b1"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/per_bin_macro_summary.csv",
+      "bytes": 2485,
+      "git_blob": "695b8bf2ab23d65f7a9b220462c818788fb30dd3"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/per_bin_seed_summary.csv",
+      "bytes": 7370,
+      "git_blob": "dd09afdc8be29b10bf453f7072aef7aa9dfb84eb"
+    },
+    {
+      "path": "final_project/reports/overnight_20261108/initial_controls_v1/prior_proposal_quality.pdf",
+      "bytes": 18475,
+      "git_blob": "5bfce480da0564e7199faaa858c3cf48646c3aae"
+    }
+  ],
+  "other_untracked_historical": {
+    "models": {
+      "exact_blob_already_in_goal": 42,
+      "large_excluded": 6,
+      "build_render_excluded": 7,
+      "not_exact_in_goal": 7
+    },
+    "research": {
+      "build_render_excluded": 130,
+      "exact_blob_already_in_goal": 136,
+      "not_exact_in_goal": 239,
+      "large_excluded": 24
+    },
+    "interpretation": "Research nonmatching compact files are largely raw harmonic spectra and interim NEB/geometry artifacts. physical_final_summary is superseded by tracked physical_final_summary_v2. Preserve entire archived worktrees rather than merging stale outputs into the active packet."
+  },
+  "observed_active_goal_packet": {
+    "untracked_scoped_files": 137,
+    "artifacts": 96,
+    "reports": 41,
+    "modified": "final_project/README.md",
+    "note": "Root ongoing packet preparation, not missing historical work."
+  },
+  "preserve_paths": {
+    "outside_worktrees_relocation": "Root-approved worktree move with old absolute-path symlink bridges preserves historic absolute receipts/runtime paths.",
+    "absolute_links_found": 5,
+    "cross_worktree_oracle_links": 4,
+    "external_pscratch_link": "ECE285_overnight_20261108/final_project/runs/overnight_20261108/paired/queue -> /pscratch/sd/r/rsb/ece285_overnight_20261108/paired_queue",
+    "bounded_inventory": "bounded_symlink_inventory.json"
+  },
+  "concrete_publication_risks": {
+    "unrelated_main_edits": "Modified HW1 files and .gitignore are unrelated and must not be broadly staged.",
+    "large_untracked_root_file": {
+      "path": "ziK6rwOR",
+      "bytes": 10487418041,
+      "action": "Preserve locally; exclude from project commit."
+    },
+    "tracked_goal_largest_file": {
+      "path": "final_project/artifacts/current/core/data/geometry_uma_fixed.npz",
+      "bytes": 22781267
+    },
+    "token_signature_scan": "git grep -I -l actual hf_/ghp_/github_pat_/PRIVATE KEY signatures on immutable goal2daba710 final_project tree returned no matching paths; this is a bounded signature check, not a complete secret/license certification.",
+    "license_scope": "Foundation environments/weights remain outside curated Git packet under existing documented exclusion policy; no new redistributable weight/license material was added or examined by this audit.",
+    "POTCAR_or_credential_like_names_found": 0
+  },
+  "scope_limits": [
+    "No worktrees, branches, source files, jobs, allocations, raw scientific results, or dataset values modified.",
+    "Raw NPZ bytes were hashed only for equality; no archive members or TEST labels were opened.",
+    "Symlink traversal was no-follow and bounded to immediate roots plus runs depth3; no per-tree15000entry cap was hit.",
+    "No full historical raw replay or physical validation."
+  ],
+  "audit_files": {
+    "bounded_symlink_inventory.json": "3adec87052bc0c11b827fba49c782661d6b0965d63d9796500119a3090dbff3a",
+    "untracked_compact_historical.json": "936f0b6194a4410e75938209a9db7b88937a80a6602e249043ab9952eb101fe2"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "status": "FROZEN_OPTIONAL_FRONTIER_BEFORE_SCORING",
+  "started_unix": 1794563155.4938073,
+  "source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/frontier.py",
+    "sha256": "105e303a295811fa90898bc2bb2407c7d2c300c6a32cb9a362f2df17bcc2cf74"
+  },
+  "queue_only_worker_override": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/oracle_worker_override.json",
+    "sha256": "77c6e81e25e355070ab2a938237e6dafcf53b677563e9fd9c5b7b56dcabab0d7"
+  },
+  "core_completion": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/completion.json",
+    "sha256": "5683990790f5534b50ce2a55712f6c28f7f2979c3623fdd63b388e495b8e4dd7"
+  },
+  "core_analysis": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/receipt.json",
+    "sha256": "d84b5cb8351a7528635dce1c2df5ba7e20295d42f03ed82846fef19ccb2afab7"
+  },
+  "initial_boundary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/reserved_boundary/receipt.json",
+    "sha256": "b05259c85240bef25b54cd1d6bf78a3992f78b9be163a3206feca2d4fac93c08"
+  },
+  "steps": 4,
+  "seeds": [
+    2026111301,
+    2026111302,
+    2026111303
+  ],
+  "counts": [
+    12,
+    24,
+    36
+  ],
+  "bins": [
+    "low",
+    "high"
+  ],
+  "starts_per_cell": 16,
+  "one_swap_neighbors": 8,
+  "attempts_and_querycap_per_cell_step": 128,
+  "arms": [
+    "greedy",
+    "random_walk",
+    "uniform"
+  ],
+  "maximum_new_scored_geometry_model_pairs": 55296,
+  "maximum_seed_rescoring_pairs": 576,
+  "maximum_elapsed_minutes": 48,
+  "hard_stop_minutes": 50,
+  "maximum_node_hours": 4,
+  "node_equivalent": 4.5,
+  "seed_selection": "Original unprotected H0TRAIN fixed-bin seeds; same16percell perreplicate forgreedy/random-walk, onefreshseedrescoringpool recordedseparately",
+  "greedy": "Best measuredUMA neighbor, tie lexicalcanonicalmask; maymoveuphill; best-so-far retained",
+  "random_walk": "Blindneighbor index frozen before energies; cyclic firsteligible fallback, noenergy-basedselection",
+  "uniform": "Fixed-countuniform proposals equalattempt/querycap; noidentical editsemantics claim",
+  "known": "Allprior core and allcompletedoptional rawattempts, allprotected unchanged; firsteligible canonicalunique; norepeatedquery topup",
+  "diversity": "Mean pairwise minimum Li/vacancy-swap distance over savedparent symmetries (Hamming/2); current16walk masks or first16eligibleuniformproposals, no energy selection for diversity.",
+  "claims": "Measuredfixed-lattice MLIP endpointsearch only; noglobalextremum,DFTorentropyclaim; no learnedneuraleditsemantics"
+}

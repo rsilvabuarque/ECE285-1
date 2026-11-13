@@ -1,0 +1,130 @@
+{
+  "status": "CHECKS_COMPLETED",
+  "source_sha256": "ab251299c9ad9c5a38b0d04262041d77b6f507a7f653d0be3114bdb988c60fc9",
+  "rows": [
+    {
+      "model": "D2",
+      "maximum_abs_logvariance_difference": 1.2733042240142822e-05,
+      "mean_pair_KL_float64": 7.124230252935882e-12,
+      "mean_pair_Taylor_upper_envelope_float64": 7.124240834273744e-12,
+      "spot_checks": [
+        {
+          "i": 0,
+          "j": 0,
+          "Decimal80_reference": "0E-133",
+          "float64_stable": 0.0,
+          "absolute_error": 0.0,
+          "float64_Taylor_envelope": 0.0
+        },
+        {
+          "i": 0,
+          "j": 1,
+          "Decimal80_reference": "1.9985352249786922765196170629701495192331292175950596940072578403095493029588286E-12",
+          "float64_stable": 1.9985352249417166e-12,
+          "absolute_error": 3.69755388366172e-23,
+          "float64_Taylor_envelope": 1.9985381373566253e-12
+        },
+        {
+          "i": 154,
+          "j": 797,
+          "Decimal80_reference": "1.3931278621519456908255081842718108182658820114480406308613769204562410152668498E-10",
+          "float64_stable": 1.393127862153875e-10,
+          "absolute_error": 1.9291402848385142e-22,
+          "float64_Taylor_envelope": 1.393131453254123e-10
+        },
+        {
+          "i": 950,
+          "j": 154,
+          "Decimal80_reference": "1.1410656986783342445874553507917226482300885327961224492971695085574689973387263E-10",
+          "float64_stable": 1.1410656986755311e-10,
+          "absolute_error": 2.8031083007890725e-22,
+          "float64_Taylor_envelope": 1.1410723042301595e-10
+        }
+      ],
+      "interpretation": "Use rounded order of magnitude, not certifiedlastdigits. Taylor envelope is an independent analytic upper expression for the exact variance term; Decimal80spotsvalidate implementation nearzero."
+    },
+    {
+      "model": "Sampled auxiliary lambda10",
+      "maximum_abs_logvariance_difference": 3.948807716369629e-06,
+      "mean_pair_KL_float64": 4.16373682308298e-13,
+      "mean_pair_Taylor_upper_envelope_float64": 4.1637415523368275e-13,
+      "spot_checks": [
+        {
+          "i": 0,
+          "j": 0,
+          "Decimal80_reference": "0E-135",
+          "float64_stable": 0.0,
+          "absolute_error": 0.0,
+          "float64_Taylor_envelope": 0.0
+        },
+        {
+          "i": 0,
+          "j": 1,
+          "Decimal80_reference": "3.0781740988000042752213107801402633285303383885866359304847421841048568983099202E-13",
+          "float64_stable": 3.0781740989543334e-13,
+          "absolute_error": 1.543289609650937e-23,
+          "float64_Taylor_envelope": 3.078175767014135e-13
+        },
+        {
+          "i": 145,
+          "j": 19,
+          "Decimal80_reference": "4.8250884062970036779379047544396140598983989241304971227609945316032107632916020E-12",
+          "float64_stable": 4.825088406329225e-12,
+          "absolute_error": 3.2221269798354656e-23,
+          "float64_Taylor_envelope": 4.825095281183039e-12
+        },
+        {
+          "i": 797,
+          "j": 154,
+          "Decimal80_reference": "7.9982082436909418645242968547733631314379776071848764580270706555915109223859934E-12",
+          "float64_stable": 7.998208243441612e-12,
+          "absolute_error": 2.4932871561224825e-22,
+          "float64_Taylor_envelope": 7.998241669224956e-12
+        }
+      ],
+      "interpretation": "Use rounded order of magnitude, not certifiedlastdigits. Taylor envelope is an independent analytic upper expression for the exact variance term; Decimal80spotsvalidate implementation nearzero."
+    },
+    {
+      "model": "Mean auxiliary lambda10",
+      "maximum_abs_logvariance_difference": 4.6193599700927734e-07,
+      "mean_pair_KL_float64": 4.7928179109849686e-15,
+      "mean_pair_Taylor_upper_envelope_float64": 4.792818383788624e-15,
+      "spot_checks": [
+        {
+          "i": 0,
+          "j": 0,
+          "Decimal80_reference": "0E-131",
+          "float64_stable": 0.0,
+          "absolute_error": 0.0,
+          "float64_Taylor_envelope": 0.0
+        },
+        {
+          "i": 0,
+          "j": 1,
+          "Decimal80_reference": "6.4726957644522206789956690080760080337825047088743457863233997894908626576485174E-15",
+          "float64_stable": 6.472695765555126e-15,
+          "absolute_error": 1.1029048538676862e-24,
+          "float64_Taylor_envelope": 6.472696007091873e-15
+        },
+        {
+          "i": 145,
+          "j": 857,
+          "Decimal80_reference": "7.9358440941940282044929492636630493799607062056048434774403637346970791331128339E-14",
+          "float64_stable": 7.935844093666617e-14,
+          "absolute_error": 5.274109442141465e-24,
+          "float64_Taylor_envelope": 7.935845588144669e-14
+        },
+        {
+          "i": 797,
+          "j": 933,
+          "Decimal80_reference": "5.0074426116114897006134034142559904057896724863068740822963323636898258350901030E-14",
+          "float64_stable": 5.007442611414986e-14,
+          "absolute_error": 1.965039893131057e-24,
+          "float64_Taylor_envelope": 5.007444717820368e-14
+        }
+      ],
+      "interpretation": "Use rounded order of magnitude, not certifiedlastdigits. Taylor envelope is an independent analytic upper expression for the exact variance term; Decimal80spotsvalidate implementation nearzero."
+    }
+  ],
+  "scope": "No arbitrary relative-pass tolerance imposed on nearzero KL. The mathematicalJensen/Taylor inequalities are exact; displayed averages use floating-point arithmetic, not intervalcertifiedbounds. Scientificinterpretation uses orders of magnitude and fixedfiniteuniformVALscope."
+}

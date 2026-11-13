@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "328a1d9fe4ddbe5d338c0dbd2621a6fbad02fef0fa71f75465187219a173c113",
+  "source_sha256": "03be7c35456a5bfff6f825e434245883f8aaa522c4fe00c885e023f372b4badb",
+  "checkpoint_bindings": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111301/last_update.pt",
+      "sha256": "0d331c60421e08f505273d62d6f59ae0d8a38aeba170cf36aa21425b3fb295f5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111302/last_update.pt",
+      "sha256": "591011cef94b21a5ec6e7bceeadc578007b6c39d1a48027cbc362daf6e620f5b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111303/last_update.pt",
+      "sha256": "d2f5007de2926369e09f5acb49d6feee3744e0fdb2c8ebe220d06e0ec9af1680"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111304/last_update.pt",
+      "sha256": "f157a0faa8bd559e42dbaa4b4fc5af71945761d51b4c4da3902e172212477995"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111305/last_update.pt",
+      "sha256": "2b8035a6f72bfdf6484790dd5040cc92dd1a8d8035f433b62de49022fb6d77ab"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111301/last_update.pt",
+      "sha256": "171261abcf28f22e6b1318a45ea773f69afe2d816437fa6768479eb7f4e00271"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111302/last_update.pt",
+      "sha256": "bb2e2becae5557c3b14a94608652cedb2fbf2b6687dd127d6a49a8e0eae227ed"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111303/last_update.pt",
+      "sha256": "7892aa2740950a1c754c2a4655437bf3626219899d0c01bcd06f7ef8812fa061"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111304/last_update.pt",
+      "sha256": "1d1a45a541051f0138acb8687a5651a9ab890d1ab0c737256fc1ba05b1d92c23"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111305/last_update.pt",
+      "sha256": "882a2234a3cf60f42dc9b657b515acfccb3767dc2fb526599c3ee30e83056f31"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111301/last_update.pt",
+      "sha256": "d367c9a87f40d487ff3d08f8e5a1f2ae0d20ed8c9f7532eca8ae37c39fda3732"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111302/last_update.pt",
+      "sha256": "9377bc4e25e948dd2358c4a8495cc7cb64abd280d95bc0d508cc0678a7819672"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111303/last_update.pt",
+      "sha256": "8cd557201433eadbbd42e0181f6fe63fa85f29c61855142cef06ccee4f6be3cc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111304/last_update.pt",
+      "sha256": "8e756feaa280379c548f21d91807ed8594b3f6b7c5140266bf4db8762a1cd0f2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111305/last_update.pt",
+      "sha256": "c4ef67244dc7e0c05dbd24cfb5d3b958eec39f7ec756b2a90284addf2da6a0d5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111301/last_update.pt",
+      "sha256": "e18aba3ee755ed7a90c23c864b3e0f02a5f0d8d9badc4364a874ed10414b777f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111302/last_update.pt",
+      "sha256": "51e46fa18a69fd6e6be9128ffd8a4489f29c8cf624e7e8d993faab8e7c2d4a1e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111303/last_update.pt",
+      "sha256": "d9d089cd8db912c4205406336fc0cc35332879f19d2d382cb59d98e5425af4e7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111304/last_update.pt",
+      "sha256": "5b3cbe41f9a68d889e9eab37f218877a7d0d035efd470d04b7a965c6467898ab"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111305/last_update.pt",
+      "sha256": "3c9e95c7753b85594bc95676e9de52a9505c9dad50f638fb15ce24cb29229705"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111301/last_update.pt",
+      "sha256": "79508fd95690647465e878b835d7e264494ed9b809786dc5bc81d9d384623fdb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111302/last_update.pt",
+      "sha256": "3e260b320e4e62239431f90dd689cf565f3dbdce7745222e700107e2b31172ec"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111303/last_update.pt",
+      "sha256": "16f26d3153c64df7fa3db284df25553a7ffc7b2382d1629c8650ec8a56264b75"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111304/last_update.pt",
+      "sha256": "5ea8430c3cf12ed3d5e769bda93cda770ec77f0cc7f7dbe969ff3d8d3d308e09"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111305/last_update.pt",
+      "sha256": "9655c0c558db16bb8976d262899288aae11e2ef55f6704c5b70377002bf1f21b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_latent_d2_2026111301/last_update.pt",
+      "sha256": "f75c91ae79471f82f381cccbe38a505f73f3e9883cf7d7b2df1184385a18b54e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_latent_d2_2026111302/last_update.pt",
+      "sha256": "2092322fb611589bfe1c6d738f868b2d1e7313860316b6bf41d112f73fd944ed"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_latent_d2_2026111303/last_update.pt",
+      "sha256": "e90fd2a8b072fd88c06bd5f93c3ef3f53821b1f4a0c2c331df1c473d0bc317c0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_latent_d2_2026111304/last_update.pt",
+      "sha256": "cb0bbb7799b5f1fb4a9664282fb6015d2b886dbb1fdaea1473364d7ca77dba18"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_latent_d2_2026111305/last_update.pt",
+      "sha256": "c4a1ac3e70db63c73daed2e801a5a404c9b80125ebdfd41c4b2e8016df69fc36"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_condition_d2_2026111301/last_update.pt",
+      "sha256": "fe1a03459f36197b899112e48298bc8fb52235ce11b4fd226152dc411584f776"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_condition_d2_2026111302/last_update.pt",
+      "sha256": "9e5ecdcc6ccf569a4287ad1a8e5e327a9ec4ce8a25486d34af1f368f70e2bbcd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_condition_d2_2026111303/last_update.pt",
+      "sha256": "48ddc4802eb830aa248914c430530c71541398b7952f67034bd9c5167fc1324d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_condition_d2_2026111304/last_update.pt",
+      "sha256": "eb5ba9ff28316cf0dc66f2b77a56e8d06fb932bc077a5a084de6136f29a100c7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_condition_d2_2026111305/last_update.pt",
+      "sha256": "ad2334413a839ab4a57ffcb0aaa94f362afb979a5cf6dc4ea867482a98c5cc6d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_shuffled_d2_2026111301/last_update.pt",
+      "sha256": "af106a6c8d68f625039f9b7e0ec4b32a9af49f0748732a02c79f3d4e5f7636d5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_shuffled_d2_2026111302/last_update.pt",
+      "sha256": "9939f4b517efbbc3af6122e7900528725f39f106d308409e4da940fae0cbc5c2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_shuffled_d2_2026111303/last_update.pt",
+      "sha256": "52575a862bdbc63795963a71959656a8c208303df6d4dbde398ebb719c4843e5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_shuffled_d2_2026111304/last_update.pt",
+      "sha256": "183e484217a81f0820e104580bbacc8ee3b154ec0070c63da404eea04c6fdc9e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/fits/mean_lambda10_shuffled_d2_2026111305/last_update.pt",
+      "sha256": "d4442fed216f9a1a4eb5ee318bdba4a8ae8bc500dc5b2794bbb56392cc49e3d5"
+    }
+  ],
+  "TRAIN_rows": 40157,
+  "VAL_rows": 4967,
+  "TEST_processed": false,
+  "scope": "Posthoc conditional deterministic-mu information audit; unweighted balanced means over9cells,5fitseeds; randominitialization5seeds at fixedn24/middle. Does not change primary generation/oracle endpoints or demonstrate useful noisy/prior z."
+}

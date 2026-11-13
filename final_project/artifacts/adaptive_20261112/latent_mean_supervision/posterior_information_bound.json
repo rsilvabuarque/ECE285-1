@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "source_sha256": "1f82567471504fe58d9abd90fd9ba4b4eb91c5d15e84e4431644d34d8ad46671",
+  "condition": {
+    "n_target": 24,
+    "measured_energy_bin": "middle",
+    "fit_seed": 2026111301
+  },
+  "rows": [
+    {
+      "model": "D2",
+      "rows": 986,
+      "latent_dim": 2,
+      "empirical_information_upper_bound_nats": 7.124230252935882e-12,
+      "upper_bound_bits": 1.0278091656061723e-11,
+      "mean_KL_to_standard_Normal_nats": 0.00406093736305546,
+      "SD_mu": [
+        1.2868896953299167e-06,
+        1.647938523952265e-06
+      ],
+      "RMS_posterior_sigma": [
+        0.9570398029350374,
+        0.9541228372651294
+      ],
+      "embedding_sha256": "ac34b9fcc2ea3cfa646bb4a490ccf6e7264989cf20efcb35b6827c41d2991ed0"
+    },
+    {
+      "model": "Sampled auxiliary lambda10",
+      "rows": 986,
+      "latent_dim": 2,
+      "empirical_information_upper_bound_nats": 4.16373682308298e-13,
+      "upper_bound_bits": 6.007002466228582e-13,
+      "mean_KL_to_standard_Normal_nats": 0.0034779335691049584,
+      "SD_mu": [
+        1.6308705827819459e-07,
+        2.1937212063561085e-07
+      ],
+      "RMS_posterior_sigma": [
+        0.9594872838382105,
+        0.9585844566326269
+      ],
+      "embedding_sha256": "bc2cdb6de1e1b79820a9f2b35e2e6c61fffc0abf431a9089c6c1ced7c067f180"
+    },
+    {
+      "model": "Mean auxiliary lambda10",
+      "rows": 986,
+      "latent_dim": 2,
+      "empirical_information_upper_bound_nats": 4.7928179109849686e-15,
+      "upper_bound_bits": 6.9145746320618156e-15,
+      "mean_KL_to_standard_Normal_nats": 0.006555027178280408,
+      "SD_mu": [
+        2.4525649437232427e-08,
+        3.2838229733068465e-08
+      ],
+      "RMS_posterior_sigma": [
+        0.9512230256105181,
+        0.9370004118518358
+      ],
+      "embedding_sha256": "da804849dbd73f6b673acdab829ea5acae026ea2e9a994d4e8ad62140d7f780a"
+    }
+  ],
+  "proof": "I=mean_i KL(q_i||mean_j q_j) <= mean_ij KL(q_i||q_j) by convexity in second KL argument; q_i diagonalGaussian encoder, empirical uniformVALrows atfixedc",
+  "units": "Natural logarithms give nats; divide bylog2 forbits",
+  "scope": "Illustrative firstseed fixedcondition empirical distribution only. Deterministicmu canencode C_s while its tinyvariation is overwhelmed by posteriornoise. No newmodelinference, targetnormalization, probes, trainingororaclecalls."
+}

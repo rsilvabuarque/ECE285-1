@@ -97,3 +97,11 @@ docs/midterm1/*.out
 /docs/research_supplement_20261108/*.blg
 /docs/research_supplement_20261108/*.log
 /docs/research_supplement_20261108/*.out
+
+# Reviewed adaptive reports are versioned; temporary TeX build products stay local.
+/reports/adaptive_20261112/*.aux
+/reports/adaptive_20261112/*.log
+/reports/adaptive_20261112/*.out
+/reports/adaptive_20261112/*.fls
+/reports/adaptive_20261112/*.fdb_latexmk
+/reports/adaptive_20261112/*.synctex.gz

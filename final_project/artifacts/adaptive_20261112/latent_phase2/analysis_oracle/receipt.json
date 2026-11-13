@@ -1,0 +1,516 @@
+{
+  "status": "PASS",
+  "stage": "oracle",
+  "fit_replicates": 5,
+  "checkpoint": "last_update primary; validation-selected posterior metadata sensitivity only",
+  "assessment": "New diagnostic development streams, not TEST",
+  "source_sha256": "7b108b1e34fa3aedbaa127bea17641f40cefc8e45d0a4c1291a692f1622709af",
+  "bindings": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111301/receipt.json",
+      "sha256": "ca899f10ac55c41fe47594744fb27084b613177e90d337667cee6193ecf280d9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111301/generated_physical_outcomes.csv",
+      "sha256": "7423e37057990e75d252435af8b24f9b0d5e575bfc752bdaebf4a340c3142f03"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111301/history.csv",
+      "sha256": "53f64c8df6e0da68b8d000980d7ce804757b2c9e775c4405f36ab60e70bb66da"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111302/receipt.json",
+      "sha256": "99621ba753373455d3e2ddb0fa6b8a2fb2f0787e8e4fde2ae5d68c8e4344b82c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111302/generated_physical_outcomes.csv",
+      "sha256": "62cd4e9d6178d3074d6b00e24e4df08f21da471b277904ce6fcf523b497ec87d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111302/history.csv",
+      "sha256": "ce22055dab72aa59db66b1dc57d6ec3149b217a13982fb44a9080714aaffe90b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111303/receipt.json",
+      "sha256": "61ddb4ed117eba8ce32e48a5d8a14b33604a4b9141e87345b3fa10e717cc9d04"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111303/generated_physical_outcomes.csv",
+      "sha256": "372f5bde4aa0a8dbd75f833111bb38e127426251cf222c48a2b516915119adb9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111303/history.csv",
+      "sha256": "740dac69433f2e112ab3b647c1cc048e2e3eb598f85543a424cca1adc16fb88f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111304/receipt.json",
+      "sha256": "9cbdc0bf762cab137c6bc828b3df9b53838b20cb95f476a13b3d129cde36e488"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111304/generated_physical_outcomes.csv",
+      "sha256": "97c6615da38dd4df7c5171578e12c6f2e48ad3ba1e8be35f62a865a70c674bf5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111304/history.csv",
+      "sha256": "5784fe70e63f3614aa62b9a215653bafcf09971a2df031286c7b056a0c1514ed"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111305/receipt.json",
+      "sha256": "dfe903711b26431f9ca5865ba96f222bbe07830dfda02199832a6e0b6fb6e28a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/ar_2026111305/generated_physical_outcomes.csv",
+      "sha256": "f3d9be0482c50cb8b10c953d6603d4e318cbc1767b71357d3e783b7cf1367d07"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/ar_2026111305/history.csv",
+      "sha256": "4ac09a315d8470a729e38d2ce3d6d45ed7bd68f3815bfa64837cb04e95d02545"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111301/receipt.json",
+      "sha256": "e6d4b4a9ab718b102bc9fd9a5b149dcb32bd505b0c4c5199420d7cb5340394d0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "8e44e583908085d7b100189ed7b563db15767bd171324bdf5a9149ba384b9fad"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111301/history.csv",
+      "sha256": "97c405e27e7a740075d85ab184e465df9c86d0fa49f6a9a3ed10fd49c97ec0db"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111302/receipt.json",
+      "sha256": "70b5b711b62e2ab358337922b534486271630925797cb510e8c38b21e206126a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "e1451edcf321379fc980cd3405bc066fc76c98d26f12ff1129cb801e7593241f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111302/history.csv",
+      "sha256": "b04ee7aa746016e9d4147f486c56ed42517a91997858726b45bb323b9080b9f9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111303/receipt.json",
+      "sha256": "7b47fe0ce0abef7d5d201cb3cf22c0c70ed164ecfcdcf62c0d1cf34cdc48bb41"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "a07b081cf045b6df27a516e7de1021ce74e21e6cbd00ab635a57a6e234cb40ef"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111303/history.csv",
+      "sha256": "74cf1d2376e9d305c7bf25599eff6d669dd49a3042927bfc639dc323c3215110"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111304/receipt.json",
+      "sha256": "d131af14a09417e632a686229fb4e7cc17b3749809f9b4305f5bd097d940c46a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "780398c169ff3f2c2b52aa6a32657a1535a18bbf276ee8a9fd196ccfedc8539a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111304/history.csv",
+      "sha256": "74878b1433235ead1697b6ccef582ae1e399de630074574bb6328f46feaced1d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111305/receipt.json",
+      "sha256": "685e76d2e0824a2d61d23a2c7ca1a1cf989cc170d75f85016463ce36d544d09a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "e7e10494773b1b0ff7d44e53bee37c28012b4c32c3f2d708d17d2cec9769b8f8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/initial_fits/d2_2026111305/history.csv",
+      "sha256": "821087c79b42c01a3c2d6fcab94ee148aa6a657d60b7eb94275867e0895a5800"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111301/receipt.json",
+      "sha256": "d0070f2a9649af9077ddf4c87a2c5f0cebe24a27b4c0fa90028a96859a6b0914"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "0eaa31e8e538b6d75715154ac458d47d4442edf5804bd0ac8ed920c843da32a5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111301/history.csv",
+      "sha256": "4ab055d315d9735f94c3d40966f317b22ca7beb6d4455e743538e4b9fd422a24"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111302/receipt.json",
+      "sha256": "cee5c96b93375e7561c2c5dd4753f8497f42ebc249a90e1c56935faf2357e9f1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "94d232da7b008752c46157ab8d7960ecfadf5a0856ebc08bcb6d2564cc3d865c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111302/history.csv",
+      "sha256": "5bb99f4b77dd3f1b55cbb6826e86b483067b97784e11d97ecfb51bf5c3674e1e"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111303/receipt.json",
+      "sha256": "468a399dd8422821025719306bc895b8b35ecdd53fa3edc4a074c8f878e402a9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "c30da972b8d3219b45a9f9c6255b1fffbda1deda4b5c3cfc0fde47c983107032"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111303/history.csv",
+      "sha256": "898cb909084e352c738673332ed694238f118074dbe8befcab7118b9e3e2d1c8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111304/receipt.json",
+      "sha256": "2dd8058c324765f40fe7fc55e36576ed76688297da862439cf5494947e30cbf2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "567e1f0ec259c6d97373489c9653a0926a41075160ffbc03e979d376797a7c50"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111304/history.csv",
+      "sha256": "b71dc3397d3c1103438ca704a15099dee5431944e429951e306dcbddae05d6c2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111305/receipt.json",
+      "sha256": "523e99537bbdf4744ff006f734af1bba0c7c3860effbec43cc35cdd712fc2489"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_latent_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "36fb7553bbf2da828c880b43b1c03f953e42ad73fb77997c35246521f7abb829"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_latent_d2_2026111305/history.csv",
+      "sha256": "9de5483bfe4c01fe90e91226d840e8d97185147a0ed29a272c1e21073c9e1d96"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111301/receipt.json",
+      "sha256": "397fea6828442deb7951940f78ca99c54930c9636e29e7ac0be0061a3b486c46"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "d720861a4bc7dc328a3ac5feaec4d2addc3a47c77a85236b51d3ddc5b24cb021"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111301/history.csv",
+      "sha256": "a25d33cf0a01db20d3a2a01fb4838af8b5ca2da490f7180bb5c92923bb0522bc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111302/receipt.json",
+      "sha256": "51f1cf6fa7c987cdb9fc1c363e93c099a7d5e3ab6ce44e8bd00f70dc91f6a6a9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "4c0d38ccde54b9304ba368089c8e2f1648067fdf505973f84509c0dd086a97a5"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111302/history.csv",
+      "sha256": "e6c86b32d4fc53e24f8832ec7bdf0a6c2872ea3318523d180da65d3078800896"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111303/receipt.json",
+      "sha256": "7f0eb02252cf5038c8bc64d8ea9459991cdb8db290355cbefe3b94f5f369fae9"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "46cc3fc72e782072e2c81274d7fa5bbea8c7d0488c5709f814aada90e5142589"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111303/history.csv",
+      "sha256": "c707c81fe1a61e64fd5ccfb2a4e9c54a91a8c2f53f60a3acb0281d7d9fd3e937"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111304/receipt.json",
+      "sha256": "a7ab13a773a8a6d17ebb9d2ede87cf4901ef4508b18148ceaeee75446271c3fd"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "f72c1ab51ff331cb7d747754d195b2f52190c3a6c12c781ea8d84a0fa448cfd8"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111304/history.csv",
+      "sha256": "08ae52a78d213a46379ff746c34b0242a65f62d343788d4096ebdacdef207459"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111305/receipt.json",
+      "sha256": "fbaf2372109b994648ebdeafb81d7778ce03234b1edce793cb02bfee0c002d08"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_condition_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "e03b3d2e67d647ccf62e19bd361a7a0826011cff40f42888d9f0a45c2251b216"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_condition_d2_2026111305/history.csv",
+      "sha256": "5e19faeefe724f85139f8931c3f69ae942f377e8a9ec32d9ce5e4e494b09bd9a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111301/receipt.json",
+      "sha256": "a15bf279641b8374e940a2ad8c408750b69f28bcbfccf56fe8b492be13eb12e3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "8177b4e61e8eb5dc9cf851456bdde67e3089b442f40c4332ef286f047cd7a94b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111301/history.csv",
+      "sha256": "3938f2801a122794a87ad0f144c6e44f72e0417a39c8500fab4f79dba90953f0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111302/receipt.json",
+      "sha256": "86819e18d487fb5de1a91e77f6d75b328734f23e8810c48306be3754b7642bad"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "8af8a514d101546e58df5d4bf4b41c0f180bf05b5d0fec76565aa0fbb87937aa"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111302/history.csv",
+      "sha256": "93bd9fb454400a95c54262b703406499f748b8d2c22b180ef020ff00b6408827"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111303/receipt.json",
+      "sha256": "5bf5e25ad97a656cfb4ee0da99f5b77ce7205c406db620128bfbabe2a532257a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "c0e5a039f1877c777314f7f9670feaa090f0ae22601765c232f832e54ef00778"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111303/history.csv",
+      "sha256": "f2691c4720d3b52edf191db56362350ea83be4f3c21f82bf018a5c5e2e341b1f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111304/receipt.json",
+      "sha256": "a3d5e7480df92424972f955e355232b942fd2fbf69a2bc8f7af23efc9b1a131d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "525e3d5003658542983b28618e1efadee9068ecf61d44f072bb668a3f0c0b765"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111304/history.csv",
+      "sha256": "2d87a8cea3cdd723125ff817f7aa018cc8764e40814a4eadf7fefa93c4904352"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111305/receipt.json",
+      "sha256": "46d144d4020dbca178600826bee832ce8d0ee52f96738ab28bf7ce4edd63cb5a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda10_shuffled_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "266362c1de9e607cb6fd620e5f4ebc82618ac377344ddac9c76acf61d6739045"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda10_shuffled_d2_2026111305/history.csv",
+      "sha256": "9ea083a7ea79569feead37523e83581b9a0735cbea94a2d03395f82252f18dc4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111301/receipt.json",
+      "sha256": "c3cea695e1e965adf97f23b2047bb1cbe46018f33e40d716b3c62b42f235973f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "e8e7eb0bab883b3bf019051f3a5c6a3116401c2111e19566e1a693392821cf43"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_latent_d2_2026111301/history.csv",
+      "sha256": "e5c2151a6bcdd396373197d843ebf9f084df4b4de53da574d6fe127e4dcc8796"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111302/receipt.json",
+      "sha256": "d430c61e5cbba6770055d9cafb63c3b119ebfea5e49805b5d33a7c9c7fc84dab"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "9af92e306046135b65bdd3f3ed1d06c4710379c302886493794d85b0805d6a05"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_latent_d2_2026111302/history.csv",
+      "sha256": "7cc4626b9caa8279b11c03cf21983cef1f2f8a0e019e29faa6a93b7058a2dd0a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111303/receipt.json",
+      "sha256": "f474192432636e757ba0975053450afc5de77cf685e34f27b4e102d95743a54a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "29ce2e0bac13ec2d86484a8070ab1d7b5323375b81c24bf80aa044d3a84f9789"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_latent_d2_2026111303/history.csv",
+      "sha256": "1ccac9bbaf1559896c476e6f1786e070130965a57e9fab705f9be64ae4cc47bf"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111304/receipt.json",
+      "sha256": "31a87144c38385ff6b304b2c790b4cce71075872d1a6fe6c7bb6b29d21304dc2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "41a32e6dd1d3c96d07666664edb693a98750013c3a4ed8a25001869225e666c2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_latent_d2_2026111304/history.csv",
+      "sha256": "28df146bffaea8a65b677121b6fe083407cd6686b0af8be2ff1a29c838c72a62"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111305/receipt.json",
+      "sha256": "734b7334376bab3a583df0dd214bc6706d4172d563dbe0997f8d41285bc502e3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_latent_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "dc1d6ab5b358dd5c962f209f5182b8f1476f60283cd938ebb929d3bde0b5068b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_latent_d2_2026111305/history.csv",
+      "sha256": "8c3c0d0750d37a29bb11f654470034cd5fcf61e08880c260bcfa28f5ba6478ca"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111301/receipt.json",
+      "sha256": "692f407db0b75a8aeb6b1e45546d488a61be4bc7d7f9dadbc1994f291e550cda"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "e2678960d6c3622e0f4ec45dd57993f489b32d8a25e8c93c36873e8f3a4659c1"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_condition_d2_2026111301/history.csv",
+      "sha256": "761fee044f5740386f860eb5e6b1ee7bbac46100bb98d6235563ec52466e7e89"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111302/receipt.json",
+      "sha256": "dbd672adb3c86e8be28cc715daf68cb475814c3b89e7a4e824adf17963a3bcdc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "fd2273d7fe9657c5fc6641d2901bdb579b131c42e79cec9e85333d0421aea0e2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_condition_d2_2026111302/history.csv",
+      "sha256": "607f66b140e5f1e048820cca6f765a5a01b8470536e54ffb45a7b91e82cb9d6b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111303/receipt.json",
+      "sha256": "ec1cc5afa714eae5f51dabb8da151633b24ed7ec235844500d22d7aa1aa3c081"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "a452dcec8fc790376db41bb7897142b335b722a465d5ac861c4ba6ba8eaa5f23"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_condition_d2_2026111303/history.csv",
+      "sha256": "69437660a14eeaecbed0de91e31e7ea1642957c0078ea3569dfb7c190a2ed585"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111304/receipt.json",
+      "sha256": "971ed4d53b1b5e600be318e78512fe37a929f60ad0ee1c7ce885ba01bc5c6621"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "fd59b07604ab994bd0304b85ebf143eb2dcddecd396f4411df41fdc93df546aa"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_condition_d2_2026111304/history.csv",
+      "sha256": "f9fd1a5184ea4ddca4de8c88e783ce2cf78be3c0df8958b8387e8943df07d56b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111305/receipt.json",
+      "sha256": "2d92199153b6a8ea76391bda880b55b59c29294be40937f090856dd4587765eb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_condition_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "e451233cb5c93b4767fd561c645181fcd6bb8008697b19875bf548944d904870"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_condition_d2_2026111305/history.csv",
+      "sha256": "c3837d2bed17348545d500bb73345c70e32a10a14d98e8ec122aa4bd7a31d933"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111301/receipt.json",
+      "sha256": "310fb4bbfa5ba47840de312af6410129f06409d6504508f123d4cf760b4ebceb"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111301/generated_physical_outcomes.csv",
+      "sha256": "011ac522b33e607b75d029e90a98fc91d038dc2a658b85b50f49e80c0a713ebc"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_shuffled_d2_2026111301/history.csv",
+      "sha256": "5675404a6ab4706cf06d8269dd02a834ee270cddc022b336e483a7b3f2146318"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111302/receipt.json",
+      "sha256": "a6e8ff85c964fc615cf774d7d628537a15bb3b271d8e3bbe38398189142bc576"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111302/generated_physical_outcomes.csv",
+      "sha256": "44f3bc3ed3bb5c2b661fc1de4d521b9b69910ed1bc7e7d12b1ba0f36d2499660"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_shuffled_d2_2026111302/history.csv",
+      "sha256": "ced6f34487dec4fe1a76ac000f6c61c127cb8b077e2eda19cc82574c35475538"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111303/receipt.json",
+      "sha256": "06b2e11dbd8f2d194bae91702dc45ca1f4da974d8611fce03783416884b004c2"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111303/generated_physical_outcomes.csv",
+      "sha256": "76badc606964ad109dc6fd55a9a366bab0da1d16fa91bb0f9d9942357003c84f"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_shuffled_d2_2026111303/history.csv",
+      "sha256": "f644ea871318721665bc7aeb98b7ea32bae356169de3ec8c3d266bca8e2dcb48"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111304/receipt.json",
+      "sha256": "4d759717c2744600fa475bf15a10c7d8a57ab9d6e4ce9dcb1a84690990bba731"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111304/generated_physical_outcomes.csv",
+      "sha256": "9082b926bb65080f66a840ac121913579603a118bb198459695e319e869cc000"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_shuffled_d2_2026111304/history.csv",
+      "sha256": "24907b4cb6982c538dead029c9f268ed765975fa91323b24d5762684d8100969"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111305/receipt.json",
+      "sha256": "78900f1a19de9235efbd4933706185ec777433bf5654919882971dcfc0bb5697"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/diagnostics/lambda100_shuffled_d2_2026111305/generated_physical_outcomes.csv",
+      "sha256": "c9091892fd9efd4fbe97a2ffe75c1042b3cb41715cae95aabb6a1d8e2fef3612"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/fits/lambda100_shuffled_d2_2026111305/history.csv",
+      "sha256": "704c9786c7d61ff7ed385148474cb25a56d3d7a4dbc30d1b8d58ca439960c470"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_uma/receipt.json",
+      "sha256": "a9ebae7bec1145e8d5ae5b6886b7fae1ac2e898d7258c6c14f05446aa0fe7141"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_uma/uma.npz",
+      "sha256": "8fb117f39dd386f629f70e365e91054b57ba51354f6a23122052d75d1e00b8a4"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json",
+      "sha256": "678cc23fe1826c54624806935052c0d659299ea27371a360cc5752b9ea4d6ca7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_mace/receipt.json",
+      "sha256": "083120e05a7eaecec1859311d82b133d5bc6e7b99c16dde3059476dd21e56b76"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/collected_mace/mace.npz",
+      "sha256": "0f502ee60ab6e982a4144305a2e1418ff9b7a039818f0c799c14fc792bcd1fde"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_mace.json",
+      "sha256": "bf9ee42191ecb622abc562ba41c9ffbf94871610beec36484ccf7fc71dd73769"
+    }
+  ],
+  "raw_attempts": 506880,
+  "interpretation": "Descriptor/probe signals alone do not establish useful physical control; oracle yields and matched guide-vs-clamp effects are required. Error bars SD over five fits; paired CI uses Student-t(df4)."
+}

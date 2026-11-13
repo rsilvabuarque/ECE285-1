@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Posthoc conditioning/data controls: balanced H0 fixed-bin yield change, percentage points, mean $\pm$ sample SD over three paired fits. Relabeling also changes class-balanced loss weights. The matched-range comparison holds the physical edges identical; adding rows can still change minibatches and row weights.}
+\begin{tabular}{lrr}\toprule
+Model / contrast & UMA & MACE\\\midrule
+AR / H0 range versus fixed & $+6.48\pm1.01$ & $+6.11\pm0.98$\\
+AR / New rows / fixed edges & $-1.56\pm0.88$ & $-1.10\pm1.33$\\
+AR / New rows / matched range edges & $-1.36\pm0.39$ & $-2.05\pm0.84$\\
+CVAE $D=2$ / H0 range versus fixed & $+7.06\pm1.09$ & $+6.80\pm0.91$\\
+CVAE $D=2$ / New rows / fixed edges & $+0.41\pm0.78$ & $+0.09\pm0.46$\\
+CVAE $D=2$ / New rows / matched range edges & $+1.85\pm1.33$ & $+2.00\pm1.39$\\
+\bottomrule\end{tabular}
+\end{table}

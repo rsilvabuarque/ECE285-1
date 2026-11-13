@@ -1,0 +1,482 @@
+[
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111301/receipt.json",
+    "sha256": "c337bbb4f5e101a995beadfb233c3ed3ab8af83fe5fa49f9d47621d85b2d6181",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111302/receipt.json",
+    "sha256": "84aa1b5fef09d94391daefe84a27c918a05857d18a2382d32f70ea2783ebbaaf",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_ar_2026111303/receipt.json",
+    "sha256": "9d08fbef03133ee613734f85a651dd7e5b231f8023c4039a6027f6085325283e",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111301/receipt.json",
+    "sha256": "cbebc207a38bf4a0bf1b80d1f4118110e7bb3f63b11875e10c0687a3b409337a",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111302/receipt.json",
+    "sha256": "4f4dd844e847b7caf4149a63d870f12874d7e59b75516ba2ba77d05987c71b40",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 1,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1/training/initial_d2_2026111303/receipt.json",
+    "sha256": "1a59a99e2daa13a0dc67722aa9f42e9bd22f88cda7d5c241b422aad01296479e",
+    "base_rows": 50247,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_adaptive_2026111301/receipt.json",
+    "sha256": "5a34738c25a6c8d927d5ad12ce04c103b1983d05f7ac8577f538a6f716bf619e",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_adaptive_2026111302/receipt.json",
+    "sha256": "3851d2be9c9a7d456c8e436f0843126ed2496503c0d5e3f545ef170bae7bafba",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_adaptive_2026111303/receipt.json",
+    "sha256": "c9dc82c380d6f5db0b9e98884cc94284bc24662f00afe540801086081b9af625",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_fixed_2026111301/receipt.json",
+    "sha256": "14555919b330dccf8eceaecc235d6da9f30e5bfab4bb12c9bb11a865066c9e11",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_fixed_2026111302/receipt.json",
+    "sha256": "18d467322b2deda800eb401f86f9eeaed030162c08faba80c4e28ae9914a812d",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_fixed_2026111303/receipt.json",
+    "sha256": "f05be322229aad238bba24aa71a78add4101e5a2104d289a3cfa77c89a7b7db6",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_range_2026111301/receipt.json",
+    "sha256": "350c1aaf182983dafe52903971220d49c580539a3b6f2ead8f2b6399df8c8056",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_range_2026111302/receipt.json",
+    "sha256": "eba28d5614d3652d649168817907d0cdf43b8451adbc3a214e32d17b6a467076",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_ar_range_2026111303/receipt.json",
+    "sha256": "bf55669f609f24a5a7843570021aaee8e3bda8793a04ba2247f937df7bdda7a4",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_adaptive_2026111301/receipt.json",
+    "sha256": "c88d213685e34b86e51b44671c8e5048afe3f7121fb2757917f7729b5ade6e8a",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_adaptive_2026111302/receipt.json",
+    "sha256": "87eff5f535fc0507aa0977113f652f6a9dc2a1b280fe52ca2e2b39458d426f23",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_adaptive_2026111303/receipt.json",
+    "sha256": "20ca295181b6bc474840da4560b813af9e5eecbedf1eb5263aac543b26c13491",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_fixed_2026111301/receipt.json",
+    "sha256": "ad58e64e2be5a2e1e98b7547358616b073ef7f58bbca92319bcff01b2ed1e3a9",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_fixed_2026111302/receipt.json",
+    "sha256": "09ccf0218fec7bdbcb1f2a6ac041094581ef08a14fc5405d741b5818abca5577",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_fixed_2026111303/receipt.json",
+    "sha256": "ab273cf69a813073ef28d7cea59d4fe9fe62a912983da8f43b1199f2ed04bd54",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_range_2026111301/receipt.json",
+    "sha256": "02186823cd63a6ba74cbe8e1bb58d350f4768ef97c654b8b3159073e63d82e14",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_range_2026111302/receipt.json",
+    "sha256": "fe5359b1092df94cbaa5db1f3eb3f269ce302334e7f6091629b1569d25e883e9",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  },
+  {
+    "round": 2,
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2/training/r1_d2_range_2026111303/receipt.json",
+    "sha256": "c4138012986b12a5a32233149bd1b410c7f37c085e5981377fd4bde8bf25448e",
+    "base_rows": 52551,
+    "added_train_rows": 2304,
+    "checks": {
+      "status": true,
+      "original_rows_certificate": true,
+      "TRAIN_only_append": true,
+      "base_data_binding": true,
+      "training_binding": true,
+      "parent_binding": true,
+      "schema_binding": true,
+      "stage_binding": true,
+      "verifier_binding": true,
+      "source_binding": true
+    },
+    "status": "PASS"
+  }
+]

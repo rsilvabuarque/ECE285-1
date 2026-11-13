@@ -1,0 +1,432 @@
+{
+  "status": "PASS_INDEPENDENT_ENTROPY_ARTIFACT_AUDIT",
+  "verified_hashes": 69,
+  "hash_checks": [
+    {
+      "path": "entropy_analysis/entropy_estimator_diagnostics.pdf",
+      "expected": "8103d92df95865bbaed4ddb0bc16f1b5afb4b5796cfcee0ed25d36ad206010cd",
+      "actual": "8103d92df95865bbaed4ddb0bc16f1b5afb4b5796cfcee0ed25d36ad206010cd",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/wang_landau_density.csv",
+      "expected": "aed20f9ea45781062469caea618bf54e824d2e504c6f932fc066c142d655bd01",
+      "actual": "aed20f9ea45781062469caea618bf54e824d2e504c6f932fc066c142d655bd01",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/canonical_thermodynamics.csv",
+      "expected": "b24573b7c2c57014c04b53c227b1eed6cbf5396adbc14aa43684258d3ab9f1b6",
+      "actual": "b24573b7c2c57014c04b53c227b1eed6cbf5396adbc14aa43684258d3ab9f1b6",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/exact_entropy_heat_capacity.pdf",
+      "expected": "e0c8cfe30eb464ba3f8c1595523d58fa41b92f4481ae7c9538b974739091f9e2",
+      "actual": "e0c8cfe30eb464ba3f8c1595523d58fa41b92f4481ae7c9538b974739091f9e2",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/wang_landau_thermodynamics.csv",
+      "expected": "74efde4a82824fdaeefb3d838173c77c6ca02e7fa6da2581b0ce8afceb0170ac",
+      "actual": "74efde4a82824fdaeefb3d838173c77c6ca02e7fa6da2581b0ce8afceb0170ac",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/wang_landau_summary.csv",
+      "expected": "519e51c32e77777040a1d22f848336d9b56b53a5e7370a67d927c2e8db48f93a",
+      "actual": "519e51c32e77777040a1d22f848336d9b56b53a5e7370a67d927c2e8db48f93a",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/symmetry_orientation_energy_checks.csv",
+      "expected": "dd91e43fa8e7b5c6bef059b13e3b37f671717cc61c940e70c0ee4edbe355dd45",
+      "actual": "dd91e43fa8e7b5c6bef059b13e3b37f671717cc61c940e70c0ee4edbe355dd45",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/synthetic_importance_benchmark.csv",
+      "expected": "0ce442b02df7e970d3b79ad95a07e278e900a644fbe10fdb81b9df93bef32d1d",
+      "actual": "0ce442b02df7e970d3b79ad95a07e278e900a644fbe10fdb81b9df93bef32d1d",
+      "match": true
+    },
+    {
+      "path": "entropy_analysis/multiplicity_effect.csv",
+      "expected": "71decb68c37bc62ea7139acf70b42f7540001c36be18f549271f23fb9b40809d",
+      "actual": "71decb68c37bc62ea7139acf70b42f7540001c36be18f549271f23fb9b40809d",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/learned_proposal_importance.csv",
+      "expected": "4c5fb9bc6c4e653c240877bf1a75349ed531bfbdf78d8bd2844d16b8bfaced93",
+      "actual": "4c5fb9bc6c4e653c240877bf1a75349ed531bfbdf78d8bd2844d16b8bfaced93",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/learned_proposal_quality.csv",
+      "expected": "88928417472578876b08cd3fc5aa58a4546dfcd58d0933a4051b14602547c12a",
+      "actual": "88928417472578876b08cd3fc5aa58a4546dfcd58d0933a4051b14602547c12a",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/learned_AR_entropy_diagnostic.pdf",
+      "expected": "dcea39135dac8dabbbe0d325a8ac64252f7e74fd8b80b05136bf0faf2fb1b9da",
+      "actual": "dcea39135dac8dabbbe0d325a8ac64252f7e74fd8b80b05136bf0faf2fb1b9da",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/AR_sampler_audit.csv",
+      "expected": "aa9cce2b7d9560a387363198eb473a825133693a9adf7f27523dfd739f35b3b0",
+      "actual": "aa9cce2b7d9560a387363198eb473a825133693a9adf7f27523dfd739f35b3b0",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/exact_AR_probabilities.csv",
+      "expected": "e3c59ede91818348c495dcd0ed0a77529179952e2c123f91ae3a115d28b10f5d",
+      "actual": "e3c59ede91818348c495dcd0ed0a77529179952e2c123f91ae3a115d28b10f5d",
+      "match": true
+    },
+    {
+      "path": "entropy_learned_proposal/AR_normalization.csv",
+      "expected": "30980a4492ee2b6b775c004fcfe4a618c34b6254f2c66e74b3a76bb7c8594df7",
+      "actual": "30980a4492ee2b6b775c004fcfe4a618c34b6254f2c66e74b3a76bb7c8594df7",
+      "match": true
+    },
+    {
+      "path": "entropy_review/symmetry_energy_temperature_scale.csv",
+      "expected": "9ec0f1ff77d2e4fbab86213718e47dfb645ed15991e4d1a0a7cd93ed7381867c",
+      "actual": "9ec0f1ff77d2e4fbab86213718e47dfb645ed15991e4d1a0a7cd93ed7381867c",
+      "match": true
+    },
+    {
+      "path": "entropy_review/entropy_review.pdf",
+      "expected": "2ae6fad6d9b408eab6389c93dacd129b4c92b0f4b0d0acb656726e43d600ae37",
+      "actual": "2ae6fad6d9b408eab6389c93dacd129b4c92b0f4b0d0acb656726e43d600ae37",
+      "match": true
+    },
+    {
+      "path": "entropy_review/terminal_AR_target_mismatch.csv",
+      "expected": "213a98a2500969e5442570e57718c3dbafb66c2f47aa50c8a35f97b3c254147c",
+      "actual": "213a98a2500969e5442570e57718c3dbafb66c2f47aa50c8a35f97b3c254147c",
+      "match": true
+    },
+    {
+      "path": "entropy_review/terminal_AR_uniform_comparison.csv",
+      "expected": "8d56e8d9ea873a9cb4024c3679227520086adec7c5cf5872846e86b7abc356ea",
+      "actual": "8d56e8d9ea873a9cb4024c3679227520086adec7c5cf5872846e86b7abc356ea",
+      "match": true
+    },
+    {
+      "path": "entropy_review/RESULTS.md",
+      "expected": "137fec4367651739c342dd7c6249c1cc791b9579789e06bdfcc303d942c37873",
+      "actual": "137fec4367651739c342dd7c6249c1cc791b9579789e06bdfcc303d942c37873",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/analyze.py",
+      "expected": "1f21bd851a34988f26f1bd19436c94145a57936f89a93cc3532c7d8517ca2ad2",
+      "actual": "1f21bd851a34988f26f1bd19436c94145a57936f89a93cc3532c7d8517ca2ad2",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/freeze_pipeline.py",
+      "expected": "efc8c82ed4f5deb6375b812695b4e26de22a2107be3f2d941145bcc12a5f0936",
+      "actual": "efc8c82ed4f5deb6375b812695b4e26de22a2107be3f2d941145bcc12a5f0936",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/learned_proposal.py",
+      "expected": "482821ba8134840a38cb87a107288920cd1d3a2e587ed7cc7052073cc4df8e48",
+      "actual": "482821ba8134840a38cb87a107288920cd1d3a2e587ed7cc7052073cc4df8e48",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/prepare.py",
+      "expected": "28f5d4204ffb83f1debe89cb8614c6ee57dfdb035c881571490edf1b6abadb2e",
+      "actual": "28f5d4204ffb83f1debe89cb8614c6ee57dfdb035c881571490edf1b6abadb2e",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/prepare_ar.py",
+      "expected": "7a5bf4a59d9ec0ec00eb59d9068d1311006444e3ab7922f52ef2a9d563c2a33a",
+      "actual": "7a5bf4a59d9ec0ec00eb59d9068d1311006444e3ab7922f52ef2a9d563c2a33a",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/scripts/entropy_20261112/run_pipeline.py",
+      "expected": "1940fb5fe997f0858d7bd1e22b52df5c1983029bd5d0289d2ff17eb310ecbf85",
+      "actual": "1940fb5fe997f0858d7bd1e22b52df5c1983029bd5d0289d2ff17eb310ecbf85",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/__init__.py",
+      "expected": "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402",
+      "actual": "519f29358acda01aef4e3743672526f426ddc611fa7e0df06572922148e9b402",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/acquisition.py",
+      "expected": "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad",
+      "actual": "d8588b4d3360785fc6211de1fa9f7a91c1b4e084bafea3192317deaf68bbf8ad",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/acquisition_generate.py",
+      "expected": "07d44571ca2617e99dccd387adbff573787b4c04a7fc8c77e87e42678d84054b",
+      "actual": "07d44571ca2617e99dccd387adbff573787b4c04a7fc8c77e87e42678d84054b",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/angular_context.py",
+      "expected": "3f00a2f7652ffd5586a7b7ba877ad5b3a062b10701ce7e9a3e32998614f9d7db",
+      "actual": "3f00a2f7652ffd5586a7b7ba877ad5b3a062b10701ce7e9a3e32998614f9d7db",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/artifact_fetch.py",
+      "expected": "97af7db046be632929d8b61ee843212f9614053af934071a381a7b603a3ad154",
+      "actual": "97af7db046be632929d8b61ee843212f9614053af934071a381a7b603a3ad154",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/cli.py",
+      "expected": "d97a0cb862677703982a748b256a977c991232e48dbbf9cdc02edf6391662029",
+      "actual": "d97a0cb862677703982a748b256a977c991232e48dbbf9cdc02edf6391662029",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/condition_evaluation.py",
+      "expected": "6ebf82854080ee5406fe83baba51848ff18d56967e592ebb6ee5e82106711634",
+      "actual": "6ebf82854080ee5406fe83baba51848ff18d56967e592ebb6ee5e82106711634",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/conditions.py",
+      "expected": "777a4872c130a8b1d3e30af083c8d83e81bcb019f947e37541717f303328bd14",
+      "actual": "777a4872c130a8b1d3e30af083c8d83e81bcb019f947e37541717f303328bd14",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/data.py",
+      "expected": "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101",
+      "actual": "db29513f59f6cb5b738fa121b83a6141bf3a7a313a8c1b04e72a598efe752101",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/descriptor.py",
+      "expected": "2ef6946e251ff16cd653e9eee534e143df2ee25ba2f891b134837e9c1d71c234",
+      "actual": "2ef6946e251ff16cd653e9eee534e143df2ee25ba2f891b134837e9c1d71c234",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/directional_context.py",
+      "expected": "c03c3e233a2c97c380ff089da0466aee5b2a377a8a40dc31da5e9e39a8527912",
+      "actual": "c03c3e233a2c97c380ff089da0466aee5b2a377a8a40dc31da5e9e39a8527912",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/entropy.py",
+      "expected": "2432fbb5db68fd5123addf977cf79576982e5ebc121588efe10afb6b1ad5957e",
+      "actual": "2432fbb5db68fd5123addf977cf79576982e5ebc121588efe10afb6b1ad5957e",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/evaluation.py",
+      "expected": "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face",
+      "actual": "4e73e6bf96d00e59df0a5352234483cfa13980ae3b24c4199f1123699c94face",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/fixed_seed_mutation.py",
+      "expected": "83be8db928f94302b594db8ec59b72181b5680ef4e3e1e06049e065dfe8c1d68",
+      "actual": "83be8db928f94302b594db8ec59b72181b5680ef4e3e1e06049e065dfe8c1d68",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/geometry_evaluation.py",
+      "expected": "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9",
+      "actual": "7e15d74a0f014dfd2e0b0e1fbd5c5e7f866d36ba3c4bd1a95fddc02e995eaaf9",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/graph.py",
+      "expected": "8f03dbf9ac7e246a9e43284ed384602df4f2181ecc353abe312dea1f29656ebc",
+      "actual": "8f03dbf9ac7e246a9e43284ed384602df4f2181ecc353abe312dea1f29656ebc",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/iterative_acquisition.py",
+      "expected": "9721fca8e22554862d5518766dbcc17088c1e1dc76d74e9a8e6b4755b3ea28b0",
+      "actual": "9721fca8e22554862d5518766dbcc17088c1e1dc76d74e9a8e6b4755b3ea28b0",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/iterative_assessment.py",
+      "expected": "7b80f6563278146fff2cb2ac823047d0fc0d7104d189a13f87cc1fbdba361276",
+      "actual": "7b80f6563278146fff2cb2ac823047d0fc0d7104d189a13f87cc1fbdba361276",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/iterative_boundary.py",
+      "expected": "4e15cd2b46b11d79d3097bfbf3e537f3ee2cefc5eb623935f681fa89447e1079",
+      "actual": "4e15cd2b46b11d79d3097bfbf3e537f3ee2cefc5eb623935f681fa89447e1079",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/iterative_comparison.py",
+      "expected": "562bf53ef9e8fac531813a2fa4e80bd36c9c9e45a5a444d4e7c904ce180f5d6c",
+      "actual": "562bf53ef9e8fac531813a2fa4e80bd36c9c9e45a5a444d4e7c904ce180f5d6c",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/iterative_next_boundary.py",
+      "expected": "b6c5bee6e3a0ccbae89f1bfb8ce31212d8725dc8c82e11fb8d68a08cf7ee25de",
+      "actual": "b6c5bee6e3a0ccbae89f1bfb8ce31212d8725dc8c82e11fb8d68a08cf7ee25de",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/__init__.py",
+      "expected": "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18",
+      "actual": "b7c0b2bed0b5884af2c88aa2e8c3603d76f586bedb14f98d83d4425285a15d18",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/edit_model.py",
+      "expected": "b6f7802ccf6b5ef456adb53df10249cc6276ebc5bdcb03ee74c308cb584130c3",
+      "actual": "b6f7802ccf6b5ef456adb53df10249cc6276ebc5bdcb03ee74c308cb584130c3",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/generate_edit.py",
+      "expected": "62931ba0856468c4cab4417b4ea4aec266daf55cf2dd240a2f30c7c3d0a82bc1",
+      "actual": "62931ba0856468c4cab4417b4ea4aec266daf55cf2dd240a2f30c7c3d0a82bc1",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/generate_geometry.py",
+      "expected": "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a",
+      "actual": "8b34c7e1173381fd3453e132bf8abf6590fb77dea91366c0d455f1db39d4c69a",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/generate_mask.py",
+      "expected": "4e222107ded369c31e2209139fba2192f3ca1bbeca46c8252cfedeb4bba69f17",
+      "actual": "4e222107ded369c31e2209139fba2192f3ca1bbeca46c8252cfedeb4bba69f17",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/geometry_model.py",
+      "expected": "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e",
+      "actual": "42cdcc49641269768619492f29f0fa10204e1f7159dca16e99827797ce6d4f5e",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/graph_model.py",
+      "expected": "c83aba743e3f45b538b567e969b2d6e7941d61fe7ef14447ea96ba516eac8440",
+      "actual": "c83aba743e3f45b538b567e969b2d6e7941d61fe7ef14447ea96ba516eac8440",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/models.py",
+      "expected": "341dd5de3ef73f83aebfe48bf169b5ef0fde98a95a07112aaf17d89ffa2cffdf",
+      "actual": "341dd5de3ef73f83aebfe48bf169b5ef0fde98a95a07112aaf17d89ffa2cffdf",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/runtime.py",
+      "expected": "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9",
+      "actual": "5fac3b035e0a9209db75543e067d69871a69898231e04f84387c29d31ca110d9",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/schedules.py",
+      "expected": "68e3c4c726148d26618862aab255722c7ef8e0d34bace61d56ac7abdcc75a783",
+      "actual": "68e3c4c726148d26618862aab255722c7ef8e0d34bace61d56ac7abdcc75a783",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/train_edit.py",
+      "expected": "50556a57271f7ca686c00690698f8b21bf254fac0d2984d000640f138312ff31",
+      "actual": "50556a57271f7ca686c00690698f8b21bf254fac0d2984d000640f138312ff31",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/train_geometry.py",
+      "expected": "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae",
+      "actual": "72bcf24aca6defa7155dac47f1fa39cb542de9d1202cb28687fe7d66f4c00eae",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/learning/train_mask.py",
+      "expected": "aca83d665037e40316e83ae3358bc6247e05a7d80817b78d35a92457a817b2c2",
+      "actual": "aca83d665037e40316e83ae3358bc6247e05a7d80817b78d35a92457a817b2c2",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/mlip/__init__.py",
+      "expected": "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968",
+      "actual": "3d1adebaf980d984a4b8076944d0bb0cbeb3a71b23494ba3a11f0351ad2b1968",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/mlip/calculators.py",
+      "expected": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "actual": "4be85892a4f7dd3c023797b0823a0c4525a9bab61af8f731af63a2aec51aae84",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/mlip/checkpoints.py",
+      "expected": "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f",
+      "actual": "de08fc21da8cc40b25fdd92e21767d8e8feb7aa5d4e67c1bb89ff229fa6c1b8f",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/mlip/cli.py",
+      "expected": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+      "actual": "81c857c244aa9c7ec595f2dbc206a300fcea6addb6f0c831c90ed8c4e3181387",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/mlip/registry.py",
+      "expected": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+      "actual": "5d071134323e264632a96750bed6c3d3ad57725cb4b1fe75c53691607d7b852d",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/parent_spec.py",
+      "expected": "1f337e9f383862f389834d9521428e2158cadbb20d66d08d481a9341dd633f30",
+      "actual": "1f337e9f383862f389834d9521428e2158cadbb20d66d08d481a9341dd633f30",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/pool_scoring.py",
+      "expected": "03eaf1c036ad22cdab687fbd25aeec64883fa1993549ed2c8f8a31cacfb84b13",
+      "actual": "03eaf1c036ad22cdab687fbd25aeec64883fa1993549ed2c8f8a31cacfb84b13",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/runtime.py",
+      "expected": "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7",
+      "actual": "88a68dcb56c4284cabb1fcf5dd0365981668a7af6a53be28e400aea03d04eee7",
+      "match": true
+    },
+    {
+      "path": "entropy_learning_execution/src/cathode_cvae/smooth_angular_context.py",
+      "expected": "630769318f3644f248d9ed9f81d65febbbcae3398f60b8a0080614f18f9bfa20",
+      "actual": "630769318f3644f248d9ed9f81d65febbbcae3398f60b8a0080614f18f9bfa20",
+      "match": true
+    }
+  ],
+  "learning_TEST_energies_all_NaN": true,
+  "learning_TRAIN_VAL_energies_finite": true,
+  "raw_microstate_vs_orbit_entropy_max_abs_error_kB": 2.6645352591003757e-15,
+  "raw_entropy_check_tolerance_kB": 1e-10,
+  "tolerance_scope": "Float64 independent calculation identity check, not physical accuracy tolerance",
+  "source_sha256": "90aeefd8744c0a2a1a7ae8b0ebce5b6ec3aa0f037a19c3925cfc622373e23830",
+  "pipeline_receipt_sha256": "09d25a1c9abe5391e68fa510918ff91f38b438c00fcaa69360a350b122235cd5",
+  "PDF_visual_audit": "entropy_review.pdf rendered with Ghostscript120dpi and manually inspected; legible3panels, labels, legends, no clipping",
+  "outputs": {
+    "REFERENCES.md": "ec82ef43a697ba1e1213814d2a1f1feaaad01dada1ba7bd40e1002e161e2b71a",
+    "exact_binned_WL_comparison.csv": "daa1d51699754712954e08454dd4f3f8d227968ee6b39b26e1a050ed151994bb"
+  }
+}

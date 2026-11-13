@@ -1,0 +1,76 @@
+{
+  "status": "PASS_ALL_166_TERMINAL_METADATA_AND_ROLE_CHECKS",
+  "created_unix": 1794564247.195179,
+  "finished_unix": 1794565291.4826972,
+  "required_fits": 154,
+  "required_PASS": 154,
+  "causal_fits_observed": 12,
+  "causal_PASS": 12,
+  "counts": {
+    "causal_optional": {
+      "PASS": 12
+    },
+    "entropy_boltzmann": {
+      "PASS": 6
+    },
+    "entropy_original": {
+      "PASS": 3
+    },
+    "latent_initial": {
+      "PASS": 40
+    },
+    "latent_mean": {
+      "PASS": 15
+    },
+    "latent_strength": {
+      "PASS": 30
+    },
+    "round1": {
+      "PASS": 24
+    },
+    "round2": {
+      "PASS": 36
+    }
+  },
+  "H0_role_counts": {
+    "train": 40157,
+    "val": 4967,
+    "test": 5123
+  },
+  "entropy_role_counts": {
+    "train": 57,
+    "val": 15,
+    "test": 15
+  },
+  "append_certificates_checked": 24,
+  "boundary_receipts_checked": 6,
+  "zero_new_H0_TRAIN_protection": "Explicitzeroanchorandall6checkedidentitytransitions addno protectedkeyfromprior-knownidentities; inherited1254H0TRAIN/protectedoverlaps retained.",
+  "TEST_energy_or_dataset_members_opened": false,
+  "NPZ_members_opened": 0,
+  "training_or_model_inference_performed": false,
+  "physical_validation": false,
+  "source_sha256": "06d075d55ce78970857e0c726fcbba4d719408a31e47f2224fb1be44f3861f8a",
+  "criterion_erratum_sha256": "6f63e0b602638c431f6526292e73c5ecfeaf059a29a3dbfcf141dc8d1788ebc8",
+  "artifacts": {
+    "fit_metadata_rows_final.json": "4c6e77662e9b8b4aca0d4c70841ff109fe9a96b881654be15f91ff0d2050fc3d",
+    "fit_metadata_rows_final.csv": "19baf17ca34518efc3fd7a0faa3dde48e3d70eed657136a7f8f3360d886bf99b",
+    "criterion_erratum_final.json": "6f63e0b602638c431f6526292e73c5ecfeaf059a29a3dbfcf141dc8d1788ebc8",
+    "writer_contracts.json": "556336ddebc3b7e5d3196157f3dfbb733bd486ba17bc9754fb391c292610da6a",
+    "append_certificate_rows.json": "af71ae55881e35110b2729f8a5500776d623932c345f1f4de152fc3e21a498a1",
+    "boundary_role_rows.json": "43808b440d023a02a03b1c091aef1494853f03bb8b4b110628a7a3b9e4b5e101",
+    "source_bindings.json": "47c538f6a24f890e7a8500981438c0e457f98a34cf31ba411e2def87a599b6bb"
+  },
+  "scope": "Terminalcheckpointmetadata/immutableexecutionreceipts/hash-boundrolecertificates only; no datasetmember orTESTlabel values opened, no training/modelinference/scoring. All166statesactuallyloaded; exactJSONbaseequality checked withduplicate-keycollisionrejection. Per-row valuepreservation relies on boundappendcertificates, not a prohibited newdatasetmembercomparison. This is not convergence/statisticaladequacy/physicalvalidation.",
+  "causal_observation": "All12hadbecomecomplete before thismetadataaudit; no training/scoringwasstarted orwaitedforby auditor.",
+  "final_comparison_started_unix": 1794565220.7128518,
+  "comparison_selftests": {
+    "reject_int_string_key_collision": true,
+    "reject_bool_string_key_collision": true,
+    "writer_integer_keys_roundtrip": true,
+    "changed_value_rejected": true,
+    "unknown_key_rejected": true,
+    "bool_int_values_distinct": true
+  },
+  "CPU_metadata_work_complete": true,
+  "scientific_artifacts_modified": false
+}

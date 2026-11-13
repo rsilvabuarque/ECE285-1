@@ -1,0 +1,21 @@
+{
+  "status": "FRONTIER_PRESENTATION_REDRAW_COMPLETE",
+  "created_unix": 1794566094.1160688,
+  "source_sha256": "34e6b0c9f4ccaf530ba1aece825a3b818501aed58b312997515ea16f3c4d5c18",
+  "input_sha256": "0a771bd2d59589ab34c7ea112e293d5cae68db040b9415dbd45f579f26a54699",
+  "completion_sha256": "8ce9d767e01694a903c0942055adc5aacc796ecf7a56cee182b6be3144e19fcd",
+  "outputs": {
+    "uma_best_gain.pdf": "6a9825049e6b2b71c3aebf175516a92d44f071aed0ed2112ec034b4dca26653f",
+    "uma_current_vs_best.png": "8500777d824692da9215f4f0e7228df5ddfe61cba773195b11b41ca30f890775",
+    "mace_best_gain.pdf": "2275564f876117093684723b797d6a91d593d28297233557ff1163f49181de39",
+    "final_summary.csv": "3c8fae07d637bdc35a7de23b5ff31c7e6967da374f6a0e24726bb7859ca3d640",
+    "mace_best_gain.png": "bc9d283c91966a92d9de0269292bc52edbe5449bf7de4fbdc51d861bb3636ffd",
+    "captions.md": "89f16239044b6cee7e34dd91fa259a27fb2503963b409c44f7f8ce945ffad492",
+    "uma_best_gain.png": "e62cb1917446b3fbb5466c9fc4c952b6dc36f59284aef4f0b815d36851a123b5",
+    "uma_current_vs_best.pdf": "bf38c45eeebf062142c6166051ea39dc41acc975518f0dd8ceb4305944616e92",
+    "mace_current_vs_best.pdf": "7e894d973e721437f89188b45d95ad2f5368080f475cc10abeebee28c5a0a36c",
+    "mace_current_vs_best.png": "dea3efd246c9997d9672b87221de194bed3e79987dd8c4c4bd9fb680920c856e"
+  },
+  "no_new_queries_or_model_updates": true,
+  "original_outputs_unchanged": true
+}

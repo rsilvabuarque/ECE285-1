@@ -1,0 +1,15 @@
+{
+  "status": "DERIVED_MACE_MOVING_METRIC_MARKED_NOT_APPLICABLE",
+  "source_sha256": "a2ad403509eac76e60cf9a4ca0b50168ea4d63dfeeb6a9048efc9f2b587dbf61",
+  "input_sha256": {
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/all_cell_metrics.csv": "e12c1c143b65516300fd6ba205dfa19dba400be85eb41aa55213f34bad2a2591",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/aggregate_metrics.csv": "f8dc7555c709035400ecada0a00d66ec01e2fe7e3ac89cac389bb3575d9d2c25",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_evaluation/all_cell_metrics.csv": "5aba6c3c1cd9134d0bc2c9ed330b7d3436f635a022a14d3e4a022d6aee518325",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_evaluation/aggregate_metrics.csv": "9ac1431844827b9a355a29fad9228b1e5d052cdd7f5d1b487eb283d0a6b300fa",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/all_cell_metrics.csv": "98d09e29928ce698485bfcde4b5d2078d1cf36a7f924c578965d56da392de70e",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/aggregate_metrics.csv": "6eadd1a70c02f4c3a81e4d06209260a6e3df32a8f34b3a2574a4638cd446d12d",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_evaluation/all_cell_metrics.csv": "2f4e930e8f3fdb003b8c832cfff404cfa5f16f21872db3fb1229679fc3751ba2",
+    "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_evaluation/aggregate_metrics.csv": "42bee960facdc88fe5bee6b4e50b85bb71b0b9982514b3418fb017f756381e54"
+  },
+  "reason": "Frozen helper applied staged UMA absolute energy edges to MACE energies in moving metric. Corrected derived tables leave this column blank for MACE. Fixed MACE metrics use its own original TRAIN-only schema and remain unchanged. No raw tables, stages, queries, checkpoints, or schema edges were modified."
+}

@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Temperature transfer of the 1,000 K-trained proposal. Entries are descriptive equal-composition averages over $n=3,6,9$ at 8,192 draws; MAE is in $k_{\rm B}$ per cell and ESS/$M$ is dimensionless. They are not averages of a physical entropy across compositions.}
+\begin{tabular}{llrrrrr}\toprule
+Teacher & $T$ (K) & AR MAE & Weighted MAE & Uniform MAE & W. ESS/$M$ & U. ESS/$M$\\\midrule
+UMA & 300 & 0.026879 & 0.008345 & 0.020461 & 0.3038 & 0.1044\\
+UMA & 1000 & 0.013095 & 0.004204 & 0.009409 & 0.7296 & 0.2495\\
+UMA & 5000 & 0.001973 & 0.008512 & 0.001763 & 0.6274 & 0.8259\\
+MACE & 300 & 0.020480 & 0.005252 & 0.016783 & 0.6374 & 0.2549\\
+MACE & 1000 & 0.013710 & 0.003133 & 0.011170 & 0.7420 & 0.3006\\
+MACE & 5000 & 0.001984 & 0.009692 & 0.001704 & 0.6515 & 0.8267\\
+\bottomrule\end{tabular}
+\end{table}

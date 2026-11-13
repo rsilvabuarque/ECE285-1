@@ -1,0 +1,63 @@
+\subsection{First-phase results}
+The first phase generated 506,880 raw diagnostic attempts across 40 fitted
+checkpoints, nine condition cells, and 11 interventions. Their union contains
+25,321 canonical orbits; 25,310 were new and eligible for scoring. Seven
+protected and four already-known identities were excluded before energy
+evaluation. Each teacher scored the entire eligible union afresh, with
+strict successful collection and no cache reuse.
+
+\input{table_latent_primary.tex}
+
+The ordinary $D=4$ CVAE differs from AR by $+0.469$ percentage points on
+UMA. The paired five-fit Student-$t$ 95\% interval has half-width 0.884 points,
+so the observed small advantage is not a demonstrated improvement. This is
+one exploratory contrast within a multi-family experiment, not a
+multiple-testing-adjusted significance claim. Neither $D=1$ nor $D=2$, the
+cyclic schedule, nor the initial physical head establishes an advantage over
+AR. Small latent dimensions are therefore reasonable baselines, but changing
+dimension alone has not solved useful latent control.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{primary_oracle_yields.pdf}
+\caption{Fresh first-phase development proposals, scored with both teachers.
+The primary terminal checkpoints receive equal 4,000-update budgets. Error
+bars describe five paired fit/proposal replicates; this pool differs from
+historical assessments.}
+\end{figure}
+
+Mean terminal validation KL is 0.00291, 0.00530, and 0.01122 nats per mask
+for $D=1,2,4$, respectively. None of these fits has an encoder-mean coordinate
+with variance above the provisional $10^{-3}$ diagnostic threshold. This
+threshold is a reporting convention, not a universal definition of a useful
+latent dimension. Reconstruction can continue improving while KL becomes
+small; the cyclic schedule gives a transient KL response but no primary
+sampling gain.
+
+For the $\lambda=1$ genuine latent head, mean VAL MSE on sampled posterior
+latents is 1.020486. The condition-only head gives 1.020411 and a
+conditions-only ridge probe gives 1.020435. These are effectively constant
+predictors on the standardized target. This pooled additive ridge probe
+shows no practically resolved VAL-MSE gain from $\mu$; it does not rule out
+a small within-condition signal or one requiring condition-dependent slopes.
+Optimizing $z$ toward the head's quartile targets changes actual generated
+pair fractions only weakly. Signed paired mean energy responses over jointly
+eligible scored pairs are of order $10^{-6}$\,eV/atom, and shuffled heads can
+be similarly responsive. This is not a bound on individual energy changes.
+A slightly moving predictor or changed occupancy is therefore
+not evidence of controlled physical ordering.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{latent_physics_diagnostics.pdf}
+\caption{Posterior information, held-out probes, and actual descriptor
+responses to latent interventions. Prediction is tested against genuine
+VAL targets; interventions are checked on generated structures rather than
+only on the auxiliary head's output.}
+\end{figure}
+\begin{figure}[htbp]
+\centering\includegraphics[width=0.97\linewidth]{optimization_curves.pdf}
+\caption{Training and validation trajectories for the first phase. The
+recorded 4,000-update budget is a matched comparison; slowly changing curves
+do not establish optimizer convergence or physical validity.}
+\end{figure}
+
+\input{results_latent_strong.tex}

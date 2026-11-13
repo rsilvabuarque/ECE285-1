@@ -1,0 +1,27 @@
+Retain AR as the reference generator and treat range relabeling as a
+conditioning/reweighting policy. Its gain does not establish that another
+acquired batch is beneficial, or that LOW requests improve as much as HIGH
+requests. Future comparisons should preserve a common assessment history
+and separate fixed-bin fidelity from extension of the observed range.
+
+The next latent test should target information that survives posterior
+sampling and produces a directed change in generated structures. Recovering
+ordering from tiny encoder-mean variations is useful diagnosis, but does not
+establish that the learned latent improves generation. The entropy study
+likewise shows why the sampling objective matters: its 1,000\,K proposal
+helps that target but loses to uniform sampling at 5,000\,K.
+
+\begin{itemize}[leftmargin=*,itemsep=3pt]
+\item \textbf{Ricardo} reviews endpoint structures, symmetry and units,
+interprets teacher disagreements, and defines later DFT/relaxation checks.
+\item \textbf{Beihao} reproduces AR/CVAE training and develops a controlled
+sampled-latent test with the existing data, matched budgets, and genuine,
+condition-only, shuffled and random-encoder comparisons.
+\item \textbf{Varad} reproduces the paired evaluations, audits thresholds
+and denominators, reports per-cell variability and negative results, and
+maintains the analysis and cost receipts.
+\end{itemize}
+
+Independent DFT accuracy, relaxed structures, non-O3 phases, size transfer,
+and stable dynamics remain physical validation tasks. The current
+fixed-lattice MLIP results do not establish those outcomes.

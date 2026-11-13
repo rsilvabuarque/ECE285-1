@@ -1,0 +1,128 @@
+{
+  "status": "FINAL_PROTECTED_ROLE_AUDIT_PASS",
+  "created_unix": 1794565842.5305228,
+  "base_boundary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/boundary_base/receipt.json",
+    "sha256": "940a516e03e5c5ccc054617e0a13bfd243ea163b162e988220cc333e08f309fa"
+  },
+  "final_boundary": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/boundary_after_step4/receipt.json",
+    "sha256": "d49585348c0c68084f76cc5e15e52df21d19d0c18e69dce7d75defc1964609d0"
+  },
+  "h0": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/current/improvement_v1/training_round0.npz",
+    "sha256": "d2c8fffa90628660400420fbb4d81566335578bb18fab49f20b0018d4e31a465"
+  },
+  "h0_train_orbits": 40157,
+  "inherited_protected_H0_TRAIN_orbits": 1254,
+  "final_protected_H0_TRAIN_orbits": 1254,
+  "newly_protected_H0_TRAIN_orbits": 0,
+  "new_training_orbits_across_alternative_lineages": 37882,
+  "new_training_protected_overlap": 0,
+  "all_protected_known": true,
+  "known_orbits": 806872,
+  "protected_orbits": 382888,
+  "acquisition_stage_receipts": [
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111301/receipt.json",
+      "sha256": "4e9d60b87fb0fb6cba53e02c2d9b998d83baafa84400f29b5e2a8f27bfdd2fbf"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111302/receipt.json",
+      "sha256": "48a0c847e66b8191582f513b8154387e7fc600d465f39624135f209026d89137"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_ar_2026111303/receipt.json",
+      "sha256": "a26b05fab3b4384d60f5bff2adee8d642844ae83bd76475ab398f5da6f6feb74"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111301/receipt.json",
+      "sha256": "a0a090f0ff46500f7884a3cc17b4172bc5441569132e7840f61d8986e5cd862d"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111302/receipt.json",
+      "sha256": "358804e2fc5415c312ee344f7ea9e17d788accd9e5b349f55f551b7969a45a2b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round1_acquisition/stages/initial_d2_2026111303/receipt.json",
+      "sha256": "c5451270eed97dbd8b46595466da0d669c87c205cc28d946d8b84522f90c70a6"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_fixed_2026111301/receipt.json",
+      "sha256": "c235781051b5fe301c1d1b7184ac1a58825cc6fc1034317f719ed840b78a8f24"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_adaptive_2026111301/receipt.json",
+      "sha256": "5c00a4bdaf0d14e310c60c7999fe24a0794965f63006e33131529942569a6617"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_range_2026111301/receipt.json",
+      "sha256": "5ae0cf84bc36c8eb20f5d814c4a2f0925e10d0e2f55e4a6706197e41779044d0"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_fixed_2026111302/receipt.json",
+      "sha256": "0e8e9158d61464147105d6006c9c7ff839f9e055d0736e251bacb36c1cea1620"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_adaptive_2026111302/receipt.json",
+      "sha256": "242e5b2a628ad075a1b99a0089ef463f5e6b97abde926d9ac9eda2c184d7b667"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_range_2026111302/receipt.json",
+      "sha256": "2d40b8d9a937e00408aaa2556c0bc1c32da2b1648803590840a776ae8bc8c03a"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_fixed_2026111303/receipt.json",
+      "sha256": "519da6ff7b4be21808bcffe2adfadeec18f3a90c533ac1117c51c833c11ff042"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_adaptive_2026111303/receipt.json",
+      "sha256": "59ca157f3411d3f7a3a835d6b188e9d779353cc77b7796b123bc8e1ea033c760"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_ar_range_2026111303/receipt.json",
+      "sha256": "cf2eff28ebc154958a878165f5e137df32c597d9cb6300c607b16fca69b69a41"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_fixed_2026111301/receipt.json",
+      "sha256": "6e2956b2615a1e873d0e30303c76975a57e91e2f6ee969e8a2de74eab14074c7"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_adaptive_2026111301/receipt.json",
+      "sha256": "b30c1f5f41e4e339abaddc86ed0f43a72ed4b41686110bdca83d6fc65f7aa16c"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_range_2026111301/receipt.json",
+      "sha256": "b4de25716ae07ce628583b45c97e00fba5c5d5bf35ce8a8e5d37eb8161960589"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_fixed_2026111302/receipt.json",
+      "sha256": "dac15a142b62a95e122ba61b1c179b285b1f651e9668fe838b9682e16a540fe3"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_adaptive_2026111302/receipt.json",
+      "sha256": "7c963d0dac20fa45a0cc1bfb9ba206c73be3fcbbf8ce35ad5aaf5a0bf8358b44"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_range_2026111302/receipt.json",
+      "sha256": "6e776a09aacfc5ca1c078cde63e8773f88781130662b35431326cabfe661de33"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_fixed_2026111303/receipt.json",
+      "sha256": "df8085295812a06d2202275e142e3c43644ef9f80b74f7ac757e746f113d1d5b"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_adaptive_2026111303/receipt.json",
+      "sha256": "ca6475fc18c7c9807943b4416215ded2156f9fbb07c0bc0f04c0693dda3ac558"
+    },
+    {
+      "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/round2_acquisition/stages/r1_d2_range_2026111303/receipt.json",
+      "sha256": "4e9c4c0403fb89f1ad8c493fa481b90f74f7a800a9c4f1c0f3790d6cdf3520bd"
+    }
+  ],
+  "no_energy_members_read": true,
+  "source": {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/final_receipt_v2.py",
+    "sha256": "5000e96fe83eecd895da8e88d3913704cb66a98aeddac57432b5e303b30bd9e6"
+  }
+}

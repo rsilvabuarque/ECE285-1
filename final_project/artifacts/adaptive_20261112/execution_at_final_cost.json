@@ -1,0 +1,74 @@
+{
+  "status": "SCIENCE_AND_REPORTS_COMPLETE_RESOURCE_CLOSURE",
+  "updated_utc": "2026-11-13T10:48:10.191757+00:00",
+  "goal_deadline_utc": "2026-11-13T13:54:28Z",
+  "root_worktree": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/runs/adaptive_goal_20261112/worktree",
+  "branch": "goal/adaptive-latent-entropy-20261112",
+  "account": "m5397_g",
+  "max_gpu_node_hours": 150,
+  "allocation_jobs": [
+    61215925,
+    61215969,
+    61215970,
+    61215971
+  ],
+  "job_sessions": {
+    "61215925": 99816,
+    "61215969": 25572,
+    "61215970": 33520,
+    "61215971": 31664
+  },
+  "worker_controls": {
+    "uma": "No further tasks; all complete; STOP requested",
+    "mace": "No further tasks; all complete; allocations released"
+  },
+  "owners": {
+    "iteration": "/root/adaptive_iteration",
+    "latent_diagnostics": "/root/latent_physics",
+    "entropy": "/root/entropy_pilot"
+  },
+  "initial_fits": "40complete4000updates each; firstphase descriptor+freshUMA/MACE inference complete",
+  "entropy_scoring": "123 actualgeometries perteacher PASS; exact/WL/threeCPUARimportance baselinecomplete and independentlyaudited",
+  "pending": [
+    "final resource receipt",
+    "consolidation audit",
+    "commit and push latest main"
+  ],
+  "scientific_scope": "Fixed-parent unrelaxed occupancy; no newDFT; inheritedroles andprotectedexclusions retained",
+  "bounded_followups": {
+    "causal_H0_range": "Posthocmechanistic follow-upfrozen beforeTRAINedgecomparison;12new2000updatefits needed forH0ownrange andH0sameR1edges;\u22643nodehours/40minMACE18 aftercore",
+    "frontier": "Aftercore andcausalrawreservation;\u22644nodehours/50min UMA18;greedy/randomwalk/uniform equalqueries"
+  },
+  "latent_complete": {
+    "fits": 85,
+    "updates_per_fit": 4000,
+    "full_diagnostic_checkpoints": 120,
+    "new_geometry_teacher_evaluations": 151106,
+    "findings": "No useful sampled/prior physicalcontrol gain. Posthoc within-condition means recoverpairordering; randomgraphfeaturesalreadydo. Empiricalfixed-cell GaussianMIbound separates\u03bcfingerprint from noisyZ."
+  },
+  "entropy_complete": {
+    "baseline_CPU_fits": 3,
+    "weighted_CPU_fits": 6,
+    "updates_per_fit": 4000,
+    "reference_masks": 4096,
+    "reference_orbits": 87,
+    "teacher_geometry_pairs": 246,
+    "findings": "Boltzmann1000Ktraining improves own-target importanceMAE/ESS; negative5000Ktransfer. WLflatnessPASS doesnotestablish bin-widthconvergence."
+  },
+  "integration_tests": {
+    "status": "PASS",
+    "passed": 414,
+    "skipped": 6,
+    "warning": "ConstantInputWarning in existing synthetic pairedvariant test",
+    "receipt": "integration_verification/receipt.json",
+    "source_commit": "98fc24ca67a9763fbfeb6e040567a554f9216dc1"
+  },
+  "queue_optimization": "Originalmeanoraclefinishedbeforeanyrestart; operationalqueue repair appliesfromfirstR2SCF. Fullsourcesnapshotonlyclaimenumerationdiff; sameinputregistry/inference, strictcollect unchanged. Genericworker nowidentical validatedfastvariant560840c...",
+  "reports": {
+    "overview": "reports/adaptive_20261112/overview.pdf",
+    "technical": "reports/adaptive_20261112/technical_report.pdf"
+  },
+  "completed_fits": 166,
+  "optimizer_updates": 520000,
+  "new_geometry_teacher_evaluation_events": 469672
+}

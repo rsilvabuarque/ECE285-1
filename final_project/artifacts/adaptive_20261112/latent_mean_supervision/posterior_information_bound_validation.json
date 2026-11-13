@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "synthetic_case": "3diagonal2DGaussianswithdifferentmeansandvariances",
+  "independent_reference": "torch.distributions.kl_divergence Normal; sumcoordinates",
+  "maximum_absolute_error": 2.220446049250313e-16,
+  "scope": "Numericalformulaimplementationcheck; Jensenproofsuppliesmathematicalbound"
+}

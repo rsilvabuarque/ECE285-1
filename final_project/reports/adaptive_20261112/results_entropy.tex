@@ -1,0 +1,75 @@
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{entropy_review.pdf}
+\caption{Complete-lattice entropy controls. The energy differences in the
+left panel are numerical symmetry checks; the middle panel compares
+importance-corrected errors at equal sample budgets; the right panel
+compares combined Wang--Landau entropy errors for 16/32 bins. The table below
+separates midpoint binning from density-of-states estimation. These are
+finite-cell MLIP calculations.}
+\end{figure}
+
+Ignoring orbit multiplicities gives a large error. For Li6/12 at 300\,K,
+the correct representative-energy sum gives $S/\kb=3.26849$ for UMA and
+5.35464 for MACE. Weighting each orbit equally instead gives 0.21254 and
+1.75616. At infinite temperature the correct value is $\log924=6.82871$,
+whereas equal orbit counting tends to $\log17=2.83321$. An independent
+expansion over all 4,096 labelled masks reproduces the orbit-based entropy
+within $2.66\times10^{-15}\kb$. This checks the combinatorics and formula,
+not the physical accuracy of either teacher.
+
+The largest AR probability-normalization discrepancy over exhaustive
+fixed-count enumeration is $1.73\times10^{-7}$. Decoder samples are also
+checked against the calculated proposal probabilities. At Li6/12, 1,000\,K,
+and 8,192 draws, the following are mean absolute errors over draw seeds,
+averaged within each fit and then over three independent terminal fits.
+The uniform comparator has one proposal distribution and three draw seeds;
+it does not have three different fitted models.
+
+\begin{table}[htbp]
+\centering
+\caption{Learned importance proposal versus uniform labelled-mask sampling.
+Entropy errors are in $\kb$ per periodic cell. The learned proposal contains
+10\% uniform probability.}
+\begin{tabular}{llrrr}\toprule
+Teacher & Proposal & Entropy MAE & Naive MAE & Weight ESS/$M$\\\midrule
+UMA & AR mixture & 0.01657 & 1.2916 & 0.1454\\
+UMA & Uniform & 0.01096 & 1.3155 & 0.1795\\
+MACE & AR mixture & 0.01460 & 1.0223 & 0.2352\\
+MACE & Uniform & 0.01033 & 1.0462 & 0.2703\\\bottomrule
+\end{tabular}
+\end{table}
+
+Importance correction is essential, but the learned proposal does not
+outperform uniform sampling in this comparison. The composition-only model
+was not trained to match a Boltzmann distribution at a specified temperature.
+A useful next proposal would target weight concentration explicitly rather
+than assume that a diverse or low-energy generator is automatically an
+efficient partition-function sampler. Validation-selected checkpoint
+sensitivities and all temperatures/counts/budgets remain in the full CSVs;
+they are not substituted for the terminal primary comparison.
+
+All 36 Wang--Landau runs met the frozen flatness/modification-factor
+schedule. Nevertheless, at Li6/12 and 300\,K, doubling the bin count gives
+the following distinct quantities:
+\begin{table}[htbp]
+\centering
+\caption{Binning and sampling are separate approximations. ``Binned exact''
+uses exact microstate counts with bin-midpoint energies. WL uses estimated
+counts with the same midpoints. $\pm$ is the sample SD over three WL seeds.}
+\begin{tabular}{llrrr}\toprule
+Teacher & Bins & Discrete exact $S/\kb$ & Binned exact & WL mean $\pm$ SD\\\midrule
+UMA & 16 & 3.26849 & 4.34857 & $4.28673\pm0.06677$\\
+UMA & 32 & 3.26849 & 3.51230 & $3.47065\pm0.02877$\\
+MACE & 16 & 5.35464 & 5.37712 & $5.34294\pm0.02633$\\
+MACE & 32 & 5.35464 & 5.37592 & $5.34162\pm0.02637$\\\bottomrule
+\end{tabular}
+\end{table}
+UMA's midpoint-only error is $+1.08008\kb$ with 16 bins and
+$+0.24382\kb$ with 32 bins. This has not established quantitative bin-width
+convergence at 300\,K, even though the sampling schedule completed. A small
+total error can also result from cancellation between midpoint and
+density-estimation errors. The two MLIPs' different exact entropies further
+show that a numerically accurate estimator does not remove teacher
+uncertainty.
+
+\input{results_entropy_followup.tex}

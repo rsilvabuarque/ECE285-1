@@ -1,0 +1,24 @@
+{
+  "status": "DESCRIPTIVE_ADAPTIVE_ANALYSIS_COMPLETE",
+  "created_unix": 1794562488.0898783,
+  "source_sha256": "a2ad403509eac76e60cf9a4ca0b50168ea4d63dfeeb6a9048efc9f2b587dbf61",
+  "study_completion_sha256": "5683990790f5534b50ce2a55712f6c28f7f2979c3623fdd63b388e495b8e4dd7",
+  "outputs": {
+    "round2_gain_vs_no_new.pdf": "c598d1102c7f7736cf3abf6caeeb22e157a91c4e8ad6231e24d953c428fc0a78",
+    "two_round_fixed_yields.pdf": "05828913037069f3ca76dafed675322de78c4bed4ee8d2502807d9ee51731d86",
+    "paired_fit_summary.csv": "c8ad4342a85e8472a07409417aecc533f2a3d58015c7ae85f4191dcaad48081f",
+    "task_cost_receipts.csv": "da387d08905c39f165f15ad9d395b4362f1aca54fdd07e3edf458cd4007c1a10",
+    "observed_training_extrema_growth.png": "8d994b938e9eba81c6a625944f84c2962f3d38328d9536755dcf61ce8780578c",
+    "two_round_fixed_yields.png": "7c24dd51a52dc8d75f7984d1d07d989db6a44e7633fac3a4b30d21dc47e12b6a",
+    "fit_weight_concentration.csv": "52e74485e941baf049409a29bdcfc624502282fca7958326fff3ff8fe9c4ba36",
+    "observed_training_extrema_growth.pdf": "14149b745d67bef3ad06a5d4ba23a0d49c209402edb274c926256ad117b41e76",
+    "metric_semantics_repair.json": "9385a966d80cd43e6183fe7397818f621f4f9d0ddf8f53f74973218f6f00e704",
+    "corrected_all_cell_metrics.csv": "f723a3d2b77bc7c3c54af2a9cd3deba447d2242962de61b83e4d4a0855fce133",
+    "interpretation.md": "1fee7d35d774cf113ac4392626b00f3405c1a942b07128d44ab8b937c4f655aa",
+    "paired_fit_results.csv": "ecbbd89fbae207b648a4dabbd45fd774db20e02f42995dad61fbc6a1afc9b5a5",
+    "training_bin_support.csv": "682e944def441359d4cdc505c24684791e9702e3c60abc6b7f07f3c033a2d554",
+    "corrected_aggregate_metrics.csv": "9f98325391b9439d663675ac7ab1c5454f63cda0289a6db5ddd8b3a0ecd281b0",
+    "round2_gain_vs_no_new.png": "854e497205a849ae8ef94790646e2fca76b89b49997d858247bf27223174c695"
+  },
+  "no_mace_moving_bin_claim": true
+}

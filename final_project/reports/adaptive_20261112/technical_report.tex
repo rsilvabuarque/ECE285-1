@@ -1,0 +1,434 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,graphicx,booktabs,tabularx,hyperref,enumitem}
+\usepackage[font=small]{caption}
+\graphicspath{{assets/}}
+\newcommand{\kb}{k_{\rm B}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\KL}{D_{\rm KL}}
+\title{Energy-range generation, latent control, and finite-lattice entropy\\
+\large Controlled experiments for lithium-vacancy sampling}
+\author{ECE 285 project: Ricardo Silva Buarque, Beihao Gu, and Varad Kottawar}
+\date{Experiments of November 12--13, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We test three related ideas for generating lithium-vacancy configurations:
+updating the meaning of low, middle, and high energy as new configurations are
+evaluated; making a variational latent vector encode a measurable ordering
+property; and using a learned proposal to estimate configurational entropy.
+Comparisons retain no-latent autoregressive models, sampling controls, matched
+training budgets, and independent machine-learning interatomic-potential
+evaluations. The small-cell entropy calculation also provides a complete
+reference against which sampling bias can be measured. All new energy labels
+are fixed-geometry UMA or MACE predictions. These experiments do not include
+new density functional theory calculations, structural relaxation, or evidence
+of equilibrium phase stability.
+\end{abstract}
+
+\section{Questions and the physical object being generated}
+In a lithium cobalt oxide crystal, lithium can occupy a periodic array of
+sites within a cobalt--oxygen framework. Removing different subsets of lithium
+gives different local arrangements, even when the total lithium count is the
+same. Their energies need not be equal. A generator that efficiently requests
+different energy ranges could help build a more varied training set for an
+interatomic potential, rather than repeatedly sampling familiar arrangements.
+The goal here is useful coverage of an energy landscape, including its tails,
+with an explicit accounting of proposals, duplicates, and energy evaluations.
+
+The large parent has 48 candidate lithium sites. A mask is
+$\mathbf x\in\{0,1\}^{48}$, where $x_i=1$ denotes an occupied site and $x_i=0$
+a vacancy. We study lithium counts $n=12,24,36$, corresponding to 25, 50, and
+75\% occupancy. The periodic cell, cobalt and oxygen positions, and positions
+of every retained lithium atom are fixed. The parent is the layered O3
+structure: lithium is initially in octahedral sites, with a three-layer
+stacking repeat. Calling a mask O3-derived specifies this parent construction;
+it does not establish that the configuration would remain in that phase after
+relaxation. O1/O2 stacking, spinel rearrangements, strains, and atomic
+displacements are outside these experiments.
+
+A machine-learning interatomic potential (MLIP) predicts energy from an
+atomic structure using parameters trained on electronic-structure data. We
+use UMA-S-1.2.1 with its \texttt{omat} task \cite{uma} and MACE-MH-1 with its
+\texttt{omat\_pbe} head \cite{macefoundation}. A static evaluation leaves the geometry unchanged.
+Density functional theory (DFT), which would provide an independent
+electronic-structure reference, is not run here. MACE evaluates the same
+candidate union as UMA, but is not used to train the N48 generators or choose
+their updates. Agreement between the two teachers is useful sensitivity
+evidence, not proof of DFT accuracy. Their absolute energy zeros differ, so
+energy bins and thresholds used for evaluation are teacher-specific.
+
+Wakamiya and Ishikawa \cite{wakamiya} combined a conditional variational
+autoencoder (CVAE), atomistic property evaluation, and iterative dataset
+enrichment for Pt--Ni catalysts. That work motivates our generate--evaluate--
+retrain loop. Here the scientific questions are whether relabeling helps
+\emph{beyond an equal amount of continued training}, whether a latent vector
+adds information beyond the autoregressive decoder, and whether a useful
+generator also supplies a statistically valid entropy estimator. Those are
+separate questions and require different controls.
+
+\section{Data, symmetry, and what a reported yield means}
+The starting archive H0 contains 40,157 TRAIN, 4,967 VAL, and 5,123 TEST
+records. TRAIN supplies model updates and all adaptive label boundaries. VAL
+provides reconstruction diagnostics and checkpoint sensitivity results. H0
+TEST is not used for new training, selection, or N48 model comparisons;
+those comparisons use separately generated development proposals.
+The compressed energy array is materialized when the archive is opened, but
+new label processing and target construction index TRAIN/VAL only. Historical
+H0 overlap with protected identities is inherited and disclosed rather than
+silently reassigned. The N12 entropy experiment has its own orbit split and
+uses its complete, already evaluated lattice as an explicit estimator
+reference, as described below.
+
+A periodic translation or point symmetry of the parent permutes the 48 site
+indices. All masks connected by these retained operations form a symmetry
+\emph{orbit}. A canonical representative identifies the orbit, so a rotated
+or translated copy is not counted as a new vacancy arrangement. The N48
+parent has 192 retained operations. This equivalence is defined by the fixed
+parent, rather than by a tolerance-based comparison of relaxed structures.
+Raw proposed masks and their canonical identities are preserved separately.
+N48 training presents masks in this canonical orientation. The small entropy
+experiment instead uses symmetry augmentation and multiplicity weights to
+learn probabilities of labelled microstates.
+
+For count $n$ and requested bin $b\in\{\mathrm{low,middle,high}\}$, define
+\begin{equation}
+Y_{n,b}=\frac{\text{distinct eligible new orbits whose measured energy is in }b}
+                 {\text{all attempted proposals for }(n,b)}.
+\label{eq:yield}
+\end{equation}
+The balanced yield is the arithmetic mean of $Y_{n,b}$ over the nine cells.
+An attempted duplicate, known identity, protected identity, or wrong-bin
+structure remains in the denominator. Eligibility is decided from identities
+before the energy is consulted. We separately report novelty, accuracy among
+eligible scored samples, and the number of actual oracle evaluations. The
+adaptive study's fixed-low-tail statistic uses only LOW requests and the
+teacher-specific lower boundary of the original H0 condition schema; its
+fixed-high-tail statistic analogously uses HIGH requests and the upper
+boundary. The latent-analysis archive also retains a separate historical
+pilot-20th-percentile diagnostic based on 409 TRAIN structures per
+composition. That extra diagnostic is not the adaptive-study tail metric or
+the primary balanced yield in this report. These finite-data thresholds do
+not identify the lowest fifth of the complete, mostly unknown configuration
+space.
+
+Each phase freezes a common novelty boundary before generating its compared
+arms. Assessment identities are protected from subsequent acquisition.
+Different phases have different known histories; their absolute yields are
+therefore not directly comparable. All learned-model contrasts are paired
+within a phase using declared seeds and proposal random arrays. Mutation has
+its own swap operations and seed bank; a CVAE proposal does not have an
+identical edit budget in the literal sense.
+
+\section{Autoregressive models and the latent-variable tests}
+\subsection{The decoder and training objective}
+An autoregressive (AR) decoder chooses sites sequentially. Its probability is
+\begin{equation}
+p_\theta(\mathbf x\mid c)=\prod_{i=1}^{48}
+p_\theta(x_i\mid x_1,\ldots,x_{i-1},c),
+\end{equation}
+where $c$ specifies the lithium count and requested energy bin. If the
+remaining lithium count forces the remaining sites to be occupied or vacant,
+the sampler enforces that constraint exactly. It remains stochastic through
+the site-by-site Bernoulli choices. Thus ``no latent'' does not mean
+deterministic or non-generative.
+
+Both AR and CVAE decoders use radial-shell context: summaries of already
+assigned neighboring sites, separated by parent-lattice distance. The current
+study holds this representation fixed rather than repeating the earlier
+angular-feature experiment. Each shell records occupied, vacant, and not-yet-
+assigned fractions, preserving causality during generation. A CVAE adds an encoder
+$q_\phi(\mathbf z\mid\mathbf x,c)$ and conditions the decoder on a latent
+vector $\mathbf z\in\mathbb R^D$ \cite{kingma}. The encoder is a diagonal
+Gaussian with means $\mu_j$ and variances $\sigma_j^2$. The main loss per mask
+is
+\begin{equation}
+\mathcal L_0=
+\E_{q_\phi}[-\log p_\theta(\mathbf x\mid\mathbf z,c)]
++\beta\,\KL(q_\phi(\mathbf z\mid\mathbf x,c)\|\mathcal N(0,I)).
+\label{eq:loss}
+\end{equation}
+The first term rewards prediction of the observed occupancies. The KL term
+penalizes moving the encoder away from the standard-normal prior used to
+generate new masks. For a diagonal Gaussian it is exactly
+$\tfrac12\sum_j(\mu_j^2+\sigma_j^2-1-\log\sigma_j^2)$, in nats per mask.
+The implemented loss uses recorded training weights.
+
+The CVAE encoder is a graph network on the fixed parent, including cobalt,
+oxygen, and all candidate lithium sites. An absent lithium site remains a
+graph node with occupancy zero; the physical MLIP evaluation later removes
+that atom. Node features include element identity, occupancy, mobile-site
+membership, and radial degree summaries. Two message-passing layers with
+32 hidden features combine neighbors through six smooth distance channels
+within 5\,\AA. Mobile and fixed-host node features are averaged separately,
+then combined with the conditions to predict $\mu$ and $\log\sigma^2$.
+Distances and pooling provide a parent-graph representation; they do not
+make the complete ordered decoder equivariant or generate relaxed
+coordinates. This pooling architecture is also a potential information
+bottleneck, which the fixed-condition diagnostics test.
+
+The first matrix contains eight families and five paired fit seeds: AR;
+ordinary CVAEs with $D=1,2,4$; a cyclic-$\beta$ $D=2$ CVAE; and three
+physical-head controls described below. Every fit receives 4,000 optimizer
+updates, decoder hidden width 64, batch size 512, and learning rate $10^{-3}$. The
+reference schedule increases $\beta$ to 0.1 over 1,580 updates. The cyclic
+schedule repeats a 2,000-update cycle twice, inspired by the KL-vanishing
+intervention of Fu et al.\ \cite{fu}; success in that paper's language tasks
+does not establish success for vacancy masks. Terminal checkpoints are the
+primary equal-update comparison. Validation-selected checkpoint information
+is retained as a sensitivity diagnostic, not a second independent experiment.
+
+\subsection{A physical target that conditions alone cannot explain}
+To test controllable ordering, define a nearest-shell vacancy-pair fraction
+\begin{equation}
+C_{\rm vv}(\mathbf x)=\frac{1}{|\mathcal E_1|}
+\sum_{(i,j,\mathbf t)\in\mathcal E_1}(1-x_i)(1-x_j).
+\end{equation}
+$\mathcal E_1$ is the set of directed nearest-shell edges in the periodic
+parent, including image translation $\mathbf t$. Both directions occur in
+the numerator and denominator. $C_{\rm vv}$ is dimensionless, invariant to
+the retained parent symmetries, and measures local vacancy clustering. It is
+not an energy, force, relaxation coordinate, or thermodynamic probability.
+The $10^{-5}$\,\AA\ shell tolerance groups numerically equal parent distances;
+it is not a criterion for physical accuracy of the MLIP.
+
+Within each TRAIN composition--measured-bin cell, we subtract the TRAIN mean
+and divide by the TRAIN standard deviation to obtain a standardized target
+$t$. This removes the easy average dependence on the existing conditions.
+An auxiliary head $h_\psi$ is trained with
+\begin{equation}
+\mathcal L=\mathcal L_0+\lambda[h_\psi(\mathbf z,c)-t]^2.
+\end{equation}
+Three matched variants use genuine $(\mathbf z,c)$ targets; a condition-only
+head $h_\psi(c)$ with no gradient path to the generator; or targets shuffled
+within TRAIN composition--bin cells. Genuine VAL targets are never shuffled
+or used for scaling. The initial weight $\lambda=1$ is a provisional
+dimensionless objective strength, not a physical threshold. A prospectively
+frozen second phase tests $\lambda=10,100$ with the same three controls and
+five fit seeds, holding all other training settings fixed.
+
+Full-scale condition-only controls reproduce the corresponding ordinary
+$D=2$ generator tensors exactly after 4,000 updates for all five seeds. This
+checks that creating and training an isolated head does not accidentally
+change the generator's random stream or update. It does not establish that
+the genuine latent target is learnable by this particular encoder.
+
+\subsection{Information, sensitivity, and useful control are different tests}
+A small posterior KL constrains mask-specific information in the noisy
+sampled $Z$, rather than in the deterministic mean $\mu(\mathbf x,c)$.
+For the encoder-induced joint
+$q(x,z,c)=p_{\rm eval}(x,c)q_\phi(z\mid x,c)$, the exact decomposition
+\begin{equation}
+\E_{x,c}\KL(q(z\mid x,c)\|p(z))
+=I_q(X;Z\mid C)+\E_c\KL(q(z\mid c)\|p(z))
+\end{equation}
+shows why the expected KL bounds conditional mutual information from above.
+$I_q(X;Z\mid C)$ measures how much a sampled latent tells us about the mask
+after its conditions are known. The expectation must use the same evaluation
+distribution and weights as the reported KL.
+The recorded validation average estimates the left-hand side for that
+validation distribution; it is not a measurement of a physically sufficient
+latent representation. We also report variation of encoder means and compare
+TRAIN-fitted ridge probes on VAL: conditions alone, conditions plus posterior
+means, and a shuffled-target control. A probe that succeeds only on posterior
+means can still fail on the noisy posterior samples actually used in training.
+
+Generation diagnostics hold site uniforms fixed while resampling $z$, setting
+$z=0$, or sweeping its first coordinate from $-2$ to $2$. A changed mask shows
+decoder sensitivity, not useful physical control. For auxiliary heads, we
+also take 20 gradient steps of size 0.1 in $z$ toward the actual TRAIN lower
+or upper quartile of $C_{\rm vv}$, clamping coordinates to $[-3,3]$. The head
+and decoder weights stay fixed. These are bounded heuristic interventions,
+not an energy gradient or a geometry minimization. A clamp-only comparator
+separates the effect of clipping from guidance. The actual generated
+$C_{\rm vv}$ and both MLIP energies are then checked; a change in the head's
+own predicted value alone is insufficient.
+
+A final bounded test changes only the auxiliary input from the noisy
+posterior draw to its mean: $h_\psi(\boldsymbol\mu(\mathbf x,c),c)$. Genuine,
+condition-only, and shuffled-target variants each receive five fits at
+$D=2$, $\lambda=10$, and 4,000 updates. The decoder still uses sampled
+$z$ in reconstruction. The purpose is to distinguish difficulty learning
+through Gaussian noise from absence of a learnable ordering signal. Mean
+prediction alone can be misleading: a head can amplify tiny variations in
+$\mu$ while posterior variance remains near one, so the sampled latent and
+prior generation may contain no useful control. We therefore retain
+sampled-posterior prediction and actual generated-ordering diagnostics.
+The new fits, sampled-head references, and AR/$D=2$ references are assessed
+on the same fresh paired streams. This is a separate development comparison;
+its absolute yield is not compared directly to earlier histories.
+
+\input{results_latent.tex}
+
+\section{Adaptive energy labels and two acquisition rounds}
+At a fixed composition, the meaning of ``low energy'' can be updated after
+new structures are evaluated. We compare three rules fitted only to TRAIN:
+\begin{align}
+\text{fixed:}\quad &(a,b)=(a_0,b_0),\\
+\text{adaptive quantiles:}\quad &(a,b)=(Q_{0.2},Q_{0.8}),\\
+\text{observed range:}\quad &(a,b)=(E_{\min}+0.2R,E_{\min}+0.8R),\quad
+R=E_{\max}-E_{\min}.
+\end{align}
+Energies here are eV per atom within one composition. The first rule preserves
+the original semantics. Quantiles keep empirical class populations roughly
+balanced but depend on which samples were acquired; finding a new minimum
+does not necessarily move the 20th percentile much. The range rule responds
+to observed extrema, but a single outlier can shift it substantially and
+leave a bin with little support. Neither rule knows the global endpoints or
+turns conditional sampling into gradient descent. Ties, class support,
+observed endpoints, and actual boundary movement are retained in the output.
+
+Three paired seeds and both AR and $D=2$ CVAE are followed through two rounds.
+Every acquisition requests all nine count--bin cells with 512 attempts and
+at most 256 first eligible unique queries per cell. Candidates are selected
+without seeing energy; every successfully evaluated selected candidate is
+added to TRAIN and labeled by its \emph{measured}, rather than requested,
+energy. The three relabeling rules share exactly the same first acquired
+batch for a given model and seed. Their first-round contrast therefore
+isolates the label-definition policy and its induced class weighting on the
+same enriched data; second-round candidate sets
+may diverge and the comparison becomes one of adaptive policies.
+
+Each update is a 2,000-step model-weight warm start with a new optimizer and
+declared random stream. Every updated lineage has an equal-update no-new-data
+continuation. In round two, that control begins at the same first-round
+checkpoint and uses its previous data and schema. Its paired contrast
+measures the combined acquisition-and-rebinning policy, not a label-only
+effect. Added rows also change minibatches and class weights. Fresh
+assessments use 128 attempts per cell, fixed teacher-specific evaluation bins,
+and the same novelty history for all arms. Moving-bin success is reported
+separately. UMA's adaptive training bins must not be applied to MACE's
+absolute energies. Uniform fixed-count sampling and mutation from a frozen,
+unprotected original TRAIN seed bank retain their own equal proposal/query
+budgets.
+
+The acquisition query cap makes Eq.~\ref{eq:yield} at most 0.5 in those
+acquisition tables, even if all queries are successful. Fresh assessments
+allow one query per attempt. These two table types must not be compared as
+though they had the same attainable yield. Endpoint discovery is measured
+within composition; changing lithium count also changes chemistry and the
+number of atoms, so an average absolute energy across counts is not a
+formation energy or a physical ranking.
+
+\input{results_iteration.tex}
+
+\section{Entropy: an exactly enumerable small-lattice test}
+\subsection{Why uniqueness and thermodynamic counting differ}
+The entropy pilot uses a new idealized O3 parent with 12 lithium sites,
+derived from the N48 parent by crystallographic standardization and a
+$2\times2\times1$ repeat of its conventional cell. It is not a Hu-archive
+DFT geometry. Its 4,096 labelled masks form 87 symmetry orbits under 144
+retained operations. All 87 representatives and 36 additional as-written
+symmetry checks were evaluated by each MLIP. At half occupancy there are
+$\binom{12}{6}=924$ labelled masks but only 17 orbits.
+
+For novelty, each orbit is one pattern. For configurational entropy, its
+multiplicity $g_o$ counts how many labelled-site microstates it represents.
+Within fixed composition, and assuming equal energies within an orbit,
+\begin{equation}
+Z_{\rm rel}=\sum_o g_o e^{-\epsilon_o/(\kb T)},\qquad
+\frac{S}{\kb}=\log Z_{\rm rel}+\frac{\langle\epsilon\rangle}{\kb T},
+\label{eq:entropy}
+\end{equation}
+where $\epsilon_o=E_o-E_{\min}$ is the total cell energy relative to the
+minimum of that composition, in eV; $\kb=8.617333262\times10^{-5}$\,eV/K;
+and $T$ is temperature in K. $Z_{\rm rel}$ is the shifted partition sum;
+a constant energy offset cancels exactly from entropy and heat capacity.
+Using eV per atom instead would change the temperature scale incorrectly.
+At infinite temperature all labelled masks have equal weight, giving
+$S/\kb=\log\binom{12}{n}$, not the logarithm of the orbit count. A finite-cell
+ground-state degeneracy also does not prove a bulk residual entropy.
+
+The complete lattice gives an exact discrete sum for each set of
+representative MLIP energies. It excludes vibrations, spin/electronic
+degeneracy, strain, phase changes, and exchange of lithium between
+compositions. It therefore tests an estimator, not experimental LCO entropy.
+Numerical symmetry checks qualify the equal-energy assumption: over the 36
+tested pairs, the maximum difference was 1.7961\,meV/cell for UMA and
+0.03052\,meV/cell for MACE. At 100\,K these are 0.2084 and 0.00354 times
+$\kb T$, respectively. At 100\,K this scale could appreciably affect
+individual Boltzmann weights; its effect on entropy was not quantified.
+Untested orientations are not bounded by the measured maximum.
+
+\subsection{A learned proposal is not a Boltzmann distribution}
+Three composition-only AR models are trained for 4,000 updates on a frozen
+split of 57 TRAIN, 15 VAL, and 15 TEST orbits, with multiplicity weights and symmetry
+augmentation. TEST energies are NaN in the learning export. Counts $n=3,6,9$
+provide the estimator comparisons. The exact AR probability of every labelled
+mask can be calculated as a product of its sequential probabilities; summing
+them over the complete fixed-count space verifies normalization.
+
+To guarantee full support, the actual proposal is
+$q(x)=0.9q_{\rm AR}(x)+0.1/\binom{12}{n}$. For this enumerable pilot, independent
+draws are sampled from the tabulated exact mixture; the ancestral AR sampler
+is checked separately against its exact probabilities. Repeated masks are
+retained and every draw counts toward the budget. Novelty rejection or
+deduplication, as used in the N48 acquisition experiment, would change the
+proposal law and invalidate these weights unless explicitly accounted for.
+For $M$ draws, define
+\begin{equation}
+w_m=\frac{e^{-\epsilon(x_m)/(\kb T)}}{q(x_m)},\quad
+\widehat Z_{\rm rel}=\frac1M\sum_m w_m,\quad
+\widehat{\langle\epsilon\rangle}=\frac{\sum_mw_m\epsilon(x_m)}{\sum_m w_m}.
+\end{equation}
+No orbit multiplicity appears in these weights because the sampled objects
+are labelled masks; an orbit-level proposal would need multiplicity factors.
+The partition-sum sample mean is unbiased when the proposal covers all
+states. The self-normalized energy estimate and entropy obtained by
+substituting these estimates into Eq.~\ref{eq:entropy} have finite-sample
+bias \cite{owen}. Weight effective sample size
+$(\sum_m w_m)^2/\sum_m w_m^2$ describes concentration of importance weights,
+not the number of independent Markov-chain samples. Uncorrected generated
+frequencies estimate the generator's distribution, not a thermal distribution.
+For a CVAE, the required proposal is the latent-marginal probability
+$q(x)=\int p_\theta(x\mid z,c)p(z)\,dz$; a decoder likelihood at one sampled
+$z$ cannot simply replace it. This pilot makes no CVAE entropy claim.
+All estimator draws reuse the already tabulated MLIP energies. Their draw
+budgets measure Monte Carlo error rather than additional static evaluations
+or end-to-end GPU cost; enumeration is used here to validate the estimator.
+
+\subsection{Density-of-states sampling and a necessary negative control}
+Wang--Landau sampling estimates the density of states by flattening visits to
+energy bins while refining the density estimate \cite{wanglandau}. We allow
+up to 200,000 proposed swaps for each of three seeds, counts 3/6/9, two teachers,
+and 16/32 bins: 36 bounded runs. All stopped after 14,000--40,000 swaps,
+with 774,000 swaps in total. This deliberately small test supplies exact
+nonempty-bin support, allowing two errors to be separated: replacing discrete
+energies by bin midpoints, and estimating the number of microstates in each
+bin. Flatness is checked every 1,000 swaps using $\min H\geq0.8\,\mathrm{mean}(H)$
+over known occupied bins. Initially $\log f=1$; it halves after each flat
+phase and stops below $10^{-4}$. This schedule is a project-specific
+diagnostic, not proof of full-space coverage or bin-width convergence.
+
+\input{results_entropy.tex}
+
+\section{Scientific interpretation and reproducibility}
+\input{results_decisions.tex}
+
+\paragraph{Data-boundary and execution record.}
+All proposed attempts, raw worker outputs, frozen task files, input/source
+hashes, and informative failures remain in the run archive. A first MACE
+startup used an incompatible UMA environment and failed before claiming a
+MACE scoring task; the retry used the dedicated MACE interpreter and the same
+model/input. An initial identity-boundary preparation was too broad and was
+replaced before any energy evaluation; its unscored attempts were retained
+as known history. The correction preserves inherited H0 TRAIN identities
+instead of newly declaring them protected. The subsequent phase-two latent
+identity boundary is added before later acquisition, with a documented
+driver handoff rather than a silent change to frozen source. Historical
+assessment exposure and inherited TRAIN/protected overlaps are disclosed
+in the existing boundary receipts; this study is development evidence, not
+a newly blind TEST claim.
+
+The code uses one assigned GPU per worker, exact model heads/checkpoints,
+FP32 neural fitting/MLIP inference, and disabled TF32 shortcuts. Entropy sums
+and importance calculations use float64. Model fitting, scoring, and
+substantial analysis run within existing compute allocations. Raw results are
+preserved; compact report assets and receipts make the conclusions reviewable
+without copying all checkpoints or protected identities into the report.
+\input{results_cost.tex}
+
+\input{references.tex}
+\end{document}

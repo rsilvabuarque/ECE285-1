@@ -1,0 +1,13 @@
+round,family,mode,moving_yield_mean_percent,moving_yield_sample_sd_percent,H0_fixed_yield_mean_percent,same_property_across_rounds,description
+1,ar,fixed,66.72453703703702,1.9532857444140859,66.72453703703702,True,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+1,ar,adaptive,67.41898148148148,1.7061947902552703,67.70833333333333,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+1,ar,range,60.300925925925924,3.3058369929599714,74.6238425925926,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+1,d2,fixed,67.24537037037037,2.5770189905338365,67.24537037037037,True,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+1,d2,adaptive,67.96875,1.525902415906851,68.31597222222221,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+1,d2,range,59.02777777777778,1.5697171284744036,74.21875,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,ar,fixed,69.03935185185185,2.598856468661099,69.03935185185185,True,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,ar,adaptive,68.89467592592592,2.5342663529684666,69.03935185185185,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,ar,range,60.011574074074076,2.2306381796537074,70.28356481481482,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,d2,fixed,69.38657407407409,2.1339576467004946,69.38657407407409,True,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,d2,adaptive,69.53125,1.3779954745128058,69.82060185185185,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.
+2,d2,range,59.432870370370374,1.8745444834196183,68.66319444444444,False,Each checkpoint scored against its own declared TRAIN-fitted intervals; descriptive only.

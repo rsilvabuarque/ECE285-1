@@ -1,0 +1,120 @@
+[
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_after_r1_acquisition/receipt.json",
+    "sha256": "2486f95df7f95660f538c86287fbca73fc7aa092721cea7b6f0be9f43d53c34c",
+    "created_unix": 1794556568.0774443,
+    "known_orbits": 582732,
+    "protected_orbits": 264074,
+    "explicit_newly_protected_H0_TRAIN": null,
+    "inherited_H0_TRAIN_protected": null,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "previous_boundary_binding": true
+    },
+    "new_protected_identities": 0,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  },
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_after_r1_evaluation/receipt.json",
+    "sha256": "081e81cc08a62c3a55f21304090e9686da79f4d401eddaf5e8bb757ed35d0f9d",
+    "created_unix": 1794559220.4475846,
+    "known_orbits": 606236,
+    "protected_orbits": 287578,
+    "explicit_newly_protected_H0_TRAIN": null,
+    "inherited_H0_TRAIN_protected": null,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "previous_boundary_binding": true,
+      "protected_monotone": true,
+      "new_protected_not_prior_known": true
+    },
+    "new_protected_identities": 23504,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  },
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_after_r2_acquisition/receipt.json",
+    "sha256": "98ba2ac2ca3138f7f8df0fcac8a5a1483bcdb49664a17a7fab5c994d80fe9464",
+    "created_unix": 1794560896.1560605,
+    "known_orbits": 737019,
+    "protected_orbits": 337820,
+    "explicit_newly_protected_H0_TRAIN": null,
+    "inherited_H0_TRAIN_protected": null,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "previous_boundary_binding": true
+    },
+    "new_protected_identities": 0,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  },
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_before_r2_with_phase2/receipt.json",
+    "sha256": "1f20471d928e09943624822f0f61fb3a0d38264bf4e5cab0c42db15ee695ca53",
+    "created_unix": 1794559235.886265,
+    "known_orbits": 656478,
+    "protected_orbits": 337820,
+    "explicit_newly_protected_H0_TRAIN": 0,
+    "inherited_H0_TRAIN_protected": 1254,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "explicit_zero_new_H0_TRAIN": true,
+      "previous_boundary_binding": true,
+      "protected_monotone": true,
+      "new_protected_not_prior_known": true
+    },
+    "new_protected_identities": 50242,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  },
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_final/receipt.json",
+    "sha256": "4813f5d20d520eaa5242441d14d1d78de0ddf2e72c4efa623c6efb31ed8a1f84",
+    "created_unix": 1794562468.3489895,
+    "known_orbits": 764744,
+    "protected_orbits": 365545,
+    "explicit_newly_protected_H0_TRAIN": null,
+    "inherited_H0_TRAIN_protected": null,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "previous_boundary_binding": true,
+      "protected_monotone": true,
+      "new_protected_not_prior_known": true
+    },
+    "new_protected_identities": 27725,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  },
+  {
+    "path": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/boundary_initial/receipt.json",
+    "sha256": "182a190634638f734ae031c8d29e031e6b6144c791d356bd3c9f820045bddb42",
+    "created_unix": 1794554883.4561248,
+    "known_orbits": 532376,
+    "protected_orbits": 264074,
+    "explicit_newly_protected_H0_TRAIN": 0,
+    "inherited_H0_TRAIN_protected": 1254,
+    "checks": {
+      "parent_binding": true,
+      "history_binding": true,
+      "protected_binding": true,
+      "explicit_zero_new_H0_TRAIN": true,
+      "previous_boundary_binding": true,
+      "protected_monotone": true,
+      "new_protected_not_prior_known": true
+    },
+    "new_protected_identities": 25310,
+    "new_protected_already_known": 0,
+    "status": "PASS"
+  }
+]

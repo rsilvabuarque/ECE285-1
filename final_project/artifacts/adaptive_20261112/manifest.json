@@ -1,0 +1,505 @@
+{
+  "scope": "Aggregate evidence and receipts only. Full attempts, identities, checkpoints and raw MLIP outputs remain in the HPC run archive. This compact packet replays report tables, not complete training or inference.",
+  "files": {
+    "latent_diagnostics/analysis_oracle/oracle_yield_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/oracle_yield_seed_balanced.csv",
+      "bytes": 128580,
+      "sha256": "28d79522500d298edc7073999d4433bbf21e2499069602355ef761a241c3e220"
+    },
+    "latent_diagnostics/analysis_oracle/oracle_yield_mean_SD.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/oracle_yield_mean_SD.csv",
+      "bytes": 48038,
+      "sha256": "d4d22fab0eeb4274450d5d8f79ac54a7cccdc47cea9f038525846aee7f2d233d"
+    },
+    "latent_diagnostics/analysis_oracle/paired_primary_effects.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/paired_primary_effects.csv",
+      "bytes": 34410,
+      "sha256": "4e84bd1f2c9759f5328368ff61065af914f7d934cbebe6fe4bb0e43b62c9308b"
+    },
+    "latent_diagnostics/analysis_oracle/guided_descriptor_effects_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/guided_descriptor_effects_seed_balanced.csv",
+      "bytes": 12300,
+      "sha256": "c94833ff8eb0594fdf71b91b95364f940bf285ee6414ef0b8d077b3277810ea2"
+    },
+    "latent_diagnostics/analysis_oracle/checkpoint_information_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/checkpoint_information_per_fit.csv",
+      "bytes": 10676,
+      "sha256": "ddd0cf4dace356c13a615c815f279cd651e4fb67f681a4a1c028322ce0c10295"
+    },
+    "latent_diagnostics/analysis_oracle/VAL_probes_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/VAL_probes_per_fit.csv",
+      "bytes": 29852,
+      "sha256": "19e6988a7c3cb909d6597ca47d340f88d1ff3a43fafb1824f97c2eb1a873625d"
+    },
+    "latent_diagnostics/analysis_oracle/optimization_curves.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/optimization_curves.csv",
+      "bytes": 551282,
+      "sha256": "f50ba037ef9ee3d4ee2f2d5ceeb0a6183a8c3b2d96b948f2b926f691df3f7870"
+    },
+    "latent_diagnostics/analysis_oracle/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_diagnostics/analysis_oracle/receipt.json",
+      "bytes": 33678,
+      "sha256": "6c30773e56ce4b4db7378c615fdf2c94b181e2c7582ac2c4e1166788005ac2b0"
+    },
+    "latent_phase2/analysis_oracle/oracle_yield_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/oracle_yield_seed_balanced.csv",
+      "bytes": 132247,
+      "sha256": "d1673b0f875a5d4786c7589dd54b5fa8dec7559fa17ee96e27a9256ec0d58081"
+    },
+    "latent_phase2/analysis_oracle/oracle_yield_mean_SD.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/oracle_yield_mean_SD.csv",
+      "bytes": 48662,
+      "sha256": "d6ff240c727f6fd65978fb019a890c9d2725fe40e59c604469c8c686804c601e"
+    },
+    "latent_phase2/analysis_oracle/paired_primary_effects.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/paired_primary_effects.csv",
+      "bytes": 53776,
+      "sha256": "c383a5360571e6a2050e764da12d5ca8a7f771bd4267f7c1d8a9e672e3694a44"
+    },
+    "latent_phase2/analysis_oracle/guided_descriptor_effects_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/guided_descriptor_effects_seed_balanced.csv",
+      "bytes": 15105,
+      "sha256": "2d0513f286f10b0fec59d5d277cb1cd822b282b86e222c1bece8224fb3e1fe29"
+    },
+    "latent_phase2/analysis_oracle/checkpoint_information_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/checkpoint_information_per_fit.csv",
+      "bytes": 11389,
+      "sha256": "8c7c4065ccdd97368287b6c59617234f548d18a5c6e6644417e4a35729a163ba"
+    },
+    "latent_phase2/analysis_oracle/VAL_probes_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/VAL_probes_per_fit.csv",
+      "bytes": 36984,
+      "sha256": "6aeaa26dcce33486ac07aac416a6fd932fd4662141885b22a5b192e8546cce19"
+    },
+    "latent_phase2/analysis_oracle/optimization_curves.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/optimization_curves.csv",
+      "bytes": 645291,
+      "sha256": "fbfeccdf61d4efca4f8b2f76c9d11e74fe61fe3736d9f38732851917155bda1d"
+    },
+    "latent_phase2/analysis_oracle/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_phase2/analysis_oracle/receipt.json",
+      "bytes": 34173,
+      "sha256": "e71f9f2837933a1a452c43538dd242afb7a65baf5c7cb2f6f9780e45c81216ad"
+    },
+    "latent_mean_supervision/analysis_oracle/oracle_yield_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/oracle_yield_seed_balanced.csv",
+      "bytes": 136727,
+      "sha256": "e718cdac9ad27b1fa1524f10ca6ede9b3662fb3fd375f8cc3fdb9b3a89553c20"
+    },
+    "latent_mean_supervision/analysis_oracle/oracle_yield_mean_SD.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/oracle_yield_mean_SD.csv",
+      "bytes": 49292,
+      "sha256": "676cc73100a98a55ced5c84f625d8d11f201d4e433973063e5418ed144b9deda"
+    },
+    "latent_mean_supervision/analysis_oracle/paired_primary_effects.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/paired_primary_effects.csv",
+      "bytes": 64698,
+      "sha256": "750cc944ba51b05aae0ee75fc5c3d04af5b96292e5b29d89865a24e80cb25aa2"
+    },
+    "latent_mean_supervision/analysis_oracle/guided_descriptor_effects_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/guided_descriptor_effects_seed_balanced.csv",
+      "bytes": 14495,
+      "sha256": "213aa857b3f310d61e9212874d6134cf1942957f0ab23982ad876af4fca1940e"
+    },
+    "latent_mean_supervision/analysis_oracle/checkpoint_information_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/checkpoint_information_per_fit.csv",
+      "bytes": 11586,
+      "sha256": "3d9982ede929f2ad568851ee24f967fd18e58ffcc2e4a0a85cc0f394c6951039"
+    },
+    "latent_mean_supervision/analysis_oracle/VAL_probes_per_fit.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/VAL_probes_per_fit.csv",
+      "bytes": 37502,
+      "sha256": "78d1e7b310c2af308cbbfefdaf5c733951dd984806bd4c151ae1b485dacf2fe5"
+    },
+    "latent_mean_supervision/analysis_oracle/optimization_curves.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/optimization_curves.csv",
+      "bytes": 647531,
+      "sha256": "1309e9ba22ab03c1ec151a60f7727154874f300e9eb422aca856b205ffd816da"
+    },
+    "latent_mean_supervision/analysis_oracle/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/analysis_oracle/receipt.json",
+      "bytes": 35343,
+      "sha256": "959bae525d181c716643c3606258ec4dd9b26164c5fc516c5181c2ea0bf84a39"
+    },
+    "latent_mean_supervision/LATENT_RESULT_PACKET.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/LATENT_RESULT_PACKET.md",
+      "bytes": 7150,
+      "sha256": "c9716d5669630ff835786994d719b7f4780359ba4fa5fc066f4526c5761e7f34"
+    },
+    "latent_mean_supervision/mean_family_five_fit_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/mean_family_five_fit_summary.csv",
+      "bytes": 2457,
+      "sha256": "701826e117213a4eb88f6dd5ce8959086952e364e180a20c2cdbd2e80ca06cbe"
+    },
+    "latent_mean_supervision/posterior_information_bound.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/posterior_information_bound.json",
+      "bytes": 2362,
+      "sha256": "493eebba4eb86c7667edba072b9a21f028e0ef91ca1e9ad9e8740f597ea9cc9d"
+    },
+    "latent_mean_supervision/posterior_information_bound_validation.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/posterior_information_bound_validation.json",
+      "bytes": 323,
+      "sha256": "27e494303dcf56def64b5fb6630ab5f744217941d530dca89fcd521f59f851b3"
+    },
+    "latent_mean_supervision/posterior_information_bound_highprecision_validation.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/posterior_information_bound_highprecision_validation.json",
+      "bytes": 5620,
+      "sha256": "8ad0372ee1e2a261e6fd71b6dc3e500974a1a3305607005aac44490d93d498bc"
+    },
+    "latent_mean_supervision/latent_cost_receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/latent_cost_receipt.json",
+      "bytes": 4505,
+      "sha256": "7e93c08d25aaf9192a0d019fdfbc6e64fba9d1fc4e29c3f0ee618fc25511a415"
+    },
+    "latent_mean_supervision/conditional_information_audit/conditional_probes_cells.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/conditional_information_audit/conditional_probes_cells.csv",
+      "bytes": 334233,
+      "sha256": "a0764fcef8755c4031780825419e0d3cc19f57d2f9d2978b94f8586b64841533"
+    },
+    "latent_mean_supervision/conditional_information_audit/conditional_probes_seed_balanced.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/conditional_information_audit/conditional_probes_seed_balanced.csv",
+      "bytes": 20308,
+      "sha256": "aec83f2e98195b1745541c873b3b4cd83e2d202515f52148c37af9d970db92b6"
+    },
+    "latent_mean_supervision/conditional_information_audit/fixed_condition_random_comparison.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/conditional_information_audit/fixed_condition_random_comparison.csv",
+      "bytes": 41945,
+      "sha256": "0c976e8bb1cd9d17c76d2b0ec04af29bbed75307c7cd80ed9322a4f4e6839ef5"
+    },
+    "latent_mean_supervision/conditional_information_audit/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/latent_mean_supervision/conditional_information_audit/receipt.json",
+      "bytes": 11089,
+      "sha256": "aa6be13ea8dfe034b5abd710425e967ac04f0c7e45a38b2aec16e283e5f68135"
+    },
+    "iteration/study_v2/analysis/paired_fit_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/paired_fit_summary.csv",
+      "bytes": 9592,
+      "sha256": "c8ad4342a85e8472a07409417aecc533f2a3d58015c7ae85f4191dcaad48081f"
+    },
+    "iteration/study_v2/analysis/paired_fit_results.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/paired_fit_results.csv",
+      "bytes": 50203,
+      "sha256": "ecbbd89fbae207b648a4dabbd45fd774db20e02f42995dad61fbc6a1afc9b5a5"
+    },
+    "iteration/study_v2/analysis/training_bin_support.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/training_bin_support.csv",
+      "bytes": 33223,
+      "sha256": "682e944def441359d4cdc505c24684791e9702e3c60abc6b7f07f3c033a2d554"
+    },
+    "iteration/study_v2/analysis/fit_weight_concentration.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/fit_weight_concentration.csv",
+      "bytes": 7060,
+      "sha256": "52e74485e941baf049409a29bdcfc624502282fca7958326fff3ff8fe9c4ba36"
+    },
+    "iteration/study_v2/analysis/corrected_aggregate_metrics.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/corrected_aggregate_metrics.csv",
+      "bytes": 43761,
+      "sha256": "9f98325391b9439d663675ac7ab1c5454f63cda0289a6db5ddd8b3a0ecd281b0"
+    },
+    "iteration/study_v2/analysis/metric_semantics_repair.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/metric_semantics_repair.json",
+      "bytes": 2250,
+      "sha256": "9385a966d80cd43e6183fe7397818f621f4f9d0ddf8f53f74973218f6f00e704"
+    },
+    "iteration/study_v2/analysis/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/receipt.json",
+      "bytes": 1872,
+      "sha256": "d84b5cb8351a7528635dce1c2df5ba7e20295d42f03ed82846fef19ccb2afab7"
+    },
+    "iteration/study_v2/analysis/interpretation.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/analysis/interpretation.md",
+      "bytes": 1278,
+      "sha256": "1fee7d35d774cf113ac4392626b00f3405c1a942b07128d44ab8b937c4f655aa"
+    },
+    "iteration/study_v2/interpretation_diagnostics/range_R2_decomposition_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/range_R2_decomposition_summary.csv",
+      "bytes": 2568,
+      "sha256": "8823ded7867b778489e72bed3368e0c2d56a5734e8a8971909a6e11ac3086ae4"
+    },
+    "iteration/study_v2/interpretation_diagnostics/fresh_uniform_mutation_baselines.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/fresh_uniform_mutation_baselines.csv",
+      "bytes": 1803,
+      "sha256": "c59f557bd4b113286c20626ce89bcf02ea61df2a8807aafd4c0124b30adc51a8"
+    },
+    "iteration/study_v2/interpretation_diagnostics/range_R2_per_cell_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/range_R2_per_cell_summary.csv",
+      "bytes": 3764,
+      "sha256": "91db8e498200bf2a5d66eba794c0bdda3a8b38f2d37db9664020737e1801c2c7"
+    },
+    "iteration/study_v2/interpretation_diagnostics/range_TRAIN_dynamics.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/range_TRAIN_dynamics.csv",
+      "bytes": 5852,
+      "sha256": "0a64d34a028de46ad58bac277762326ede594bb144e2cd196ca656e548f9046e"
+    },
+    "iteration/study_v2/interpretation_diagnostics/R1_range_minus_fixed_same_data.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/R1_range_minus_fixed_same_data.csv",
+      "bytes": 971,
+      "sha256": "c2e5affa19b88c0c63dee986a61d3a47cacda9170bf8cda1237b07273f167390"
+    },
+    "iteration/study_v2/interpretation_diagnostics/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/receipt.json",
+      "bytes": 2416,
+      "sha256": "8602e8a9e4b780b62954018f267a12c9817bb3ba944a0a1b3e011cd1fe2b2b16"
+    },
+    "iteration/study_v2/interpretation_diagnostics/interpretation.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/interpretation_diagnostics/interpretation.md",
+      "bytes": 991,
+      "sha256": "e46d844334b0c233cad71080d5bb760d1b8d242bfbacbfb9e5120312d304fdee"
+    },
+    "iteration/study_v2/acquisition_coverage/summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/acquisition_coverage/summary.csv",
+      "bytes": 16013,
+      "sha256": "365cfabbc24ff6cd4e915f74de390d4e0e74ed354941b8378a7674681c2b0a12"
+    },
+    "iteration/study_v2/acquisition_coverage/by_fit_count.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/acquisition_coverage/by_fit_count.csv",
+      "bytes": 19791,
+      "sha256": "a95b1e9c5a51ef7fd5ad9ccd1ce9557513334d7ee833107ef1941ee409c80725"
+    },
+    "iteration/study_v2/acquisition_coverage/UMA_own_moving_target_fidelity.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/acquisition_coverage/UMA_own_moving_target_fidelity.csv",
+      "bytes": 2081,
+      "sha256": "f04ddf1541efd4354cf6a9773a186f515fb1d09556abef5e7713d805f037498f"
+    },
+    "iteration/study_v2/acquisition_coverage/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/acquisition_coverage/receipt.json",
+      "bytes": 2424,
+      "sha256": "084b3cf2ddfd1b2e0e5e3fdb139d5730078f50f89096ea43bf80f85960e536f9"
+    },
+    "iteration/study_v2/acquisition_coverage/interpretation.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/study_v2/acquisition_coverage/interpretation.md",
+      "bytes": 1169,
+      "sha256": "ed70633208b16d71fd5176bb29bf7aa5a3c49e84b08bfcde9ac129aad6674aaf"
+    },
+    "iteration/causal_range/paired_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_summary.csv",
+      "bytes": 5478,
+      "sha256": "05e76cb11b4ada818bef4bdda9222541fa5854c6d081b03690a6980959e11c51"
+    },
+    "iteration/causal_range/paired_results.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/paired_results.csv",
+      "bytes": 18715,
+      "sha256": "c5f890659f9284440b153fc1962390794c4b9fb0424428340c7f10fd58631db1"
+    },
+    "iteration/causal_range/aggregate_metrics.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/aggregate_metrics.csv",
+      "bytes": 7581,
+      "sha256": "fccf48816a6132ebca46a0a3fc8da99cae02e2908baaab003619394d37b81a3a"
+    },
+    "iteration/causal_range/plan.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/plan.json",
+      "bytes": 3485,
+      "sha256": "a6ac5cd03fbba24bf9b3b69b82cbaea1f0b8e1a79b472d5fde7846fb0d5964e4"
+    },
+    "iteration/causal_range/protocol.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/protocol.json",
+      "bytes": 25415,
+      "sha256": "c7fa78da3aea51281d564e9a369400929d044c9ebef13735425700a7551d11c1"
+    },
+    "iteration/causal_range/completion.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/causal_range/completion.json",
+      "bytes": 1343,
+      "sha256": "2dc546cd551f0ca69b22a4030b1e63ad208b7bc57cf1bfdd540cc12793a6140b"
+    },
+    "iteration/frontier/completion.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/completion.json",
+      "bytes": 1080,
+      "sha256": "8ce9d767e01694a903c0942055adc5aacc796ecf7a56cee182b6be3144e19fcd"
+    },
+    "iteration/frontier/protocol.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/protocol.json",
+      "bytes": 2832,
+      "sha256": "f9e1cd5e429b609c0b51c284bc8354b98e6cc8831bb9f6d79cedea13a990d629"
+    },
+    "iteration/frontier/first_step_paired_control_check.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/first_step_paired_control_check.json",
+      "bytes": 2017,
+      "sha256": "686788f8001bdb66d836f32227f45904a4718cdbc02458f2cf41f224d45a7755"
+    },
+    "iteration/frontier/presentation_v2/final_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/presentation_v2/final_summary.csv",
+      "bytes": 4155,
+      "sha256": "3c8fae07d637bdc35a7de23b5ff31c7e6967da374f6a0e24726bb7859ca3d640"
+    },
+    "iteration/frontier/presentation_v2/captions.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/presentation_v2/captions.md",
+      "bytes": 1002,
+      "sha256": "89f16239044b6cee7e34dd91fa259a27fb2503963b409c44f7f8ce945ffad492"
+    },
+    "iteration/frontier/presentation_v2/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/frontier/presentation_v2/receipt.json",
+      "bytes": 1410,
+      "sha256": "571f2dc35ad92d746d62abd0f8feb16cc181940a9c46b24b91d66651d44bedb6"
+    },
+    "entropy_review/RESULTS.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/RESULTS.md",
+      "bytes": 4954,
+      "sha256": "137fec4367651739c342dd7c6249c1cc791b9579789e06bdfcc303d942c37873"
+    },
+    "entropy_review/terminal_AR_uniform_comparison.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/terminal_AR_uniform_comparison.csv",
+      "bytes": 16597,
+      "sha256": "8d56e8d9ea873a9cb4024c3679227520086adec7c5cf5872846e86b7abc356ea"
+    },
+    "entropy_review/terminal_AR_target_mismatch.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/terminal_AR_target_mismatch.csv",
+      "bytes": 1041,
+      "sha256": "213a98a2500969e5442570e57718c3dbafb66c2f47aa50c8a35f97b3c254147c"
+    },
+    "entropy_review/symmetry_energy_temperature_scale.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/symmetry_energy_temperature_scale.csv",
+      "bytes": 3177,
+      "sha256": "9ec0f1ff77d2e4fbab86213718e47dfb645ed15991e4d1a0a7cd93ed7381867c"
+    },
+    "entropy_review/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_review/receipt.json",
+      "bytes": 1207,
+      "sha256": "c1987eb06c26d92c5f329421023b360381bd0a59bb5f84aec29ff96e1606451b"
+    },
+    "entropy_independent_audit/exact_binned_WL_comparison.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_independent_audit/exact_binned_WL_comparison.csv",
+      "bytes": 14967,
+      "sha256": "daa1d51699754712954e08454dd4f3f8d227968ee6b39b26e1a050ed151994bb"
+    },
+    "entropy_independent_audit/REFERENCES.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_independent_audit/REFERENCES.md",
+      "bytes": 1610,
+      "sha256": "ec82ef43a697ba1e1213814d2a1f1feaaad01dada1ba7bd40e1002e161e2b71a"
+    },
+    "entropy_independent_audit/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_independent_audit/receipt.json",
+      "bytes": 20231,
+      "sha256": "5cdbe5e00be559977e801d0412fa766ee4baffe9643db17b8ac26fd91a2d57a0"
+    },
+    "entropy_boltzmann_1000K/summary/RESULTS.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/RESULTS.md",
+      "bytes": 2063,
+      "sha256": "b8d5ecf0b542b80c0585152365f9f7d9e5834bb39b6e68dfc01e142aa53492f7"
+    },
+    "entropy_boltzmann_1000K/summary/matched_budget_comparison.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/matched_budget_comparison.csv",
+      "bytes": 36911,
+      "sha256": "756de7a9cf9692651aac014694af899d2354487b1e5e105132d0a81b663c6a0b"
+    },
+    "entropy_boltzmann_1000K/summary/physical_target_role_mass.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/physical_target_role_mass.csv",
+      "bytes": 922,
+      "sha256": "946b44621ffdfba723b7e0a05084f6a208f9ab567aebef38fe466f6a45843123"
+    },
+    "entropy_boltzmann_1000K/summary/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/summary/receipt.json",
+      "bytes": 733,
+      "sha256": "43fbc07d64be538977518480ea6863d73326302c7e28171f22d49c999adf4efd"
+    },
+    "integration_verification/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/receipt.json",
+      "bytes": 14860,
+      "sha256": "008b9689c507a04bc1fcb3e2b22c2df74323354f4a0a14b89499f91644ad08d7"
+    },
+    "integration_verification/causal_review/audit.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/causal_review/audit.json",
+      "bytes": 171492,
+      "sha256": "e3d22bf6c245f7716bac2d2820f8dfd31095f6442be4f20105f512f64029cfbf"
+    },
+    "integration_verification/causal_review/AUDIT.md": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/causal_review/AUDIT.md",
+      "bytes": 2120,
+      "sha256": "17535243c4917d4a1f67b9a68ad0c5015064ac920ccc9fa523091edd082b8cf0"
+    },
+    "integration_verification/causal_review/independent_paired_summary.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/causal_review/independent_paired_summary.csv",
+      "bytes": 5469,
+      "sha256": "44bacb31b6243d51b3bd005150d2d416e6123411f40afb512b79f4fe84d4b3f6"
+    },
+    "integration_verification/causal_review/audit.py": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/causal_review/audit.py",
+      "bytes": 13561,
+      "sha256": "a48a308f4c2ad324e58d67dac7548c55a4ba5c782cc6438c33e4ed62a8342daf"
+    },
+    "integration_verification/fit_role_audit/receipt_final.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/receipt_final.json",
+      "bytes": 3098,
+      "sha256": "d481e54698d9440659ef51a5c3b2deb40651cc7b08a14d3a401af28bec9e67bc"
+    },
+    "integration_verification/fit_role_audit/AUDIT_COMPLETION.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/AUDIT_COMPLETION.json",
+      "bytes": 1684,
+      "sha256": "0bc712350cba7324c0578b78ff19d762768d244eb957f0573212510a6b85b081"
+    },
+    "integration_verification/fit_role_audit/fit_metadata_rows_final.csv": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/fit_metadata_rows_final.csv",
+      "bytes": 51306,
+      "sha256": "19baf17ca34518efc3fd7a0faa3dde48e3d70eed657136a7f8f3360d886bf99b"
+    },
+    "integration_verification/fit_role_audit/criterion_erratum_final.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/criterion_erratum_final.json",
+      "bytes": 1592,
+      "sha256": "6f63e0b602638c431f6526292e73c5ecfeaf059a29a3dbfcf141dc8d1788ebc8"
+    },
+    "integration_verification/fit_role_audit/append_certificate_rows.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/append_certificate_rows.json",
+      "bytes": 16503,
+      "sha256": "af71ae55881e35110b2729f8a5500776d623932c345f1f4de152fc3e21a498a1"
+    },
+    "integration_verification/fit_role_audit/boundary_role_rows.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/integration_verification/fit_role_audit/boundary_role_rows.json",
+      "bytes": 4542,
+      "sha256": "43808b440d023a02a03b1c091aef1494853f03bb8b4b110628a7a3b9e4b5e101"
+    },
+    "iteration/RESULT_AND_COST_RECEIPT.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/RESULT_AND_COST_RECEIPT.json",
+      "bytes": 40776,
+      "sha256": "d453c05bfb15590b0c9ffc5d74e6c76992dfda9cb497608854e62210398e5b37"
+    },
+    "iteration/final_protected_role_audit.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/iteration/final_protected_role_audit.json",
+      "bytes": 8192,
+      "sha256": "786762e9a1b34a9c33559cca4338d6c55594a85f7ba17a4860e28e81528da73e"
+    },
+    "entropy_pipeline_receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_pipeline_receipt.json",
+      "bytes": 12371,
+      "sha256": "09d25a1c9abe5391e68fa510918ff91f38b438c00fcaa69360a350b122235cd5"
+    },
+    "entropy_boltzmann_1000K/pipeline_receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/pipeline_receipt.json",
+      "bytes": 18216,
+      "sha256": "9b9bff6b7f5072cf8c877bd8bae6d5871423af21d74342d40bd5e475a73b6da2"
+    },
+    "entropy_boltzmann_1000K/independent_audit/receipt.json": {
+      "source": "/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285/final_project/runs/adaptive_20261112/entropy_boltzmann_1000K/independent_audit/receipt.json",
+      "bytes": 16885,
+      "sha256": "cfc8dca4e4b1c8fe23b646b9a6dad8b1682ca04e6db1aae0f2c83ca99d308d0f"
+    }
+  },
+  "additional_final_receipts": {
+    "resource_receipt.json": {
+      "sha256": "8ffefc3ddf8ed18153af5c9dcb4959bc834e6e135661df813171e45ee63bc439",
+      "bytes": 3222
+    },
+    "report_build_receipt.json": {
+      "sha256": "23fd516936ccdf495568b54d91e6847802112d2c5e9131b01c6f009a91c8c70d",
+      "bytes": 4554
+    },
+    "execution_at_final_cost.json": {
+      "sha256": "d2aa8474f647f75733d0bad4aa19ec50a1d9f59f795ef6d2a5357effdecb1f84",
+      "bytes": 3244
+    },
+    "consolidation/AUDIT.md": {
+      "sha256": "a18a2fc4e42f8792a833a3d743c2f5fc6b9b8fd7f0ac16d9c308ac838d11866f",
+      "bytes": 3194
+    },
+    "consolidation/audit.json": {
+      "sha256": "3f5bbdc73f739a5661895023f2d0ba4376acc8b5b7d9bf41b09142e3942e8e65",
+      "bytes": 10402
+    },
+    "consolidation/bounded_symlink_inventory.json": {
+      "sha256": "3adec87052bc0c11b827fba49c782661d6b0965d63d9796500119a3090dbff3a",
+      "bytes": 5262
+    },
+    "consolidation/relocation_receipt.json": {
+      "sha256": "a7b0dc4a7619049d052f58417302990e07bf8fb32e02727c74818800094fa19d",
+      "bytes": 7107
+    }
+  }
+}

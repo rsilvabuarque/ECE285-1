@@ -1,0 +1,29 @@
+Observed-range labels improve first-round balanced sampling by roughly six
+percentage points, but a second acquired batch does not sustain that gain
+against its matched continuation. The follow-up recovers a similar gain by
+relabeling H0 alone. This identifies conditioning and its induced class
+weighting as important parts of the result; adding configurations is not a
+uniform benefit. Most of the gain is in HIGH-class fidelity, rather than
+low-energy discovery.
+
+The tested CVAEs do not establish a primary sampling advantage over the
+no-latent autoregressive model. Their deterministic posterior means retain
+a recoverable vacancy-ordering fingerprint. A fixed-condition random-encoder
+control also contains this fingerprint, so recovery alone does not show
+that training discovered it. That information does not become reliable
+control of generated structures. In the illustrated fixed condition, tiny
+mean variations coexist with nearly unit-scale posterior noise; a readable
+mean scatter and a useful sampled latent are different outcomes.
+
+Entropy estimation needs a different sampling objective. On the complete
+12-site lattice, correct orbit multiplicities and proposal probabilities
+are essential. Training toward a 1,000\,K Boltzmann target reduces the
+equal-composition entropy MAE from 0.01310 to 0.00420\,$\kb$/cell for UMA
+and from 0.01371 to 0.00313 for MACE. The same proposals are worse than
+uniform sampling at 5,000\,K. Histogram flattening also does not establish
+energy-bin convergence in the Wang--Landau calculation.
+
+These findings concern fixed O3-derived vacancy lattices and the supplied
+MLIP energies. Agreement across teachers is useful sensitivity evidence;
+it does not validate DFT accuracy, relaxed phase stability, bulk entropy,
+or molecular-dynamics predictions.

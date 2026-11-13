@@ -1,0 +1,40 @@
+\subsection{Does a stronger ordering loss rescue the latent vector?}
+The second phase completed 30 new fits: weights 10 and 100, each crossed
+with genuine, condition-only, and shuffled heads, for five seeds. Original
+AR and $D=2$ references were reevaluated on the same new diagnostic streams.
+The raw union contains 26,110 orbits; 25,675 were new and eligible after
+excluding the shared history. Each teacher evaluated all eligible structures
+afresh. This comparison has its own novelty history and should be read
+within its table.
+
+\input{table_latent_strength.tex}
+
+On sampled posterior latents, the genuine head's mean VAL MSE is
+$1.020409\pm0.000255$ for $\lambda=10$ and
+$1.020514\pm0.000433$ for $\lambda=100$, with spread over five fits.
+Mean KL rises to about 0.0312 nats/mask at $\lambda=100$, but stronger KL is
+not accompanied by useful prediction or ordering control. The measured
+upper-minus-lower guided change in generated pair fraction is approximately
+$-10^{-6}$ and $-3.1\times10^{-5}$, respectively, even having the wrong
+average sign for the requested direction.
+
+There is one small positive sampling contrast worth preserving. On UMA,
+genuine $\lambda=100$ exceeds its condition-only control by 0.746 percentage
+points, with an exploratory paired 95\% interval half-width of 0.658 points.
+It differs from AR by only 0.035 points and from the shuffled-target model
+by $-0.469$ points. This does not identify physical information as the cause
+of the gain. The ordering tests, AR comparator, and shuffled comparator are
+needed to avoid that inference.
+
+A separate 512-row TRAIN gradient audit verifies manual edge products,
+target scaling, and shuffled assignments for all 45 auxiliary models from
+the first two phases. Mean genuine auxiliary encoder-gradient norms increase
+from approximately 0.00104 to 0.0100 to 0.1348 as $\lambda$ increases from 1
+to 10 to 100; the condition-only path is exactly zero. These unweighted
+diagnostic norms are not the actual weighted training update or a
+convergence criterion. They establish that the target reaches the encoder
+and that its strength changes; a disconnected-loss explanation is therefore
+insufficient. All ten stronger condition-only controls also reproduce their
+ordinary $D=2$ generator tensors and raw proposals exactly.
+
+\input{results_latent_mean.tex}

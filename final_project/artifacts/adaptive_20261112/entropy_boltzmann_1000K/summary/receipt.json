@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE_MATCHED_TARGET_MEASURE_COMPARISON",
+  "baseline_receipt_sha256": "09d25a1c9abe5391e68fa510918ff91f38b438c00fcaa69360a350b122235cd5",
+  "weighted_diagnostic_sha256": "41bd6f4149b8b2b0af9398fc93a238c006ab8ed500a5bd9321fe9b7274ff5b8c",
+  "primary": "1000K own-teacher terminal checkpoints",
+  "outputs": {
+    "boltzmann_target_followup.pdf": "8485cd999178b0d775dd8f0c8a3d54d03cdad0034cd269a60c8edb82b3869955",
+    "physical_target_role_mass.csv": "946b44621ffdfba723b7e0a05084f6a208f9ab567aebef38fe466f6a45843123",
+    "matched_budget_comparison.csv": "756de7a9cf9692651aac014694af899d2354487b1e5e105132d0a81b663c6a0b",
+    "RESULTS.md": "b8d5ecf0b542b80c0585152365f9f7d9e5834bb39b6e68dfc01e142aa53492f7"
+  }
+}

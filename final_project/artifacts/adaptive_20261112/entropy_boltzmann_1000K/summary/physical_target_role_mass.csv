@@ -1,0 +1,7 @@
+teacher,n_target,temperature_K,TRAIN_target_probability,VAL_target_probability,TEST_target_probability,scope
+uma,3,1000.0,0.608962258436282,0.06591536604076019,0.32512237552295814,Final closed diagnostic only; not consulted by weights or fit
+uma,6,1000.0,0.9672404523670597,0.025860445385809564,0.006899102247130376,Final closed diagnostic only; not consulted by weights or fit
+uma,9,1000.0,0.7569646011492019,0.03986896824793895,0.20316643060285922,Final closed diagnostic only; not consulted by weights or fit
+mace,3,1000.0,0.5838751270626275,0.0547975746710208,0.3613272982663521,Final closed diagnostic only; not consulted by weights or fit
+mace,6,1000.0,0.9523134840076873,0.03841230047609762,0.00927421551621472,Final closed diagnostic only; not consulted by weights or fit
+mace,9,1000.0,0.9383312456695373,0.020092445455950205,0.0415763088745124,Final closed diagnostic only; not consulted by weights or fit

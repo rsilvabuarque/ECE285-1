@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE_ENTROPY_REVIEW",
+  "pipeline_receipt_sha256": "09d25a1c9abe5391e68fa510918ff91f38b438c00fcaa69360a350b122235cd5",
+  "source_sha256": "52c393b04d30601b3cf8d9391e596ba1aea156431842f34257d77d0aada9601e",
+  "orientation_max_absolute_delta_eV": {
+    "mace": 3.0517578125e-05,
+    "uma": 0.0017960627479283175
+  },
+  "normalization_max_absolute_error": 1.7278615227489524e-07,
+  "wl_converged": 36,
+  "wl_runs": 36,
+  "input_hashes": {
+    "entropy_analysis/receipt.json": "97b9c5f7a114f4058270e33a4ee3db3c2710e587e90a4afd0c4c7d9ea6a15928",
+    "entropy_learned_proposal/receipt.json": "589030c3e78e2d32035788a60914c5ef4e400c9eb5ab5bc50c367b5683042074"
+  },
+  "outputs": {
+    "symmetry_energy_temperature_scale.csv": "9ec0f1ff77d2e4fbab86213718e47dfb645ed15991e4d1a0a7cd93ed7381867c",
+    "entropy_review.pdf": "2ae6fad6d9b408eab6389c93dacd129b4c92b0f4b0d0acb656726e43d600ae37",
+    "terminal_AR_target_mismatch.csv": "213a98a2500969e5442570e57718c3dbafb66c2f47aa50c8a35f97b3c254147c",
+    "terminal_AR_uniform_comparison.csv": "8d56e8d9ea873a9cb4024c3679227520086adec7c5cf5872846e86b7abc356ea",
+    "RESULTS.md": "137fec4367651739c342dd7c6249c1cc791b9579789e06bdfcc303d942c37873"
+  }
+}

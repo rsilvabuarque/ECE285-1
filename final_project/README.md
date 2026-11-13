@@ -1,6 +1,36 @@
 # Cathode vacancy generation: project overview
 
-**Start here:** the current consolidated project combines the November 8
+**Latest integrated update (November 13):** start with the
+[overview report](reports/adaptive_20261112/overview.pdf),
+[detailed methods and results](reports/adaptive_20261112/technical_report.pdf),
+and [rebuild instructions](reports/adaptive_20261112/README.md).
+The [compact evidence packet](artifacts/adaptive_20261112/README.md) contains
+source-bound tables and audit receipts. The current shared branch is `main`.
+[Repository layout and historical worktrees](docs/REPOSITORY_LAYOUT.md) explains
+where earlier code, raw runs, and archived checkouts are retained.
+
+The new experiments complete two adaptive-label acquisition rounds, a matched
+conditioning/data control, D=1/2/4 and physical-latent tests, a bounded local
+swap search, and an exactly checkable small-cell entropy pilot. First-round
+range-label gains are mainly reproduced by relabeling/reweighting original
+training data and primarily affect HIGH energy. Further range acquisition loses
+fixed-reference yield while extending observed upper-energy coverage. The
+tested variational latent does not establish a sampling advantage over the
+matched autoregressive decoder. A temperature-weighted AR proposal improves
+importance-sampling entropy estimates at its training target, but has negative
+temperature transfer. Reports retain both positive and negative results.
+
+These are fixed-parent, unrelaxed O3 MLIP-label experiments, not new DFT or
+physical thermodynamic validation. All 166 new fits completed their specified
+update budgets; that fact does not establish optimizer convergence. Integration
+testing passes 414 tests with six skips. Beihao, Varad, and Ricardo should use
+the [updated independent tasks](docs/COLLABORATOR_TASKS.md), install below, and
+make personal branches with fresh output directories.
+
+## Preserved November 8–11 results
+
+
+The earlier consolidated project combines the November 8
 portable package and frozen data release, the November 9 midterm submission,
 and the November 10–11 angular-feature, latent-space and iterative-acquisition
 experiments. The latest [research report](reports/angular_20261110/report.pdf),
@@ -12,9 +42,8 @@ repository. Earlier original-only work is preserved under
 The current class experiments use vacancy masks in one unrelaxed 48-site O3
 LiCoO₂ parent, at 12, 24 and 36 retained Li atoms. They compare radial and
 angular CVAEs with no-latent autoregressive and mutation baselines; two
-controlled acquisition rounds use fixed energy boundaries. Neither adaptive
-re-binning nor a model of configurational entropy has been implemented in these
-experiments. DFT validation, relaxed-coordinate generation and transfer to
+controlled acquisition rounds use fixed energy boundaries. Adaptive re-binning and entropy were not part of that earlier study; the
+November 12–13 reports above cover their subsequent implementation. DFT validation, relaxed-coordinate generation and transfer to
 other materials or cell sizes remain separate follow-up work.
 
 The November 10–11 study found no consistent improvement from the tested

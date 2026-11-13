@@ -1,0 +1,20 @@
+{
+  "status": "WRITER_JSON_SERIALIZATION_EXPECTATION_REPAIRED",
+  "reason": "condition_stats uses integer compositionkeys in pickle; json.dumps sidecarstringifies them. Sorting before that conversion gives different orders(0,1,2,..12 vs0,1,10,11,12,2), despite equalJSONobjects.",
+  "contract": "Validatecollision-free writerJSONroundtrip then compare fulltypedJSONobjects. Allkeys andvalues retained; numeric/stringkey collisions rejected; unknown/missingconfigurationkeys rejected. Sole genuineaddition selected_validation_beta mustexactlymatchcfg.validation_beta andactualtop-levelselection_beta.",
+  "no_training_update_role_or_hash_criteria_relaxed": true,
+  "v1_receipt_sha256": "7e60d7ae8347ec43e6f7446aa6d7e8801c667dca2f4c518a8ab122a155f57284",
+  "v2_receipt_sha256": "6f58c19171249a21b3a4f02b04114657f724bfe2d976339c8253dcfd01fa4a49",
+  "v3_rejected_assumption": "NineentropyfailureswerebaseJSONordering, notmissingtop-levelselection_beta; v3assertionstoppedbeforeoutputs. Actualtop-levelbetaexistsandmatches0.1.",
+  "v3_source_sha256": "3caa4887ac820019f7df7f1be145f1d6f97b2d5ff09b8397b41e333d0ee1e648",
+  "actual_difference_witness_sha256": "8cb46b476387e23d592870e4535f14191dd50a248f8b6973b79aff2b4f3a9d29",
+  "writer_contracts_sha256": "556336ddebc3b7e5d3196157f3dfbb733bd486ba17bc9754fb391c292610da6a",
+  "comparison_selftests": {
+    "reject_int_string_key_collision": true,
+    "reject_bool_string_key_collision": true,
+    "writer_integer_keys_roundtrip": true,
+    "changed_value_rejected": true,
+    "unknown_key_rejected": true,
+    "bool_int_values_distinct": true
+  }
+}
