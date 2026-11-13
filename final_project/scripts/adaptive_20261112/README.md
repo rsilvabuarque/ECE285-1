@@ -67,3 +67,28 @@ or included in support/endpoint summaries here; their original values are
 preserved in the output archive. Six tiny synthetic tests cover these
 boundaries, exact counts, paired arrays, caps, measured labels, and raw oracle
 provenance; they do not establish physical MLIP accuracy.
+
+The dated campaign driver and its phase-2 boundary handoff are archived as
+`orchestrate_study_v2.py`, `resume_with_phase2.py`, and `analyze_study_v2.py`.
+These are exact campaign receipts with site-specific paths, not portable cluster
+submission commands. Their executed copies remain under
+`final_project/runs/adaptive_20261112/iteration/study_v2/`. That directory's
+`design.json`, `phase2_boundary_amendment.json`, frozen taskfiles, raw worker
+receipts, four strict oracle verifiers, and final boundary define the actual
+run. The generic portable interfaces remain the module CLI documented above.
+
+The initial driver was terminated before scoring after a clarification that
+new latent diagnostic masks must not turn existing TRAIN structures into
+protected assessment data. All twelve completed proposal bundles were retained
+as unscored history. The replacement run uses a new namespace and a corrected
+boundary with zero newly protected H0 TRAIN orbits. A later controlled CPU-only
+handoff keeps the already frozen first-round assessment queue and adds the
+independent phase-2 latent diagnostic identity union before round two. GPU tasks
+continue through that handoff.
+
+The analysis preserves raw tables and writes corrected derived tables: moving
+condition fidelity is undefined for MACE because UMA supplied the training
+conditions. Fixed MACE metrics use its own frozen TRAIN-only energy schema.
+Paired-fit error bars are sample standard deviations across three fits, not
+confidence intervals. Per-attempt acquisition yield is capped at one half by the
+256-query/512-attempt design; fresh assessment uses 128/128.
