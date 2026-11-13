@@ -140,3 +140,22 @@ endpoint gains are measured within one Li count and require no tail threshold.
 The frontier records the energy-blind move itself before scoring, checks exact
 first-step proposal/query equality, and reports diversity as the minimum
 Hamming distance over parent symmetries divided by two (Li/vacancy swaps).
+
+The existing-results diagnostics are separate immutable supplements:
+`decompose.py` separates novelty from conditional bin accuracy and reports
+per-cell effects, fresh uniform/mutation controls, same-data R1 contrasts, and
+TRAIN edge/extrema/weight-ESS motion. Its symmetric rate decomposition is an
+algebraic identity, not a causal failure mechanism. `coverage.py` measures
+selected acquisition-pool endpoints outside original H0 TRAIN extrema under
+the same attempt/query caps and reports realized physical query IDs. It uses
+UMA's frozen TRAIN extrema only; it does not infer global coverage or entropy.
+`presentation.py` redraws paired-policy effects with all seed points and shorter
+labels, preserving every original figure and table.
+
+The frontier's energy-blind next move is saved and hashed before scoring,
+including its eligibility-only fallback. The common first-step proposals and
+query unions are independently checked. `seed_consistency.py` compares already
+computed fresh UMA seed energies with their H0 TRAIN labels, without new queries
+or a newly chosen numerical tolerance. The launcher waits for the causal raw
+reservation and verifies that exact protected boundary before any frontier
+proposal or seed rescoring begins.
