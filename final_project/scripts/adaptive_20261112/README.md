@@ -113,3 +113,30 @@ from inherited row weights and the implemented within-composition class
 rescaling. That ESS measures concentration of objective weight, not independent
 physical observations. Frozen fixed-schema support counts describe the original
 reference population; actual augmented-row support is reported separately.
+
+The second CPU-only handoff (`handoff_to_optimized.py` and
+`resume_r2_optimized.py`) keeps every generated structure and all scientific
+code on the original snapshot. Only scoring workers use the tested queue
+helper that reads existing claim names once instead of issuing one filesystem
+existence query per task. Atomic claim creation and all raw-score checks stay
+unchanged. `publish_lent_mace.py` records an explicit resource ownership handoff
+and routes existing frozen tasks to the second group without adding evaluations.
+
+`causal_range/` is an explicitly post-hoc mechanistic follow-up to the first
+range-labeling gain. Its plan precedes TRAIN-only edge comparison. It compares
+H0 and augmented rows under fixed and identical observed-range condition edges;
+a separate H0-only range schema tests whether relabeling alone is sufficient.
+The exact edge comparison triggered twelve new 2,000-update fits, including six
+H0 fits using each lineage's R1 range edges. All classes have actual H0 TRAIN
+support. The control starts only after core completion and derived analysis,
+uses the extra 18-GPU group with a 40-minute/3-node-hour cap, and reserves every
+fresh raw identity before any frontier proposal can start. The two follow-ups
+then use disjoint groups. Neither changes the core experiment.
+
+Tail tables in these campaign analyses mean **H0 fixed-low** and **H0
+fixed-high**, using original teacher-specific H0 schema edges. They are distinct
+from the pilot409 threshold diagnostic used in some latent summaries. Frontier
+endpoint gains are measured within one Li count and require no tail threshold.
+The frontier records the energy-blind move itself before scoring, checks exact
+first-step proposal/query equality, and reports diversity as the minimum
+Hamming distance over parent symmetries divided by two (Li/vacancy swaps).

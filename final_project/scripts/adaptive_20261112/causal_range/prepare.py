@@ -1,0 +1,19 @@
+"""Freeze a post-hoc causal follow-up before TRAIN-only edge comparison; no model/SCF work."""
+from pathlib import Path
+import importlib.util,json,time
+import numpy as np
+C=Path(__file__).parent;BASE=C.parent/'study_v2'
+spec=importlib.util.spec_from_file_location('frozen_core',BASE/'orchestrate.py');d=importlib.util.module_from_spec(spec);spec.loader.exec_module(d)
+d.require_compute_allocation()
+d.write(C/'plan.json',dict(status='FROZEN_BEFORE_TRAIN_EDGE_INSPECTION_AND_FOLLOWUP_FITS',created_unix=time.time(),purpose='Post-hoc mechanistic follow-up to positive R1range policy result; not new blind confirmation.',source=d.binding(__file__),H0=d.binding(d.H0),parent=d.binding(d.PARENT),fixed_teacher_schemas={'uma':d.binding(d.SCHEMA),'mace':d.binding(d.MACE_SCHEMA)},families=d.FAMILIES,fit_seeds=d.SEEDS,draw_seeds=[2026111701,2026111702,2026111703],namespace='causal_range_20261113_v1',updates=2000,warm_start='Original4000update AR/D2 checkpoints; fresh Adam/RNG/schedule; terminal checkpoint only.',contrasts=['H0range(H0edges) versus H0fixed: pure relabeling on existing rows','R1augrange versus R1augfixed: relabeling on identical augmented rows','R1augfixed versus H0fixed: added rows at identical fixed edges','R1augrange versus H0 using identical R1range edges: added rows at identical range edges','Difference in differences of added-row effects, range minus fixed'],edge_rule='Derive H0range from H0TRAIN min+.2range/min+.8range. Compare exactfloat64 edges at12/24/36 to all6 R1lineages. If ANY differs, add6 H0-with-lineage-R1edges fits; otherwise6H0range fits suffice. No numerical tolerance or class-support retuning.',evaluation=dict(attempts_per_cell=128,queries_per_cell=128,counts=[12,24,36],bins=['low','middle','high'],teachers=['uma','mace'],primary='Balanced fixed-schema novel unique in-bin yield per all128attempts; same teacher-specific original TRAIN-only schemas.',pool='Fresh shared draw namespace and paired draw seeds, after full core/latent history boundary'),core_prerequisite='Core completion+derived analysis ready before new fits, no changes to frozen core.',maximum_gpu_node_hours=3,maximum_wall_minutes=40,active_guard_minutes=38,resource_group='ExtraMACE18 only; no new allocations',reservation='Freeze all causal raw and protected eligible identities before frontier starts. Then disjoint group scoring may run concurrently. No assessment energies enter training.',no_new_dft=True))
+d.ai.fit_round_schema(d.H0,d.PARENT,d.SCHEMA,'range',C/'h0_range_schema')
+h0=d.load_schema(C/'h0_range_schema/condition_schema.json');comparison=[];different=False
+for family in d.FAMILIES:
+ for seed in d.SEEDS:
+  path=BASE/'round1/schemas'/f'r1_{family}_range_{seed}'/'condition_schema.json';aug=d.load_schema(path)
+  for count in [12,24,36]:
+   a=np.asarray(h0['compositions'][str(count)]['edges_eV_atom'],np.float64);b=np.asarray(aug['compositions'][str(count)]['edges_eV_atom'],np.float64);eq=bool(np.array_equal(a,b));different|=not eq
+   comparison.append(dict(family=family,fit_seed=seed,n_target=count,h0_low_edge_eV_atom=float(a[0]),h0_high_edge_eV_atom=float(a[1]),r1_low_edge_eV_atom=float(b[0]),r1_high_edge_eV_atom=float(b[1]),low_shift_eV_atom=float(b[0]-a[0]),high_shift_eV_atom=float(b[1]-a[1]),exact_equal=eq))
+d.ai.write_csv(C/'edge_comparison.csv',comparison)
+d.write(C/'preparation_receipt.json',dict(status='PREPARED_TRAIN_ONLY_CAUSAL_SCHEMA_BRANCH',created_unix=time.time(),plan=d.binding(C/'plan.json'),schema=d.binding(C/'h0_range_schema/condition_schema.json'),comparison=d.binding(C/'edge_comparison.csv'),all_lineage_edges_exact_equal=not different,new_fits=12 if different else 6,extra_H0_using_R1edges=different,no_TEST_energy_classification=True,no_model_fits_or_SCFs_started=True,source=d.binding(__file__)))
+print('PREPARED_NEW_FITS',12 if different else 6,flush=True)

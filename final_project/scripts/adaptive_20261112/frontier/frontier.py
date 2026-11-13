@@ -5,6 +5,8 @@ import numpy as np
 BASE=Path(__file__).parent.parent/'study_v2'
 spec=importlib.util.spec_from_file_location('frozen_core_driver',BASE/'orchestrate.py');d=importlib.util.module_from_spec(spec);spec.loader.exec_module(d)
 F=Path(__file__).parent
+WORKER_OVERRIDE=BASE/'oracle_worker_override.json'
+WORKER_CONFIG=json.loads(WORKER_OVERRIDE.read_text());W=Path(WORKER_CONFIG['source'])
 ARMS=('greedy','random_walk','uniform');COUNTS=(12,24,36);BINS=('low','high');STEPS=4;STARTS=16;NEIGHBORS=8
 
 
@@ -26,7 +28,10 @@ def score(name,pools,stages=None):
         for pool in pools:d.oracle.register_pool(root,pool,d.PARENT,models=[m],batch_size=64)
     tasks=[]
     for m,root in roots.items():
-        for i in range(9):tasks.append(d.template(f'{m}_{i:02d}',['-m','cathode_cvae.adaptive_oracle','worker','--root',root,'--model',m,'--checkpoint',d.CHECKPOINTS[m],'--threads','4'],[F/'protocol.json',root/'registry.json',d.SRC/'cathode_cvae/adaptive_oracle.py'],python=d.UMA_PY if m=='uma' else d.MACE_PY))
+        for i in range(9):
+            t=d.template(f'{m}_{i:02d}',['-m','cathode_cvae.adaptive_oracle','worker','--root',root,'--model',m,'--checkpoint',d.CHECKPOINTS[m],'--threads','4'],[F/'protocol.json',root/'registry.json',W/'cathode_cvae/adaptive_oracle.py',W/'cathode_cvae/oracle_queue.py',WORKER_OVERRIDE,Path(WORKER_CONFIG['snapshot_receipt']['path'])],python=d.UMA_PY if m=='uma' else d.MACE_PY)
+            t['env']=dict(t['env'],PYTHONPATH=str(W));tasks.append(t)
+    assert d.ENV['PYTHONPATH']==str(d.SRC)
     p=taskfile(name,tasks);budget();d.start_tasks(p);pending=set(roots);last={}
     try:
         while pending:
@@ -106,6 +111,16 @@ def make_stage(step,arm,seed,states,boundary):
     np.savez_compressed(out/'raw_attempts.npz',occupancy=np.asarray(raw,np.uint8),latents=np.asarray(zz,np.float32),uniforms=np.asarray(uu,np.float32),parent_sha256=np.asarray(d.sha256(d.PARENT)))
     d.ai.write_csv(out/'attempts.csv',rows);d.write(out/'all_generated_keys.json',sorted(allkeys));d.write(out/'blind_choices.json',choices)
     outputs={name:d.sha256(out/name) for name in ['candidates.npz','raw_attempts.npz','attempts.csv','all_generated_keys.json','blind_choices.json']}
+    if arm=='random_walk':
+        planned=[]
+        for count,label in ((n,b) for n in COUNTS for b in BINS):
+            for trajectory in range(STARTS):
+                candidates=[r for r in rows if r['n_target']==count and r['requested_bin']==label and r['trajectory']==trajectory and r['status']=='selected']
+                chosen=None
+                if candidates:
+                    blind=candidates[0]['predeclared_blind_neighbor'];chosen=min(candidates,key=lambda r:((r['neighbor']-blind)%NEIGHBORS,r['neighbor']))
+                planned.append(dict(n_target=count,requested_bin=label,trajectory=trajectory,structure_id=None if chosen is None else chosen['structure_id'],canonical_mask=None if chosen is None else chosen['canonical_mask'],decision='Frozen before any energy scoring; first eligible in predeclared cyclic neighbor order'))
+        d.write(out/'predeclared_moves.json',planned);outputs['predeclared_moves.json']=d.sha256(out/'predeclared_moves.json')
     if arm!='uniform':outputs['states_before.npz']=d.sha256(out/'states_before.npz')
     from collections import Counter
     d.write(out/'receipt.json',dict(status='FROZEN_ADAPTIVE_STAGE_BEFORE_SCORING',created_unix=time.time(),protocol=d.binding(out/'protocol.json'),outputs=outputs,attempts=len(rows),selected_unique=len(ordered),status_counts=dict(Counter(r['status'] for r in rows)),parent=protocol['parent'],schema=protocol['schema'],boundary=protocol['boundary'],no_energy_filtering=True))
@@ -113,6 +128,7 @@ def make_stage(step,arm,seed,states,boundary):
 
 
 def next_states(step,stages,states,scores,all_scores,starts,best,metrics):
+    perms,_=d._parent(d.PARENT);inv=np.argsort(perms,axis=1)
     for teacher in all_scores:all_scores[teacher].update(scores[teacher])
     for stage in stages:
         rows=d.ai.read_csv(stage/'attempts.csv');arm=rows[0]['method'];seed=int(rows[0]['seed'])
@@ -125,28 +141,41 @@ def next_states(step,stages,states,scores,all_scores,starts,best,metrics):
                     if not candidates:continue
                     if arm=='greedy':chosen=min(candidates,key=lambda r:(-sign*scores['uma'][r['structure_id']],r['canonical_mask']))
                     else:
-                        blind=int(candidates[0]['predeclared_blind_neighbor']);chosen=min(candidates,key=lambda r:((int(r['neighbor'])-blind)%NEIGHBORS,int(r['neighbor'])))
+                        planned=json.loads((stage/'predeclared_moves.json').read_text())
+                        move=next(r for r in planned if r['n_target']==count and r['requested_bin']==label and r['trajectory']==trajectory)
+                        if move['structure_id'] is None:raise ValueError('Predeclared blind move missing despite eligible candidates')
+                        chosen=next(r for r in candidates if r['structure_id']==move['structure_id'] and r['canonical_mask']==move['canonical_mask'])
                     states[(arm,seed)][cell,trajectory]=np.asarray([1-int(c) for c in chosen['canonical_mask']],np.uint8)
+            if arm!='uniform':diversity_masks=states[(arm,seed)][cell]
+            else:diversity_masks=np.asarray([[1-int(c) for c in r['canonical_mask']] for r in selected[:STARTS]],np.uint8).reshape(-1,48)
+            transformed=diversity_masks[:,inv];distances=[]
+            for i in range(len(diversity_masks)):
+                for j in range(i+1,len(diversity_masks)):distances.append(float(np.count_nonzero(diversity_masks[i][None,:]!=transformed[j],axis=1).min()/2))
+            diversity=float(np.mean(distances)) if distances else ''
             for teacher in ['uma','mace']:
                 key=(teacher,arm,seed,count,label);values=[scores[teacher][r['structure_id']] for r in selected]
                 if values:best[key]=(min if label=='low' else max)([best[key],*values])
                 initial=starts[(teacher,seed,count,label)]
                 current=[]
                 if arm!='uniform':
-                    perms,_=d._parent(d.PARENT);keys=d._canonical_vacancy(states[(arm,seed)][cell],perms);current=[all_scores[teacher][d.ai.identity(k)] for k in keys]
-                metrics.append(dict(step=step,teacher=teacher,arm=arm,seed=seed,n_target=count,requested_bin=label,attempts=len(rr),selected_query_incidences=len(selected),known_excluded=sum(r['status']=='known_boundary' for r in rr),protected_excluded=sum(r['status']=='protected_boundary' for r in rr),best_initial_eV_atom=initial,best_so_far_eV_atom=best[key],desired_best_gain_meV_atom=sign*(best[key]-initial)*1000,mean_current_eV_atom=float(np.mean(current)) if current else '',best_current_eV_atom=(min(current) if label=='low' else max(current)) if current else ''))
+                    keys=d._canonical_vacancy(states[(arm,seed)][cell],perms);current=[all_scores[teacher][d.ai.identity(k)] for k in keys]
+                metrics.append(dict(step=step,teacher=teacher,arm=arm,seed=seed,n_target=count,requested_bin=label,attempts=len(rr),selected_query_incidences=len(selected),query_uniqueness_fraction=len(selected)/len(rr),duplicate_within_cell=sum(r['status']=='duplicate_within_cell' for r in rr),diversity_sample='current16paths' if arm!='uniform' else 'first16eligibleuniformproposals',diversity_sample_masks=len(diversity_masks),mean_symmetry_swap_distance=diversity,current_unique_orbits=len(set(keys.tolist())) if arm!='uniform' else '',known_excluded=sum(r['status']=='known_boundary' for r in rr),protected_excluded=sum(r['status']=='protected_boundary' for r in rr),best_initial_eV_atom=initial,best_so_far_eV_atom=best[key],desired_best_gain_meV_atom=sign*(best[key]-initial)*1000,mean_current_eV_atom=float(np.mean(current)) if current else '',best_current_eV_atom=(min(current) if label=='low' else max(current)) if current else ''))
     np.savez_compressed(F/f'step{step}/states_after.npz',**{f'{arm}_{seed}':v for (arm,seed),v in states.items()})
     d.ai.write_csv(F/f'step{step}/metrics.csv',[r for r in metrics if r['step']==step])
 
 
 def main():
     d.require_compute_allocation()
+    for item in [WORKER_CONFIG['snapshot_receipt'],WORKER_CONFIG['validation']]:d.binding(item['path'],item['sha256'])
+    worker_manifest=json.loads(Path(WORKER_CONFIG['snapshot_receipt']['path']).read_text())
+    assert worker_manifest['byte_reversal_recovers_original_oracle']
+    for name,digest in worker_manifest['files'].items():d.binding(W/name,digest)
     if not (BASE/'completion.json').exists() or not (BASE/'analysis/receipt.json').exists():raise ValueError('Required core results and derived analysis must be ready first')
     boundary=BASE/'boundary_final'
     if (F/'input_boundary.json').exists():
         b=json.loads((F/'input_boundary.json').read_text());d.binding(b['path'],b['sha256']);boundary=Path(b['path']).parent
     d.ai.load_boundary(boundary)
-    d.write(F/'protocol.json',dict(status='FROZEN_OPTIONAL_FRONTIER_BEFORE_SCORING',started_unix=time.time(),source=d.binding(__file__),core_completion=d.binding(BASE/'completion.json'),core_analysis=d.binding(BASE/'analysis/receipt.json'),initial_boundary=d.binding(boundary/'receipt.json'),steps=STEPS,seeds=d.SEEDS,counts=list(COUNTS),bins=list(BINS),starts_per_cell=STARTS,one_swap_neighbors=NEIGHBORS,attempts_and_querycap_per_cell_step=128,arms=list(ARMS),maximum_new_scored_geometry_model_pairs=55296,maximum_seed_rescoring_pairs=576,maximum_elapsed_minutes=48,hard_stop_minutes=50,maximum_node_hours=4,node_equivalent=4.5,seed_selection='Original unprotected H0TRAIN fixed-bin seeds; same16percell perreplicate forgreedy/random-walk, onefreshseedrescoringpool recordedseparately',greedy='Best measuredUMA neighbor, tie lexicalcanonicalmask; maymoveuphill; best-so-far retained',random_walk='Blindneighbor index frozen before energies; cyclic firsteligible fallback, noenergy-basedselection',uniform='Fixed-countuniform proposals equalattempt/querycap; noidentical editsemantics claim',known='Allprior core and allcompletedoptional rawattempts, allprotected unchanged; firsteligible canonicalunique; norepeatedquery topup',claims='Measuredfixed-lattice MLIP endpointsearch only; noglobalextremum,DFTorentropyclaim; no learnedneuraleditsemantics'))
+    d.write(F/'protocol.json',dict(status='FROZEN_OPTIONAL_FRONTIER_BEFORE_SCORING',started_unix=time.time(),source=d.binding(__file__),queue_only_worker_override=d.binding(WORKER_OVERRIDE),core_completion=d.binding(BASE/'completion.json'),core_analysis=d.binding(BASE/'analysis/receipt.json'),initial_boundary=d.binding(boundary/'receipt.json'),steps=STEPS,seeds=d.SEEDS,counts=list(COUNTS),bins=list(BINS),starts_per_cell=STARTS,one_swap_neighbors=NEIGHBORS,attempts_and_querycap_per_cell_step=128,arms=list(ARMS),maximum_new_scored_geometry_model_pairs=55296,maximum_seed_rescoring_pairs=576,maximum_elapsed_minutes=48,hard_stop_minutes=50,maximum_node_hours=4,node_equivalent=4.5,seed_selection='Original unprotected H0TRAIN fixed-bin seeds; same16percell perreplicate forgreedy/random-walk, onefreshseedrescoringpool recordedseparately',greedy='Best measuredUMA neighbor, tie lexicalcanonicalmask; maymoveuphill; best-so-far retained',random_walk='Blindneighbor index frozen before energies; cyclic firsteligible fallback, noenergy-basedselection',uniform='Fixed-countuniform proposals equalattempt/querycap; noidentical editsemantics claim',known='Allprior core and allcompletedoptional rawattempts, allprotected unchanged; firsteligible canonicalunique; norepeatedquery topup',diversity='Mean pairwise minimum Li/vacancy-swap distance over savedparent symmetries (Hamming/2); current16walk masks or first16eligibleuniformproposals, no energy selection for diversity.',claims='Measuredfixed-lattice MLIP endpointsearch only; noglobalextremum,DFTorentropyclaim; no learnedneuraleditsemantics'))
     states,seedrows=seed_pool(boundary);score0,_=score('seed_rescoring',[F/'seeds/pool.npz']);all_scores={m:dict(v) for m,v in score0.items()};starts={};best={};metrics=[]
     for teacher in ['uma','mace']:
         for seed in d.SEEDS:
