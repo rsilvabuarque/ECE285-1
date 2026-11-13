@@ -50,6 +50,26 @@ def regression_summary(target,prediction):
                 Spearman=correlation)
 
 
+def guide_latent(head,z0,condition,mode,target,steps=20,learning_rate=.1):
+    """Bounded predictor-gradient intervention; no energy or model-weight update."""
+    z=z0.detach().clone();initial=final=None
+    capable=head is not None and mode!='condition' and z.shape[1]>0
+    if head is not None:
+        with torch.no_grad():initial=head_prediction(head,z,condition,mode).cpu().numpy()
+    if capable:
+        for _ in range(steps):
+            z=z.detach().requires_grad_(True)
+            prediction=head_prediction(head,z,condition,mode)
+            # A sum keeps each example's gradient independent of batch size.
+            gradient=torch.autograd.grad((prediction-target).square().sum(),z)[0]
+            if not bool(torch.isfinite(gradient).all()):raise FloatingPointError('Nonfinite latent guide gradient')
+            z=(z-learning_rate*gradient).detach().clamp(-3.,3.)
+    if head is not None:
+        with torch.no_grad():final=head_prediction(head,z,condition,mode).cpu().numpy()
+    return z,dict(guide_capable=capable,guide_initial=initial,guide_final=final,
+                  guide_z_norm=torch.linalg.vector_norm(z,dim=-1).cpu().numpy())
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('checkpoint','data','parent','output-dir'):p.add_argument('--'+name,type=Path,required=True)
@@ -57,8 +77,13 @@ def main(argv=None):
     p.add_argument('--threads',type=int,default=4);p.add_argument('--batch-size',type=int,default=512)
     p.add_argument('--seed',type=int,required=True);p.add_argument('--draws',type=int,default=128)
     p.add_argument('--probe-only',action='store_true')
+    p.add_argument('--guided',action='store_true',help='Add two TRAIN-quartile targets, optimizing only z through frozen auxiliary head')
+    p.add_argument('--guide-steps',type=int,default=20)
+    p.add_argument('--guide-learning-rate',type=float,default=.1)
     a=p.parse_args(argv);require_compute_allocation();a.device=device_name(a.device)
     if a.draws<1 or a.batch_size<1:raise ValueError('draws and batch size must be positive')
+    if a.guide_steps<1 or not np.isfinite(a.guide_learning_rate) or a.guide_learning_rate<=0:
+        raise ValueError('Guide steps and dimensionless learning rate must be positive')
     a.output_dir.mkdir(parents=True,exist_ok=False);torch.set_num_threads(a.threads)
     torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
     model,cfg=load_model(a.checkpoint,a.device)
@@ -102,11 +127,12 @@ def main(argv=None):
     posterior=mu[val]+np.exp(.5*logvar[val])*eps
     predictions['mu_fitted_probe_on_posterior_sample']=predict_ridge(latent_coef,np.column_stack((cond[val],(posterior-center)/scale)))
     predictions['mu_fitted_probe_on_independent_prior']=predict_ridge(latent_coef,np.column_stack((cond[val],(eps-center)/scale)))
-    head_cfg=cfg.get('physical_auxiliary')
+    head=None;head_cfg=cfg.get('physical_auxiliary')
     if head_cfg:
         ck=trusted_checkpoint(a.checkpoint,a.device)
         head=make_head(model.latent_dim,model.condition_dim,head_cfg['mode'],123,a.device)
         head.load_state_dict(ck['physical_auxiliary_state_dict']);head.eval()
+        for parameter in head.parameters():parameter.requires_grad_(False)
         with torch.no_grad():
             for name,z in [('auxiliary_head_posterior_mu',mu[val]),('auxiliary_head_posterior_sample',posterior),('auxiliary_head_independent_prior',eps)]:
                 predictions[name]=head_prediction(head,torch.as_tensor(z,device=a.device),ct[val],head_cfg['mode']).cpu().numpy()
@@ -129,14 +155,27 @@ def main(argv=None):
                 width=max(4,model.latent_dim);z0=stream.standard_normal((a.draws,width)).astype(np.float32)[:,:model.latent_dim]
                 z1=stream.standard_normal((a.draws,width)).astype(np.float32)[:,:model.latent_dim]
                 uniforms=stream.random((a.draws,model.n_sites),dtype=np.float32)
-                requests=[('primary',z0),('latent_resample',z1),('latent_zero',np.zeros_like(z0))]
+                requests=[('primary',z0,{}),('latent_resample',z1,{}),('latent_zero',np.zeros_like(z0),{})]
                 for v in [-2.,-1.,0.,1.,2.]:
                     zz=z0.copy()
                     if model.latent_dim:zz[:,0]=v
-                    requests.append((f'coordinate0_{v:g}',zz))
+                    requests.append((f'coordinate0_{v:g}',zz,{}))
                 c=torch.as_tensor(np.tile(cv,(a.draws,1)),device=a.device)
                 u=torch.as_tensor(uniforms,device=a.device);base_codes=None;base_raw=None
-                for name,z in requests:
+                if a.guided:
+                    requests.append(('latent_clamp_only',np.clip(z0,-3.,3.),{}))
+                    members=train[(n[train]==count)&(bins[train]==bin_)]
+                    if not len(members):raise ValueError('Missing TRAIN guide target cell')
+                    lower,upper=np.quantile(raw[members],[.25,.75],method='linear')
+                    scale_cell=(head_cfg or target_metadata)['cells'][f'{count}:{bin_}']
+                    for name,value in [('guide_lower_quartile',lower),('guide_upper_quartile',upper)]:
+                        target=float((value-scale_cell['mean'])/scale_cell['scale'])
+                        zz,details=guide_latent(head,torch.as_tensor(z0.copy(),device=a.device),c,
+                            None if head_cfg is None else head_cfg['mode'],target,
+                            a.guide_steps,a.guide_learning_rate)
+                        details.update(guide_target_raw=float(value),guide_target_standardized=target)
+                        requests.append((name,zz.detach().cpu().numpy(),details))
+                for name,z,details in requests:
                     with torch.no_grad():occ=model.sample(c,int(count),z=torch.as_tensor(z,device=a.device),uniforms=u)
                     canonical,codes=canonicalize(occ,inverse);occupancy=canonical.cpu().numpy().astype(np.uint8)
                     values,_=vacancy_pair_values(occupancy,graph)
@@ -144,7 +183,13 @@ def main(argv=None):
                     if name=='primary':base_codes=codes;base_raw=values
                     for i in range(a.draws):outcomes.append(dict(n_target=int(count),requested_bin=bin_,intervention=name,attempt=i,
                         structure_id=str(sid[i]),vacancy_pair_fraction=float(values[i]),same_orbit_as_primary=bool(codes[i]==base_codes[i]),
-                        pair_fraction_change_from_primary=float(values[i]-base_raw[i])))
+                        pair_fraction_change_from_primary=float(values[i]-base_raw[i]),
+                        guide_capable=details.get('guide_capable',''),
+                        guide_target_raw=details.get('guide_target_raw',''),
+                        guide_target_standardized=details.get('guide_target_standardized',''),
+                        guide_prediction_initial='' if details.get('guide_initial') is None else float(details['guide_initial'][i]),
+                        guide_prediction_final='' if details.get('guide_final') is None else float(details['guide_final'][i]),
+                        guide_z_norm='' if details.get('guide_z_norm') is None else float(details['guide_z_norm'][i])))
                     all_occ.append(occupancy);all_ids.append(sid);all_n.extend([count]*a.draws)
                     all_labels.extend([bin_]*a.draws);all_interventions.extend([name]*a.draws)
         with (a.output_dir/'generated_physical_outcomes.csv').open('x',newline='') as f:
@@ -157,6 +202,12 @@ def main(argv=None):
             unique_raw_orbits=len(set(np.concatenate(all_ids).tolist())),
             protection_status='UNFILTERED_RAW; filter all prior TRAIN/VAL/TEST/assessment histories before oracle use',
             coordinate_scope='Untrained latent-axis intervention at -2,-1,0,1,2; not a semantic physical coordinate',
+            guided=dict(enabled=a.guided,steps=a.guide_steps,learning_rate=a.guide_learning_rate,
+                target='Unweighted actual TRAIN within-composition/energy-bin C_s quartiles, numpy linear quantile',
+                clamp='Each latent coordinate clipped to [-3,3]; provisional standard-Normal support heuristic, not physical tolerance',
+                controls='No-head and condition-only models retain original z for both targets; shuffled head has identical optimizer',
+                clamp_control='latent_clamp_only uses the same initial z and decoder uniforms; isolates the effect of initial coordinates outside [-3,3]',
+                scope='Frozen auxiliary predictor loss only, not an MLIP energy gradient; actual generated C_s and oracle energies determine usefulness'),
             paired_stream='Same per-cell prior prefix (width at least4) and uniform matrices across models with same diagnostic seed; baseline AR has zero latent coordinates')
     (a.output_dir/'receipt.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
     print(json.dumps({'status':result['status'],'latent_dim':model.latent_dim,'metrics':summary}),flush=True)
