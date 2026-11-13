@@ -62,11 +62,17 @@ def main():
                         b=next(r for r in data if r['teacher']==teacher and r['stage_id']==f'r{roundi}_{family}_fixed_{seed}')
                         for metric in ('balanced_fixed_yield','low_tail_yield','high_tail_yield'):
                             paired.append(dict(round=roundi,teacher=teacher,family=family,mode=mode,seed=seed,metric=metric,yield_fraction=float(a[metric]),control_yield_fraction=float(b[metric]),paired_gain_pp=100*(float(a[metric])-float(b[metric])),control_id=b['stage_id']))
+        training_metadata=json.loads((R/f'round{roundi}/training_design.json').read_text())['new_models']
         for p in sorted((R/f'round{roundi}/schemas').glob('*/condition_schema.json')):
             schema=json.loads(p.read_text())
+            model=next(m for m in training_metadata if m['id']==p.parent.name)
+            with np.load(model['data'],allow_pickle=False) as z:
+                roles=z['split'].astype(str); ii=np.flatnonzero(roles=='train'); nn=z['n_Li'][ii]; ee=z['energy_eV_atom'][ii]
+            original=json.loads(Path('/global/cfs/cdirs/m5397/rsb/2026/classes/ECE285_overnight_20261108/final_project/artifacts/overnight_20261107/data/condition_schema_uma.json').read_text())
             for count in (12,24,36):
                 v=schema['compositions'][str(count)]
-                support.append(dict(round=roundi,fit_id=p.parent.name,n_target=count,train_rows=v['train_rows'],low_count=v['bin_counts']['low'],middle_count=v['bin_counts']['middle'],high_count=v['bin_counts']['high'],low_edge_eV_atom=v['edges_eV_atom'][0],high_edge_eV_atom=v['edges_eV_atom'][1],supported_bins='|'.join(v['supported_bins']),coincident_edges=v['coincident_edges']))
+                observed=ee[nn==count]; labels=np.searchsorted(v['edges_eV_atom'],observed,side='left');counts=[int(np.sum(labels==j)) for j in range(3)]
+                support.append(dict(round=roundi,fit_id=p.parent.name,n_target=count,train_rows=len(observed),schema_reference_train_rows=v['train_rows'],low_count=counts[0],middle_count=counts[1],high_count=counts[2],low_edge_eV_atom=v['edges_eV_atom'][0],high_edge_eV_atom=v['edges_eV_atom'][1],low_edge_shift_meV_atom=1000*(v['edges_eV_atom'][0]-original['compositions'][str(count)]['edges_eV_atom'][0]),high_edge_shift_meV_atom=1000*(v['edges_eV_atom'][1]-original['compositions'][str(count)]['edges_eV_atom'][1]),supported_bins='|'.join(v['supported_bins']),actual_empty_bins='|'.join(b for b,n in zip(['low','middle','high'],counts) if not n),coincident_edges=v['coincident_edges']))
     write(out/'paired_fit_summary.csv',summaries);write(out/'paired_fit_results.csv',paired);write(out/'training_bin_support.csv',support)
     fig,axs=plt.subplots(2,2,figsize=(9.5,6.4),sharey=True)
     colors={'fixed':'#377eb8','adaptive':'#ff7f00','range':'#4daf4a'}
