@@ -208,6 +208,12 @@ def arguments(argv=None):
     parser.add_argument("--validation-samples", type=int, default=2)
     parser.add_argument("--class-balance", action="store_true")
     parser.add_argument("--warm-start", type=Path)
+    parser.add_argument("--allow-rebinned-warm-start", action="store_true",
+                        help="Explicit multibin-only reuse of weights after TRAIN energy-bin relabeling; teacher, parent and geometry must match")
+    parser.add_argument("--latent-physical-weight", type=float, default=0.,
+                        help="Optional dimensionless weight on TRAIN-only standardized vacancy-pair auxiliary MSE; excluded from checkpoint selection")
+    parser.add_argument("--latent-physical-mode", choices=["latent", "condition", "shuffled"], default="latent",
+                        help="Auxiliary predictor uses posterior z+c, c only, or z+c with within-cell TRAIN target shuffling")
     parser.add_argument("--device", choices=["cuda", "cpu", "auto"], default="auto")
     parser.add_argument("--threads", type=int, default=4)
     return parser.parse_args(argv)
@@ -221,6 +227,10 @@ def main(argv=None):
     assert a.beta_final >= 0 and a.beta_warmup > 0 and a.max_seconds > 0
     assert a.patience > 0 and a.minimum_epochs > 0
     assert a.validation_beta >= 0
+    if not math.isfinite(a.latent_physical_weight) or a.latent_physical_weight < 0:
+        raise ValueError("Physical auxiliary weight must be finite and nonnegative")
+    if a.latent_physical_weight > 0 and a.kind == "ar_baseline" and a.latent_physical_mode != "condition":
+        raise ValueError("A no-latent AR supports only condition-only physical auxiliary control")
     if a.hidden_dim < 1 or (a.hidden_dim != 64 and a.kind.startswith("dense")):
         raise ValueError("A positive hidden width is supported for the AR decoder; dense decoder widths are fixed")
     if a.context_association != "physical" and not a.graph_context:
@@ -390,7 +400,7 @@ def main(argv=None):
     val_t = torch.as_tensor(val, device=a.device)
     graph_data = None
     context_spec = None
-    if a.encoder == "graph" or a.graph_context:
+    if a.encoder == "graph" or a.graph_context or a.latent_physical_weight > 0:
         from ..parent_spec import ParentSpec
         from ..graph import build_periodic_graph
         parent_spec = ParentSpec.from_legacy(parent_arrays, source_sha256=sha256(a.parent))
@@ -425,6 +435,9 @@ def main(argv=None):
     if getattr(model, "graph_context", None) is not None:
         observed_spec = model.graph_context.to_spec()
         context_spec = {**observed_spec, **({"scramble_seed": a.context_scramble_seed} if a.context_association != "physical" else {})}
+    rebinned_warm_start = None
+    if a.allow_rebinned_warm_start and not a.warm_start:
+        raise ValueError("--allow-rebinned-warm-start requires --warm-start")
     if a.warm_start:
         checkpoint = trusted_checkpoint(a.warm_start, a.device)
         prior_cfg = checkpoint.get("configuration", {})
@@ -449,12 +462,52 @@ def main(argv=None):
             raise ValueError("Warm-start decoder context version differs")
         if prior_cfg.get("energy_target", "deletion") != a.energy_target:
             raise ValueError("Warm-start label targets differ")
-        if prior_cfg.get("condition_schema_id") not in {None, schema_identity(schema)}:
-            raise ValueError("Warm-start condition partition differs")
+        prior_schema_id = prior_cfg.get("condition_schema_id")
+        if a.allow_rebinned_warm_start:
+            if a.condition_mode != "multibin" or prior_cfg.get("condition_mode") != "multibin":
+                raise ValueError("Rebinned warm starts require explicit multibin source and destination")
+            if not prior_schema_id:
+                raise ValueError("Rebinned warm start requires a source schema identity")
+            for key, expected in [("teacher", a.teacher), ("teacher_head", teacher_head),
+                                  ("label_energy_protocol", label_protocol)]:
+                if prior_cfg.get(key) != expected:
+                    raise ValueError("Rebinned warm-start inference identity differs: " + key)
+            if (prior_cfg.get("graph") or {}).get("graph_hash") != (graph_data or {}).get("graph_hash"):
+                raise ValueError("Rebinned warm-start physical graph differs")
+            rebinned_warm_start = dict(previous_schema_id=prior_schema_id,
+                current_schema_id=schema_identity(schema), changed=prior_schema_id != schema_identity(schema),
+                semantics="Weights reused with intentionally reinterpreted TRAIN-fitted multibin classes; Adam/RNG/schedule restart; no guarantee of improvement")
+        elif prior_schema_id not in {None, schema_identity(schema)}:
+            raise ValueError("Warm-start condition partition differs; adaptive relabeling needs explicit --allow-rebinned-warm-start")
         if prior_cfg.get("parent_sha256") not in {None, sha256(a.parent)}:
             raise ValueError("Warm-start parent identity differs")
         model.load_state_dict(checkpoint["state_dict"], strict=True)
-    optimizer = torch.optim.Adam(model.parameters(), lr=a.learning_rate)
+    physical_head = physical_target = physical_genuine = None
+    physical_metadata = None
+    optimizer_parameters = list(model.parameters())
+    if a.latent_physical_weight > 0:
+        from ..graph import PeriodicGraph
+        from .physical_auxiliary import prepare_targets, make_head
+        raw_target, genuine, target, physical_metadata = prepare_targets(
+            d["occupancy"], d["n_Li"], observed_bins, splits,
+            PeriodicGraph.from_dict(graph_data), mode=a.latent_physical_mode,
+            seed=a.seed + 65537, shell_tolerance_A=a.context_shell_tolerance_A)
+        physical_target = torch.as_tensor(target, device=a.device)
+        physical_genuine = torch.as_tensor(genuine, device=a.device)
+        physical_head = make_head(model.latent_dim, conditions.shape[1],
+                                  a.latent_physical_mode, a.seed + 65539, a.device)
+        optimizer_parameters += list(physical_head.parameters())
+        physical_metadata.update(weight=a.latent_physical_weight,
+            head_hidden_dim=32, head_parameter_count=sum(p.numel() for p in physical_head.parameters()),
+            objective="reconstruction + beta*KL + weight*MSE of TRAIN-standardized physical target; this augmented objective is not an ELBO",
+            head_rng="Separate forked RNG; head initialization does not consume model-training RNG",
+            source_sha256=sha256(HERE / "physical_auxiliary.py"))
+        np.savez_compressed(a.output_dir / "physical_auxiliary_targets.npz",
+            structure_ids=d["structure_ids"][active], split=splits[active],
+            raw_vacancy_pair_fraction=raw_target[active],
+            genuine_standardized_target=genuine[active],
+            training_standardized_target=target[active])
+    optimizer = torch.optim.Adam(optimizer_parameters, lr=a.learning_rate)
     noise_generator = torch.Generator(device=a.device).manual_seed(a.seed + 8191)
     validation_noise = torch.randn((a.validation_samples, len(val), model.latent_dim),
                                    generator=noise_generator, device=a.device)
@@ -513,8 +566,10 @@ def main(argv=None):
         KL_convention="Per-row sum across latent dimensions, then row-weighted mean; never divided by latent dimension in training",
         latent_activity_cutoffs=[0.001, 0.01, 0.1],
         latent_activity_scope="Descriptive VAL posterior-mean variance sensitivity; no test rows, not physical convergence",
+        physical_auxiliary=physical_metadata,
         warm_start=None if a.warm_start is None else dict(path=str(a.warm_start.resolve()), sha256=sha256(a.warm_start)),
         warm_start_semantics="Weights only; Adam, training RNG, update clock and validation noise restart. This is not exact optimizer continuation.",
+        rebinned_warm_start=rebinned_warm_start,
         torch=str(torch.__version__), numpy=str(np.__version__), dtype="float32", tf32=False,
         device=a.device, gpu=torch.cuda.get_device_name() if a.device == "cuda" else None,
         scientific_scope="Deletion vacancy masks, not relaxed geometry; no force/stress inputs or energy gradients; no global minimum guarantee",
@@ -526,10 +581,16 @@ def main(argv=None):
     selections = {b: dict(best=float("inf"), epoch=0) for b in selection_betas}
     stop_reason = "maximum_epochs"
     updates = 0
+    def auxiliary_payload():
+        return ({"physical_auxiliary_state_dict": physical_head.state_dict()}
+                if physical_head is not None else {})
     for epoch in range(1, a.epochs + 1):
         model.train()
+        if physical_head is not None:
+            physical_head.train()
         order = train_t[torch.randperm(len(train_t), device=a.device)]
         totals = np.zeros(4, dtype=np.float64)
+        auxiliary_total = 0.0
         beta_values = []
         for ids in order.split(a.batch_size):
             beta = beta_at_update(mode=a.beta_schedule, final=a.beta_final, update=updates, epoch=epoch,
@@ -544,12 +605,20 @@ def main(argv=None):
             reconstruction = model.reconstruction(xx, c[ids], z, exact_count=exact_count)
             kl = gaussian_kl(mu, logvar)
             objective = reconstruction + beta * kl
+            if physical_head is not None:
+                from .physical_auxiliary import head_prediction
+                auxiliary = (head_prediction(physical_head, z, c[ids], a.latent_physical_mode)
+                             - physical_target[ids]).square()
+                objective = objective + a.latent_physical_weight * auxiliary
+                auxiliary_total += float((auxiliary * w[ids]).sum().detach())
             loss = (objective * w[ids]).mean()
             if not torch.isfinite(loss):
                 raise FloatingPointError("Nonfinite training loss; inputs and failed attempt remain preserved")
             optimizer.zero_grad()
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 10)
+            if physical_head is not None:
+                torch.nn.utils.clip_grad_norm_(physical_head.parameters(), 10)
             optimizer.step()
             updates += 1
             totals += np.array([float((objective * w[ids]).sum().detach()),
@@ -558,9 +627,12 @@ def main(argv=None):
             if a.max_updates is not None and updates >= a.max_updates:
                 break
         model.eval()
+        if physical_head is not None:
+            physical_head.eval()
         val_reconstruction = 0.0
         val_kl = 0.0
         val_weight = 0.0
+        val_auxiliary = val_auxiliary_prior = val_auxiliary_mu = val_auxiliary_zero = 0.0
         latent_mu, latent_logvar, latent_weights = [], [], []
         with torch.no_grad():
             for start in range(0, len(val_t), a.batch_size):
@@ -571,9 +643,24 @@ def main(argv=None):
                 latent_weights.append(w[ids])
                 kl = gaussian_kl(mu, logvar)
                 rec = torch.zeros(len(ids), device=a.device)
+                aux = torch.zeros(len(ids), device=a.device)
+                aux_prior = torch.zeros(len(ids), device=a.device)
                 for eps in validation_noise[:, start:start + len(ids)]:
                     z = mu + torch.exp(0.5 * logvar) * eps if model.latent_dim else None
                     rec += model.reconstruction(x[ids], c[ids], z, exact_count=exact_count) / a.validation_samples
+                    if physical_head is not None:
+                        from .physical_auxiliary import head_prediction
+                        aux += (head_prediction(physical_head, z, c[ids], a.latent_physical_mode)
+                                - physical_genuine[ids]).square() / a.validation_samples
+                        aux_prior += (head_prediction(physical_head, eps, c[ids], a.latent_physical_mode)
+                                      - physical_genuine[ids]).square() / a.validation_samples
+                if physical_head is not None:
+                    aux_mu = (head_prediction(physical_head, mu, c[ids], a.latent_physical_mode)
+                              - physical_genuine[ids]).square()
+                    val_auxiliary += float((aux * w[ids]).sum())
+                    val_auxiliary_prior += float((aux_prior * w[ids]).sum())
+                    val_auxiliary_mu += float((aux_mu * w[ids]).sum())
+                    val_auxiliary_zero += float((physical_genuine[ids].square() * w[ids]).sum())
                 val_reconstruction += float((rec * w[ids]).sum())
                 val_kl += float((kl * w[ids]).sum())
                 val_weight += float(w[ids].sum())
@@ -587,6 +674,13 @@ def main(argv=None):
                    train_reconstruction=totals[1] / totals[3], train_KL=totals[2] / totals[3],
                    val_objective=objective, val_reconstruction=val_reconstruction,
                    val_KL=val_kl, elapsed_seconds=time.perf_counter() - started)
+        if physical_head is not None:
+            row.update(train_physical_MSE=auxiliary_total / totals[3],
+                val_physical_posterior_MSE=val_auxiliary / val_weight,
+                val_physical_prior_MSE=val_auxiliary_prior / val_weight,
+                val_physical_mu_MSE=val_auxiliary_mu / val_weight,
+                val_physical_zero_baseline_MSE=val_auxiliary_zero / val_weight,
+                val_physical_posterior_skill_vs_zero=(1-val_auxiliary/val_auxiliary_zero) if val_auxiliary_zero > 0 else None)
         for selection_beta in selection_betas:
             row["val_objective_beta_" + format(selection_beta, ".12g").replace(".", "p")] = val_reconstruction + selection_beta * val_kl
         history.append(row)
@@ -608,7 +702,8 @@ def main(argv=None):
                 selected_metadata = {**metadata, "selected_validation_beta": selection_beta}
                 checkpoint = dict(state_dict=model.state_dict(), configuration=selected_metadata,
                                   epoch=epoch, optimizer_updates=updates, val_objective=score,
-                                  selection_beta=selection_beta, latent_statistics=latent_record)
+                                  selection_beta=selection_beta, latent_statistics=latent_record,
+                                  **auxiliary_payload())
                 torch.save(checkpoint, a.output_dir / selection_checkpoint_name(selection_beta))
                 (a.output_dir / (selection_checkpoint_name(selection_beta) + ".latent.json")).write_text(json.dumps(latent_record, indent=2) + "\n")
         if objective < best - 1e-4:
@@ -616,7 +711,8 @@ def main(argv=None):
             best_epoch = epoch
             torch.save(dict(state_dict=model.state_dict(), configuration={**metadata, "selected_validation_beta": a.validation_beta},
                             epoch=epoch, optimizer_updates=updates, val_objective=best,
-                            selection_beta=a.validation_beta, latent_statistics=latent_record), a.output_dir / "best.pt")
+                            selection_beta=a.validation_beta, latent_statistics=latent_record,
+                            **auxiliary_payload()), a.output_dir / "best.pt")
         with (a.output_dir / "history.csv").open("w", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=list(row))
             writer.writeheader()
@@ -637,7 +733,8 @@ def main(argv=None):
     torch.save(dict(state_dict=model.state_dict(),
                     configuration={**metadata, "selected_validation_beta": a.validation_beta},
                     epoch=epoch, optimizer_updates=updates, val_objective=objective,
-                    selection_beta=a.validation_beta, latent_statistics=latent_record), terminal_checkpoint)
+                    selection_beta=a.validation_beta, latent_statistics=latent_record,
+                    **auxiliary_payload()), terminal_checkpoint)
     (a.output_dir / "last_update.pt.latent.json").write_text(json.dumps(latent_record, indent=2) + "\n")
     summary = dict(status="FIT_COMPLETE" if a.max_updates is None or updates == a.max_updates else "FIT_PARTIAL", stop_reason=stop_reason,
                    completed_epochs=len(history), optimizer_updates=updates, best_epoch=best_epoch,
