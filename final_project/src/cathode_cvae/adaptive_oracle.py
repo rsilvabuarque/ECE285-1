@@ -32,14 +32,16 @@ def certify_cache(root,model,parent_sha):
  if c.get('npz_sha256')!=sha256(p):raise ValueError('Cache bytes differ from certified source')
  return c
 
-def register_pool(root,input_path,parent_path,models=('uma','mace'),batch_size=64):
+def register_pool(root,input_path,parent_path,models=('uma','mace'),batch_size=64,as_written=False):
  if batch_size < 1:raise ValueError('batch_size must be positive')
  root=Path(root);root.mkdir(parents=True,exist_ok=True)
  parent_sha=sha256(parent_path)
  with np.load(parent_path,allow_pickle=False) as z: sites=len(z['target_indices'] if 'target_indices' in z else z['li_indices'])
  if not 1 <= sites <= 62: raise ValueError('Canonical integer codes require 1..62 mobile sites')
- registry_path=root/'registry.json';registry=json.loads(registry_path.read_text()) if registry_path.exists() else {'parent_sha256':parent_sha,'physical_keys':{},'tasks':[]}
+ registry_path=root/'registry.json';registry=json.loads(registry_path.read_text()) if registry_path.exists() else {'parent_sha256':parent_sha,'physical_keys':{},'tasks':[],'as_written':as_written}
  if registry['parent_sha256']!=parent_sha:raise ValueError('One queue must have one exact parent')
+ if registry.get('as_written',False)!=as_written:raise ValueError('Do not mix canonical and as-written audit queues')
+ registry['as_written']=as_written
  with np.load(input_path,allow_pickle=False) as z:
   ids=z['structure_ids'].astype(str);masks=z['masks'] if 'masks' in z else 1-z['occupancy'];embedded=str(z['parent_sha256'].item()) if 'parent_sha256' in z else None
  if embedded and embedded!=parent_sha:raise ValueError('Pool parent hash differs')
@@ -48,7 +50,7 @@ def register_pool(root,input_path,parent_path,models=('uma','mace'),batch_size=6
  powers=1<<np.arange(sites-1,-1,-1,dtype=np.int64)
  for start in range(0,len(masks),128):
   v=masks[start:start+128].astype(np.int64)
-  if not np.array_equal((v*powers).sum(-1),(v[:,inv]*powers).sum(-1).min(1)):raise ValueError('Pool masks must be in canonical orientation')
+  if not as_written and not np.array_equal((v*powers).sum(-1),(v[:,inv]*powers).sum(-1).min(1)):raise ValueError('Pool masks must be in canonical orientation')
  input_sha=sha256(input_path);added=[]
  for model in models:
   cache_path=root/f'cache_{model}.npz';cached=set()
@@ -58,7 +60,7 @@ def register_pool(root,input_path,parent_path,models=('uma','mace'),batch_size=6
   pending=[]
   for i,(sid,mask) in enumerate(zip(ids,masks)):
    key=''.join(map(str,mask));expected=f'mask{sites}_{int(key,2):0{(sites+3)//4}x}'
-   if sid!=expected:raise ValueError('Scoring ID disagrees with canonical mask code')
+   if not as_written and sid!=expected:raise ValueError('Scoring ID disagrees with canonical mask code')
    pk=physical_key(parent_sha,key,model)
    if pk not in registry['physical_keys']:
     registry['physical_keys'][pk]=dict(model=model,structure_id=sid,input_sha256=input_sha,provenance='exact_geometry_cache' if sid in cached else 'new_scoring');
@@ -151,13 +153,13 @@ def collect(root,output):
 
 def main(argv=None):
  p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='command',required=True)
- r=sub.add_parser('register');r.add_argument('--root',type=Path,required=True);r.add_argument('--input',type=Path,required=True);r.add_argument('--parent',type=Path,required=True);r.add_argument('--models',nargs='+',default=['uma','mace']);r.add_argument('--batch-size',type=int,default=64)
+ r=sub.add_parser('register');r.add_argument('--root',type=Path,required=True);r.add_argument('--input',type=Path,required=True);r.add_argument('--parent',type=Path,required=True);r.add_argument('--models',nargs='+',default=['uma','mace']);r.add_argument('--batch-size',type=int,default=64);r.add_argument('--as-written',action='store_true',help='Audit distinct actual orientations without canonical aliasing')
  w=sub.add_parser('worker');w.add_argument('--root',type=Path,required=True);w.add_argument('--model',required=True);w.add_argument('--checkpoint',required=True);w.add_argument('--device',default='cuda');w.add_argument('--threads',type=int,default=4)
  c=sub.add_parser('collect');c.add_argument('--root',type=Path,required=True);c.add_argument('--output',type=Path,required=True)
  a=p.parse_args(argv)
  from .runtime import require_compute_allocation
  require_compute_allocation()
- if a.command=='register':value=register_pool(a.root,a.input,a.parent,a.models,a.batch_size)
+ if a.command=='register':value=register_pool(a.root,a.input,a.parent,a.models,a.batch_size,a.as_written)
  elif a.command=='collect':value=collect(a.root,a.output)
  else:return worker(a.root,a.model,a.checkpoint,a.device,a.threads)
  print(json.dumps(value,indent=2));return value
