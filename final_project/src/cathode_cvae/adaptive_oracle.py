@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 from .data import sha256,deletion_atoms
 from .mlip.registry import MODELS
+from .oracle_queue import unclaimed_tasks
 
 PROTOCOL='pristine-derived deletion; unrelaxed; exact canonical parent coordinates'
 
@@ -83,7 +84,7 @@ def worker(root,model,checkpoint,device='cuda',threads=4):
  parents={};inputs={}
  while not (root/'STOP').exists():
   queue=root/'tasks.jsonl';tasks=[json.loads(s) for s in queue.read_text().splitlines() if s] if queue.exists() else []
-  candidates=[t for t in tasks if t['model']==model and not (root/'claims'/t['task_id']).exists()]
+  candidates=unclaimed_tasks(tasks,root/'claims',model)
   if not candidates:time.sleep(1);continue
   # Randomized task choice reduces lock contention; task identity fixes all inputs.
   t=candidates[int.from_bytes(os.urandom(4),'little')%len(candidates)];claim=root/'claims'/t['task_id']
