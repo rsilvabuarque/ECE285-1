@@ -159,3 +159,22 @@ computed fresh UMA seed energies with their H0 TRAIN labels, without new queries
 or a newly chosen numerical tolerance. The launcher waits for the causal raw
 reservation and verifies that exact protected boundary before any frontier
 proposal or seed rescoring begins.
+
+The executed campaign completed with 72 new generative continuations (2,000
+updates each), 233,490 core geometry/teacher evaluations, 34,686 causal follow-up
+evaluations, 49,570 new frontier evaluations, and 574 separate TRAIN-seed
+rescoring evaluations. No new DFT or MLIP fine-tuning ran. The authoritative
+component bindings, local budget-window checks, and complete raw task receipts
+are summarized in `iteration/RESULT_AND_COST_RECEIPT.json`; billed resource
+usage belongs to the root allocation receipts. The final role audit retains
+1,254 inherited protected/H0-TRAIN overlaps and adds zero; new acquired TRAIN
+orbits do not intersect protected assessment orbits. All original results,
+failed administrative path helpers, raw claims, and source snapshots remain
+preserved under the dated execution directory.
+
+`final_receipt_v2.py` is the working final audit. The failed original helper
+used an incorrect base-boundary path and produced no scientific changes; its
+source/log are bound by the final receipt. Remaining `frontier/presentation.py`
+redraws use short labels and separately show selected current endpoints and
+monotone best-so-far. They run as light packaging on the retained shared
+allocation after all full-node scientific work completes.
