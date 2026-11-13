@@ -92,3 +92,24 @@ conditions. Fixed MACE metrics use its own frozen TRAIN-only energy schema.
 Paired-fit error bars are sample standard deviations across three fits, not
 confidence intervals. Per-attempt acquisition yield is capped at one half by the
 256-query/512-attempt design; fresh assessment uses 128/128.
+
+The optional `frontier/frontier.py` is a separately budgeted, dated experiment
+that runs only after the core and derived analyses complete. Greedy UMA-guided
+single-swap search and an energy-blind random walk share original unprotected
+TRAIN seeds, exactly identical first-step proposals and queried unions, and the
+same eight one-swap neighbors per trajectory. A uniform fixed-count baseline
+receives the same proposal/query cap without an edit-semantics claim. All raw
+attempts are retained, new-orbit selection precedes scoring, and all teachers'
+raw worker outputs receive exact-union verification. Four steps over 16 starts
+per composition/endpoint cell and three seeds cap new work at 27,648 geometries
+per teacher. Seed rescoring is recorded separately. The active 48-minute guard
+reserves two minutes for cleanup within the approved 50-minute/4-node-hour cap.
+This checks local endpoint search; it cannot establish global extrema or entropy.
+
+Class balancing in `train_mask.py` rescales row loss weights; it does not
+oversample minibatch draws. The derived support table computes actual TRAIN
+class counts, extrema, edge shifts, and loss-weight ESS = (sum w)^2/sum(w^2)
+from inherited row weights and the implemented within-composition class
+rescaling. That ESS measures concentration of objective weight, not independent
+physical observations. Frozen fixed-schema support counts describe the original
+reference population; actual augmented-row support is reported separately.

@@ -32,23 +32,29 @@ def finish_running_oracle(phase,stages):
 
 
 def phase2_boundary(base):
-    receipt_path=d.RUN/'latent_phase2/raw_union_receipt.json';pool=d.RUN/'latent_phase2/raw_valid_canonical_union.npz'
-    if not receipt_path.exists():raise ValueError('Phase2 rawunion not frozen; do not delay primary study indefinitely')
-    rr=json.loads(receipt_path.read_text())
-    if rr['status']!='ALL40_RAW_DIAGNOSTICS_FROZEN_BEFORE_ORACLE' or not rr['no_energy_filtering'] or rr['pool_sha256']!=d.sha256(pool) or rr['parent_sha256']!=d.sha256(d.PARENT):raise ValueError('Phase2 rawunion binding mismatch')
-    boundary,known,protected=d.ai.load_boundary(base);base_known=set(known);base_protected=set(protected);perms,_=d._parent(d.PARENT)
-    with np.load(pool,allow_pickle=False) as z:
-        x=z['occupancy'];m=z['masks'];ids=z['structure_ids'].astype(str)
-        if str(z['parent_sha256'].item())!=d.sha256(d.PARENT):raise ValueError('Phase2 parent mismatch')
-    keys=d._canonical_vacancy(x,perms)
-    if not np.array_equal(m,1-x) or ids.tolist()!=[d.ai.identity(k) for k in keys] or len(set(keys.tolist()))!=rr['unique_valid_orbits']:raise ValueError('Phase2 union invalid canonical masks')
+    required=d.RUN/'latent_phase2/raw_union_receipt.json'
+    if not required.exists():raise ValueError('Required phase2 raw union not frozen')
+    inputs=[required]
+    optional=d.RUN/'latent_mean_supervision/raw_union_receipt.json'
+    if optional.exists():inputs.append(optional)
+    boundary,known,protected=d.ai.load_boundary(base);base_protected=set(protected);perms,_=d._parent(d.PARENT)
     with np.load(d.H0,allow_pickle=False) as z:roles=z['split'].astype(str);tx=z['occupancy'][roles=='train']
-    tk=set(d._canonical_vacancy(tx,perms).tolist());new=set(keys.tolist())-known-tk;known.update(keys.tolist());protected.update(new)
+    tk=set(d._canonical_vacancy(tx,perms).tolist());sources=[];new_total=0
+    for receipt_path in inputs:
+        pool=receipt_path.parent/'raw_valid_canonical_union.npz';rr=json.loads(receipt_path.read_text())
+        if rr['status']!='ALL40_RAW_DIAGNOSTICS_FROZEN_BEFORE_ORACLE' or not rr.get('no_energy_filtering',True) or rr['pool_sha256']!=d.sha256(pool) or rr['parent_sha256']!=d.sha256(d.PARENT):raise ValueError('Independent rawunion binding mismatch')
+        with np.load(pool,allow_pickle=False) as z:
+            x=z['occupancy'];m=z['masks'];ids=z['structure_ids'].astype(str)
+            if str(z['parent_sha256'].item())!=d.sha256(d.PARENT):raise ValueError('Independent parent mismatch')
+        keys=d._canonical_vacancy(x,perms)
+        if not np.array_equal(m,1-x) or ids.tolist()!=[d.ai.identity(k) for k in keys] or len(set(keys.tolist()))!=rr['unique_valid_orbits']:raise ValueError('Independent union invalid canonical masks')
+        new=set(keys.tolist())-known-tk;known.update(keys.tolist());protected.update(new);new_total+=len(new)
+        sources.append(dict(pool=d.binding(pool),receipt=d.binding(receipt_path),raw_unique_orbits=len(keys),new_protected_orbits=len(new)))
     if (protected-base_protected)&tk:raise ValueError('New H0TRAIN protected overlap')
     out=d.R/'boundary_before_r2_with_phase2';out.mkdir(exist_ok=False)
     d.write(out/'known_history.json',sorted(known));d.write(out/'protected.json',sorted(protected))
-    d.write(out/'receipt.json',dict(status='FROZEN_ADAPTIVE_CANONICAL_BOUNDARY',created_unix=time.time(),parent=boundary['parent'],history=d.binding(out/'known_history.json'),protected=d.binding(out/'protected.json'),known_orbits=len(known),protected_orbits=len(protected),previous_boundary=d.binding(base/'receipt.json'),latent_phase2_raw_union=d.binding(pool),latent_phase2_raw_receipt=d.binding(receipt_path),new_phase2_protected_orbits=len(new),newly_protected_h0_train_orbits=0,inherited_h0_train_protected_orbits=len(base_protected&tk),source=d.binding(__file__),amendment=d.binding(d.R/'phase2_boundary_amendment.json'),no_energy_members_read=True))
-    d.log('PHASE2_BOUNDARY_READY',len(known),len(protected),len(new));return out
+    d.write(out/'receipt.json',dict(status='FROZEN_ADAPTIVE_CANONICAL_BOUNDARY',created_unix=time.time(),parent=boundary['parent'],history=d.binding(out/'known_history.json'),protected=d.binding(out/'protected.json'),known_orbits=len(known),protected_orbits=len(protected),previous_boundary=d.binding(base/'receipt.json'),independent_diagnostic_unions=sources,new_independent_protected_orbits=new_total,newly_protected_h0_train_orbits=0,inherited_h0_train_protected_orbits=len(base_protected&tk),source=d.binding(__file__),amendment=d.binding(d.R/'phase2_boundary_amendment.json'),no_energy_members_read=True))
+    d.log('ADDITIONAL_DIAGNOSTIC_BOUNDARY_READY',len(known),len(protected),new_total,len(sources));return out
 
 
 def main():
@@ -56,7 +62,7 @@ def main():
     if list((d.R/'round2_acquisition').glob('stages/*')):raise ValueError('R2 already started; preserve original prospective boundary')
     if not (d.R/'taskfiles/round1_evaluation_oracle.json').exists():raise ValueError('R1 assessment oracle not yet frozen/dispatched')
     if not (d.RUN/'latent_phase2/raw_union_receipt.json').exists():raise ValueError('No phase2 rawunion yet')
-    d.write(d.R/'phase2_boundary_amendment.json',dict(status='FROZEN_BEFORE_R2_ACQUISITION',created_unix=time.time(),reason='Independent phase2 latent diagnostic raw identities must not enter later adaptive TRAIN. Root authorized adding newly eligible identities to protection, allraw to known; no hyperparameters or assessment-derived policy changes.',parent_design=d.binding(d.R/'design.json'),original_driver=d.binding(d.R/'orchestrate.py'),resume_source=d.binding(__file__),phase2_union_receipt=d.binding(d.RUN/'latent_phase2/raw_union_receipt.json'),r1_assessment_taskfile=d.binding(d.R/'taskfiles/round1_evaluation_oracle.json'),no_model_or_budget_changes=True))
+    d.write(d.R/'phase2_boundary_amendment.json',dict(status='FROZEN_BEFORE_R2_ACQUISITION',created_unix=time.time(),reason='Independent phase2 latent diagnostic raw identities must not enter later adaptive TRAIN. Root authorized adding newly eligible identities to protection, allraw to known; no hyperparameters or assessment-derived policy changes.',parent_design=d.binding(d.R/'design.json'),original_driver=d.binding(d.R/'orchestrate.py'),resume_source=d.binding(__file__),phase2_union_receipt=d.binding(d.RUN/'latent_phase2/raw_union_receipt.json'),r1_assessment_taskfile=d.binding(d.R/'taskfiles/round1_evaluation_oracle.json'),additional_union_policy='Include phase3 mean-supervision rawunion as well only if already frozen before R2 boundary creation; do not wait for it. Identity-only, no model or budget change.',no_model_or_budget_changes=True))
     phase='round1_evaluation';meta=json.loads((d.R/phase/'models.json').read_text());stages=[Path(m['stage']) for m in meta]
     verifiers=finish_running_oracle(phase,stages);d.summarize_phase(phase,stages,verifiers)
     b2=d.R/'boundary_after_r1_evaluation';d.ai.extend_boundary(d.R/'boundary_after_r1_acquisition',[],stages,b2)
