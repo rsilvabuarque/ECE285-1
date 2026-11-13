@@ -110,3 +110,16 @@ def make_head(latent_dim, condition_dim, mode, seed, device):
 def head_prediction(head, z, condition, mode):
     features = condition if mode == "condition" else torch.cat((z, condition), dim=-1)
     return head(features).squeeze(-1)
+
+
+def auxiliary_latent(mu, sampled_z, input_mode):
+    """Select descriptor supervision while leaving decoder sampling unchanged.
+
+    A mean target removes posterior sampling noise from the auxiliary loss;
+    it does not establish that independent-prior samples encode the target.
+    """
+    if input_mode == 'sampled':
+        return sampled_z
+    if input_mode == 'mean':
+        return mu
+    raise ValueError('Physical auxiliary input must be sampled or mean')

@@ -7,7 +7,7 @@ import torch
 from cathode_cvae.graph import build_periodic_graph
 from cathode_cvae.parent_spec import ParentSpec
 from cathode_cvae.learning.physical_auxiliary import (vacancy_pair_values,
-    prepare_targets, make_head, head_prediction)
+    prepare_targets, make_head, head_prediction, auxiliary_latent)
 
 
 def square_graph():
@@ -70,7 +70,8 @@ def test_missing_training_cell_is_rejected():
             np.array(['low','high']),np.array(['train','val']),square_graph(),mode='latent',seed=3)
 
 
-def test_condition_only_auxiliary_keeps_generator_updates_identical(tmp_path):
+@pytest.mark.parametrize('posterior_input', ['sampled', 'mean'])
+def test_condition_only_auxiliary_keeps_generator_updates_identical(tmp_path, posterior_input):
     # This small integration test may run on CI or an allocation; it never
     # disables the site's training guard when invoked on a NERSC login host.
     from cathode_cvae.runtime import require_compute_allocation
@@ -85,14 +86,33 @@ def test_condition_only_auxiliary_keeps_generator_updates_identical(tmp_path):
              weight=np.ones(6),split=np.array(['train']*3+['val']*2+['test']),
              structure_ids=np.array([f'synthetic_{i}' for i in range(6)]),parent_sha256=np.asarray(train_mask.sha256(parent)))
     checkpoints=[]
-    for name, extra in [('baseline',[]),('condition',['--latent-physical-weight','1','--latent-physical-mode','condition'])]:
+    for name, extra in [('baseline',[]),('condition',['--latent-physical-weight','1','--latent-physical-mode','condition',
+                                                    '--latent-physical-input',posterior_input])]:
         out=tmp_path/name
         train_mask.main(['--data',str(data),'--parent',str(parent),'--output-dir',str(out),
             '--kind','ar_cvae','--condition-mode','composition','--latent-dim','2','--max-updates','2',
             '--epochs','10','--minimum-epochs','10','--patience','10','--batch-size','2',
             '--validation-samples','1','--device','cpu','--threads','1','--max-seconds','60',*extra])
         checkpoints.append(torch.load(out/'last_update.pt',weights_only=False))
+        if name == 'condition':
+            metadata=json.loads((out/'configuration.json').read_text())['physical_auxiliary']
+            assert metadata['posterior_input'] == posterior_input
+            assert metadata['head_inputs'] == 'condition only'
     for key in checkpoints[0]['state_dict']:
         assert torch.equal(checkpoints[0]['state_dict'][key],checkpoints[1]['state_dict'][key]),key
     assert 'physical_auxiliary_state_dict' in checkpoints[1]
     assert checkpoints[0]['val_objective']==checkpoints[1]['val_objective']
+
+
+def test_mean_supervision_gradient_avoids_posterior_sampling_noise():
+    mu=torch.tensor([[.3,-.4]],requires_grad=True)
+    logvar=torch.tensor([[.2,-.1]],requires_grad=True)
+    sampled=mu+torch.exp(.5*logvar)*torch.ones_like(mu)
+    mean_loss=auxiliary_latent(mu,sampled,'mean').square().sum()
+    mean_grad=torch.autograd.grad(mean_loss,(mu,logvar),allow_unused=True,retain_graph=True)
+    assert torch.count_nonzero(mean_grad[0])>0 and mean_grad[1] is None
+    sampled_loss=auxiliary_latent(mu,sampled,'sampled').square().sum()
+    sampled_grad=torch.autograd.grad(sampled_loss,(mu,logvar),allow_unused=True)
+    assert torch.count_nonzero(sampled_grad[0])>0 and torch.count_nonzero(sampled_grad[1])>0
+    with pytest.raises(ValueError,match='sampled or mean'):
+        auxiliary_latent(mu,sampled,'unknown')

@@ -214,6 +214,8 @@ def arguments(argv=None):
                         help="Optional dimensionless weight on TRAIN-only standardized vacancy-pair auxiliary MSE; excluded from checkpoint selection")
     parser.add_argument("--latent-physical-mode", choices=["latent", "condition", "shuffled"], default="latent",
                         help="Auxiliary predictor uses posterior z+c, c only, or z+c with within-cell TRAIN target shuffling")
+    parser.add_argument("--latent-physical-input", choices=["sampled", "mean"], default="sampled",
+                        help="Train the auxiliary head from sampled posterior z or posterior mean; reconstruction still uses sampled z")
     parser.add_argument("--device", choices=["cuda", "cpu", "auto"], default="auto")
     parser.add_argument("--threads", type=int, default=4)
     return parser.parse_args(argv)
@@ -498,6 +500,10 @@ def main(argv=None):
                                   a.latent_physical_mode, a.seed + 65539, a.device)
         optimizer_parameters += list(physical_head.parameters())
         physical_metadata.update(weight=a.latent_physical_weight,
+            posterior_input=a.latent_physical_input,
+            head_inputs=("condition only" if a.latent_physical_mode == "condition" else
+                         "posterior mean concatenated with condition" if a.latent_physical_input == "mean" else
+                         "posterior sampled latent concatenated with condition"),
             head_hidden_dim=32, head_parameter_count=sum(p.numel() for p in physical_head.parameters()),
             objective="reconstruction + beta*KL + weight*MSE of TRAIN-standardized physical target; this augmented objective is not an ELBO",
             head_rng="Separate forked RNG; head initialization does not consume model-training RNG",
@@ -606,8 +612,9 @@ def main(argv=None):
             kl = gaussian_kl(mu, logvar)
             objective = reconstruction + beta * kl
             if physical_head is not None:
-                from .physical_auxiliary import head_prediction
-                auxiliary = (head_prediction(physical_head, z, c[ids], a.latent_physical_mode)
+                from .physical_auxiliary import head_prediction, auxiliary_latent
+                supervised_z = auxiliary_latent(mu, z, a.latent_physical_input)
+                auxiliary = (head_prediction(physical_head, supervised_z, c[ids], a.latent_physical_mode)
                              - physical_target[ids]).square()
                 objective = objective + a.latent_physical_weight * auxiliary
                 auxiliary_total += float((auxiliary * w[ids]).sum().detach())
