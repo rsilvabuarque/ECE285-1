@@ -155,6 +155,15 @@ def main():
         'fit means. The reported fit spread is descriptive; it is not a confidence interval from nine independent fits. '
         'Weight ESS measures weight concentration and does not measure Markov-chain independence.','']
     for teacher in teachers:
+        for bins in (16,32):
+            rr=[r for r in wl_thermo if r['teacher']==teacher and int(r['n_target'])==6
+                and float(r['temperature_K'])==300. and int(r['n_bins'])==bins]
+            lines.append(f'- {teacher}, Li6/12, 300 K, {bins} WL bins: midpoint-only entropy bias '
+                f'{float(rr[0]["discretization_error_kB"]):+.6g} kB per cell; mean absolute DOS-estimation '
+                f'error relative to the binned reference {np.mean([abs(float(r["estimation_error_relative_binned_kB"])) for r in rr]):.6g} kB. '
+                'The two contributions may cancel; small total error alone does not establish either convergence.')
+    lines.append('')
+    for teacher in teachers:
         for method in ['terminal_AR_mixture','uniform_microstate']:
             rr=[r for r in comparisons if r['teacher']==teacher and r['n_target']==6
                 and r['temperature_K']==1000. and r['draws']==8192 and r['method']==method][0]
