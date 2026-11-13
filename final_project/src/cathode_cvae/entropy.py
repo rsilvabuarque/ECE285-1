@@ -12,6 +12,37 @@ from .data import validate_permutation_group
 KB_EV_K = 8.617333262145e-5
 
 
+def boltzmann_training_weights(energy_eV, counts, splits, multiplicity, temperature_K):
+    """Reweight TRAIN orbits toward a fixed-T labelled-mask Boltzmann target.
+
+    Energies are TOTAL eV per cell. Each composition preserves its original
+    TRAIN multiplicity sum, so only its internal target distribution changes.
+    VAL/TEST weights are unchanged and their energies are never consulted.
+    """
+    e=np.asarray(energy_eV,float);n=np.asarray(counts);roles=np.asarray(splits).astype(str)
+    g=np.asarray(multiplicity,float);T=float(temperature_K)
+    if (e.ndim!=1 or any(v.shape!=e.shape for v in [n,roles,g]) or not len(e)
+            or not np.isfinite(T) or T<=0 or not np.isfinite(g).all() or np.any(g<=0)):
+        raise ValueError('Aligned finite positive multiplicities and T>0 required')
+    train=roles=='train'
+    if not train.any() or not np.isfinite(e[train]).all():
+        raise ValueError('Finite TRAIN total-cell energies required')
+    result=g.copy();groups=[]
+    for count in sorted(set(n[train])):
+        ix=np.flatnonzero(train & (n==count));reference=float(e[ix].min())
+        total=float(g[ix].sum());logw=np.log(g[ix])-(e[ix]-reference)/(KB_EV_K*T)
+        result[ix]=total*np.exp(logw-logsumexp(logw))
+        if not np.isfinite(result[ix]).all() or np.any(result[ix]<=0):
+            raise ValueError('Boltzmann TRAIN weights exceed floating-point dynamic range; do not silently clip')
+        if not np.isclose(result[ix].sum(),total,rtol=1e-12,atol=1e-12):
+            raise AssertionError('Per-composition TRAIN mass changed')
+        groups.append(dict(n_target=int(count),train_orbits=len(ix),
+            train_energy_reference_eV=reference,original_train_weight_sum=total,
+            new_train_weight_sum=float(result[ix].sum()),minimum_weight=float(result[ix].min()),
+            maximum_weight=float(result[ix].max()),weight_ESS=float(result[ix].sum()**2/np.sum(result[ix]**2))))
+    return result,groups
+
+
 def enumerate_orbits(permutations, maximum_sites=20):
     """Exhaustively partition all binary masks under a verified finite site group."""
     p = np.asarray(permutations, dtype=np.int64)
